@@ -2,7 +2,13 @@
 
 ## 1. Dataset overview
 
-This dataset contains **3,000 images** and **12,000 questions**. It was generated on **2026-08-10** using a fully synthetic, deterministic Python pipeline; no image was human-drawn and no answer was manually labeled. The visual design and dual-wording Level-2 format were adapted from an existing published methodology for testing line-intersection counting in vision-language models. This dataset extends that design with a four-level difficulty structure, variable segment counts, explicit self-intersection handling, and coordinate-derived compound questions.
+The current v3 dataset contains **3,000 images** and **15,000 questions** (five ordered levels per image). It was generated using a fully synthetic, deterministic Python pipeline; no image was human-drawn and no answer was manually labeled. The visual design and dual-wording Level-2 format were adapted from an existing published methodology for testing line-intersection counting in vision-language models.
+
+### Version 3 Level-5 counterfactual correction
+
+The former 20-pixel downward translation was independently recomputed and found to preserve the intersection count in all 2,016 translation-template items because it was smaller than the generator's endpoint separation. Version 3 uses 60 pixels and always rebuilds the translated red coordinates before running the full red-blue segment-intersection search. This changes 1,400 Level-5 answers; the translated-minus-original distribution is recorded in `validation_metrics.json`. The other 984 Level-5 items retain the remove-first-red-segment template. The new overall Level-5 constant-answer baseline is 49.63%.
+
+All five levels, point/segment and intersection-array invariants, leak statistics, guard injections, and all 3,000 PNGs are exhaustively revalidated. The long verbatim prompt below is retained as historical design provenance; the release description above and v3 generator are authoritative.
 
 ## 2. Full verbatim generation prompt
 

@@ -1,16 +1,17 @@
-GRIP Five-Level Validation Summary — line_intersection
-Images checked: 3000
-Questions checked: 15000
-Base geometry/Levels 1-4: PASS
-Level 5 independent validation: PASS
-Total mismatches found: 0
-Summary: PASS
+Line Intersection Dataset v3 Validation Report
+==============================================
+Images/questions: 3000/15000
+Mismatches: 0
+Answers changed by level: {'1': 0, '2': 0, '3': 0, '4': 0, '5': 1400}
+Level distributions and baselines: {'1': {'counts': {'3': 619, '2': 1223, '4': 568, '5': 590}, 'constant_answer_baseline': 0.4076666666666667}, '2': {'counts': {'2': 819, '1': 757, '4': 188, '5': 95, '0': 758, '3': 383}, 'constant_answer_baseline': 0.273}, '3': {'counts': {'blue': 567, 'left': 624, 'red': 543, 'above': 537, 'below': 572, 'right': 157}, 'constant_answer_baseline': 0.208}, '4': {'counts': {'1,1': 472, '1,0': 250, 'even': 578, 'odd': 408, '0,1': 257, '0,0': 498, '1,3': 21, '2,2': 92, '1,2': 128, '2,0': 44, '2,1': 118, '0,3': 6, '0,2': 46, '2,3': 36, '3,1': 14, '3,2': 30, '3,0': 2}, 'constant_answer_baseline': 0.19266666666666668}, '5': {'counts': {'1': 764, '0': 1489, '2': 557, '4': 58, '3': 130, '5': 2}, 'constant_answer_baseline': 0.49633333333333335}}
+Level 5 templates: {'remove_first_red_segment': 984, 'translate_red_intersections': 2016}
+Translated answers differing from original: 1400/2016
+Translated-minus-original distribution: {-5: 23, -4: 67, -3: 186, -2: 408, -1: 426, 0: 616, 1: 181, 2: 81, 3: 21, 4: 6, 5: 1}
+PNG recovery: 3000/3000
+Guard injection tests: {'intersection_count_violation_rejected': True, 'intersection_count_boundary_accepted': True, 'red_point_violation_rejected': True, 'red_point_boundary_accepted': True, 'blue_point_violation_rejected': True, 'blue_point_boundary_accepted': True, 'inherited_level5_violation_rejected': True, 'independent_level5_boundary_accepted': True, 'png_boundary_accepted': True}
+Features at V >= 0.10 (nothing hidden): {'canvas_size': {'1': {'cramers_v': 0.10845331571172052, 'kind': 'categorical'}}, 'crossed_from_above_to_below': {'1': {'cramers_v': 0.16602515274348242, 'kind': 'categorical'}, '2': {'cramers_v': 0.999332665925011, 'kind': 'categorical'}, '3': {'cramers_v': 0.24382485996360917, 'kind': 'categorical'}, '4': {'cramers_v': 0.9974951951979326, 'kind': 'categorical'}, '5': {'cramers_v': 0.10633522642820674, 'kind': 'categorical'}}, 'difficulty_score': {'1': {'cramers_v': 0.8524917471375301, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.707612580501277, 'kind': 'numeric_deciles'}, '3': {'cramers_v': 0.18609249408835285, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.4828009773697632, 'kind': 'numeric_deciles'}, '5': {'cramers_v': 0.2764338162488935, 'kind': 'numeric_deciles'}}, 'leftmost_intersection_x': {'1': {'cramers_v': 0.17244786703642884, 'kind': 'categorical'}, '2': {'cramers_v': 0.5031630080719137, 'kind': 'categorical'}, '3': {'cramers_v': 0.21808085882978565, 'kind': 'categorical'}, '4': {'cramers_v': 0.46245306006000597, 'kind': 'categorical'}, '5': {'cramers_v': 0.20153091676455742, 'kind': 'categorical'}}, 'num_blue_segments': {'1': {'cramers_v': 1.0, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.3519578674194084, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.3485129221115988, 'kind': 'numeric_deciles'}, '5': {'cramers_v': 0.2448867721693077, 'kind': 'numeric_deciles'}}, 'num_red_segments': {'1': {'cramers_v': 1.0, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.3519578674194084, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.3485129221115988, 'kind': 'numeric_deciles'}, '5': {'cramers_v': 0.2448867721693077, 'kind': 'numeric_deciles'}}, 'red_above_blue_at_end': {'3': {'cramers_v': 0.6277295814021999, 'kind': 'categorical'}, '5': {'cramers_v': 0.19278923326330089, 'kind': 'categorical'}}, 'red_above_blue_at_start': {'3': {'cramers_v': 0.633359142591668, 'kind': 'categorical'}, '5': {'cramers_v': 0.19749312158764903, 'kind': 'categorical'}}, 'rightmost_intersection_x': {'1': {'cramers_v': 0.17147737015201117, 'kind': 'categorical'}, '2': {'cramers_v': 0.5028309968130666, 'kind': 'categorical'}, '3': {'cramers_v': 0.21814305087089234, 'kind': 'categorical'}, '4': {'cramers_v': 0.462221287108952, 'kind': 'categorical'}, '5': {'cramers_v': 0.2011941575669298, 'kind': 'categorical'}}, 'total_intersections': {'1': {'cramers_v': 0.32378613232968567, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.9998330411541915, 'kind': 'numeric_deciles'}, '3': {'cramers_v': 0.23746468316223507, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.8621829464544354, 'kind': 'numeric_deciles'}, '5': {'cramers_v': 0.3101845784550317, 'kind': 'numeric_deciles'}}}
 
-Dataset: line_intersection
-Images checked: 3000
-Level 5 questions checked: 3000
-Total mismatches found: 0
-Level 5 templates:
-  remove_first_red_segment: 984
-  translate_red_intersections: 2016
+Mismatches:
+  None
+
 Summary: PASS

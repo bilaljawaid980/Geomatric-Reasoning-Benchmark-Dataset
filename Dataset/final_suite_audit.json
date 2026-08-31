@@ -18660,7 +18660,7 @@
         "p95": 4.0
       }
     },
-    "dataset_version": "line-intersection-2.0.0",
+    "dataset_version": "line-intersection-3.0.0",
     "degeneracy_flags": {},
     "features_at_v_ge_0_10": {
       "crossed_from_above_to_below": {
@@ -18668,53 +18668,55 @@
         "2": 0.99933267,
         "3": 0.24382486,
         "4": 0.9974952,
-        "5": 0.65641789
+        "5": 0.10633523
       },
       "difficulty_score": {
         "1": 0.85249175,
         "2": 0.70761258,
         "3": 0.18609249,
         "4": 0.48280098,
-        "5": 0.59575224
+        "5": 0.27643382
       },
       "leftmost_intersection_x": {
         "1": 0.17244787,
         "2": 0.50316301,
         "3": 0.21808086,
         "4": 0.46245306,
-        "5": 0.50316301
+        "5": 0.20153092
       },
       "num_blue_segments": {
         "1": 1.0,
         "2": 0.35195787,
         "4": 0.34851292,
-        "5": 0.3207622
+        "5": 0.24488677
       },
       "num_red_segments": {
         "1": 1.0,
         "2": 0.35195787,
         "4": 0.34851292,
-        "5": 0.3207622
+        "5": 0.24488677
       },
       "red_above_blue_at_end": {
-        "3": 0.62772958
+        "3": 0.62772958,
+        "5": 0.19278923
       },
       "red_above_blue_at_start": {
-        "3": 0.63335914
+        "3": 0.63335914,
+        "5": 0.19749312
       },
       "rightmost_intersection_x": {
         "1": 0.17147737,
         "2": 0.502831,
         "3": 0.21814305,
         "4": 0.46222129,
-        "5": 0.502831
+        "5": 0.20119416
       },
       "total_intersections": {
         "1": 0.32378613,
         "2": 0.99983304,
         "3": 0.23746468,
         "4": 0.86218295,
-        "5": 0.82743926
+        "5": 0.31018458
       }
     },
     "images": 3000,
@@ -18765,7 +18767,7 @@
             "kind": "categorical"
           },
           "5": {
-            "cramers_v": 0.6564178921365604,
+            "cramers_v": 0.10633522642820674,
             "kind": "categorical"
           }
         },
@@ -18791,7 +18793,7 @@
             "kind": "numeric_deciles"
           },
           "5": {
-            "cramers_v": 0.5957522424527353,
+            "cramers_v": 0.2764338162488935,
             "kind": "numeric_deciles"
           }
         },
@@ -18817,7 +18819,7 @@
             "kind": "categorical"
           },
           "5": {
-            "cramers_v": 0.5031630080720518,
+            "cramers_v": 0.20153091676455742,
             "kind": "categorical"
           }
         },
@@ -18843,7 +18845,7 @@
             "kind": "numeric_deciles"
           },
           "5": {
-            "cramers_v": 0.32076220310426695,
+            "cramers_v": 0.2448867721693077,
             "kind": "numeric_deciles"
           }
         },
@@ -18869,7 +18871,7 @@
             "kind": "numeric_deciles"
           },
           "5": {
-            "cramers_v": 0.32076220310426695,
+            "cramers_v": 0.2448867721693077,
             "kind": "numeric_deciles"
           }
         },
@@ -18895,7 +18897,7 @@
             "kind": "categorical"
           },
           "5": {
-            "cramers_v": 0.024939328296776968,
+            "cramers_v": 0.19278923326330089,
             "kind": "categorical"
           }
         },
@@ -18921,7 +18923,7 @@
             "kind": "categorical"
           },
           "5": {
-            "cramers_v": 0.027270754941034103,
+            "cramers_v": 0.19749312158764903,
             "kind": "categorical"
           }
         },
@@ -18973,7 +18975,7 @@
             "kind": "categorical"
           },
           "5": {
-            "cramers_v": 0.5028309968131334,
+            "cramers_v": 0.2011941575669298,
             "kind": "categorical"
           }
         },
@@ -18999,7 +19001,7 @@
             "kind": "numeric_deciles"
           },
           "5": {
-            "cramers_v": 0.8274392623607943,
+            "cramers_v": 0.3101845784550317,
             "kind": "numeric_deciles"
           }
         },
@@ -19087,14 +19089,14 @@
         }
       },
       "5": {
-        "constant_answer_baseline": 0.2976666666666667,
+        "constant_answer_baseline": 0.49633333333333335,
         "counts": {
-          "0": 858,
-          "1": 893,
-          "2": 683,
-          "3": 332,
-          "4": 167,
-          "5": 67
+          "0": 1489,
+          "1": 764,
+          "2": 557,
+          "3": 130,
+          "4": 58,
+          "5": 2
         }
       }
     },
@@ -26324,34 +26326,31 @@
     "categorical_distributions": {
       "face_shape_types": {
         "mixed": 1738,
-        "pentagons": 472,
+        "pentagons": 315,
         "squares": 158,
-        "triangles": 632
+        "triangles": 789
       },
       "is_convex": {
-        "False": 630,
-        "True": 2370
+        "False": 316,
+        "True": 2684
       },
       "solid_class": {
         "Archimedean": 948,
         "Catalan": 632,
         "Compound": 316,
-        "NonConvex": 314,
-        "Platonic": 790
+        "Platonic": 1104
       },
       "solid_name": {
         "compound of cube and octahedron": 158,
         "cube": 158,
         "cuboctahedron": 158,
-        "dodecahedron": 158,
-        "great dodecahedron": 157,
-        "icosahedron": 158,
+        "dodecahedron": 315,
+        "icosahedron": 315,
         "icosidodecahedron": 158,
         "octahedron": 158,
         "rhombic dodecahedron": 158,
         "rhombic triacontahedron": 158,
         "rhombicuboctahedron": 158,
-        "small stellated dodecahedron": 157,
         "stella octangula": 158,
         "tetrahedron": 158,
         "triakis octahedron": 158,
@@ -26376,7 +26375,7 @@
         "max": 32.0,
         "min": 4.0,
         "p25": 8.0,
-        "p50": 12.0,
+        "p50": 14.0,
         "p75": 20.0,
         "p95": 32.0
       },
@@ -26399,13 +26398,13 @@
         "p95": 16.0
       }
     },
-    "dataset_version": "polyhedron-3.0.0",
+    "dataset_version": "polyhedron-4.0.0",
     "degeneracy_flags": {
       "2": {
-        "constant_answer_baseline": 0.79,
+        "constant_answer_baseline": 0.8946666666666667,
         "counts": {
-          "convex": 2370,
-          "non-convex": 630
+          "convex": 2684,
+          "non-convex": 316
         }
       },
       "5": {
@@ -26417,52 +26416,52 @@
     },
     "features_at_v_ge_0_10": {
       "edge_count": {
-        "1": 0.75583117,
-        "2": 0.48189444,
-        "3": 0.67088382,
-        "4": 0.5883061
+        "1": 0.76787728,
+        "2": 0.45461294,
+        "3": 0.65853928,
+        "4": 0.57636344
       },
       "face_count": {
-        "1": 0.9994987,
-        "2": 0.41087482,
-        "3": 0.70705014,
-        "4": 0.70138458
+        "1": 0.99966572,
+        "2": 0.45387864,
+        "3": 0.70242336,
+        "4": 0.67866732
       },
       "face_shape_types": {
-        "1": 0.86719078,
-        "2": 0.51107672,
-        "3": 0.8201062,
-        "4": 0.65396173
+        "1": 0.85781495,
+        "2": 0.20976386,
+        "3": 0.85076687,
+        "4": 0.58908833
       },
       "is_convex": {
-        "1": 0.40965529,
+        "1": 0.45314314,
         "2": 1.0,
-        "3": 0.42016178,
-        "4": 0.82962824
+        "3": 0.36265877,
+        "4": 0.99766238
       },
       "solid_class": {
-        "1": 0.68039958,
-        "2": 0.99949954,
-        "3": 0.61202071,
-        "4": 0.82161564
+        "1": 0.72115872,
+        "2": 0.99966639,
+        "3": 0.63374451,
+        "4": 0.86455964
       },
       "solid_name": {
-        "1": 0.99849385,
-        "2": 0.99716075,
-        "3": 0.55664183,
-        "4": 0.61491684
+        "1": 0.99882875,
+        "2": 0.9974952,
+        "3": 0.59153212,
+        "4": 0.60079841
       },
       "vertex_count": {
-        "1": 0.77114061,
-        "2": 0.42338604,
-        "3": 0.75755222,
-        "4": 0.61836357
+        "1": 0.80136852,
+        "2": 0.50258694,
+        "3": 0.76737935,
+        "4": 0.61153135
       },
       "visible_face_count": {
-        "1": 0.94450613,
-        "2": 0.38803547,
-        "3": 0.70008253,
-        "4": 0.67368945
+        "1": 0.98613929,
+        "2": 0.44154719,
+        "3": 0.70777868,
+        "4": 0.66677894
       }
     },
     "images": 3000,
@@ -26471,19 +26470,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.7558311692393166,
+            "cramers_v": 0.7678772775143334,
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.48189444296185086,
+            "cramers_v": 0.45461294361222804,
             "kind": "numeric_deciles"
           },
           "3": {
-            "cramers_v": 0.6708838217815941,
+            "cramers_v": 0.6585392806416459,
             "kind": "numeric_deciles"
           },
           "4": {
-            "cramers_v": 0.5883060976992267,
+            "cramers_v": 0.5763634416760484,
             "kind": "numeric_deciles"
           },
           "5": {
@@ -26497,19 +26496,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.999498704956384,
+            "cramers_v": 0.999665719529353,
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.4108748230510013,
+            "cramers_v": 0.4538786369638581,
             "kind": "numeric_deciles"
           },
           "3": {
-            "cramers_v": 0.7070501355062565,
+            "cramers_v": 0.7024233562734422,
             "kind": "numeric_deciles"
           },
           "4": {
-            "cramers_v": 0.701384580685305,
+            "cramers_v": 0.6786673193089476,
             "kind": "numeric_deciles"
           },
           "5": {
@@ -26523,19 +26522,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.867190777357142,
+            "cramers_v": 0.8578149524363928,
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.5110767202699095,
+            "cramers_v": 0.20976385557014507,
             "kind": "categorical"
           },
           "3": {
-            "cramers_v": 0.8201061981936764,
+            "cramers_v": 0.8507668742491247,
             "kind": "categorical"
           },
           "4": {
-            "cramers_v": 0.6539617344974008,
+            "cramers_v": 0.5890883344193385,
             "kind": "categorical"
           },
           "5": {
@@ -26549,19 +26548,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.40965528570468135,
+            "cramers_v": 0.4531431403922659,
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.9999999999999999,
+            "cramers_v": 1.0,
             "kind": "categorical"
           },
           "3": {
-            "cramers_v": 0.4201617750145626,
+            "cramers_v": 0.3626587678392811,
             "kind": "categorical"
           },
           "4": {
-            "cramers_v": 0.8296282369790656,
+            "cramers_v": 0.9976623778346884,
             "kind": "categorical"
           },
           "5": {
@@ -26575,19 +26574,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.6803995831650559,
+            "cramers_v": 0.7211587248153378,
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.9994995412147983,
+            "cramers_v": 0.9996663886479304,
             "kind": "categorical"
           },
           "3": {
-            "cramers_v": 0.6120207081547728,
+            "cramers_v": 0.6337445100277069,
             "kind": "categorical"
           },
           "4": {
-            "cramers_v": 0.821615636025442,
+            "cramers_v": 0.8645596407847268,
             "kind": "categorical"
           },
           "5": {
@@ -26601,19 +26600,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.9984938490322233,
+            "cramers_v": 0.9988287455195981,
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.9971607458355733,
+            "cramers_v": 0.9974951951979328,
             "kind": "categorical"
           },
           "3": {
-            "cramers_v": 0.5566418257069514,
+            "cramers_v": 0.5915321198219095,
             "kind": "categorical"
           },
           "4": {
-            "cramers_v": 0.6149168351347316,
+            "cramers_v": 0.6007984103612805,
             "kind": "categorical"
           },
           "5": {
@@ -26627,19 +26626,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.7711406057961122,
+            "cramers_v": 0.8013685193945911,
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.4233860362173674,
+            "cramers_v": 0.502586939464905,
             "kind": "numeric_deciles"
           },
           "3": {
-            "cramers_v": 0.7575522205488738,
+            "cramers_v": 0.7673793499859815,
             "kind": "numeric_deciles"
           },
           "4": {
-            "cramers_v": 0.6183635665536725,
+            "cramers_v": 0.6115313451725574,
             "kind": "numeric_deciles"
           },
           "5": {
@@ -26653,19 +26652,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.9445061270013774,
+            "cramers_v": 0.9861392881588266,
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.3880354657584141,
+            "cramers_v": 0.4415471852371717,
             "kind": "numeric_deciles"
           },
           "3": {
-            "cramers_v": 0.7000825297107476,
+            "cramers_v": 0.7077786799672889,
             "kind": "numeric_deciles"
           },
           "4": {
-            "cramers_v": 0.6736894549459747,
+            "cramers_v": 0.6667789386007642,
             "kind": "numeric_deciles"
           },
           "5": {
@@ -26678,11 +26677,11 @@
     },
     "level_distributions": {
       "1": {
-        "constant_answer_baseline": 0.26266666666666666,
+        "constant_answer_baseline": 0.21066666666666667,
         "counts": {
-          "12": 788,
+          "12": 631,
           "14": 632,
-          "20": 158,
+          "20": 315,
           "24": 158,
           "26": 158,
           "30": 158,
@@ -26693,10 +26692,10 @@
         }
       },
       "2": {
-        "constant_answer_baseline": 0.79,
+        "constant_answer_baseline": 0.8946666666666667,
         "counts": {
-          "convex": 2370,
-          "non-convex": 630
+          "convex": 2684,
+          "non-convex": 316
         }
       },
       "3": {
@@ -26721,9 +26720,9 @@
           "7": 205,
           "8": 158,
           "mixed": 585,
-          "pentagons": 178,
+          "pentagons": 120,
           "squares": 51,
-          "triangles": 205
+          "triangles": 263
         }
       },
       "4": {
@@ -26742,8 +26741,7 @@
           "Archimedean": 273,
           "Catalan": 206,
           "Compound": 97,
-          "NonConvex": 112,
-          "Platonic": 207,
+          "Platonic": 319,
           "no": 826,
           "yes": 219
         }

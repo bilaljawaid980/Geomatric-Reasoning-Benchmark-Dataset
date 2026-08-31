@@ -1,5 +1,143 @@
 {
-  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "after_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.4076666666666667,
+      "counts": {
+        "2": 1223,
+        "3": 619,
+        "4": 568,
+        "5": 590
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.273,
+      "counts": {
+        "0": 758,
+        "1": 757,
+        "2": 819,
+        "3": 383,
+        "4": 188,
+        "5": 95
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.208,
+      "counts": {
+        "above": 537,
+        "below": 572,
+        "blue": 567,
+        "left": 624,
+        "red": 543,
+        "right": 157
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.19266666666666668,
+      "counts": {
+        "0,0": 498,
+        "0,1": 257,
+        "0,2": 46,
+        "0,3": 6,
+        "1,0": 250,
+        "1,1": 472,
+        "1,2": 128,
+        "1,3": 21,
+        "2,0": 44,
+        "2,1": 118,
+        "2,2": 92,
+        "2,3": 36,
+        "3,0": 2,
+        "3,1": 14,
+        "3,2": 30,
+        "even": 578,
+        "odd": 408
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.49633333333333335,
+      "counts": {
+        "0": 1489,
+        "1": 764,
+        "2": 557,
+        "3": 130,
+        "4": 58,
+        "5": 2
+      }
+    }
+  },
+  "answers_changed_by_level": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 1400
+  },
+  "before_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.4076666666666667,
+      "counts": {
+        "2": 1223,
+        "3": 619,
+        "4": 568,
+        "5": 590
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.273,
+      "counts": {
+        "0": 758,
+        "1": 757,
+        "2": 819,
+        "3": 383,
+        "4": 188,
+        "5": 95
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.208,
+      "counts": {
+        "above": 537,
+        "below": 572,
+        "blue": 567,
+        "left": 624,
+        "red": 543,
+        "right": 157
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.19266666666666668,
+      "counts": {
+        "0,0": 498,
+        "0,1": 257,
+        "0,2": 46,
+        "0,3": 6,
+        "1,0": 250,
+        "1,1": 472,
+        "1,2": 128,
+        "1,3": 21,
+        "2,0": 44,
+        "2,1": 118,
+        "2,2": 92,
+        "2,3": 36,
+        "3,0": 2,
+        "3,1": 14,
+        "3,2": 30,
+        "even": 578,
+        "odd": 408
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.2976666666666667,
+      "counts": {
+        "0": 858,
+        "1": 893,
+        "2": 683,
+        "3": 332,
+        "4": 167,
+        "5": 67
+      }
+    }
+  },
   "categorical_distributions": {
     "blue_self_intersecting": {
       "False": 3000
@@ -80,65 +218,211 @@
       "p95": 4.0
     }
   },
-  "dataset_version": "line-intersection-2.0.0",
-  "degeneracy_flags": {},
-  "features_at_v_ge_0_10": {
+  "dataset_version": "line-intersection-3.0.0",
+  "definitional_whitelist": {
+    "crossed_from_above_to_below": "defines parity Level 4",
+    "leftmost_intersection_x": "defines left/right Level 3",
+    "num_blue_segments": "defines blue-segment Level 1",
+    "num_red_segments": "defines red-segment Level 1",
+    "red_above_blue_at_end": "defines end-order Level 3",
+    "red_above_blue_at_start": "defines start-order Level 3",
+    "total_intersections": "defines Level 2 and contributes to Levels 4/5"
+  },
+  "diagnosis_before_fix": {
+    "delta_at_20px": {
+      "0": 2016
+    },
+    "stored_level5_not_equal_original": 0,
+    "stored_level5_recomputation_mismatches_at_20px": 0,
+    "translation_template_items": 2016
+  },
+  "features_at_v_ge_0_10_nothing_hidden": {
+    "canvas_size": {
+      "1": {
+        "cramers_v": 0.10845331571172052,
+        "kind": "categorical"
+      }
+    },
     "crossed_from_above_to_below": {
-      "1": 0.16898371,
-      "2": 1.0,
-      "3": 0.24718002,
-      "4": 1.0,
-      "5": 0.65757737
+      "1": {
+        "cramers_v": 0.16602515274348242,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.999332665925011,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.24382485996360917,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.9974951951979326,
+        "kind": "categorical"
+      },
+      "5": {
+        "cramers_v": 0.10633522642820674,
+        "kind": "categorical"
+      }
     },
     "difficulty_score": {
-      "1": 0.85382445,
-      "2": 0.70914157,
-      "3": 0.19383932,
-      "4": 0.48757807,
-      "5": 0.59777086
+      "1": {
+        "cramers_v": 0.8524917471375301,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.707612580501277,
+        "kind": "numeric_deciles"
+      },
+      "3": {
+        "cramers_v": 0.18609249408835285,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.4828009773697632,
+        "kind": "numeric_deciles"
+      },
+      "5": {
+        "cramers_v": 0.2764338162488935,
+        "kind": "numeric_deciles"
+      }
     },
     "leftmost_intersection_x": {
-      "1": 0.88145198,
-      "2": 1.0,
-      "3": 0.89147577,
-      "4": 0.97978106,
-      "5": 1.0
+      "1": {
+        "cramers_v": 0.17244786703642884,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.5031630080719137,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.21808085882978565,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.46245306006000597,
+        "kind": "categorical"
+      },
+      "5": {
+        "cramers_v": 0.20153091676455742,
+        "kind": "categorical"
+      }
     },
     "num_blue_segments": {
-      "1": 1.0,
-      "2": 0.35414354,
-      "4": 0.35591413,
-      "5": 0.32319141
+      "1": {
+        "cramers_v": 1.0,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.3519578674194084,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.3485129221115988,
+        "kind": "numeric_deciles"
+      },
+      "5": {
+        "cramers_v": 0.2448867721693077,
+        "kind": "numeric_deciles"
+      }
     },
     "num_red_segments": {
-      "1": 1.0,
-      "2": 0.35414354,
-      "4": 0.35591413,
-      "5": 0.32319141
+      "1": {
+        "cramers_v": 1.0,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.3519578674194084,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.3485129221115988,
+        "kind": "numeric_deciles"
+      },
+      "5": {
+        "cramers_v": 0.2448867721693077,
+        "kind": "numeric_deciles"
+      }
     },
     "red_above_blue_at_end": {
-      "3": 0.62895171
+      "3": {
+        "cramers_v": 0.6277295814021999,
+        "kind": "categorical"
+      },
+      "5": {
+        "cramers_v": 0.19278923326330089,
+        "kind": "categorical"
+      }
     },
     "red_above_blue_at_start": {
-      "3": 0.63456857
+      "3": {
+        "cramers_v": 0.633359142591668,
+        "kind": "categorical"
+      },
+      "5": {
+        "cramers_v": 0.19749312158764903,
+        "kind": "categorical"
+      }
     },
     "rightmost_intersection_x": {
-      "1": 0.88145198,
-      "2": 1.0,
-      "3": 0.89167796,
-      "4": 0.97984244,
-      "5": 1.0
+      "1": {
+        "cramers_v": 0.17147737015201117,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.5028309968130666,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.21814305087089234,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.462221287108952,
+        "kind": "categorical"
+      },
+      "5": {
+        "cramers_v": 0.2011941575669298,
+        "kind": "categorical"
+      }
     },
     "total_intersections": {
-      "1": 0.32567832,
-      "2": 1.0,
-      "3": 0.24079345,
-      "4": 0.86469825,
-      "5": 0.82789479
+      "1": {
+        "cramers_v": 0.32378613232968567,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.9998330411541915,
+        "kind": "numeric_deciles"
+      },
+      "3": {
+        "cramers_v": 0.23746468316223507,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.8621829464544354,
+        "kind": "numeric_deciles"
+      },
+      "5": {
+        "cramers_v": 0.3101845784550317,
+        "kind": "numeric_deciles"
+      }
     }
   },
+  "guard_injection_tests": {
+    "blue_point_boundary_accepted": true,
+    "blue_point_violation_rejected": true,
+    "independent_level5_boundary_accepted": true,
+    "inherited_level5_violation_rejected": true,
+    "intersection_count_boundary_accepted": true,
+    "intersection_count_violation_rejected": true,
+    "png_boundary_accepted": true,
+    "red_point_boundary_accepted": true,
+    "red_point_violation_rejected": true
+  },
   "images": 3000,
-  "leak_audit": {
+  "leak_audit_all_scalar_scene_features": {
     "blue_self_intersecting": {
       "classification": "scene_feature",
       "levels": {
@@ -165,187 +449,213 @@
       },
       "whitelist_justification": null
     },
-    "crossed_from_above_to_below": {
+    "canvas_size": {
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.16898370811157126,
+          "cramers_v": 0.10845331571172052,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 1.0,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.2471800179662791,
+          "cramers_v": 0.08071546399669882,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.9999999999999999,
+          "cramers_v": 0.05436342966681211,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.6575773684386915,
+          "cramers_v": 0.0,
           "kind": "categorical"
         }
       },
       "whitelist_justification": null
     },
+    "crossed_from_above_to_below": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.16602515274348242,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.999332665925011,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.24382485996360917,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.9974951951979326,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.10633522642820674,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": "defines parity Level 4"
+    },
     "difficulty_score": {
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.8538244519594975,
+          "cramers_v": 0.8524917471375301,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.7091415657038528,
+          "cramers_v": 0.707612580501277,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.19383931511264524,
+          "cramers_v": 0.18609249408835285,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.48757806752082655,
+          "cramers_v": 0.4828009773697632,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.5977708615511975,
+          "cramers_v": 0.2764338162488935,
           "kind": "numeric_deciles"
         }
       },
       "whitelist_justification": null
     },
     "leftmost_intersection_x": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.8814519849034225,
+          "cramers_v": 0.17244786703642884,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.999999999999963,
+          "cramers_v": 0.5031630080719137,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.8914757720488039,
+          "cramers_v": 0.21808085882978565,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.9797810641589569,
+          "cramers_v": 0.46245306006000597,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 1.0000000000000324,
+          "cramers_v": 0.20153091676455742,
           "kind": "categorical"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines left/right Level 3"
     },
     "num_blue_segments": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
           "cramers_v": 1.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.35414354039038093,
+          "cramers_v": 0.3519578674194084,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.060361967526233386,
+          "cramers_v": 0.04447835090838629,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.35591412844280573,
+          "cramers_v": 0.3485129221115988,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.32319141487555897,
+          "cramers_v": 0.2448867721693077,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines blue-segment Level 1"
     },
     "num_red_segments": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
           "cramers_v": 1.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.35414354039038093,
+          "cramers_v": 0.3519578674194084,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.060361967526233386,
+          "cramers_v": 0.04447835090838629,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.35591412844280573,
+          "cramers_v": 0.3485129221115988,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.32319141487555897,
+          "cramers_v": 0.2448867721693077,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines red-segment Level 1"
     },
     "red_above_blue_at_end": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.03169830018267307,
+          "cramers_v": 0.0021095672325464644,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.05956985322998553,
+          "cramers_v": 0.04338170743217188,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.6289517134367957,
+          "cramers_v": 0.6277295814021999,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.08722779898991233,
+          "cramers_v": 0.04768999452055526,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.04784333925289336,
+          "cramers_v": 0.19278923326330089,
           "kind": "categorical"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines end-order Level 3"
     },
     "red_above_blue_at_start": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.04673542701190182,
+          "cramers_v": 0.034413101850769984,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.0595140673734316,
+          "cramers_v": 0.043305047342557426,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.634568567393909,
+          "cramers_v": 0.633359142591668,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.0871898663054286,
+          "cramers_v": 0.04762055480836574,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.04909855906070815,
+          "cramers_v": 0.19749312158764903,
           "kind": "categorical"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines start-order Level 3"
     },
     "red_self_intersecting": {
       "classification": "scene_feature",
@@ -377,162 +687,106 @@
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.8814519849034211,
+          "cramers_v": 0.17147737015201117,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.9999999999999885,
+          "cramers_v": 0.5028309968130666,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.8916779581528633,
+          "cramers_v": 0.21814305087089234,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.9798424399134555,
+          "cramers_v": 0.462221287108952,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 1.000000000000022,
+          "cramers_v": 0.2011941575669298,
           "kind": "categorical"
         }
       },
       "whitelist_justification": null
     },
     "total_intersections": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.3256783152100101,
+          "cramers_v": 0.32378613232968567,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.9999999999999999,
+          "cramers_v": 0.9998330411541915,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.240793453230768,
+          "cramers_v": 0.23746468316223507,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.8646982528360648,
+          "cramers_v": 0.8621829464544354,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.8278947859481997,
+          "cramers_v": 0.3101845784550317,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines Level 2 and contributes to Levels 4/5"
     },
     "wording_variant": {
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.042809109690897046,
+          "cramers_v": 0.028854185864983846,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.03571910262079197,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.035423146302445974,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.0499069462643473,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.033270414496080244,
+          "cramers_v": 0.0,
           "kind": "categorical"
         }
       },
       "whitelist_justification": null
     }
   },
-  "level_distributions": {
-    "1": {
-      "constant_answer_baseline": 0.4076666666666667,
-      "counts": {
-        "2": 1223,
-        "3": 619,
-        "4": 568,
-        "5": 590
-      }
-    },
-    "2": {
-      "constant_answer_baseline": 0.273,
-      "counts": {
-        "0": 758,
-        "1": 757,
-        "2": 819,
-        "3": 383,
-        "4": 188,
-        "5": 95
-      }
-    },
-    "3": {
-      "constant_answer_baseline": 0.208,
-      "counts": {
-        "above": 537,
-        "below": 572,
-        "blue": 567,
-        "left": 624,
-        "red": 543,
-        "right": 157
-      }
-    },
-    "4": {
-      "constant_answer_baseline": 0.19266666666666668,
-      "counts": {
-        "0,0": 498,
-        "0,1": 257,
-        "0,2": 46,
-        "0,3": 6,
-        "1,0": 250,
-        "1,1": 472,
-        "1,2": 128,
-        "1,3": 21,
-        "2,0": 44,
-        "2,1": 118,
-        "2,2": 92,
-        "2,3": 36,
-        "3,0": 2,
-        "3,1": 14,
-        "3,2": 30,
-        "even": 578,
-        "odd": 408
-      }
-    },
-    "5": {
-      "constant_answer_baseline": 0.2976666666666667,
-      "counts": {
-        "0": 858,
-        "1": 893,
-        "2": 683,
-        "3": 332,
-        "4": 167,
-        "5": 67
-      }
-    }
+  "level5_template_distribution": {
+    "remove_first_red_segment": 984,
+    "translate_red_intersections": 2016
   },
-  "png_asset_presence": "3000/3000",
+  "mismatch_count": 0,
+  "mismatches": [],
+  "png_recovery": {
+    "method": "exact independent redraw from red/blue point paths and palette",
+    "passed": 3000,
+    "total": 3000
+  },
   "questions": 15000,
-  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
-  "scalar_scene_features": [
-    "blue_self_intersecting",
-    "crossed_from_above_to_below",
-    "difficulty_score",
-    "leftmost_intersection_x",
-    "num_blue_segments",
-    "num_red_segments",
-    "red_above_blue_at_end",
-    "red_above_blue_at_start",
-    "red_self_intersecting",
-    "rightmost_intersection_x",
-    "total_intersections",
-    "wording_variant"
-  ]
+  "translation_delta_distribution": {
+    "-5": 23,
+    "-4": 67,
+    "-3": 186,
+    "-2": 408,
+    "-1": 426,
+    "0": 616,
+    "1": 181,
+    "2": 81,
+    "3": 21,
+    "4": 6,
+    "5": 1
+  },
+  "translation_distance_pixels": 60,
+  "translation_level5_not_equal_original": 1400
 }

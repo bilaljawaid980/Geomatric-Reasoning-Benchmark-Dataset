@@ -1,9 +1,20 @@
 {
-  "constraint_source": "generator constants and validation metrics",
+  "constraint_set": {
+    "blue_points_length_equals_num_blue_segments_plus_one": true,
+    "five_ordered_questions_per_image": true,
+    "intersection_array_length_equals_total_intersections": true,
+    "level5_translation_pixels": 60,
+    "level5_translation_reintersects_from_transformed_coordinates": true,
+    "no_endpoint_or_collinear_degenerate_intersections": true,
+    "png_red_blue_polyline_recovery_all_items": true,
+    "red_points_length_equals_num_red_segments_plus_one": true
+  },
+  "constraint_source": "generator constants and exhaustive validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "line-intersection-2.0.0",
-  "generator_commit": "e6975d7f82e6fc42f77fdc6434e733c10adb83d6",
+  "dataset_version": "line-intersection-3.0.0",
+  "generator_commit": "c0bf63192b57ed5f7269adce67557adcebddd323",
   "images": 3000,
+  "metadata_only_rebuild": true,
   "question_set_fields": [
     "question_id",
     "task",

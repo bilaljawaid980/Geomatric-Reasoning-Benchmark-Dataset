@@ -2,7 +2,7 @@ import argparse,itertools,json,math,random
 from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
-BG=(26,26,26);INK=(118,172,190);AA=3;PHI=(1+5**.5)/2
+BG=(26,26,26);INK=(118,172,190);AA=3;PHI=(1+5**.5)/2;VERSION='polyhedron-4.0.0'
 def unique(points):
  out=[]
  for p in points:
@@ -48,12 +48,6 @@ def compound(parts):
   verts.extend(m['vertices']);faces.extend([[x+off for x in f] for f in m['faces']]);edges.extend([(a+off,b+off) for a,b in m['edges']]);off+=len(m['vertices'])
  return {'vertices':np.array(verts),'faces':faces,'edges':edges}
 TET2={'vertices':-TET['vertices'],'faces':TET['faces'],'edges':TET['edges']}
-def star_mesh(base):
- f=base['faces'];e=set(base['edges'])
- for face in f:
-  if len(face)>=5:
-   for i in range(len(face)):e.add(tuple(sorted((face[i],face[(i+2)%len(face)]))))
- return {'vertices':base['vertices'],'faces':f,'edges':sorted(e)}
 SPECS=[]
 def add(name,cls,m,convex,shape,counts=None):
  v,e,f=(len(m['vertices']),len(m['edges']),len(m['faces'])) if counts is None else counts;SPECS.append({'name':name,'class':cls,'mesh':m,'is_convex':convex,'face_shape_types':shape,'vertex_count':v,'edge_count':e,'face_count':f})
@@ -61,7 +55,10 @@ for x in [('tetrahedron',TET,'triangles'),('cube',CUBE,'squares'),('octahedron',
 for x in [('truncated tetrahedron',TT),('cuboctahedron',CO),('truncated cube',TC),('truncated octahedron',TO),('rhombicuboctahedron',RCO),('icosidodecahedron',ID)]:add(x[0],'Archimedean',x[1],True,'mixed')
 for name,m in [('triakis tetrahedron',dual(TT)),('rhombic dodecahedron',dual(CO)),('triakis octahedron',dual(TC)),('rhombic triacontahedron',dual(ID))]:add(name,'Catalan',m,True,'mixed')
 add('stella octangula','Compound',compound([TET,TET2]),False,'triangles',(8,12,8));add('compound of cube and octahedron','Compound',compound([CUBE,OCT]),False,'mixed',(14,24,14))
-add('small stellated dodecahedron','NonConvex',star_mesh(ICO),False,'pentagons',(12,30,12));add('great dodecahedron','NonConvex',star_mesh(DOD),False,'pentagons',(20,30,12))
+# The former two entries reused the regular icosahedron/dodecahedron face complexes
+# and merely injected face diagonals.  Name and classify the geometry that is
+# actually stored and rendered; edge arrays always come from face boundaries.
+add('icosahedron','Platonic',ICO,True,'triangles');add('dodecahedron','Platonic',DOD,True,'pentagons')
 assert len(SPECS)==19
 for s in SPECS:
  if s['is_convex']:assert s['vertex_count']-s['edge_count']+s['face_count']==2,(s['name'],s['vertex_count'],s['edge_count'],s['face_count'])
@@ -92,7 +89,7 @@ def questions(iid,row,rng):
  qs.append({'question_id':iid+'_q4','question_text':text,'question_type':typ,'ground_truth':gt,'answer_format':fmt,'difficulty_level':4})
  qs.append({'question_id':iid+'_q5','question_text':'If one face were removed from this solid while all remaining faces stayed fixed, would the result still be a closed surface to which the closed-surface Euler formula directly applies? Answer yes or no.','question_type':'remove_face_closed_surface','ground_truth':'no','answer_format':'yes_no','difficulty_level':5});return qs
 def generate_one(i,images):
- rng=random.Random(i);s=SPECS[(i-1)%len(SPECS)];w=rng.randint(450,500);h=rng.randint(450,500);ry=rng.uniform(0,360);tx=rng.uniform(15,45);scale=rng.uniform(250,330);iid=f'polyhedron_{i:04d}';render(images/f'{iid}.png',(w,h),s['mesh'],ry,tx,scale);vf=visible_faces(s['mesh']['vertices'],s['mesh']['faces'],rotation(ry,tx));row={'id':iid,'image_path':f'images/{iid}.png','canvas_size':[w,h],'dataset_version':'polyhedron-3.0.0','solid_name':s['name'],'solid_class':s['class'],'face_count':s['face_count'],'edge_count':s['edge_count'],'vertex_count':s['vertex_count'],'is_convex':s['is_convex'],'face_shape_types':s['face_shape_types'],'viewing_angle':{'rotation_y':round(ry,6),'tilt_x':round(tx,6)},'visible_face_count':vf,'vertices':np.round(s['mesh']['vertices'],8).tolist(),'faces':[[int(x) for x in f] for f in s['mesh']['faces']],'edges':[[int(a),int(b)] for a,b in s['mesh']['edges']],'seed':i};row['questions']=questions(iid,row,rng);return row
+ rng=random.Random(i);s=SPECS[(i-1)%len(SPECS)];w=rng.randint(450,500);h=rng.randint(450,500);ry=rng.uniform(0,360);tx=rng.uniform(15,45);scale=rng.uniform(250,330);iid=f'polyhedron_{i:04d}';render(images/f'{iid}.png',(w,h),s['mesh'],ry,tx,scale);vf=visible_faces(s['mesh']['vertices'],s['mesh']['faces'],rotation(ry,tx));row={'id':iid,'image_path':f'images/{iid}.png','canvas_size':[w,h],'dataset_version':VERSION,'solid_name':s['name'],'solid_class':s['class'],'face_count':s['face_count'],'edge_count':s['edge_count'],'vertex_count':s['vertex_count'],'is_convex':s['is_convex'],'face_shape_types':s['face_shape_types'],'viewing_angle':{'rotation_y':round(ry,6),'tilt_x':round(tx,6)},'visible_face_count':vf,'vertices':np.round(s['mesh']['vertices'],8).tolist(),'faces':[[int(x) for x in f] for f in s['mesh']['faces']],'edges':[[int(a),int(b)] for a,b in s['mesh']['edges']],'seed':i};row['questions']=questions(iid,row,rng);return row
 def generate_dataset(n,out):
  out=Path(out);images=out/'images';images.mkdir(parents=True,exist_ok=True)
  with (out/'annotations.jsonl').open('w',encoding='utf8',newline='\n') as f:

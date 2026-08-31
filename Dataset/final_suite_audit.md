@@ -19,7 +19,7 @@
 | hex_pathfinding_dataset_3000 | hex-pathfinding-2.0.0 | yes | 0 | 11.1% | 50.0% | 21.6% | 22.0% | 33.3% | 3000/3000 |
 | impossible_object_dataset_3000 | impossible-object-4.0.0 | no | 0 | 50.1% | 50.0% | 20.7% | 25.0% | 50.0% | 3000/3000 |
 | laser_mirror_dataset_3000 | legacy-current | no | 0 | 25.1% | 75.0% | 52.3% | 4.4% | 3.7% | 3000/3000 |
-| line_intersection_dataset_3000 | line-intersection-2.0.0 | yes | 0 | 40.8% | 27.3% | 20.8% | 19.3% | 29.8% | 3000/3000 |
+| line_intersection_dataset_3000 | line-intersection-3.0.0 | yes | 0 | 40.8% | 27.3% | 20.8% | 19.3% | 49.6% | 3000/3000 |
 | nested_hexagons_dataset_3000 | nested-hexagons-8.0.0 | no | 0 | 11.5% | 50.0% | 5.2% | 15.0% | 50.0% | 3000/3000 |
 | nested_squares_dataset_3000 | nested-squares-8.0.0 | no | 0 | 11.5% | 50.0% | 5.2% | 15.0% | 50.0% | 3000/3000 |
 | nested_triangles_dataset_3000 | nested-triangles-8.0.0 | no | 0 | 11.5% | 50.0% | 5.1% | 15.0% | 50.0% | 3000/3000 |
@@ -28,7 +28,7 @@
 | orthographic_dataset_3000 | legacy-current | no | 0 | 23.5% | 18.8% | 32.8% | 46.5% | 100.0% | 3000/3000 |
 | overlap_circles_dataset_3000 | overlap-circles-2.0.0 | yes | 0 | 13.3% | 36.1% | 34.5% | 21.6% | 9.3% | 3000/3000 |
 | physical_stability_dataset_3000 | legacy-current | no | 0 | 30.8% | 62.5% | 30.5% | 50.0% | 16.6% | 3000/3000 |
-| polyhedron_dataset_3000 | polyhedron-3.0.0 | yes | 0 | 26.3% | 79.0% | 19.5% | 27.5% | 100.0% | 3000/3000 |
+| polyhedron_dataset_3000 | polyhedron-4.0.0 | yes | 0 | 21.1% | 89.5% | 19.5% | 27.5% | 100.0% | 3000/3000 |
 | projectile_motion_dataset_1000 | projectile-motion-1.0.0 | no | 0 | 2.8% | 65.4% | 1.0% | 0.4% | 68.8% | 1000/1000 |
 | rotation_matching_dataset_3000 | rotation-matching-2.0.0 | no | 0 | 25.8% | 25.0% | 15.2% | 26.0% | 14.3% | 3000/3000 |
 | route_dataset_3000 | route-2.0.0 | yes | 0 | 23.4% | 51.3% | 11.3% | 3.5% | 26.3% | 3000/3000 |

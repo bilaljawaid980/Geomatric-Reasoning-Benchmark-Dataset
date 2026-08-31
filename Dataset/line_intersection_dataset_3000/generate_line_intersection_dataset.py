@@ -8,6 +8,7 @@ try:
 except ImportError:
  def tqdm(x,**_):return x
 BG="#FDFBF6";RED="#D7192D";BLUE="#1769B0";AA=3;EPS=1e-9
+VERSION="line-intersection-3.0.0";LEVEL5_TRANSLATION_PX=60
 def segment_intersection(p1,p2,p3,p4):
  x1,y1=p1;x2,y2=p2;x3,y3=p3;x4,y4=p4;rx=x2-x1;ry=y2-y1;sx=x4-x3;sy=y4-y3;den=rx*sy-ry*sx
  if abs(den)<EPS:return None
@@ -66,11 +67,17 @@ def questions(iid,meta,rng):
  if t=="parity":text="If the two lines intersect an odd number of times, the line that starts higher must end lower (and vice versa). Based on this rule, do these two lines intersect an odd or even number of times? Answer 'odd' or 'even'.";gt="odd" if meta["crossed_from_above_to_below"] else "even";typ="intersection_parity";fmt="choice"
  elif t=="halves":text="How many intersection points occur in the left half of the image versus the right half? Answer as two numbers separated by a comma, e.g. {2,1}.";left=sum(p["x"]<meta["canvas_size"][0]/2 for p in meta["intersections"]);gt=f"{left},{meta['total_intersections']-left}";typ="intersection_half_counts";fmt="numeric_pair"
  else:text="If you removed the segment of the red line closest to the left edge, how many intersection points would remain? Answer with a number in curly brackets.";gt=str(meta["total_intersections"]-sum(p["red_segment_index"]==0 for p in meta["intersections"]));typ="remove_first_red_segment";fmt="numeric"
- qs.append({"question_id":iid+"_q4","question_text":text,"question_type":typ,"ground_truth":gt,"answer_format":fmt,"difficulty_level":4});return qs
+ qs.append({"question_id":iid+"_q4","question_text":text,"question_type":typ,"ground_truth":gt,"answer_format":fmt,"difficulty_level":4})
+ if rng.random()<2/3:
+  moved=[[x,y+LEVEL5_TRANSLATION_PX] for x,y in meta["red_points"]]
+  text=f"If the entire red polyline were translated exactly {LEVEL5_TRANSLATION_PX} pixels downward without changing its shape, how many red-blue intersections would remain?";gt=str(len(compute_intersections(moved,meta["blue_points"])));typ="translate_red_intersections"
+ else:
+  text="If you removed the segment of the red line closest to the left edge, how many intersection points would remain? Answer with a number in curly brackets.";gt=str(meta["total_intersections"]-sum(p["red_segment_index"]==0 for p in meta["intersections"]));typ="remove_first_red_segment"
+ qs.append({"question_id":iid+"_q5","question_text":text,"question_type":typ,"ground_truth":gt,"answer_format":"numeric","difficulty_level":5});return qs
 def render(path,size,red,blue):
  w,h=size;im=Image.new("RGB",(w*AA,h*AA),BG);d=ImageDraw.Draw(im);d.line([(x*AA,y*AA) for x,y in red],fill=RED,width=6,joint="curve");d.line([(x*AA,y*AA) for x,y in blue],fill=BLUE,width=6,joint="curve");im.resize((w,h),Image.Resampling.LANCZOS).save(path,"PNG")
 def generate_one(i,images):
- rng,size,red,blue,ints=generate_geometry(i);iid=f"line_intersect_{i:04d}";render(images/f"{iid}.png",size,red,blue);total=len(ints);meta={"canvas_size":list(size),"num_red_segments":len(red)-1,"num_blue_segments":len(blue)-1,"total_intersections":total,"intersections":ints,"leftmost_intersection_x":ints[0]["x"] if ints else None,"rightmost_intersection_x":ints[-1]["x"] if ints else None,"red_above_blue_at_start":red[0][1]<blue[0][1],"red_above_blue_at_end":red[-1][1]<blue[-1][1],"crossed_from_above_to_below":(red[0][1]<blue[0][1])!=(red[-1][1]<blue[-1][1]),"red_self_intersecting":is_self_intersecting(red),"blue_self_intersecting":is_self_intersecting(blue),"seed":i,"red_points":red,"blue_points":blue};difficulty=round(min(1,.45*total/5+.35*((len(red)-1)+(len(blue)-1)-4)/6+.2*(total>2)),4);row={"id":iid,"image_path":f"images/{iid}.png",**meta,"difficulty_score":difficulty};row["questions"]=questions(iid,row,rng);return row
+ rng,size,red,blue,ints=generate_geometry(i);iid=f"line_intersect_{i:04d}";render(images/f"{iid}.png",size,red,blue);total=len(ints);meta={"canvas_size":list(size),"num_red_segments":len(red)-1,"num_blue_segments":len(blue)-1,"total_intersections":total,"intersections":ints,"leftmost_intersection_x":ints[0]["x"] if ints else None,"rightmost_intersection_x":ints[-1]["x"] if ints else None,"red_above_blue_at_start":red[0][1]<blue[0][1],"red_above_blue_at_end":red[-1][1]<blue[-1][1],"crossed_from_above_to_below":(red[0][1]<blue[0][1])!=(red[-1][1]<blue[-1][1]),"red_self_intersecting":is_self_intersecting(red),"blue_self_intersecting":is_self_intersecting(blue),"seed":i,"red_points":red,"blue_points":blue,"dataset_version":VERSION,"frame_conventions":{"stored_geometry":"image_pixel_frame","render":"image_pixel_frame","level5_translation":f"red y + {LEVEL5_TRANSLATION_PX} pixels"}};difficulty=round(min(1,.45*total/5+.35*((len(red)-1)+(len(blue)-1)-4)/6+.2*(total>2)),4);row={"id":iid,"image_path":f"images/{iid}.png",**meta,"difficulty_score":difficulty};row["questions"]=questions(iid,row,rng);return row
 def generate_dataset(n=3000,output_dir="line_intersection_dataset"):
  out=Path(output_dir);images=out/"images";images.mkdir(parents=True,exist_ok=True)
  with (out/"annotations.jsonl").open("w",encoding="utf-8",newline="\n") as f:

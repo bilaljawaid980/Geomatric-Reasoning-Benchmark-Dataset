@@ -2,9 +2,15 @@
 
 ## 1. Dataset overview
 
-This dataset is designed as a direct extension of the GIQ benchmark (Michalkiewicz et al., arXiv:2506.08194), which found that vision-language models including Claude, Gemini, and ChatGPT show remarkably low accuracy interpreting basic shape properties such as face geometry, convexity, and compound structures of complex polyhedra. This dataset replicates and extends that evaluation methodology at larger scale (3000 images vs GIQ's 224 unique polyhedra) with a structured 4-level difficulty progression. See the [GIQ paper](https://arxiv.org/abs/2506.08194).
+This dataset is designed as a direct extension of the GIQ benchmark (Michalkiewicz et al., arXiv:2506.08194), which found that vision-language models including Claude, Gemini, and ChatGPT show remarkably low accuracy interpreting basic shape properties such as face geometry, convexity, and compound structures of complex polyhedra. This dataset replicates and extends that evaluation methodology at larger scale (3000 images vs GIQ's 224 unique polyhedra) with a structured five-level difficulty progression. See the [GIQ paper](https://arxiv.org/abs/2506.08194).
 
-The collection contains 19 named solids, 3,000 unique dark-theme wireframe views, and exactly four questions per image (12,000 flattened rows).
+The current v4 collection contains 17 named solids, 3,000 unique dark-theme wireframe views, and exactly five questions per image (15,000 flattened rows).
+
+### Version 4 geometry and edge correction
+
+Version 4 removes face diagonals from every stored and rendered edge list. The 157 affected `great dodecahedron` records contained the regular dodecahedron geometry plus 60 pentagon diagonals; their PNGs were regenerated with the 30 true boundary edges. The two supposed stellated families were geometry-identical to regular solids and are now named and classified from their actual topology: 157 records became `icosahedron` and 157 became `dodecahedron`. Exhaustive independent checks now require boundary-edge equality, the appropriate Euler characteristic (including component-aware compound handling), hull/face-support convexity, topology-based identity, positive Euler Level-4 answers, and exact PNG edge-set recovery. All 3,000 PNGs pass.
+
+Answer changes from v3 were: Level 1 = 157, Level 2 = 314, Level 3 = 58, Level 4 = 112, Level 5 = 0. Level 5 remains structurally constant (`no` for all 3,000 records) and is documented as such rather than treated as a measured distinction.
 
 ## 2. Full generation prompt
 
