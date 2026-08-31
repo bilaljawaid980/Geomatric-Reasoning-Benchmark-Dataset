@@ -90,6 +90,8 @@ Every image has exactly five questions in increasing order of difficulty:
 
 The exact question templates differ by category, but this progression and the `difficulty_level: 1..5` annotation contract are shared by all 34 datasets. Every Level 5 operation is independently recomputable from raw stored geometry or scene metadata. Flattened CSV/JSONL files contain one row per question, yielding 15,000 rows per core dataset and 5,000 for the focused projectile-motion category.
 
+The suite-level files in `All question and answer/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 private answers.
+
 Free-body-diagram Level 4 questions introduce the structured private scoring declaration `{"type":"numeric_tolerance","tolerance_percent":2}` for real-valued mechanics answers. This field appears in annotations and private answer keys, not public question sets; it changes grading precision without exposing an acceptance band to a tested model.
 
 ### Independent validation

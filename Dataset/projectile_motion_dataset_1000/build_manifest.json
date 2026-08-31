@@ -1,4 +1,21 @@
 {
+  "constraint_set": {
+    "angle_degrees_range": "15..75",
+    "canvas_height_range_px": "400..450",
+    "canvas_width_range_px": "550..650",
+    "constant_gravity_m_s2": 9.8,
+    "five_questions_per_image": true,
+    "level_ground_launch_and_landing": true,
+    "no_air_resistance": true,
+    "obstacle_cases_have_visible_nonzero_clear_or_hit_margin": true,
+    "public_question_set_fields_only": [
+      "question_id",
+      "task",
+      "image",
+      "prompt"
+    ],
+    "speed_m_s_range": "10..40"
+  },
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
   "dataset_version": "projectile-motion-1.0.0",

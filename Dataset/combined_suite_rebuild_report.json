@@ -1,0 +1,400 @@
+{
+  "actual_totals": {
+    "answers": 500000,
+    "images": 100000,
+    "questions": 500000
+  },
+  "after": {
+    "answer_rows": 500000,
+    "question_answer_row_counts_match": true,
+    "question_rows": 500000
+  },
+  "before": {
+    "answer_prefix_counts": {
+      "angle_estimation": 15000,
+      "clock_reading": 15000,
+      "combination": 15000,
+      "combination3d": 15000,
+      "coordinate_geometry": 15000,
+      "cube_net": 15000,
+      "cube_structure": 15000,
+      "depth_height": 15000,
+      "embedded_figure": 15000,
+      "fbd": 15000,
+      "fold_punch": 15000,
+      "gauge_reading": 15000,
+      "gear_train": 15000,
+      "impossible_object": 15000,
+      "line_intersect": 15000,
+      "nested_hexagons": 15000,
+      "nested_squares": 15000,
+      "nested_triangles": 15000,
+      "occluded_pattern": 15000,
+      "orthographic": 15000,
+      "overlap_circles": 15000,
+      "physical_stability": 15000,
+      "polyhedron": 15000,
+      "rotation_match": 15000,
+      "route_puzzle": 15000,
+      "rpm": 15000,
+      "shadow_inference": 15000,
+      "surface_topology": 15000,
+      "symmetry_pattern": 15000
+    },
+    "answer_rows": 435000,
+    "extra_prefixes": [],
+    "missing_prefixes": [
+      "compass_bearing",
+      "hex_pathfinding",
+      "laser_mirror",
+      "optical_illusion",
+      "projectile_motion"
+    ],
+    "present": true,
+    "question_answer_row_counts_match": true,
+    "question_prefix_counts": {
+      "angle_estimation": 15000,
+      "clock_reading": 15000,
+      "combination": 15000,
+      "combination3d": 15000,
+      "coordinate_geometry": 15000,
+      "cube_net": 15000,
+      "cube_structure": 15000,
+      "depth_height": 15000,
+      "embedded_figure": 15000,
+      "fbd": 15000,
+      "fold_punch": 15000,
+      "gauge_reading": 15000,
+      "gear_train": 15000,
+      "impossible_object": 15000,
+      "line_intersect": 15000,
+      "nested_hexagons": 15000,
+      "nested_squares": 15000,
+      "nested_triangles": 15000,
+      "occluded_pattern": 15000,
+      "orthographic": 15000,
+      "overlap_circles": 15000,
+      "physical_stability": 15000,
+      "polyhedron": 15000,
+      "rotation_match": 15000,
+      "route_puzzle": 15000,
+      "rpm": 15000,
+      "shadow_inference": 15000,
+      "surface_topology": 15000,
+      "symmetry_pattern": 15000
+    },
+    "question_rows": 435000,
+    "stale_or_mismatched": {
+      "angle_estimation": "question rows differ from current question_set.csv",
+      "clock_reading": "dataset_version is [''], expected legacy-current",
+      "combination": "dataset_version is [''], expected legacy-current",
+      "combination3d": "question rows differ from current question_set.csv",
+      "coordinate_geometry": "dataset_version is [''], expected coordinate-geometry-2.0.0",
+      "cube_net": "question rows differ from current question_set.csv",
+      "cube_structure": "question rows differ from current question_set.csv",
+      "depth_height": "dataset_version is [''], expected depth-height-2.0.0",
+      "embedded_figures": "dataset_version is [''], expected legacy-current",
+      "fbd": "question rows differ from current question_set.csv",
+      "fold_punch": "question rows differ from current question_set.csv",
+      "gauge_reading": "dataset_version is [''], expected legacy-current",
+      "gear_train": "dataset_version is [''], expected legacy-current",
+      "impossible_object": "question rows differ from current question_set.csv",
+      "line_intersection": "dataset_version is [''], expected line-intersection-2.0.0",
+      "nested_hexagons": "question rows differ from current question_set.csv",
+      "nested_squares": "question rows differ from current question_set.csv",
+      "nested_triangles": "question rows differ from current question_set.csv",
+      "occluded_pattern": "dataset_version is [''], expected occluded-pattern-2.0.0",
+      "orthographic": "dataset_version is [''], expected legacy-current",
+      "overlap_circles": "question rows differ from current question_set.csv",
+      "physical_stability": "dataset_version is [''], expected legacy-current",
+      "polyhedron": "dataset_version is [''], expected polyhedron-3.0.0",
+      "rotation_matching": "question rows differ from current question_set.csv",
+      "route": "dataset_version is [''], expected route-2.0.0",
+      "rpm": "question rows differ from current question_set.csv",
+      "shadow_inference": "question rows differ from current question_set.csv",
+      "surface_topology": "question rows differ from current question_set.csv",
+      "symmetry_pattern": "dataset_version is [''], expected symmetry-pattern-2.0.0"
+    }
+  },
+  "discovered_dataset_count": 34,
+  "expected_totals": {
+    "answers": 500000,
+    "images": 100000,
+    "layout": "33 datasets x 3000 images plus projectile_motion_dataset_1000 x 1000 images",
+    "questions": 500000
+  },
+  "per_dataset": {
+    "angle_estimation_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "angle_estimation",
+      "questions": 15000,
+      "slug": "angle_estimation",
+      "version": "angle-estimation-3.0.0"
+    },
+    "clock_reading_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "clock_reading",
+      "questions": 15000,
+      "slug": "clock_reading",
+      "version": "legacy-current"
+    },
+    "combination3d_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "combination3d",
+      "questions": 15000,
+      "slug": "combination3d",
+      "version": "combination3d-2.0.0"
+    },
+    "combination_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "combination",
+      "questions": 15000,
+      "slug": "combination",
+      "version": "legacy-current"
+    },
+    "compass_bearing_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "compass_bearing",
+      "questions": 15000,
+      "slug": "compass_bearing",
+      "version": "compass-bearing-2.0.0"
+    },
+    "coordinate_geometry_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "coordinate_geometry",
+      "questions": 15000,
+      "slug": "coordinate_geometry",
+      "version": "coordinate-geometry-2.0.0"
+    },
+    "cube_net_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "cube_net",
+      "questions": 15000,
+      "slug": "cube_net",
+      "version": "cube-net-2.0.0"
+    },
+    "cube_structure_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "cube_structure",
+      "questions": 15000,
+      "slug": "cube_structure",
+      "version": "cube-structure-2.0.0"
+    },
+    "depth_height_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "depth_height",
+      "questions": 15000,
+      "slug": "depth_height",
+      "version": "depth-height-2.0.0"
+    },
+    "embedded_figures_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "embedded_figure",
+      "questions": 15000,
+      "slug": "embedded_figures",
+      "version": "legacy-current"
+    },
+    "fbd_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "fbd",
+      "questions": 15000,
+      "slug": "fbd",
+      "version": "free-body-diagram-2.0.0"
+    },
+    "fold_punch_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "fold_punch",
+      "questions": 15000,
+      "slug": "fold_punch",
+      "version": "fold-punch-2.0.0"
+    },
+    "gauge_reading_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "gauge_reading",
+      "questions": 15000,
+      "slug": "gauge_reading",
+      "version": "legacy-current"
+    },
+    "gear_train_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "gear_train",
+      "questions": 15000,
+      "slug": "gear_train",
+      "version": "legacy-current"
+    },
+    "hex_pathfinding_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "hex_pathfinding",
+      "questions": 15000,
+      "slug": "hex_pathfinding",
+      "version": "hex-pathfinding-2.0.0"
+    },
+    "impossible_object_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "impossible_object",
+      "questions": 15000,
+      "slug": "impossible_object",
+      "version": "impossible-object-4.0.0"
+    },
+    "laser_mirror_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "laser_mirror",
+      "questions": 15000,
+      "slug": "laser_mirror",
+      "version": "legacy-current"
+    },
+    "line_intersection_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "line_intersect",
+      "questions": 15000,
+      "slug": "line_intersection",
+      "version": "line-intersection-2.0.0"
+    },
+    "nested_hexagons_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "nested_hexagons",
+      "questions": 15000,
+      "slug": "nested_hexagons",
+      "version": "nested-hexagons-8.0.0"
+    },
+    "nested_squares_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "nested_squares",
+      "questions": 15000,
+      "slug": "nested_squares",
+      "version": "nested-squares-8.0.0"
+    },
+    "nested_triangles_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "nested_triangles",
+      "questions": 15000,
+      "slug": "nested_triangles",
+      "version": "nested-triangles-8.0.0"
+    },
+    "occluded_pattern_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "occluded_pattern",
+      "questions": 15000,
+      "slug": "occluded_pattern",
+      "version": "occluded-pattern-2.0.0"
+    },
+    "optical_illusion_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "optical_illusion",
+      "questions": 15000,
+      "slug": "optical_illusion",
+      "version": "optical-illusion-3.0.0"
+    },
+    "orthographic_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "orthographic",
+      "questions": 15000,
+      "slug": "orthographic",
+      "version": "legacy-current"
+    },
+    "overlap_circles_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "overlap_circles",
+      "questions": 15000,
+      "slug": "overlap_circles",
+      "version": "overlap-circles-2.0.0"
+    },
+    "physical_stability_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "physical_stability",
+      "questions": 15000,
+      "slug": "physical_stability",
+      "version": "legacy-current"
+    },
+    "polyhedron_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "polyhedron",
+      "questions": 15000,
+      "slug": "polyhedron",
+      "version": "polyhedron-3.0.0"
+    },
+    "projectile_motion_dataset_1000": {
+      "answers": 5000,
+      "images": 1000,
+      "prefix": "projectile_motion",
+      "questions": 5000,
+      "slug": "projectile_motion",
+      "version": "projectile-motion-1.0.0"
+    },
+    "rotation_matching_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "rotation_match",
+      "questions": 15000,
+      "slug": "rotation_matching",
+      "version": "rotation-matching-2.0.0"
+    },
+    "route_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "route_puzzle",
+      "questions": 15000,
+      "slug": "route",
+      "version": "route-2.0.0"
+    },
+    "rpm_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "rpm",
+      "questions": 15000,
+      "slug": "rpm",
+      "version": "rpm-2.0.0"
+    },
+    "shadow_inference_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "shadow_inference",
+      "questions": 15000,
+      "slug": "shadow_inference",
+      "version": "shadow-inference-2.0.0"
+    },
+    "surface_topology_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "surface_topology",
+      "questions": 15000,
+      "slug": "surface_topology",
+      "version": "surface-topology-3.0.0"
+    },
+    "symmetry_pattern_dataset_3000": {
+      "answers": 15000,
+      "images": 3000,
+      "prefix": "symmetry_pattern",
+      "questions": 15000,
+      "slug": "symmetry_pattern",
+      "version": "symmetry-pattern-2.0.0"
+    }
+  }
+}

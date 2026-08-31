@@ -1,5 +1,5 @@
 {
-  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "build_manifest_has_commit_and_constraints": true,
   "categorical_distributions": {
     "has_obstacle": {
       "False": 700,
@@ -10,127 +10,7 @@
       "stay the same": 16
     }
   },
-  "continuous_distributions": {
-    "canvas_height": {
-      "count": 1000,
-      "max": 450.0,
-      "min": 400.0,
-      "p25": 400.0,
-      "p50": 425.0,
-      "p75": 450.0,
-      "p95": 450.0
-    },
-    "canvas_width": {
-      "count": 1000,
-      "max": 650.0,
-      "min": 550.0,
-      "p25": 570.0,
-      "p50": 600.0,
-      "p75": 630.0,
-      "p95": 650.0
-    },
-    "difficulty_score": {
-      "count": 1000,
-      "max": 0.79,
-      "min": 0.25,
-      "p25": 0.49,
-      "p50": 0.49,
-      "p75": 0.61,
-      "p95": 0.79
-    },
-    "gravity_m_s2": {
-      "count": 1000,
-      "max": 9.8,
-      "min": 9.8,
-      "p25": 9.8,
-      "p50": 9.8,
-      "p75": 9.8,
-      "p95": 9.8
-    },
-    "horizontal_position_at_peak_m": {
-      "count": 1000,
-      "max": 81.43380002121013,
-      "min": 2.551020408163265,
-      "p25": 12.789806135139644,
-      "p50": 26.269676039512206,
-      "p75": 45.46316727785027,
-      "p95": 69.1671931687352
-    },
-    "initial_speed_m_s": {
-      "count": 1000,
-      "max": 40.0,
-      "min": 10.0,
-      "p25": 18.0,
-      "p50": 26.0,
-      "p75": 33.0,
-      "p95": 39.0
-    },
-    "initial_velocity_x_m_s": {
-      "count": 1000,
-      "max": 38.63703305156273,
-      "min": 2.5881904510252074,
-      "p25": 10.50493335656116,
-      "p50": 15.821716600056998,
-      "p75": 23.395136062375016,
-      "p95": 32.920425812832626
-    },
-    "initial_velocity_y_m_s": {
-      "count": 1000,
-      "max": 38.450467837532756,
-      "min": 2.5881904510252074,
-      "p25": 10.308432965681638,
-      "p50": 15.810003811443057,
-      "p75": 22.95131414311285,
-      "p95": 32.62949206302353
-    },
-    "launch_angle_degrees": {
-      "count": 1000,
-      "max": 75.0,
-      "min": 15.0,
-      "p25": 30.0,
-      "p50": 45.0,
-      "p75": 59.0,
-      "p95": 72.0
-    },
-    "max_height_m": {
-      "count": 1000,
-      "max": 75.43053453699697,
-      "min": 0.34177192912132986,
-      "p25": 5.421660853828888,
-      "p50": 12.752880606852838,
-      "p75": 26.875654127339377,
-      "p95": 54.32060524506524
-    },
-    "range_at_45_degrees_m": {
-      "count": 1000,
-      "max": 163.26530612244898,
-      "min": 10.204081632653061,
-      "p25": 33.06122448979592,
-      "p50": 68.97959183673468,
-      "p75": 111.12244897959182,
-      "p95": 155.20408163265304
-    },
-    "range_m": {
-      "count": 1000,
-      "max": 162.86760004242026,
-      "min": 5.10204081632653,
-      "p25": 25.579612270279288,
-      "p50": 52.53935207902441,
-      "p75": 90.92633455570054,
-      "p95": 138.3343863374704
-    },
-    "time_of_flight_s": {
-      "count": 1000,
-      "max": 7.847034252557704,
-      "min": 0.5282021328622872,
-      "p25": 2.103761829730946,
-      "p50": 3.226531390090419,
-      "p75": 4.683941661859765,
-      "p95": 6.659080012861945
-    }
-  },
-  "dataset_version": "projectile-motion-1.0.0",
-  "degeneracy_flags": {
+  "constant_answer_baselines_at_or_above_60_percent": {
     "2": {
       "constant_answer_baseline": 0.654,
       "counts": {
@@ -343,100 +223,236 @@
       }
     }
   },
-  "features_at_v_ge_0_10": {
+  "continuous_distributions": {
     "canvas_height": {
-      "1": 0.22766113,
-      "3": 0.63347522,
-      "4": 0.87820516,
-      "5": 0.44440242
+      "count": 1000,
+      "max": 450.0,
+      "min": 400.0,
+      "p25": 400.0,
+      "p50": 425.0,
+      "p75": 450.0,
+      "p95": 450.0
     },
     "canvas_width": {
-      "1": 0.23960026,
-      "3": 0.63060291,
-      "4": 0.87897632,
-      "5": 0.47127878
+      "count": 1000,
+      "max": 650.0,
+      "min": 550.0,
+      "p25": 570.0,
+      "p50": 600.0,
+      "p75": 630.0,
+      "p95": 650.0
     },
     "difficulty_score": {
-      "1": 0.37712264,
-      "2": 0.69746762,
-      "3": 0.71111794,
-      "4": 0.93656616,
-      "5": 0.70693046
+      "count": 1000,
+      "max": 0.79,
+      "min": 0.25,
+      "p25": 0.49,
+      "p50": 0.49,
+      "p75": 0.61,
+      "p95": 0.79
     },
-    "has_obstacle": {
-      "1": 0.26095632,
-      "3": 0.64731844,
-      "4": 0.89176123,
-      "5": 1.0
+    "gravity_m_s2": {
+      "count": 1000,
+      "max": 9.8,
+      "min": 9.8,
+      "p25": 9.8,
+      "p50": 9.8,
+      "p75": 9.8,
+      "p95": 9.8
     },
     "horizontal_position_at_peak_m": {
-      "1": 0.27112777,
-      "2": 0.62466772,
-      "3": 0.99792316,
-      "4": 1.0,
-      "5": 0.46015222
+      "count": 1000,
+      "max": 81.43380002121013,
+      "min": 2.551020408163265,
+      "p25": 12.789806135139644,
+      "p50": 26.269676039512206,
+      "p75": 45.46316727785027,
+      "p95": 69.1671931687352
     },
     "initial_speed_m_s": {
-      "1": 0.24750653,
-      "2": 0.61763712,
-      "3": 0.88198387,
-      "4": 1.0,
-      "5": 0.46328199
+      "count": 1000,
+      "max": 40.0,
+      "min": 10.0,
+      "p25": 18.0,
+      "p50": 26.0,
+      "p75": 33.0,
+      "p95": 39.0
     },
     "initial_velocity_x_m_s": {
-      "1": 0.35954118,
-      "2": 0.26302239,
-      "3": 0.74949782,
-      "4": 1.0,
-      "5": 0.45470188
+      "count": 1000,
+      "max": 38.63703305156273,
+      "min": 2.5881904510252074,
+      "p25": 10.50493335656116,
+      "p50": 15.821716600056998,
+      "p75": 23.395136062375016,
+      "p95": 32.920425812832626
     },
     "initial_velocity_y_m_s": {
-      "1": 0.36426588,
-      "2": 0.94378208,
-      "3": 0.74622756,
-      "4": 1.0,
-      "5": 0.50229089
+      "count": 1000,
+      "max": 38.450467837532756,
+      "min": 2.5881904510252074,
+      "p25": 10.308432965681638,
+      "p50": 15.810003811443057,
+      "p75": 22.95131414311285,
+      "p95": 32.62949206302353
     },
     "launch_angle_degrees": {
-      "1": 1.0,
-      "2": 0.52220035,
-      "3": 0.72208272,
-      "4": 0.99839243,
-      "5": 0.46862859
+      "count": 1000,
+      "max": 75.0,
+      "min": 15.0,
+      "p25": 30.0,
+      "p50": 45.0,
+      "p75": 59.0,
+      "p95": 72.0
     },
     "max_height_m": {
-      "1": 0.36426588,
-      "2": 0.94378208,
-      "3": 0.74622756,
-      "4": 1.0,
-      "5": 0.50229089
+      "count": 1000,
+      "max": 75.43053453699697,
+      "min": 0.34177192912132986,
+      "p25": 5.421660853828888,
+      "p50": 12.752880606852838,
+      "p75": 26.875654127339377,
+      "p95": 54.32060524506524
     },
     "range_at_45_degrees_m": {
-      "1": 0.24750653,
-      "2": 0.61763712,
-      "3": 0.88198387,
-      "4": 1.0,
-      "5": 0.46328199
-    },
-    "range_change_at_45_degrees": {
-      "1": 1.0,
-      "3": 0.81595557,
-      "4": 0.96223578,
-      "5": 0.9677209
+      "count": 1000,
+      "max": 163.26530612244898,
+      "min": 10.204081632653061,
+      "p25": 33.06122448979592,
+      "p50": 68.97959183673468,
+      "p75": 111.12244897959182,
+      "p95": 155.20408163265304
     },
     "range_m": {
-      "1": 0.27112777,
-      "2": 0.62466772,
-      "3": 0.99792316,
-      "4": 1.0,
-      "5": 0.46015222
+      "count": 1000,
+      "max": 162.86760004242026,
+      "min": 5.10204081632653,
+      "p25": 25.579612270279288,
+      "p50": 52.53935207902441,
+      "p75": 90.92633455570054,
+      "p95": 138.3343863374704
     },
     "time_of_flight_s": {
-      "1": 0.36426588,
-      "2": 0.94378208,
-      "3": 0.74622756,
-      "4": 1.0,
-      "5": 0.50229089
+      "count": 1000,
+      "max": 7.847034252557704,
+      "min": 0.5282021328622872,
+      "p25": 2.103761829730946,
+      "p50": 3.226531390090419,
+      "p75": 4.683941661859765,
+      "p95": 6.659080012861945
+    }
+  },
+  "dataset_version": "projectile-motion-1.0.0",
+  "definitional_whitelist": {
+    "has_obstacle": "selects the Level 5 question branch",
+    "horizontal_position_at_peak_m": "defines Level 3",
+    "launch_angle_degrees": "defines Level 1 and contributes to projectile kinematics in Levels 2-5",
+    "max_height_m": "defines Level 2 and is derived from the rendered launch parameters",
+    "range_change_at_45_degrees": "is the no-obstacle Level 5 answer",
+    "range_m": "defines part of Level 4 and the Level 5 counterfactual comparison",
+    "time_of_flight_s": "defines part of Level 4"
+  },
+  "features_at_v_ge_0_10_nothing_hidden": {
+    "canvas_width": {
+      "5": 0.1550024
+    },
+    "difficulty_score": {
+      "1": 0.28750282,
+      "2": 0.69349585,
+      "3": 0.29288824,
+      "4": 0.30152184,
+      "5": 0.55079446
+    },
+    "has_obstacle": {
+      "5": 0.89588236
+    },
+    "horizontal_position_at_peak_m": {
+      "1": 0.11650099,
+      "2": 0.61772382,
+      "3": 0.76201142,
+      "4": 0.46384428,
+      "5": 0.1168973
+    },
+    "initial_speed_m_s": {
+      "2": 0.61060611,
+      "3": 0.60060377,
+      "4": 0.46384428,
+      "5": 0.12876873
+    },
+    "initial_velocity_x_m_s": {
+      "1": 0.26427065,
+      "2": 0.24542221,
+      "3": 0.37763919,
+      "4": 0.46384428
+    },
+    "initial_velocity_y_m_s": {
+      "1": 0.27072096,
+      "2": 0.93946745,
+      "3": 0.37104645,
+      "4": 0.46384428,
+      "5": 0.23364447
+    },
+    "launch_angle_degrees": {
+      "1": 0.97390187,
+      "2": 0.51375909,
+      "3": 0.31921946,
+      "4": 0.46033657,
+      "5": 0.14700079
+    },
+    "max_height_m": {
+      "1": 0.27072096,
+      "2": 0.93946745,
+      "3": 0.37104645,
+      "4": 0.46384428,
+      "5": 0.23364447
+    },
+    "range_at_45_degrees_m": {
+      "2": 0.61060611,
+      "3": 0.60060377,
+      "4": 0.46384428,
+      "5": 0.12876873
+    },
+    "range_change_at_45_degrees": {
+      "1": 0.9699906,
+      "3": 0.49558947,
+      "4": 0.37316256,
+      "5": 0.85966581
+    },
+    "range_m": {
+      "1": 0.11650099,
+      "2": 0.61772382,
+      "3": 0.76201142,
+      "4": 0.46384428,
+      "5": 0.1168973
+    },
+    "time_of_flight_s": {
+      "1": 0.27072096,
+      "2": 0.93946745,
+      "3": 0.37104645,
+      "4": 0.46384428,
+      "5": 0.23364447
+    }
+  },
+  "guard_injection_tests": {
+    "angle_range": {
+      "boundary_angle_15_accepted": true,
+      "violating_low_angle_rejected": true
+    },
+    "five_ordered_levels": {
+      "boundary_1_to_5_accepted": true,
+      "violating_missing_level_rejected": true
+    },
+    "obstacle_margin": {
+      "boundary_visible_margin_accepted": true,
+      "violating_zero_margin_rejected": true
+    },
+    "public_schema": {
+      "boundary_four_fields_accepted": true,
+      "violating_extra_public_field_rejected": true
+    },
+    "speed_range": {
+      "boundary_speed_10_accepted": true,
+      "violating_low_speed_rejected": true
     }
   },
   "images": 1000,
@@ -445,23 +461,23 @@
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.2276611257243016,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.01721895319209293,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.6334752229978197,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.8782051572328742,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.4444024197912729,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         }
       },
@@ -471,23 +487,23 @@
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.2396002619654441,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.05937515276379409,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.6306029053102316,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.8789763247972785,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.4712787845708155,
+          "cramers_v": 0.1550023985462455,
           "kind": "numeric_deciles"
         }
       },
@@ -497,23 +513,23 @@
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.37712264474889345,
+          "cramers_v": 0.2875028222519521,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.6974676234508882,
+          "cramers_v": 0.6934958526709524,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7111179419970624,
+          "cramers_v": 0.2928882438171102,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.9365661576140166,
+          "cramers_v": 0.3015218389367271,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.706930456131636,
+          "cramers_v": 0.5507944634100258,
           "kind": "numeric_deciles"
         }
       },
@@ -546,78 +562,78 @@
       "whitelist_justification": null
     },
     "has_obstacle": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.26095632495129745,
+          "cramers_v": 0.08970060046623472,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.026606725107127596,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.6473184409710308,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.8917612321905944,
+          "cramers_v": 0.09197704439827185,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.9999999999999987,
+          "cramers_v": 0.8958823641644249,
           "kind": "categorical"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "selects the Level 5 question branch"
     },
     "horizontal_position_at_peak_m": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.2711277661311135,
+          "cramers_v": 0.11650098756108293,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.624667719848272,
+          "cramers_v": 0.6177238184593522,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.9979231616689717,
+          "cramers_v": 0.762011417209995,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.000000000000044,
+          "cramers_v": 0.46384427898983926,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.46015222327608113,
+          "cramers_v": 0.11689729808827008,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines Level 3"
     },
     "initial_speed_m_s": {
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.24750653250957333,
+          "cramers_v": 0.034789760354634394,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.617637124199475,
+          "cramers_v": 0.6106061097095554,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.8819838653083677,
+          "cramers_v": 0.6006037729202885,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.0000000000000144,
+          "cramers_v": 0.46384427898977504,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.463281988544662,
+          "cramers_v": 0.12876872506370393,
           "kind": "numeric_deciles"
         }
       },
@@ -627,23 +643,23 @@
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.3595411783207917,
+          "cramers_v": 0.26427065451497406,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.26302238968512226,
+          "cramers_v": 0.24542220930436656,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7494978240655987,
+          "cramers_v": 0.3776391860482434,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.000000000000046,
+          "cramers_v": 0.46384427898984376,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.45470187765728903,
+          "cramers_v": 0.09291597022442727,
           "kind": "numeric_deciles"
         }
       },
@@ -653,183 +669,183 @@
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.3642658785208889,
+          "cramers_v": 0.27072096153509284,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.9437820767190408,
+          "cramers_v": 0.9394674458923803,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7462275567857574,
+          "cramers_v": 0.37104644668274783,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.0000000000000195,
+          "cramers_v": 0.4638442789897862,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.5022908904886977,
+          "cramers_v": 0.23364447335331193,
           "kind": "numeric_deciles"
         }
       },
       "whitelist_justification": null
     },
     "launch_angle_degrees": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.9999999999999999,
+          "cramers_v": 0.9739018679953583,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.5222003456388864,
+          "cramers_v": 0.513759091981421,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7220827214551072,
+          "cramers_v": 0.31921946025492304,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.9983924310253856,
+          "cramers_v": 0.460336568661365,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.4686285872928196,
+          "cramers_v": 0.14700079047143938,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines Level 1 and contributes to projectile kinematics in Levels 2-5"
     },
     "max_height_m": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.3642658785208889,
+          "cramers_v": 0.27072096153509284,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.9437820767190408,
+          "cramers_v": 0.9394674458923803,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7462275567857574,
+          "cramers_v": 0.37104644668274783,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.0000000000000195,
+          "cramers_v": 0.4638442789897862,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.5022908904886977,
+          "cramers_v": 0.23364447335331193,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines Level 2 and is derived from the rendered launch parameters"
     },
     "range_at_45_degrees_m": {
       "classification": "scene_feature",
       "levels": {
         "1": {
-          "cramers_v": 0.24750653250957333,
+          "cramers_v": 0.034789760354634394,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.617637124199475,
+          "cramers_v": 0.6106061097095554,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.8819838653083677,
+          "cramers_v": 0.6006037729202885,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.0000000000000144,
+          "cramers_v": 0.46384427898977504,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.463281988544662,
+          "cramers_v": 0.12876872506370393,
           "kind": "numeric_deciles"
         }
       },
       "whitelist_justification": null
     },
     "range_change_at_45_degrees": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 1.0000000000000002,
+          "cramers_v": 0.9699905997106647,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.02452768796830814,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.8159555675354052,
+          "cramers_v": 0.4955894697720392,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.9622357800856095,
+          "cramers_v": 0.3731625642789519,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.9677208997626321,
+          "cramers_v": 0.8596658110632194,
           "kind": "categorical"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "is the no-obstacle Level 5 answer"
     },
     "range_m": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.2711277661311135,
+          "cramers_v": 0.11650098756108293,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.624667719848272,
+          "cramers_v": 0.6177238184593522,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.9979231616689717,
+          "cramers_v": 0.762011417209995,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.000000000000044,
+          "cramers_v": 0.46384427898983926,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.46015222327608113,
+          "cramers_v": 0.11689729808827008,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines part of Level 4 and the Level 5 counterfactual comparison"
     },
     "time_of_flight_s": {
-      "classification": "scene_feature",
+      "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.3642658785208889,
+          "cramers_v": 0.27072096153509284,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.9437820767190408,
+          "cramers_v": 0.9394674458923803,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7462275567857574,
+          "cramers_v": 0.37104644668274783,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 1.0000000000000195,
+          "cramers_v": 0.4638442789897862,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.5022908904886977,
+          "cramers_v": 0.23364447335331193,
           "kind": "numeric_deciles"
         }
       },
-      "whitelist_justification": null
+      "whitelist_justification": "defines part of Level 4"
     }
   },
   "level_distributions": {
@@ -2329,24 +2345,26 @@
       }
     }
   },
-  "png_asset_presence": "1000/1000",
-  "questions": 5000,
-  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
-  "scalar_scene_features": [
-    "canvas_height",
-    "canvas_width",
-    "difficulty_score",
-    "gravity_m_s2",
-    "has_obstacle",
-    "horizontal_position_at_peak_m",
-    "initial_speed_m_s",
-    "initial_velocity_x_m_s",
-    "initial_velocity_y_m_s",
-    "launch_angle_degrees",
-    "max_height_m",
-    "range_at_45_degrees_m",
-    "range_change_at_45_degrees",
-    "range_m",
-    "time_of_flight_s"
-  ]
+  "png_recovery": {
+    "checks": [
+      "canvas_size",
+      "ground_band",
+      "trajectory_pixels",
+      "launch_vector_or_ball",
+      "ink_labels_and_axes",
+      "peak_marker",
+      "obstacle_wall_or_absence"
+    ],
+    "fail_count": 0,
+    "failures": {},
+    "note": "Pixel recovery verifies the rendered semantic elements and label regions for all items; exact numeric text is also independently checked from annotations because OCR is not a repo dependency.",
+    "pass_count": 1000
+  },
+  "question_set_public_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
+  "questions": 5000
 }
