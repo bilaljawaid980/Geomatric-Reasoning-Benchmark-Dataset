@@ -28,7 +28,7 @@
 | orthographic_dataset_3000 | legacy-current | no | 0 | 23.5% | 18.8% | 32.8% | 46.5% | 100.0% | 3000/3000 |
 | overlap_circles_dataset_3000 | overlap-circles-2.0.0 | yes | 0 | 13.3% | 36.1% | 34.5% | 21.6% | 9.3% | 3000/3000 |
 | physical_stability_dataset_3000 | legacy-current | no | 0 | 30.8% | 62.5% | 30.5% | 50.0% | 16.6% | 3000/3000 |
-| polyhedron_dataset_3000 | polyhedron-4.0.0 | yes | 0 | 21.1% | 89.5% | 19.5% | 27.5% | 100.0% | 3000/3000 |
+| polyhedron_dataset_3000 | polyhedron-4.0.0 | yes | 0 | 21.1% | 100.0% | 19.5% | 27.5% | 100.0% | 3000/3000 |
 | projectile_motion_dataset_1000 | projectile-motion-1.0.0 | no | 0 | 2.8% | 65.4% | 1.0% | 0.4% | 68.8% | 1000/1000 |
 | rotation_matching_dataset_3000 | rotation-matching-2.0.0 | no | 0 | 25.8% | 25.0% | 15.2% | 26.0% | 14.3% | 3000/3000 |
 | route_dataset_3000 | route-2.0.0 | yes | 0 | 23.4% | 51.3% | 11.3% | 3.5% | 26.3% | 3000/3000 |

@@ -26331,8 +26331,7 @@
         "triangles": 789
       },
       "is_convex": {
-        "False": 316,
-        "True": 2684
+        "True": 3000
       },
       "solid_class": {
         "Archimedean": 948,
@@ -26401,10 +26400,9 @@
     "dataset_version": "polyhedron-4.0.0",
     "degeneracy_flags": {
       "2": {
-        "constant_answer_baseline": 0.8946666666666667,
+        "constant_answer_baseline": 1.0,
         "counts": {
-          "convex": 2684,
-          "non-convex": 316
+          "convex": 3000
         }
       },
       "5": {
@@ -26417,49 +26415,36 @@
     "features_at_v_ge_0_10": {
       "edge_count": {
         "1": 0.76787728,
-        "2": 0.45461294,
         "3": 0.65853928,
         "4": 0.57636344
       },
       "face_count": {
         "1": 0.99966572,
-        "2": 0.45387864,
         "3": 0.70242336,
         "4": 0.67866732
       },
       "face_shape_types": {
         "1": 0.85781495,
-        "2": 0.20976386,
         "3": 0.85076687,
         "4": 0.58908833
       },
-      "is_convex": {
-        "1": 0.45314314,
-        "2": 1.0,
-        "3": 0.36265877,
-        "4": 0.99766238
-      },
       "solid_class": {
         "1": 0.72115872,
-        "2": 0.99966639,
         "3": 0.63374451,
         "4": 0.86455964
       },
       "solid_name": {
         "1": 0.99882875,
-        "2": 0.9974952,
         "3": 0.59153212,
         "4": 0.60079841
       },
       "vertex_count": {
         "1": 0.80136852,
-        "2": 0.50258694,
         "3": 0.76737935,
         "4": 0.61153135
       },
       "visible_face_count": {
         "1": 0.98613929,
-        "2": 0.44154719,
         "3": 0.70777868,
         "4": 0.66677894
       }
@@ -26474,7 +26459,7 @@
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.45461294361222804,
+            "cramers_v": 0.0,
             "kind": "numeric_deciles"
           },
           "3": {
@@ -26500,7 +26485,7 @@
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.4538786369638581,
+            "cramers_v": 0.0,
             "kind": "numeric_deciles"
           },
           "3": {
@@ -26526,7 +26511,7 @@
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.20976385557014507,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "3": {
@@ -26548,19 +26533,19 @@
         "classification": "scene_feature",
         "levels": {
           "1": {
-            "cramers_v": 0.4531431403922659,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 1.0,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "3": {
-            "cramers_v": 0.3626587678392811,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "4": {
-            "cramers_v": 0.9976623778346884,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "5": {
@@ -26578,7 +26563,7 @@
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.9996663886479304,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "3": {
@@ -26604,7 +26589,7 @@
             "kind": "categorical"
           },
           "2": {
-            "cramers_v": 0.9974951951979328,
+            "cramers_v": 0.0,
             "kind": "categorical"
           },
           "3": {
@@ -26630,7 +26615,7 @@
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.502586939464905,
+            "cramers_v": 0.0,
             "kind": "numeric_deciles"
           },
           "3": {
@@ -26656,7 +26641,7 @@
             "kind": "numeric_deciles"
           },
           "2": {
-            "cramers_v": 0.4415471852371717,
+            "cramers_v": 0.0,
             "kind": "numeric_deciles"
           },
           "3": {
@@ -26692,10 +26677,9 @@
         }
       },
       "2": {
-        "constant_answer_baseline": 0.8946666666666667,
+        "constant_answer_baseline": 1.0,
         "counts": {
-          "convex": 2684,
-          "non-convex": 316
+          "convex": 3000
         }
       },
       "3": {

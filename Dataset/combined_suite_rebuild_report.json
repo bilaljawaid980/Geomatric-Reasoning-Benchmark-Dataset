@@ -88,10 +88,7 @@
       "symmetry_pattern": 15000
     },
     "question_rows": 500000,
-    "stale_or_mismatched": {
-      "line_intersection": "question rows differ from current question_set.csv",
-      "polyhedron": "dataset_version is ['polyhedron-3.0.0'], expected polyhedron-4.0.0"
-    }
+    "stale_or_mismatched": {}
   },
   "discovered_dataset_count": 34,
   "expected_totals": {

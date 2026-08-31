@@ -3,7 +3,7 @@
     "boundary_edges_only": true,
     "compound_components_checked_separately": true,
     "connected_closed_solid_euler_characteristic": "V - E + F = 2",
-    "convexity_matches_independent_hull_support_test": true,
+    "convexity_matches_independent_point_hull_test": true,
     "edge_array_length_equals_edge_count": true,
     "five_ordered_questions_per_image": true,
     "level4_euler_equals_positive_face_count": true,

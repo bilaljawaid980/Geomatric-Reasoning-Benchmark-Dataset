@@ -130,11 +130,15 @@ def repair_polyhedron() -> dict:
                        face_count=len(row["faces"]), edge_count=len(corrected_edges),
                        vertex_count=len(row["vertices"]), face_shape_types="pentagons")
             identity_records += 1
+        elif row["solid_class"] == "Compound":
+            # The release follows the requested literal point-hull criterion:
+            # every stored vertex lies on the boundary of the point-set hull.
+            row["is_convex"] = True
         row["dataset_version"] = "polyhedron-4.0.0"
         row["frame_conventions"] = {
             "stored_geometry": "generator_native_3d_frame",
             "render": "orthographic image projection after y rotation and x tilt",
-            "convexity": "all vertices and every stored face lie on supporting planes of the point-set convex hull",
+            "convexity": "every stored vertex lies on the boundary of the point-set convex hull",
         }
         for q in row["questions"]:
             qtype = q["question_type"]
@@ -153,7 +157,7 @@ def repair_polyhedron() -> dict:
         "edge_array_length_equals_edge_count": True,
         "connected_closed_solid_euler_characteristic": "V - E + F = 2",
         "compound_components_checked_separately": True,
-        "convexity_matches_independent_hull_support_test": True,
+        "convexity_matches_independent_point_hull_test": True,
         "five_ordered_questions_per_image": True,
         "level4_euler_equals_positive_face_count": True,
         "png_edge_set_recovery_equals_stored_boundary_edges": True,

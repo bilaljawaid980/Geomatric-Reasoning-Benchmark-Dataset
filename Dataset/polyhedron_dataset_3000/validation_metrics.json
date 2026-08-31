@@ -16,10 +16,9 @@
       }
     },
     "2": {
-      "constant_answer_baseline": 0.8946666666666667,
+      "constant_answer_baseline": 1.0,
       "counts": {
-        "convex": 2684,
-        "non-convex": 316
+        "convex": 3000
       }
     },
     "3": {
@@ -79,7 +78,7 @@
   },
   "answers_changed_by_level": {
     "1": 157,
-    "2": 314,
+    "2": 630,
     "3": 58,
     "4": 112,
     "5": 0
@@ -163,7 +162,7 @@
       }
     }
   },
-  "compound_convexity_disposition": "Point-only hull membership includes both interpenetrating compounds; the independent face-support/single-surface check correctly keeps Compound records non-convex.",
+  "compound_convexity_disposition": "The requested literal point-hull rule classifies all 316 Compound records as convex because every stored vertex lies on the hull boundary; face-support is reported separately and does not override that rule.",
   "continuous_distributions": {
     "edge_count": {
       "count": 3000,
@@ -232,10 +231,6 @@
         "cramers_v": 0.7678772775143334,
         "kind": "numeric_deciles"
       },
-      "2": {
-        "cramers_v": 0.45461294361222804,
-        "kind": "numeric_deciles"
-      },
       "3": {
         "cramers_v": 0.6585392806416459,
         "kind": "numeric_deciles"
@@ -248,10 +243,6 @@
     "face_count": {
       "1": {
         "cramers_v": 0.999665719529353,
-        "kind": "numeric_deciles"
-      },
-      "2": {
-        "cramers_v": 0.4538786369638581,
         "kind": "numeric_deciles"
       },
       "3": {
@@ -268,10 +259,6 @@
         "cramers_v": 0.8578149524363928,
         "kind": "categorical"
       },
-      "2": {
-        "cramers_v": 0.20976385557014507,
-        "kind": "categorical"
-      },
       "3": {
         "cramers_v": 0.8507668742491247,
         "kind": "categorical"
@@ -281,31 +268,9 @@
         "kind": "categorical"
       }
     },
-    "is_convex": {
-      "1": {
-        "cramers_v": 0.4531431403922659,
-        "kind": "categorical"
-      },
-      "2": {
-        "cramers_v": 1.0,
-        "kind": "categorical"
-      },
-      "3": {
-        "cramers_v": 0.3626587678392811,
-        "kind": "categorical"
-      },
-      "4": {
-        "cramers_v": 0.9976623778346884,
-        "kind": "categorical"
-      }
-    },
     "solid_class": {
       "1": {
         "cramers_v": 0.7211587248153378,
-        "kind": "categorical"
-      },
-      "2": {
-        "cramers_v": 0.9996663886479304,
         "kind": "categorical"
       },
       "3": {
@@ -322,10 +287,6 @@
         "cramers_v": 0.9988287455195981,
         "kind": "categorical"
       },
-      "2": {
-        "cramers_v": 0.9974951951979328,
-        "kind": "categorical"
-      },
       "3": {
         "cramers_v": 0.5915321198219095,
         "kind": "categorical"
@@ -340,10 +301,6 @@
         "cramers_v": 0.8013685193945911,
         "kind": "numeric_deciles"
       },
-      "2": {
-        "cramers_v": 0.502586939464905,
-        "kind": "numeric_deciles"
-      },
       "3": {
         "cramers_v": 0.7673793499859815,
         "kind": "numeric_deciles"
@@ -356,10 +313,6 @@
     "visible_face_count": {
       "1": {
         "cramers_v": 0.9861392881588266,
-        "kind": "numeric_deciles"
-      },
-      "2": {
-        "cramers_v": 0.4415471852371717,
         "kind": "numeric_deciles"
       },
       "3": {
@@ -422,7 +375,7 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.45461294361222804,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {
@@ -448,7 +401,7 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.4538786369638581,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {
@@ -474,7 +427,7 @@
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.20976385557014507,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
@@ -496,19 +449,19 @@
       "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.4531431403922659,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 1.0,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.3626587678392811,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.9976623778346884,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "5": {
@@ -526,7 +479,7 @@
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.9996663886479304,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
@@ -552,7 +505,7 @@
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.9974951951979328,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
@@ -578,7 +531,7 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.502586939464905,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {
@@ -604,7 +557,7 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.4415471852371717,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {

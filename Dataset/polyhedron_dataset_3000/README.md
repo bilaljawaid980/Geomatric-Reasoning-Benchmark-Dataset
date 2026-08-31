@@ -10,7 +10,7 @@ The current v4 collection contains 17 named solids, 3,000 unique dark-theme wire
 
 Version 4 removes face diagonals from every stored and rendered edge list. The 157 affected `great dodecahedron` records contained the regular dodecahedron geometry plus 60 pentagon diagonals; their PNGs were regenerated with the 30 true boundary edges. The two supposed stellated families were geometry-identical to regular solids and are now named and classified from their actual topology: 157 records became `icosahedron` and 157 became `dodecahedron`. Exhaustive independent checks now require boundary-edge equality, the appropriate Euler characteristic (including component-aware compound handling), hull/face-support convexity, topology-based identity, positive Euler Level-4 answers, and exact PNG edge-set recovery. All 3,000 PNGs pass.
 
-Answer changes from v3 were: Level 1 = 157, Level 2 = 314, Level 3 = 58, Level 4 = 112, Level 5 = 0. Level 5 remains structurally constant (`no` for all 3,000 records) and is documented as such rather than treated as a measured distinction.
+Answer changes from v3 were: Level 1 = 157, Level 2 = 630, Level 3 = 58, Level 4 = 112, Level 5 = 0. The Level-2 count follows the requested literal point-hull definition: all 316 compound records also have every stored vertex on the hull boundary, although their interpenetrating face complexes are reported separately by the face-support diagnostic. Level 5 remains structurally constant (`no` for all 3,000 records) and is documented as such rather than treated as a measured distinction.
 
 ## 2. Full generation prompt
 
