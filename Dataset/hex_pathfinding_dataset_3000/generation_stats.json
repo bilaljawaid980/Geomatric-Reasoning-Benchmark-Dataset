@@ -1,0 +1,22 @@
+{
+  "images": 3000,
+  "grid_radius": {
+    "3": 1000,
+    "4": 1000,
+    "5": 1000
+  },
+  "level2": {
+    "walkable": 1500,
+    "hole": 1500
+  },
+  "level5": {
+    "same": 1000,
+    "increase": 1000,
+    "no_path": 1000
+  },
+  "hole_density": {
+    "min": 0.120879,
+    "mean": 0.183492314,
+    "max": 0.245902
+  }
+}

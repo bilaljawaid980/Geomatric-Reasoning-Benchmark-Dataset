@@ -1,0 +1,658 @@
+{
+  "after_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.26266666666666666,
+      "counts": {
+        "12": 788,
+        "14": 632,
+        "20": 158,
+        "24": 158,
+        "26": 158,
+        "30": 158,
+        "32": 158,
+        "4": 158,
+        "6": 158,
+        "8": 474
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.79,
+      "counts": {
+        "convex": 2370,
+        "non-convex": 630
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.195,
+      "counts": {
+        "1": 16,
+        "10": 108,
+        "12": 268,
+        "13": 46,
+        "14": 169,
+        "15": 54,
+        "16": 60,
+        "2": 22,
+        "20": 93,
+        "24": 154,
+        "3": 64,
+        "30": 58,
+        "32": 58,
+        "4": 223,
+        "5": 22,
+        "6": 203,
+        "7": 205,
+        "8": 158,
+        "mixed": 585,
+        "pentagons": 178,
+        "squares": 51,
+        "triangles": 205
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2753333333333333,
+      "counts": {
+        "12": 197,
+        "14": 213,
+        "20": 71,
+        "24": 70,
+        "26": 66,
+        "30": 74,
+        "32": 81,
+        "4": 76,
+        "6": 65,
+        "8": 147,
+        "Archimedean": 273,
+        "Catalan": 206,
+        "Compound": 97,
+        "NonConvex": 112,
+        "Platonic": 207,
+        "no": 826,
+        "yes": 219
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "no": 3000
+      }
+    }
+  },
+  "answer_changes_by_level": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0
+  },
+  "before_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.26266666666666666,
+      "counts": {
+        "12": 788,
+        "14": 632,
+        "20": 158,
+        "24": 158,
+        "26": 158,
+        "30": 158,
+        "32": 158,
+        "4": 158,
+        "6": 158,
+        "8": 474
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.79,
+      "counts": {
+        "convex": 2370,
+        "non-convex": 630
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.195,
+      "counts": {
+        "1": 16,
+        "10": 108,
+        "12": 268,
+        "13": 46,
+        "14": 169,
+        "15": 54,
+        "16": 60,
+        "2": 22,
+        "20": 93,
+        "24": 154,
+        "3": 64,
+        "30": 58,
+        "32": 58,
+        "4": 223,
+        "5": 22,
+        "6": 203,
+        "7": 205,
+        "8": 158,
+        "mixed": 585,
+        "pentagons": 178,
+        "squares": 51,
+        "triangles": 205
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2753333333333333,
+      "counts": {
+        "-10": 213,
+        "-16": 71,
+        "-2": 65,
+        "-20": 70,
+        "-22": 66,
+        "-26": 74,
+        "-28": 81,
+        "-4": 147,
+        "-8": 197,
+        "0": 76,
+        "Archimedean": 273,
+        "Catalan": 206,
+        "Compound": 97,
+        "NonConvex": 112,
+        "Platonic": 207,
+        "no": 826,
+        "yes": 219
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "no": 3000
+      }
+    }
+  },
+  "continuous_distributions": {
+    "edge_count": {
+      "count": 3000,
+      "max": 60.0,
+      "min": 6.0,
+      "p25": 18.0,
+      "p50": 30.0,
+      "p75": 36.0,
+      "p95": 60.0
+    },
+    "face_count": {
+      "count": 3000,
+      "max": 32.0,
+      "min": 4.0,
+      "p25": 8.0,
+      "p50": 12.0,
+      "p75": 20.0,
+      "p95": 32.0
+    },
+    "vertex_count": {
+      "count": 3000,
+      "max": 32.0,
+      "min": 4.0,
+      "p25": 8.0,
+      "p50": 14.0,
+      "p75": 24.0,
+      "p95": 32.0
+    },
+    "visible_face_count": {
+      "count": 3000,
+      "max": 16.0,
+      "min": 1.0,
+      "p25": 4.0,
+      "p50": 7.0,
+      "p75": 10.0,
+      "p95": 16.0
+    }
+  },
+  "dataset_version": "polyhedron-3.0.0",
+  "definitional_whitelist": {
+    "edge_count": "defines Euler Level 4 with V",
+    "face_count": "defines Level 1 and Euler Level 4",
+    "face_shape_types": "defines face-shape Level 3",
+    "is_convex": "defines Level 2",
+    "solid_class": "defines compound/family Level 4",
+    "vertex_count": "defines vertex Level 3 and Euler Level 4",
+    "visible_face_count": "defines visible-face Level 3"
+  },
+  "difficulty_score_build_diagnostic": {},
+  "euler_items": 1060,
+  "features_at_v_ge_0_10_nothing_hidden": {
+    "edge_count": {
+      "1": {
+        "cramers_v": 0.7558311692393166,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.48189444296185086,
+        "kind": "numeric_deciles"
+      },
+      "3": {
+        "cramers_v": 0.6708838217815941,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.5883060976992267,
+        "kind": "numeric_deciles"
+      }
+    },
+    "face_count": {
+      "1": {
+        "cramers_v": 0.999498704956384,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.4108748230510013,
+        "kind": "numeric_deciles"
+      },
+      "3": {
+        "cramers_v": 0.7070501355062565,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.701384580685305,
+        "kind": "numeric_deciles"
+      }
+    },
+    "face_shape_types": {
+      "1": {
+        "cramers_v": 0.867190777357142,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.5110767202699095,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.8201061981936764,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.6539617344974008,
+        "kind": "categorical"
+      }
+    },
+    "is_convex": {
+      "1": {
+        "cramers_v": 0.40965528570468135,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.9999999999999999,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.4201617750145626,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.8296282369790656,
+        "kind": "categorical"
+      }
+    },
+    "solid_class": {
+      "1": {
+        "cramers_v": 0.6803995831650559,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.9994995412147983,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.6120207081547728,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.821615636025442,
+        "kind": "categorical"
+      }
+    },
+    "solid_name": {
+      "1": {
+        "cramers_v": 0.9984938490322233,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.9971607458355733,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.5566418257069514,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.6149168351347316,
+        "kind": "categorical"
+      }
+    },
+    "vertex_count": {
+      "1": {
+        "cramers_v": 0.7711406057961122,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.4233860362173674,
+        "kind": "numeric_deciles"
+      },
+      "3": {
+        "cramers_v": 0.7575522205488738,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.6183635665536725,
+        "kind": "numeric_deciles"
+      }
+    },
+    "visible_face_count": {
+      "1": {
+        "cramers_v": 0.9445061270013774,
+        "kind": "numeric_deciles"
+      },
+      "2": {
+        "cramers_v": 0.3880354657584141,
+        "kind": "numeric_deciles"
+      },
+      "3": {
+        "cramers_v": 0.7000825297107476,
+        "kind": "numeric_deciles"
+      },
+      "4": {
+        "cramers_v": 0.6736894549459747,
+        "kind": "numeric_deciles"
+      }
+    }
+  },
+  "guard_injection_tests": {
+    "boundary_correct_positive_accepted": true,
+    "violating_disagreement_rejected": true,
+    "violating_zero_rejected": true
+  },
+  "images": 3000,
+  "leak_audit_all_scalar_scene_features": {
+    "canvas_size": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.08670048605600239,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.08786698611056853,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "edge_count": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.7558311692393166,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.48189444296185086,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.6708838217815941,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.5883060976992267,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": "defines Euler Level 4 with V"
+    },
+    "face_count": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.999498704956384,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4108748230510013,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.7070501355062565,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.701384580685305,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": "defines Level 1 and Euler Level 4"
+    },
+    "face_shape_types": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.867190777357142,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.5110767202699095,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.8201061981936764,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.6539617344974008,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": "defines face-shape Level 3"
+    },
+    "is_convex": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.40965528570468135,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.4201617750145626,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.8296282369790656,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": "defines Level 2"
+    },
+    "solid_class": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.6803995831650559,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.9994995412147983,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.6120207081547728,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.821615636025442,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": "defines compound/family Level 4"
+    },
+    "solid_name": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.9984938490322233,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.9971607458355733,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.5566418257069514,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.6149168351347316,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "vertex_count": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.7711406057961122,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4233860362173674,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.7575522205488738,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.6183635665536725,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": "defines vertex Level 3 and Euler Level 4"
+    },
+    "visible_face_count": {
+      "classification": "definitional",
+      "levels": {
+        "1": {
+          "cramers_v": 0.9445061270013774,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.3880354657584141,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.7000825297107476,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.6736894549459747,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": "defines visible-face Level 3"
+    }
+  },
+  "leak_audit_excluded_non_scalar_or_identifier_fields": [
+    "dataset_version",
+    "edges",
+    "faces",
+    "frame_conventions",
+    "id",
+    "image_path",
+    "questions",
+    "seed",
+    "vertices",
+    "viewing_angle"
+  ],
+  "level3_vertex_answer_matches": 999,
+  "level3_vertex_items": 999,
+  "level4_prompt_vertex_edge_matches": 1060,
+  "level4_prompt_vertex_edge_mismatches": 0,
+  "level5_distribution": {
+    "constant_answer_baseline": 1.0,
+    "counts": {
+      "no": 3000
+    }
+  },
+  "mismatch_count": 0,
+  "mismatches": [],
+  "negative_level4_answers_before": 984,
+  "png_dimension_recovery": {
+    "passed": 3000,
+    "total": 3000
+  },
+  "questions": 15000,
+  "solid_distribution": {
+    "compound of cube and octahedron": 158,
+    "cube": 158,
+    "cuboctahedron": 158,
+    "dodecahedron": 158,
+    "great dodecahedron": 157,
+    "icosahedron": 158,
+    "icosidodecahedron": 158,
+    "octahedron": 158,
+    "rhombic dodecahedron": 158,
+    "rhombic triacontahedron": 158,
+    "rhombicuboctahedron": 158,
+    "small stellated dodecahedron": 157,
+    "stella octangula": 158,
+    "tetrahedron": 158,
+    "triakis octahedron": 158,
+    "triakis tetrahedron": 158,
+    "truncated cube": 158,
+    "truncated octahedron": 158,
+    "truncated tetrahedron": 158
+  },
+  "wrong_level4_answers_before": 1060,
+  "zero_level4_answers_before": 76
+}

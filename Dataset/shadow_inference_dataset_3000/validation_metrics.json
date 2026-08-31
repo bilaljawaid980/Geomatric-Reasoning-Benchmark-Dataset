@@ -1,0 +1,446 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "azimuth_convention": {
+      "0=front, 90=right, 180=back, 270=left; shadow projects away from light": 3000
+    },
+    "coordinate_frame": {
+      "screen_x_right_screen_y_down": 3000
+    },
+    "has_inconsistent_shadow": {
+      "False": 2380,
+      "True": 620
+    }
+  },
+  "continuous_distributions": {
+    "azimuth_exclusion_degrees": {
+      "count": 3000,
+      "max": 30.0,
+      "min": 30.0,
+      "p25": 30.0,
+      "p50": 30.0,
+      "p75": 30.0,
+      "p95": 30.0
+    },
+    "difficulty_score": {
+      "count": 3000,
+      "max": 1.16,
+      "min": 0.2,
+      "p25": 0.35,
+      "p50": 0.51,
+      "p75": 0.7,
+      "p95": 1.01
+    },
+    "ground_y": {
+      "count": 3000,
+      "max": 320.0,
+      "min": 263.0,
+      "p25": 281.0,
+      "p50": 290.0,
+      "p75": 300.0,
+      "p95": 311.0
+    },
+    "inconsistent_object_index": {
+      "count": 620,
+      "max": 2.0,
+      "min": 0.0,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p95": 2.0
+    },
+    "light_azimuth_degrees": {
+      "count": 3000,
+      "max": 319.7876,
+      "min": 40.0403,
+      "p25": 89.58489999999999,
+      "p50": 139.58800000000002,
+      "p75": 270.892675,
+      "p95": 308.68564499999997
+    },
+    "light_elevation_degrees": {
+      "count": 3000,
+      "max": 69.9626,
+      "min": 20.0184,
+      "p25": 32.596875,
+      "p50": 45.271100000000004,
+      "p75": 57.909425,
+      "p95": 67.87110999999999
+    },
+    "num_objects": {
+      "count": 3000,
+      "max": 3.0,
+      "min": 1.0,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 3.0,
+      "p95": 3.0
+    }
+  },
+  "dataset_version": "shadow-inference-2.0.0",
+  "degeneracy_flags": {},
+  "features_at_v_ge_0_10": {
+    "difficulty_score": {
+      "1": 0.89100743,
+      "2": 0.44039765,
+      "3": 0.24411997,
+      "4": 0.39805529
+    },
+    "has_inconsistent_shadow": {
+      "1": 0.31423182,
+      "2": 1.0,
+      "3": 0.17790311,
+      "4": 1.0
+    },
+    "inconsistent_object_index": {
+      "1": 0.2749336,
+      "2": 0.57735027,
+      "3": 0.11130765,
+      "4": 0.57874764
+    },
+    "light_azimuth_degrees": {
+      "2": 0.51193727
+    },
+    "light_elevation_degrees": {
+      "3": 0.34281678,
+      "4": 0.34274989
+    },
+    "num_objects": {
+      "1": 1.0,
+      "2": 0.22297935,
+      "3": 0.36099402,
+      "4": 0.22469453
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "azimuth_convention": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "azimuth_exclusion_degrees": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "coordinate_frame": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8910074281965562,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4403976501018125,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.2441199733301626,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.3980552938353429,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.026665240567031026,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "ground_y": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0456153221402054,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.04391895256922678,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.051955006465362726,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.05261133973519523,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.052379695094748636,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "has_inconsistent_shadow": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.3142318152965131,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.17790310873825696,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.014817951938361827,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "inconsistent_object_index": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.274933599413759,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.5773502691896258,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.11130765400856328,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.5787476437169861,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.024241881464197066,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "light_azimuth_degrees": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.04028154136625938,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.5119372679123163,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.04381592272355648,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.057497820530165736,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.044421302853992026,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "light_elevation_degrees": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.04034271847164703,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.039406145096297966,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.3428167770184715,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.3427498862927161,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.03269388473061706,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_objects": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.22297935432306826,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.36099401992259605,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.22469452984846922,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.014805990098149266,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.37833333333333335,
+      "counts": {
+        "1": 811,
+        "2": 1135,
+        "3": 1054
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.36,
+      "counts": {
+        "back": 119,
+        "front": 111,
+        "left": 1080,
+        "no": 620,
+        "right": 1070
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.296,
+      "counts": {
+        "blue": 329,
+        "high": 888,
+        "low": 877,
+        "orange": 303,
+        "purple": 285,
+        "teal": 318
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.4003333333333333,
+      "counts": {
+        "15": 60,
+        "30": 350,
+        "45": 334,
+        "60": 353,
+        "75": 82,
+        "blue": 142,
+        "orange": 172,
+        "purple": 162,
+        "same": 1201,
+        "teal": 144
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.5,
+      "counts": {
+        "same": 1500,
+        "shorter": 1500
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "azimuth_convention",
+    "azimuth_exclusion_degrees",
+    "coordinate_frame",
+    "difficulty_score",
+    "ground_y",
+    "has_inconsistent_shadow",
+    "inconsistent_object_index",
+    "light_azimuth_degrees",
+    "light_elevation_degrees",
+    "num_objects"
+  ]
+}

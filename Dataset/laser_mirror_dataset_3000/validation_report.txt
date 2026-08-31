@@ -1,0 +1,24 @@
+Laser Mirror Dataset Validation Report
+=======================================
+Total images checked: 3000
+Total questions checked: 15000
+PNG files checked: 3000
+Total mismatches found: 0
+
+Grid sizes: {5: 750, 6: 750, 7: 750, 8: 750}
+Mirror counts: {2: 752, 3: 752, 4: 748, 5: 748}
+Level 2 answers: {'yes': 2250, 'no': 750}
+Reflection counts: {0: 750, 1: 1568, 2: 569, 3: 100, 4: 11, 5: 2}
+Level 5 exit changed: {'yes': 2249, 'no': 751}
+
+Independent checks:
+  Original path re-simulation: complete
+  Every single-mirror flip loop test: complete
+  Asked Level 5 flip re-simulation: complete
+  Orthogonal-adjacency constraint: complete
+  CSV/public-leak checks: complete
+
+Issues:
+  None
+
+Summary: PASS

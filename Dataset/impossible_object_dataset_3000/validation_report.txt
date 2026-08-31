@@ -1,0 +1,104 @@
+Impossible Object Dataset v4 Validation Report
+================================================
+Dataset version: impossible-object-4.0.0
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+
+Depth constraints: directed beam-label front/back relation per projected crossing
+
+PNG recovery:
+  beam count: 3000/3000
+  crossing count: 3000/3000
+  per-crossing depth order: 3000/3000
+
+Per-level distributions and best constant baselines:
+  L1: {'5': 1504, '6': 1496}
+    baseline: {'answer': '5', 'count': 1504, 'accuracy': 0.5013333333333333}
+  L2: {'yes': 1500, 'no': 1500}
+    baseline: {'answer': 'yes', 'count': 1500, 'accuracy': 0.5}
+  L3: {'C': 504, 'A': 573, 'E': 503, 'B': 622, 'D': 551, 'F': 247}
+    baseline: {'answer': 'B', 'count': 622, 'accuracy': 0.20733333333333334}
+  L4: {'6': 750, '7': 750, '8': 750, '9': 750}
+    baseline: {'answer': '6', 'count': 750, 'accuracy': 0.25}
+  L5: {'already constructible': 1500, 'A': 275, 'B': 276, 'C': 274, 'D': 275, 'E': 275, 'F': 125}
+    baseline: {'answer': 'already constructible', 'count': 1500, 'accuracy': 0.5}
+
+Features at Cramer's V >= 0.10 (none hidden):
+  L1:beam_count: {'cramers_v': 1.0, 'kind': 'categorical', 'classification': 'definitional'}
+  L1:reference_front_beam: {'cramers_v': 0.30093540673853003, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L1:removable_beam_label: {'cramers_v': 0.2137780005613839, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L2:mode: {'cramers_v': 1.0, 'kind': 'categorical', 'classification': 'definitional'}
+  L2:removable_beam_label: {'cramers_v': 1.0, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L3:beam_count: {'cramers_v': 0.30093540673853, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L3:reference_front_beam: {'cramers_v': 1.0, 'kind': 'categorical', 'classification': 'definitional'}
+  L3:removable_beam_label: {'cramers_v': 0.11384753504186265, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L4:target_crossing_count: {'cramers_v': 1.0, 'kind': 'categorical', 'classification': 'definitional'}
+  L4:removable_beam_label: {'cramers_v': 0.21275584256951807, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L5:mode: {'cramers_v': 1.0, 'kind': 'categorical', 'classification': 'definitional'}
+  L5:beam_count: {'cramers_v': 0.2137780005613839, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L5:target_crossing_count: {'cramers_v': 0.21275584256951807, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L5:reference_front_beam: {'cramers_v': 0.11384753504186265, 'kind': 'categorical', 'classification': 'non-definitional'}
+  L5:removable_beam_label: {'cramers_v': 1.0000000000000002, 'kind': 'categorical', 'classification': 'definitional'}
+
+Definitional whitelist:
+  L1: {'beam_count': 'the stored count named by the answer'}
+  L2: {'mode': 'constructibility class named by the answer'}
+  L3: {'reference_front_beam': 'front beam at the deterministic reference crossing'}
+  L4: {'target_crossing_count': 'the crossing count named by the answer'}
+  L5: {'mode': 'determines already-constructible versus repair', 'removable_beam_label': 'the unique repair label named by the answer'}
+
+Separation distributions:
+  label_by_beam_count: {'5': {'count': 1504, 'min': 40.0, 'p25': 41.0, 'p50': 42.0, 'p75': 43.0, 'p95': 43.8, 'max': 44.0}, '6': {'count': 1496, 'min': 40.0, 'p25': 41.0, 'p50': 42.0, 'p75': 43.0, 'p95': 43.8, 'max': 44.0}}
+  crossing_by_beam_count: {'5': {'count': 1504, 'min': 8.002565, 'p25': 9.05323625, 'p50': 10.001759499999999, 'p75': 10.95956575, 'p95': 11.808788799999999, 'max': 11.996817}, '6': {'count': 1496, 'min': 8.000829, 'p25': 9.0715955, 'p50': 9.990133499999999, 'p75': 10.999966, 'p95': 11.78833325, 'max': 11.993313}}
+  crossing_by_crossing_count: {'6': {'count': 750, 'min': 8.016876, 'p25': 9.077195750000001, 'p50': 9.973046, 'p75': 10.92353525, 'p95': 11.79853645, 'max': 11.99268}, '7': {'count': 750, 'min': 8.001411, 'p25': 9.10189325, 'p50': 9.984862499999998, 'p75': 11.0121205, 'p95': 11.820861449999999, 'max': 11.993313}, '8': {'count': 750, 'min': 8.000829, 'p25': 8.972336, 'p50': 9.996596499999999, 'p75': 10.98759875, 'p95': 11.7737541, 'max': 11.996817}, '9': {'count': 750, 'min': 8.002565, 'p25': 9.089679499999999, 'p50': 9.994854499999999, 'p75': 11.00168125, 'p95': 11.7698119, 'max': 11.988271}}
+  reference_gap_by_beam_count: {'5': {'count': 1504, 'min': 12.502381, 'p25': 13.47885525, 'p50': 13.9487175, 'p75': 14.479625500000001, 'p95': 15.0799217, 'max': 15.47515}, '6': {'count': 1496, 'min': 12.516885, 'p25': 13.479834499999999, 'p50': 13.96513, 'p75': 14.4520875, 'p95': 15.087695000000002, 'max': 15.454033}}
+  reference_gap_by_crossing_count: {'6': {'count': 750, 'min': 12.502381, 'p25': 13.468549, 'p50': 13.9492855, 'p75': 14.4486245, 'p95': 15.06014835, 'max': 15.47515}, '7': {'count': 750, 'min': 12.562482, 'p25': 13.52211125, 'p50': 13.998766499999999, 'p75': 14.470224, 'p95': 15.098057949999998, 'max': 15.453479}, '8': {'count': 750, 'min': 12.504202, 'p25': 13.4683045, 'p50': 13.914516, 'p75': 14.51651175, 'p95': 15.0960236, 'max': 15.429246}, '9': {'count': 750, 'min': 12.516885, 'p25': 13.47248075, 'p50': 13.978908, 'p75': 14.438533, 'p95': 15.0594192, 'max': 15.460032}}
+  reference_gap_by_mode: {'impossible': {'count': 1500, 'min': 12.502381, 'p25': 13.46785575, 'p50': 13.954075, 'p75': 14.4406125, 'p95': 15.0817023, 'max': 15.47515}, 'possible': {'count': 1500, 'min': 12.504202, 'p25': 13.49029675, 'p50': 13.959604500000001, 'p75': 14.501918, 'p95': 15.0878742, 'max': 15.460032}}
+
+Released field listing:
+  annotations_jsonl_top_level: ['beams', 'canvas_size', 'color', 'crossings', 'dataset_version', 'depth_constraint_representation', 'depth_constraints', 'difficulty_score', 'id', 'image_path', 'mode', 'num_beams', 'num_crossings', 'questions', 'reference_crossing_id', 'reference_crossing_point', 'reference_front_beam', 'reference_rule', 'removable_beam_label', 'scene_params', 'seed']
+  annotations_jsonl_scene_params: ['beam_count', 'canvas_height', 'canvas_width', 'color_index', 'minimum_crossing_separation_px', 'minimum_label_separation_px', 'mode', 'reference_distance_gap_px', 'reference_front_beam', 'removable_beam_label', 'target_crossing_count', 'target_crossing_separation_px', 'target_label_separation_px', 'target_reference_distance_gap_px']
+  annotations_jsonl_question_object: ['answer_format', 'difficulty_level', 'ground_truth', 'question_id', 'question_text', 'question_type']
+  question_set_csv: ['question_id', 'task', 'image', 'prompt']
+  answer_key_csv: ['question_id', 'task', 'image', 'prompt', 'groundtruth', 'answer_format']
+
+Private build diagnostics:
+  generation attempts: {'count': 3000, 'min': 0, 'p25': 134, 'p50': 369, 'p75': 1095, 'p95': 7194, 'max': 39948, 'mean': 1501.2013333333334}
+  attempts by configuration: {'beams=5,crossings=6': {'count': 376, 'min': 5, 'p50': 1192, 'p95': 14714, 'max': 30327, 'mean': 3389.593085106383}, 'beams=5,crossings=7': {'count': 376, 'min': 1, 'p50': 552, 'p95': 6251, 'max': 14685, 'mean': 1564.4335106382978}, 'beams=5,crossings=8': {'count': 376, 'min': 0, 'p50': 201, 'p95': 811, 'max': 3299, 'mean': 289.5345744680851}, 'beams=5,crossings=9': {'count': 376, 'min': 0, 'p50': 159, 'p95': 652, 'max': 1310, 'mean': 221.36436170212767}, 'beams=6,crossings=6': {'count': 374, 'min': 4, 'p50': 1322, 'p95': 18703, 'max': 39948, 'mean': 4370.64705882353}, 'beams=6,crossings=7': {'count': 374, 'min': 1, 'p50': 659, 'p95': 4755, 'max': 8805, 'mean': 1302.2299465240642}, 'beams=6,crossings=8': {'count': 374, 'min': 2, 'p50': 366, 'p95': 1817, 'max': 4545, 'mean': 580.687165775401}, 'beams=6,crossings=9': {'count': 374, 'min': 1, 'p50': 199, 'p95': 901, 'max': 1683, 'mean': 294.0080213903743}}
+  PNG recovery retries: {'0': 2681, '1': 273, '3': 12, '2': 32, '4': 2}
+
+Guard injection tests:
+  crossing_separation: {'violating': {'value': 7.99, 'accepted': False}, 'boundary': {'value': 8.0, 'accepted': True}}
+  reference_distance_gap: {'violating': {'value': 11.99, 'accepted': False}, 'boundary': {'value': 12.0, 'accepted': True}}
+  beam_label_separation: {'violating': {'value': 23.99, 'accepted': False}, 'boundary': {'value': 24.0, 'accepted': True}}
+  crossing_count_target: {'violating': {'value': 5, 'accepted': False}, 'boundary': {'value': 6, 'accepted': True}}
+  unique_removable_beam: {'violating': {'valid_removal_count': 2, 'accepted': False}, 'boundary': {'valid_removal_count': 1, 'accepted': True}}
+  beam_separability: {'violating': {'recovered_labels': 4, 'stored_beams': 5, 'accepted': False}, 'boundary': {'recovered_labels': 5, 'stored_beams': 5, 'accepted': True}}
+  png_depth_recoverability: {'violating': {'recovered_crossings': 7, 'stored_crossings': 8, 'accepted': False}, 'boundary': {'recovered_crossings': 8, 'stored_crossings': 8, 'accepted': True}}
+  crossing_target_match: {'violating': {'absolute_error_px': 1.01, 'accepted': False}, 'boundary': {'absolute_error_px': 1.0, 'accepted': True}}
+  label_target_match: {'violating': {'absolute_error_px': 0.01, 'accepted': False}, 'boundary': {'absolute_error_px': 0.0, 'accepted': True}}
+  reference_gap_target_match: {'violating': {'absolute_error_px': 1.01, 'accepted': False}, 'boundary': {'absolute_error_px': 1.0, 'accepted': True}}
+
+Continuous distributions:
+  canvas_width: {'count': 3000, 'min': 500.0, 'p25': 524.0, 'p50': 550.0, 'p75': 574.0, 'p95': 595.0, 'max': 600.0}
+  canvas_height: {'count': 3000, 'min': 350.0, 'p25': 362.0, 'p50': 375.0, 'p75': 387.0, 'p95': 398.0, 'max': 400.0}
+  beam_count: {'count': 3000, 'min': 5.0, 'p25': 5.0, 'p50': 5.0, 'p75': 6.0, 'p95': 6.0, 'max': 6.0}
+  target_crossing_count: {'count': 3000, 'min': 6.0, 'p25': 6.75, 'p50': 7.5, 'p75': 8.25, 'p95': 9.0, 'max': 9.0}
+  target_crossing_separation_px: {'count': 3000, 'min': 9.0, 'p25': 9.0, 'p50': 9.0, 'p75': 11.0, 'p95': 11.0, 'max': 11.0}
+  minimum_crossing_separation_px: {'count': 3000, 'min': 8.000829, 'p25': 9.06051525, 'p50': 9.9942935, 'p75': 10.98006375, 'p95': 11.7969585, 'max': 11.996817}
+  target_reference_distance_gap_px: {'count': 3000, 'min': 13.5, 'p25': 13.7, 'p50': 14.0, 'p75': 14.3, 'p95': 14.5, 'max': 14.5}
+  reference_distance_gap_px: {'count': 3000, 'min': 12.502381, 'p25': 13.4792635, 'p50': 13.956029000000001, 'p75': 14.46835625, 'p95': 15.085374149999998, 'max': 15.47515}
+  target_label_separation_px: {'count': 3000, 'min': 40.0, 'p25': 41.0, 'p50': 42.0, 'p75': 43.0, 'p95': 43.8, 'max': 44.0}
+  minimum_label_separation_px: {'count': 3000, 'min': 40.0, 'p25': 41.0, 'p50': 42.0, 'p75': 43.0, 'p95': 43.8, 'max': 44.0}
+  color_index: {'count': 3000, 'min': 0.0, 'p25': 0.0, 'p50': 1.0, 'p75': 2.0, 'p95': 2.0, 'max': 2.0}
+
+Categorical distributions:
+  mode: {'possible': 1500, 'impossible': 1500}
+  reference_front_beam: {'C': 504, 'A': 573, 'E': 503, 'B': 622, 'D': 551, 'F': 247}
+  removable_beam_label: {'None': 1500, 'A': 275, 'B': 276, 'C': 274, 'D': 275, 'E': 275, 'F': 125}
+
+Issues:
+  None
+
+Summary: PASS

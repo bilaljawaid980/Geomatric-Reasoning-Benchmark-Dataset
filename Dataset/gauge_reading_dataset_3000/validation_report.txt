@@ -1,0 +1,29 @@
+Gauge Reading Dataset Validation Report
+=======================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+Danger zones marked: 1200
+Level 5 projected values exceeding maximum: 741
+
+Instrument types:
+  analog meter: 600
+  pressure gauge: 1200
+  speedometer: 600
+  temperature dial: 600
+
+Range-half distribution:
+  lower half: 1500
+  upper half: 1500
+
+Question types:
+  danger_zone_status: 3000
+  lower_or_upper_half: 3000
+  minimum_scale_value: 3000
+  needle_value_nearest_tick: 3000
+  quarter_range_increase: 3000
+
+Issues:
+  None
+
+Summary: PASS

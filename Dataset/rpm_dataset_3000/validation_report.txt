@@ -1,0 +1,7 @@
+Total images checked: 3000
+Difficulty tiers: {"combined_rules": 3000}
+Orientations: {"column": 597, "row": 2403}
+Rule distribution: {"color_progression": 843, "count_progression": 922, "shape_progression": 3000, "size_progression": 844, "xor_addition": 391}
+Question types: {"add_same_shape_distractor": 3000, "choices_matching_correct_shape": 1002, "combined_rule_attributes": 1041, "consistent_attribute": 1340, "correct_choice": 3000, "distractor_classification": 1660, "rule_extrapolation": 957, "top_left_shape_count": 3000}
+Total mismatches found: 0
+Summary: PASS

@@ -1,0 +1,13 @@
+Projectile Motion Dataset Validation Report
+============================================
+Dataset version: projectile-motion-1.0.0
+Total images checked: 1000
+Total questions checked: 5000
+Total mismatches found: 0
+Obstacle distribution: {'present': 300, 'absent': 700}
+Question types: {'read_launch_angle': 1000, 'height_above_20m': 1000, 'horizontal_position_at_peak': 1000, 'flight_time_and_range': 1000, 'obstacle_clearance': 300, 'range_at_45_degrees': 700}
+
+Issues:
+  None
+
+Summary: PASS

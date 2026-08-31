@@ -1,0 +1,36 @@
+{
+  "images": 3000,
+  "illusion_types": {
+    "muller_lyer": 1050,
+    "ponzo": 1050,
+    "ebbinghaus": 900
+  },
+  "equal_by_type": {
+    "muller_lyer": {
+      "true": 525,
+      "false": 525
+    },
+    "ponzo": {
+      "true": 525,
+      "false": 525
+    },
+    "ebbinghaus": {
+      "true": 450,
+      "false": 450
+    }
+  },
+  "unequal_alignment_by_type": {
+    "muller_lyer": {
+      "matches": 263,
+      "contradicts": 262
+    },
+    "ponzo": {
+      "matches": 263,
+      "contradicts": 262
+    },
+    "ebbinghaus": {
+      "matches": 225,
+      "contradicts": 225
+    }
+  }
+}

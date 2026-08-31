@@ -1,0 +1,607 @@
+{
+  "images_checked": 3000,
+  "questions_checked": 15000,
+  "mismatches": 0,
+  "grid_radius_distribution": {
+    "3": 1000,
+    "4": 1000,
+    "5": 1000
+  },
+  "level2_distribution": {
+    "walkable": 1500,
+    "hole": 1500
+  },
+  "level5_distribution": {
+    "same": 1000,
+    "increase": 1000,
+    "no_path": 1000
+  },
+  "level5_constant_answer_baseline": 0.3333333333333333,
+  "level5_invariants": {
+    "same:pass": 1000,
+    "increase:pass": 1000,
+    "no_path:pass": 1000
+  },
+  "png_full_tile_class_recovery": "3000/3000",
+  "hole_density": {
+    "min": 0.120879,
+    "mean": 0.183492314,
+    "max": 0.245902
+  },
+  "answer_distributions": {
+    "1": {
+      "counts": {
+        "6": 256,
+        "8": 334,
+        "20": 105,
+        "13": 269,
+        "12": 202,
+        "7": 237,
+        "11": 182,
+        "16": 91,
+        "5": 169,
+        "14": 260,
+        "17": 98,
+        "10": 147,
+        "19": 115,
+        "9": 238,
+        "22": 18,
+        "15": 119,
+        "18": 89,
+        "21": 71
+      },
+      "constant_answer_baseline": 0.11133333333333334
+    },
+    "2": {
+      "counts": {
+        "walkable": 1500,
+        "hole": 1500
+      },
+      "constant_answer_baseline": 0.5
+    },
+    "3": {
+      "counts": {
+        "5": 649,
+        "7": 434,
+        "13": 36,
+        "9": 228,
+        "10": 183,
+        "6": 595,
+        "8": 325,
+        "11": 132,
+        "4": 325,
+        "12": 82,
+        "16": 2,
+        "15": 6,
+        "14": 3
+      },
+      "constant_answer_baseline": 0.21633333333333332
+    },
+    "4": {
+      "counts": {
+        "multiple (10)": 136,
+        "multiple (9)": 56,
+        "multiple (17)": 8,
+        "multiple (2)": 434,
+        "multiple (11)": 25,
+        "multiple (3)": 425,
+        "multiple (4)": 384,
+        "multiple (21)": 24,
+        "multiple (5)": 195,
+        "unique": 660,
+        "multiple (12)": 44,
+        "multiple (6)": 235,
+        "multiple (14)": 27,
+        "multiple (7)": 95,
+        "multiple (16)": 17,
+        "multiple (18)": 13,
+        "multiple (8)": 54,
+        "multiple (19)": 9,
+        "multiple (30)": 2,
+        "multiple (15)": 38,
+        "multiple (47)": 1,
+        "multiple (56)": 2,
+        "multiple (40)": 2,
+        "multiple (20)": 26,
+        "multiple (55)": 1,
+        "multiple (29)": 3,
+        "multiple (69)": 1,
+        "multiple (22)": 6,
+        "multiple (48)": 1,
+        "multiple (35)": 6,
+        "multiple (28)": 6,
+        "multiple (23)": 6,
+        "multiple (31)": 5,
+        "multiple (33)": 4,
+        "multiple (32)": 2,
+        "multiple (58)": 1,
+        "multiple (25)": 5,
+        "multiple (50)": 2,
+        "multiple (34)": 4,
+        "multiple (26)": 2,
+        "multiple (65)": 1,
+        "multiple (13)": 11,
+        "multiple (24)": 6,
+        "multiple (38)": 2,
+        "multiple (60)": 1,
+        "multiple (41)": 1,
+        "multiple (36)": 1,
+        "multiple (27)": 4,
+        "multiple (45)": 1,
+        "multiple (64)": 1,
+        "multiple (83)": 1,
+        "multiple (198)": 1,
+        "multiple (72)": 1,
+        "multiple (42)": 1
+      },
+      "constant_answer_baseline": 0.22
+    },
+    "5": {
+      "counts": {
+        "stay the same (5 moves)": 369,
+        "increase to 8 moves": 223,
+        "no valid path exists": 1000,
+        "increase to 9 moves": 171,
+        "increase to 6 moves": 215,
+        "stay the same (7 moves)": 75,
+        "increase to 7 moves": 270,
+        "increase to 10 moves": 74,
+        "stay the same (6 moves)": 218,
+        "stay the same (4 moves)": 325,
+        "stay the same (8 moves)": 12,
+        "increase to 11 moves": 27,
+        "increase to 12 moves": 12,
+        "increase to 14 moves": 2,
+        "increase to 13 moves": 5,
+        "increase to 16 moves": 1,
+        "stay the same (9 moves)": 1
+      },
+      "constant_answer_baseline": 0.3333333333333333
+    }
+  },
+  "leak_audit": {
+    "dataset_version": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "coordinate_frame": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "canvas_size": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.18546683150882648,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.18425545483757053,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.1785470440769059,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.18647194719671922,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.18203764159834296,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "seed": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.07404447866481459,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.0014907202668021247,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.05361714951552922,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.13336963932229737,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.06689521217276184,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "hole_density": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.8687931985752121,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.10766348470346868,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.18439452501161863,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.15820876691020644,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.27055425266030986,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "grid_radius": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.8162959523507749,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.6377712310008522,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.29211619857280297,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "shortest_path_length": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.306256296945076,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.09319283177200013,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.2599752201420257,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.6787034568789638,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals Level 3"
+    },
+    "difficulty_score": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.7094415947444069,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.10789755454202664,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.3109660502044661,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.28848401598906037,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.45367069378644653,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "num_hole_tiles": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.11513747467266601,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.27032580416168983,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.16480658743254029,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.3924020547718414,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals Level 1"
+    },
+    "num_alternate_shortest_paths": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.13957724911090236,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.09923021575900788,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.2110390068346345,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.18491656899581588,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals Level 4"
+    },
+    "level2_neighbor_direction_is_toward_home": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "level5_outcome": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.8162959523507748,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.6377712310008522,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.29211619857280285,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "categorical"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals Level 5"
+    },
+    "level5_new_shortest_path_length": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.31300941934073884,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.10118599247293417,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.46939174678870355,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.28454466128767414,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "generation_attempt": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.09253351617436516,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.07694986071681037,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.05613862877192266,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.12531962691149823,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.10498301916694602,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    }
+  },
+  "full_parameter_distributions": {
+    "continuous": {
+      "hole_density": {
+        "count": 3000,
+        "min": 0.120879,
+        "p25": 0.162162,
+        "p50": 0.186813,
+        "p75": 0.213115,
+        "p95": 0.230769,
+        "max": 0.245902
+      },
+      "grid_radius": {
+        "count": 3000,
+        "min": 3.0,
+        "p25": 3.0,
+        "p50": 4.0,
+        "p75": 5.0,
+        "p95": 5.0,
+        "max": 5.0
+      },
+      "shortest_path_length": {
+        "count": 3000,
+        "min": 4.0,
+        "p25": 5.0,
+        "p50": 6.0,
+        "p75": 8.0,
+        "p95": 11.0,
+        "max": 16.0
+      },
+      "difficulty_score": {
+        "count": 3000,
+        "min": 0.3743,
+        "p25": 0.5041,
+        "p50": 0.6795,
+        "p75": 0.8057,
+        "p95": 0.8196,
+        "max": 0.8235
+      },
+      "num_hole_tiles": {
+        "count": 3000,
+        "min": 5.0,
+        "p25": 8.0,
+        "p50": 11.0,
+        "p75": 14.0,
+        "p95": 20.0,
+        "max": 22.0
+      },
+      "num_alternate_shortest_paths": {
+        "count": 3000,
+        "min": 1.0,
+        "p25": 2.0,
+        "p50": 3.0,
+        "p75": 6.0,
+        "p95": 18.0,
+        "max": 198.0
+      }
+    },
+    "categorical": {
+      "level2_neighbor_direction_is_toward_home": {
+        "True": 3000
+      },
+      "level5_outcome": {
+        "increase": 1000,
+        "no_path": 1000,
+        "same": 1000
+      }
+    }
+  },
+  "guard_injection_tests": {
+    "original_path": {
+      "violating_no_path_rejected": true,
+      "boundary_adjacent_accepted": true
+    },
+    "level5_cut_vertex": {
+      "violating_non_cut_rejected": true,
+      "boundary_cut_accepted": true
+    }
+  },
+  "issues": []
+}

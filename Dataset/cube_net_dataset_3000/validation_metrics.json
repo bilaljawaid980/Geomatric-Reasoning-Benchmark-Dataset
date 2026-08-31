@@ -1,0 +1,232 @@
+{
+  "dataset_version": "cube-net-2.0.0",
+  "images": 3000,
+  "questions": 15000,
+  "mismatches": 0,
+  "previous_answer_changes_by_level": {
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 2705,
+    "5": 675
+  },
+  "previous_wrong_level4_answers": 452,
+  "png_face_and_layout_recovery": "3000/3000",
+  "accepted_list_sizes": {
+    "2": 1232,
+    "1": 1405,
+    "3": 318,
+    "4": 45
+  },
+  "level_distributions": {
+    "1": {
+      "6": 3000
+    },
+    "2": {
+      "E": 527,
+      "B": 517,
+      "D": 519,
+      "A": 480,
+      "C": 477,
+      "F": 480
+    },
+    "3": {
+      "2": 464,
+      "A": 341,
+      "F": 305,
+      "1": 525,
+      "B": 289,
+      "3": 123,
+      "D": 296,
+      "C": 328,
+      "E": 317,
+      "4": 12
+    },
+    "4": {
+      "adjacent": 1500,
+      "opposite": 1500
+    },
+    "5": {
+      "yes": 635,
+      "no": 2365
+    }
+  },
+  "constant_baselines": {
+    "1": 1.0,
+    "2": 0.17566666666666667,
+    "3": 0.175,
+    "4": 0.5,
+    "5": 0.7883333333333333
+  },
+  "reference_frame_audit": {
+    "letter_positions": "flat_net",
+    "net_edge_pairs": "flat_net",
+    "net_edge_neighbors": "flat_net",
+    "opposite_pairs": "folded_cube",
+    "cube_adjacent_pairs": "folded_cube",
+    "cube_adjacent_faces": "folded_cube"
+  },
+  "leak_audit": {
+    "net_layout_type": {
+      "1": 0.0,
+      "2": 0.06152502,
+      "3": 0.13077028,
+      "4": 0.00312538,
+      "5": 0.0470552
+    },
+    "square_size_px": {
+      "1": 0.0,
+      "2": 0.0404321,
+      "3": 0.06022123,
+      "4": 0.05904562,
+      "5": 0.04413015
+    },
+    "stroke_width_px": {
+      "1": 0.0,
+      "2": 0.05501839,
+      "3": 0.05923862,
+      "4": 0.06077244,
+      "5": 0.0375049
+    },
+    "canvas_width": {
+      "1": 0.0,
+      "2": 0.05034768,
+      "3": 0.05514403,
+      "4": 0.06969501,
+      "5": 0.05108857
+    },
+    "canvas_height": {
+      "1": 0.0,
+      "2": 0.05249897,
+      "3": 0.04913688,
+      "4": 0.06860173,
+      "5": 0.05080717
+    },
+    "difficulty_score": {
+      "1": 0.0,
+      "2": 0.05218663,
+      "3": 0.09563752,
+      "4": 0.02019342,
+      "5": 0.05618146
+    },
+    "q2_accepted_count": {
+      "1": 0.0,
+      "2": 0.0518122,
+      "3": 0.09905484,
+      "4": 0.02085497,
+      "5": 0.00863569
+    }
+  },
+  "features_at_v_ge_0_10": {
+    "net_layout_type": {
+      "1": 0.0,
+      "2": 0.06152502,
+      "3": 0.13077028,
+      "4": 0.00312538,
+      "5": 0.0470552
+    }
+  },
+  "definitional_whitelist": {
+    "1": [
+      "face_count"
+    ],
+    "2": [
+      "net_edge_neighbors"
+    ],
+    "3": [
+      "net_edge_neighbors or opposite_pairs"
+    ],
+    "4": [
+      "cube_adjacent_faces and opposite_pairs"
+    ],
+    "5": [
+      "opposite_pairs"
+    ]
+  },
+  "guard_injection_tests": {
+    "valid_cube_net": {
+      "violating_disconnected_accepted": false,
+      "boundary_valid_six_face_accepted": true
+    },
+    "q2_nonempty": {
+      "violating_empty_accepted": false,
+      "boundary_one_neighbor_accepted": true
+    },
+    "folded_pair_binary": {
+      "violating_neither_accepted": false,
+      "boundary_opposite_accepted": true
+    }
+  },
+  "continuous_distributions": {
+    "square_size_px": {
+      "count": 3000,
+      "min": 60.0,
+      "p25": 69.0,
+      "p50": 78.0,
+      "p75": 85.0,
+      "p95": 95.0,
+      "max": 100.0
+    },
+    "stroke_width_px": {
+      "count": 3000,
+      "min": 0.55,
+      "p25": 0.67,
+      "p50": 0.78,
+      "p75": 0.89,
+      "p95": 0.98,
+      "max": 1.0
+    },
+    "canvas_width": {
+      "count": 3000,
+      "min": 500.0,
+      "p25": 514.0,
+      "p50": 530.0,
+      "p75": 545.0,
+      "p95": 557.0,
+      "max": 560.0
+    },
+    "canvas_height": {
+      "count": 3000,
+      "min": 350.0,
+      "p25": 367.0,
+      "p50": 386.0,
+      "p75": 404.0,
+      "p95": 417.0,
+      "max": 420.0
+    },
+    "difficulty_score": {
+      "count": 3000,
+      "min": 0.25,
+      "p25": 0.5,
+      "p50": 0.6,
+      "p75": 0.75,
+      "p95": 0.95,
+      "max": 1.0
+    },
+    "q2_accepted_count": {
+      "count": 3000,
+      "min": 1.0,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 2.0,
+      "p95": 3.0,
+      "max": 4.0
+    }
+  },
+  "categorical_distributions": {
+    "net_layout_type": {
+      "cross_tail": 273,
+      "long_zigzag": 273,
+      "t_left_cap": 273,
+      "t_middle_cap": 273,
+      "t_right_cap": 273,
+      "offset_cross": 273,
+      "zigzag_staircase": 273,
+      "double_step": 273,
+      "long_l": 272,
+      "t_cross_left": 272,
+      "t_cross_right": 272
+    }
+  },
+  "issues": []
+}

@@ -1,0 +1,16 @@
+GRIP Five-Level Validation Summary — line_intersection
+Images checked: 3000
+Questions checked: 15000
+Base geometry/Levels 1-4: PASS
+Level 5 independent validation: PASS
+Total mismatches found: 0
+Summary: PASS
+
+Dataset: line_intersection
+Images checked: 3000
+Level 5 questions checked: 3000
+Total mismatches found: 0
+Level 5 templates:
+  remove_first_red_segment: 984
+  translate_red_intersections: 2016
+Summary: PASS

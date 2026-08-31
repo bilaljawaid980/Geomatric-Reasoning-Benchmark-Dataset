@@ -1,0 +1,393 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "break_type": {
+      "fill": 375,
+      "position": 375,
+      "rotation": 375,
+      "size": 375
+    },
+    "broken_location": {
+      "bottom-left": 447,
+      "bottom-right": 429,
+      "center": 1,
+      "top-left": 311,
+      "top-right": 312
+    },
+    "is_broken": {
+      "False": 1500,
+      "True": 1500
+    },
+    "symmetry_type": {
+      "mirror_both": 428,
+      "mirror_horizontal": 428,
+      "mirror_vertical": 428,
+      "rotational_2": 429,
+      "rotational_3": 429,
+      "rotational_4": 429,
+      "rotational_6": 429
+    }
+  },
+  "continuous_distributions": {
+    "broken_shape_index": {
+      "count": 1500,
+      "max": 7.0,
+      "min": 0.0,
+      "p25": 1.0,
+      "p50": 3.0,
+      "p75": 5.0,
+      "p95": 7.0
+    },
+    "difficulty_score": {
+      "count": 3000,
+      "max": 0.83,
+      "min": 0.3,
+      "p25": 0.46,
+      "p50": 0.505,
+      "p75": 0.71,
+      "p95": 0.83
+    },
+    "num_shapes": {
+      "count": 3000,
+      "max": 8.0,
+      "min": 6.0,
+      "p25": 6.0,
+      "p50": 8.0,
+      "p75": 8.0,
+      "p95": 8.0
+    },
+    "symmetric_partner_count": {
+      "count": 3000,
+      "max": 8.0,
+      "min": 4.0,
+      "p25": 6.0,
+      "p50": 6.0,
+      "p75": 8.0,
+      "p95": 8.0
+    }
+  },
+  "dataset_version": "symmetry-pattern-2.0.0",
+  "degeneracy_flags": {
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "yes": 3000
+      }
+    }
+  },
+  "features_at_v_ge_0_10": {
+    "break_type": {
+      "2": 1.0,
+      "3": 0.5011557,
+      "4": 1.0
+    },
+    "broken_location": {
+      "1": 0.11302281,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 0.44824729
+    },
+    "broken_shape_index": {
+      "1": 0.24836346,
+      "2": 1.0,
+      "3": 0.47022152,
+      "4": 0.44932505
+    },
+    "difficulty_score": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 0.56443841,
+      "4": 0.77459761
+    },
+    "is_broken": {
+      "2": 1.0,
+      "3": 1.0,
+      "4": 1.0
+    },
+    "num_shapes": {
+      "1": 1.0,
+      "3": 0.54249143,
+      "4": 0.70718231
+    },
+    "symmetric_partner_count": {
+      "1": 0.86562847,
+      "2": 0.14266679,
+      "3": 0.55047028,
+      "4": 0.79529688
+    },
+    "symmetry_type": {
+      "1": 1.0,
+      "3": 0.30738429,
+      "4": 0.31627252
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "break_type": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0032299512168774288,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.501155700532683,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "broken_location": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.11302281437529361,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.4482472854810428,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "broken_shape_index": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.24836345874670152,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.47022152396366895,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.4493250534451727,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.5644384112771962,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.7745976052799901,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "is_broken": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0006734913854201326,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_shapes": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999998,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.0006734913854201326,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.5424914270496853,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.7071823107213502,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "symmetric_partner_count": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8656284712662018,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.14266679348165057,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.5504702779821432,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.7952968781777862,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "symmetry_type": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.001762952951159817,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.307384292166254,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.3162725216502728,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.571,
+      "counts": {
+        "6": 1287,
+        "8": 1713
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.5,
+      "counts": {
+        "broken": 1500,
+        "symmetric": 1500
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.286,
+      "counts": {
+        "bottom-left": 447,
+        "bottom-right": 429,
+        "center": 1,
+        "mirror": 642,
+        "rotational": 858,
+        "top-left": 311,
+        "top-right": 312
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2853333333333333,
+      "counts": {
+        "6": 644,
+        "8": 856,
+        "different size": 375,
+        "filled": 375,
+        "rotated": 375,
+        "shifted": 375
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "yes": 3000
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "break_type",
+    "broken_location",
+    "broken_shape_index",
+    "difficulty_score",
+    "is_broken",
+    "num_shapes",
+    "symmetric_partner_count",
+    "symmetry_type"
+  ]
+}

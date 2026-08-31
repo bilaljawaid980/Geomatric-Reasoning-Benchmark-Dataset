@@ -1,0 +1,27 @@
+Gear Train Dataset Validation Report
+====================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+
+Arrangement distribution:
+  branching: 900
+  linear_chain: 2100
+
+Level 5 outcome distribution:
+  decrease: 1000
+  increase: 1000
+  stay the same: 1000
+
+Question-type distribution:
+  direct_mesh_direction: 3000
+  double_teeth_counterfactual: 3000
+  fastest_gear: 1500
+  gear_count: 3000
+  most_teeth: 1500
+  multi_mesh_target_rpm: 3000
+
+Issues:
+  None
+
+Summary: PASS

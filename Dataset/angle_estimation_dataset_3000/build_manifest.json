@@ -1,0 +1,23 @@
+{
+  "constraint_source": "generator constants and validation metrics",
+  "current_build_layout": "unsuffixed",
+  "dataset_version": "angle-estimation-3.0.0",
+  "generator_commit": "269045bc25630d3cc96a3d617e35043d72f941cd",
+  "images": 3000,
+  "constraints": {
+    "angle_sum_boundary_margin_degrees": 2,
+    "angle_sum_threshold_degrees": 15,
+    "comparison_level4_balance": {
+      "neither": 350,
+      "right": 350,
+      "straight": 350
+    }
+  },
+  "question_set_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
+  "questions": 15000
+}

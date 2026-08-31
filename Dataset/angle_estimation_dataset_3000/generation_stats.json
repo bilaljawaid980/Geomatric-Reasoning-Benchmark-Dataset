@@ -1,0 +1,5 @@
+{
+  "angle_sum_threshold_degrees": 15,
+  "angle_sum_boundary_margin_degrees": 2,
+  "comparison_generation_rejections": 7310
+}

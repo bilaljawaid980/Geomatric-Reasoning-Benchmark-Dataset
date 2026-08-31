@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.git-*.log
+.env
+.hf_cache/
+hf_upload_verification/
+.vscode/
+sample_test/
+preflight_v2/

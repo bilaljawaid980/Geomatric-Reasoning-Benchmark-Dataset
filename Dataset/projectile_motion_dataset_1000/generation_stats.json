@@ -1,0 +1,5 @@
+{
+  "diagnostic_scope": "aggregate only; retry counters are not released scene features",
+  "released_images": 1000,
+  "released_questions": 5000
+}

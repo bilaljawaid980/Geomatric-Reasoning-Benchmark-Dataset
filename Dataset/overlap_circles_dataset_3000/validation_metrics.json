@@ -1,0 +1,983 @@
+{
+  "dataset_version": "overlap-circles-2.0.0",
+  "images_checked": 3000,
+  "questions_checked": 15000,
+  "mismatches": 0,
+  "overlap_density_before": {
+    "source": "archive/v1",
+    "count": 3000,
+    "min": 0.2,
+    "p25": 0.9272727272727272,
+    "p50": 1.0,
+    "p75": 1.0,
+    "p95": 1.0,
+    "max": 1.0
+  },
+  "overlap_density_after": {
+    "count": 3000,
+    "min": 0.21818181818181817,
+    "p25": 0.3333333333333333,
+    "p50": 0.4,
+    "p75": 0.4666666666666667,
+    "p95": 0.5238095238095238,
+    "max": 0.5833333333333334
+  },
+  "max_stack_depth_distribution": {
+    "3": 1041,
+    "4": 1813,
+    "2": 146
+  },
+  "max_stack_depth_rejections": 18730,
+  "png_circle_recovery": "3000/3000",
+  "png_failure_depth_distribution": {},
+  "outline_colour_change_needed": false,
+  "level4_answer_100_count": 193,
+  "ratio_tolerance": {
+    "absolute": 0.1,
+    "answer_key_side_only": true
+  },
+  "answer_distributions": {
+    "1": {
+      "counts": {
+        "6": 360,
+        "7": 391,
+        "10": 375,
+        "12": 394,
+        "11": 399,
+        "8": 353,
+        "5": 363,
+        "9": 365
+      },
+      "constant_answer_baseline": 0.133
+    },
+    "2": {
+      "counts": {
+        "yes": 417,
+        "6": 105,
+        "no": 1083,
+        "18": 62,
+        "22": 53,
+        "27": 34,
+        "15": 62,
+        "14": 57,
+        "21": 51,
+        "26": 44,
+        "7": 71,
+        "4": 76,
+        "10": 59,
+        "17": 57,
+        "9": 59,
+        "5": 108,
+        "3": 47,
+        "24": 26,
+        "12": 56,
+        "23": 45,
+        "32": 15,
+        "16": 42,
+        "13": 75,
+        "29": 8,
+        "25": 15,
+        "11": 66,
+        "19": 38,
+        "28": 23,
+        "20": 43,
+        "31": 25,
+        "8": 60,
+        "30": 7,
+        "33": 6,
+        "36": 1,
+        "34": 3,
+        "35": 1
+      },
+      "constant_answer_baseline": 0.361
+    },
+    "3": {
+      "counts": {
+        "target_density": 1034,
+        "3": 344,
+        "1.7": 110,
+        "4": 593,
+        "2.1": 148,
+        "2.0": 212,
+        "1.8": 159,
+        "2": 45,
+        "1.2": 7,
+        "1.6": 80,
+        "1.9": 156,
+        "1.3": 13,
+        "2.2": 28,
+        "1.5": 44,
+        "1.4": 25,
+        "1.1": 2
+      },
+      "constant_answer_baseline": 0.3446666666666667
+    },
+    "4": {
+      "counts": {
+        "1": 300,
+        "3": 268,
+        "0": 649,
+        "2": 204,
+        "90": 26,
+        "58": 10,
+        "73": 25,
+        "5": 218,
+        "100": 78,
+        "6": 131,
+        "67": 62,
+        "83": 19,
+        "20": 45,
+        "4": 250,
+        "57": 41,
+        "17": 31,
+        "82": 38,
+        "62": 37,
+        "64": 20,
+        "91": 26,
+        "7": 38,
+        "60": 21,
+        "92": 37,
+        "29": 14,
+        "70": 26,
+        "75": 37,
+        "40": 32,
+        "80": 24,
+        "78": 29,
+        "12": 6,
+        "14": 18,
+        "38": 10,
+        "43": 25,
+        "44": 17,
+        "33": 36,
+        "50": 45,
+        "56": 19,
+        "55": 7,
+        "8": 5,
+        "71": 29,
+        "88": 15,
+        "36": 2,
+        "45": 4,
+        "89": 18,
+        "25": 3,
+        "86": 3,
+        "22": 1,
+        "42": 1
+      },
+      "constant_answer_baseline": 0.21633333333333332
+    },
+    "5": {
+      "counts": {
+        "2": 234,
+        "3": 278,
+        "6": 152,
+        "16": 105,
+        "14": 123,
+        "15": 91,
+        "17": 86,
+        "20": 63,
+        "10": 158,
+        "4": 208,
+        "7": 175,
+        "19": 71,
+        "5": 167,
+        "11": 113,
+        "8": 137,
+        "13": 112,
+        "9": 159,
+        "1": 101,
+        "18": 83,
+        "26": 20,
+        "12": 136,
+        "28": 6,
+        "23": 31,
+        "22": 53,
+        "27": 14,
+        "21": 59,
+        "24": 30,
+        "25": 27,
+        "29": 4,
+        "0": 4
+      },
+      "constant_answer_baseline": 0.09266666666666666
+    }
+  },
+  "non_overlapping_count_distribution": {
+    "1": 724,
+    "0": 2161,
+    "2": 111,
+    "3": 4
+  },
+  "leak_audit": {
+    "dataset_version": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "geometry_frame": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "canvas_size": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.39405938532430235,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.38121791312044906,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.3870357372880322,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.38329489820586726,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.3798910481844596,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "seed": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.052688767027137,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.10343402779850669,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.07026344266023832,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.1284673789092049,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.09863785409778128,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "line_width_px": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.050707540495550305,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.11146417578355451,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.07515601213741205,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.11851860236582681,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.10834791487018243,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "total_circle_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999998,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.44541767432484564,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.20240445010632888,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.5499283220297393,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.5541664584843471,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals L1"
+    },
+    "total_overlapping_pairs": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.5774813719981557,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.7143899928388376,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.19347586060187633,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.40100052929439656,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.6491348739480709,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally used by L2 pair-count form"
+    },
+    "non_overlapping_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.20968197144868791,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.5486668968517527,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.12210539611176176,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.37100146130278977,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.30558134904257145,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally used by L2 isolation form"
+    },
+    "largest_circle_index": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.21381599025572026,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.16116161863445122,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.09557795528677131,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.1779709348457226,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.19667816349417405,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "smallest_circle_index": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.21792340562236856,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.16603269322731018,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.10955725508347484,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.18307797070219292,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.19963701704747838,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "largest_radius": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.11271314055390232,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.135312567739369,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.15305072229019823,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.1430939901308607,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.1298855285153105,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "smallest_radius": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.12321658480329972,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.12313446547073059,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.21116966534636128,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.13283794864502543,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.12901559624024744,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "max_stack_depth": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.713154516747917,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.5773872567102993,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.598582253364823,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.5773577424104175,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.7705882480992549,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "max_stack_location": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999711,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.9999999999998499,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0000000000000253,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.9999999999996123,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.9999999999998891,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "generation_mode": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "above_average_radius_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.44634144905324724,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.3337712177745038,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.1937582848903618,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.6021977421602023,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.4237085828292372,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "three_plus_overlap_percent": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.44351990765855986,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.3525452629756956,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.19465598674719323,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.5875181459307305,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.43084266723340037,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "isolated_after_largest_removal": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.23560327484212323,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.37541759045509815,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.13932926516523736,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.4812027317669266,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.4605990230174377,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "overlapping_pairs_after_largest_removal": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.5352692057731451,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4766447507017952,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.18407467393987254,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.3610438585402357,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals L5"
+    },
+    "overlap_density": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.2975821067759815,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.43710544808856266,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.112390583160187,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.2822306888131542,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.26005525027413867,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "target_overlap_density": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.04818941049877276,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.2770613812412002,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.11046444246121288,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.25849801428481667,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.21803779023840453,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.6624788219215413,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4980891269610819,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.23087313319684372,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.4264972947947842,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.5658181709820291,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "generation_attempt": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.20476806753819707,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.2203074679378359,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.09855610185684173,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.1948304408260699,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.25012575084286365,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "rejections_max_stack_depth": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.3723479319424499,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4088323584262741,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.17728825842377832,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.3425145410354194,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.4999079266510997,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    }
+  },
+  "full_parameter_distributions": {
+    "continuous": {
+      "total_circle_count": {
+        "count": 3000,
+        "min": 5.0,
+        "p25": 7.0,
+        "p50": 9.0,
+        "p75": 11.0,
+        "p95": 12.0,
+        "max": 12.0
+      },
+      "total_overlapping_pairs": {
+        "count": 3000,
+        "min": 3.0,
+        "p25": 7.0,
+        "p50": 13.0,
+        "p75": 19.25,
+        "p95": 28.0,
+        "max": 36.0
+      },
+      "non_overlapping_count": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 1.0,
+        "p95": 1.0,
+        "max": 3.0
+      },
+      "max_stack_depth": {
+        "count": 3000,
+        "min": 2.0,
+        "p25": 3.0,
+        "p50": 4.0,
+        "p75": 4.0,
+        "p95": 4.0,
+        "max": 4.0
+      },
+      "above_average_radius_count": {
+        "count": 3000,
+        "min": 1.0,
+        "p25": 3.0,
+        "p50": 4.0,
+        "p75": 5.0,
+        "p95": 7.0,
+        "max": 8.0
+      },
+      "three_plus_overlap_percent": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 38.0,
+        "p50": 64.0,
+        "p75": 80.0,
+        "p95": 100.0,
+        "max": 100.0
+      },
+      "overlapping_pairs_after_largest_removal": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 4.0,
+        "p50": 9.0,
+        "p75": 14.0,
+        "p95": 22.0,
+        "max": 29.0
+      },
+      "overlap_density": {
+        "count": 3000,
+        "min": 0.21818181818181817,
+        "p25": 0.3333333333333333,
+        "p50": 0.4,
+        "p75": 0.4666666666666667,
+        "p95": 0.5238095238095238,
+        "max": 0.5833333333333334
+      },
+      "target_overlap_density": {
+        "count": 3000,
+        "min": 0.28,
+        "p25": 0.34,
+        "p50": 0.4,
+        "p75": 0.46,
+        "p95": 0.52,
+        "max": 0.52
+      },
+      "difficulty_score": {
+        "count": 3000,
+        "min": 0.174,
+        "p25": 0.3766,
+        "p50": 0.5502,
+        "p75": 0.6578,
+        "p95": 0.7370049999999999,
+        "max": 0.7735
+      },
+      "generation_attempt": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 1.0,
+        "p50": 3.0,
+        "p75": 8.0,
+        "p95": 43.04999999999973,
+        "max": 3037.0
+      },
+      "rejections_max_stack_depth": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 1.0,
+        "p95": 16.0,
+        "max": 919.0
+      },
+      "line_width_px": {
+        "count": 3000,
+        "min": 1.0,
+        "p25": 1.13,
+        "p50": 1.25,
+        "p75": 1.38,
+        "p95": 1.47,
+        "max": 1.5
+      }
+    },
+    "categorical": {
+      "generation_mode": {
+        "target_density": 3000
+      }
+    }
+  },
+  "guard_injection_tests": {
+    "max_stack_depth": {
+      "violating_5_rejected": true,
+      "boundary_4_accepted": true
+    },
+    "overlap_density": {
+      "near_complete_rejected": true,
+      "upper_boundary_accepted": true
+    },
+    "near_duplicate": {
+      "violating_rejected": true,
+      "boundary_accepted": true
+    }
+  },
+  "reference_frame_audit": {
+    "circle_geometry": "canvas pixels",
+    "render": "same canvas-pixel frame",
+    "questions": "same frame",
+    "mismatches": 0
+  },
+  "issues": []
+}

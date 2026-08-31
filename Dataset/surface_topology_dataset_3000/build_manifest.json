@@ -1,0 +1,19 @@
+{
+  "constraint_source": "generator constants and validation metrics",
+  "current_build_layout": "unsuffixed",
+  "dataset_version": "surface-topology-3.0.0",
+  "generator_commit": "269045bc25630d3cc96a3d617e35043d72f941cd",
+  "images": 3000,
+  "constraints": {
+    "level4_depends_on_rendered_surface": true,
+    "level4_max_constant_answer_share": 0.2733333333333333,
+    "level4_output": "Euler characteristic; orientability"
+  },
+  "question_set_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
+  "questions": 15000
+}

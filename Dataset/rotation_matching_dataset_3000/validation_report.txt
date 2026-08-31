@@ -1,0 +1,21 @@
+Rotation Matching Dataset v2 Validation Report
+==================================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+Answer changes by level: {1: 0, 2: 0, 3: 2498, 4: 1019, 5: 1739}
+Transformation types: {'target_rotation': 3000, 'wrong_angle_rotation': 6000, 'reflection': 3000}
+Raw angles: {45: 429, 90: 429, 135: 429, 180: 429, 225: 428, 270: 428, 315: 428}
+Minimum turn guard: 25.0 degrees; generation rejections: 19217
+PNG vertex/congruence recovery: 3000/3000
+Cross-level dependency: {'L2_vs_L4_cramers_v': 0.33420827037176043, 'L2_vs_L5_answer_cramers_v': 0.001762952951159817, 'L4_vs_L5_answer_cramers_v': 0.03799579263544026}
+Level distributions: {'1': {'5': 746, '6': 726, '7': 754, '8': 774}, '2': {'A': 750, 'B': 750, 'C': 750, 'D': 750}, '3': {'45': 418, '90': 450, '135': 404, '270': 436, '225': 409, '315': 427, '180': 456}, '4': {'C': 748, 'A': 767, 'D': 779, 'B': 706}, '5': {'135': 429, '180': 429, '225': 429, '270': 429, '315': 428, '360': 428, '45': 428}}
+Constant baselines: {'1': 0.258, '2': 0.25, '3': 0.152, '4': 0.25966666666666666, '5': 0.143}
+Features at V >= 0.10 (nothing hidden): {'num_reference_vertices': {'1': 1.0, '2': 0.02354988, '3': 0.04805298, '4': 0.02644774, '5': 0.0410042}, 'correct_rotation_angle': {'1': 0.0410042, '2': 0.00176295, '3': 0.22202228, '4': 0.03799579, '5': 1.0}, 'correct_answer_choice': {'1': 0.02354988, '2': 1.0, '3': 0.04330767, '4': 0.33420827, '5': 0.00176295}, 'reflection_answer_choice': {'1': 0.02644774, '2': 0.33420827, '3': 0.04084087, '4': 1.0, '5': 0.03799579}, 'minimum_turning_angle_degrees': {'1': 0.51707581, '2': 0.0600341, '3': 0.05543345, '4': 0.03981333, '5': 0.07087586}, 'reference_generation_rejections': {'1': 0.5560933, '2': 0.03828326, '3': 0.04272204, '4': 0.04387153, '5': 0.04724706}, 'difficulty_score': {'1': 1.0, '2': 0.04193266, '3': 0.09528707, '4': 0.04384226, '5': 0.40959024}}
+Guard injection tests: {'minimum_turn': {'violating_24.99_accepted': False, 'boundary_25.0_accepted': True}, 'minimum_edge_length': {'violating_0.319_accepted': False, 'boundary_0.32_accepted': True}, 'asymmetry_distance': {'violating_0.079_accepted': False, 'boundary_0.08_accepted': True}, 'wrong_angle_separation': {'violating_44_accepted': False, 'boundary_45_accepted': True}, 'png_corner_recovery': {'violating_missing_corner_accepted': False, 'boundary_all_corners_accepted': True}}
+Reference-frame audit: all angles are clockwise in the rendered image plane.
+
+Issues:
+  None
+
+Summary: PASS

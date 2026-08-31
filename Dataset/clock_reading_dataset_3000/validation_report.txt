@@ -1,0 +1,36 @@
+Clock Reading Dataset Validation Report
+=======================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+Minute rollovers checked: 1035
+
+Minute relation distribution:
+  after: 1500
+  before: 1500
+
+Hour distribution:
+  1: 270
+  2: 267
+  3: 239
+  4: 240
+  5: 247
+  6: 245
+  7: 236
+  8: 257
+  9: 265
+  10: 255
+  11: 235
+  12: 244
+
+Question types:
+  angle_after_twenty_minutes: 3000
+  exact_clock_time: 3000
+  hour_recently_passed: 3000
+  minute_before_after_six: 3000
+  smaller_hand_angle: 3000
+
+Issues:
+  None
+
+Summary: PASS

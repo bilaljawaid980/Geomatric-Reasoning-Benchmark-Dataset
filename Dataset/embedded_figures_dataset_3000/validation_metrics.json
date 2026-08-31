@@ -1,0 +1,319 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "correct_answer_choice": {
+      "A": 750,
+      "B": 750,
+      "C": 750,
+      "D": 750
+    },
+    "same_side_foil_exists": {
+      "False": 1500,
+      "True": 1500
+    },
+    "target_shape_type": {
+      "hexagon": 750,
+      "pentagon": 750,
+      "square": 750,
+      "triangle": 750
+    }
+  },
+  "continuous_distributions": {
+    "difficulty_score": {
+      "count": 3000,
+      "max": 0.85,
+      "min": 0.435,
+      "p25": 0.585,
+      "p50": 0.665,
+      "p75": 0.7725,
+      "p95": 0.85
+    },
+    "num_distractor_segments": {
+      "count": 3000,
+      "max": 11.0,
+      "min": 6.0,
+      "p25": 7.0,
+      "p50": 8.0,
+      "p75": 9.0,
+      "p95": 10.0
+    },
+    "num_total_segments": {
+      "count": 3000,
+      "max": 14.0,
+      "min": 9.0,
+      "p25": 11.0,
+      "p50": 12.0,
+      "p75": 13.0,
+      "p95": 14.0
+    }
+  },
+  "dataset_version": "legacy-current",
+  "degeneracy_flags": {
+    "5": {
+      "constant_answer_baseline": 0.6623333333333333,
+      "counts": {
+        "closed": 1013,
+        "open": 1987
+      }
+    }
+  },
+  "features_at_v_ge_0_10": {
+    "correct_answer_choice": {
+      "1": 0.32929737,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 0.4350801
+    },
+    "difficulty_score": {
+      "1": 0.67099318,
+      "2": 0.88568837,
+      "3": 0.88568837,
+      "4": 0.52696356
+    },
+    "num_distractor_segments": {
+      "1": 0.38268122,
+      "2": 0.32611791,
+      "3": 0.32611791,
+      "4": 0.82595659
+    },
+    "num_total_segments": {
+      "1": 1.0,
+      "2": 0.29106739,
+      "3": 0.29106739,
+      "4": 0.3465983
+    },
+    "same_side_foil_exists": {
+      "1": 0.26423917,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 0.62225112
+    },
+    "target_shape_type": {
+      "1": 0.32929737,
+      "2": 1.0,
+      "3": 1.0,
+      "4": 0.4350801
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "correct_answer_choice": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.32929736648517566,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.43508010427674343,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.038263651438462866,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.6709931847803943,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.8856883747984564,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.8856883747984564,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.5269635572024364,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.057995562572809314,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_distractor_segments": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.38268122000044186,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.32611791489667413,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.32611791489667413,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.8259565938867924,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.03889195173486098,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_total_segments": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.2910673883953594,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.2910673883953594,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.34659830248390566,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.05423037269586282,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "same_side_foil_exists": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.26423916991270385,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.622251119417462,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.03171822368487249,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "target_shape_type": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.32929736648517566,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.4350801042767433,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.038263651438462866,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.241,
+      "counts": {
+        "10": 269,
+        "11": 460,
+        "12": 703,
+        "13": 719,
+        "14": 723,
+        "9": 126
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.25,
+      "counts": {
+        "3": 750,
+        "4": 750,
+        "5": 750,
+        "6": 750
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.25,
+      "counts": {
+        "A": 750,
+        "B": 750,
+        "C": 750,
+        "D": 750
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.17133333333333334,
+      "counts": {
+        "10": 204,
+        "11": 83,
+        "6": 457,
+        "7": 475,
+        "8": 501,
+        "9": 286,
+        "no": 514,
+        "yes": 480
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.6623333333333333,
+      "counts": {
+        "closed": 1013,
+        "open": 1987
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "correct_answer_choice",
+    "difficulty_score",
+    "num_distractor_segments",
+    "num_total_segments",
+    "same_side_foil_exists",
+    "target_shape_type"
+  ]
+}

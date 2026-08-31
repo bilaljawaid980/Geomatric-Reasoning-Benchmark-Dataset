@@ -1,0 +1,16 @@
+GRIP Five-Level Validation Summary — combination
+Images checked: 3000
+Questions checked: 15000
+Base geometry/Levels 1-4: PASS
+Level 5 independent validation: PASS
+Total mismatches found: 0
+Summary: PASS
+
+Dataset: combination
+Images checked: 3000
+Level 5 questions checked: 3000
+Total mismatches found: 0
+Level 5 templates:
+  extra_cell_connectivity: 968
+  remove_top_left_cell_connectivity: 2032
+Summary: PASS

@@ -1,0 +1,13 @@
+Total images checked: 3000
+Total mismatches found: 0
+Question distribution:
+  elevation_nearest_15: 1179
+  inconsistent_shadow_object: 620
+  light_direction_bucket: 2380
+  light_height_class: 1765
+  longest_shadow: 1235
+  object_count: 3000
+  opposite_azimuth_length_change: 2701
+  raise_light_elevation: 1500
+  same_light_source: 620
+Summary: PASS

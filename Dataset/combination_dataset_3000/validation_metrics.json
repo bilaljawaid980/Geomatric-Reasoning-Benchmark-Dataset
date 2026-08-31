@@ -1,0 +1,193 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "correct_answer_choice": {
+      "A": 750,
+      "B": 750,
+      "C": 750,
+      "D": 750
+    }
+  },
+  "continuous_distributions": {
+    "difficulty_score": {
+      "count": 3000,
+      "max": 0.64,
+      "min": 0.3,
+      "p25": 0.355,
+      "p50": 0.415,
+      "p75": 0.52,
+      "p95": 0.58
+    },
+    "target_cell_count": {
+      "count": 3000,
+      "max": 10.0,
+      "min": 6.0,
+      "p25": 7.0,
+      "p50": 8.0,
+      "p75": 9.0,
+      "p95": 10.0
+    }
+  },
+  "dataset_version": "legacy-current",
+  "degeneracy_flags": {
+    "5": {
+      "constant_answer_baseline": 0.64,
+      "counts": {
+        "connected": 1920,
+        "disconnected": 112,
+        "yes": 968
+      }
+    }
+  },
+  "features_at_v_ge_0_10": {
+    "correct_answer_choice": {
+      "2": 1.0,
+      "4": 0.33387285
+    },
+    "difficulty_score": {
+      "1": 0.87752718,
+      "3": 0.30699402
+    },
+    "target_cell_count": {
+      "1": 1.0,
+      "3": 0.10638514
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "correct_answer_choice": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.035926688465582404,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.02972396513334681,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.3338728529129281,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.033327023704284836,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8775271790313706,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.05636347349611195,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.3069940153334504,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.04426984179814052,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.08371917801265413,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "target_cell_count": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.035926688465582404,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.10638513923021022,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.02974223530213807,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.06418628056411042,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.20966666666666667,
+      "counts": {
+        "10": 597,
+        "6": 593,
+        "7": 588,
+        "8": 593,
+        "9": 629
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.25,
+      "counts": {
+        "A": 750,
+        "B": 750,
+        "C": 750,
+        "D": 750
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.33,
+      "counts": {
+        "2": 990,
+        "3": 408,
+        "4": 79,
+        "no": 543,
+        "yes": 980
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2623333333333333,
+      "counts": {
+        "A": 733,
+        "B": 787,
+        "C": 722,
+        "D": 758
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.64,
+      "counts": {
+        "connected": 1920,
+        "disconnected": 112,
+        "yes": 968
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "correct_answer_choice",
+    "difficulty_score",
+    "target_cell_count"
+  ]
+}

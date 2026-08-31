@@ -1,0 +1,15 @@
+Compass Bearing Dataset Validation Report
+==========================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+
+Cardinal convention tests: {'north': {'computed': 0.0, 'expected': 0, 'pass': True}, 'east': {'computed': 90.0, 'expected': 90, 'pass': True}, 'south': {'computed': 180.0, 'expected': 180, 'pass': True}, 'west': {'computed': 270.0, 'expected': 270, 'pass': True}}
+Landmark counts: {4: 1500, 3: 1500}
+Path presence: {True: 1500, False: 1500}
+Level 2 relations: {'south': 1380, 'north': 1320, 'same latitude': 300}
+
+Issues:
+  None
+
+Summary: PASS

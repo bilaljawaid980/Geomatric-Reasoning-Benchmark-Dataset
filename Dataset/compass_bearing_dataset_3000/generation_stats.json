@@ -1,0 +1,12 @@
+{
+  "images": 3000,
+  "landmark_counts": {
+    "4": 1500,
+    "3": 1500
+  },
+  "path_presence": {
+    "true": 1500,
+    "false": 1500
+  },
+  "same_latitude_cases": 300
+}

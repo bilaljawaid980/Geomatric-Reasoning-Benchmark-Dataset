@@ -1,0 +1,14 @@
+{
+  "constraint_source": "generator constants and validation metrics",
+  "current_build_layout": "unsuffixed",
+  "dataset_version": "overlap-circles-2.0.0",
+  "generator_commit": "e6975d7f82e6fc42f77fdc6434e733c10adb83d6",
+  "images": 3000,
+  "question_set_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
+  "questions": 15000
+}

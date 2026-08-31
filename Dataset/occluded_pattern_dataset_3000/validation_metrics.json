@@ -1,0 +1,435 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "occluder_style": {
+      "seamless": 1500,
+      "visible_box": 1500
+    },
+    "pattern_type": {
+      "circle": 1000,
+      "grid": 1000,
+      "triangle": 1000
+    },
+    "shape_type": {
+      "dot": 1000,
+      "square": 1000,
+      "triangle": 1000
+    }
+  },
+  "continuous_distributions": {
+    "difficulty_score": {
+      "count": 3000,
+      "max": 0.7,
+      "min": 0.38,
+      "p25": 0.48,
+      "p50": 0.5333,
+      "p75": 0.5714,
+      "p95": 0.62
+    },
+    "object_radius_px": {
+      "count": 3000,
+      "max": 11.0,
+      "min": 8.0,
+      "p25": 9.0,
+      "p50": 10.0,
+      "p75": 11.0,
+      "p95": 11.0
+    },
+    "occluded_object_count": {
+      "count": 3000,
+      "max": 20.0,
+      "min": 2.0,
+      "p25": 2.0,
+      "p50": 3.0,
+      "p75": 5.0,
+      "p95": 9.0
+    },
+    "total_object_count": {
+      "count": 3000,
+      "max": 36.0,
+      "min": 6.0,
+      "p25": 9.0,
+      "p50": 12.0,
+      "p75": 15.0,
+      "p95": 30.0
+    },
+    "visible_object_count": {
+      "count": 3000,
+      "max": 30.0,
+      "min": 3.0,
+      "p25": 6.0,
+      "p50": 8.0,
+      "p75": 12.0,
+      "p95": 20.0
+    }
+  },
+  "dataset_version": "occluded-pattern-2.0.0",
+  "degeneracy_flags": {},
+  "features_at_v_ge_0_10": {
+    "difficulty_score": {
+      "1": 0.42276273,
+      "2": 0.36986357,
+      "3": 0.54234396,
+      "4": 0.20862787,
+      "5": 0.36986357
+    },
+    "object_radius_px": {
+      "1": 0.10818308
+    },
+    "occluded_object_count": {
+      "1": 0.52848123,
+      "2": 0.42694899,
+      "3": 0.38821596,
+      "4": 1.0,
+      "5": 0.42694899
+    },
+    "pattern_type": {
+      "1": 0.5907972,
+      "2": 0.79651251,
+      "3": 1.0,
+      "4": 0.40399427,
+      "5": 0.79651251
+    },
+    "total_object_count": {
+      "1": 0.69613242,
+      "2": 1.0,
+      "3": 0.74296384,
+      "4": 0.34217945,
+      "5": 1.0
+    },
+    "visible_object_count": {
+      "1": 1.0,
+      "2": 0.67045696,
+      "3": 0.57630322,
+      "4": 0.31639122,
+      "5": 0.67045696
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.4227627265788655,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.36986357499684036,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.5423439613844747,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.20862786809184863,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.36986357499684036,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "object_radius_px": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.10818307693938421,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.071046701765256,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.034561388345314546,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.06706359067660336,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.071046701765256,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "occluded_object_count": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.5284812269315827,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.4269489879972255,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.3882159641089984,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.42694898799722547,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "occluder_style": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.07152370794506112,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.06408298297792042,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.07014275900016169,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.06408298297792042,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "pattern_type": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.5907971989147528,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.7965125126870816,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.4039942665387555,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.7965125126870816,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "shape_type": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0989051516968729,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.08257439911113074,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.001,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.05179418084246683,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.08257439911113074,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "total_object_count": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.6961324212486504,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.7429638420985303,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.3421794490472334,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "visible_object_count": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0000000000000002,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.670456960122931,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.5763032152311334,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.31639121970163836,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.6704569601229309,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.14466666666666667,
+      "counts": {
+        "10": 246,
+        "11": 213,
+        "12": 188,
+        "13": 43,
+        "14": 80,
+        "15": 44,
+        "16": 62,
+        "17": 36,
+        "18": 65,
+        "19": 31,
+        "20": 56,
+        "21": 55,
+        "22": 17,
+        "24": 40,
+        "25": 6,
+        "26": 6,
+        "27": 3,
+        "28": 6,
+        "3": 73,
+        "30": 16,
+        "4": 434,
+        "5": 169,
+        "6": 204,
+        "7": 307,
+        "8": 368,
+        "9": 232
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.152,
+      "counts": {
+        "10": 445,
+        "11": 124,
+        "12": 265,
+        "13": 96,
+        "14": 108,
+        "15": 448,
+        "16": 49,
+        "18": 126,
+        "20": 118,
+        "24": 134,
+        "25": 59,
+        "30": 121,
+        "36": 57,
+        "6": 456,
+        "7": 101,
+        "8": 109,
+        "9": 184
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.3333333333333333,
+      "counts": {
+        "circle": 1000,
+        "grid": 1000,
+        "triangle": 1000
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.36933333333333335,
+      "counts": {
+        "10": 30,
+        "12": 54,
+        "15": 14,
+        "16": 13,
+        "2": 1108,
+        "20": 2,
+        "3": 643,
+        "4": 498,
+        "5": 162,
+        "6": 289,
+        "7": 27,
+        "8": 96,
+        "9": 64
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.152,
+      "counts": {
+        "10": 184,
+        "11": 445,
+        "12": 124,
+        "13": 265,
+        "14": 96,
+        "15": 108,
+        "16": 448,
+        "17": 49,
+        "19": 126,
+        "21": 118,
+        "25": 134,
+        "26": 59,
+        "31": 121,
+        "37": 57,
+        "7": 456,
+        "8": 101,
+        "9": 109
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "difficulty_score",
+    "object_radius_px",
+    "occluded_object_count",
+    "occluder_style",
+    "pattern_type",
+    "shape_type",
+    "total_object_count",
+    "visible_object_count"
+  ]
+}

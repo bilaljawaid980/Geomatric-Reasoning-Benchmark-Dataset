@@ -1,0 +1,363 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "counterfactual_scenario": {
+      "stable_becomes_unstable": 750,
+      "stable_remains_stable": 750,
+      "unstable_becomes_stable": 750,
+      "unstable_remains_unstable": 750
+    },
+    "is_stable": {
+      "False": 1500,
+      "True": 1500
+    },
+    "largest_offset_block": {
+      "B": 638,
+      "C": 811,
+      "D": 914,
+      "E": 637
+    },
+    "level2_upper_block": {
+      "B": 1374,
+      "C": 852,
+      "D": 258,
+      "E": 516
+    },
+    "tipping_joint": {
+      "B": 443,
+      "C": 413,
+      "D": 457,
+      "E": 187
+    }
+  },
+  "continuous_distributions": {
+    "difficulty_score": {
+      "count": 3000,
+      "max": 0.92,
+      "min": 0.47,
+      "p25": 0.65,
+      "p50": 0.74,
+      "p75": 0.83,
+      "p95": 0.92
+    },
+    "num_blocks": {
+      "count": 3000,
+      "max": 5.0,
+      "min": 2.0,
+      "p25": 3.0,
+      "p50": 4.0,
+      "p75": 5.0,
+      "p95": 5.0
+    }
+  },
+  "dataset_version": "legacy-current",
+  "degeneracy_flags": {
+    "2": {
+      "constant_answer_baseline": 0.6246666666666667,
+      "counts": {
+        "directly above": 446,
+        "left": 680,
+        "right": 1874
+      }
+    }
+  },
+  "features_at_v_ge_0_10": {
+    "counterfactual_scenario": {
+      "1": 0.22583523,
+      "2": 0.4886282,
+      "3": 0.23622579,
+      "4": 0.6172489,
+      "5": 0.74602514
+    },
+    "difficulty_score": {
+      "1": 0.86615272,
+      "2": 0.51773151,
+      "3": 0.84006776,
+      "4": 0.72310156,
+      "5": 0.88654788
+    },
+    "is_stable": {
+      "2": 0.38106692,
+      "3": 0.26041273,
+      "4": 1.0,
+      "5": 0.5786452
+    },
+    "largest_offset_block": {
+      "1": 0.73264986,
+      "2": 0.340882,
+      "3": 1.0,
+      "4": 0.70345262,
+      "5": 0.94022294
+    },
+    "level2_upper_block": {
+      "1": 0.67755934,
+      "2": 0.3299862,
+      "3": 0.60475815,
+      "4": 0.46284657,
+      "5": 0.7782584
+    },
+    "num_blocks": {
+      "1": 1.0,
+      "2": 0.27316583,
+      "3": 0.73264986,
+      "4": 0.4376613,
+      "5": 1.0
+    },
+    "tipping_joint": {
+      "1": 0.4376613,
+      "2": 0.33828054,
+      "3": 0.70345262,
+      "4": 1.0,
+      "5": 0.73338201
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "counterfactual_scenario": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.22583522734848555,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.48862819922521133,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.2362257887417123,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.6172489030136115,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.7460251402047625,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8661527150125636,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.5177315140675041,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.8400677561351303,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.723101562837418,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.8865478835039527,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "is_stable": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.027769238277596888,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.381066921186255,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.2604127347281047,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.5786451976179388,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "largest_offset_block": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.7326498634910869,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.34088200002869146,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.7034526185764655,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.9402229422048972,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "level2_upper_block": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.6775593384858851,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.32998620257853384,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.604758153473119,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.46284657427877013,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.7782584001812541,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_blocks": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.273165828291099,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.7326498634910869,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.4376613016489824,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "tipping_joint": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.4376613016489824,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.3382805428764313,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.7034526185764653,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.7333820109947802,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.30766666666666664,
+      "counts": {
+        "2": 391,
+        "3": 841,
+        "4": 845,
+        "5": 923
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.6246666666666667,
+      "counts": {
+        "directly above": 446,
+        "left": 680,
+        "right": 1874
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.30466666666666664,
+      "counts": {
+        "B": 638,
+        "C": 811,
+        "D": 914,
+        "E": 637
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.5,
+      "counts": {
+        "stable": 1500,
+        "tips between block B and block A": 443,
+        "tips between block C and block B": 413,
+        "tips between block D and block C": 457,
+        "tips between block E and block D": 187
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.16566666666666666,
+      "counts": {
+        "stable; after removing block B, every cumulative center of mass remains within its supporting base": 391,
+        "stable; after removing block C, every cumulative center of mass remains within its supporting base": 344,
+        "stable; after removing block D, every cumulative center of mass remains within its supporting base": 377,
+        "stable; after removing block E, every cumulative center of mass remains within its supporting base": 388,
+        "unstable; after removing block C, the cumulative center of mass at the joint between block B and block A lies outside its supporting base": 497,
+        "unstable; after removing block D, the cumulative center of mass at the joint between block B and block A lies outside its supporting base": 251,
+        "unstable; after removing block D, the cumulative center of mass at the joint between block C and block B lies outside its supporting base": 217,
+        "unstable; after removing block E, the cumulative center of mass at the joint between block B and block A lies outside its supporting base": 249,
+        "unstable; after removing block E, the cumulative center of mass at the joint between block D and block C lies outside its supporting base": 286
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "counterfactual_scenario",
+    "difficulty_score",
+    "is_stable",
+    "largest_offset_block",
+    "level2_upper_block",
+    "num_blocks",
+    "tipping_joint"
+  ]
+}

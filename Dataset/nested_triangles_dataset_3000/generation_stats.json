@@ -1,0 +1,367 @@
+{
+  "accepted_scenes": 3000,
+  "candidate_scenes_rejected": 3990,
+  "rejection_cause_counts_may_overlap": true,
+  "rejections_by_constraint": {
+    "containment": 0,
+    "drift_floor": 0,
+    "gap_margin": 0,
+    "level5_margin": 0,
+    "minimum_inner_size": 0,
+    "minimum_outline_clearance": 3990,
+    "reduction_perceptibility": 0,
+    "rotation_wrap": 0
+  },
+  "rotation_mode_distribution": {
+    "fixed": 450,
+    "per_shape_independent": 2550
+  },
+  "rotation_mode_by_level2": {
+    "changing": {
+      "fixed": 225,
+      "per_shape_independent": 1275
+    },
+    "constant": {
+      "fixed": 225,
+      "per_shape_independent": 1275
+    }
+  },
+  "level2_distribution": {
+    "changing": 1500,
+    "constant": 1500
+  },
+  "changing_factor_span_threshold": 1.35,
+  "changing_factor_span_accepted": {
+    "count": 1500,
+    "min": 1.350060950433422,
+    "p25": 1.3795926442849122,
+    "p50": 1.4088153429886632,
+    "p75": 1.440272244567916,
+    "p95": 1.4638274866126175,
+    "max": 1.4696395978124528
+  },
+  "changing_factor_span_all_candidates": {
+    "count": 1500,
+    "min": 1.350060950433422,
+    "p25": 1.3795926442849122,
+    "p50": 1.4088153429886632,
+    "p75": 1.440272244567916,
+    "p95": 1.4638274866126175,
+    "max": 1.4696395978124528
+  },
+  "fixed_mode_count": 450,
+  "gap_separation_all_offset_candidates": {
+    "count": 0,
+    "min": null,
+    "p25": null,
+    "p50": null,
+    "p75": null,
+    "p95": null,
+    "max": null
+  },
+  "level4_theoretical_uniform_baseline": 0.19101123595505617,
+  "level4_observed_max_constant_capture": 0.19137254901960785,
+  "level4_constant_capture_target": 0.2,
+  "level5_threshold": 0.12,
+  "level5_threshold_derivation": "v7 medians motivated an upward move; 12% is the lowest shared rounded threshold whose 9.6% lower guard is feasible for 10-12 triangles under both standing visibility floors",
+  "level5_exclusion_band": [
+    0.096,
+    0.144
+  ],
+  "level5_count_correlation": 0.0,
+  "level5_distribution": {
+    "no": 1500,
+    "yes": 1500
+  },
+  "level5_extrapolation_rule": "reuse final observed per-step factor",
+  "wrap_guard_injection_test": {
+    "thresholds": {
+      "lower": 16.0,
+      "upper": 104.0
+    },
+    "probes": {
+      "below_lower": {
+        "delta": 15.0,
+        "accepted": false
+      },
+      "lower_boundary": {
+        "delta": 16.0,
+        "accepted": true
+      },
+      "upper_boundary": {
+        "delta": 104.0,
+        "accepted": true
+      },
+      "above_upper": {
+        "delta": 105.0,
+        "accepted": false
+      }
+    },
+    "pass": true
+  },
+  "guard_injection_tests": {
+    "gap_margin": {
+      "violating": {
+        "metric": 4.375808424126154e-16,
+        "accepted": false
+      },
+      "boundary": {
+        "metric": 0.0400000000000001,
+        "accepted": true
+      }
+    },
+    "reduction_perceptibility": {
+      "violating": {
+        "metric": 1.3490000000000002,
+        "accepted": false
+      },
+      "boundary": {
+        "metric": 1.35,
+        "accepted": true
+      }
+    },
+    "level5_margin": {
+      "violating": {
+        "metric": 0.12,
+        "accepted": false
+      },
+      "lower_boundary": {
+        "metric": 0.096,
+        "accepted": true
+      },
+      "upper_boundary": {
+        "metric": 0.144,
+        "accepted": true
+      }
+    },
+    "containment": {
+      "violating": {
+        "inner_to_outer_side_ratio": 1.01,
+        "accepted": false
+      },
+      "boundary": {
+        "inner_to_outer_side_ratio": 1.0,
+        "accepted": true
+      }
+    },
+    "minimum_inner_size": {
+      "violating": {
+        "metric_px": 14.99,
+        "accepted": false
+      },
+      "boundary": {
+        "metric_px": 15.0,
+        "accepted": true
+      }
+    },
+    "minimum_outline_clearance": {
+      "violating": {
+        "metric_px": 2.99,
+        "accepted": false
+      },
+      "boundary": {
+        "metric_px": 3.0,
+        "accepted": true
+      }
+    },
+    "pass": true
+  },
+  "seed_namespace": 47000000,
+  "full_sampled_parameter_distributions": {
+    "continuous": {
+      "canvas_height": {
+        "count": 3000,
+        "min": 580,
+        "p25": 585,
+        "p50": 591,
+        "p75": 596,
+        "p95": 600,
+        "max": 600
+      },
+      "canvas_width": {
+        "count": 3000,
+        "min": 580,
+        "p25": 585,
+        "p50": 590,
+        "p75": 595,
+        "p95": 600,
+        "max": 600
+      },
+      "cumulative_rotation_degrees": {
+        "count": 3000,
+        "min": 0,
+        "p25": 26,
+        "p50": 52,
+        "p75": 78,
+        "p95": 99,
+        "max": 104
+      },
+      "difficulty_score": {
+        "count": 3000,
+        "min": 0.25,
+        "p25": 0.2938,
+        "p50": 0.3812,
+        "p75": 0.4688,
+        "p95": 0.6,
+        "max": 0.6
+      },
+      "extrapolation_reduction_factor": {
+        "count": 3000,
+        "min": 0.448053485930819,
+        "p25": 0.6742433416042677,
+        "p50": 0.769112609517153,
+        "p75": 0.8163168262442546,
+        "p95": 0.8549197826844459,
+        "max": 0.8626722644057049
+      },
+      "generation_attempt": {
+        "count": 3000,
+        "min": 0,
+        "p25": 0,
+        "p50": 0,
+        "p75": 0,
+        "p95": 3,
+        "max": 122
+      },
+      "innermost_side_length": {
+        "count": 3000,
+        "min": 28.1544,
+        "p25": 56.1452,
+        "p50": 80.361,
+        "p75": 97.1719,
+        "p95": 116.2334,
+        "max": 129.777
+      },
+      "line_width_px": {
+        "count": 3000,
+        "min": 0.5,
+        "p25": 0.6,
+        "p50": 0.77,
+        "p75": 0.88,
+        "p95": 0.98,
+        "max": 1.0
+      },
+      "matched_clearance_target_px": {
+        "count": 3000,
+        "min": 3.0001004186838403,
+        "p25": 3.000326055629639,
+        "p50": 3.000563147470822,
+        "p75": 3.0007882364996292,
+        "p95": 3.00095193913602,
+        "max": 3.0009999305839856
+      },
+      "minimum_adjacent_clear_background_px": {
+        "count": 3000,
+        "min": 3.0001014334242933,
+        "p25": 3.00036773886225,
+        "p50": 3.0006052272536117,
+        "p75": 3.0008273709081927,
+        "p95": 3.0009935885520167,
+        "max": 3.0010860463904034
+      },
+      "outer_inner_size_ratio": {
+        "count": 3000,
+        "min": 3.779151995363405,
+        "p25": 4.952971496134756,
+        "p50": 6.101124644880537,
+        "p75": 8.635001516309863,
+        "p95": 12.17423100843414,
+        "max": 16.609141022362405
+      },
+      "outer_rotation_angle": {
+        "count": 3000,
+        "min": -17.9918,
+        "p25": -9.1712,
+        "p50": 0.2415,
+        "p75": 9.4985,
+        "p95": 16.2013,
+        "max": 17.9915
+      },
+      "outer_side_length": {
+        "count": 3000,
+        "min": 452.445,
+        "p25": 472.1965,
+        "p50": 479.6572,
+        "p75": 486.9867,
+        "p95": 495.8674,
+        "max": 504.5515
+      },
+      "reduction_factor_span": {
+        "count": 3000,
+        "min": 1.0000000286260555,
+        "p25": 1.0000007954480163,
+        "p50": 1.350060950433422,
+        "p75": 1.4087146398595163,
+        "p95": 1.458220194998031,
+        "max": 1.4696395978124528
+      },
+      "sampled_total_inner_fraction": {
+        "count": 3000,
+        "min": 0.060207871768638475,
+        "p25": 0.11580778233475601,
+        "p50": 0.17581616730298388,
+        "p75": 0.2018990331027495,
+        "p95": 0.2432032305712712,
+        "max": 0.2646097029254631
+      },
+      "sampled_total_reduction_root": {
+        "count": 3000,
+        "min": 0.44805312161904676,
+        "p25": 0.6742442763064257,
+        "p50": 0.7691120337075704,
+        "p75": 0.8163167489277313,
+        "p95": 0.8549197564629943,
+        "max": 0.8626725525077547
+      }
+    },
+    "categorical": {
+      "center_drift": {
+        "False": 3000
+      },
+      "color_alternation": {
+        "False": 2050,
+        "True": 950
+      },
+      "factor_progression_direction": {
+        "changing": 1500,
+        "constant": 1500
+      },
+      "level5_label": {
+        "no": 1500,
+        "yes": 1500
+      },
+      "offset_requested_pre_containment": {
+        "False": 3000
+      },
+      "reduction_mode": {
+        "changing": 1500,
+        "constant": 1500
+      },
+      "rotation_mode": {
+        "fixed": 450,
+        "per_shape_independent": 2550
+      },
+      "shape_count": {
+        "10": 332,
+        "11": 332,
+        "12": 344,
+        "4": 332,
+        "5": 332,
+        "6": 332,
+        "7": 332,
+        "8": 332,
+        "9": 332
+      },
+      "size_axis_band": {
+        "high": 1500,
+        "low": 1500
+      },
+      "stroke_colors_used": {
+        "('#16697A', '#2C2C2A')": 330,
+        "('#263238', '#8A4F7D')": 330,
+        "('#2C2C2A',)": 2050,
+        "('#30343F', '#8A6D1D')": 290
+      }
+    }
+  }
+}

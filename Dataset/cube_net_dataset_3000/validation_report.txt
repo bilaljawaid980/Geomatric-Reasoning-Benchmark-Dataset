@@ -1,0 +1,18 @@
+Cube Net Dataset v2 Validation Report
+============================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+Previous wrong Level 4 answers: 452
+Answer changes by level: {1: 0, 2: 0, 3: 0, 4: 2705, 5: 675}
+PNG face/layout recovery: 3000/3000
+Level 4 split: {'adjacent': 1500, 'opposite': 1500}
+Level 2 accepted-list sizes: {2: 1232, 1: 1405, 3: 318, 4: 45}
+Constant baselines: {'1': 1.0, '2': 0.17566666666666667, '3': 0.175, '4': 0.5, '5': 0.7883333333333333}
+Features at V >= 0.10 (nothing hidden): {'net_layout_type': {'1': 0.0, '2': 0.06152502, '3': 0.13077028, '4': 0.00312538, '5': 0.0470552}}
+Guard injection tests: {'valid_cube_net': {'violating_disconnected_accepted': False, 'boundary_valid_six_face_accepted': True}, 'q2_nonempty': {'violating_empty_accepted': False, 'boundary_one_neighbor_accepted': True}, 'folded_pair_binary': {'violating_neither_accepted': False, 'boundary_opposite_accepted': True}}
+Reference-frame audit: flat net -> letter positions/net edges; folded cube -> opposition/cube adjacency.
+Issues:
+  None
+
+Summary: PASS

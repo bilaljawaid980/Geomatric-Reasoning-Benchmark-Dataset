@@ -1,0 +1,19 @@
+Polyhedron Dataset v3 Validation Report
+=========================================
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+Wrong Level 4 Euler answers before repair: 1060
+Negative / zero Level 4 answers before repair: 984 / 76
+Answer changes by level: {'1': 0, '2': 0, '3': 0, '4': 0, '5': 0}
+Euler prompts with matching printed V/E: 1060/1060
+Level 3 vertex answers matching vertex_count: 999/999
+Level 5 distribution: {'counts': {'no': 3000}, 'constant_answer_baseline': 1.0}
+PNG dimension recovery: 3000/3000
+Guard injection tests: {'violating_disagreement_rejected': True, 'boundary_correct_positive_accepted': True, 'violating_zero_rejected': True}
+Features at V >= 0.10 (nothing hidden): {'edge_count': {'1': {'cramers_v': 0.7558311692393166, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.48189444296185086, 'kind': 'numeric_deciles'}, '3': {'cramers_v': 0.6708838217815941, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.5883060976992267, 'kind': 'numeric_deciles'}}, 'face_count': {'1': {'cramers_v': 0.999498704956384, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.4108748230510013, 'kind': 'numeric_deciles'}, '3': {'cramers_v': 0.7070501355062565, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.701384580685305, 'kind': 'numeric_deciles'}}, 'face_shape_types': {'1': {'cramers_v': 0.867190777357142, 'kind': 'categorical'}, '2': {'cramers_v': 0.5110767202699095, 'kind': 'categorical'}, '3': {'cramers_v': 0.8201061981936764, 'kind': 'categorical'}, '4': {'cramers_v': 0.6539617344974008, 'kind': 'categorical'}}, 'is_convex': {'1': {'cramers_v': 0.40965528570468135, 'kind': 'categorical'}, '2': {'cramers_v': 0.9999999999999999, 'kind': 'categorical'}, '3': {'cramers_v': 0.4201617750145626, 'kind': 'categorical'}, '4': {'cramers_v': 0.8296282369790656, 'kind': 'categorical'}}, 'solid_class': {'1': {'cramers_v': 0.6803995831650559, 'kind': 'categorical'}, '2': {'cramers_v': 0.9994995412147983, 'kind': 'categorical'}, '3': {'cramers_v': 0.6120207081547728, 'kind': 'categorical'}, '4': {'cramers_v': 0.821615636025442, 'kind': 'categorical'}}, 'solid_name': {'1': {'cramers_v': 0.9984938490322233, 'kind': 'categorical'}, '2': {'cramers_v': 0.9971607458355733, 'kind': 'categorical'}, '3': {'cramers_v': 0.5566418257069514, 'kind': 'categorical'}, '4': {'cramers_v': 0.6149168351347316, 'kind': 'categorical'}}, 'vertex_count': {'1': {'cramers_v': 0.7711406057961122, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.4233860362173674, 'kind': 'numeric_deciles'}, '3': {'cramers_v': 0.7575522205488738, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.6183635665536725, 'kind': 'numeric_deciles'}}, 'visible_face_count': {'1': {'cramers_v': 0.9445061270013774, 'kind': 'numeric_deciles'}, '2': {'cramers_v': 0.3880354657584141, 'kind': 'numeric_deciles'}, '3': {'cramers_v': 0.7000825297107476, 'kind': 'numeric_deciles'}, '4': {'cramers_v': 0.6736894549459747, 'kind': 'numeric_deciles'}}}
+
+Mismatches:
+  None
+
+Summary: PASS

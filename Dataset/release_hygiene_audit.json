@@ -1,0 +1,1373 @@
+{
+  "combination3d": {
+    "classification": {
+      "height_z_layers": {
+        "L4": "definitional: L4 explicitly requests height",
+        "L5": "non-definitional but answer-key-side, never in question_set.csv"
+      },
+      "target_cube_count": {
+        "L4": "definitional: L4 explicitly requests target count",
+        "L5": "non-definitional but answer-key-side, never in question_set.csv"
+      }
+    },
+    "post_fix_bias_corrected_cramers_v": {
+      "height_z_layers": {
+        "1": 0.2674623758961033,
+        "2": 0.013104354277695995,
+        "3": 0.03267090330176058,
+        "4": 0.5693696448984978,
+        "5": 0.8103683761458195
+      },
+      "target_cube_count": {
+        "1": 0.9999999999999999,
+        "2": 0.0,
+        "3": 0.02018485685200762,
+        "4": 0.5732615587328183,
+        "5": 0.8084163115364709
+      }
+    }
+  },
+  "failures": [],
+  "per_dataset_fields": {
+    "angle_estimation_dataset_3000": {
+      "annotations.jsonl": [
+        "angle_degrees",
+        "arc_sweep_degrees",
+        "canvas_size",
+        "dataset_version",
+        "difficulty_score",
+        "id",
+        "image_path",
+        "marked_sweep",
+        "questions",
+        "ray_endpoints",
+        "scene_type",
+        "seed",
+        "vertex"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "clock_reading_dataset_3000": {
+      "annotations.jsonl": [
+        "after_twenty_minutes",
+        "angle_between_hands",
+        "angle_between_hands_fraction",
+        "canvas_size",
+        "difficulty_score",
+        "hour",
+        "hour_angle",
+        "hour_angle_fraction",
+        "id",
+        "image_path",
+        "minute",
+        "minute_angle",
+        "minute_angle_fraction",
+        "minute_relation_to_six",
+        "questions",
+        "seed",
+        "time"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "combination3d_dataset_3000": {
+      "annotations.jsonl": [
+        "candidates",
+        "canvas_size",
+        "coordinate_frame",
+        "correct_answer_choice",
+        "dataset_version",
+        "difficulty_score",
+        "gravity_supported",
+        "id",
+        "image_path",
+        "permitted_piece_rotation_axes",
+        "questions",
+        "renderer_projection",
+        "seed",
+        "target_cube_count",
+        "target_cubes",
+        "vertical_axis"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "combination_dataset_3000": {
+      "annotations.jsonl": [
+        "candidates",
+        "canvas_size",
+        "correct_answer_choice",
+        "difficulty_score",
+        "id",
+        "image_path",
+        "questions",
+        "seed",
+        "target_cell_count",
+        "target_cells"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "compass_bearing_dataset_3000": {
+      "annotations.jsonl": [
+        "all_pairwise_bearings",
+        "all_pairwise_distances",
+        "canvas_size",
+        "dataset_version",
+        "difficulty_score",
+        "distance_unit",
+        "frame_conventions",
+        "generation_attempt",
+        "has_path",
+        "id",
+        "image_path",
+        "landmarks",
+        "level2_pair",
+        "level3_pair",
+        "level4_triple",
+        "level5_projection",
+        "num_landmarks",
+        "path_bearing",
+        "path_end",
+        "path_start",
+        "questions",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "coordinate_geometry_dataset_3000": {
+      "annotations.jsonl": [
+        "all_pairwise_distances",
+        "all_pairwise_midpoints",
+        "canvas_size",
+        "collinear_labels",
+        "dataset_version",
+        "difficulty_score",
+        "frame_conventions",
+        "grid_range",
+        "id",
+        "image_path",
+        "is_collinear_triple",
+        "num_points",
+        "points",
+        "questions",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "cube_net_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "cube_adjacent_faces",
+        "cube_adjacent_pairs",
+        "dataset_version",
+        "difficulty_score",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "letter_positions",
+        "net_edge_neighbors",
+        "net_edge_pairs",
+        "net_layout_type",
+        "opposite_pairs",
+        "questions",
+        "seed",
+        "square_size_px",
+        "stroke_width_px"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "cube_structure_dataset_3000": {
+      "annotations.jsonl": [
+        "base_layer_count",
+        "canvas_size",
+        "cluster_counts",
+        "color_cluster_count",
+        "coordinate_frame",
+        "cubes",
+        "cubes_per_layer",
+        "dataset_version",
+        "difficulty_score",
+        "generation_attempt",
+        "has_ambiguous_visual_floater",
+        "hidden_cube_count",
+        "hidden_members_per_cluster",
+        "hidden_to_visible_180",
+        "id",
+        "image_path",
+        "line_width_px",
+        "max_height",
+        "questions",
+        "render_frame",
+        "rotation_axis_level5",
+        "seed",
+        "total_cube_count",
+        "vertical_axis",
+        "visible_cube_count"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "depth_height_dataset_3000": {
+      "annotations.jsonl": [
+        "base_size_px",
+        "canvas_size",
+        "closest_object_color",
+        "dataset_version",
+        "depth_ordering",
+        "difficulty_score",
+        "farthest_object_color",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "objects",
+        "questions",
+        "scene_type",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "embedded_figures_dataset_3000": {
+      "annotations.jsonl": [
+        "candidate_choices",
+        "canvas_size",
+        "correct_answer_choice",
+        "difficulty_score",
+        "distractor_choices_info",
+        "id",
+        "image_path",
+        "num_distractor_segments",
+        "num_total_segments",
+        "questions",
+        "same_side_foil_exists",
+        "seed",
+        "segments",
+        "target_edges",
+        "target_shape_type",
+        "target_vertices"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "fbd_dataset_3000": {
+      "annotations.jsonl": [
+        "analysis_mass_kg",
+        "analysis_target",
+        "dataset_version",
+        "derived_quantities",
+        "difficulty_score",
+        "forces",
+        "id",
+        "image_path",
+        "is_equilibrium",
+        "missing_force_id",
+        "missing_force_type",
+        "net_force_direction_degrees",
+        "net_force_magnitude",
+        "physical_frame",
+        "physics_parameters",
+        "preset",
+        "question_frame_policy",
+        "questions",
+        "rendered_frame",
+        "resulting_acceleration_m_s2",
+        "scenario_type",
+        "seed",
+        "shown_forces",
+        "shown_net_force_direction_degrees",
+        "shown_net_force_magnitude",
+        "wrong_force_details"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "fold_punch_dataset_3000": {
+      "annotations.jsonl": [
+        "candidates",
+        "canvas_size",
+        "coordinate_frame",
+        "correct_answer_choice",
+        "dataset_version",
+        "difficulty_score",
+        "final_folded_bounds",
+        "fold_sequence",
+        "id",
+        "image_path",
+        "minimum_distractor_displacement",
+        "num_folds",
+        "num_holes",
+        "punch_position",
+        "questions",
+        "seed",
+        "unfolded_hole_positions"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "gauge_reading_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "danger_zone_threshold",
+        "danger_zone_threshold_fraction",
+        "dial_start_angle",
+        "dial_sweep_degrees",
+        "difficulty_score",
+        "id",
+        "image_path",
+        "instrument_type",
+        "max_value",
+        "min_value",
+        "needle_angle",
+        "needle_angle_fraction",
+        "needle_value",
+        "needle_value_fraction",
+        "projected_exceeds_maximum",
+        "projected_value_after_quarter_range",
+        "projected_value_fraction",
+        "questions",
+        "rounded_tick_value",
+        "rounded_tick_value_fraction",
+        "seed",
+        "tick_interval",
+        "unit"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "gear_train_dataset_3000": {
+      "annotations.jsonl": [
+        "arrangement_type",
+        "canvas_size",
+        "computed_rotation",
+        "difficulty_score",
+        "driver_direction",
+        "driver_label",
+        "driver_rpm",
+        "gears",
+        "id",
+        "image_path",
+        "level2_neighbor",
+        "level4_mesh_distance",
+        "level4_target",
+        "level5_scenario",
+        "mesh_edges",
+        "num_gears",
+        "questions",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "hex_pathfinding_dataset_3000": {
+      "annotations.jsonl": [
+        "all_tiles",
+        "canvas_size",
+        "coordinate_frame",
+        "dataset_version",
+        "difficulty_score",
+        "generation_attempt",
+        "grid_radius",
+        "hole_density",
+        "home_coordinate",
+        "id",
+        "image_path",
+        "level2_neighbor_coordinate",
+        "level2_neighbor_direction_is_toward_home",
+        "level5_blocked_coordinate",
+        "level5_new_shortest_path_length",
+        "level5_outcome",
+        "num_alternate_shortest_paths",
+        "num_hole_tiles",
+        "questions",
+        "seed",
+        "shortest_path_length",
+        "shortest_path_sequence",
+        "start_coordinate"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "impossible_object_dataset_3000": {
+      "annotations.jsonl": [
+        "beams",
+        "canvas_size",
+        "color",
+        "crossings",
+        "dataset_version",
+        "depth_constraint_representation",
+        "depth_constraints",
+        "difficulty_score",
+        "id",
+        "image_path",
+        "mode",
+        "num_beams",
+        "num_crossings",
+        "questions",
+        "reference_crossing_id",
+        "reference_crossing_point",
+        "reference_front_beam",
+        "reference_rule",
+        "removable_beam_label",
+        "scene_params",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "laser_mirror_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "difficulty_score",
+        "entry_cell",
+        "entry_direction",
+        "entry_edge",
+        "entry_position",
+        "exit_cell",
+        "exit_direction",
+        "exit_edge",
+        "exit_position",
+        "generation_attempt",
+        "grid_size",
+        "id",
+        "image_path",
+        "level5_exit_cell",
+        "level5_exit_changed",
+        "level5_exit_direction",
+        "level5_exit_edge",
+        "level5_exit_position",
+        "level5_flipped_orientation",
+        "level5_mirror_cell",
+        "level5_num_reflections",
+        "level5_original_orientation",
+        "level5_path_cells",
+        "mirrors",
+        "num_reflections",
+        "path_cells",
+        "path_length",
+        "questions",
+        "reflection_points",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "line_intersection_dataset_3000": {
+      "annotations.jsonl": [
+        "blue_points",
+        "blue_self_intersecting",
+        "canvas_size",
+        "crossed_from_above_to_below",
+        "dataset_version",
+        "difficulty_score",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "intersections",
+        "leftmost_intersection_x",
+        "num_blue_segments",
+        "num_red_segments",
+        "questions",
+        "red_above_blue_at_end",
+        "red_above_blue_at_start",
+        "red_points",
+        "red_self_intersecting",
+        "rightmost_intersection_x",
+        "seed",
+        "total_intersections",
+        "wording_variant"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "nested_hexagons_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "center_drift",
+        "color_alternation",
+        "cumulative_rotation_degrees",
+        "cumulative_rotation_fraction",
+        "dataset_version",
+        "difficulty_score",
+        "drift_floor_applied_as_rejection",
+        "extrapolation_reduction_factor",
+        "factor_progression_direction",
+        "generation_attempt",
+        "generation_rejections",
+        "hexagons",
+        "id",
+        "image_path",
+        "line_width_px",
+        "matched_clearance_target_px",
+        "minimum_adjacent_clear_background_px",
+        "num_hexagons",
+        "offset_requested_pre_containment",
+        "paired_nuisance_rank",
+        "parameter_seed",
+        "questions",
+        "reduction_factor_span",
+        "reduction_mode",
+        "rejected_candidates",
+        "rotation_mode",
+        "sampled_total_inner_fraction",
+        "sampled_total_reduction_root",
+        "seed",
+        "size_axis_band",
+        "size_axis_pair_rank",
+        "size_reduction_factor",
+        "source_index",
+        "step_reduction_factors",
+        "stroke_colors_used",
+        "symmetry_modulus_degrees",
+        "target_cumulative_rotation_degrees"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "nested_squares_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "center_drift",
+        "color_alternation",
+        "cumulative_rotation_degrees",
+        "cumulative_rotation_fraction",
+        "dataset_version",
+        "difficulty_score",
+        "drift_floor_applied_as_rejection",
+        "extrapolation_reduction_factor",
+        "factor_progression_direction",
+        "generation_attempt",
+        "generation_rejections",
+        "id",
+        "image_path",
+        "line_width_px",
+        "matched_clearance_target_px",
+        "minimum_adjacent_clear_background_px",
+        "num_squares",
+        "offset_requested_pre_containment",
+        "paired_nuisance_rank",
+        "parameter_seed",
+        "questions",
+        "reduction_factor_span",
+        "reduction_mode",
+        "rejected_candidates",
+        "rotation_mode",
+        "sampled_total_inner_fraction",
+        "sampled_total_reduction_root",
+        "seed",
+        "size_axis_band",
+        "size_axis_pair_rank",
+        "size_reduction_factor",
+        "source_index",
+        "squares",
+        "step_reduction_factors",
+        "stroke_colors_used",
+        "symmetry_modulus_degrees",
+        "target_cumulative_rotation_degrees"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "nested_triangles_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "center_drift",
+        "color_alternation",
+        "cumulative_rotation_degrees",
+        "cumulative_rotation_fraction",
+        "dataset_version",
+        "difficulty_score",
+        "drift_floor_applied_as_rejection",
+        "extrapolation_reduction_factor",
+        "factor_progression_direction",
+        "generation_attempt",
+        "generation_rejections",
+        "id",
+        "image_path",
+        "line_width_px",
+        "matched_clearance_target_px",
+        "minimum_adjacent_clear_background_px",
+        "num_triangles",
+        "offset_requested_pre_containment",
+        "paired_nuisance_rank",
+        "parameter_seed",
+        "questions",
+        "reduction_factor_span",
+        "reduction_mode",
+        "rejected_candidates",
+        "rotation_mode",
+        "sampled_total_inner_fraction",
+        "sampled_total_reduction_root",
+        "seed",
+        "size_axis_band",
+        "size_axis_pair_rank",
+        "size_reduction_factor",
+        "source_index",
+        "step_reduction_factors",
+        "stroke_colors_used",
+        "symmetry_modulus_degrees",
+        "target_cumulative_rotation_degrees",
+        "triangles"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "occluded_pattern_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "dataset_version",
+        "difficulty_score",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "object_color",
+        "object_positions",
+        "object_radius_px",
+        "occluded_object_count",
+        "occluder_bounds",
+        "occluder_style",
+        "pattern_params",
+        "pattern_type",
+        "questions",
+        "seed",
+        "shape_type",
+        "total_object_count",
+        "visible_object_count"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "optical_illusion_dataset_3000": {
+      "annotations.jsonl": [
+        "are_actually_equal",
+        "canvas_size",
+        "construction",
+        "dataset_version",
+        "difficulty_score",
+        "element_a_true_value",
+        "element_b_true_value",
+        "frame_conventions",
+        "id",
+        "illusion_appears_larger_element",
+        "illusion_direction",
+        "illusion_type",
+        "image_path",
+        "matches_illusion_direction",
+        "percent_difference",
+        "percent_difference_definition",
+        "percent_difference_fraction",
+        "questions",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "orthographic_dataset_3000": {
+      "annotations.jsonl": [
+        "add_cube_changed_views",
+        "candidates",
+        "canvas_size",
+        "correct_answer_choice",
+        "difficulty_score",
+        "front_view_cells",
+        "has_candidate_panel",
+        "id",
+        "image_path",
+        "is_uniquely_determined",
+        "is_uniquely_determined_same_count",
+        "minimum_possible_cube_count",
+        "questions",
+        "seed",
+        "side_view_cells",
+        "tallest_column_xy",
+        "target_cubes",
+        "top_view_cells",
+        "total_cube_count",
+        "uniqueness_scope",
+        "view_filled_counts"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "overlap_circles_dataset_3000": {
+      "annotations.jsonl": [
+        "above_average_radius_count",
+        "canvas_size",
+        "circles",
+        "dataset_version",
+        "difficulty_score",
+        "generation_attempt",
+        "generation_mode",
+        "geometry_frame",
+        "id",
+        "image_path",
+        "isolated_after_largest_removal",
+        "largest_circle_index",
+        "largest_radius",
+        "line_width_px",
+        "max_stack_depth",
+        "max_stack_location",
+        "non_overlapping_circles",
+        "non_overlapping_count",
+        "overlap_density",
+        "overlapping_pairs_after_largest_removal",
+        "pairwise_overlaps",
+        "questions",
+        "rejections_max_stack_depth",
+        "seed",
+        "smallest_circle_index",
+        "smallest_radius",
+        "target_overlap_density",
+        "three_plus_overlap_percent",
+        "total_circle_count",
+        "total_overlapping_pairs"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "physical_stability_dataset_3000": {
+      "annotations.jsonl": [
+        "after_top_removal",
+        "blocks",
+        "canvas_size",
+        "counterfactual_scenario",
+        "difficulty_score",
+        "id",
+        "image_path",
+        "is_stable",
+        "largest_offset_block",
+        "level2_upper_block",
+        "num_blocks",
+        "per_joint_stability",
+        "questions",
+        "seed",
+        "tipping_joint"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "polyhedron_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "dataset_version",
+        "edge_count",
+        "edges",
+        "face_count",
+        "face_shape_types",
+        "faces",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "is_convex",
+        "questions",
+        "seed",
+        "solid_class",
+        "solid_name",
+        "vertex_count",
+        "vertices",
+        "viewing_angle",
+        "visible_face_count"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "projectile_motion_dataset_1000": {
+      "annotations.jsonl": [
+        "canvas_height",
+        "canvas_width",
+        "dataset_version",
+        "difficulty_score",
+        "gravity_m_s2",
+        "has_obstacle",
+        "horizontal_position_at_peak_m",
+        "id",
+        "image_path",
+        "initial_speed_m_s",
+        "initial_velocity_x_m_s",
+        "initial_velocity_y_m_s",
+        "launch_angle_degrees",
+        "max_height_m",
+        "obstacle",
+        "questions",
+        "range_at_45_degrees_m",
+        "range_change_at_45_degrees",
+        "range_m",
+        "seed",
+        "time_of_flight_s"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "rotation_matching_dataset_3000": {
+      "annotations.jsonl": [
+        "candidates",
+        "canvas_size",
+        "coordinate_frame",
+        "correct_answer_choice",
+        "correct_rotation_angle",
+        "dataset_version",
+        "difficulty_score",
+        "id",
+        "image_path",
+        "minimum_turn_guard_degrees",
+        "minimum_turning_angle_degrees",
+        "num_reference_vertices",
+        "questions",
+        "reference_generation_rejections",
+        "reference_vertices",
+        "reflection_answer_choice",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "route_dataset_3000": {
+      "annotations.jsonl": [
+        "canvas_size",
+        "colors_used",
+        "crossing_count",
+        "dataset_version",
+        "difficulty_score",
+        "endpoint_letters",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "line_width_px",
+        "num_endpoints",
+        "num_routes",
+        "questions",
+        "routes",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "rpm_dataset_3000": {
+      "annotations.jsonl": [
+        "active_rules",
+        "answer_choices",
+        "background_constants",
+        "canvas_size",
+        "correct_answer_index",
+        "dataset_version",
+        "difficulty_score",
+        "difficulty_tier",
+        "distractor_violations",
+        "frame_conventions",
+        "grid_panels",
+        "id",
+        "image_path",
+        "num_active_rules",
+        "orientation",
+        "questions",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "shadow_inference_dataset_3000": {
+      "annotations.jsonl": [
+        "azimuth_convention",
+        "azimuth_exclusion_degrees",
+        "canvas_size",
+        "coordinate_frame",
+        "dataset_version",
+        "difficulty_score",
+        "ground_y",
+        "has_inconsistent_shadow",
+        "id",
+        "image_path",
+        "inconsistent_object_index",
+        "light_azimuth_degrees",
+        "light_elevation_degrees",
+        "num_objects",
+        "objects",
+        "questions",
+        "seed"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "surface_topology_dataset_3000": {
+      "annotations.jsonl": [
+        "boundary_count",
+        "canvas_size",
+        "dataset_version",
+        "difficulty_score",
+        "euler_characteristic",
+        "frame_conventions",
+        "genus",
+        "genus_kind",
+        "id",
+        "image_path",
+        "is_orientable",
+        "questions",
+        "render_color",
+        "seed",
+        "surface_type",
+        "surface_variant",
+        "viewing_angle"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    },
+    "symmetry_pattern_dataset_3000": {
+      "annotations.jsonl": [
+        "break_type",
+        "broken_location",
+        "broken_shape_index",
+        "broken_shape_position",
+        "canvas_size",
+        "dataset_version",
+        "difficulty_score",
+        "frame_conventions",
+        "id",
+        "image_path",
+        "is_broken",
+        "num_shapes",
+        "questions",
+        "seed",
+        "shapes",
+        "symmetric_partner_count",
+        "symmetry_type"
+      ],
+      "answer_key.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt",
+        "groundtruth"
+      ],
+      "public_schema_pass": true,
+      "question_set.csv": [
+        "question_id",
+        "task",
+        "image",
+        "prompt"
+      ]
+    }
+  },
+  "polyhedron": {
+    "canvas_size_bias_corrected_cramers_v": {
+      "1": 0.0,
+      "2": 0.08670048605600239,
+      "3": 0.08786698611056853,
+      "4": 0.0,
+      "5": 0.0
+    },
+    "cause": "uncorrected sparse-table bias from 1801 size-pair categories in 3000 records; dimensions are seeded independently of cyclic solid identity",
+    "difficulty_score_absent_from_released_annotations": true,
+    "difficulty_score_removed_records_this_run": 0,
+    "difficulty_score_validation_summary": {
+      "count": 3000,
+      "max": 0.73,
+      "min": 0.298,
+      "p25": 0.394,
+      "p50": 0.514,
+      "p75": 0.634,
+      "p95": 0.73
+    },
+    "regenerated": false
+  },
+  "public_rule": "question_set.csv is the only model-facing artifact; all other data files are answer-key-side"
+}

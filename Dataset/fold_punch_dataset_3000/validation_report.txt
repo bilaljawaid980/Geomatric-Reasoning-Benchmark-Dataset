@@ -1,0 +1,18 @@
+Total images checked: 3000
+Total mismatches found: 0
+Correct answer distribution: {'A': 750, 'B': 750, 'C': 750, 'D': 750}
+Fold-count distribution: {2: 1500, 3: 1500}
+Question template counts:
+  Level 1 / fold_count: 3000
+  Level 2 / unfolded_hole_count: 3000
+  Level 3 / correct_pattern_choice: 3000
+  Level 4 / remove_last_fold: 967
+  Level 4 / wrong_count_choice: 1053
+  Level 4 / wrong_positions_choice: 980
+  Level 5 / additional_fold_hole_count: 2000
+  Level 5 / remove_last_fold: 1000
+
+Mismatches:
+  None
+
+Summary: PASS

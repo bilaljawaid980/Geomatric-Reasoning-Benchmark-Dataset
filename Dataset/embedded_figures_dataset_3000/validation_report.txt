@@ -1,0 +1,16 @@
+GRIP Five-Level Validation Summary — embedded_figures
+Images checked: 3000
+Questions checked: 15000
+Base geometry/Levels 1-4: PASS
+Level 5 independent validation: PASS
+Total mismatches found: 0
+Summary: PASS
+
+Dataset: embedded_figures
+Images checked: 3000
+Level 5 questions checked: 3000
+Total mismatches found: 0
+Level 5 templates:
+  remove_target_edge_closure: 1987
+  target_closure: 1013
+Summary: PASS

@@ -1,0 +1,272 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "difficulty_tier": {
+      "combined_rules": 3000
+    },
+    "orientation": {
+      "column": 597,
+      "row": 2403
+    }
+  },
+  "continuous_distributions": {
+    "correct_answer_index": {
+      "count": 3000,
+      "max": 8.0,
+      "min": 1.0,
+      "p25": 3.0,
+      "p50": 5.0,
+      "p75": 7.0,
+      "p95": 8.0
+    },
+    "difficulty_score": {
+      "count": 3000,
+      "max": 0.93,
+      "min": 0.6767,
+      "p25": 0.6767,
+      "p50": 0.73,
+      "p75": 0.7967,
+      "p95": 0.85
+    },
+    "num_active_rules": {
+      "count": 3000,
+      "max": 2.0,
+      "min": 2.0,
+      "p25": 2.0,
+      "p50": 2.0,
+      "p75": 2.0,
+      "p95": 2.0
+    }
+  },
+  "dataset_version": "rpm-2.0.0",
+  "degeneracy_flags": {},
+  "features_at_v_ge_0_10": {
+    "correct_answer_index": {
+      "2": 1.0
+    },
+    "difficulty_score": {
+      "1": 0.66985682,
+      "3": 0.16338909,
+      "4": 0.2012755
+    },
+    "orientation": {
+      "4": 0.13469823
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "correct_answer_index": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.05586473533935303,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.04465441078382672,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.09621738774272637,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.03340102303316178,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.6698568164860447,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.05215105569361642,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.16338908747079336,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.20127550464009716,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.038025395339897204,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_tier": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_active_rules": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "orientation": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.020206129966673845,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.040852546760182386,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.09541421533708327,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.13469823424994734,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.03780245934000633,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.41833333333333333,
+      "counts": {
+        "1": 1255,
+        "2": 705,
+        "3": 1040
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.13066666666666665,
+      "counts": {
+        "1": 361,
+        "2": 343,
+        "3": 383,
+        "4": 389,
+        "5": 368,
+        "6": 378,
+        "7": 392,
+        "8": 386
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.299,
+      "counts": {
+        "color": 436,
+        "correct color but wrong shape": 376,
+        "correct shape but wrong color": 387,
+        "count": 472,
+        "size": 432,
+        "wrong in some other way": 897
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.17133333333333334,
+      "counts": {
+        "#147A68": 20,
+        "#246EB9": 23,
+        "#7040A0": 17,
+        "#8A6800": 19,
+        "#B23A2E": 15,
+        "#C65D00": 23,
+        "0": 95,
+        "3": 13,
+        "4": 89,
+        "5": 263,
+        "6": 514,
+        "7": 246,
+        "circle": 77,
+        "color and shape": 119,
+        "count and shape": 230,
+        "hexagon": 86,
+        "large": 71,
+        "pentagon": 74,
+        "shape and color": 163,
+        "shape and count": 223,
+        "shape and size": 168,
+        "size and shape": 138,
+        "small": 68,
+        "square": 76,
+        "star": 81,
+        "triangle": 89
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.515,
+      "counts": {
+        "6": 725,
+        "7": 1545,
+        "8": 730
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "correct_answer_index",
+    "difficulty_score",
+    "difficulty_tier",
+    "num_active_rules",
+    "orientation"
+  ]
+}

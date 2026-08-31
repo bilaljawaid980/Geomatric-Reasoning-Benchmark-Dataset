@@ -1,0 +1,750 @@
+{
+  "dataset_version": "cube-structure-2.0.0",
+  "images_checked": 3000,
+  "questions_checked": 15000,
+  "mismatches": 0,
+  "ambiguity_flag_count": 0,
+  "ambiguity_disposition": "rejected during generation",
+  "independent_level5_mismatches": 0,
+  "png_face_recovery": "3000/3000",
+  "vertical_axis": "z",
+  "combination3d_vertical_axis": "z",
+  "hidden_members_per_cluster": {
+    "A:0": 1180,
+    "A:1": 992,
+    "B:1": 228,
+    "B:0": 460,
+    "A:2": 828,
+    "B:2": 62
+  },
+  "answer_distributions": {
+    "1": {
+      "counts": {
+        "16": 82,
+        "13": 212,
+        "10": 483,
+        "11": 462,
+        "9": 470,
+        "12": 343,
+        "14": 147,
+        "15": 100,
+        "8": 506,
+        "19": 26,
+        "20": 37,
+        "18": 30,
+        "21": 25,
+        "17": 46,
+        "22": 31
+      },
+      "constant_answer_baseline": 0.16866666666666666
+    },
+    "2": {
+      "counts": {
+        "4": 367,
+        "10": 459,
+        "7": 463,
+        "5": 352,
+        "9": 441,
+        "8": 559,
+        "6": 359
+      },
+      "constant_answer_baseline": 0.18633333333333332
+    },
+    "3": {
+      "counts": {
+        "5": 128,
+        "1": 1526,
+        "3": 387,
+        "2": 536,
+        "6": 121,
+        "4": 221,
+        "8": 19,
+        "7": 20,
+        "13": 3,
+        "9": 13,
+        "12": 5,
+        "11": 8,
+        "14": 3,
+        "10": 9,
+        "16": 1
+      },
+      "constant_answer_baseline": 0.5086666666666667
+    },
+    "4": {
+      "counts": {
+        "0": 1000,
+        "1": 1000,
+        "2": 1000
+      },
+      "constant_answer_baseline": 0.3333333333333333
+    },
+    "5": {
+      "counts": {
+        "0": 1000,
+        "1": 1000,
+        "2": 1000
+      },
+      "constant_answer_baseline": 0.3333333333333333
+    }
+  },
+  "leak_audit": {
+    "dataset_version": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "vertical_axis": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "coordinate_frame": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "render_frame": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "rotation_axis_level5": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "canvas_size": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.5610994331364112,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.551026912044252,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.5714879679188579,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.5599344491113101,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.5599344491113101,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "seed": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.06775923907620017,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.05407303892257961,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.06815730683833005,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.001490720266802125,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.001490720266802125,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "line_width_px": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.07442659996690563,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.056552850951430464,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.06551116791378779,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.04100603799538305,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.04100603799538305,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "total_cube_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.21715350262032732,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.19766948122518252,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.2814482086808209,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.2814482086808209,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals L1"
+    },
+    "visible_cube_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.6274330705341827,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.3265993385734512,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.20496938044154764,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.25608600040729707,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.25608600040729707,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "hidden_cube_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.2981993908858295,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.2468908257349484,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.1734535788356852,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals L4"
+    },
+    "base_layer_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.22938428988686718,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.1854734942295014,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.2468908257349484,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.2468908257349484,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals L2"
+    },
+    "max_height": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.43531596558667435,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.3519744288968742,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.6181452819918458,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.22157404511589535,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.22157404511589535,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "cubes_per_layer": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999973,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.000000000000001,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.6251463869753833,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.6555975303619549,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.6555975303619549,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "color_cluster_count": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0656621597749327,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.043409229340734636,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.3247502763162299,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.009797958971132713,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.009797958971132713,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "cluster_counts": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.9999999999999996,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.30552532473121863,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.6523714514432093,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.3657896980210809,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.3657896980210809,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "hidden_members_per_cluster": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.16080856096193585,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.1533048056048451,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.17142501353673792,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "has_ambiguous_visual_floater": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "hidden_to_visible_180": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.2981993908858295,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.2468908257349484,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.1734535788356852,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "definitional",
+      "whitelist_justification": "definitionally equals L5"
+    },
+    "generation_attempt": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.10639533171269536,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.09355675618276763,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.07389816182899708,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.5123931052107278,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.5123931052107278,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "levels": {
+        "1": {
+          "cramers_v": 0.3975313943640799,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.20528069038990474,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.24054985364704579,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.4668882937949076,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.4668882937949076,
+          "kind": "numeric_deciles"
+        }
+      },
+      "classification": "scene_feature",
+      "whitelist_justification": null
+    }
+  },
+  "full_parameter_distributions": {
+    "continuous": {
+      "total_cube_count": {
+        "count": 3000,
+        "min": 8.0,
+        "p25": 9.0,
+        "p50": 11.0,
+        "p75": 12.0,
+        "p95": 17.0,
+        "max": 22.0
+      },
+      "visible_cube_count": {
+        "count": 3000,
+        "min": 6.0,
+        "p25": 8.0,
+        "p50": 10.0,
+        "p75": 11.0,
+        "p95": 17.0,
+        "max": 22.0
+      },
+      "hidden_cube_count": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 0.0,
+        "p50": 1.0,
+        "p75": 2.0,
+        "p95": 2.0,
+        "max": 2.0
+      },
+      "base_layer_count": {
+        "count": 3000,
+        "min": 4.0,
+        "p25": 6.0,
+        "p50": 7.0,
+        "p75": 9.0,
+        "p95": 10.0,
+        "max": 10.0
+      },
+      "max_height": {
+        "count": 3000,
+        "min": 1.0,
+        "p25": 2.0,
+        "p50": 3.0,
+        "p75": 4.0,
+        "p95": 6.0,
+        "max": 6.0
+      },
+      "hidden_to_visible_180": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 0.0,
+        "p50": 1.0,
+        "p75": 2.0,
+        "p95": 2.0,
+        "max": 2.0
+      },
+      "generation_attempt": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 5.0,
+        "p50": 14.0,
+        "p75": 39.0,
+        "p95": 173.04999999999973,
+        "max": 606.0
+      },
+      "difficulty_score": {
+        "count": 3000,
+        "min": 0.0,
+        "p25": 0.115,
+        "p50": 0.18,
+        "p75": 0.2557,
+        "p95": 0.431,
+        "max": 0.6136
+      },
+      "line_width_px": {
+        "count": 3000,
+        "min": 0.5,
+        "p25": 0.62,
+        "p50": 0.75,
+        "p75": 0.87,
+        "p95": 0.97,
+        "max": 1.0
+      }
+    },
+    "categorical": {
+      "color_cluster_count": {
+        "1": 2250,
+        "2": 750
+      },
+      "has_ambiguous_visual_floater": {
+        "False": 3000
+      },
+      "vertical_axis": {
+        "z": 3000
+      }
+    }
+  },
+  "guard_injection_tests": {
+    "gravity": {
+      "violating": true,
+      "boundary": true
+    },
+    "ambiguity": {
+      "violating_rejected": true,
+      "boundary_accepted": true
+    },
+    "vertical_axis": {
+      "wrong_rejected": true,
+      "z_accepted": true
+    }
+  },
+  "issues": []
+}

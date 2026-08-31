@@ -1,0 +1,1066 @@
+{
+  "dataset_version": "impossible-object-4.0.0",
+  "images_checked": 3000,
+  "questions_checked": 15000,
+  "mismatches": 0,
+  "png_recovery": {
+    "beam_count": 3000,
+    "crossing_count": 3000,
+    "depth_order": 3000
+  },
+  "answer_distributions": {
+    "1": {
+      "5": 1504,
+      "6": 1496
+    },
+    "2": {
+      "yes": 1500,
+      "no": 1500
+    },
+    "3": {
+      "C": 504,
+      "A": 573,
+      "E": 503,
+      "B": 622,
+      "D": 551,
+      "F": 247
+    },
+    "4": {
+      "6": 750,
+      "7": 750,
+      "8": 750,
+      "9": 750
+    },
+    "5": {
+      "already constructible": 1500,
+      "A": 275,
+      "B": 276,
+      "C": 274,
+      "D": 275,
+      "E": 275,
+      "F": 125
+    }
+  },
+  "constant_answer_baselines": {
+    "1": {
+      "answer": "5",
+      "count": 1504,
+      "accuracy": 0.5013333333333333
+    },
+    "2": {
+      "answer": "yes",
+      "count": 1500,
+      "accuracy": 0.5
+    },
+    "3": {
+      "answer": "B",
+      "count": 622,
+      "accuracy": 0.20733333333333334
+    },
+    "4": {
+      "answer": "6",
+      "count": 750,
+      "accuracy": 0.25
+    },
+    "5": {
+      "answer": "already constructible",
+      "count": 1500,
+      "accuracy": 0.5
+    }
+  },
+  "depth_constraint_representation": "directed beam-label front/back relation per projected crossing",
+  "leak_audit": {
+    "1": {
+      "canvas_width": {
+        "cramers_v": 0.06045772988789091,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "canvas_height": {
+        "cramers_v": 0.04882639606820724,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "mode": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "beam_count": {
+        "cramers_v": 1.0,
+        "kind": "categorical",
+        "classification": "definitional"
+      },
+      "target_crossing_count": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_separation_px": {
+        "cramers_v": 0.0026737967914437833,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "minimum_crossing_separation_px": {
+        "cramers_v": 0.042395118993361236,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_reference_distance_gap_px": {
+        "cramers_v": 0.008311429258190098,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "reference_distance_gap_px": {
+        "cramers_v": 0.055793467584880116,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_label_separation_px": {
+        "cramers_v": 0.01306399174467462,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "minimum_label_separation_px": {
+        "cramers_v": 0.01306399174467462,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "reference_front_beam": {
+        "cramers_v": 0.30093540673853003,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "removable_beam_label": {
+        "cramers_v": 0.2137780005613839,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "color_index": {
+        "cramers_v": 0.016880111470034896,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      }
+    },
+    "2": {
+      "canvas_width": {
+        "cramers_v": 0.06679986693266851,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "canvas_height": {
+        "cramers_v": 0.05112077203381551,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "mode": {
+        "cramers_v": 1.0,
+        "kind": "categorical",
+        "classification": "definitional"
+      },
+      "beam_count": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_count": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_separation_px": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "minimum_crossing_separation_px": {
+        "cramers_v": 0.054650404085117864,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_reference_distance_gap_px": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "reference_distance_gap_px": {
+        "cramers_v": 0.07477373276165307,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_label_separation_px": {
+        "cramers_v": 0.0,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "minimum_label_separation_px": {
+        "cramers_v": 0.0,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "reference_front_beam": {
+        "cramers_v": 0.0648369922457878,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "removable_beam_label": {
+        "cramers_v": 1.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "color_index": {
+        "cramers_v": 0.03333457806885684,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      }
+    },
+    "3": {
+      "canvas_width": {
+        "cramers_v": 0.05197529210092573,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "canvas_height": {
+        "cramers_v": 0.052320029611240645,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "mode": {
+        "cramers_v": 0.06483699224578779,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "beam_count": {
+        "cramers_v": 0.30093540673853,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_count": {
+        "cramers_v": 0.04086971609068541,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_separation_px": {
+        "cramers_v": 0.021461085251276588,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "minimum_crossing_separation_px": {
+        "cramers_v": 0.05799240176754557,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_reference_distance_gap_px": {
+        "cramers_v": 0.061072629741393616,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "reference_distance_gap_px": {
+        "cramers_v": 0.04685668523125511,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_label_separation_px": {
+        "cramers_v": 0.05164078328814912,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "minimum_label_separation_px": {
+        "cramers_v": 0.05164078328814912,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "reference_front_beam": {
+        "cramers_v": 1.0,
+        "kind": "categorical",
+        "classification": "definitional"
+      },
+      "removable_beam_label": {
+        "cramers_v": 0.11384753504186265,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "color_index": {
+        "cramers_v": 0.04470651771617561,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      }
+    },
+    "4": {
+      "canvas_width": {
+        "cramers_v": 0.05036165501943216,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "canvas_height": {
+        "cramers_v": 0.06256256128128126,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "mode": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "beam_count": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_count": {
+        "cramers_v": 1.0,
+        "kind": "categorical",
+        "classification": "definitional"
+      },
+      "target_crossing_separation_px": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "minimum_crossing_separation_px": {
+        "cramers_v": 0.05955389715767277,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_reference_distance_gap_px": {
+        "cramers_v": 0.0,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "reference_distance_gap_px": {
+        "cramers_v": 0.06833468833344915,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_label_separation_px": {
+        "cramers_v": 0.007698003589195006,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "minimum_label_separation_px": {
+        "cramers_v": 0.007698003589195006,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "reference_front_beam": {
+        "cramers_v": 0.04086971609068541,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "removable_beam_label": {
+        "cramers_v": 0.21275584256951807,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "color_index": {
+        "cramers_v": 0.03849360994987901,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      }
+    },
+    "5": {
+      "canvas_width": {
+        "cramers_v": 0.06821338251779531,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "canvas_height": {
+        "cramers_v": 0.05468840792418565,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "mode": {
+        "cramers_v": 1.0,
+        "kind": "categorical",
+        "classification": "definitional"
+      },
+      "beam_count": {
+        "cramers_v": 0.2137780005613839,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_count": {
+        "cramers_v": 0.21275584256951807,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "target_crossing_separation_px": {
+        "cramers_v": 0.0016575567215669654,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "minimum_crossing_separation_px": {
+        "cramers_v": 0.05383992067708595,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_reference_distance_gap_px": {
+        "cramers_v": 0.007997785606457225,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "reference_distance_gap_px": {
+        "cramers_v": 0.06506443015767137,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "target_label_separation_px": {
+        "cramers_v": 0.01821233639758834,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "minimum_label_separation_px": {
+        "cramers_v": 0.01821233639758834,
+        "kind": "numeric_deciles",
+        "classification": "non-definitional"
+      },
+      "reference_front_beam": {
+        "cramers_v": 0.11384753504186265,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      },
+      "removable_beam_label": {
+        "cramers_v": 1.0000000000000002,
+        "kind": "categorical",
+        "classification": "definitional"
+      },
+      "color_index": {
+        "cramers_v": 0.061058943821836895,
+        "kind": "categorical",
+        "classification": "non-definitional"
+      }
+    }
+  },
+  "features_at_v_ge_0_10": {
+    "L1:beam_count": {
+      "cramers_v": 1.0,
+      "kind": "categorical",
+      "classification": "definitional"
+    },
+    "L1:reference_front_beam": {
+      "cramers_v": 0.30093540673853003,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L1:removable_beam_label": {
+      "cramers_v": 0.2137780005613839,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L2:mode": {
+      "cramers_v": 1.0,
+      "kind": "categorical",
+      "classification": "definitional"
+    },
+    "L2:removable_beam_label": {
+      "cramers_v": 1.0,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L3:beam_count": {
+      "cramers_v": 0.30093540673853,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L3:reference_front_beam": {
+      "cramers_v": 1.0,
+      "kind": "categorical",
+      "classification": "definitional"
+    },
+    "L3:removable_beam_label": {
+      "cramers_v": 0.11384753504186265,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L4:target_crossing_count": {
+      "cramers_v": 1.0,
+      "kind": "categorical",
+      "classification": "definitional"
+    },
+    "L4:removable_beam_label": {
+      "cramers_v": 0.21275584256951807,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L5:mode": {
+      "cramers_v": 1.0,
+      "kind": "categorical",
+      "classification": "definitional"
+    },
+    "L5:beam_count": {
+      "cramers_v": 0.2137780005613839,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L5:target_crossing_count": {
+      "cramers_v": 0.21275584256951807,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L5:reference_front_beam": {
+      "cramers_v": 0.11384753504186265,
+      "kind": "categorical",
+      "classification": "non-definitional"
+    },
+    "L5:removable_beam_label": {
+      "cramers_v": 1.0000000000000002,
+      "kind": "categorical",
+      "classification": "definitional"
+    }
+  },
+  "definitional_whitelist": {
+    "1": {
+      "beam_count": "the stored count named by the answer"
+    },
+    "2": {
+      "mode": "constructibility class named by the answer"
+    },
+    "3": {
+      "reference_front_beam": "front beam at the deterministic reference crossing"
+    },
+    "4": {
+      "target_crossing_count": "the crossing count named by the answer"
+    },
+    "5": {
+      "mode": "determines already-constructible versus repair",
+      "removable_beam_label": "the unique repair label named by the answer"
+    }
+  },
+  "guard_injection_tests": {
+    "crossing_separation": {
+      "violating": {
+        "value": 7.99,
+        "accepted": false
+      },
+      "boundary": {
+        "value": 8.0,
+        "accepted": true
+      }
+    },
+    "reference_distance_gap": {
+      "violating": {
+        "value": 11.99,
+        "accepted": false
+      },
+      "boundary": {
+        "value": 12.0,
+        "accepted": true
+      }
+    },
+    "beam_label_separation": {
+      "violating": {
+        "value": 23.99,
+        "accepted": false
+      },
+      "boundary": {
+        "value": 24.0,
+        "accepted": true
+      }
+    },
+    "crossing_count_target": {
+      "violating": {
+        "value": 5,
+        "accepted": false
+      },
+      "boundary": {
+        "value": 6,
+        "accepted": true
+      }
+    },
+    "unique_removable_beam": {
+      "violating": {
+        "valid_removal_count": 2,
+        "accepted": false
+      },
+      "boundary": {
+        "valid_removal_count": 1,
+        "accepted": true
+      }
+    },
+    "beam_separability": {
+      "violating": {
+        "recovered_labels": 4,
+        "stored_beams": 5,
+        "accepted": false
+      },
+      "boundary": {
+        "recovered_labels": 5,
+        "stored_beams": 5,
+        "accepted": true
+      }
+    },
+    "png_depth_recoverability": {
+      "violating": {
+        "recovered_crossings": 7,
+        "stored_crossings": 8,
+        "accepted": false
+      },
+      "boundary": {
+        "recovered_crossings": 8,
+        "stored_crossings": 8,
+        "accepted": true
+      }
+    },
+    "crossing_target_match": {
+      "violating": {
+        "absolute_error_px": 1.01,
+        "accepted": false
+      },
+      "boundary": {
+        "absolute_error_px": 1.0,
+        "accepted": true
+      }
+    },
+    "label_target_match": {
+      "violating": {
+        "absolute_error_px": 0.01,
+        "accepted": false
+      },
+      "boundary": {
+        "absolute_error_px": 0.0,
+        "accepted": true
+      }
+    },
+    "reference_gap_target_match": {
+      "violating": {
+        "absolute_error_px": 1.01,
+        "accepted": false
+      },
+      "boundary": {
+        "absolute_error_px": 1.0,
+        "accepted": true
+      }
+    }
+  },
+  "separation_distributions": {
+    "label_by_beam_count": {
+      "5": {
+        "count": 1504,
+        "min": 40.0,
+        "p25": 41.0,
+        "p50": 42.0,
+        "p75": 43.0,
+        "p95": 43.8,
+        "max": 44.0
+      },
+      "6": {
+        "count": 1496,
+        "min": 40.0,
+        "p25": 41.0,
+        "p50": 42.0,
+        "p75": 43.0,
+        "p95": 43.8,
+        "max": 44.0
+      }
+    },
+    "crossing_by_beam_count": {
+      "5": {
+        "count": 1504,
+        "min": 8.002565,
+        "p25": 9.05323625,
+        "p50": 10.001759499999999,
+        "p75": 10.95956575,
+        "p95": 11.808788799999999,
+        "max": 11.996817
+      },
+      "6": {
+        "count": 1496,
+        "min": 8.000829,
+        "p25": 9.0715955,
+        "p50": 9.990133499999999,
+        "p75": 10.999966,
+        "p95": 11.78833325,
+        "max": 11.993313
+      }
+    },
+    "crossing_by_crossing_count": {
+      "6": {
+        "count": 750,
+        "min": 8.016876,
+        "p25": 9.077195750000001,
+        "p50": 9.973046,
+        "p75": 10.92353525,
+        "p95": 11.79853645,
+        "max": 11.99268
+      },
+      "7": {
+        "count": 750,
+        "min": 8.001411,
+        "p25": 9.10189325,
+        "p50": 9.984862499999998,
+        "p75": 11.0121205,
+        "p95": 11.820861449999999,
+        "max": 11.993313
+      },
+      "8": {
+        "count": 750,
+        "min": 8.000829,
+        "p25": 8.972336,
+        "p50": 9.996596499999999,
+        "p75": 10.98759875,
+        "p95": 11.7737541,
+        "max": 11.996817
+      },
+      "9": {
+        "count": 750,
+        "min": 8.002565,
+        "p25": 9.089679499999999,
+        "p50": 9.994854499999999,
+        "p75": 11.00168125,
+        "p95": 11.7698119,
+        "max": 11.988271
+      }
+    },
+    "reference_gap_by_beam_count": {
+      "5": {
+        "count": 1504,
+        "min": 12.502381,
+        "p25": 13.47885525,
+        "p50": 13.9487175,
+        "p75": 14.479625500000001,
+        "p95": 15.0799217,
+        "max": 15.47515
+      },
+      "6": {
+        "count": 1496,
+        "min": 12.516885,
+        "p25": 13.479834499999999,
+        "p50": 13.96513,
+        "p75": 14.4520875,
+        "p95": 15.087695000000002,
+        "max": 15.454033
+      }
+    },
+    "reference_gap_by_crossing_count": {
+      "6": {
+        "count": 750,
+        "min": 12.502381,
+        "p25": 13.468549,
+        "p50": 13.9492855,
+        "p75": 14.4486245,
+        "p95": 15.06014835,
+        "max": 15.47515
+      },
+      "7": {
+        "count": 750,
+        "min": 12.562482,
+        "p25": 13.52211125,
+        "p50": 13.998766499999999,
+        "p75": 14.470224,
+        "p95": 15.098057949999998,
+        "max": 15.453479
+      },
+      "8": {
+        "count": 750,
+        "min": 12.504202,
+        "p25": 13.4683045,
+        "p50": 13.914516,
+        "p75": 14.51651175,
+        "p95": 15.0960236,
+        "max": 15.429246
+      },
+      "9": {
+        "count": 750,
+        "min": 12.516885,
+        "p25": 13.47248075,
+        "p50": 13.978908,
+        "p75": 14.438533,
+        "p95": 15.0594192,
+        "max": 15.460032
+      }
+    },
+    "reference_gap_by_mode": {
+      "impossible": {
+        "count": 1500,
+        "min": 12.502381,
+        "p25": 13.46785575,
+        "p50": 13.954075,
+        "p75": 14.4406125,
+        "p95": 15.0817023,
+        "max": 15.47515
+      },
+      "possible": {
+        "count": 1500,
+        "min": 12.504202,
+        "p25": 13.49029675,
+        "p50": 13.959604500000001,
+        "p75": 14.501918,
+        "p95": 15.0878742,
+        "max": 15.460032
+      }
+    }
+  },
+  "field_listing": {
+    "annotations_jsonl_top_level": [
+      "beams",
+      "canvas_size",
+      "color",
+      "crossings",
+      "dataset_version",
+      "depth_constraint_representation",
+      "depth_constraints",
+      "difficulty_score",
+      "id",
+      "image_path",
+      "mode",
+      "num_beams",
+      "num_crossings",
+      "questions",
+      "reference_crossing_id",
+      "reference_crossing_point",
+      "reference_front_beam",
+      "reference_rule",
+      "removable_beam_label",
+      "scene_params",
+      "seed"
+    ],
+    "annotations_jsonl_scene_params": [
+      "beam_count",
+      "canvas_height",
+      "canvas_width",
+      "color_index",
+      "minimum_crossing_separation_px",
+      "minimum_label_separation_px",
+      "mode",
+      "reference_distance_gap_px",
+      "reference_front_beam",
+      "removable_beam_label",
+      "target_crossing_count",
+      "target_crossing_separation_px",
+      "target_label_separation_px",
+      "target_reference_distance_gap_px"
+    ],
+    "annotations_jsonl_question_object": [
+      "answer_format",
+      "difficulty_level",
+      "ground_truth",
+      "question_id",
+      "question_text",
+      "question_type"
+    ],
+    "question_set_csv": [
+      "question_id",
+      "task",
+      "image",
+      "prompt"
+    ],
+    "answer_key_csv": [
+      "question_id",
+      "task",
+      "image",
+      "prompt",
+      "groundtruth",
+      "answer_format"
+    ]
+  },
+  "generation_diagnostics": {
+    "generation_attempts": {
+      "count": 3000,
+      "min": 0,
+      "p25": 134,
+      "p50": 369,
+      "p75": 1095,
+      "p95": 7194,
+      "max": 39948,
+      "mean": 1501.2013333333334
+    },
+    "generation_attempts_by_configuration": {
+      "beams=5,crossings=6": {
+        "count": 376,
+        "min": 5,
+        "p50": 1192,
+        "p95": 14714,
+        "max": 30327,
+        "mean": 3389.593085106383
+      },
+      "beams=5,crossings=7": {
+        "count": 376,
+        "min": 1,
+        "p50": 552,
+        "p95": 6251,
+        "max": 14685,
+        "mean": 1564.4335106382978
+      },
+      "beams=5,crossings=8": {
+        "count": 376,
+        "min": 0,
+        "p50": 201,
+        "p95": 811,
+        "max": 3299,
+        "mean": 289.5345744680851
+      },
+      "beams=5,crossings=9": {
+        "count": 376,
+        "min": 0,
+        "p50": 159,
+        "p95": 652,
+        "max": 1310,
+        "mean": 221.36436170212767
+      },
+      "beams=6,crossings=6": {
+        "count": 374,
+        "min": 4,
+        "p50": 1322,
+        "p95": 18703,
+        "max": 39948,
+        "mean": 4370.64705882353
+      },
+      "beams=6,crossings=7": {
+        "count": 374,
+        "min": 1,
+        "p50": 659,
+        "p95": 4755,
+        "max": 8805,
+        "mean": 1302.2299465240642
+      },
+      "beams=6,crossings=8": {
+        "count": 374,
+        "min": 2,
+        "p50": 366,
+        "p95": 1817,
+        "max": 4545,
+        "mean": 580.687165775401
+      },
+      "beams=6,crossings=9": {
+        "count": 374,
+        "min": 1,
+        "p50": 199,
+        "p95": 901,
+        "max": 1683,
+        "mean": 294.0080213903743
+      }
+    },
+    "png_recovery_retry_distribution": {
+      "0": 2681,
+      "1": 273,
+      "3": 12,
+      "2": 32,
+      "4": 2
+    }
+  },
+  "continuous_distributions": {
+    "canvas_width": {
+      "count": 3000,
+      "min": 500.0,
+      "p25": 524.0,
+      "p50": 550.0,
+      "p75": 574.0,
+      "p95": 595.0,
+      "max": 600.0
+    },
+    "canvas_height": {
+      "count": 3000,
+      "min": 350.0,
+      "p25": 362.0,
+      "p50": 375.0,
+      "p75": 387.0,
+      "p95": 398.0,
+      "max": 400.0
+    },
+    "beam_count": {
+      "count": 3000,
+      "min": 5.0,
+      "p25": 5.0,
+      "p50": 5.0,
+      "p75": 6.0,
+      "p95": 6.0,
+      "max": 6.0
+    },
+    "target_crossing_count": {
+      "count": 3000,
+      "min": 6.0,
+      "p25": 6.75,
+      "p50": 7.5,
+      "p75": 8.25,
+      "p95": 9.0,
+      "max": 9.0
+    },
+    "target_crossing_separation_px": {
+      "count": 3000,
+      "min": 9.0,
+      "p25": 9.0,
+      "p50": 9.0,
+      "p75": 11.0,
+      "p95": 11.0,
+      "max": 11.0
+    },
+    "minimum_crossing_separation_px": {
+      "count": 3000,
+      "min": 8.000829,
+      "p25": 9.06051525,
+      "p50": 9.9942935,
+      "p75": 10.98006375,
+      "p95": 11.7969585,
+      "max": 11.996817
+    },
+    "target_reference_distance_gap_px": {
+      "count": 3000,
+      "min": 13.5,
+      "p25": 13.7,
+      "p50": 14.0,
+      "p75": 14.3,
+      "p95": 14.5,
+      "max": 14.5
+    },
+    "reference_distance_gap_px": {
+      "count": 3000,
+      "min": 12.502381,
+      "p25": 13.4792635,
+      "p50": 13.956029000000001,
+      "p75": 14.46835625,
+      "p95": 15.085374149999998,
+      "max": 15.47515
+    },
+    "target_label_separation_px": {
+      "count": 3000,
+      "min": 40.0,
+      "p25": 41.0,
+      "p50": 42.0,
+      "p75": 43.0,
+      "p95": 43.8,
+      "max": 44.0
+    },
+    "minimum_label_separation_px": {
+      "count": 3000,
+      "min": 40.0,
+      "p25": 41.0,
+      "p50": 42.0,
+      "p75": 43.0,
+      "p95": 43.8,
+      "max": 44.0
+    },
+    "color_index": {
+      "count": 3000,
+      "min": 0.0,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 2.0,
+      "p95": 2.0,
+      "max": 2.0
+    }
+  },
+  "categorical_distributions": {
+    "mode": {
+      "possible": 1500,
+      "impossible": 1500
+    },
+    "reference_front_beam": {
+      "C": 504,
+      "A": 573,
+      "E": 503,
+      "B": 622,
+      "D": 551,
+      "F": 247
+    },
+    "removable_beam_label": {
+      "None": 1500,
+      "A": 275,
+      "B": 276,
+      "C": 274,
+      "D": 275,
+      "E": 275,
+      "F": 125
+    }
+  },
+  "issues": []
+}

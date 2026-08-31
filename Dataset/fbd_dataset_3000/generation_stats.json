@@ -1,0 +1,17 @@
+{
+  "images": 3000,
+  "scenario_distribution": {
+    "incline": 500,
+    "hanging_mass": 500,
+    "atwood_machine": 500,
+    "wall_push": 500,
+    "elevator": 500,
+    "banked_curve": 500
+  },
+  "preset_distribution": {
+    "equilibrium": 750,
+    "accelerating": 750,
+    "missing_force": 750,
+    "wrong_diagram": 750
+  }
+}

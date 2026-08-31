@@ -1,0 +1,26 @@
+{
+  "constraint_source": "generator constants and validation metrics",
+  "constraint_set": {
+    "euler_formula": "face_count = 2 - vertex_count + edge_count",
+    "euler_level4_equals_stored_face_count": true,
+    "euler_level4_positive": true,
+    "euler_prompt_values_match_record": true,
+    "five_questions_per_image": true,
+    "level3_vertex_answer_matches_vertex_count": true,
+    "level5_remove_face_closed_surface_answer": "no",
+    "stored_convex_topology_satisfies_v_minus_e_plus_f_equals_2": true
+  },
+  "current_build_layout": "unsuffixed",
+  "dataset_version": "polyhedron-3.0.0",
+  "generator_commit": "269045bc25630d3cc96a3d617e35043d72f941cd",
+  "images": 3000,
+  "metadata_only_rebuild": true,
+  "superseded_build": "archive/v2 (metadata only; no images)",
+  "question_set_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
+  "questions": 15000
+}

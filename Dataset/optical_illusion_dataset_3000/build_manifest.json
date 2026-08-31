@@ -1,0 +1,18 @@
+{
+  "constraint_source": "generator constants and validation metrics",
+  "current_build_layout": "unsuffixed",
+  "dataset_version": "optical-illusion-3.0.0",
+  "generator_commit": "269045bc25630d3cc96a3d617e35043d72f941cd",
+  "images": 3000,
+  "constraints": {
+    "level2_human_perception_frame_explicit": true,
+    "perception_frame_phrase": "typical human viewer"
+  },
+  "question_set_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
+  "questions": 15000
+}

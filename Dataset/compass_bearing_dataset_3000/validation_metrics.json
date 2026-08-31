@@ -1,0 +1,41 @@
+{
+  "images_checked": 3000,
+  "questions_checked": 15000,
+  "mismatches": 0,
+  "cardinal_convention_tests": {
+    "north": {
+      "computed": 0.0,
+      "expected": 0,
+      "pass": true
+    },
+    "east": {
+      "computed": 90.0,
+      "expected": 90,
+      "pass": true
+    },
+    "south": {
+      "computed": 180.0,
+      "expected": 180,
+      "pass": true
+    },
+    "west": {
+      "computed": 270.0,
+      "expected": 270,
+      "pass": true
+    }
+  },
+  "landmark_distribution": {
+    "4": 1500,
+    "3": 1500
+  },
+  "path_distribution": {
+    "true": 1500,
+    "false": 1500
+  },
+  "level2_relations": {
+    "south": 1380,
+    "north": 1320,
+    "same latitude": 300
+  },
+  "issues": []
+}

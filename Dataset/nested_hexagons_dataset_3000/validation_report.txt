@@ -1,0 +1,123 @@
+Nested Hexagons Dataset v8 Validation Report
+====================================================
+Dataset version: nested-hexagons-8.0.0
+Total images checked: 3000
+Total questions checked: 15000
+Total mismatches found: 0
+
+Level 2 balance: {'constant': 1500, 'changing': 1500}
+Rotation modes split by Level 2: {'changing': {'fixed': 225, 'per_shape_independent': 1275}, 'constant': {'fixed': 225, 'per_shape_independent': 1275}}
+Rotation-mode / Level-2 Cramer's V: 0.0000000000
+Definitional whitelist (exactly two): ['factor_progression_direction', 'reduction_factor_span']
+All features at V >= 0.10: {'factor_progression_direction': {'kind': 'categorical', 'cramers_v': 1.0, 'classification': 'definitional'}, 'reduction_factor_span': {'kind': 'numeric_deciles', 'cramers_v': 1.0, 'summary': {'count': 3000, 'min': 1.000000090694639, 'p25': 1.0000013951005957, 'p50': 1.1750355518762032, 'p75': 1.4098735344901754, 'p95': 1.4573660874208867, 'max': 1.469830067978409}, 'classification': 'definitional'}}
+Association filter exactly matches raw audit: YES
+Leak audit (all stored scene features):
+  canvas_height: V=0.00000000 (numeric_deciles)
+  canvas_width: V=0.00000000 (numeric_deciles)
+  center_drift_measured: V=0.00000000 (categorical)
+  color_alternation: V=0.00000000 (categorical)
+  containment_outcome: V=0.00000000 (categorical)
+  cumulative_rotation: V=0.00000000 (numeric_deciles)
+  difficulty_score: V=0.00000000 (numeric_deciles)
+  extrapolation_reduction_factor: V=0.00000000 (numeric_deciles)
+  factor_progression_direction: V=1.00000000 (categorical)
+  gap_separation: V=0.00000000 (numeric_deciles)
+  generation_attempt: V=0.00000000 (numeric_deciles)
+  innermost_center_x: V=0.00000000 (numeric_deciles)
+  innermost_center_y: V=0.00000000 (numeric_deciles)
+  innermost_side_length: V=0.00000000 (numeric_deciles)
+  level5_label: V=0.00000000 (categorical)
+  line_width_class: V=0.00000000 (categorical)
+  line_width_px: V=0.00000000 (numeric_deciles)
+  matched_clearance_target_px: V=0.00000000 (numeric_deciles)
+  minimum_adjacent_clear_background_px: V=0.00298143 (numeric_deciles)
+  offset_requested_pre_containment: V=0.00000000 (categorical)
+  outer_center_x: V=0.00000000 (numeric_deciles)
+  outer_center_y: V=0.00000000 (numeric_deciles)
+  outer_inner_size_ratio: V=0.00000000 (numeric_deciles)
+  outer_rotation_angle: V=0.00000000 (numeric_deciles)
+  outer_side_length: V=0.00000000 (numeric_deciles)
+  reduction_factor_span: V=1.00000000 (numeric_deciles)
+  rejections_containment: V=0.00000000 (numeric_deciles)
+  rejections_drift_floor: V=0.00000000 (numeric_deciles)
+  rejections_gap_margin: V=0.00000000 (numeric_deciles)
+  rejections_level5_margin: V=0.00000000 (numeric_deciles)
+  rejections_minimum_inner_size: V=0.00000000 (numeric_deciles)
+  rejections_minimum_outline_clearance: V=0.00000000 (numeric_deciles)
+  rejections_reduction_perceptibility: V=0.00000000 (numeric_deciles)
+  rejections_rotation_wrap: V=0.00000000 (numeric_deciles)
+  rotation_mode: V=0.00000000 (categorical)
+  sampled_total_inner_fraction: V=0.00000000 (numeric_deciles)
+  sampled_total_reduction_root: V=0.00000000 (numeric_deciles)
+  shape_count: V=0.00000000 (categorical)
+  size_axis_band: V=0.00000000 (categorical)
+  stroke_palette: V=0.00000000 (categorical)
+  target_cumulative_rotation: V=0.00000000 (numeric_deciles)
+
+Changing-factor perceptibility threshold: 1.350
+Changing-factor span distribution: {'count': 1500, 'min': 1.3500662908267302, 'p25': 1.3802176340296488, 'p50': 1.4098842969347922, 'p75': 1.43876117464662, 'p95': 1.4628171814090507, 'max': 1.469830067978409}
+Outer/inner ratio vs Level 2 V: 0.00000000
+Level 5 threshold: 12.000%
+Level 5 threshold derivation: v7 medians motivated an upward move; 12% is the lowest shared rounded threshold whose 9.6% lower guard is feasible for 10-12 triangles under both standing visibility floors
+Level 5 exclusion band: [0.096, 0.144]
+Level 5 achievable extrapolated-fraction range: {'count': 3000, 'min': 0.09301175487254436, 'p25': 0.09399995226804102, 'p50': 0.12255249789639439, 'p75': 0.15999995383010174, 'p95': 0.16795187823302646, 'max': 0.16988371437180014}
+Level 5 labels: {'no': 1500, 'yes': 1500}
+Level 5 count correlation: 0.00000000
+Minimum-clearance / Level-2 V: 0.00298143
+Minimum-clearance distributions by Level 2: {'constant': {'count': 1500, 'min': 3.0001118934066318, 'p25': 3.000373887692112, 'p50': 3.000594674074793, 'p75': 3.000816283875488, 'p95': 3.0009935665749388, 'max': 3.0010814376652433}, 'changing': {'count': 1500, 'min': 3.0001118934066318, 'p25': 3.0003742536053157, 'p50': 3.0005942696052457, 'p75': 3.000816283875488, 'p95': 3.0009935665749388, 'max': 3.0010814376652433}}
+PNG-recovered shape counts matching stored count: 3000/3000
+Innermost size threshold: 15.0px
+Clear-background threshold: 3.0px
+
+offset_intended absent from annotations and flattened outputs: YES
+Requested offsets contracted below 3%: 0
+
+Full sampled parameter distributions:
+  continuous canvas_height: {'count': 3000, 'min': 580.0, 'p25': 585.0, 'p50': 590.0, 'p75': 596.0, 'p95': 600.0, 'max': 600.0}
+  continuous canvas_width: {'count': 3000, 'min': 580.0, 'p25': 585.0, 'p50': 590.0, 'p75': 595.0, 'p95': 599.0, 'max': 600.0}
+  continuous cumulative_rotation_degrees: {'count': 3000, 'min': 0.0, 'p25': 14.0, 'p50': 26.0, 'p75': 38.0, 'p95': 48.0, 'max': 50.0}
+  continuous difficulty_score: {'count': 3000, 'min': 0.1, 'p25': 0.3938, 'p50': 0.4812, 'p75': 0.5687, 'p95': 0.6125, 'max': 0.7}
+  continuous extrapolation_reduction_factor: {'count': 3000, 'min': 0.5522485434536333, 'p25': 0.6935099613099337, 'p50': 0.7691010211024871, 'p75': 0.8163502923005029, 'p95': 0.8549255460826235, 'max': 0.8626725311690739}
+  continuous generation_attempt: {'count': 3000, 'min': 0.0, 'p25': 0.0, 'p50': 0.0, 'p75': 0.0, 'p95': 0.0, 'max': 1.0}
+  continuous innermost_center_x: {'count': 3000, 'min': 235.1895, 'p25': 290.9143, 'p50': 295.17245, 'p75': 298.897175, 'p95': 304.33777999999995, 'max': 370.2171}
+  continuous innermost_center_y: {'count': 3000, 'min': 223.6976, 'p25': 291.2014, 'p50': 295.48294999999996, 'p75': 299.62217499999997, 'p95': 304.87924, 'max': 369.8917}
+  continuous innermost_side_length: {'count': 3000, 'min': 29.3252, 'p25': 33.156774999999996, 'p50': 45.6545, 'p75': 53.097875, 'p95': 63.910125, 'max': 70.7976}
+  continuous line_width_px: {'count': 3000, 'min': 0.75, 'p25': 0.9, 'p50': 1.57, 'p75': 1.78, 'p95': 1.95, 'max': 2.0}
+  continuous matched_clearance_target_px: {'count': 3000, 'min': 3.000100075624495, 'p25': 3.0003205460019498, 'p50': 3.000546691812106, 'p75': 3.0007651317233717, 'p95': 3.000942941940058, 'max': 3.0009992730987007}
+  continuous minimum_adjacent_clear_background_px: {'count': 3000, 'min': 3.0001118934066318, 'p25': 3.000374013882757, 'p50': 3.0005944371186484, 'p75': 3.000816283875488, 'p95': 3.0009935665749388, 'max': 3.0010814376652433}
+  continuous outer_center_x: {'count': 3000, 'min': 282.2035, 'p25': 290.98524999999995, 'p50': 295.17325, 'p75': 298.83665, 'p95': 304.14905999999996, 'max': 307.7319}
+  continuous outer_center_y: {'count': 3000, 'min': 282.1907, 'p25': 291.22207499999996, 'p50': 295.48294999999996, 'p75': 299.52295000000004, 'p95': 304.5011, 'max': 307.4109}
+  continuous outer_inner_size_ratio: {'count': 3000, 'min': 3.7791532375150423, 'p25': 4.952574552535424, 'p50': 5.766133781610599, 'p75': 7.918359512680759, 'p95': 8.6719351893855, 'max': 8.820785989576052}
+  continuous outer_rotation_angle: {'count': 3000, 'min': -17.9421, 'p25': -9.17815, 'p50': 0.30495, 'p75': 9.128425, 'p95': 15.98026, 'max': 17.971}
+  continuous outer_side_length: {'count': 3000, 'min': 258.0019, 'p25': 260.24402499999997, 'p50': 262.52445, 'p75': 264.966225, 'p95': 267.05539000000005, 'max': 267.9842}
+  continuous reduction_factor_span: {'count': 3000, 'min': 1.000000090694639, 'p25': 1.0000013951005957, 'p50': 1.1750355518762032, 'p75': 1.4098735344901754, 'p95': 1.4573660874208867, 'max': 1.469830067978409}
+  continuous sampled_total_inner_fraction: {'count': 3000, 'min': 0.11336851948416225, 'p25': 0.1262888725220047, 'p50': 0.17345835606061172, 'p75': 0.20191533866063116, 'p95': 0.24321770408364302, 'max': 0.2646097029254631}
+  continuous sampled_total_reduction_root: {'count': 3000, 'min': 0.5522488268797281, 'p25': 0.6935097976033888, 'p50': 0.7691010988799167, 'p75': 0.8163506716712188, 'p95': 0.8549251869395291, 'max': 0.8626725525077547}
+  categorical center_drift: {'False': 496, 'True': 2504}
+  categorical color_alternation: {'False': 2138, 'True': 862}
+  categorical factor_progression_direction: {'changing': 1500, 'constant': 1500}
+  categorical level5_label: {'no': 1500, 'yes': 1500}
+  categorical offset_requested_pre_containment: {'False': 2946, 'True': 54}
+  categorical reduction_mode: {'changing': 1500, 'constant': 1500}
+  categorical rotation_mode: {'fixed': 450, 'per_shape_independent': 2550}
+  categorical shape_count: {'10': 332, '11': 332, '12': 344, '4': 332, '5': 332, '6': 332, '7': 332, '8': 332, '9': 332}
+  categorical size_axis_band: {'high': 1500, 'low': 1500}
+  categorical stroke_colors_used: {"('#16697A', '#2C2C2A')": 306, "('#263238', '#8A4F7D')": 260, "('#2C2C2A',)": 2138, "('#30343F', '#8A6D1D')": 296}
+
+Guard injection tests: PASS
+  gap_margin: {'violating': {'metric': 1.4586028080420515e-16, 'accepted': False}, 'boundary': {'metric': 0.012000000000000144, 'accepted': True}}
+  reduction_perceptibility: {'violating': {'metric': 1.3490000000000002, 'accepted': False}, 'boundary': {'metric': 1.35, 'accepted': True}}
+  level5_margin: {'violating': {'metric': 0.12, 'accepted': False}, 'lower_boundary': {'metric': 0.096, 'accepted': True}, 'upper_boundary': {'metric': 0.144, 'accepted': True}}
+  containment: {'violating': {'inner_to_outer_side_ratio': 1.01, 'accepted': False}, 'boundary': {'inner_to_outer_side_ratio': 1.0, 'accepted': True}}
+  minimum_inner_size: {'violating': {'metric_px': 14.99, 'accepted': False}, 'boundary': {'metric_px': 15.0, 'accepted': True}}
+  minimum_outline_clearance: {'violating': {'metric_px': 2.99, 'accepted': False}, 'boundary': {'metric_px': 3.0, 'accepted': True}}
+  rotation_wrap: PASS {'lower': 10.0, 'upper': 50.0}
+
+Level 4 theoretical baseline: 0.268293
+Level 4 observed max constant capture: 0.269020
+All rejection cause counts: {'containment': 0, 'drift_floor': 0, 'gap_margin': 0, 'level5_margin': 0, 'minimum_inner_size': 0, 'minimum_outline_clearance': 2, 'reduction_perceptibility': 0, 'rotation_wrap': 0}
+
+Issues:
+  None
+
+Summary: PASS

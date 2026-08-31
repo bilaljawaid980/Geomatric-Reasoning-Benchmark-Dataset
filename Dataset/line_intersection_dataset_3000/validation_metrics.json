@@ -1,0 +1,538 @@
+{
+  "answerability_audit": "Question prompts and image assets are present for all five levels; semantic PNG recovery remains the responsibility of the dataset-specific validator.",
+  "categorical_distributions": {
+    "blue_self_intersecting": {
+      "False": 3000
+    },
+    "crossed_from_above_to_below": {
+      "False": 1765,
+      "True": 1235
+    },
+    "red_above_blue_at_end": {
+      "False": 1507,
+      "True": 1493
+    },
+    "red_above_blue_at_start": {
+      "False": 1492,
+      "True": 1508
+    },
+    "red_self_intersecting": {
+      "False": 3000
+    },
+    "wording_variant": {
+      "intersection_points": 1458,
+      "touch_each_other": 1542
+    }
+  },
+  "continuous_distributions": {
+    "difficulty_score": {
+      "count": 3000,
+      "max": 1.0,
+      "min": 0.0,
+      "p25": 0.09,
+      "p50": 0.2067,
+      "p75": 0.53,
+      "p95": 0.91
+    },
+    "leftmost_intersection_x": {
+      "count": 2242,
+      "max": 444.760965,
+      "min": 79.459657,
+      "p25": 112.12994125,
+      "p50": 150.0844255,
+      "p75": 206.4944415,
+      "p95": 379.02586945
+    },
+    "num_blue_segments": {
+      "count": 3000,
+      "max": 5.0,
+      "min": 2.0,
+      "p25": 2.0,
+      "p50": 3.0,
+      "p75": 4.0,
+      "p95": 5.0
+    },
+    "num_red_segments": {
+      "count": 3000,
+      "max": 5.0,
+      "min": 2.0,
+      "p25": 2.0,
+      "p50": 3.0,
+      "p75": 4.0,
+      "p95": 5.0
+    },
+    "rightmost_intersection_x": {
+      "count": 2242,
+      "max": 447.224915,
+      "min": 82.2365,
+      "p25": 308.38819475,
+      "p50": 364.3027145,
+      "p75": 399.90161075,
+      "p95": 425.40239075
+    },
+    "total_intersections": {
+      "count": 3000,
+      "max": 5.0,
+      "min": 0.0,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 2.0,
+      "p95": 4.0
+    }
+  },
+  "dataset_version": "line-intersection-2.0.0",
+  "degeneracy_flags": {},
+  "features_at_v_ge_0_10": {
+    "crossed_from_above_to_below": {
+      "1": 0.16898371,
+      "2": 1.0,
+      "3": 0.24718002,
+      "4": 1.0,
+      "5": 0.65757737
+    },
+    "difficulty_score": {
+      "1": 0.85382445,
+      "2": 0.70914157,
+      "3": 0.19383932,
+      "4": 0.48757807,
+      "5": 0.59777086
+    },
+    "leftmost_intersection_x": {
+      "1": 0.88145198,
+      "2": 1.0,
+      "3": 0.89147577,
+      "4": 0.97978106,
+      "5": 1.0
+    },
+    "num_blue_segments": {
+      "1": 1.0,
+      "2": 0.35414354,
+      "4": 0.35591413,
+      "5": 0.32319141
+    },
+    "num_red_segments": {
+      "1": 1.0,
+      "2": 0.35414354,
+      "4": 0.35591413,
+      "5": 0.32319141
+    },
+    "red_above_blue_at_end": {
+      "3": 0.62895171
+    },
+    "red_above_blue_at_start": {
+      "3": 0.63456857
+    },
+    "rightmost_intersection_x": {
+      "1": 0.88145198,
+      "2": 1.0,
+      "3": 0.89167796,
+      "4": 0.97984244,
+      "5": 1.0
+    },
+    "total_intersections": {
+      "1": 0.32567832,
+      "2": 1.0,
+      "3": 0.24079345,
+      "4": 0.86469825,
+      "5": 0.82789479
+    }
+  },
+  "images": 3000,
+  "leak_audit": {
+    "blue_self_intersecting": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "crossed_from_above_to_below": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.16898370811157126,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 1.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.2471800179662791,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.6575773684386915,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "difficulty_score": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8538244519594975,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.7091415657038528,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.19383931511264524,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.48757806752082655,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.5977708615511975,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "leftmost_intersection_x": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8814519849034225,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.999999999999963,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.8914757720488039,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.9797810641589569,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 1.0000000000000324,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_blue_segments": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.35414354039038093,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.060361967526233386,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.35591412844280573,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.32319141487555897,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "num_red_segments": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 1.0,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.35414354039038093,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.060361967526233386,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.35591412844280573,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.32319141487555897,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "red_above_blue_at_end": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.03169830018267307,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.05956985322998553,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.6289517134367957,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.08722779898991233,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.04784333925289336,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "red_above_blue_at_start": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.04673542701190182,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0595140673734316,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.634568567393909,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0871898663054286,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.04909855906070815,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "red_self_intersecting": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.0,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "rightmost_intersection_x": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.8814519849034211,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.9999999999999885,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.8916779581528633,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.9798424399134555,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 1.000000000000022,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "total_intersections": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.3256783152100101,
+          "kind": "numeric_deciles"
+        },
+        "2": {
+          "cramers_v": 0.9999999999999999,
+          "kind": "numeric_deciles"
+        },
+        "3": {
+          "cramers_v": 0.240793453230768,
+          "kind": "numeric_deciles"
+        },
+        "4": {
+          "cramers_v": 0.8646982528360648,
+          "kind": "numeric_deciles"
+        },
+        "5": {
+          "cramers_v": 0.8278947859481997,
+          "kind": "numeric_deciles"
+        }
+      },
+      "whitelist_justification": null
+    },
+    "wording_variant": {
+      "classification": "scene_feature",
+      "levels": {
+        "1": {
+          "cramers_v": 0.042809109690897046,
+          "kind": "categorical"
+        },
+        "2": {
+          "cramers_v": 0.03571910262079197,
+          "kind": "categorical"
+        },
+        "3": {
+          "cramers_v": 0.035423146302445974,
+          "kind": "categorical"
+        },
+        "4": {
+          "cramers_v": 0.0499069462643473,
+          "kind": "categorical"
+        },
+        "5": {
+          "cramers_v": 0.033270414496080244,
+          "kind": "categorical"
+        }
+      },
+      "whitelist_justification": null
+    }
+  },
+  "level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.4076666666666667,
+      "counts": {
+        "2": 1223,
+        "3": 619,
+        "4": 568,
+        "5": 590
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.273,
+      "counts": {
+        "0": 758,
+        "1": 757,
+        "2": 819,
+        "3": 383,
+        "4": 188,
+        "5": 95
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.208,
+      "counts": {
+        "above": 537,
+        "below": 572,
+        "blue": 567,
+        "left": 624,
+        "red": 543,
+        "right": 157
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.19266666666666668,
+      "counts": {
+        "0,0": 498,
+        "0,1": 257,
+        "0,2": 46,
+        "0,3": 6,
+        "1,0": 250,
+        "1,1": 472,
+        "1,2": 128,
+        "1,3": 21,
+        "2,0": 44,
+        "2,1": 118,
+        "2,2": 92,
+        "2,3": 36,
+        "3,0": 2,
+        "3,1": 14,
+        "3,2": 30,
+        "even": 578,
+        "odd": 408
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 0.2976666666666667,
+      "counts": {
+        "0": 858,
+        "1": 893,
+        "2": 683,
+        "3": 332,
+        "4": 167,
+        "5": 67
+      }
+    }
+  },
+  "png_asset_presence": "3000/3000",
+  "questions": 15000,
+  "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "scalar_scene_features": [
+    "blue_self_intersecting",
+    "crossed_from_above_to_below",
+    "difficulty_score",
+    "leftmost_intersection_x",
+    "num_blue_segments",
+    "num_red_segments",
+    "red_above_blue_at_end",
+    "red_above_blue_at_start",
+    "red_self_intersecting",
+    "rightmost_intersection_x",
+    "total_intersections",
+    "wording_variant"
+  ]
+}
