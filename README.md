@@ -1,12 +1,55 @@
+---
+license: mit
+task_categories:
+  - visual-question-answering
+language:
+  - en
+tags:
+  - geometry
+  - spatial-reasoning
+  - visual-reasoning
+  - physical-reasoning
+  - synthetic
+  - benchmark
+  - vqa
+size_categories:
+  - 100K<n<1M
+pretty_name: GRIP-Benchmark-34
+configs:
+  - config_name: default
+    data_files:
+      - split: train
+        path: combined/all_questions_combined.csv
+dataset_info:
+  features:
+    - name: dataset
+      dtype: string
+    - name: dataset_version
+      dtype: string
+    - name: question_id
+      dtype: string
+    - name: task
+      dtype: string
+    - name: image
+      dtype: string
+    - name: image_path
+      dtype: image
+    - name: prompt
+      dtype: string
+  splits:
+    - name: train
+      num_examples: 500000
+---
+
 # GRIP-Benchmark-34
 
 **A programmatically generated and independently validated suite for visual geometry and physical reasoning**
 
 ## 1. Suite overview
 
-GRIP-Benchmark-34 contains **34 synthetic sub-benchmarks**, **100,000 images**, and **500,000 image–question pairs**. The 33 core categories contribute 3,000 images each, while the focused projectile-motion addition contributes 1,000; every image has exactly five difficulty-ordered questions. Twenty-eight categories address geometric, spatial, navigational, perceptual, or optical reasoning; `gear_train`, `physical_stability`, `free_body_diagram`, `clock_reading`, `gauge_reading`, and `projectile_motion` form the Physical/Mechanical Reasoning family. These totals are computed from the current `annotations.jsonl` files rather than inferred from folder names.
+GRIP-Benchmark-34 contains **34 synthetic sub-benchmarks**, **100,000 images**, and **500,000 image–question pairs** across **nine reasoning families**: plane geometry, transformational geometry, projective geometry, topology/graph theory, surface topology, analytic/coordinate geometry, inductive/analogical reasoning, physical/mechanical reasoning, and solid geometry. The 33 core categories contribute 3,000 images each, while the focused projectile-motion addition contributes 1,000; every image has exactly five difficulty-ordered questions.
 
-All images, scene parameters, and answers are generated programmatically. Ground truth is validated from the underlying geometry by dataset-specific validator code, and every current validation report records **PASS with zero mismatches**.
+All images, scene parameters, and answers are generated programmatically with deterministic, closed-form ground truth. Ground truth is independently re-derived from the underlying geometry by dataset-specific validator code, and every current validation report records **PASS with zero mismatches**.
 
 Suggested suite names:
 
@@ -25,12 +68,12 @@ This repository generates datasets and ground truth. It does not run models, sco
 | [nested_triangles](Dataset/nested_triangles_dataset_3000/) | Transformational Geometry | nested-triangles-8.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Generalize drift, size, and three-fold rotation reasoning to triangles |
 | [nested_hexagons](Dataset/nested_hexagons_dataset_3000/) | Transformational Geometry | nested-hexagons-8.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Generalize drift, size, and six-fold rotation reasoning to hexagons |
 | [cube_structure](Dataset/cube_structure_dataset_3000/) | Solid Geometry | cube-structure-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Count and reason about visible/hidden cubes and support |
-| [line_intersection](Dataset/line_intersection_dataset_3000/) | Plane Geometry | line-intersection-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Count and compare line intersections |
+| [line_intersection](Dataset/line_intersection_dataset_3000/) | Plane Geometry | line-intersection-3.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Count and compare line intersections |
 | [overlap_circles](Dataset/overlap_circles_dataset_3000/) | Plane Geometry | overlap-circles-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Reason about circle overlap and planar regions |
 | [cube_net](Dataset/cube_net_dataset_3000/) | Solid Geometry | cube-net-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Infer 3D cube relationships from unfolded nets |
 | [shadow_inference](Dataset/shadow_inference_dataset_3000/) | Projective Geometry | shadow-inference-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Infer light direction/elevation from projected shadows |
 | [impossible_object](Dataset/impossible_object_dataset_3000/) | Solid Geometry | impossible-object-4.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Detect globally inconsistent 3D line structures |
-| [polyhedron](Dataset/polyhedron_dataset_3000/) | Solid Geometry | polyhedron-3.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Classify polyhedra and reason about faces, edges, and vertices |
+| [polyhedron](Dataset/polyhedron_dataset_3000/) | Solid Geometry | polyhedron-5.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Classify polyhedra and reason about faces, edges, and vertices |
 | [depth_height](Dataset/depth_height_dataset_3000/) | Projective Geometry / Height Comparison | depth-height-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Compare perspective-based depth and count flat stack heights |
 | [embedded_figures](Dataset/embedded_figures_dataset_3000/) | Plane Geometry — Composition | legacy-current | 3,000 | 15,000 | PASS — 0 mismatches | Find a target figure within a complex line composition |
 | [rotation_matching](Dataset/rotation_matching_dataset_3000/) | Transformational Geometry | rotation-matching-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Match shapes under rotation while rejecting reflections |
@@ -90,7 +133,7 @@ Every image has exactly five questions in increasing order of difficulty:
 
 The exact question templates differ by category, but this progression and the `difficulty_level: 1..5` annotation contract are shared by all 34 datasets. Every Level 5 operation is independently recomputable from raw stored geometry or scene metadata. Flattened CSV/JSONL files contain one row per question, yielding 15,000 rows per core dataset and 5,000 for the focused projectile-motion category.
 
-The suite-level files in `All question and answer/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 private answers.
+The suite-level files in `combined/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 private answers. The Hub's default configuration loads only `combined/all_questions_combined.csv`; it never loads the private combined answer file.
 
 Free-body-diagram Level 4 questions introduce the structured private scoring declaration `{"type":"numeric_tolerance","tolerance_percent":2}` for real-valued mechanics answers. This field appears in annotations and private answer keys, not public question sets; it changes grading precision without exposing an acceptance band to a tested model.
 
@@ -161,7 +204,7 @@ The `orthographic_dataset_3000` category implements classical orthographic/third
 
 ### Public and private files
 
-`question_set.csv` is the only model-facing dataset file. It contains exactly `question_id`, `task`, `image`, and `prompt`. `annotations.jsonl`, `answer_key.csv`, `dataset_final.csv`, and `dataset_final.jsonl` are private answer-key-side artifacts and contain ground truth or scene metadata that may directly reveal answers. **Never provide `annotations.jsonl` to a tested model.**
+`question_set.csv` and `combined/all_questions_combined.csv` are the model-facing dataset files. The combined questions file preserves the original bare `image` filename and adds `image_path`, a repository-relative PNG path used by the Hub viewer. `annotations.jsonl`, `answer_key.csv`, `dataset_final.csv`, `dataset_final.jsonl`, and `combined/all_answers_combined.csv` are private answer-key-side artifacts and contain ground truth or scene metadata that may directly reveal answers. **Never provide `annotations.jsonl` to a tested model: doing so leaks answers.**
 
 ### Validation methodology
 
@@ -184,7 +227,7 @@ Validators independently re-derive answers from stored geometry, inspect final P
 - `optical_illusion_dataset_3000` Level 1: **100.0%**
 - `orthographic_dataset_3000` Level 5: **100.0%**
 - `physical_stability_dataset_3000` Level 2: **62.5%**
-- `polyhedron_dataset_3000` Level 2: **79.0%**
+- `polyhedron_dataset_3000` Level 2: **89.5%**
 - `polyhedron_dataset_3000` Level 5: **100.0%**
 - `projectile_motion_dataset_1000` Level 2: **65.4%**
 - `projectile_motion_dataset_1000` Level 5: **68.8%**
@@ -220,7 +263,7 @@ geomstry/
 ├── spot check/
 │   ├── spot_check_sampler.py
 │   └── spot_check_review/
-└── All question and answer/
+└── combined/
     ├── all_questions_combined.csv
     └── all_answers_combined.csv
 ```

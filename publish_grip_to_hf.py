@@ -266,9 +266,10 @@ def main() -> None:
     if set(counts) != set(CATEGORIES) or any(counts[key] != EXPECTED_ROWS[key] for key in CATEGORIES):
         raise RuntimeError(f"Built category distribution is invalid: {counts}")
 
-    card = dataset_card()
-    card_path = PROJECT / "HF_DATASET_CARD.md"
-    card_path.write_text(card, encoding="utf-8")
+    # README.md is the only dataset card recognized by the Hub.  It is maintained
+    # in the repository so publishing cannot create a second, conflicting card.
+    card_path = PROJECT / "README.md"
+    card = card_path.read_text(encoding="utf-8")
     print("\n===== DATASET CARD =====\n")
     print(card)
     print("===== END DATASET CARD =====\n")

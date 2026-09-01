@@ -6,8 +6,12 @@
   },
   "after": {
     "answer_rows": 500000,
+    "image_path_column": "repository-relative",
+    "image_path_rows_checked": 500000,
+    "missing_image_paths": [],
     "question_answer_row_counts_match": true,
-    "question_rows": 500000
+    "question_rows": 500000,
+    "unique_image_paths_checked": 100000
   },
   "before": {
     "answer_prefix_counts": {
@@ -21,36 +25,13 @@
       "cube_structure": 15000,
       "depth_height": 15000,
       "embedded_figure": 15000,
-      "fbd": 15000,
-      "fold_punch": 15000,
-      "gauge_reading": 15000,
-      "gear_train": 15000,
-      "hex_pathfinding": 15000,
-      "impossible_object": 15000,
-      "laser_mirror": 15000,
-      "line_intersect": 15000,
-      "nested_hexagons": 15000,
-      "nested_squares": 15000,
-      "nested_triangles": 15000,
-      "occluded_pattern": 15000,
-      "optical_illusion": 15000,
-      "orthographic": 15000,
-      "overlap_circles": 15000,
-      "physical_stability": 15000,
-      "polyhedron": 15000,
-      "projectile_motion": 5000,
-      "rotation_match": 15000,
-      "route_puzzle": 15000,
-      "rpm": 15000,
-      "shadow_inference": 15000,
-      "surface_topology": 15000,
-      "symmetry_pattern": 15000
+      "fbd": 9839
     },
-    "answer_rows": 500000,
+    "answer_rows": 159839,
     "extra_prefixes": [],
     "missing_prefixes": [],
     "present": true,
-    "question_answer_row_counts_match": true,
+    "question_answer_row_counts_match": false,
     "question_prefix_counts": {
       "angle_estimation": 15000,
       "clock_reading": 15000,
@@ -88,9 +69,7 @@
       "symmetry_pattern": 15000
     },
     "question_rows": 500000,
-    "stale_or_mismatched": {
-      "polyhedron": "dataset_version is ['polyhedron-4.0.0'], expected polyhedron-5.0.0"
-    }
+    "stale_or_mismatched": {}
   },
   "discovered_dataset_count": 34,
   "expected_totals": {

@@ -9,12 +9,12 @@ from pathlib import Path
 
 DATASET_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = DATASET_ROOT.parent
-COMBINED_ROOT = REPO_ROOT / "All question and answer"
+COMBINED_ROOT = REPO_ROOT / "combined"
 QUESTION_FILE = COMBINED_ROOT / "all_questions_combined.csv"
 ANSWER_FILE = COMBINED_ROOT / "all_answers_combined.csv"
 REPORT_FILE = DATASET_ROOT / "combined_suite_rebuild_report.json"
 
-QUESTION_COLUMNS = ["dataset", "dataset_version", "question_id", "task", "image", "prompt"]
+QUESTION_COLUMNS = ["dataset", "dataset_version", "question_id", "task", "image", "image_path", "prompt"]
 ANSWER_COLUMNS = QUESTION_COLUMNS + ["groundtruth", "answer_format"]
 PUBLIC_COLUMNS = ["question_id", "task", "image", "prompt"]
 PRIVATE_COLUMNS = PUBLIC_COLUMNS + ["groundtruth"]
@@ -177,6 +177,7 @@ def existing_combined_summary(summary: dict[str, dict]) -> dict:
 def rebuild(summary: dict[str, dict]) -> dict:
     combined_questions = []
     combined_answers = []
+    verified_image_paths: set[str] = set()
     for folder_name, item in summary.items():
         folder = DATASET_ROOT / folder_name
         public = read_csv(folder / "question_set.csv")
@@ -190,7 +191,13 @@ def rebuild(summary: dict[str, dict]) -> dict:
             qid = public_row["question_id"]
             if qid not in private_by_id:
                 raise RuntimeError(f"{folder_name}/{qid}: missing answer row")
-            base = {"dataset": item["slug"], "dataset_version": item["version"], **public_row}
+            image_path = (Path("Dataset") / folder_name / "images" / public_row["image"]).as_posix()
+            if image_path not in verified_image_paths:
+                if not (REPO_ROOT / image_path).is_file():
+                    raise RuntimeError(f"{folder_name}/{qid}: repository-relative image path missing: {image_path}")
+                verified_image_paths.add(image_path)
+            base = {"dataset": item["slug"], "dataset_version": item["version"],
+                    **public_row, "image_path": image_path}
             combined_questions.append(base)
             combined_answers.append({**base, "groundtruth": private_by_id[qid]["groundtruth"],
                                      "answer_format": answer_formats.get(qid, private_by_id[qid].get("answer_format", ""))})
@@ -204,12 +211,17 @@ def rebuild(summary: dict[str, dict]) -> dict:
         for key in QUESTION_COLUMNS:
             if question_row[key] != answer_row[key]:
                 raise RuntimeError(f"Question/answer drift at {question_row['question_id']}")
+    missing_image_paths: list[str] = []
     write_csv(QUESTION_FILE, combined_questions, QUESTION_COLUMNS)
     write_csv(ANSWER_FILE, combined_answers, ANSWER_COLUMNS)
     return {
         "question_rows": len(combined_questions),
         "answer_rows": len(combined_answers),
         "question_answer_row_counts_match": len(combined_questions) == len(combined_answers),
+        "image_path_column": "repository-relative",
+        "image_path_rows_checked": len(combined_questions),
+        "unique_image_paths_checked": len(verified_image_paths),
+        "missing_image_paths": missing_image_paths,
     }
 
 
