@@ -2,7 +2,7 @@ import argparse,itertools,json,math,random
 from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
-BG=(26,26,26);INK=(118,172,190);AA=3;PHI=(1+5**.5)/2;VERSION='polyhedron-4.0.0'
+BG=(26,26,26);INK=(118,172,190);AA=3;PHI=(1+5**.5)/2;VERSION='polyhedron-5.0.0'
 def unique(points):
  out=[]
  for p in points:
@@ -49,11 +49,17 @@ def compound(parts):
  return {'vertices':np.array(verts),'faces':faces,'edges':edges}
 TET2={'vertices':-TET['vertices'],'faces':TET['faces'],'edges':TET['edges']}
 SPECS=[]
+def face_shape_type(faces):
+ arities={len(face) for face in faces}
+ return {frozenset({3}):'triangles',frozenset({4}):'squares',frozenset({5}):'pentagons'}.get(frozenset(arities),'mixed')
 def add(name,cls,m,convex,shape,counts=None):
- v,e,f=(len(m['vertices']),len(m['edges']),len(m['faces'])) if counts is None else counts;SPECS.append({'name':name,'class':cls,'mesh':m,'is_convex':convex,'face_shape_types':shape,'vertex_count':v,'edge_count':e,'face_count':f})
+ v,e,f=(len(m['vertices']),len(m['edges']),len(m['faces'])) if counts is None else counts
+ derived_shape=face_shape_type(m['faces'])
+ assert shape==derived_shape,(name,shape,derived_shape)
+ SPECS.append({'name':name,'class':cls,'mesh':m,'is_convex':convex,'face_shape_types':derived_shape,'vertex_count':v,'edge_count':e,'face_count':f})
 for x in [('tetrahedron',TET,'triangles'),('cube',CUBE,'squares'),('octahedron',OCT,'triangles'),('dodecahedron',DOD,'pentagons'),('icosahedron',ICO,'triangles')]:add(x[0],'Platonic',x[1],True,x[2])
 for x in [('truncated tetrahedron',TT),('cuboctahedron',CO),('truncated cube',TC),('truncated octahedron',TO),('rhombicuboctahedron',RCO),('icosidodecahedron',ID)]:add(x[0],'Archimedean',x[1],True,'mixed')
-for name,m in [('triakis tetrahedron',dual(TT)),('rhombic dodecahedron',dual(CO)),('triakis octahedron',dual(TC)),('rhombic triacontahedron',dual(ID))]:add(name,'Catalan',m,True,'mixed')
+for name,m in [('triakis tetrahedron',dual(TT)),('rhombic dodecahedron',dual(CO)),('triakis octahedron',dual(TC)),('rhombic triacontahedron',dual(ID))]:add(name,'Catalan',m,True,face_shape_type(m['faces']))
 add('stella octangula','Compound',compound([TET,TET2]),False,'triangles',(8,12,8));add('compound of cube and octahedron','Compound',compound([CUBE,OCT]),False,'mixed',(14,24,14))
 # The former two entries reused the regular icosahedron/dodecahedron face complexes
 # and merely injected face diagonals.  Name and classify the geometry that is
@@ -61,7 +67,11 @@ add('stella octangula','Compound',compound([TET,TET2]),False,'triangles',(8,12,8
 add('icosahedron','Platonic',ICO,True,'triangles');add('dodecahedron','Platonic',DOD,True,'pentagons')
 assert len(SPECS)==19
 for s in SPECS:
- if s['is_convex']:assert s['vertex_count']-s['edge_count']+s['face_count']==2,(s['name'],s['vertex_count'],s['edge_count'],s['face_count'])
+ assert len(s['mesh']['faces'])==s['face_count']
+ assert len(s['mesh']['edges'])==s['edge_count']
+ assert face_shape_type(s['mesh']['faces'])==s['face_shape_types']
+ components=2 if s['class']=='Compound' else 1
+ assert s['vertex_count']-s['edge_count']+s['face_count']==2*components,(s['name'],s['vertex_count'],s['edge_count'],s['face_count'])
 def rotation(ry,tx):
  y=math.radians(ry);x=math.radians(tx);Ry=np.array([[math.cos(y),0,math.sin(y)],[0,1,0],[-math.sin(y),0,math.cos(y)]]);Rx=np.array([[1,0,0],[0,math.cos(x),-math.sin(x)],[0,math.sin(x),math.cos(x)]]);return Rx@Ry
 def visible_faces(v,faces,R):

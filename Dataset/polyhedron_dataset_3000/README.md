@@ -4,13 +4,21 @@
 
 This dataset is designed as a direct extension of the GIQ benchmark (Michalkiewicz et al., arXiv:2506.08194), which found that vision-language models including Claude, Gemini, and ChatGPT show remarkably low accuracy interpreting basic shape properties such as face geometry, convexity, and compound structures of complex polyhedra. This dataset replicates and extends that evaluation methodology at larger scale (3000 images vs GIQ's 224 unique polyhedra) with a structured five-level difficulty progression. See the [GIQ paper](https://arxiv.org/abs/2506.08194).
 
-The current v4 collection contains 17 named solids, 3,000 unique dark-theme wireframe views, and exactly five questions per image (15,000 flattened rows).
+The current v5 collection contains 17 named solids, 3,000 unique dark-theme wireframe views, and exactly five questions per image (15,000 flattened rows).
+
+### Version 5 identity, face-shape, and compound-convexity repair
+
+Version 5 adds unconditional checks for `len(faces) == face_count`, face-label agreement with actual face arities, `len(edges) == edge_count`, component-aware Euler characteristic, and `visible_face_count <= face_count`. The v4 build had no face-count, edge-count, or visible-count failures, but 632 Catalan records were incorrectly labelled `mixed`: the triakis tetrahedron and triakis octahedron have all-triangular faces, while the rhombic dodecahedron and rhombic triacontahedron have all-quadrilateral faces. Those 632 labels were corrected, changing 200 Level 3 answers whose selected template asks face shape.
+
+Version 5 also restores all 316 compounds to `non-convex`, changing 316 Level 2 answers. A point-set hull test is insufficient for a compound because its interpenetrating component structure determines convexity. The dataset now contains 2,684 convex connected solids and 316 genuinely non-convex compounds. It contains no correctly generated self-intersecting stellations: the 314 former stellation labels were relabelled in v4 because their actual meshes were the regular icosahedron and dodecahedron.
+
+For connected closed solids, `V-E+F=2`. Each compound record contains two separately closed components, so its aggregate Euler characteristic is 4 and each component is checked at 2. Treating the aggregate as a single connected surface would reject valid compound topology.
 
 ### Version 4 geometry and edge correction
 
 Version 4 removes face diagonals from every stored and rendered edge list. The 157 affected `great dodecahedron` records contained the regular dodecahedron geometry plus 60 pentagon diagonals; their PNGs were regenerated with the 30 true boundary edges. The two supposed stellated families were geometry-identical to regular solids and are now named and classified from their actual topology: 157 records became `icosahedron` and 157 became `dodecahedron`. Exhaustive independent checks now require boundary-edge equality, the appropriate Euler characteristic (including component-aware compound handling), hull/face-support convexity, topology-based identity, positive Euler Level-4 answers, and exact PNG edge-set recovery. All 3,000 PNGs pass.
 
-Answer changes from v3 were: Level 1 = 157, Level 2 = 630, Level 3 = 58, Level 4 = 112, Level 5 = 0. The Level-2 count follows the requested literal point-hull definition: all 316 compound records also have every stored vertex on the hull boundary, although their interpenetrating face complexes are reported separately by the face-support diagnostic. Level 5 remains structurally constant (`no` for all 3,000 records) and is documented as such rather than treated as a measured distinction.
+Answer changes from v3 to v4 were: Level 1 = 157, Level 2 = 630, Level 3 = 58, Level 4 = 112, Level 5 = 0. Version 5 corrects the v4 point-hull over-application to compounds. Level 5 remains structurally constant (`no` for all 3,000 records) and is documented as such rather than treated as a measured distinction.
 
 ## 2. Full generation prompt
 
@@ -34,7 +42,7 @@ Canvas: 450-500px, dark background (#1A1A1A), consistent with your dark-theme da
   CATALAN (subset of 4): triakis tetrahedron, rhombic dodecahedron, triakis octahedron, 
   rhombic triacontahedron
   COMPOUND (2-3): stella octangula (compound of two tetrahedra), compound of cube+octahedron
-  NON-CONVEX (2-3): small stellated dodecahedron, great dodecahedron
+  COMPOUND/NON-CONVEX (2): stella octangula, compound of cube and octahedron
   Total: aim for 18-22 distinct named solids, each appearing ~135-165 times across the 
   3000 images (varied only by viewing angle/scale/minor jitter).
 - For each solid type, hardcode: exact face_count, edge_count, vertex_count, is_convex 
@@ -152,15 +160,13 @@ Solid usage (157–158 each):
 - `compound of cube and octahedron`: 158
 - `cube`: 158
 - `cuboctahedron`: 158
-- `dodecahedron`: 158
-- `great dodecahedron`: 157
-- `icosahedron`: 158
+- `dodecahedron`: 315
+- `icosahedron`: 315
 - `icosidodecahedron`: 158
 - `octahedron`: 158
 - `rhombic dodecahedron`: 158
 - `rhombic triacontahedron`: 158
 - `rhombicuboctahedron`: 158
-- `small stellated dodecahedron`: 157
 - `stella octangula`: 158
 - `tetrahedron`: 158
 - `triakis octahedron`: 158
@@ -169,11 +175,11 @@ Solid usage (157–158 each):
 - `truncated octahedron`: 158
 - `truncated tetrahedron`: 158
 
-Class totals: Archimedean=948, Catalan=632, Compound=316, NonConvex=314, Platonic=790.
+Class totals: Archimedean=948, Catalan=632, Compound=316, Platonic=1104. The Compound class is non-convex; no true stellation geometry is present.
 
 ## 4. Ground truth generation and validation
 
-Platonic coordinates use their standard exact coordinate families. Archimedean meshes are constructed by topology-preserving truncation or rectification, with the rhombicuboctahedron generated from signed permutations of `(1, 1, 1+√2)`. Catalan meshes are computed as convex duals. Compound meshes combine explicit component graphs. Each convex mesh is rejected unless `V−E+F=2`.
+Platonic coordinates use their standard exact coordinate families. Archimedean meshes are constructed by topology-preserving truncation or rectification, with the rhombicuboctahedron generated from signed permutations of `(1, 1, 1+√2)`. Catalan meshes are computed as convex duals. Compound meshes combine two explicit closed component graphs and are classified non-convex. Each connected closed mesh is rejected unless `V−E+F=2`; compound aggregates must satisfy `V−E+F=4`, with each component separately satisfying 2.
 
 The independent validator checks a separate 19-solid reference topology table, Euler's formula for every convex record, file and canvas integrity, and independently rotates stored vertices and recomputes outward face normals/back-face visibility. Every question answer is then re-derived. Final result: **3,000/3,000 passed; 0 mismatches**.
 
@@ -195,7 +201,7 @@ The earlier raw `canvas_size` association (about 0.77) was a sparse-table artifa
 - Rendering is thin wireframe rather than GIQ's photorealistic Mitsuba imagery, creating a meaningfully different visual task.
 - Viewing angles are randomized but not exhaustively sampled for each solid.
 - Wireframes show hidden edges, so visible-face questions use geometric face orientation rather than counting unobscured filled regions.
-- Non-convex stellations use explicit star-edge diagrams and reference topology counts; their intersecting-face visibility is approximated by oriented face normals rather than ray-traced occlusion.
+- No true self-intersecting stellation is present; non-convex coverage comes from 316 two-component compounds.
 
 ## 6. Reasoning skills tested
 

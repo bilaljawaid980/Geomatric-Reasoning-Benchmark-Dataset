@@ -88,7 +88,9 @@
       "symmetry_pattern": 15000
     },
     "question_rows": 500000,
-    "stale_or_mismatched": {}
+    "stale_or_mismatched": {
+      "polyhedron": "dataset_version is ['polyhedron-4.0.0'], expected polyhedron-5.0.0"
+    }
   },
   "discovered_dataset_count": 34,
   "expected_totals": {
@@ -312,7 +314,7 @@
       "prefix": "polyhedron",
       "questions": 15000,
       "slug": "polyhedron",
-      "version": "polyhedron-4.0.0"
+      "version": "polyhedron-5.0.0"
     },
     "projectile_motion_dataset_1000": {
       "answers": 5000,

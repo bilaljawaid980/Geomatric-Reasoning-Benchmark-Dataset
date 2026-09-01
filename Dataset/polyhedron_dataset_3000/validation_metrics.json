@@ -16,6 +16,121 @@
       }
     },
     "2": {
+      "constant_answer_baseline": 0.8946666666666667,
+      "counts": {
+        "convex": 2684,
+        "non-convex": 316
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.12833333333333333,
+      "counts": {
+        "1": 16,
+        "10": 108,
+        "12": 268,
+        "13": 46,
+        "14": 169,
+        "15": 54,
+        "16": 60,
+        "2": 22,
+        "20": 93,
+        "24": 154,
+        "3": 64,
+        "30": 58,
+        "32": 58,
+        "4": 223,
+        "5": 22,
+        "6": 203,
+        "7": 205,
+        "8": 158,
+        "mixed": 385,
+        "pentagons": 120,
+        "squares": 152,
+        "triangles": 362
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2753333333333333,
+      "counts": {
+        "12": 197,
+        "14": 213,
+        "20": 71,
+        "24": 70,
+        "26": 66,
+        "30": 74,
+        "32": 81,
+        "4": 76,
+        "6": 65,
+        "8": 147,
+        "Archimedean": 273,
+        "Catalan": 206,
+        "Compound": 97,
+        "Platonic": 319,
+        "no": 826,
+        "yes": 219
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "no": 3000
+      }
+    }
+  },
+  "answers_changed_by_level": {
+    "1": 0,
+    "2": 316,
+    "3": 200,
+    "4": 0,
+    "5": 0
+  },
+  "before_assertion_failures": {
+    "edge_array_length_equals_edge_count": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "face_array_length_equals_face_count": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "face_shape_matches_face_arities": {
+      "by_solid_name": {
+        "rhombic dodecahedron": 158,
+        "rhombic triacontahedron": 158,
+        "triakis octahedron": 158,
+        "triakis tetrahedron": 158
+      },
+      "total": 632
+    },
+    "literal_v_minus_e_plus_f_equals_2": {
+      "by_solid_name": {
+        "compound of cube and octahedron": 158,
+        "stella octangula": 158
+      },
+      "total": 316
+    },
+    "visible_face_count_not_above_face_count": {
+      "by_solid_name": {},
+      "total": 0
+    }
+  },
+  "before_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.21066666666666667,
+      "counts": {
+        "12": 631,
+        "14": 632,
+        "20": 315,
+        "24": 158,
+        "26": 158,
+        "30": 158,
+        "32": 158,
+        "4": 158,
+        "6": 158,
+        "8": 474
+      }
+    },
+    "2": {
       "constant_answer_baseline": 1.0,
       "counts": {
         "convex": 3000
@@ -76,93 +191,7 @@
       }
     }
   },
-  "answers_changed_by_level": {
-    "1": 157,
-    "2": 630,
-    "3": 58,
-    "4": 112,
-    "5": 0
-  },
-  "before_level_distributions": {
-    "1": {
-      "constant_answer_baseline": 0.26266666666666666,
-      "counts": {
-        "12": 788,
-        "14": 632,
-        "20": 158,
-        "24": 158,
-        "26": 158,
-        "30": 158,
-        "32": 158,
-        "4": 158,
-        "6": 158,
-        "8": 474
-      }
-    },
-    "2": {
-      "constant_answer_baseline": 0.79,
-      "counts": {
-        "convex": 2370,
-        "non-convex": 630
-      }
-    },
-    "3": {
-      "constant_answer_baseline": 0.195,
-      "counts": {
-        "1": 16,
-        "10": 108,
-        "12": 268,
-        "13": 46,
-        "14": 169,
-        "15": 54,
-        "16": 60,
-        "2": 22,
-        "20": 93,
-        "24": 154,
-        "3": 64,
-        "30": 58,
-        "32": 58,
-        "4": 223,
-        "5": 22,
-        "6": 203,
-        "7": 205,
-        "8": 158,
-        "mixed": 585,
-        "pentagons": 178,
-        "squares": 51,
-        "triangles": 205
-      }
-    },
-    "4": {
-      "constant_answer_baseline": 0.2753333333333333,
-      "counts": {
-        "12": 197,
-        "14": 213,
-        "20": 71,
-        "24": 70,
-        "26": 66,
-        "30": 74,
-        "32": 81,
-        "4": 76,
-        "6": 65,
-        "8": 147,
-        "Archimedean": 273,
-        "Catalan": 206,
-        "Compound": 97,
-        "NonConvex": 112,
-        "Platonic": 207,
-        "no": 826,
-        "yes": 219
-      }
-    },
-    "5": {
-      "constant_answer_baseline": 1.0,
-      "counts": {
-        "no": 3000
-      }
-    }
-  },
-  "compound_convexity_disposition": "The requested literal point-hull rule classifies all 316 Compound records as convex because every stored vertex lies on the hull boundary; face-support is reported separately and does not override that rule.",
+  "component_aware_euler_failures": 0,
   "continuous_distributions": {
     "edge_count": {
       "count": 3000,
@@ -201,7 +230,7 @@
       "p95": 16.0
     }
   },
-  "dataset_version": "polyhedron-4.0.0",
+  "dataset_version": "polyhedron-5.0.0",
   "definitional_whitelist": {
     "edge_count": "defines Euler Level 4 with V",
     "face_count": "defines Level 1 and Euler Level 4",
@@ -211,28 +240,26 @@
     "vertex_count": "defines vertex Level 3 and Euler Level 4",
     "visible_face_count": "defines visible-face Level 3"
   },
-  "diagnosis_before_fix": {
-    "edge_length_mismatches": 157,
-    "edge_mismatch_face_shape_types": {
-      "pentagons": 157
-    },
-    "literal_point_hull_flag_mismatches": 630,
-    "name_geometry_mismatches": {
-      "great dodecahedron": 157,
-      "small stellated dodecahedron": 157
-    },
-    "stored_nonconvex": 314
-  },
   "euler_level4_items": 1060,
   "euler_prompt_values_matching": 1060,
   "features_at_v_ge_0_10_nothing_hidden": {
+    "canvas_size": {
+      "3": {
+        "cramers_v": 0.10177913129247916,
+        "kind": "categorical"
+      }
+    },
     "edge_count": {
       "1": {
         "cramers_v": 0.7678772775143334,
         "kind": "numeric_deciles"
       },
+      "2": {
+        "cramers_v": 0.45461294361222804,
+        "kind": "numeric_deciles"
+      },
       "3": {
-        "cramers_v": 0.6585392806416459,
+        "cramers_v": 0.640317985514594,
         "kind": "numeric_deciles"
       },
       "4": {
@@ -245,8 +272,12 @@
         "cramers_v": 0.999665719529353,
         "kind": "numeric_deciles"
       },
+      "2": {
+        "cramers_v": 0.4538786369638581,
+        "kind": "numeric_deciles"
+      },
       "3": {
-        "cramers_v": 0.7024233562734422,
+        "cramers_v": 0.6967563609920298,
         "kind": "numeric_deciles"
       },
       "4": {
@@ -256,15 +287,37 @@
     },
     "face_shape_types": {
       "1": {
-        "cramers_v": 0.8578149524363928,
+        "cramers_v": 0.8050955034657306,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 0.20255187859515755,
         "kind": "categorical"
       },
       "3": {
-        "cramers_v": 0.8507668742491247,
+        "cramers_v": 0.8563903733909849,
         "kind": "categorical"
       },
       "4": {
-        "cramers_v": 0.5890883344193385,
+        "cramers_v": 0.5881691608288327,
+        "kind": "categorical"
+      }
+    },
+    "is_convex": {
+      "1": {
+        "cramers_v": 0.4531431403922659,
+        "kind": "categorical"
+      },
+      "2": {
+        "cramers_v": 1.0,
+        "kind": "categorical"
+      },
+      "3": {
+        "cramers_v": 0.361320934665966,
+        "kind": "categorical"
+      },
+      "4": {
+        "cramers_v": 0.9976623778346884,
         "kind": "categorical"
       }
     },
@@ -273,8 +326,12 @@
         "cramers_v": 0.7211587248153378,
         "kind": "categorical"
       },
+      "2": {
+        "cramers_v": 0.9996663886479304,
+        "kind": "categorical"
+      },
       "3": {
-        "cramers_v": 0.6337445100277069,
+        "cramers_v": 0.6516760081223836,
         "kind": "categorical"
       },
       "4": {
@@ -287,8 +344,12 @@
         "cramers_v": 0.9988287455195981,
         "kind": "categorical"
       },
+      "2": {
+        "cramers_v": 0.9974951951979328,
+        "kind": "categorical"
+      },
       "3": {
-        "cramers_v": 0.5915321198219095,
+        "cramers_v": 0.5918921465757105,
         "kind": "categorical"
       },
       "4": {
@@ -301,8 +362,12 @@
         "cramers_v": 0.8013685193945911,
         "kind": "numeric_deciles"
       },
+      "2": {
+        "cramers_v": 0.502586939464905,
+        "kind": "numeric_deciles"
+      },
       "3": {
-        "cramers_v": 0.7673793499859815,
+        "cramers_v": 0.7715181234555979,
         "kind": "numeric_deciles"
       },
       "4": {
@@ -315,8 +380,12 @@
         "cramers_v": 0.9861392881588266,
         "kind": "numeric_deciles"
       },
+      "2": {
+        "cramers_v": 0.4415471852371717,
+        "kind": "numeric_deciles"
+      },
       "3": {
-        "cramers_v": 0.7077786799672889,
+        "cramers_v": 0.7004085512375036,
         "kind": "numeric_deciles"
       },
       "4": {
@@ -327,17 +396,24 @@
   },
   "full_hull_surface_convex_items": 2684,
   "guard_injection_tests": {
-    "convexity_boundary_accepted": true,
-    "convexity_violation_rejected": true,
-    "edge_boundary_accepted": true,
-    "edge_violation_rejected": true,
+    "compound_convexity_violation_rejected": true,
+    "compound_two_component_euler_boundary_accepted": true,
+    "connected_convexity_boundary_accepted": true,
+    "connected_euler_boundary_accepted": true,
+    "connected_euler_violation_rejected": true,
+    "edge_count_boundary_accepted": true,
+    "edge_count_violation_rejected": true,
     "euler_answer_boundary_accepted": true,
     "euler_answer_zero_rejected": true,
-    "euler_boundary_accepted": true,
-    "euler_violation_rejected": true,
+    "face_count_boundary_accepted": true,
+    "face_count_violation_rejected": true,
+    "face_shape_boundary_accepted": true,
+    "face_shape_violation_rejected": true,
     "identity_boundary_accepted": true,
     "identity_violation_rejected": true,
-    "png_boundary_accepted": true
+    "png_boundary_accepted": true,
+    "visible_face_boundary_accepted": true,
+    "visible_face_violation_rejected": true
   },
   "images": 3000,
   "leak_audit_all_scalar_scene_features": {
@@ -353,7 +429,7 @@
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.09203388063505782,
+          "cramers_v": 0.10177913129247916,
           "kind": "categorical"
         },
         "4": {
@@ -375,11 +451,11 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.45461294361222804,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.6585392806416459,
+          "cramers_v": 0.640317985514594,
           "kind": "numeric_deciles"
         },
         "4": {
@@ -401,11 +477,11 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.4538786369638581,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7024233562734422,
+          "cramers_v": 0.6967563609920298,
           "kind": "numeric_deciles"
         },
         "4": {
@@ -423,19 +499,19 @@
       "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.8578149524363928,
+          "cramers_v": 0.8050955034657306,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.20255187859515755,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.8507668742491247,
+          "cramers_v": 0.8563903733909849,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.5890883344193385,
+          "cramers_v": 0.5881691608288327,
           "kind": "categorical"
         },
         "5": {
@@ -449,19 +525,19 @@
       "classification": "definitional",
       "levels": {
         "1": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.4531431403922659,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 1.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.361320934665966,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.9976623778346884,
           "kind": "categorical"
         },
         "5": {
@@ -479,11 +555,11 @@
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.9996663886479304,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.6337445100277069,
+          "cramers_v": 0.6516760081223836,
           "kind": "categorical"
         },
         "4": {
@@ -505,11 +581,11 @@
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.9974951951979328,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.5915321198219095,
+          "cramers_v": 0.5918921465757105,
           "kind": "categorical"
         },
         "4": {
@@ -531,11 +607,11 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.502586939464905,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7673793499859815,
+          "cramers_v": 0.7715181234555979,
           "kind": "numeric_deciles"
         },
         "4": {
@@ -557,11 +633,11 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.0,
+          "cramers_v": 0.4415471852371717,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.7077786799672889,
+          "cramers_v": 0.7004085512375036,
           "kind": "numeric_deciles"
         },
         "4": {
@@ -583,12 +659,46 @@
   },
   "mismatch_count": 0,
   "mismatches": [],
-  "png_edge_recovery": {
-    "passed": 3000,
-    "total": 3000
+  "nonconvex_geometry_disposition": {
+    "compounds_restored_nonconvex": 316,
+    "false_stellation_labels_removed_in_v4": 314,
+    "true_stellations": 0
+  },
+  "png_recovery_all_items": {
+    "edge_count": {
+      "passed": 3000,
+      "total": 3000
+    },
+    "exact_reference_render": {
+      "passed": 3000,
+      "total": 3000
+    },
+    "face_count": {
+      "passed": 3000,
+      "total": 3000
+    },
+    "vertex_count": {
+      "passed": 3000,
+      "total": 3000
+    }
   },
   "point_hull_items": 3000,
+  "post_fix_literal_euler_assertion": {
+    "by_solid_name": {
+      "compound of cube and octahedron": 158,
+      "stella octangula": 158
+    },
+    "disposition": "Expected only for two-component compounds; each component has Euler characteristic 2 and the aggregate has 4.",
+    "total": 316
+  },
+  "question_set_fields": [
+    "question_id",
+    "task",
+    "image",
+    "prompt"
+  ],
   "questions": 15000,
+  "renames_this_pass": [],
   "solid_class_distribution": {
     "Archimedean": 948,
     "Catalan": 632,
@@ -613,5 +723,23 @@
     "truncated cube": 158,
     "truncated octahedron": 158,
     "truncated tetrahedron": 158
+  },
+  "v4_geometry_renames_reverified": {
+    "great dodecahedron_to_dodecahedron": {
+      "V_E_F": [
+        20,
+        30,
+        12
+      ],
+      "count": 157
+    },
+    "small stellated dodecahedron_to_icosahedron": {
+      "V_E_F": [
+        12,
+        30,
+        20
+      ],
+      "count": 157
+    }
   }
 }

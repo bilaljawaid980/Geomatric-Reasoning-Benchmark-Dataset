@@ -1,0 +1,251 @@
+{
+  "after_assertion_failures": {
+    "edge_array_length_equals_edge_count": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "face_array_length_equals_face_count": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "face_shape_matches_face_arities": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "literal_v_minus_e_plus_f_equals_2": {
+      "by_solid_name": {
+        "compound of cube and octahedron": 158,
+        "stella octangula": 158
+      },
+      "total": 316
+    },
+    "visible_face_count_not_above_face_count": {
+      "by_solid_name": {},
+      "total": 0
+    }
+  },
+  "after_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.21066666666666667,
+      "counts": {
+        "12": 631,
+        "14": 632,
+        "20": 315,
+        "24": 158,
+        "26": 158,
+        "30": 158,
+        "32": 158,
+        "4": 158,
+        "6": 158,
+        "8": 474
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 0.8946666666666667,
+      "counts": {
+        "convex": 2684,
+        "non-convex": 316
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.12833333333333333,
+      "counts": {
+        "1": 16,
+        "10": 108,
+        "12": 268,
+        "13": 46,
+        "14": 169,
+        "15": 54,
+        "16": 60,
+        "2": 22,
+        "20": 93,
+        "24": 154,
+        "3": 64,
+        "30": 58,
+        "32": 58,
+        "4": 223,
+        "5": 22,
+        "6": 203,
+        "7": 205,
+        "8": 158,
+        "mixed": 385,
+        "pentagons": 120,
+        "squares": 152,
+        "triangles": 362
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2753333333333333,
+      "counts": {
+        "12": 197,
+        "14": 213,
+        "20": 71,
+        "24": 70,
+        "26": 66,
+        "30": 74,
+        "32": 81,
+        "4": 76,
+        "6": 65,
+        "8": 147,
+        "Archimedean": 273,
+        "Catalan": 206,
+        "Compound": 97,
+        "Platonic": 319,
+        "no": 826,
+        "yes": 219
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "no": 3000
+      }
+    }
+  },
+  "answers_changed_by_level": {
+    "1": 0,
+    "2": 316,
+    "3": 200,
+    "4": 0,
+    "5": 0
+  },
+  "before_assertion_failures": {
+    "edge_array_length_equals_edge_count": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "face_array_length_equals_face_count": {
+      "by_solid_name": {},
+      "total": 0
+    },
+    "face_shape_matches_face_arities": {
+      "by_solid_name": {
+        "rhombic dodecahedron": 158,
+        "rhombic triacontahedron": 158,
+        "triakis octahedron": 158,
+        "triakis tetrahedron": 158
+      },
+      "total": 632
+    },
+    "literal_v_minus_e_plus_f_equals_2": {
+      "by_solid_name": {
+        "compound of cube and octahedron": 158,
+        "stella octangula": 158
+      },
+      "total": 316
+    },
+    "visible_face_count_not_above_face_count": {
+      "by_solid_name": {},
+      "total": 0
+    }
+  },
+  "before_level_distributions": {
+    "1": {
+      "constant_answer_baseline": 0.21066666666666667,
+      "counts": {
+        "12": 631,
+        "14": 632,
+        "20": 315,
+        "24": 158,
+        "26": 158,
+        "30": 158,
+        "32": 158,
+        "4": 158,
+        "6": 158,
+        "8": 474
+      }
+    },
+    "2": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "convex": 3000
+      }
+    },
+    "3": {
+      "constant_answer_baseline": 0.195,
+      "counts": {
+        "1": 16,
+        "10": 108,
+        "12": 268,
+        "13": 46,
+        "14": 169,
+        "15": 54,
+        "16": 60,
+        "2": 22,
+        "20": 93,
+        "24": 154,
+        "3": 64,
+        "30": 58,
+        "32": 58,
+        "4": 223,
+        "5": 22,
+        "6": 203,
+        "7": 205,
+        "8": 158,
+        "mixed": 585,
+        "pentagons": 120,
+        "squares": 51,
+        "triangles": 263
+      }
+    },
+    "4": {
+      "constant_answer_baseline": 0.2753333333333333,
+      "counts": {
+        "12": 197,
+        "14": 213,
+        "20": 71,
+        "24": 70,
+        "26": 66,
+        "30": 74,
+        "32": 81,
+        "4": 76,
+        "6": 65,
+        "8": 147,
+        "Archimedean": 273,
+        "Catalan": 206,
+        "Compound": 97,
+        "Platonic": 319,
+        "no": 826,
+        "yes": 219
+      }
+    },
+    "5": {
+      "constant_answer_baseline": 1.0,
+      "counts": {
+        "no": 3000
+      }
+    }
+  },
+  "dataset_version": "polyhedron-5.0.0",
+  "failing_records_examined": 948,
+  "field_changes": {
+    "dataset_version": 3000,
+    "face_shape_types": 632,
+    "is_convex": 316
+  },
+  "literal_euler_note": "The 316 compound records contain two closed components, so their aggregate Euler characteristic is 4; each component is checked at 2.",
+  "nonconvex_disposition": {
+    "compounds_restored_nonconvex": 316,
+    "false_stellation_labels_removed_in_v4": 314,
+    "true_stellations": 0
+  },
+  "renames_this_pass": [],
+  "v4_geometry_renames_reverified": {
+    "great dodecahedron_to_dodecahedron": {
+      "V_E_F": [
+        20,
+        30,
+        12
+      ],
+      "count": 157
+    },
+    "small stellated dodecahedron_to_icosahedron": {
+      "V_E_F": [
+        12,
+        30,
+        20
+      ],
+      "count": 157
+    }
+  }
+}
