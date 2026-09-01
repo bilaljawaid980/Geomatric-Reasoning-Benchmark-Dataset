@@ -19,26 +19,11 @@ configs:
   - config_name: default
     data_files:
       - split: train
-        path: combined/all_questions_combined.csv
-dataset_info:
-  features:
-    - name: dataset
-      dtype: string
-    - name: dataset_version
-      dtype: string
-    - name: question_id
-      dtype: string
-    - name: task
-      dtype: string
-    - name: image
-      dtype: string
-    - name: image_path
-      dtype: image
-    - name: prompt
-      dtype: string
-  splits:
-    - name: train
-      num_examples: 500000
+        path: combined/all_answers_combined-*.parquet
+  - config_name: annotations
+    data_files:
+      - split: train
+        path: combined/all_annotations_combined-*.parquet
 ---
 
 # GRIP-Benchmark-34
@@ -133,9 +118,9 @@ Every image has exactly five questions in increasing order of difficulty:
 
 The exact question templates differ by category, but this progression and the `difficulty_level: 1..5` annotation contract are shared by all 34 datasets. Every Level 5 operation is independently recomputable from raw stored geometry or scene metadata. Flattened CSV/JSONL files contain one row per question, yielding 15,000 rows per core dataset and 5,000 for the focused projectile-motion category.
 
-The suite-level files in `combined/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 private answers. The Hub's default configuration loads only `combined/all_questions_combined.csv`; it never loads the private combined answer file.
+The suite-level files in `combined/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 answers. The Hub's `default` configuration loads the sharded answer Parquet view, including embedded image bytes, prompt, ground truth, and answer format. The separate `annotations` configuration contains one row per image with the combined scene metadata. The original question and answer CSVs remain available for non-viewer workflows.
 
-Free-body-diagram Level 4 questions introduce the structured private scoring declaration `{"type":"numeric_tolerance","tolerance_percent":2}` for real-valued mechanics answers. This field appears in annotations and private answer keys, not public question sets; it changes grading precision without exposing an acceptance band to a tested model.
+Free-body-diagram Level 4 questions introduce the structured scoring declaration `{"type":"numeric_tolerance","tolerance_percent":2}` for real-valued mechanics answers. This field appears in annotations, answer keys, and the published answer view, but not in question-only CSVs; it records grading precision explicitly.
 
 ### Independent validation
 
@@ -202,9 +187,11 @@ The `orthographic_dataset_3000` category implements classical orthographic/third
 
 ## 6. Release use, validation, and limitations
 
-### Public and private files
+### Benchmark and metadata files
 
-`question_set.csv` and `combined/all_questions_combined.csv` are the model-facing dataset files. The combined questions file preserves the original bare `image` filename and adds `image_path`, a repository-relative PNG path used by the Hub viewer. `annotations.jsonl`, `answer_key.csv`, `dataset_final.csv`, `dataset_final.jsonl`, and `combined/all_answers_combined.csv` are private answer-key-side artifacts and contain ground truth or scene metadata that may directly reveal answers. **Never provide `annotations.jsonl` to a tested model: doing so leaks answers.**
+GRIP is a published open benchmark, so the Hub's `default` configuration intentionally exposes ground truth and `answer_format` alongside each question. Its `image_bytes` column is a Hugging Face `Image` feature with the PNG bytes embedded in Parquet; `image` retains the original filename and `image_path` retains the repository-relative source path. The `annotations` configuration exposes scene metadata for inspection and analysis, with its `image` column stored as the same embedded `Image` feature. Complex list and object metadata is losslessly JSON-encoded in individual columns so the heterogeneous 34-domain schema remains representable in one table.
+
+The per-dataset `question_set.csv` files and `combined/all_questions_combined.csv` remain the question-only model-facing artifacts. Per-dataset `answer_key.csv` files, `combined/all_answers_combined.csv`, and the answer Parquet view include published reference answers. Raw `annotations.jsonl` and the annotations Parquet view can reveal the exact scene geometry and quantities from which answers are derived. **Do not provide annotations to a model under evaluation: doing so leaks answer-generating metadata and invalidates the measurement.**
 
 ### Validation methodology
 
@@ -265,7 +252,9 @@ geomstry/
 │   └── spot_check_review/
 └── combined/
     ├── all_questions_combined.csv
-    └── all_answers_combined.csv
+    ├── all_answers_combined.csv
+    ├── all_answers_combined-*.parquet
+    └── all_annotations_combined-*.parquet
 ```
 
 Each dataset folder is self-contained. Consult its local README for task definitions, generation commands, annotation schema, validation logic, limitations, and review assets.

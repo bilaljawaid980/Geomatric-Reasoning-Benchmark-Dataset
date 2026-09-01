@@ -1,6 +1,7 @@
 *.png filter=lfs diff=lfs merge=lfs -text
 combined/all_answers_combined.csv filter=lfs diff=lfs merge=lfs -text
 combined/all_questions_combined.csv filter=lfs diff=lfs merge=lfs -text
+combined/*.parquet filter=lfs diff=lfs merge=lfs -text
 Dataset/cube_structure_dataset_3000/dataset_final.csv filter=lfs diff=lfs merge=lfs -text
 Dataset/cube_structure_dataset_3000/dataset_final.jsonl filter=lfs diff=lfs merge=lfs -text
 Dataset/fbd_dataset_3000/annotations.jsonl filter=lfs diff=lfs merge=lfs -text
