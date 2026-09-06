@@ -48,7 +48,7 @@ This repository generates datasets and ground truth. It does not run models, sco
 
 | Dataset | Geometry class | Version | Images | Questions | Validation | Key skill tested |
 |---|---|---|---:|---:|---|---|
-| [route](Dataset/route_dataset_3000/) | Topology / Graph Theory | route-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Trace colored routes and reason over endpoint connectivity |
+| [route](Dataset/route_dataset_3000/) | Topology / Graph Theory | route-3.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Trace colored routes and reason over endpoint connectivity |
 | [nested_squares](Dataset/nested_squares_dataset_3000/) | Transformational Geometry | nested-squares-8.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Measure center drift, size ratio, four-fold rotation, and geometric visibility |
 | [nested_triangles](Dataset/nested_triangles_dataset_3000/) | Transformational Geometry | nested-triangles-8.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Generalize drift, size, and three-fold rotation reasoning to triangles |
 | [nested_hexagons](Dataset/nested_hexagons_dataset_3000/) | Transformational Geometry | nested-hexagons-8.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Generalize drift, size, and six-fold rotation reasoning to hexagons |
@@ -79,7 +79,7 @@ This repository generates datasets and ground truth. It does not run models, sco
 | [gauge_reading](Dataset/gauge_reading_dataset_3000/) | Physical / Mechanical Reasoning | legacy-current | 3,000 | 15,000 | PASS — 0 mismatches | Interpolate single-needle readings across varied ranges and reason about thresholds and projected values |
 | [optical_illusion](Dataset/optical_illusion_dataset_3000/) | Plane Geometry / Visual Perception | optical-illusion-3.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Separate true pixel geometry from misleading contextual size cues |
 | [compass_bearing](Dataset/compass_bearing_dataset_3000/) | Analytic Geometry / Navigation | compass-bearing-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Compute compass bearings, turns, and counterfactual destinations |
-| [hex_pathfinding](Dataset/hex_pathfinding_dataset_3000/) | Topology / Graph Theory | hex-pathfinding-2.0.0 | 3,000 | 15,000 | PASS — 0 mismatches | Find and count shortest paths through obstructed hex grids |
+| [hex_pathfinding](Dataset/hex_pathfinding_dataset_3000/) | Topology / Graph Theory | hex-pathfinding-3.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Find and count shortest paths through obstructed hex grids |
 | [laser_mirror](Dataset/laser_mirror_dataset_3000/) | Plane Geometry / Physical Optics | legacy-current | 3,000 | 15,000 | PASS — 0 mismatches | Trace multi-bounce reflections and counterfactual mirror rotations |
 | [projectile_motion](Dataset/projectile_motion_dataset_1000/) | Physical / Mechanical Reasoning | projectile-motion-1.0.0 | 1,000 | 5,000 | PASS — 0 mismatches | Apply ideal projectile kinematics and reason about obstacle clearance and angle optimization |
 | **Total** | **34 sub-benchmarks** | — | **100,000** | **500,000** | **34/34 PASS** | **Broad visual, spatial, geometric, topological, analytic, inductive, optical, and mechanical reasoning** |
@@ -118,7 +118,7 @@ Every image has exactly five questions in increasing order of difficulty:
 
 The exact question templates differ by category, but this progression and the `difficulty_level: 1..5` annotation contract are shared by all 34 datasets. Every Level 5 operation is independently recomputable from raw stored geometry or scene metadata. Flattened CSV/JSONL files contain one row per question, yielding 15,000 rows per core dataset and 5,000 for the focused projectile-motion category.
 
-The suite-level files in `combined/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 answers. The Hub's `default` configuration loads the sharded answer Parquet view, including embedded image bytes, prompt, ground truth, and answer format. The separate `annotations` configuration contains one row per image with the combined scene metadata. The original question and answer CSVs remain available for non-viewer workflows.
+The suite-level files in `combined/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The current five-level combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 answers. Route and hex pathfinding additionally provide 3,000 supplementary open-ended questions each. Those 6,000 questions and answers are deliberately kept in the separate `all_open_questions_combined.csv` and `all_open_answers_combined.csv` files; they do not change the five-level totals or structure. The Hub's `default` configuration loads the sharded answer Parquet view, including embedded image bytes, prompt, ground truth, and answer format. The separate `annotations` configuration contains one row per image with the combined scene metadata. The original question and answer CSVs remain available for non-viewer workflows.
 
 Free-body-diagram Level 4 questions introduce the structured scoring declaration `{"type":"numeric_tolerance","tolerance_percent":2}` for real-valued mechanics answers. This field appears in annotations, answer keys, and the published answer view, but not in question-only CSVs; it records grading precision explicitly.
 
@@ -191,7 +191,7 @@ The `orthographic_dataset_3000` category implements classical orthographic/third
 
 GRIP is a published open benchmark, so the Hub's `default` configuration intentionally exposes ground truth and `answer_format` alongside each question. Its `image_bytes` column is a Hugging Face `Image` feature with the PNG bytes embedded in Parquet; `image` retains the original filename and `image_path` retains the repository-relative source path. The `annotations` configuration exposes scene metadata for inspection and analysis, with its `image` column stored as the same embedded `Image` feature. Complex list and object metadata is losslessly JSON-encoded in individual columns so the heterogeneous 34-domain schema remains representable in one table.
 
-The per-dataset `question_set.csv` files and `combined/all_questions_combined.csv` remain the question-only model-facing artifacts. Per-dataset `answer_key.csv` files, `combined/all_answers_combined.csv`, and the answer Parquet view include published reference answers. Raw `annotations.jsonl` and the annotations Parquet view can reveal the exact scene geometry and quantities from which answers are derived. **Do not provide annotations to a model under evaluation: doing so leaks answer-generating metadata and invalidates the measurement.**
+The per-dataset `question_set.csv` files, `combined/all_questions_combined.csv`, per-domain `open_questions.csv`, and `combined/all_open_questions_combined.csv` are question-only model-facing artifacts. Per-dataset `answer_key.csv`, per-domain `open_answer_key.csv`, and their combined answer files include published reference answers. Raw `annotations.jsonl`, `open_annotations.jsonl`, and the annotations Parquet view can reveal the exact scene geometry and quantities from which answers are derived. **Do not provide annotations to a model under evaluation: doing so leaks answer-generating metadata and invalidates the measurement.**
 
 ### Validation methodology
 
@@ -253,6 +253,8 @@ geomstry/
 └── combined/
     ├── all_questions_combined.csv
     ├── all_answers_combined.csv
+    ├── all_open_questions_combined.csv
+    ├── all_open_answers_combined.csv
     ├── all_answers_combined-*.parquet
     └── all_annotations_combined-*.parquet
 ```

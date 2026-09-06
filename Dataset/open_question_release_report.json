@@ -1,0 +1,234 @@
+{
+  "status": "PASS",
+  "scope": [
+    "route_dataset_3000",
+    "hex_pathfinding_dataset_3000"
+  ],
+  "domains": {
+    "route_dataset_3000": {
+      "dataset_version": "route-3.0.0",
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000
+      },
+      "constant_answer_baselines": {
+        "answer": 0.913,
+        "colors": 0.006666666666666667,
+        "lines_at_target": 0.502,
+        "reached": 0.06833333333333333,
+        "target": 0.212,
+        "target_degree": 0.502,
+        "unreached": 0.087
+      },
+      "fields_over_60_percent": {
+        "answer": 0.913
+      },
+      "protected_file_hashes_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "selection_distribution": {
+        "target": {
+          "A": 609,
+          "B": 582,
+          "C": 630,
+          "D": 636,
+          "E": 397,
+          "F": 146
+        },
+        "target_degree": {
+          "1": 93,
+          "2": 1090,
+          "3": 1506,
+          "4": 247,
+          "5": 63,
+          "6": 1
+        }
+      },
+      "connected_label_pairs_out_of_canonical_15": {
+        "2": 4,
+        "3": 96,
+        "4": 405,
+        "5": 809,
+        "6": 755,
+        "7": 484,
+        "8": 301,
+        "9": 119,
+        "10": 26,
+        "11": 1
+      }
+    },
+    "hex_pathfinding_dataset_3000": {
+      "dataset_version": "hex-pathfinding-3.0.0",
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000
+      },
+      "constant_answer_baselines": {
+        "hole_directions": 0.419,
+        "holes_touching": 0.419,
+        "home_on_boundary": 0.5353333333333333,
+        "neighbour_count": 0.4646666666666667,
+        "walkable_touching": 0.279
+      },
+      "fields_over_60_percent": {},
+      "protected_file_hashes_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "boundary_vs_interior": {
+        "boundary": 1606,
+        "interior": 1394
+      },
+      "template_choice": "retained neighbour_count because HOME is boundary in 1,606 items and interior in 1,394",
+      "answer_distributions": {
+        "hole_directions": {
+          "[\"left\", \"lower-left\", \"lower-right\"]": 4,
+          "[\"left\", \"lower-left\"]": 30,
+          "[\"left\", \"lower-right\"]": 41,
+          "[\"left\", \"right\", \"lower-left\", \"lower-right\"]": 2,
+          "[\"left\", \"right\", \"lower-left\"]": 4,
+          "[\"left\", \"right\", \"lower-right\"]": 2,
+          "[\"left\", \"right\"]": 35,
+          "[\"left\"]": 183,
+          "[\"lower-left\", \"lower-right\"]": 37,
+          "[\"lower-left\"]": 213,
+          "[\"lower-right\"]": 205,
+          "[\"right\", \"lower-left\", \"lower-right\"]": 3,
+          "[\"right\", \"lower-left\"]": 33,
+          "[\"right\", \"lower-right\"]": 44,
+          "[\"right\"]": 193,
+          "[\"upper-left\", \"left\", \"lower-left\"]": 7,
+          "[\"upper-left\", \"left\", \"lower-right\"]": 3,
+          "[\"upper-left\", \"left\", \"right\", \"lower-right\"]": 1,
+          "[\"upper-left\", \"left\", \"right\"]": 7,
+          "[\"upper-left\", \"left\"]": 34,
+          "[\"upper-left\", \"lower-left\", \"lower-right\"]": 5,
+          "[\"upper-left\", \"lower-left\"]": 26,
+          "[\"upper-left\", \"lower-right\"]": 33,
+          "[\"upper-left\", \"right\", \"lower-left\"]": 7,
+          "[\"upper-left\", \"right\", \"lower-right\"]": 2,
+          "[\"upper-left\", \"right\"]": 24,
+          "[\"upper-left\", \"upper-right\", \"left\", \"lower-left\"]": 1,
+          "[\"upper-left\", \"upper-right\", \"left\"]": 3,
+          "[\"upper-left\", \"upper-right\", \"lower-left\", \"lower-right\"]": 2,
+          "[\"upper-left\", \"upper-right\", \"lower-left\"]": 7,
+          "[\"upper-left\", \"upper-right\", \"lower-right\"]": 3,
+          "[\"upper-left\", \"upper-right\", \"right\", \"lower-right\"]": 1,
+          "[\"upper-left\", \"upper-right\", \"right\"]": 6,
+          "[\"upper-left\", \"upper-right\"]": 30,
+          "[\"upper-left\"]": 173,
+          "[\"upper-right\", \"left\", \"lower-left\"]": 3,
+          "[\"upper-right\", \"left\", \"lower-right\"]": 4,
+          "[\"upper-right\", \"left\", \"right\", \"lower-left\"]": 1,
+          "[\"upper-right\", \"left\", \"right\"]": 9,
+          "[\"upper-right\", \"left\"]": 27,
+          "[\"upper-right\", \"lower-left\", \"lower-right\"]": 7,
+          "[\"upper-right\", \"lower-left\"]": 28,
+          "[\"upper-right\", \"lower-right\"]": 32,
+          "[\"upper-right\", \"right\", \"lower-left\", \"lower-right\"]": 1,
+          "[\"upper-right\", \"right\", \"lower-left\"]": 5,
+          "[\"upper-right\", \"right\", \"lower-right\"]": 5,
+          "[\"upper-right\", \"right\"]": 27,
+          "[\"upper-right\"]": 190,
+          "[]": 1257
+        },
+        "holes_touching": {
+          "0": 1257,
+          "1": 1157,
+          "2": 481,
+          "3": 96,
+          "4": 9
+        },
+        "home_on_boundary": {
+          "False": 1394,
+          "True": 1606
+        },
+        "neighbour_count": {
+          "3": 475,
+          "4": 1131,
+          "6": 1394
+        },
+        "walkable_touching": {
+          "1": 43,
+          "2": 364,
+          "3": 749,
+          "4": 837,
+          "5": 538,
+          "6": 469
+        }
+      }
+    }
+  },
+  "combined_open": {
+    "status": "PASS",
+    "datasets": {
+      "hex_pathfinding_dataset_3000": {
+        "dataset_version": "hex-pathfinding-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "route_dataset_3000": {
+        "dataset_version": "route-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      }
+    },
+    "combined_open_questions": 6000,
+    "combined_open_answers": 6000,
+    "unique_question_ids": 6000,
+    "resolved_image_paths": 6000,
+    "public_columns": [
+      "dataset",
+      "dataset_version",
+      "question_id",
+      "image",
+      "image_path",
+      "prompt"
+    ],
+    "private_columns": [
+      "dataset",
+      "dataset_version",
+      "question_id",
+      "image",
+      "image_path",
+      "prompt",
+      "target",
+      "target_position",
+      "target_degree",
+      "lines_at_target",
+      "colors",
+      "reached",
+      "unreached",
+      "answer",
+      "home_on_boundary",
+      "neighbour_count",
+      "holes_touching",
+      "walkable_touching",
+      "hole_directions"
+    ]
+  },
+  "five_level_suite": {
+    "datasets": 34,
+    "images": 100000,
+    "questions": 500000,
+    "answers": 500000
+  },
+  "protected_content": "images, renderers, existing five-level question text, and existing answers unchanged"
+}

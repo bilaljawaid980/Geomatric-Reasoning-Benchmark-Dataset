@@ -1,9 +1,35 @@
 {
-  "constraint_source": "generator constants and validation metrics",
+  "constraint_set": {
+    "existing_five_level_questions_unchanged": true,
+    "fixed_open_direction_vocabulary": [
+      "upper-left",
+      "upper-right",
+      "left",
+      "right",
+      "lower-left",
+      "lower-right"
+    ],
+    "no_coordinates_in_open_prompt": true,
+    "open_ground_truth_independently_rederived": true,
+    "open_png_recoverability_all_items": true,
+    "open_public_fields_exact": [
+      "question_id",
+      "image",
+      "prompt"
+    ],
+    "open_question_count_per_image": 1
+  },
+  "constraint_source": "generator constants and open-question validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "hex-pathfinding-2.0.0",
+  "dataset_version": "hex-pathfinding-3.0.0",
   "generator_commit": "e6975d7f82e6fc42f77fdc6434e733c10adb83d6",
   "images": 3000,
+  "open_question_files": [
+    "open_questions.csv",
+    "open_answer_key.csv",
+    "open_annotations.jsonl"
+  ],
+  "open_questions": 3000,
   "question_set_fields": [
     "question_id",
     "task",

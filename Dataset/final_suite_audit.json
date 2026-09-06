@@ -16826,7 +16826,7 @@
         "p95": 11.0
       }
     },
-    "dataset_version": "hex-pathfinding-2.0.0",
+    "dataset_version": "hex-pathfinding-3.0.0",
     "degeneracy_flags": {},
     "features_at_v_ge_0_10": {
       "difficulty_score": {
@@ -29547,7 +29547,7 @@
         "p95": 12.0
       }
     },
-    "dataset_version": "route-2.0.0",
+    "dataset_version": "route-3.0.0",
     "degeneracy_flags": {},
     "features_at_v_ge_0_10": {
       "crossing_count": {

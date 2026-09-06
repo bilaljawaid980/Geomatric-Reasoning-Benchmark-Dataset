@@ -16,7 +16,7 @@
 | fold_punch_dataset_3000 | fold-punch-2.0.0 | yes | 0 | 50.0% | 50.0% | 25.0% | 32.2% | 33.3% | 3000/3000 |
 | gauge_reading_dataset_3000 | legacy-current | no | 0 | 80.0% | 50.0% | 9.9% | 60.0% | 3.9% | 3000/3000 |
 | gear_train_dataset_3000 | legacy-current | no | 0 | 38.1% | 100.0% | 25.8% | 0.7% | 33.3% | 3000/3000 |
-| hex_pathfinding_dataset_3000 | hex-pathfinding-2.0.0 | yes | 0 | 11.1% | 50.0% | 21.6% | 22.0% | 33.3% | 3000/3000 |
+| hex_pathfinding_dataset_3000 | hex-pathfinding-3.0.0 | yes | 0 | 11.1% | 50.0% | 21.6% | 22.0% | 33.3% | 3000/3000 |
 | impossible_object_dataset_3000 | impossible-object-4.0.0 | no | 0 | 50.1% | 50.0% | 20.7% | 25.0% | 50.0% | 3000/3000 |
 | laser_mirror_dataset_3000 | legacy-current | no | 0 | 25.1% | 75.0% | 52.3% | 4.4% | 3.7% | 3000/3000 |
 | line_intersection_dataset_3000 | line-intersection-3.0.0 | yes | 0 | 40.8% | 27.3% | 20.8% | 19.3% | 49.6% | 3000/3000 |
@@ -31,7 +31,7 @@
 | polyhedron_dataset_3000 | polyhedron-4.0.0 | yes | 0 | 21.1% | 100.0% | 19.5% | 27.5% | 100.0% | 3000/3000 |
 | projectile_motion_dataset_1000 | projectile-motion-1.0.0 | no | 0 | 2.8% | 65.4% | 1.0% | 0.4% | 68.8% | 1000/1000 |
 | rotation_matching_dataset_3000 | rotation-matching-2.0.0 | no | 0 | 25.8% | 25.0% | 15.2% | 26.0% | 14.3% | 3000/3000 |
-| route_dataset_3000 | route-2.0.0 | yes | 0 | 23.4% | 51.3% | 11.3% | 3.5% | 26.3% | 3000/3000 |
+| route_dataset_3000 | route-3.0.0 | yes | 0 | 23.4% | 51.3% | 11.3% | 3.5% | 26.3% | 3000/3000 |
 | rpm_dataset_3000 | rpm-2.0.0 | yes | 0 | 41.8% | 13.1% | 29.9% | 17.1% | 51.5% | 3000/3000 |
 | shadow_inference_dataset_3000 | shadow-inference-2.0.0 | yes | 0 | 37.8% | 36.0% | 29.6% | 40.0% | 50.0% | 3000/3000 |
 | surface_topology_dataset_3000 | surface-topology-3.0.0 | yes | 0 | 27.3% | 75.0% | 51.8% | 27.3% | 52.3% | 3000/3000 |

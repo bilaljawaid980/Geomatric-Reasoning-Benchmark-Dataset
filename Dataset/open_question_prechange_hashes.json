@@ -1,0 +1,18 @@
+{
+  "hex_pathfinding_dataset_3000": {
+    "answer_key_sha256": "6dddbeddd760b86d240ed400b715d8a98973ac9e63525179b93b513c868dcdc6",
+    "dataset_final_csv_sha256": "ea8259602ed80d6a4ec4c9f1ceeaa6a7d03b323fe262b78f752290f267dd9d96",
+    "dataset_final_jsonl_sha256": "b2ceae336c0c8e86f5c2227164fc4ae314739b07765a427ac5f88adf7b39eb6f",
+    "existing_questions_semantic_sha256": "2442dbe89dd9e242e58c7a58b8d0a0e71ab3c13a10754cc0d89d51a2fe6bd041",
+    "image_tree_git_oid": "14e67e7b1f49c42c3beaaa78e20de230746a9395",
+    "question_set_sha256": "5f9fb5f503e642376e109a408bbaf12815515e30d5d489b88e82397eb58c6154"
+  },
+  "route_dataset_3000": {
+    "answer_key_sha256": "ab9fb431b5bbb44953b0f1b323b693ef0793defa14aae859aff310a6273572e4",
+    "dataset_final_csv_sha256": "909a9801222e694903332c3ebacf6633501f821d988df458ee67efae0db9f7df",
+    "dataset_final_jsonl_sha256": "b550367f58d6850656900d592c0e491f360e90201ea4e3a0cd76e10efdc59bc3",
+    "existing_questions_semantic_sha256": "4ea557a6a3feb111d4d5309a70364fd5aa7a9c2810f9cb739b717012ed053d6d",
+    "image_tree_git_oid": "cbe959b68ae060fc5eb6bc4c290988e18992a8c9",
+    "question_set_sha256": "62d9122b24f374ac2aeb96b10f9c49fa50e811fc0205427eb31afe074ba90876"
+  }
+}

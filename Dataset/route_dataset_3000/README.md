@@ -2,7 +2,7 @@
 
 ## 1. Dataset overview
 
-The dataset contains **3,000 images** and **12,000 questions**. It was generated on **2026-08-10** through a fully synthetic, deterministic Python pipeline; images were not human-drawn and labels were not human-annotated.
+Current version: `route-3.0.0`. The dataset contains **3,000 images**, **15,000 five-level questions**, and **3,000 supplementary open-ended questions**. It was generated through a fully synthetic, deterministic Python pipeline; images were not human-drawn and labels were not human-annotated.
 
 ## 2. Full verbatim generation prompt
 
@@ -305,3 +305,16 @@ Route Counting,route_puzzle_0001.png,Count the one-colored routes that go from A
 Comparative Reasoning,route_puzzle_0001.png,How many routes does letter A have in total (i.e. touching A)?,5,"{""colors_used"":[""orange"",""amber"",""olive"",""cyan"",""brown"",""magenta"",""gray-blue"",""teal""],""crossing_count"":83,""difficulty_score"":0.4971,""line_width_px"":2.95,""num_endpoints"":4,""num_routes"":8,""seed"":1}"
 Compound Reasoning,route_puzzle_0001.png,"Is there any letter-pair with zero directly connecting routes? If yes, name one such pair; if no, answer 'none'.",CD,"{""colors_used"":[""orange"",""amber"",""olive"",""cyan"",""brown"",""magenta"",""gray-blue"",""teal""],""crossing_count"":83,""difficulty_score"":0.4971,""line_width_px"":2.95,""num_endpoints"":4,""num_routes"":8,""seed"":1}"
 ```
+
+### Supplementary open-ended questions (v3)
+
+Version `route-3.0.0` adds one open-ended route-tracing question per image without changing the existing images or five-level questions and answers. Target selection prefers an incident-line degree of 2 or 3, uses the stored seed to choose deterministically among qualifying labels, and otherwise selects among labels with the lowest non-zero degree. Because scenes contain four, five, or six endpoint labels, the common prompt inserts the actual number of other labels instead of assuming that every image has six.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and stores the target, target position, selected degree, incident-line count and colors, exact reached and unreached label sets, and overall conclusion.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation, including per-label degrees and incident route paths. Its scoring declaration requires an exact reached set for the conclusion while retaining separate fields for partial-credit logging.
+- `build_open_questions.py` rebuilds the three open-question artifacts; `validate_open_questions.py` independently re-derives every answer and validates all 3,000 PNGs.
+
+The selected target-degree distribution is `{1: 93, 2: 1090, 3: 1506, 4: 247, 5: 63, 6: 1}`. The broad conclusion is structurally skewed: `some labelled sides remain unreached` occurs in 91.3% of images. Exact reached-set, unreached-set, incident-color, and incident-count fields are therefore the meaningful scoring components; their complete distributions and baselines are in `open_validation_metrics.json`. The connected-pair diagnostic ranges from 2 to 11 of the 15 canonical A–F pairs, and the worked `route_puzzle_0332` case has 7.
+
+Do not provide `open_answer_key.csv` or `open_annotations.jsonl` to a model under evaluation. The latter contains the stored path geometry and directly leaks the derivation.

@@ -1,0 +1,11 @@
+HEX PATHFINDING OPEN-QUESTION VALIDATION REPORT
+================================================
+Questions: 3000
+Derivation mismatches: 0
+PNG-recoverable items: 3000/3000
+Boundary/interior: {'boundary': 1606, 'interior': 1394}
+Constant baselines: {'home_on_boundary': 0.5353333333333333, 'neighbour_count': 0.4646666666666667, 'holes_touching': 0.419, 'walkable_touching': 0.279, 'hole_directions': 0.419}
+Fields over 60%: {}
+Issues: 0
+None
+Summary: PASS

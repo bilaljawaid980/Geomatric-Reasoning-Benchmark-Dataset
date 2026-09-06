@@ -8,14 +8,23 @@ errors=[];lines=[]
 datasets=sorted(d for d in root.iterdir() if d.is_dir() and (d/'annotations.jsonl').exists())
 for d in datasets:
     rows=[json.loads(x) for x in (d/'annotations.jsonl').read_text(encoding='utf-8').splitlines()]
-    names={p.name for p in d.iterdir()};missing=required-names
+    names={p.name for p in d.iterdir() if p.name!='__pycache__'};missing=required-names
     if missing:errors.append(f'{d.name}: missing {sorted(missing)}')
-    allowed=required | {name for name in names if re.fullmatch(r'(generate|validate|flatten)_.+\.py',name)}
+    manifest=json.loads((d/'build_manifest.json').read_text(encoding='utf-8'))
+    open_files=set(manifest.get('open_question_files',[]))
+    open_support={'build_open_questions.py','validate_open_questions.py','open_validation_metrics.json','open_validation_report.txt'} if open_files else set()
+    allowed=required | open_files | open_support | {name for name in names if re.fullmatch(r'(generate|validate|flatten)_.+\.py',name)}
     extra=names-allowed
     if extra:errors.append(f'{d.name}: unexpected {sorted(extra)}')
     for prefix in ('generate_','validate_','flatten_'):
-        if sum(name.startswith(prefix) and name.endswith('.py') for name in names)!=1:
+        standard_scripts=[name for name in names if name.startswith(prefix) and name.endswith('.py') and name!='validate_open_questions.py']
+        if len(standard_scripts)!=1:
             errors.append(f'{d.name}: expected exactly one {prefix}*.py')
+    if open_files:
+        if not open_files <= names:errors.append(f'{d.name}: missing declared open-question files')
+        with (d/'open_questions.csv').open(encoding='utf-8-sig',newline='') as f:
+            reader=csv.reader(f);open_header=next(reader);open_questions=sum(1 for _ in reader)
+        if open_header!=['question_id','image','prompt'] or open_questions!=len(rows):errors.append(f'{d.name}: open_questions contract')
     if any(re.search(r'_v\d+$',p.stem) for p in d.iterdir() if p.is_file()):errors.append(f'{d.name}: version-suffixed top-level file')
     images=sum(1 for _ in (d/'images').glob('*.png'))
     if images!=len(rows):errors.append(f'{d.name}: images {images}/{len(rows)}')

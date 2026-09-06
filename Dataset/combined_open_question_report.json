@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "hex_pathfinding_dataset_3000": {
+      "dataset_version": "hex-pathfinding-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
+    },
+    "route_dataset_3000": {
+      "dataset_version": "route-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
+    }
+  },
+  "combined_open_questions": 6000,
+  "combined_open_answers": 6000,
+  "unique_question_ids": 6000,
+  "resolved_image_paths": 6000,
+  "public_columns": [
+    "dataset",
+    "dataset_version",
+    "question_id",
+    "image",
+    "image_path",
+    "prompt"
+  ],
+  "private_columns": [
+    "dataset",
+    "dataset_version",
+    "question_id",
+    "image",
+    "image_path",
+    "prompt",
+    "target",
+    "target_position",
+    "target_degree",
+    "lines_at_target",
+    "colors",
+    "reached",
+    "unreached",
+    "answer",
+    "home_on_boundary",
+    "neighbour_count",
+    "holes_touching",
+    "walkable_touching",
+    "hole_directions"
+  ]
+}

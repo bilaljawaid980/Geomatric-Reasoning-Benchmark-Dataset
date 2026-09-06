@@ -5,7 +5,7 @@ from collections import Counter,deque
 from pathlib import Path
 from PIL import Image,ImageDraw,ImageFont
 BACKGROUND="#FDFAF4";WHITE="#FFFDF9";BLACK="#242A2E";GREY="#9DA3A8";HOME="#4A9B63";START="#D24A43";OUTLINE="#314958";L2="#2C78B8";L5="#8A4FA3"
-DATASET_VERSION="hex-pathfinding-2.0.0"
+DATASET_VERSION="hex-pathfinding-3.0.0"
 DIRECTIONS=((1,0),(1,-1),(0,-1),(-1,0),(-1,1),(0,1))
 def font(size,bold=False):
  try:return ImageFont.truetype(str(Path("C:/Windows/Fonts")/("arialbd.ttf" if bold else "arial.ttf")),size)

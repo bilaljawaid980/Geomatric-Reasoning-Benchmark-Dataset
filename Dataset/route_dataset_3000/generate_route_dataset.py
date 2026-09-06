@@ -14,7 +14,7 @@ try:
 except ImportError:
  def tqdm(x,**_):return x
 
-BG="#FDFAF4";INK="#101719";SCALE=3;GRID=15
+BG="#FDFAF4";INK="#101719";SCALE=3;GRID=15;DATASET_VERSION="route-3.0.0"
 COLORS=[("teal","#009E9A"),("orange","#F05A17"),("blue","#0878BD"),("green","#149B43"),("red","#D7192D"),("purple","#9256C2"),("brown","#7A4938"),("amber","#C77A00"),("magenta","#D51A78"),("cyan","#00A8C2"),("olive","#799514"),("gray-blue","#557383")]
 
 def font(size):
@@ -128,7 +128,7 @@ def generate_one(index,images_dir):
   sp=port_point(endpoints[a],used[a],totals[a]);used[a]+=1;ep=port_point(endpoints[b],used[b],totals[b]);used[b]+=1;bends=compatible_bends(endpoints[a]["side"],endpoints[b]["side"],rng)
   pts=generate_route(sp,ep,bounds,bends,endpoints[a]["side"],rng);routes.append({"color":name,"hex":hx,"start":a,"end":b,"num_bends":bends,"line_width":line_width,"points":[list(p) for p in pts]})
  cross=compute_crossings(routes);avg=sum(r["num_bends"] for r in routes)/nroute;difficulty=min(1,round(.22*(nroute-6)/6+.13*(nend-4)/2+.20*(avg-3)/5+.15*(3-line_width)/2+.30*min(cross,60)/60,4));iid=f"route_puzzle_{index:04d}";render(images_dir/f"{iid}.png",size,endpoints,routes,line_width)
- return {"id":iid,"image_path":f"images/{iid}.png","canvas_size":list(size),"num_endpoints":nend,"endpoint_letters":letters,"num_routes":nroute,"colors_used":[r["color"] for r in routes],"line_width_px":line_width,"seed":index,"routes":routes,"crossing_count":cross,"difficulty_score":difficulty,"questions":questions_for(iid,letters,routes,rng)}
+ return {"dataset_version":DATASET_VERSION,"id":iid,"image_path":f"images/{iid}.png","canvas_size":list(size),"num_endpoints":nend,"endpoint_letters":letters,"num_routes":nroute,"colors_used":[r["color"] for r in routes],"line_width_px":line_width,"seed":index,"routes":routes,"crossing_count":cross,"difficulty_score":difficulty,"questions":questions_for(iid,letters,routes,rng)}
 
 def validate_dataset(out):
  rows=[]

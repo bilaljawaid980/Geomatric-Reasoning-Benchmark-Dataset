@@ -1,6 +1,6 @@
 # GRIP Hex Grid Pathfinding Dataset 3000
 
-Current version: `hex-pathfinding-2.0.0`. The superseded initial build is preserved under `archive/v1/`; v2 is unsuffixed at the dataset root.
+Current version: `hex-pathfinding-3.0.0`. Version 3 adds supplementary open-ended questions and leaves the existing images and five-level questions and answers unchanged.
 
 ## 1. Overview
 
@@ -61,7 +61,7 @@ Outputs include `annotations.jsonl`, `images/`, `dataset_final.csv`, `dataset_fi
 
 The validator independently rebuilds the coordinate set and traversable graph from `all_tiles`, runs its own BFS, recounts shortest paths, verifies every edge in the stored path sequence is one of the six axial neighbors, and reruns BFS after removing the Level 5 tile. It proves the outcome-specific Level 5 invariant for every item: a no-path tile is a true START/HOME cut vertex, an increase tile belongs to every original shortest path, and a same-length case retains an avoiding shortest path. PNG probes recover white, black, grey, START, and HOME as distinct classes and recover the exact grey-hole count in all 3,000 images.
 
-The v2 reference-frame declaration is `axial hex coordinates (q,r)`. All stored graph quantities and every consuming question use that same frame. Full association matrices, answer baselines, parameter distributions, guard injections, and PNG recovery totals are in `validation_metrics.json` and `validation_report.txt`.
+The reference-frame declaration is `axial hex coordinates (q,r)`. All stored graph quantities and every consuming five-level question use that same frame. Full association matrices, answer baselines, parameter distributions, guard injections, and PNG recovery totals are in `validation_metrics.json` and `validation_report.txt`.
 
 Manual launch traces confirmed 5-, 7-, and 13-move sample paths using only legal six-neighbor transitions.
 
@@ -70,3 +70,16 @@ Manual launch traces confirmed 5-, 7-, and 13-move sample paths using only legal
 Skills tested include graph construction from a visual grid, six-neighbor adjacency, hazard avoidance, optimal path planning, shortest-path multiplicity, articulation reasoning, and counterfactual replanning.
 
 Limitations: only hexagonal grids are included; holes are static; every scene has one START and one HOME; movement costs are uniform; there are no dynamic agents, terrain weights, diagonal-like jumps, multiple goals, or partial observability.
+
+## 8. Supplementary open-ended questions (v3)
+
+Each image has one additional open-ended question about the visible neighborhood of the green HOME tile. The prompt uses only printed labels, colors, and the fixed natural-language vocabulary `upper-left`, `upper-right`, `left`, `right`, `lower-left`, and `lower-right`; it never exposes axial coordinates. The requested facts are stored separately as `home_on_boundary`, `neighbour_count`, `holes_touching`, `walkable_touching`, and `hole_directions` so partial correctness can be measured without accepting an incorrect combined conclusion.
+
+The requested preflight showed that neighbor count is informative and should remain in the prompt: HOME is on the boundary in 1,606 images and interior in 1,394; `neighbour_count` is 3 for 475 images, 4 for 1,131, and 6 for 1,394. Walkable-neighbor counts range from 1 to 6. No open-answer field has a constant-answer baseline above 60%; complete distributions appear in `open_validation_metrics.json`.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains the target and the five separately scored ground-truth fields.
+- `open_annotations.jsonl` is answer-key-side and adds the private coordinate-based derivation. Coordinates are deliberately absent from the prompt because the render has no printed coordinate axes.
+- `build_open_questions.py` rebuilds these artifacts; `validate_open_questions.py` independently re-derives them and recovers every HOME-neighborhood fact from all 3,000 PNGs.
+
+Do not provide `open_answer_key.csv` or `open_annotations.jsonl` to a model under evaluation; the annotation derivation directly exposes the answer-generating scene structure.

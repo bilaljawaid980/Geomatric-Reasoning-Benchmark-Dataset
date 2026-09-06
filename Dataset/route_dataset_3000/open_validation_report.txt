@@ -1,0 +1,12 @@
+ROUTE OPEN-QUESTION VALIDATION REPORT
+=====================================
+Questions: 3000
+Derivation mismatches: 0
+PNG-recoverable items: 3000/3000
+Selected target degrees: {1: 93, 2: 1090, 3: 1506, 4: 247, 5: 63, 6: 1}
+Connected-pair diagnostic (of canonical 15): {2: 4, 3: 96, 4: 405, 5: 809, 6: 755, 7: 484, 8: 301, 9: 119, 10: 26, 11: 1}
+Constant baselines: {'target': 0.212, 'target_degree': 0.502, 'lines_at_target': 0.502, 'colors': 0.006666666666666667, 'reached': 0.06833333333333333, 'unreached': 0.087, 'answer': 0.913}
+Fields over 60%: {'answer': 0.913}
+Issues: 0
+None
+Summary: PASS
