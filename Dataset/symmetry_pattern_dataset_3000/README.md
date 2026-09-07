@@ -198,3 +198,14 @@ Raw annotations retain symmetry type, every shape's center/orientation/size/fill
 | Basic Relational Reasoning | symmetry_pattern_0001.png | Is this pattern symmetric, or is there an element that breaks the symmetry? Answer 'symmetric' or 'broken'. | broken |
 | Comparative Reasoning | symmetry_pattern_0001.png | Which shape breaks the symmetry? Answer with its approximate location, such as top-left, top-right, bottom-left, bottom-right, or center. | bottom-left |
 | Compound Reasoning | symmetry_pattern_0001.png | In what way does the odd shape differ — filled instead of outlined, rotated at a different angle, shifted out of position, or a different size? | filled |
+
+### Supplementary open-ended questions
+
+Version `symmetry-pattern-3.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.071667`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `symmetry_type, orbit_count, partnered_shape_count, pattern_status, break_location, break_type`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

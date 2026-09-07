@@ -55,3 +55,14 @@ The validator is independent of the generator. It reconstructs rotations, reflec
 ## 7. Known limitations
 
 Shapes are restricted to unit-grid polyominoes for exact verification rather than free-form polygons. Candidate sets contain only 2–4 pieces. Reflection is strictly invalid for the core question, with no partial credit for an almost-correct mirrored construction. The images test spatial composition but do not model physical thickness, material, or real-world assembly constraints.
+
+### Supplementary open-ended questions
+
+Version `combination-2.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.011333`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `candidate, piece_counts, candidate_total, target_total, blocking_reason`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

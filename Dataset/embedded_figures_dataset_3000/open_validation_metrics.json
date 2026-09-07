@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "dataset": "embedded_figures_dataset_3000",
+  "items": 3000,
+  "template": "Start at candidate C and compare its complete outline with the shape hidden in the dense line drawing: report the side count of each, their signed side-count difference, decide whether they are the same shape up to rotation and scale, and name the mismatch. Justify by tracing a closed boundary through the clutter and explaining how you separated target edges from crossing distractor segments. End with a confidence score from 0 to 1.",
+  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
+  "metadata_fields_targeted": [
+    "candidate",
+    "target_sides",
+    "candidate_sides",
+    "side_difference",
+    "mismatch_signature"
+  ],
+  "selection_distribution": {
+    "[\"C\"]": 794,
+    "[\"D\"]": 743,
+    "[\"A\"]": 741,
+    "[\"B\"]": 722
+  },
+  "answer_distributions": {
+    "candidate": {
+      "C": 794,
+      "D": 743,
+      "A": 741,
+      "B": 722
+    },
+    "target_sides": {
+      "3": 750,
+      "4": 750,
+      "5": 750,
+      "6": 750
+    },
+    "candidate_sides": {
+      "4": 923,
+      "6": 912,
+      "5": 600,
+      "3": 565
+    },
+    "side_difference": {
+      "1": 691,
+      "-1": 573,
+      "0": 516,
+      "2": 414,
+      "-2": 397,
+      "3": 239,
+      "-3": 170
+    },
+    "mismatch_signature": {
+      "different vertex count; side difference +1": 691,
+      "different vertex count; side difference -1": 573,
+      "same side count but different proportions; side difference +0": 516,
+      "different vertex count; side difference +2": 414,
+      "different vertex count; side difference -2": 397,
+      "different vertex count; side difference +3": 239,
+      "different vertex count; side difference -3": 170
+    },
+    "acceptance_set": {
+      "[\"candidate=C; target_sides=6; candidate_sides=6; side_difference=0; mismatch_signature=same side count but different proportions; side difference +0\"]": 262,
+      "[\"candidate=D; target_sides=4; candidate_sides=4; side_difference=0; mismatch_signature=same side count but different proportions; side difference +0\"]": 254,
+      "[\"candidate=A; target_sides=5; candidate_sides=4; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 95,
+      "[\"candidate=D; target_sides=5; candidate_sides=4; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 95,
+      "[\"candidate=C; target_sides=3; candidate_sides=4; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 94,
+      "[\"candidate=C; target_sides=3; candidate_sides=5; side_difference=2; mismatch_signature=different vertex count; side difference +2\"]": 94,
+      "[\"candidate=C; target_sides=4; candidate_sides=5; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 93,
+      "[\"candidate=C; target_sides=4; candidate_sides=6; side_difference=2; mismatch_signature=different vertex count; side difference +2\"]": 93,
+      "[\"candidate=A; target_sides=4; candidate_sides=5; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 90,
+      "[\"candidate=A; target_sides=6; candidate_sides=3; side_difference=-3; mismatch_signature=different vertex count; side difference -3\"]": 90,
+      "[\"candidate=B; target_sides=5; candidate_sides=6; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 90,
+      "[\"candidate=A; target_sides=5; candidate_sides=3; side_difference=-2; mismatch_signature=different vertex count; side difference -2\"]": 85,
+      "[\"candidate=B; target_sides=3; candidate_sides=5; side_difference=2; mismatch_signature=different vertex count; side difference +2\"]": 85,
+      "[\"candidate=D; target_sides=5; candidate_sides=6; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 85,
+      "[\"candidate=B; target_sides=6; candidate_sides=5; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 84,
+      "[\"candidate=B; target_sides=3; candidate_sides=4; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 83,
+      "[\"candidate=A; target_sides=6; candidate_sides=4; side_difference=-2; mismatch_signature=different vertex count; side difference -2\"]": 82,
+      "[\"candidate=C; target_sides=3; candidate_sides=6; side_difference=3; mismatch_signature=different vertex count; side difference +3\"]": 82,
+      "[\"candidate=A; target_sides=4; candidate_sides=3; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 80,
+      "[\"candidate=B; target_sides=3; candidate_sides=6; side_difference=3; mismatch_signature=different vertex count; side difference +3\"]": 80,
+      "[\"candidate=B; target_sides=6; candidate_sides=3; side_difference=-3; mismatch_signature=different vertex count; side difference -3\"]": 80,
+      "[\"candidate=A; target_sides=5; candidate_sides=6; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 79,
+      "[\"candidate=D; target_sides=3; candidate_sides=5; side_difference=2; mismatch_signature=different vertex count; side difference +2\"]": 78,
+      "[\"candidate=B; target_sides=5; candidate_sides=3; side_difference=-2; mismatch_signature=different vertex count; side difference -2\"]": 77,
+      "[\"candidate=D; target_sides=3; candidate_sides=4; side_difference=1; mismatch_signature=different vertex count; side difference +1\"]": 77,
+      "[\"candidate=D; target_sides=3; candidate_sides=6; side_difference=3; mismatch_signature=different vertex count; side difference +3\"]": 77,
+      "[\"candidate=D; target_sides=5; candidate_sides=3; side_difference=-2; mismatch_signature=different vertex count; side difference -2\"]": 77,
+      "[\"candidate=A; target_sides=6; candidate_sides=5; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 76,
+      "[\"candidate=B; target_sides=6; candidate_sides=4; side_difference=-2; mismatch_signature=different vertex count; side difference -2\"]": 76,
+      "[\"candidate=C; target_sides=4; candidate_sides=3; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 76,
+      "[\"candidate=B; target_sides=5; candidate_sides=4; side_difference=-1; mismatch_signature=different vertex count; side difference -1\"]": 67,
+      "[\"candidate=A; target_sides=4; candidate_sides=6; side_difference=2; mismatch_signature=different vertex count; side difference +2\"]": 64
+    }
+  },
+  "constant_answer_baselines": {
+    "targets": 0.26466666666666666,
+    "candidate": 0.26466666666666666,
+    "target_sides": 0.25,
+    "candidate_sides": 0.30766666666666664,
+    "side_difference": 0.23033333333333333,
+    "mismatch_signature": 0.23033333333333333,
+    "acceptance_set": 0.08733333333333333
+  },
+  "fields_at_or_above_60_percent": {},
+  "preflight": {
+    "intended_answer_field": "acceptance_set",
+    "baseline": 0.08733333333333333,
+    "template_changed_after_check": true,
+    "change": "combined generic mismatch reason with signed side difference"
+  },
+  "derivation": {
+    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
+    "mismatches": []
+  },
+  "assertions": {
+    "public_exactly_three_columns": true,
+    "no_prompt_answer_leaks": true,
+    "no_absent_coordinate_scheme": true,
+    "fixed_frame_and_vocabulary": true,
+    "no_exact_L1_L5_paraphrase": true
+  },
+  "png_recoverability": {
+    "passed": 3000,
+    "total": 3000,
+    "failures": [],
+    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+  },
+  "protected_existing_files_unchanged": {
+    "question_set.csv": true,
+    "answer_key.csv": true,
+    "dataset_final.csv": true,
+    "dataset_final.jsonl": true
+  },
+  "images_unchanged": true,
+  "issues": []
+}

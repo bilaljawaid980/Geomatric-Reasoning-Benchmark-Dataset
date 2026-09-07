@@ -93,8 +93,38 @@
     },
     "question_rows": 500000,
     "stale_or_mismatched": {
-      "hex_pathfinding": "dataset_version is ['hex-pathfinding-2.0.0'], expected hex-pathfinding-3.0.0",
-      "route": "dataset_version is ['route-2.0.0'], expected route-3.0.0"
+      "angle_estimation": "dataset_version is ['angle-estimation-3.0.0'], expected angle-estimation-4.0.0",
+      "clock_reading": "dataset_version is ['legacy-current'], expected clock-reading-2.0.0",
+      "combination": "dataset_version is ['legacy-current'], expected combination-2.0.0",
+      "combination3d": "dataset_version is ['combination3d-2.0.0'], expected combination3d-3.0.0",
+      "compass_bearing": "dataset_version is ['compass-bearing-2.0.0'], expected compass-bearing-3.0.0",
+      "coordinate_geometry": "dataset_version is ['coordinate-geometry-2.0.0'], expected coordinate-geometry-3.0.0",
+      "cube_net": "dataset_version is ['cube-net-2.0.0'], expected cube-net-3.0.0",
+      "cube_structure": "dataset_version is ['cube-structure-2.0.0'], expected cube-structure-3.0.0",
+      "depth_height": "dataset_version is ['depth-height-2.0.0'], expected depth-height-3.0.0",
+      "embedded_figures": "dataset_version is ['legacy-current'], expected embedded-figures-2.0.0",
+      "fbd": "dataset_version is ['free-body-diagram-2.0.0'], expected free-body-diagram-3.0.0",
+      "fold_punch": "dataset_version is ['fold-punch-2.0.0'], expected fold-punch-3.0.0",
+      "gauge_reading": "dataset_version is ['legacy-current'], expected gauge-reading-2.0.0",
+      "gear_train": "dataset_version is ['legacy-current'], expected gear-train-2.0.0",
+      "impossible_object": "dataset_version is ['impossible-object-4.0.0'], expected impossible-object-5.0.0",
+      "laser_mirror": "dataset_version is ['legacy-current'], expected laser-mirror-2.0.0",
+      "line_intersection": "dataset_version is ['line-intersection-3.0.0'], expected line-intersection-4.0.0",
+      "nested_hexagons": "dataset_version is ['nested-hexagons-8.0.0'], expected nested-hexagons-9.0.0",
+      "nested_squares": "dataset_version is ['nested-squares-8.0.0'], expected nested-squares-9.0.0",
+      "nested_triangles": "dataset_version is ['nested-triangles-8.0.0'], expected nested-triangles-9.0.0",
+      "occluded_pattern": "dataset_version is ['occluded-pattern-2.0.0'], expected occluded-pattern-3.0.0",
+      "optical_illusion": "dataset_version is ['optical-illusion-3.0.0'], expected optical-illusion-4.0.0",
+      "orthographic": "dataset_version is ['legacy-current'], expected orthographic-2.0.0",
+      "overlap_circles": "dataset_version is ['overlap-circles-2.0.0'], expected overlap-circles-3.0.0",
+      "physical_stability": "dataset_version is ['legacy-current'], expected physical-stability-2.0.0",
+      "polyhedron": "dataset_version is ['polyhedron-5.0.0'], expected polyhedron-6.0.0",
+      "projectile_motion": "dataset_version is ['projectile-motion-1.0.0'], expected projectile-motion-2.0.0",
+      "rotation_matching": "dataset_version is ['rotation-matching-2.0.0'], expected rotation-matching-3.0.0",
+      "rpm": "dataset_version is ['rpm-2.0.0'], expected rpm-3.0.0",
+      "shadow_inference": "dataset_version is ['shadow-inference-2.0.0'], expected shadow-inference-3.0.0",
+      "surface_topology": "dataset_version is ['surface-topology-3.0.0'], expected surface-topology-4.0.0",
+      "symmetry_pattern": "dataset_version is ['symmetry-pattern-2.0.0'], expected symmetry-pattern-3.0.0"
     }
   },
   "discovered_dataset_count": 34,
@@ -111,7 +141,7 @@
       "prefix": "angle_estimation",
       "questions": 15000,
       "slug": "angle_estimation",
-      "version": "angle-estimation-3.0.0"
+      "version": "angle-estimation-4.0.0"
     },
     "clock_reading_dataset_3000": {
       "answers": 15000,
@@ -119,7 +149,7 @@
       "prefix": "clock_reading",
       "questions": 15000,
       "slug": "clock_reading",
-      "version": "legacy-current"
+      "version": "clock-reading-2.0.0"
     },
     "combination3d_dataset_3000": {
       "answers": 15000,
@@ -127,7 +157,7 @@
       "prefix": "combination3d",
       "questions": 15000,
       "slug": "combination3d",
-      "version": "combination3d-2.0.0"
+      "version": "combination3d-3.0.0"
     },
     "combination_dataset_3000": {
       "answers": 15000,
@@ -135,7 +165,7 @@
       "prefix": "combination",
       "questions": 15000,
       "slug": "combination",
-      "version": "legacy-current"
+      "version": "combination-2.0.0"
     },
     "compass_bearing_dataset_3000": {
       "answers": 15000,
@@ -143,7 +173,7 @@
       "prefix": "compass_bearing",
       "questions": 15000,
       "slug": "compass_bearing",
-      "version": "compass-bearing-2.0.0"
+      "version": "compass-bearing-3.0.0"
     },
     "coordinate_geometry_dataset_3000": {
       "answers": 15000,
@@ -151,7 +181,7 @@
       "prefix": "coordinate_geometry",
       "questions": 15000,
       "slug": "coordinate_geometry",
-      "version": "coordinate-geometry-2.0.0"
+      "version": "coordinate-geometry-3.0.0"
     },
     "cube_net_dataset_3000": {
       "answers": 15000,
@@ -159,7 +189,7 @@
       "prefix": "cube_net",
       "questions": 15000,
       "slug": "cube_net",
-      "version": "cube-net-2.0.0"
+      "version": "cube-net-3.0.0"
     },
     "cube_structure_dataset_3000": {
       "answers": 15000,
@@ -167,7 +197,7 @@
       "prefix": "cube_structure",
       "questions": 15000,
       "slug": "cube_structure",
-      "version": "cube-structure-2.0.0"
+      "version": "cube-structure-3.0.0"
     },
     "depth_height_dataset_3000": {
       "answers": 15000,
@@ -175,7 +205,7 @@
       "prefix": "depth_height",
       "questions": 15000,
       "slug": "depth_height",
-      "version": "depth-height-2.0.0"
+      "version": "depth-height-3.0.0"
     },
     "embedded_figures_dataset_3000": {
       "answers": 15000,
@@ -183,7 +213,7 @@
       "prefix": "embedded_figure",
       "questions": 15000,
       "slug": "embedded_figures",
-      "version": "legacy-current"
+      "version": "embedded-figures-2.0.0"
     },
     "fbd_dataset_3000": {
       "answers": 15000,
@@ -191,7 +221,7 @@
       "prefix": "fbd",
       "questions": 15000,
       "slug": "fbd",
-      "version": "free-body-diagram-2.0.0"
+      "version": "free-body-diagram-3.0.0"
     },
     "fold_punch_dataset_3000": {
       "answers": 15000,
@@ -199,7 +229,7 @@
       "prefix": "fold_punch",
       "questions": 15000,
       "slug": "fold_punch",
-      "version": "fold-punch-2.0.0"
+      "version": "fold-punch-3.0.0"
     },
     "gauge_reading_dataset_3000": {
       "answers": 15000,
@@ -207,7 +237,7 @@
       "prefix": "gauge_reading",
       "questions": 15000,
       "slug": "gauge_reading",
-      "version": "legacy-current"
+      "version": "gauge-reading-2.0.0"
     },
     "gear_train_dataset_3000": {
       "answers": 15000,
@@ -215,7 +245,7 @@
       "prefix": "gear_train",
       "questions": 15000,
       "slug": "gear_train",
-      "version": "legacy-current"
+      "version": "gear-train-2.0.0"
     },
     "hex_pathfinding_dataset_3000": {
       "answers": 15000,
@@ -231,7 +261,7 @@
       "prefix": "impossible_object",
       "questions": 15000,
       "slug": "impossible_object",
-      "version": "impossible-object-4.0.0"
+      "version": "impossible-object-5.0.0"
     },
     "laser_mirror_dataset_3000": {
       "answers": 15000,
@@ -239,7 +269,7 @@
       "prefix": "laser_mirror",
       "questions": 15000,
       "slug": "laser_mirror",
-      "version": "legacy-current"
+      "version": "laser-mirror-2.0.0"
     },
     "line_intersection_dataset_3000": {
       "answers": 15000,
@@ -247,7 +277,7 @@
       "prefix": "line_intersect",
       "questions": 15000,
       "slug": "line_intersection",
-      "version": "line-intersection-3.0.0"
+      "version": "line-intersection-4.0.0"
     },
     "nested_hexagons_dataset_3000": {
       "answers": 15000,
@@ -255,7 +285,7 @@
       "prefix": "nested_hexagons",
       "questions": 15000,
       "slug": "nested_hexagons",
-      "version": "nested-hexagons-8.0.0"
+      "version": "nested-hexagons-9.0.0"
     },
     "nested_squares_dataset_3000": {
       "answers": 15000,
@@ -263,7 +293,7 @@
       "prefix": "nested_squares",
       "questions": 15000,
       "slug": "nested_squares",
-      "version": "nested-squares-8.0.0"
+      "version": "nested-squares-9.0.0"
     },
     "nested_triangles_dataset_3000": {
       "answers": 15000,
@@ -271,7 +301,7 @@
       "prefix": "nested_triangles",
       "questions": 15000,
       "slug": "nested_triangles",
-      "version": "nested-triangles-8.0.0"
+      "version": "nested-triangles-9.0.0"
     },
     "occluded_pattern_dataset_3000": {
       "answers": 15000,
@@ -279,7 +309,7 @@
       "prefix": "occluded_pattern",
       "questions": 15000,
       "slug": "occluded_pattern",
-      "version": "occluded-pattern-2.0.0"
+      "version": "occluded-pattern-3.0.0"
     },
     "optical_illusion_dataset_3000": {
       "answers": 15000,
@@ -287,7 +317,7 @@
       "prefix": "optical_illusion",
       "questions": 15000,
       "slug": "optical_illusion",
-      "version": "optical-illusion-3.0.0"
+      "version": "optical-illusion-4.0.0"
     },
     "orthographic_dataset_3000": {
       "answers": 15000,
@@ -295,7 +325,7 @@
       "prefix": "orthographic",
       "questions": 15000,
       "slug": "orthographic",
-      "version": "legacy-current"
+      "version": "orthographic-2.0.0"
     },
     "overlap_circles_dataset_3000": {
       "answers": 15000,
@@ -303,7 +333,7 @@
       "prefix": "overlap_circles",
       "questions": 15000,
       "slug": "overlap_circles",
-      "version": "overlap-circles-2.0.0"
+      "version": "overlap-circles-3.0.0"
     },
     "physical_stability_dataset_3000": {
       "answers": 15000,
@@ -311,7 +341,7 @@
       "prefix": "physical_stability",
       "questions": 15000,
       "slug": "physical_stability",
-      "version": "legacy-current"
+      "version": "physical-stability-2.0.0"
     },
     "polyhedron_dataset_3000": {
       "answers": 15000,
@@ -319,7 +349,7 @@
       "prefix": "polyhedron",
       "questions": 15000,
       "slug": "polyhedron",
-      "version": "polyhedron-5.0.0"
+      "version": "polyhedron-6.0.0"
     },
     "projectile_motion_dataset_1000": {
       "answers": 5000,
@@ -327,7 +357,7 @@
       "prefix": "projectile_motion",
       "questions": 5000,
       "slug": "projectile_motion",
-      "version": "projectile-motion-1.0.0"
+      "version": "projectile-motion-2.0.0"
     },
     "rotation_matching_dataset_3000": {
       "answers": 15000,
@@ -335,7 +365,7 @@
       "prefix": "rotation_match",
       "questions": 15000,
       "slug": "rotation_matching",
-      "version": "rotation-matching-2.0.0"
+      "version": "rotation-matching-3.0.0"
     },
     "route_dataset_3000": {
       "answers": 15000,
@@ -351,7 +381,7 @@
       "prefix": "rpm",
       "questions": 15000,
       "slug": "rpm",
-      "version": "rpm-2.0.0"
+      "version": "rpm-3.0.0"
     },
     "shadow_inference_dataset_3000": {
       "answers": 15000,
@@ -359,7 +389,7 @@
       "prefix": "shadow_inference",
       "questions": 15000,
       "slug": "shadow_inference",
-      "version": "shadow-inference-2.0.0"
+      "version": "shadow-inference-3.0.0"
     },
     "surface_topology_dataset_3000": {
       "answers": 15000,
@@ -367,7 +397,7 @@
       "prefix": "surface_topology",
       "questions": 15000,
       "slug": "surface_topology",
-      "version": "surface-topology-3.0.0"
+      "version": "surface-topology-4.0.0"
     },
     "symmetry_pattern_dataset_3000": {
       "answers": 15000,
@@ -375,7 +405,7 @@
       "prefix": "symmetry_pattern",
       "questions": 15000,
       "slug": "symmetry_pattern",
-      "version": "symmetry-pattern-2.0.0"
+      "version": "symmetry-pattern-3.0.0"
     }
   }
 }

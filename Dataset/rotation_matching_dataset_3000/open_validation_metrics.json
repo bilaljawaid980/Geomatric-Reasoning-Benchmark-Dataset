@@ -1,0 +1,125 @@
+{
+  "status": "PASS",
+  "dataset": "rotation_matching_dataset_3000",
+  "items": 3000,
+  "template": "Start at candidate C and match distinctive corners back to the reference polygon: decide whether it is a rotation or reflection, and if it is a rotation report both its clockwise angle and equivalent counterclockwise angle; then state whether rotation alone makes it match. Justify by tracking vertex order and explain how near-symmetry and page orientation can disguise a reflection. Use only rotation or reflection. End with a confidence score from 0 to 1.",
+  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
+  "metadata_fields_targeted": [
+    "candidate",
+    "transformation_type",
+    "clockwise_degrees",
+    "counterclockwise_equivalent_degrees"
+  ],
+  "selection_distribution": {
+    "[\"D\"]": 789,
+    "[\"A\"]": 758,
+    "[\"C\"]": 733,
+    "[\"B\"]": 720
+  },
+  "answer_distributions": {
+    "candidate": {
+      "D": 789,
+      "A": 758,
+      "C": 733,
+      "B": 720
+    },
+    "transformation_type": {
+      "reflection": 1503,
+      "rotation": 1497
+    },
+    "clockwise_degrees": {
+      "not applicable": 1503,
+      "270": 235,
+      "225": 234,
+      "135": 216,
+      "45": 211,
+      "180": 209,
+      "315": 198,
+      "90": 194
+    },
+    "counterclockwise_equivalent_degrees": {
+      "not applicable": 1503,
+      "90": 235,
+      "135": 234,
+      "225": 216,
+      "315": 211,
+      "180": 209,
+      "45": 198,
+      "270": 194
+    },
+    "acceptance_set": {
+      "[\"candidate=D; transformation_type=reflection; clockwise_degrees=not applicable; counterclockwise_equivalent_degrees=not applicable\"]": 394,
+      "[\"candidate=A; transformation_type=reflection; clockwise_degrees=not applicable; counterclockwise_equivalent_degrees=not applicable\"]": 385,
+      "[\"candidate=C; transformation_type=reflection; clockwise_degrees=not applicable; counterclockwise_equivalent_degrees=not applicable\"]": 383,
+      "[\"candidate=B; transformation_type=reflection; clockwise_degrees=not applicable; counterclockwise_equivalent_degrees=not applicable\"]": 341,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=135; counterclockwise_equivalent_degrees=225\"]": 72,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=270; counterclockwise_equivalent_degrees=90\"]": 67,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=225; counterclockwise_equivalent_degrees=135\"]": 67,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=180; counterclockwise_equivalent_degrees=180\"]": 65,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=315; counterclockwise_equivalent_degrees=45\"]": 64,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=270; counterclockwise_equivalent_degrees=90\"]": 61,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=90; counterclockwise_equivalent_degrees=270\"]": 61,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=225; counterclockwise_equivalent_degrees=135\"]": 60,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=270; counterclockwise_equivalent_degrees=90\"]": 58,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=45; counterclockwise_equivalent_degrees=315\"]": 57,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=180; counterclockwise_equivalent_degrees=180\"]": 56,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=225; counterclockwise_equivalent_degrees=135\"]": 55,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=135; counterclockwise_equivalent_degrees=225\"]": 54,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=45; counterclockwise_equivalent_degrees=315\"]": 54,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=225; counterclockwise_equivalent_degrees=135\"]": 52,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=45; counterclockwise_equivalent_degrees=315\"]": 52,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=90; counterclockwise_equivalent_degrees=270\"]": 50,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=270; counterclockwise_equivalent_degrees=90\"]": 49,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=45; counterclockwise_equivalent_degrees=315\"]": 48,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=315; counterclockwise_equivalent_degrees=45\"]": 48,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=135; counterclockwise_equivalent_degrees=225\"]": 46,
+      "[\"candidate=B; transformation_type=rotation; clockwise_degrees=180; counterclockwise_equivalent_degrees=180\"]": 46,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=315; counterclockwise_equivalent_degrees=45\"]": 45,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=135; counterclockwise_equivalent_degrees=225\"]": 44,
+      "[\"candidate=A; transformation_type=rotation; clockwise_degrees=90; counterclockwise_equivalent_degrees=270\"]": 42,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=180; counterclockwise_equivalent_degrees=180\"]": 42,
+      "[\"candidate=C; transformation_type=rotation; clockwise_degrees=90; counterclockwise_equivalent_degrees=270\"]": 41,
+      "[\"candidate=D; transformation_type=rotation; clockwise_degrees=315; counterclockwise_equivalent_degrees=45\"]": 41
+    }
+  },
+  "constant_answer_baselines": {
+    "targets": 0.263,
+    "candidate": 0.263,
+    "transformation_type": 0.501,
+    "clockwise_degrees": 0.501,
+    "counterclockwise_equivalent_degrees": 0.501,
+    "acceptance_set": 0.13133333333333333
+  },
+  "fields_at_or_above_60_percent": {},
+  "preflight": {
+    "intended_answer_field": "acceptance_set",
+    "baseline": 0.13133333333333333,
+    "template_changed_after_check": true,
+    "change": "removed the structurally constant selected-foil match flag"
+  },
+  "derivation": {
+    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
+    "mismatches": []
+  },
+  "assertions": {
+    "public_exactly_three_columns": true,
+    "no_prompt_answer_leaks": true,
+    "no_absent_coordinate_scheme": true,
+    "fixed_frame_and_vocabulary": true,
+    "no_exact_L1_L5_paraphrase": true
+  },
+  "png_recoverability": {
+    "passed": 3000,
+    "total": 3000,
+    "failures": [],
+    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+  },
+  "protected_existing_files_unchanged": {
+    "question_set.csv": true,
+    "answer_key.csv": true,
+    "dataset_final.csv": true,
+    "dataset_final.jsonl": true
+  },
+  "images_unchanged": true,
+  "issues": []
+}

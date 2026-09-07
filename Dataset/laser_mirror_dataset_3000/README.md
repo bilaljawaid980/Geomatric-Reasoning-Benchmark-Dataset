@@ -45,3 +45,14 @@ python .\validate_laser_mirror_dataset.py
 ```
 
 The validator contains its own ray simulator and does not import generation logic. It reconstructs every original and Level 5 path, verifies every possible single-mirror flip terminates, checks all question ground truths and flattened tables, confirms public-answer separation, and checks all PNG files.
+
+### Supplementary open-ended questions
+
+Version `laser-mirror-2.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.012333`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `entry_edge, entry_position, mirrors_hit_in_order, mirror_orientations, reflection_count, exit_edge, exit_position`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

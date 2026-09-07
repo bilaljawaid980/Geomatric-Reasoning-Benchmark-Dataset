@@ -65,3 +65,14 @@ The validator independently recomputes all original and advanced-time angles fro
 The dataset uses clean front-facing schematic clocks with two hands, fixed typography, and no second hand. It excludes exactly `:30` to keep the binary Level 2 prompt unambiguous and excludes hand separations below 12° to prevent visual occlusion. It does not model perspective, glare, damaged faces, Roman numerals, missing numerals, decorative hands, or real-world backgrounds.
 
 This repository contains generation data and ground truth only. It includes no model inference, evaluation, scoring, or benchmark runner.
+
+### Supplementary open-ended questions
+
+Version `clock-reading-2.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.004000`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `read_time, minute_hand_ticks_from_12, hour_hand_ticks_past_hour, nearer_to_12, smaller_separation_degrees`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

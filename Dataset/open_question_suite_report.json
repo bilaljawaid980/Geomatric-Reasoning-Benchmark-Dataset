@@ -1,0 +1,1541 @@
+{
+  "status": "PASS",
+  "datasets": {
+    "angle_estimation_dataset_3000": {
+      "dataset_version": "angle-estimation-4.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.4,
+        "scene_form": 0.4,
+        "primary_label": 0.4,
+        "primary_measure_degrees": 0.049666666666666665,
+        "secondary_label": 0.4,
+        "secondary_measure_degrees": 0.4,
+        "comparison_summary": 0.23766666666666666,
+        "acceptance_set": 0.011666666666666667
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "clock_reading_dataset_3000": {
+      "dataset_version": "clock-reading-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "read_time": 0.004,
+        "minute_hand_ticks_from_12": 0.023,
+        "hour_hand_ticks_past_hour": 0.023,
+        "nearer_to_12": 0.5016666666666667,
+        "smaller_separation_degrees": 0.006333333333333333,
+        "acceptance_set": 0.004
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "combination3d_dataset_3000": {
+      "dataset_version": "combination3d-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.2613333333333333,
+        "candidate": 0.2613333333333333,
+        "piece_counts": 0.021333333333333333,
+        "candidate_total": 0.14866666666666667,
+        "target_total": 0.14566666666666667,
+        "blocking_reason": 0.3403333333333333,
+        "acceptance_set": 0.0033333333333333335
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "combination_dataset_3000": {
+      "dataset_version": "combination-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.25566666666666665,
+        "candidate": 0.25566666666666665,
+        "piece_counts": 0.07133333333333333,
+        "candidate_total": 0.21066666666666667,
+        "target_total": 0.20966666666666667,
+        "blocking_reason": 0.3396666666666667,
+        "acceptance_set": 0.011333333333333334
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "compass_bearing_dataset_3000": {
+      "dataset_version": "compass-bearing-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.2986666666666667,
+        "target": 0.2986666666666667,
+        "nearest_labels": 0.302,
+        "nearest_distance": 0.0023333333333333335,
+        "farthest_labels": 0.304,
+        "farthest_distance": 0.001,
+        "bearing_to_first_nearest": 0.13966666666666666,
+        "acceptance_set": 0.0003333333333333333
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "coordinate_geometry_dataset_3000": {
+      "dataset_version": "coordinate-geometry-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.37066666666666664,
+        "target": 0.37066666666666664,
+        "target_coordinates": 0.007666666666666666,
+        "nearest_labels": 0.44333333333333336,
+        "nearest_distance": 0.12666666666666668,
+        "farthest_labels": 0.3893333333333333,
+        "farthest_distance": 0.056666666666666664,
+        "acceptance_set": 0.001
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "cube_net_dataset_3000": {
+      "dataset_version": "cube-net-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.174,
+        "target_face": 0.174,
+        "flat_net_neighbours": 0.05633333333333333,
+        "opposite_after_folding": 0.177,
+        "adjacent_after_folding": 0.07066666666666667,
+        "acceptance_set": 0.008
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "cube_structure_dataset_3000": {
+      "dataset_version": "cube-structure-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "visible_vertical_columns": 0.18633333333333332,
+        "height_histogram": 0.043,
+        "tallest_column_height": 0.38,
+        "cube_total_from_columns": 0.16866666666666666,
+        "acceptance_set": 0.043
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "depth_height_dataset_3000": {
+      "dataset_version": "depth-height-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.205,
+        "target_color": 0.205,
+        "target_shape": 0.5,
+        "target_position": 0.181,
+        "depth_rank_nearest_first": 0.5,
+        "rendered_size": 0.5,
+        "nearest_color": 0.5,
+        "farthest_color": 0.5,
+        "height_units": 0.5,
+        "height_rank_tallest_first": 0.5,
+        "tallest_colors": 0.5,
+        "acceptance_set": 0.009666666666666667
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "embedded_figures_dataset_3000": {
+      "dataset_version": "embedded-figures-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.26466666666666666,
+        "candidate": 0.26466666666666666,
+        "target_sides": 0.25,
+        "candidate_sides": 0.30766666666666664,
+        "side_difference": 0.23033333333333333,
+        "mismatch_signature": 0.23033333333333333,
+        "acceptance_set": 0.08733333333333333
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "fbd_dataset_3000": {
+      "dataset_version": "free-body-diagram-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.3586666666666667,
+        "target_arrow": 0.3586666666666667,
+        "force_type_as_drawn": 0.45166666666666666,
+        "direction_as_drawn": 0.45166666666666666,
+        "magnitude_rank_largest_first": 0.5823333333333334,
+        "same_direction_arrow_labels": 0.3586666666666667,
+        "shown_arrow_count": 0.375,
+        "acceptance_set": 0.114
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "fold_punch_dataset_3000": {
+      "dataset_version": "fold-punch-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "fold_directions": 0.036,
+        "horizontal_folds": 0.45566666666666666,
+        "vertical_folds": 0.42333333333333334,
+        "unfolded_holes": 0.5,
+        "distinct_hole_columns": 0.42333333333333334,
+        "distinct_hole_rows": 0.45566666666666666,
+        "acceptance_set": 0.036
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "gauge_reading_dataset_3000": {
+      "dataset_version": "gauge-reading-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "instrument": 0.4,
+        "unit": 0.2,
+        "lower_bracketing_tick": 0.09233333333333334,
+        "upper_bracketing_tick": 0.089,
+        "fraction_from_lower_tick": 0.54,
+        "exact_needle_value": 0.052,
+        "acceptance_set": 0.02
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "gear_train_dataset_3000": {
+      "dataset_version": "gear-train-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.5953333333333334,
+        "target_gear": 0.5953333333333334,
+        "mesh_path": 0.5953333333333334,
+        "target_teeth": 0.041,
+        "target_direction": 0.5033333333333333,
+        "target_rpm": 0.008,
+        "acceptance_set": 0.0013333333333333333
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "hex_pathfinding_dataset_3000": {
+      "dataset_version": "hex-pathfinding-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "hole_directions": 0.419,
+        "holes_touching": 0.419,
+        "home_on_boundary": 0.5353333333333333,
+        "neighbour_count": 0.4646666666666667,
+        "walkable_touching": 0.279
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "impossible_object_dataset_3000": {
+      "dataset_version": "impossible-object-5.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.156,
+        "crossing": 0.156,
+        "crossing_beams": 0.097,
+        "front_beam": 0.19466666666666665,
+        "back_beam": 0.189,
+        "total_crossings": 0.25,
+        "front_beam_wins": 0.41233333333333333,
+        "acceptance_set": 0.0026666666666666666
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "laser_mirror_dataset_3000": {
+      "dataset_version": "laser-mirror-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.047,
+        "entry_edge": 0.258,
+        "entry_position": 0.172,
+        "mirrors_hit_in_order": 0.25,
+        "mirror_orientations": 0.26566666666666666,
+        "reflection_count": 0.5226666666666666,
+        "exit_edge": 0.25766666666666665,
+        "exit_position": 0.16733333333333333,
+        "acceptance_set": 0.012333333333333333
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "line_intersection_dataset_3000": {
+      "dataset_version": "line-intersection-4.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "red_at_left": 0.5026666666666667,
+        "red_at_right": 0.5023333333333333,
+        "total_crossings": 0.273,
+        "order_transition": 0.5883333333333334,
+        "red_segments_with_crossings": 0.273,
+        "blue_segments_with_crossings": 0.273,
+        "acceptance_set": 0.13966666666666666
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "nested_hexagons_dataset_3000": {
+      "dataset_version": "nested-hexagons-9.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "shape_count": 0.11466666666666667,
+        "outer_to_inner_size_ratio": 0.006666666666666667,
+        "clockwise_steps": 0.564,
+        "counterclockwise_steps": 0.586,
+        "largest_shrink_step": 0.122,
+        "acceptance_set": 0.004
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "nested_squares_dataset_3000": {
+      "dataset_version": "nested-squares-9.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "shape_count": 0.11466666666666667,
+        "outer_to_inner_size_ratio": 0.006666666666666667,
+        "clockwise_steps": 0.5686666666666667,
+        "counterclockwise_steps": 0.5813333333333334,
+        "largest_shrink_step": 0.119,
+        "acceptance_set": 0.0033333333333333335
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "nested_triangles_dataset_3000": {
+      "dataset_version": "nested-triangles-9.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "shape_count": 0.11466666666666667,
+        "outer_to_inner_size_ratio": 0.007333333333333333,
+        "clockwise_steps": 0.57,
+        "counterclockwise_steps": 0.58,
+        "largest_shrink_step": 0.12333333333333334,
+        "acceptance_set": 0.0033333333333333335
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "occluded_pattern_dataset_3000": {
+      "dataset_version": "occluded-pattern-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "pattern_type": 0.3333333333333333,
+        "repeated_shape": 0.3333333333333333,
+        "visible_count": 0.14466666666666667,
+        "hidden_count": 0.36933333333333335,
+        "completed_total": 0.152,
+        "occluder_style": 0.5,
+        "acceptance_set": 0.017
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "optical_illusion_dataset_3000": {
+      "dataset_version": "optical-illusion-4.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "illusion_type": 0.35,
+        "element_A_true_value": 0.024333333333333332,
+        "element_B_true_value": 0.025666666666666667,
+        "true_relation": 0.5,
+        "absolute_difference": 0.5,
+        "percent_difference": 0.5,
+        "acceptance_set": 0.013
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "orthographic_dataset_3000": {
+      "dataset_version": "orthographic-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "top_filled": 0.235,
+        "front_filled": 0.20633333333333334,
+        "side_filled": 0.22066666666666668,
+        "largest_views": 0.4176666666666667,
+        "cube_total": 0.15633333333333332,
+        "acceptance_set": 0.025666666666666667
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "overlap_circles_dataset_3000": {
+      "dataset_version": "overlap-circles-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "direct_overlap_degree": 0.21633333333333332,
+        "total_overlap_pairs": 0.07866666666666666,
+        "above_average_radius_count": 0.254,
+        "circles_isolated_after_removal": 0.5793333333333334,
+        "three_plus_overlap_percent": 0.07033333333333333,
+        "acceptance_set": 0.009666666666666667
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "physical_stability_dataset_3000": {
+      "dataset_version": "physical-stability-2.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.28633333333333333,
+        "supporting_block": 0.28633333333333333,
+        "upper_block": 0.28633333333333333,
+        "blocks_above": 0.17733333333333334,
+        "combined_com_relation": 0.5,
+        "joint_stable": 0.5,
+        "whole_stack_stable": 0.5,
+        "acceptance_set": 0.11466666666666667
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "polyhedron_dataset_3000": {
+      "dataset_version": "polyhedron-6.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "solid_name": 0.105,
+        "vertices": 0.21033333333333334,
+        "edges": 0.21,
+        "faces": 0.21066666666666667,
+        "face_size_histogram": 0.10533333333333333,
+        "acceptance_set": 0.105
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "projectile_motion_dataset_1000": {
+      "dataset_version": "projectile-motion-2.0.0",
+      "images": 1000,
+      "open_questions": 1000,
+      "open_answers": 1000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "launch_speed_m_s": 0.041,
+        "launch_angle_degrees": 0.028,
+        "horizontal_component_m_s": 0.006,
+        "vertical_component_m_s": 0.008,
+        "larger_component": 0.493,
+        "time_to_peak_s": 0.013,
+        "acceptance_set": 0.004
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 1000,
+        "total": 1000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "rotation_matching_dataset_3000": {
+      "dataset_version": "rotation-matching-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.263,
+        "candidate": 0.263,
+        "transformation_type": 0.501,
+        "clockwise_degrees": 0.501,
+        "counterclockwise_equivalent_degrees": 0.501,
+        "acceptance_set": 0.13133333333333333
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "route_dataset_3000": {
+      "dataset_version": "route-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "answer": 0.913,
+        "colors": 0.006666666666666667,
+        "lines_at_target": 0.502,
+        "reached": 0.06833333333333333,
+        "target": 0.212,
+        "target_degree": 0.502,
+        "unreached": 0.087
+      },
+      "fields_at_or_above_60_percent": {
+        "answer": 0.913
+      },
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "rpm_dataset_3000": {
+      "dataset_version": "rpm-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "shape": 0.17933333333333334,
+        "color": 0.17566666666666667,
+        "count": 0.4236666666666667,
+        "size": 0.38333333333333336,
+        "rotation_degrees": 0.13333333333333333,
+        "acceptance_set": 0.002
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "shadow_inference_dataset_3000": {
+      "dataset_version": "shadow-inference-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 0.25766666666666665,
+        "target_color": 0.25766666666666665,
+        "target_type": 0.26066666666666666,
+        "target_shadow_direction": 0.41633333333333333,
+        "target_shadow_length": 0.0036666666666666666,
+        "longest_shadow_colors": 0.259,
+        "acceptance_set": 0.0006666666666666666
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "surface_topology_dataset_3000": {
+      "dataset_version": "surface-topology-4.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "surface_type": 0.25,
+        "handle_or_crosscap_genus": 0.2733333333333333,
+        "euler_characteristic": 0.5233333333333333,
+        "topological_signature": 0.25,
+        "acceptance_set": 0.125
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    },
+    "symmetry_pattern_dataset_3000": {
+      "dataset_version": "symmetry-pattern-3.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000,
+      "validation_status": "PASS",
+      "constant_answer_baselines": {
+        "targets": 1.0,
+        "symmetry_type": 0.143,
+        "orbit_count": 0.42866666666666664,
+        "partnered_shape_count": 0.49933333333333335,
+        "pattern_status": 0.5,
+        "break_location": 0.5,
+        "break_type": 0.5,
+        "acceptance_set": 0.07166666666666667
+      },
+      "fields_at_or_above_60_percent": {},
+      "derivation_mismatches": 0,
+      "png_recoverability": {
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+      },
+      "protected_files_unchanged": {
+        "question_set.csv": true,
+        "answer_key.csv": true,
+        "dataset_final.csv": true,
+        "dataset_final.jsonl": true
+      },
+      "annotation_payload_unchanged_except_version": true,
+      "images_unchanged": true,
+      "issues": []
+    }
+  },
+  "totals": {
+    "domains": 34,
+    "images": 100000,
+    "open_questions": 100000,
+    "open_answers": 100000
+  },
+  "combined_open": {
+    "status": "PASS",
+    "datasets": {
+      "angle_estimation_dataset_3000": {
+        "dataset_version": "angle-estimation-4.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "clock_reading_dataset_3000": {
+        "dataset_version": "clock-reading-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "combination3d_dataset_3000": {
+        "dataset_version": "combination3d-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "combination_dataset_3000": {
+        "dataset_version": "combination-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "compass_bearing_dataset_3000": {
+        "dataset_version": "compass-bearing-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "coordinate_geometry_dataset_3000": {
+        "dataset_version": "coordinate-geometry-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "cube_net_dataset_3000": {
+        "dataset_version": "cube-net-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "cube_structure_dataset_3000": {
+        "dataset_version": "cube-structure-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "depth_height_dataset_3000": {
+        "dataset_version": "depth-height-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "embedded_figures_dataset_3000": {
+        "dataset_version": "embedded-figures-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "fbd_dataset_3000": {
+        "dataset_version": "free-body-diagram-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "fold_punch_dataset_3000": {
+        "dataset_version": "fold-punch-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "gauge_reading_dataset_3000": {
+        "dataset_version": "gauge-reading-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "gear_train_dataset_3000": {
+        "dataset_version": "gear-train-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "hex_pathfinding_dataset_3000": {
+        "dataset_version": "hex-pathfinding-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "impossible_object_dataset_3000": {
+        "dataset_version": "impossible-object-5.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "laser_mirror_dataset_3000": {
+        "dataset_version": "laser-mirror-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "line_intersection_dataset_3000": {
+        "dataset_version": "line-intersection-4.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "nested_hexagons_dataset_3000": {
+        "dataset_version": "nested-hexagons-9.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "nested_squares_dataset_3000": {
+        "dataset_version": "nested-squares-9.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "nested_triangles_dataset_3000": {
+        "dataset_version": "nested-triangles-9.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "occluded_pattern_dataset_3000": {
+        "dataset_version": "occluded-pattern-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "optical_illusion_dataset_3000": {
+        "dataset_version": "optical-illusion-4.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "orthographic_dataset_3000": {
+        "dataset_version": "orthographic-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "overlap_circles_dataset_3000": {
+        "dataset_version": "overlap-circles-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "physical_stability_dataset_3000": {
+        "dataset_version": "physical-stability-2.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "polyhedron_dataset_3000": {
+        "dataset_version": "polyhedron-6.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "projectile_motion_dataset_1000": {
+        "dataset_version": "projectile-motion-2.0.0",
+        "images": 1000,
+        "open_questions": 1000,
+        "open_answers": 1000
+      },
+      "rotation_matching_dataset_3000": {
+        "dataset_version": "rotation-matching-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "route_dataset_3000": {
+        "dataset_version": "route-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "rpm_dataset_3000": {
+        "dataset_version": "rpm-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "shadow_inference_dataset_3000": {
+        "dataset_version": "shadow-inference-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "surface_topology_dataset_3000": {
+        "dataset_version": "surface-topology-4.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      },
+      "symmetry_pattern_dataset_3000": {
+        "dataset_version": "symmetry-pattern-3.0.0",
+        "images": 3000,
+        "open_questions": 3000,
+        "open_answers": 3000
+      }
+    },
+    "combined_open_questions": 100000,
+    "combined_open_answers": 100000,
+    "unique_question_ids": 100000,
+    "resolved_image_paths": 100000,
+    "public_columns": [
+      "dataset",
+      "dataset_version",
+      "question_id",
+      "image",
+      "image_path",
+      "prompt"
+    ],
+    "private_columns": [
+      "dataset",
+      "dataset_version",
+      "question_id",
+      "image",
+      "image_path",
+      "prompt",
+      "acceptance_set",
+      "targets",
+      "scene_form",
+      "primary_label",
+      "primary_measure_degrees",
+      "secondary_label",
+      "secondary_measure_degrees",
+      "comparison_summary",
+      "read_time",
+      "minute_hand_ticks_from_12",
+      "hour_hand_ticks_past_hour",
+      "nearer_to_12",
+      "smaller_separation_degrees",
+      "candidate",
+      "piece_counts",
+      "candidate_total",
+      "target_total",
+      "blocking_reason",
+      "target",
+      "nearest_labels",
+      "nearest_distance",
+      "farthest_labels",
+      "farthest_distance",
+      "bearing_to_first_nearest",
+      "target_coordinates",
+      "target_face",
+      "flat_net_neighbours",
+      "opposite_after_folding",
+      "adjacent_after_folding",
+      "visible_vertical_columns",
+      "height_histogram",
+      "tallest_column_height",
+      "cube_total_from_columns",
+      "target_color",
+      "target_shape",
+      "target_position",
+      "depth_rank_nearest_first",
+      "rendered_size",
+      "nearest_color",
+      "farthest_color",
+      "height_units",
+      "height_rank_tallest_first",
+      "tallest_colors",
+      "target_sides",
+      "candidate_sides",
+      "side_difference",
+      "mismatch_signature",
+      "target_arrow",
+      "force_type_as_drawn",
+      "direction_as_drawn",
+      "magnitude_rank_largest_first",
+      "same_direction_arrow_labels",
+      "shown_arrow_count",
+      "fold_directions",
+      "horizontal_folds",
+      "vertical_folds",
+      "unfolded_holes",
+      "distinct_hole_columns",
+      "distinct_hole_rows",
+      "instrument",
+      "unit",
+      "lower_bracketing_tick",
+      "upper_bracketing_tick",
+      "fraction_from_lower_tick",
+      "exact_needle_value",
+      "target_gear",
+      "mesh_path",
+      "target_teeth",
+      "target_direction",
+      "target_rpm",
+      "home_on_boundary",
+      "neighbour_count",
+      "holes_touching",
+      "walkable_touching",
+      "hole_directions",
+      "crossing",
+      "crossing_beams",
+      "front_beam",
+      "back_beam",
+      "total_crossings",
+      "front_beam_wins",
+      "entry_edge",
+      "entry_position",
+      "mirrors_hit_in_order",
+      "mirror_orientations",
+      "reflection_count",
+      "exit_edge",
+      "exit_position",
+      "red_at_left",
+      "red_at_right",
+      "order_transition",
+      "red_segments_with_crossings",
+      "blue_segments_with_crossings",
+      "shape_count",
+      "outer_to_inner_size_ratio",
+      "clockwise_steps",
+      "counterclockwise_steps",
+      "largest_shrink_step",
+      "pattern_type",
+      "repeated_shape",
+      "visible_count",
+      "hidden_count",
+      "completed_total",
+      "occluder_style",
+      "illusion_type",
+      "element_A_true_value",
+      "element_B_true_value",
+      "true_relation",
+      "absolute_difference",
+      "percent_difference",
+      "top_filled",
+      "front_filled",
+      "side_filled",
+      "largest_views",
+      "cube_total",
+      "direct_overlap_degree",
+      "total_overlap_pairs",
+      "above_average_radius_count",
+      "circles_isolated_after_removal",
+      "three_plus_overlap_percent",
+      "supporting_block",
+      "upper_block",
+      "blocks_above",
+      "combined_com_relation",
+      "joint_stable",
+      "whole_stack_stable",
+      "solid_name",
+      "vertices",
+      "edges",
+      "faces",
+      "face_size_histogram",
+      "launch_speed_m_s",
+      "launch_angle_degrees",
+      "horizontal_component_m_s",
+      "vertical_component_m_s",
+      "larger_component",
+      "time_to_peak_s",
+      "transformation_type",
+      "clockwise_degrees",
+      "counterclockwise_equivalent_degrees",
+      "target_degree",
+      "lines_at_target",
+      "colors",
+      "reached",
+      "unreached",
+      "answer",
+      "shape",
+      "color",
+      "count",
+      "size",
+      "rotation_degrees",
+      "target_type",
+      "target_shadow_direction",
+      "target_shadow_length",
+      "longest_shadow_colors",
+      "surface_type",
+      "handle_or_crosscap_genus",
+      "euler_characteristic",
+      "topological_signature",
+      "symmetry_type",
+      "orbit_count",
+      "partnered_shape_count",
+      "pattern_status",
+      "break_location",
+      "break_type"
+    ]
+  },
+  "protected_scope": "images, renderers, existing five-level questions and answers unchanged; annotations changed only in dataset_version",
+  "failures": []
+}

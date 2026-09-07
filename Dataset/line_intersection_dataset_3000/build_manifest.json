@@ -7,11 +7,22 @@
     "level5_translation_reintersects_from_transformed_coordinates": true,
     "no_endpoint_or_collinear_degenerate_intersections": true,
     "png_red_blue_polyline_recovery_all_items": true,
-    "red_points_length_equals_num_red_segments_plus_one": true
+    "red_points_length_equals_num_red_segments_plus_one": true,
+    "existing_five_level_questions_unchanged": true,
+    "open_question_count_per_image": 1,
+    "open_public_fields_exact": [
+      "question_id",
+      "image",
+      "prompt"
+    ],
+    "open_ground_truth_rederived_from_scene_metadata": true,
+    "open_prompt_no_unrendered_coordinate_scheme": true,
+    "open_png_recoverability_all_items": true,
+    "open_composite_answer_baseline_below_0_60": true
   },
   "constraint_source": "generator constants and exhaustive validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "line-intersection-3.0.0",
+  "dataset_version": "line-intersection-4.0.0",
   "generator_commit": "c0bf63192b57ed5f7269adce67557adcebddd323",
   "images": 3000,
   "metadata_only_rebuild": true,
@@ -21,5 +32,13 @@
     "image",
     "prompt"
   ],
-  "questions": 15000
+  "questions": 15000,
+  "open_questions": 3000,
+  "open_question_files": [
+    "open_questions.csv",
+    "open_answer_key.csv",
+    "open_annotations.jsonl"
+  ],
+  "open_question_builder": "../build_remaining_open_questions.py",
+  "open_question_validator": "../validate_remaining_open_questions.py"
 }

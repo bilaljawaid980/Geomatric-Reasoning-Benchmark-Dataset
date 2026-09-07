@@ -1,0 +1,122 @@
+{
+  "status": "PASS",
+  "dataset": "physical_stability_dataset_3000",
+  "items": 3000,
+  "template": "Start at the contact supporting block C and consider that block together with every labelled block above it: list those labels, locate their combined centre of mass relative to the supporting base using only left, inside, or right, decide whether this joint is stable, and then conclude whether the whole stack is stable. Justify from visible block widths and offsets, explaining how a dramatic single-block overhang can mislead compared with the combined mass. End with a confidence score from 0 to 1.",
+  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
+  "metadata_fields_targeted": [
+    "supporting_block",
+    "upper_block",
+    "blocks_above",
+    "combined_com_relation",
+    "joint_stable",
+    "whole_stack_stable"
+  ],
+  "selection_distribution": {
+    "[\"D\"]": 859,
+    "[\"C\"]": 855,
+    "[\"B\"]": 777,
+    "[\"E\"]": 509
+  },
+  "answer_distributions": {
+    "supporting_block": {
+      "C": 859,
+      "B": 855,
+      "A": 777,
+      "D": 509
+    },
+    "upper_block": {
+      "D": 859,
+      "C": 855,
+      "B": 777,
+      "E": 509
+    },
+    "blocks_above": {
+      "[\"D\"]": 532,
+      "[\"C\"]": 524,
+      "[\"E\"]": 509,
+      "[\"B\"]": 391,
+      "[\"D\",\"E\"]": 327,
+      "[\"B\",\"C\"]": 317,
+      "[\"C\",\"D\"]": 268,
+      "[\"C\",\"D\",\"E\"]": 63,
+      "[\"B\",\"C\",\"D\"]": 45,
+      "[\"B\",\"C\",\"D\",\"E\"]": 24
+    },
+    "combined_com_relation": {
+      "inside": 1500,
+      "right": 1500
+    },
+    "joint_stable": {
+      "False": 1500,
+      "True": 1500
+    },
+    "whole_stack_stable": {
+      "False": 1500,
+      "True": 1500
+    },
+    "acceptance_set": {
+      "[\"supporting_block=C; upper_block=D; blocks_above=['D']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 344,
+      "[\"supporting_block=B; upper_block=C; blocks_above=['C']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 343,
+      "[\"supporting_block=D; upper_block=E; blocks_above=['E']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 322,
+      "[\"supporting_block=C; upper_block=D; blocks_above=['D', 'E']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 269,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B', 'C']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 247,
+      "[\"supporting_block=B; upper_block=C; blocks_above=['C', 'D']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 215,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 197,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 194,
+      "[\"supporting_block=C; upper_block=D; blocks_above=['D']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 188,
+      "[\"supporting_block=D; upper_block=E; blocks_above=['E']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 187,
+      "[\"supporting_block=B; upper_block=C; blocks_above=['C']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 181,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B', 'C']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 70,
+      "[\"supporting_block=C; upper_block=D; blocks_above=['D', 'E']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 58,
+      "[\"supporting_block=B; upper_block=C; blocks_above=['C', 'D']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 53,
+      "[\"supporting_block=B; upper_block=C; blocks_above=['C', 'D', 'E']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 46,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B', 'C', 'D']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 43,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B', 'C', 'D', 'E']; combined_com_relation=inside; joint_stable=True; whole_stack_stable=True\"]": 24,
+      "[\"supporting_block=B; upper_block=C; blocks_above=['C', 'D', 'E']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 17,
+      "[\"supporting_block=A; upper_block=B; blocks_above=['B', 'C', 'D']; combined_com_relation=right; joint_stable=False; whole_stack_stable=False\"]": 2
+    }
+  },
+  "constant_answer_baselines": {
+    "targets": 0.28633333333333333,
+    "supporting_block": 0.28633333333333333,
+    "upper_block": 0.28633333333333333,
+    "blocks_above": 0.17733333333333334,
+    "combined_com_relation": 0.5,
+    "joint_stable": 0.5,
+    "whole_stack_stable": 0.5,
+    "acceptance_set": 0.11466666666666667
+  },
+  "fields_at_or_above_60_percent": {},
+  "preflight": {
+    "intended_answer_field": "acceptance_set",
+    "baseline": 0.11466666666666667,
+    "template_changed_after_check": false,
+    "change": null
+  },
+  "derivation": {
+    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
+    "mismatches": []
+  },
+  "assertions": {
+    "public_exactly_three_columns": true,
+    "no_prompt_answer_leaks": true,
+    "no_absent_coordinate_scheme": true,
+    "fixed_frame_and_vocabulary": true,
+    "no_exact_L1_L5_paraphrase": true
+  },
+  "png_recoverability": {
+    "passed": 3000,
+    "total": 3000,
+    "failures": [],
+    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+  },
+  "protected_existing_files_unchanged": {
+    "question_set.csv": true,
+    "answer_key.csv": true,
+    "dataset_final.csv": true,
+    "dataset_final.jsonl": true
+  },
+  "images_unchanged": true,
+  "issues": []
+}

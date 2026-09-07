@@ -1,0 +1,12 @@
+Supplementary open-question validation: projectile_motion_dataset_1000
+Status: PASS
+Items: 1000
+Template: Start at the launch arrow and read its displayed speed and angle: resolve it into horizontal and vertical velocity components, identify the larger component using only horizontal, vertical, or equal, and derive the time to the trajectory peak to two decimals. Justify with the arrow direction and trajectory shape, explaining how the stretched plot axes can mislead visual estimates of angle and component size. End with a confidence score from 0 to 1.
+Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
+Targeted fields: launch_speed_m_s, launch_angle_degrees, horizontal_component_m_s, vertical_component_m_s, larger_component, time_to_peak_s
+Selection distribution: {"[\"launch arrow\"]": 1000}
+Constant-answer baselines: {"acceptance_set": 0.004, "horizontal_component_m_s": 0.006, "larger_component": 0.493, "launch_angle_degrees": 0.028, "launch_speed_m_s": 0.041, "targets": 1.0, "time_to_peak_s": 0.013, "vertical_component_m_s": 0.008}
+Fields >=60%: {}
+Independent derivation mismatches: 0
+PNG recoverability: 1000/1000
+Protected existing files unchanged: True

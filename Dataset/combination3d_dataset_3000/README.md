@@ -43,3 +43,14 @@ python validate_combination3d_dataset.py --dataset-dir .
 `question_set.csv` is the only model-facing file and contains exactly `question_id`, `task`, `image`, and `prompt`. The remaining tabular files are private answer-key-side artifacts; do not expose `annotations.jsonl` to a tested model.
 
 `target_cube_count` and the z-derived target height are definitional for Level 4, which explicitly asks for target count and height. They are non-definitional for Level 5 rotation-invariance answers. Their bias-corrected Cramér's V values against Level 5 are 0.8084 and 0.8104 respectively, but both values live only in private answer-key-side annotations and never appear in `question_set.csv`. The complete post-cleanup matrix is recorded in the suite-level `release_hygiene_audit.json`.
+
+### Supplementary open-ended questions
+
+Version `combination3d-3.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.003333`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `candidate, piece_counts, candidate_total, target_total, blocking_reason`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

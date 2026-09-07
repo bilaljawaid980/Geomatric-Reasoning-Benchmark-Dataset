@@ -194,3 +194,14 @@ Raw depth records store depth, position, shape, RGB, rendered size, ordering, an
 | Basic Relational Reasoning | depth_height_0001.png | Which object is closer to the camera: the teal circle or the orange square? | teal |
 | Comparative Reasoning | depth_height_0001.png | Rank all objects in this scene from closest to farthest, by color. | teal, orange |
 | Compound Reasoning | depth_height_0001.png | If the orange object moved twice as far from the camera as its current distance, would it appear larger, smaller, or about the same size as the teal object? | smaller |
+
+### Supplementary open-ended questions
+
+Version `depth-height-3.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.009667`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `target_color, target_shape, target_position, depth_rank_nearest_first, rendered_size, nearest_color, farthest_color, height_units, height_rank_tallest_first, tallest_colors`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

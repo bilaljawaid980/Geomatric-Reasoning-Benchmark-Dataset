@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "dataset": "fbd_dataset_3000",
+  "items": 3000,
+  "template": "Treat only the diagram as drawn, including any deliberately incorrect arrows, and start at arrow A: identify its displayed force type, classify its arrow direction using only up, upper-right, right, lower-right, down, lower-left, left, or upper-left, rank its drawn magnitude from largest to smallest with ties sharing a rank, and list every arrow label drawn in the same direction. Justify from the arrowheads and relative lengths, explaining how you kept the drawn frame separate from the physically correct scenario. End with a confidence score from 0 to 1.",
+  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
+  "metadata_fields_targeted": [
+    "target_arrow",
+    "force_type_as_drawn",
+    "direction_as_drawn",
+    "magnitude_rank_largest_first",
+    "same_direction_arrow_labels",
+    "shown_arrow_count"
+  ],
+  "selection_distribution": {
+    "[\"W\"]": 1076,
+    "[\"N\"]": 508,
+    "[\"F\"]": 465,
+    "[\"A\"]": 273,
+    "[\"T\"]": 178,
+    "[\"W2\"]": 149,
+    "[\"W1\"]": 130,
+    "[\"T2\"]": 121,
+    "[\"T1\"]": 100
+  },
+  "answer_distributions": {
+    "target_arrow": {
+      "W": 1076,
+      "N": 508,
+      "F": 465,
+      "A": 273,
+      "T": 178,
+      "W2": 149,
+      "W1": 130,
+      "T2": 121,
+      "T1": 100
+    },
+    "force_type_as_drawn": {
+      "weight": 1355,
+      "normal": 508,
+      "friction": 465,
+      "tension": 399,
+      "applied": 273
+    },
+    "direction_as_drawn": {
+      "down": 1355,
+      "up": 708,
+      "upper-right": 343,
+      "upper-left": 272,
+      "left": 190,
+      "right": 132
+    },
+    "magnitude_rank_largest_first": {
+      "1": 1747,
+      "2": 755,
+      "3": 390,
+      "4": 108
+    },
+    "same_direction_arrow_labels": {
+      "[\"W\"]": 1076,
+      "[\"N\"]": 508,
+      "[\"F\"]": 329,
+      "[\"W1\",\"W2\"]": 279,
+      "[\"A\",\"F\"]": 278,
+      "[\"T\"]": 178,
+      "[\"A\"]": 131,
+      "[\"T1\",\"T2\"]": 115,
+      "[\"T2\"]": 70,
+      "[\"T1\"]": 36
+    },
+    "shown_arrow_count": {
+      "4": 1125,
+      "2": 875,
+      "3": 750,
+      "1": 250
+    },
+    "acceptance_set": {
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W']; shown_arrow_count=2\"]": 342,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W']; shown_arrow_count=1\"]": 250,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=2; same_direction_arrow_labels=['W']; shown_arrow_count=3\"]": 114,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['N']; shown_arrow_count=2\"]": 113,
+      "[\"target_arrow=T; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['T']; shown_arrow_count=2\"]": 112,
+      "[\"target_arrow=W2; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W1', 'W2']; shown_arrow_count=4\"]": 107,
+      "[\"target_arrow=A; force_type_as_drawn=applied; direction_as_drawn=upper-right; magnitude_rank_largest_first=4; same_direction_arrow_labels=['A', 'F']; shown_arrow_count=4\"]": 106,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W']; shown_arrow_count=3\"]": 104,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=left; magnitude_rank_largest_first=1; same_direction_arrow_labels=['N']; shown_arrow_count=4\"]": 94,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=upper-right; magnitude_rank_largest_first=3; same_direction_arrow_labels=['A', 'F']; shown_arrow_count=4\"]": 91,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W']; shown_arrow_count=4\"]": 90,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=2; same_direction_arrow_labels=['W']; shown_arrow_count=2\"]": 87,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=upper-left; magnitude_rank_largest_first=2; same_direction_arrow_labels=['N']; shown_arrow_count=4\"]": 76,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=up; magnitude_rank_largest_first=3; same_direction_arrow_labels=['F']; shown_arrow_count=4\"]": 71,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=upper-left; magnitude_rank_largest_first=3; same_direction_arrow_labels=['F']; shown_arrow_count=3\"]": 69,
+      "[\"target_arrow=T; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['T']; shown_arrow_count=2\"]": 66,
+      "[\"target_arrow=A; force_type_as_drawn=applied; direction_as_drawn=right; magnitude_rank_largest_first=1; same_direction_arrow_labels=['A']; shown_arrow_count=4\"]": 65,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=upper-left; magnitude_rank_largest_first=1; same_direction_arrow_labels=['N']; shown_arrow_count=2\"]": 62,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=2; same_direction_arrow_labels=['W']; shown_arrow_count=4\"]": 55,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=left; magnitude_rank_largest_first=3; same_direction_arrow_labels=['F']; shown_arrow_count=3\"]": 50,
+      "[\"target_arrow=W1; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W1', 'W2']; shown_arrow_count=4\"]": 49,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['F']; shown_arrow_count=3\"]": 45,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=upper-right; magnitude_rank_largest_first=2; same_direction_arrow_labels=['A', 'F']; shown_arrow_count=3\"]": 43,
+      "[\"target_arrow=W1; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W1', 'W2']; shown_arrow_count=3\"]": 43,
+      "[\"target_arrow=W2; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=1; same_direction_arrow_labels=['W1', 'W2']; shown_arrow_count=3\"]": 42,
+      "[\"target_arrow=T2; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['T2']; shown_arrow_count=3\"]": 40,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['N']; shown_arrow_count=3\"]": 38,
+      "[\"target_arrow=W1; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=3; same_direction_arrow_labels=['W1', 'W2']; shown_arrow_count=4\"]": 38,
+      "[\"target_arrow=A; force_type_as_drawn=applied; direction_as_drawn=right; magnitude_rank_largest_first=1; same_direction_arrow_labels=['A']; shown_arrow_count=3\"]": 37,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=left; magnitude_rank_largest_first=2; same_direction_arrow_labels=['F']; shown_arrow_count=2\"]": 37,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=upper-right; magnitude_rank_largest_first=2; same_direction_arrow_labels=['N']; shown_arrow_count=3\"]": 37,
+      "[\"target_arrow=T1; force_type_as_drawn=tension; direction_as_drawn=upper-left; magnitude_rank_largest_first=1; same_direction_arrow_labels=['T1']; shown_arrow_count=4\"]": 36,
+      "[\"target_arrow=A; force_type_as_drawn=applied; direction_as_drawn=upper-right; magnitude_rank_largest_first=3; same_direction_arrow_labels=['A', 'F']; shown_arrow_count=3\"]": 35,
+      "[\"target_arrow=T1; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['T1', 'T2']; shown_arrow_count=4\"]": 34,
+      "[\"target_arrow=W; force_type_as_drawn=weight; direction_as_drawn=down; magnitude_rank_largest_first=3; same_direction_arrow_labels=['W']; shown_arrow_count=4\"]": 34,
+      "[\"target_arrow=T2; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['T1', 'T2']; shown_arrow_count=4\"]": 31,
+      "[\"target_arrow=T1; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['T1', 'T2']; shown_arrow_count=4\"]": 30,
+      "[\"target_arrow=T2; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=1; same_direction_arrow_labels=['T2']; shown_arrow_count=4\"]": 30,
+      "[\"target_arrow=A; force_type_as_drawn=applied; direction_as_drawn=right; magnitude_rank_largest_first=2; same_direction_arrow_labels=['A']; shown_arrow_count=4\"]": 29,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=upper-left; magnitude_rank_largest_first=2; same_direction_arrow_labels=['F']; shown_arrow_count=2\"]": 29,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=upper-right; magnitude_rank_largest_first=1; same_direction_arrow_labels=['N']; shown_arrow_count=3\"]": 28,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['F']; shown_arrow_count=4\"]": 27,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['N']; shown_arrow_count=2\"]": 27,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['N']; shown_arrow_count=3\"]": 24,
+      "[\"target_arrow=T2; force_type_as_drawn=tension; direction_as_drawn=up; magnitude_rank_largest_first=2; same_direction_arrow_labels=['T1', 'T2']; shown_arrow_count=4\"]": 20,
+      "[\"target_arrow=N; force_type_as_drawn=normal; direction_as_drawn=left; magnitude_rank_largest_first=2; same_direction_arrow_labels=['N']; shown_arrow_count=4\"]": 9,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=upper-right; magnitude_rank_largest_first=4; same_direction_arrow_labels=['A', 'F']; shown_arrow_count=4\"]": 2,
+      "[\"target_arrow=A; force_type_as_drawn=applied; direction_as_drawn=upper-right; magnitude_rank_largest_first=3; same_direction_arrow_labels=['A', 'F']; shown_arrow_count=4\"]": 1,
+      "[\"target_arrow=F; force_type_as_drawn=friction; direction_as_drawn=right; magnitude_rank_largest_first=3; same_direction_arrow_labels=['F']; shown_arrow_count=3\"]": 1
+    }
+  },
+  "constant_answer_baselines": {
+    "targets": 0.3586666666666667,
+    "target_arrow": 0.3586666666666667,
+    "force_type_as_drawn": 0.45166666666666666,
+    "direction_as_drawn": 0.45166666666666666,
+    "magnitude_rank_largest_first": 0.5823333333333334,
+    "same_direction_arrow_labels": 0.3586666666666667,
+    "shown_arrow_count": 0.375,
+    "acceptance_set": 0.114
+  },
+  "fields_at_or_above_60_percent": {},
+  "preflight": {
+    "intended_answer_field": "acceptance_set",
+    "baseline": 0.114,
+    "template_changed_after_check": false,
+    "change": null
+  },
+  "derivation": {
+    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
+    "mismatches": []
+  },
+  "assertions": {
+    "public_exactly_three_columns": true,
+    "no_prompt_answer_leaks": true,
+    "no_absent_coordinate_scheme": true,
+    "fixed_frame_and_vocabulary": true,
+    "no_exact_L1_L5_paraphrase": true
+  },
+  "png_recoverability": {
+    "passed": 3000,
+    "total": 3000,
+    "failures": [],
+    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+  },
+  "protected_existing_files_unchanged": {
+    "question_set.csv": true,
+    "answer_key.csv": true,
+    "dataset_final.csv": true,
+    "dataset_final.jsonl": true
+  },
+  "images_unchanged": true,
+  "issues": []
+}

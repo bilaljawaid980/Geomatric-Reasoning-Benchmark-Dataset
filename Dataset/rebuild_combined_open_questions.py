@@ -16,11 +16,6 @@ REPORT_OUT = DATASET_ROOT / "combined_open_question_report.json"
 
 SOURCE_PUBLIC_COLUMNS = ["question_id", "image", "prompt"]
 PUBLIC_COLUMNS = ["dataset", "dataset_version", "question_id", "image", "image_path", "prompt"]
-PRIVATE_COLUMNS = PUBLIC_COLUMNS + [
-    "target", "target_position", "target_degree", "lines_at_target", "colors",
-    "reached", "unreached", "answer", "home_on_boundary", "neighbour_count",
-    "holes_touching", "walkable_touching", "hole_directions",
-]
 
 
 def read_csv(path: Path) -> tuple[list[str], list[dict[str, str]]]:
@@ -51,20 +46,22 @@ def main() -> None:
             discovered.append(folder)
     if incomplete:
         raise RuntimeError(f"Incomplete open-question file pairs: {incomplete}")
-    expected = {"route_dataset_3000", "hex_pathfinding_dataset_3000"}
+    expected = {folder.name for folder in DATASET_ROOT.glob("*_dataset_*") if (folder / "build_manifest.json").is_file()}
     if {folder.name for folder in discovered} != expected:
         raise RuntimeError(f"Expected open sets for {sorted(expected)}, found {[f.name for f in discovered]}")
 
     public_rows: list[dict[str, str]] = []
     private_rows: list[dict[str, str]] = []
+    private_columns = list(PUBLIC_COLUMNS)
     per_dataset: dict[str, dict[str, int | str]] = {}
     for folder in discovered:
         public_header, public = read_csv(folder / "open_questions.csv")
         private_header, private = read_csv(folder / "open_answer_key.csv")
         if public_header != SOURCE_PUBLIC_COLUMNS:
             raise RuntimeError(f"{folder.name}: public schema is {public_header}")
-        if len(public) != 3000 or len(private) != 3000:
-            raise RuntimeError(f"{folder.name}: expected 3000 public/private rows")
+        expected_rows = int(folder.name.rsplit("_", 1)[1])
+        if len(public) != expected_rows or len(private) != expected_rows:
+            raise RuntimeError(f"{folder.name}: expected {expected_rows} public/private rows")
         private_by_id = {row["question_id"]: row for row in private}
         if len(private_by_id) != len(private):
             raise RuntimeError(f"{folder.name}: duplicate private question_id")
@@ -89,6 +86,9 @@ def main() -> None:
             }
             public_rows.append(base)
             private_rows.append({**base, **{key: answer.get(key, "") for key in private_header[2:]}})
+        for key in private_header[2:]:
+            if key not in private_columns:
+                private_columns.append(key)
         per_dataset[folder.name] = {
             "dataset_version": version,
             "images": len(public),
@@ -99,10 +99,11 @@ def main() -> None:
     duplicate_ids = [qid for qid, count in Counter(row["question_id"] for row in public_rows).items() if count != 1]
     if duplicate_ids:
         raise RuntimeError(f"Combined open question IDs are not unique: {duplicate_ids[:5]}")
-    if len(public_rows) != 6000 or len(private_rows) != 6000:
-        raise RuntimeError("Combined open row count must be exactly 6000")
+    expected_total=sum(int(json.loads((folder / "build_manifest.json").read_text(encoding="utf-8"))["images"]) for folder in discovered)
+    if len(public_rows) != expected_total or len(private_rows) != expected_total:
+        raise RuntimeError(f"Combined open row count must be exactly {expected_total}")
     write_csv(PUBLIC_OUT, public_rows, PUBLIC_COLUMNS)
-    write_csv(PRIVATE_OUT, private_rows, PRIVATE_COLUMNS)
+    write_csv(PRIVATE_OUT, private_rows, private_columns)
     report = {
         "status": "PASS",
         "datasets": per_dataset,
@@ -111,7 +112,7 @@ def main() -> None:
         "unique_question_ids": len({row["question_id"] for row in public_rows}),
         "resolved_image_paths": len({row["image_path"] for row in public_rows}),
         "public_columns": PUBLIC_COLUMNS,
-        "private_columns": PRIVATE_COLUMNS,
+        "private_columns": private_columns,
     }
     REPORT_OUT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))

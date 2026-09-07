@@ -1,7 +1,7 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "angle-estimation-3.0.0",
+  "dataset_version": "angle-estimation-4.0.0",
   "generator_commit": "269045bc25630d3cc96a3d617e35043d72f941cd",
   "images": 3000,
   "constraints": {
@@ -19,5 +19,26 @@
     "image",
     "prompt"
   ],
-  "questions": 15000
+  "questions": 15000,
+  "open_questions": 3000,
+  "open_question_files": [
+    "open_questions.csv",
+    "open_answer_key.csv",
+    "open_annotations.jsonl"
+  ],
+  "constraint_set": {
+    "existing_five_level_questions_unchanged": true,
+    "open_question_count_per_image": 1,
+    "open_public_fields_exact": [
+      "question_id",
+      "image",
+      "prompt"
+    ],
+    "open_ground_truth_rederived_from_scene_metadata": true,
+    "open_prompt_no_unrendered_coordinate_scheme": true,
+    "open_png_recoverability_all_items": true,
+    "open_composite_answer_baseline_below_0_60": true
+  },
+  "open_question_builder": "../build_remaining_open_questions.py",
+  "open_question_validator": "../validate_remaining_open_questions.py"
 }

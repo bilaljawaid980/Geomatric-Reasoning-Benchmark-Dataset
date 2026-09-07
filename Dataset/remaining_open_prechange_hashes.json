@@ -1,0 +1,258 @@
+{
+  "angle_estimation_dataset_3000": {
+    "question_set.csv": "09e76cbf4d9ab3a5277dfe8bdad34789d6333b98fff3c0e32589af1140d2226e",
+    "answer_key.csv": "fc52dd1cccda41101dbcf6946e5aa0f927caa1da4aeb59592dee6382d703ce4e",
+    "dataset_final.csv": "1f13c503a6b7cad07a5a45e7b39029647bff5464b017ac855220286b10565288",
+    "dataset_final.jsonl": "e94fd0d366205f10d833d007fdb1c510b47f3141414ee73a8bb2931407efe295",
+    "image_count": 3000,
+    "images_git_index_sha256": "56cd0d3ec0da0c9d756f81d948f503d9302ad6d3d10fb1a17266e4f60983f188"
+  },
+  "clock_reading_dataset_3000": {
+    "question_set.csv": "990e1053d693300ba8bffa338f7a605624331abd9ee101526afd5abab925854b",
+    "answer_key.csv": "95deb9a1aa3454fa27e1bbcd48ba7a200023632c3af909179b4c11e8091a2dca",
+    "dataset_final.csv": "cac242af278b2c619d9fcd7cd1b3df76df1607a71ce84c5da6890526451df942",
+    "dataset_final.jsonl": "e1d2a23d7d189b672f4ff82b9ef3698d208e7f71cef9ac3a24aed2a10e544d4c",
+    "image_count": 3000,
+    "images_git_index_sha256": "309377e5266abe82b51dfe2871ac97ee252a0dcde81a339cde6a2da9eaec01f1"
+  },
+  "combination3d_dataset_3000": {
+    "question_set.csv": "8a8287625a2c44e35e128a7c2d5005a8c4c36669abfe3f664a8de87ed13bcd74",
+    "answer_key.csv": "724ed272b0db18f23fbd6818bcc8f751a50c42d78b8d8dd58a9b2a480673839c",
+    "dataset_final.csv": "1463e2464a6b6893f02cdc4e4b6157a8b9165502662f4d2ae6bc3f5c058faa73",
+    "dataset_final.jsonl": "8cf8cb273f3c575e92e84a2a88d1eb3e65c3de5e0cc9bedc66b131bdd23f490e",
+    "image_count": 3000,
+    "images_git_index_sha256": "aec0edcfcbf9043009f9d55bc90c59d84aadfc58b67c3db79731365448f13b14"
+  },
+  "combination_dataset_3000": {
+    "question_set.csv": "54f8848c5b4f166880d691dc6c2adc782f0457ff8d323ad26bd46cd454623255",
+    "answer_key.csv": "f339fd70b23c8df76c41dae6cb4daa099a8de86dd5a4c010a2a523bd53501f2f",
+    "dataset_final.csv": "017bf980685eefb5d67883faa190d215abbbc76a05f42bab62fb359d753fef6d",
+    "dataset_final.jsonl": "b60132ca5ef956364d5c3faa4ded37619e6eb57afd89c0f6a45d9ba95a8ce518",
+    "image_count": 3000,
+    "images_git_index_sha256": "c3a0970918b0e35e2160b252861fef1acad6ff2b1a24344cf26044ac196c5881"
+  },
+  "compass_bearing_dataset_3000": {
+    "question_set.csv": "5fb02f0a12bffff55b2764d051e107219c9f5f67c3f3a547adda4005c8a96736",
+    "answer_key.csv": "06779ff1d2d930e3f0b7c6770da844cefb81dfe236e554b85deac018b84f33ad",
+    "dataset_final.csv": "bd5e3b03afc9471d4e23826bf6f9e77a7aaf1c1ae45910437fc586c061ae5abe",
+    "dataset_final.jsonl": "20d76a8a9b412fc2bb439827c636b2d94795ceab6778b37c363b3ba000e10653",
+    "image_count": 3000,
+    "images_git_index_sha256": "914943614fa2e4af026470a166eec4271c239f0240167c27be72a282d87641b4"
+  },
+  "coordinate_geometry_dataset_3000": {
+    "question_set.csv": "1f0d229748ae7b0d48875895884c4f779cb0752881ee5d04fa8c05bb584d2e84",
+    "answer_key.csv": "756aead7432200a93f24af2e1a219c37a03f6822c82e96662531b6c37af2d374",
+    "dataset_final.csv": "b41f803799e8ba6e24ed75f4c93e5fbc33483b7681fb14f36278ff9170bd5be7",
+    "dataset_final.jsonl": "fb52e16605075b6a71ea941234b34d5e3da98bbb05fdecc25bd6633f1d0c2653",
+    "image_count": 3000,
+    "images_git_index_sha256": "603989615ad03c2b6542774a99d8ce18436c033d6cfff6bcc22639d336475cc1"
+  },
+  "cube_net_dataset_3000": {
+    "question_set.csv": "c907be51b6be455a954e485ab509c78a834e70d6f3b86e986adb6cbb69191830",
+    "answer_key.csv": "244fb1dd2899046ce857952dd165141fdd653d9da5b283a0233e35fc469e5b7d",
+    "dataset_final.csv": "befdfc30588a9da4715ad412fefef0ea91d6ec9a21b067c2c4a27c0449c5090c",
+    "dataset_final.jsonl": "80bb16cc837ccdfb4d249e8dd4b1b29aaccf03ad4302f45eb85683c78602b971",
+    "image_count": 3000,
+    "images_git_index_sha256": "b935ba9109641a902d9b65bbeb42b862d2a6b10116d388cf3bf1676bd5eb4747"
+  },
+  "cube_structure_dataset_3000": {
+    "question_set.csv": "5c4fb265e3c99108abaf040621e626c94fe17cda744a6827948d6f2d1202117c",
+    "answer_key.csv": "a585f85c26b9b50f13ecf7eecbe9282c3e866fb6b45c187161f029942054e5d0",
+    "dataset_final.csv": "fc07577199b4a397bfdff811273c6be52cddbd3695ee103d4ef3ccaf57ff7e2e",
+    "dataset_final.jsonl": "9fbcdb1c7eb323b3ecb49edfa16478318728df2d67ebac9a4c96e0d7d17939f4",
+    "image_count": 3000,
+    "images_git_index_sha256": "446e291bc11bf87515900bffe24ec4c6bd4380420a6d2638e2712df9c921467b"
+  },
+  "depth_height_dataset_3000": {
+    "question_set.csv": "1a308ab7cab4a9cc41693d21cfb0bda35bdb69a1ea86199326e1fa58c6ffc518",
+    "answer_key.csv": "dceb20c8164fcef86bb3dac73a6292c39841235c6d29014cbde47f3b1765264b",
+    "dataset_final.csv": "b711a18c30d8e3d4dca3ebfdd62cb098fe4b5dfc293dddae07017ba622848ae6",
+    "dataset_final.jsonl": "d9f5a0cbac10e1fdc818ea700fedf4a97953b9bd0f4cfd644a249d015a455748",
+    "image_count": 3000,
+    "images_git_index_sha256": "c3646018ecd7d3a26c7ecec0f668c43bf7c307f1356e091e094e7f7dbcc5294a"
+  },
+  "embedded_figures_dataset_3000": {
+    "question_set.csv": "ec0f4a9223728b6528b2ffd95bfdda97099c6824a4c564e356da63f5cc65e2f0",
+    "answer_key.csv": "7e17f94c98363334775c869a1c4eda135aec8b02520a7dd81784068b7e3df092",
+    "dataset_final.csv": "321238390c1d133ceb931cc87797331aeda9ab294606626fe7f4b444cd24c585",
+    "dataset_final.jsonl": "af11b163e463371f934422bc63fb0f96a987416cf230af935fd37c2ccda76e3f",
+    "image_count": 3000,
+    "images_git_index_sha256": "fd0cd3f83dcf3515ea21a4d1a4fef226dd06219b58d0884f6b4221ed7002e690"
+  },
+  "fbd_dataset_3000": {
+    "question_set.csv": "812e70032adb634b51d3519556156d51b7b08cf2e6aeb7341b4a02bb4d3b628d",
+    "answer_key.csv": "cb0707729873e1c9fe8b5dac6f4f4e62c94a9e2c03a321ddf15b0d146d9e39a9",
+    "dataset_final.csv": "2080f3cae548499b1dff7ed36704ee44f8119fef455f543f2ac0c508734154d7",
+    "dataset_final.jsonl": "9f104acbb5e9f81b0160ec3e473c48973e320a8710f053d44ab8f3d27f9f0268",
+    "image_count": 3000,
+    "images_git_index_sha256": "73e308a189fbd6feaf57fa3780315f45166a738dac214035eeda94f4a8c01f24"
+  },
+  "fold_punch_dataset_3000": {
+    "question_set.csv": "b853009c7a758429ef03af80ed9345ef46f85f7b8e7b30b69170113b9a1dee15",
+    "answer_key.csv": "d7a033db98e08394da7d11554d4596cae2e88e7722cda758ab056e285b3f16fe",
+    "dataset_final.csv": "1534605c186a4fdba3b68549211d8dd2b855c6c046ffcac81449663e6750ae96",
+    "dataset_final.jsonl": "2e37a7b296b0f7b1406db73e6c7373ceacaec210a72408dc504efbf7e272b22e",
+    "image_count": 3000,
+    "images_git_index_sha256": "c893b88aeb2e1d6246c15dbe3c90f15df19dac27af657031ca64620a089b7133"
+  },
+  "gauge_reading_dataset_3000": {
+    "question_set.csv": "b481b113f18a68829af14080ee37d1c75367194acdd22f8e75755f01070a2f73",
+    "answer_key.csv": "afa13623edae8d951d29da6a687f36aa05422dcd5a908caba90afa7f9bdcb10f",
+    "dataset_final.csv": "1f5be6cabce4a8f572a4b5103db34b96bb7a9afa70c091d2673e5113a615abbb",
+    "dataset_final.jsonl": "8ee28ea1c6dc926ce50609a6739e64528a8e5bc8b385aab551a428852f0f265c",
+    "image_count": 3000,
+    "images_git_index_sha256": "ae5f7cdf047a031a396f4fbc793ec76ec1cbb93677acb64958b742862fc0a9bb"
+  },
+  "gear_train_dataset_3000": {
+    "question_set.csv": "85796df6fa9fee5e951b0b0d9eabce6724c35b53bfd5e329ba797d271b94d3b8",
+    "answer_key.csv": "da04d05340a5c9ef51a716d95da0988831d543af20dbb4e5d79823c4612a25ee",
+    "dataset_final.csv": "16ea6aac64280687e4413f52ec5c5fee7cafafc2a66e98e090503244c028967c",
+    "dataset_final.jsonl": "442130ef4ebad392022d5b3147e764640c4eda3ebd30b315fb0695bedd3e94fe",
+    "image_count": 3000,
+    "images_git_index_sha256": "4f539bf90fbf9fab926ad1f09339df569514ee980f8ef08f917c9c22ebc395a2"
+  },
+  "impossible_object_dataset_3000": {
+    "question_set.csv": "86b346eaef197d555c91c2e0d0eae88b403589d642094b44886954c76e99f1fa",
+    "answer_key.csv": "a66775580f82fa552f2302761dad31764524f49b3e9906671b1bc4a3ef7c39f2",
+    "dataset_final.csv": "634bb8ddd21c098b256affc763d8856df0bc225d602b39c14b1c1605da17a451",
+    "dataset_final.jsonl": "4257a7faf78d25336aa00342d4aa97486070989c5af444e6560bab5d1e5a4311",
+    "image_count": 3000,
+    "images_git_index_sha256": "be59e442ac69cdff317aeb0a05446c59467b2235ea82fc2b2ef4b7eaea660c32"
+  },
+  "laser_mirror_dataset_3000": {
+    "question_set.csv": "1867dab89b277ba7d50f23d71bd7847af93f500101cf627c661a7075a96af876",
+    "answer_key.csv": "f3f417e4c548d7d858efcf50c71b2def3103bf0c19b663f7e692c8a2e2064fc1",
+    "dataset_final.csv": "8c72ce2dc42de3639410e1de1bf4cce7f06ad8b6dd9529edae5e119ccc13e42e",
+    "dataset_final.jsonl": "bdd59f597e1b1d169dfadaaffe8e10e3504e138e40d125e2618cda6e29b4f9ad",
+    "image_count": 3000,
+    "images_git_index_sha256": "1204fb550464af7afff227a3e0c051eb3f21173b8f57af6f8ab8805e5d7a0056"
+  },
+  "line_intersection_dataset_3000": {
+    "question_set.csv": "bf3a4b4b82276c93b6cbe392f1c267386206b4547f8706719808877f88eea6ee",
+    "answer_key.csv": "01a94ae1cfebdeacad06631d76e74a2742d0a87e39f67055750e40610aff122c",
+    "dataset_final.csv": "605abf94941aaade30ea49da05637c46ba378e8158379e02b6164d5bdbd9be36",
+    "dataset_final.jsonl": "f73cb16271004ec1322cc3a6b3cac3e81d4c9776262b69c96c44656347fba2ab",
+    "image_count": 3000,
+    "images_git_index_sha256": "ec312c0612b4e918362ccb12916751537f1c64fb8c496ea7c7eb0f2bf36c7544"
+  },
+  "nested_hexagons_dataset_3000": {
+    "question_set.csv": "c18daade18322e107a3343a2a4b30824ee118513423cce4987cf1cf0a30cbd76",
+    "answer_key.csv": "b1f93f12cc4ebe765191f195ca00dad062b8b71f1943476a238b4a7c1a383460",
+    "dataset_final.csv": "4c8034f11324a9229d0bde2d4b2cda9010689f213ba129f864174cda9ddd2bc0",
+    "dataset_final.jsonl": "7ab9194d8a918a6a54b94ec55059367da08610c3f6f1ca4f9a92db3a5c4734fd",
+    "image_count": 3000,
+    "images_git_index_sha256": "8f803b549ade5332d7e3e3e0814b2ab3fd46ca3d3a9a052f9d31b2a8f2eb3190"
+  },
+  "nested_squares_dataset_3000": {
+    "question_set.csv": "807340af32cb673008e6e00e11887cea2538c97be6523e1b421263eb3e0f2ee5",
+    "answer_key.csv": "61d2103303c2b4ad59a6fb2d5c3f4563e37abee0ec50b22e7c925a801f2be979",
+    "dataset_final.csv": "f53681a22517989236f7441ee1009f0cde8d75ad019180bb8b527e4c42d5e9fb",
+    "dataset_final.jsonl": "af3987fc2fbb19e130b41e728723b74740e639c11e48b4008889cc82d821ef4c",
+    "image_count": 3000,
+    "images_git_index_sha256": "b1b54c3e10f46b50e33707157bd77ea8fc2d34e6d4c70e0c80a5efc517603c6c"
+  },
+  "nested_triangles_dataset_3000": {
+    "question_set.csv": "0642acdf722de4a36a07994b31ceee5116d9b3da0de4ceadd8faa969524382f3",
+    "answer_key.csv": "7c19ff4fc178e11394674d45dd3d13924ed0723137af2542a875d5cfadea4721",
+    "dataset_final.csv": "28d5d9a71ab845c88d7726ae454135e47df72895542594560699a9326f9cbb7c",
+    "dataset_final.jsonl": "5fbe55fbe9b5659466e53841bb88302825884ef4eca82a2e118261914b73ace0",
+    "image_count": 3000,
+    "images_git_index_sha256": "a6c9b6afde64b34571abde670a70156e9b10dcae07d607ea245385a1a5740879"
+  },
+  "occluded_pattern_dataset_3000": {
+    "question_set.csv": "ca69722da61e35da863ee7447de046bed4470e504e42df240153c442fb6bdfb9",
+    "answer_key.csv": "faa1614026ebd22bd3a793c4e9aee42e8f3f11536592086943697086d6721037",
+    "dataset_final.csv": "e06a07ef432a26203e5cdcd8a1a04d6465a126332f628fcb0fc71ad44fe220b4",
+    "dataset_final.jsonl": "847f626b4e915c28d4ef14c44a1171d2904479891d230094bf63e46410f88ca8",
+    "image_count": 3000,
+    "images_git_index_sha256": "7e427887c779ad70b519d068cb9357f0d1396552aef192b8caaa38b41e696e93"
+  },
+  "optical_illusion_dataset_3000": {
+    "question_set.csv": "3f4efa8e59c1cc90716fbc44eb16c8cc1c51d9d0f8af49499ad6227a48d6b10e",
+    "answer_key.csv": "88dd88caac265a361339ad028195a8724345bdf0ab84e2e3ff40c602aa304e34",
+    "dataset_final.csv": "8654f38cd93f7e0de50172c5f8a2fbdb00b0d02e97e06297d5c87db81b307605",
+    "dataset_final.jsonl": "0b021b2a8d11b8e8d3eedad4cf502dfb2b33924f3689d570a4701fe8a402b1d0",
+    "image_count": 3000,
+    "images_git_index_sha256": "fe6dc0c385fcfafdb1387ecde338ec929c63c808ca2edf1e232fec5d3b5fba91"
+  },
+  "orthographic_dataset_3000": {
+    "question_set.csv": "fa64d9ff433f3fb00c060da4662d0e6a8df24d8c7c0979fc2742eeeeab433db7",
+    "answer_key.csv": "dda520487a258b24951a80a66b2fd1ac64ecd5ab4de40c0b0f802f155f6903de",
+    "dataset_final.csv": "a9fe2f5d0f7dc32d42ae4eb65e96a7e28d52445490947ec2014a02368d119ea2",
+    "dataset_final.jsonl": "a3a78b26bd636113b5377142fdbe449b878254d079ffadcf6a77f5b088660596",
+    "image_count": 3000,
+    "images_git_index_sha256": "d3c120f25f74053b44acac7c2b4f67d4f61bc443ebac9efd8c76ad27c54d1f13"
+  },
+  "overlap_circles_dataset_3000": {
+    "question_set.csv": "e7164f3b641287fa021c82a95b6ef15fa570228e17962f61bdd46d0b4b031e7e",
+    "answer_key.csv": "209605cacc408abdc5b179bd56d9f2b644d1dc94caa78554acac2520270577ee",
+    "dataset_final.csv": "cbb5d1765270667f96b1a2f802fc5fcb0a47caf3e51c0a2d9aafa52b901223f5",
+    "dataset_final.jsonl": "a88a9ebe08b952636dd8a0838a1fac6566cacafe29b9c0e2a4667a59018635e5",
+    "image_count": 3000,
+    "images_git_index_sha256": "b011a47ee50292cb8f0d15204ebd94f40496eb4098f1046973f5e4c8f81538f3"
+  },
+  "physical_stability_dataset_3000": {
+    "question_set.csv": "ac4d406c01603a80844ac4fca009e30839251be59e26278fd31661e14572c845",
+    "answer_key.csv": "fad44dcefe03159b9251a23568019567fd757cde625f44241a5f60f708c61d32",
+    "dataset_final.csv": "046f41dec244fedcd98e0d592c64c0d5502a6613f3abd587bd536e59e4f14e15",
+    "dataset_final.jsonl": "2bec5a3e09e8d12c5aef42b8abc03293197f8a74168e586e3ea0c23e5d64cdb7",
+    "image_count": 3000,
+    "images_git_index_sha256": "3f0df9eacc33679565377b544c644d4882477a0ed8d18a8ada9d2cefea2775ee"
+  },
+  "polyhedron_dataset_3000": {
+    "question_set.csv": "f43846aa231aaa9ca0a7f6fb9a9bd91d7d34f95e2e5141cee382d774611aabbd",
+    "answer_key.csv": "01e1476f7b15467844b098b30f8f42dceb5b27f9e6330344411ebae2229044c4",
+    "dataset_final.csv": "c59f0847f0407fb32853aa0f55c192b1b05b01141caf348fedca93951e5a50cf",
+    "dataset_final.jsonl": "4c6b3fec910a785f029612d728f26dc37f0b3780dd19bee0d9efa7aad1c57706",
+    "image_count": 3000,
+    "images_git_index_sha256": "2ebd418ff3c056d60c457b23632ac665a730df46560a0f5285ca6439c6f8b6e7"
+  },
+  "projectile_motion_dataset_1000": {
+    "question_set.csv": "3a13cc0367e15b5811252bf778e4e7ab4ad783245a4aeb79bfd38b6f1ac91169",
+    "answer_key.csv": "0285e4f785d3a303ea392cdcf184c156a04144a5252caeb60f343321fb1835bf",
+    "dataset_final.csv": "1124e3e844c4f972f67a8e43ba78e8446ea6c03705e57d0a13e2a2d1e4db6a7e",
+    "dataset_final.jsonl": "513452e01b68591a3a5cb3091d60297d99503478a89ea95fbba6e9d4432dfed1",
+    "image_count": 1000,
+    "images_git_index_sha256": "27387369ea12d2f94253e2c7580f29acf2c80a36cdfbad7bfb78f2c09ccfb576"
+  },
+  "rotation_matching_dataset_3000": {
+    "question_set.csv": "2db2c92039adc904bea0e2255446c1a93b82d48384971b0696ede86bf91bfffc",
+    "answer_key.csv": "8c9147aeeab9ffcf848dbdfaa66440ff77664de4e6b38aec3b9371758c0848fe",
+    "dataset_final.csv": "bfd5557be8378aa45bb037e3c3c44e5a3640aeb099b7e04f73d42e0748b19139",
+    "dataset_final.jsonl": "7f915ecf0541fb2da824dea228f22a7c61eaa8d42815daccda51ffde83dab38d",
+    "image_count": 3000,
+    "images_git_index_sha256": "80294ef47691ed7babbd1498915dcff4ff8c833dc131994d24a7fc58bf8fbba2"
+  },
+  "rpm_dataset_3000": {
+    "question_set.csv": "102dcda7593fdbef4dc72af34736daccdddf1768fc5a3ef21a2662c23ce6012b",
+    "answer_key.csv": "71e872779b7c523255ffa9960e75970ddd56d5cde35d77dadaec7116b155a8d8",
+    "dataset_final.csv": "73070fa352131f4ecadc5eed4e678b60d87cd3f68dcd749e7f19f87eafcb947f",
+    "dataset_final.jsonl": "01cbb7a8b75c89bfbcccf26ace378a41ab5f3e869047037c1e533d66d13c687b",
+    "image_count": 3000,
+    "images_git_index_sha256": "ce4f6b910995b8c366d3cbaf468e4fa70f4a583147c6f48bfc991f2ed1e39f75"
+  },
+  "shadow_inference_dataset_3000": {
+    "question_set.csv": "e8f685a71e88c381e721f08d046e34a3a696883e5093e56240689fb459014cf6",
+    "answer_key.csv": "57591430005cdad36e45f6147f5c938713a70bed2d9ef1ee62d91d102ac4f132",
+    "dataset_final.csv": "807da207dbf8d658f46312980563d25e2996e6f3913190c0c9554e547bbb0fac",
+    "dataset_final.jsonl": "9ef8a4087a40358517818f691a45f6603fe135bf895abd5b75cba4a7ae9b69ae",
+    "image_count": 3000,
+    "images_git_index_sha256": "9fa5fbf9506fc1f3a145ff44d4d2dab91e053a9c69c1a51cbda56b39ad32a20d"
+  },
+  "surface_topology_dataset_3000": {
+    "question_set.csv": "4a8f44ee16548b831c968860298baf95d1140dddabffe9ceb92b2263fc5a8241",
+    "answer_key.csv": "664255bc42ca0190e35c9a099c04b00b83f4b0b7252ef88f88415d83b23cd472",
+    "dataset_final.csv": "edd853df714076e289950099fe9661f396ba22c3a4abd8a4c72307be47cd4721",
+    "dataset_final.jsonl": "915b8c8d2e0600955340b9f1af9c691aff44224e07f1a799e56aa559935a7efe",
+    "image_count": 3000,
+    "images_git_index_sha256": "9a0e2fbeb8ecc6f464d06dc0644b0605e57ca273c4db44e10ee8c6532fa45929"
+  },
+  "symmetry_pattern_dataset_3000": {
+    "question_set.csv": "99aa76682aa641049f3db14b872910023abff7d0930aebde42531b2f356a5933",
+    "answer_key.csv": "def5cf890a0a8653d39a35463270374c6ab206ceca66b42d106e475b3a504c94",
+    "dataset_final.csv": "7f2790eeb223b27629744bf5df5e5337a8b6222696f8e9546f1192924828d2cd",
+    "dataset_final.jsonl": "ae05649cb72b9f0791650e6495018af103576eb560d9596cd5eedd83bd2fd6e2",
+    "image_count": 3000,
+    "images_git_index_sha256": "c9e8955476877516653d29564a8501d30dd2ba385f79bc94b54fa74087b1e7de"
+  }
+}

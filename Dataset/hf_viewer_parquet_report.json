@@ -535,37 +535,37 @@
   ],
   "annotation_shards": [
     {
-      "bytes": 391483753,
+      "bytes": 391484005,
       "file": "all_annotations_combined-00000-of-00006.parquet",
-      "mib": 373.3480005264282,
+      "mib": 373.34824085235596,
       "row_groups": 35,
       "rows": 17103
     },
     {
-      "bytes": 304471475,
+      "bytes": 304471900,
       "file": "all_annotations_combined-00001-of-00006.parquet",
-      "mib": 290.36662578582764,
+      "mib": 290.3670310974121,
       "row_groups": 44,
       "rows": 21805
     },
     {
-      "bytes": 475340110,
+      "bytes": 475340209,
       "file": "all_annotations_combined-00002-of-00006.parquet",
-      "mib": 453.3196544647217,
+      "mib": 453.319748878479,
       "row_groups": 18,
       "rows": 8966
     },
     {
-      "bytes": 480251550,
+      "bytes": 480251680,
       "file": "all_annotations_combined-00003-of-00006.parquet",
-      "mib": 458.003568649292,
+      "mib": 458.0036926269531,
       "row_groups": 31,
       "rows": 15154
     },
     {
-      "bytes": 435153150,
+      "bytes": 435153596,
       "file": "all_annotations_combined-00004-of-00006.parquet",
-      "mib": 414.99438285827637,
+      "mib": 414.9948081970215,
       "row_groups": 37,
       "rows": 18099
     },
@@ -577,41 +577,41 @@
       "rows": 18873
     }
   ],
-  "annotations_total_gib": 2.386543762870133,
+  "annotations_total_gib": 2.386545022018254,
   "compression": "zstd level 9; five adjacent question rows contain identical embedded PNG bytes",
   "default_answer_shards": [
     {
-      "bytes": 428977576,
+      "bytes": 428978836,
       "file": "all_answers_combined-00000-of-00006.parquet",
-      "mib": 409.10489654541016,
+      "mib": 409.1060981750488,
       "row_groups": 172,
       "rows": 85515
     },
     {
-      "bytes": 365026732,
+      "bytes": 365028764,
       "file": "all_answers_combined-00001-of-00006.parquet",
-      "mib": 348.1166191101074,
+      "mib": 348.11855697631836,
       "row_groups": 219,
       "rows": 109025
     },
     {
-      "bytes": 475030840,
+      "bytes": 475031179,
       "file": "all_answers_combined-00002-of-00006.parquet",
-      "mib": 453.0247116088867,
+      "mib": 453.02503490448,
       "row_groups": 90,
       "rows": 44830
     },
     {
-      "bytes": 474818119,
+      "bytes": 474818753,
       "file": "all_answers_combined-00003-of-00006.parquet",
-      "mib": 452.82184505462646,
+      "mib": 452.82244968414307,
       "row_groups": 152,
       "rows": 75770
     },
     {
-      "bytes": 441359589,
+      "bytes": 441361763,
       "file": "all_answers_combined-00004-of-00006.parquet",
-      "mib": 420.91330432891846,
+      "mib": 420.9153776168823,
       "row_groups": 181,
       "rows": 90495
     },
@@ -623,7 +623,7 @@
       "rows": 94365
     }
   ],
-  "default_total_gib": 2.476506500504911,
+  "default_total_gib": 2.476512497290969,
   "logical_rows": {
     "annotations": 100000,
     "default_answers": 500000

@@ -244,3 +244,14 @@ Each raw annotation stores identifiers, canvas size, circle centers/radii, pairw
 | Basic Relational Reasoning | overlap_circles_0001.png | Is there any circle that does not overlap with any other circle? Answer yes or no. | no |
 | Comparative Reasoning | overlap_circles_0001.png | Which is larger: the biggest circle or the smallest circle? Estimate the ratio of their sizes (diameter), rounded to 1 decimal, e.g. {2.3}. | 2.3 |
 | Compound Reasoning | overlap_circles_0001.png | Estimate what percentage of circles in this image overlap with at least 3 other circles. Answer as a whole number percentage in curly brackets, e.g. {40}. | 100 |
+
+### Supplementary open-ended questions
+
+Version `overlap-circles-3.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.009667`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `direct_overlap_degree, total_overlap_pairs, above_average_radius_count, circles_isolated_after_removal, three_plus_overlap_percent`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

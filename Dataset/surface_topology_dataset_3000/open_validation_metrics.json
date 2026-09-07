@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "dataset": "surface_topology_dataset_3000",
+  "items": 3000,
+  "template": "Start at the most prominent hole or twist in the rendered surface and inspect the whole connected sheet: identify its family using only sphere with handles, polyhedral mesh, Möbius-or-cylinder, or Klein-or-torus; count its handles or crosscaps; derive the Euler characteristic; and give the signature in the exact form 'orientable genus N with B boundary loops' or 'non-orientable genus N with B boundary loops'. Justify how you followed the surface through occlusion and distinguished a true handle, crosscap, or boundary opening from one caused only by viewing angle. End with a confidence score from 0 to 1.",
+  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
+  "metadata_fields_targeted": [
+    "surface_type",
+    "handle_or_crosscap_genus",
+    "euler_characteristic",
+    "topological_signature"
+  ],
+  "selection_distribution": {
+    "[\"most prominent hole or twist\"]": 3000
+  },
+  "answer_distributions": {
+    "surface_type": {
+      "Klein-or-torus": 750,
+      "Möbius-or-cylinder": 750,
+      "polyhedral mesh": 750,
+      "sphere with handles": 750
+    },
+    "handle_or_crosscap_genus": {
+      "1": 820,
+      "0": 755,
+      "3": 750,
+      "2": 675
+    },
+    "euler_characteristic": {
+      "0": 1570,
+      "-4": 750,
+      "2": 380,
+      "-2": 300
+    },
+    "topological_signature": {
+      "orientable genus 3 with 0 boundary loops": 750,
+      "orientable genus 1 with 0 boundary loops": 445,
+      "orientable genus 0 with 0 boundary loops": 380,
+      "non-orientable genus 1 with 1 boundary loops": 375,
+      "non-orientable genus 2 with 0 boundary loops": 375,
+      "orientable genus 0 with 2 boundary loops": 375,
+      "orientable genus 2 with 0 boundary loops": 300
+    },
+    "acceptance_set": {
+      "[\"surface_type=Klein-or-torus; handle_or_crosscap_genus=1; euler_characteristic=0; topological_signature=orientable genus 1 with 0 boundary loops\"]": 375,
+      "[\"surface_type=Klein-or-torus; handle_or_crosscap_genus=2; euler_characteristic=0; topological_signature=non-orientable genus 2 with 0 boundary loops\"]": 375,
+      "[\"surface_type=Möbius-or-cylinder; handle_or_crosscap_genus=0; euler_characteristic=0; topological_signature=orientable genus 0 with 2 boundary loops\"]": 375,
+      "[\"surface_type=Möbius-or-cylinder; handle_or_crosscap_genus=1; euler_characteristic=0; topological_signature=non-orientable genus 1 with 1 boundary loops\"]": 375,
+      "[\"surface_type=polyhedral mesh; handle_or_crosscap_genus=3; euler_characteristic=-4; topological_signature=orientable genus 3 with 0 boundary loops\"]": 375,
+      "[\"surface_type=sphere with handles; handle_or_crosscap_genus=3; euler_characteristic=-4; topological_signature=orientable genus 3 with 0 boundary loops\"]": 375,
+      "[\"surface_type=polyhedral mesh; handle_or_crosscap_genus=0; euler_characteristic=2; topological_signature=orientable genus 0 with 0 boundary loops\"]": 190,
+      "[\"surface_type=sphere with handles; handle_or_crosscap_genus=0; euler_characteristic=2; topological_signature=orientable genus 0 with 0 boundary loops\"]": 190,
+      "[\"surface_type=polyhedral mesh; handle_or_crosscap_genus=2; euler_characteristic=-2; topological_signature=orientable genus 2 with 0 boundary loops\"]": 150,
+      "[\"surface_type=sphere with handles; handle_or_crosscap_genus=2; euler_characteristic=-2; topological_signature=orientable genus 2 with 0 boundary loops\"]": 150,
+      "[\"surface_type=polyhedral mesh; handle_or_crosscap_genus=1; euler_characteristic=0; topological_signature=orientable genus 1 with 0 boundary loops\"]": 35,
+      "[\"surface_type=sphere with handles; handle_or_crosscap_genus=1; euler_characteristic=0; topological_signature=orientable genus 1 with 0 boundary loops\"]": 35
+    }
+  },
+  "constant_answer_baselines": {
+    "targets": 1.0,
+    "surface_type": 0.25,
+    "handle_or_crosscap_genus": 0.2733333333333333,
+    "euler_characteristic": 0.5233333333333333,
+    "topological_signature": 0.25,
+    "acceptance_set": 0.125
+  },
+  "fields_at_or_above_60_percent": {},
+  "preflight": {
+    "intended_answer_field": "acceptance_set",
+    "baseline": 0.125,
+    "template_changed_after_check": true,
+    "change": "removed dominant boundary and orientability fields"
+  },
+  "derivation": {
+    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
+    "mismatches": []
+  },
+  "assertions": {
+    "public_exactly_three_columns": true,
+    "no_prompt_answer_leaks": true,
+    "no_absent_coordinate_scheme": true,
+    "fixed_frame_and_vocabulary": true,
+    "no_exact_L1_L5_paraphrase": true
+  },
+  "png_recoverability": {
+    "passed": 3000,
+    "total": 3000,
+    "failures": [],
+    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+  },
+  "protected_existing_files_unchanged": {
+    "question_set.csv": true,
+    "answer_key.csv": true,
+    "dataset_final.csv": true,
+    "dataset_final.jsonl": true
+  },
+  "images_unchanged": true,
+  "issues": []
+}

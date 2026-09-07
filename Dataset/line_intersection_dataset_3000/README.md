@@ -296,3 +296,14 @@ Basic Relational Reasoning,line_intersect_0001.png,"How many times do the blue a
 Comparative Reasoning,line_intersect_0001.png,"At the leftmost point of the image, which line is higher: red or blue?",blue,"{""difficulty_score"":0.2967,""num_blue_segments"":3,""num_red_segments"":3,""seed"":1,""total_intersections"":2,""wording_variant"":""touch_each_other""}"
 Compound Reasoning,line_intersect_0001.png,"If you removed the segment of the red line closest to the left edge, how many intersection points would remain? Answer with a number in curly brackets.",1,"{""difficulty_score"":0.2967,""num_blue_segments"":3,""num_red_segments"":3,""seed"":1,""total_intersections"":2,""wording_variant"":""touch_each_other""}"
 ```
+
+### Supplementary open-ended questions
+
+Version `line-intersection-4.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.139667`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `red_at_left, red_at_right, total_crossings, order_transition, red_segments_with_crossings, blue_segments_with_crossings`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

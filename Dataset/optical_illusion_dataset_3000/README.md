@@ -59,3 +59,14 @@ The validator does not trust stored target values or question answers. It recons
 Recent work directly studies whether language-grounded vision systems respond to illusions like humans, including [*Grounding Visual Illusions in Language*](https://aclanthology.org/2023.emnlp-main.348/) and later counterfactual/tool-guided analyses. Psychophysical work confirms that Ebbinghaus apparent size depends on inducer size and distance ([Weintraub et al., 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4631937/)) and can influence preattentive visual search ([Busch & Müller, 2004](https://pubmed.ncbi.nlm.nih.gov/15283072/)). These are independent related works; their authors are not affiliated with GRIP.
 
 Limitations: this release covers only three of many documented illusions, samples controlled literature-informed parameter ranges rather than the full psychometric strength space, uses clean two-target diagrams rather than multi-element or photographic scenes, and records the canonical predicted illusion direction rather than collecting human perceptual judgments for each generated instance.
+
+### Supplementary open-ended questions
+
+Version `optical-illusion-4.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.013000`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `illusion_type, element_A_true_value, element_B_true_value, true_relation, absolute_difference, percent_difference`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

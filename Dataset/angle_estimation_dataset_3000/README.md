@@ -44,3 +44,14 @@ The validator independently recomputes every angle from coordinates, verifies re
 ## 7. Known limitations
 
 Nearest-15-degree estimation has intentional tolerance rather than requiring pixel-perfect reading. Triangle classification uses a ±2° right-angle band. Scenes are clean synthetic line drawings without perspective or hand-drawn distortion. The Level 1 bucket follows the provided greater-than-90° wording for reflex angles.
+
+### Supplementary open-ended questions
+
+Version `angle-estimation-4.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.011667`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `scene_form, primary_label, primary_measure_degrees, secondary_label, secondary_measure_degrees, comparison_summary`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

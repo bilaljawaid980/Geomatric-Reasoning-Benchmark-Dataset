@@ -91,3 +91,14 @@ python generate_fbd_dataset.py --sample
 - Banked-curve equilibrium scenes represent a parked body; moving banked-curve scenes correctly retain centripetal acceleration.
 - Real-valued Level 4 answers require 2% tolerance rather than exact-string grading.
 - Missing and wrong diagrams are deliberately diagnostic and should not be treated as measurements of naturally occurring diagram error frequency.
+
+### Supplementary open-ended questions
+
+Version `free-body-diagram-3.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+
+- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
+
+The composite acceptance-set preflight baseline is `0.114000`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `target_arrow, force_type_as_drawn, direction_as_drawn, magnitude_rank_largest_first, same_direction_arrow_labels, shown_arrow_count`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

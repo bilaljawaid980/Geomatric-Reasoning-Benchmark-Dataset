@@ -1,0 +1,12 @@
+Supplementary open-question validation: rotation_matching_dataset_3000
+Status: PASS
+Items: 3000
+Template: Start at candidate C and match distinctive corners back to the reference polygon: decide whether it is a rotation or reflection, and if it is a rotation report both its clockwise angle and equivalent counterclockwise angle; then state whether rotation alone makes it match. Justify by tracking vertex order and explain how near-symmetry and page orientation can disguise a reflection. Use only rotation or reflection. End with a confidence score from 0 to 1.
+Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
+Targeted fields: candidate, transformation_type, clockwise_degrees, counterclockwise_equivalent_degrees
+Selection distribution: {"[\"A\"]": 758, "[\"B\"]": 720, "[\"C\"]": 733, "[\"D\"]": 789}
+Constant-answer baselines: {"acceptance_set": 0.13133333333333333, "candidate": 0.263, "clockwise_degrees": 0.501, "counterclockwise_equivalent_degrees": 0.501, "targets": 0.263, "transformation_type": 0.501}
+Fields >=60%: {}
+Independent derivation mismatches: 0
+PNG recoverability: 3000/3000
+Protected existing files unchanged: True
