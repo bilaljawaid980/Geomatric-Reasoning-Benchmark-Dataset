@@ -2,19 +2,12 @@
   "status": "PASS",
   "dataset": "line_intersection_dataset_3000",
   "items": 3000,
-  "template": "Start at the left endpoints of the red and blue polylines and follow both to the right: state whether red begins above or below blue and where it ends, count their mutual crossings, describe the resulting order transition, and count how many red segments and blue segments participate in at least one crossing. Justify by tracing through every bend and explain how you excluded self-bends and near touches. Use only above or below for endpoint order. End with a confidence score from 0 to 1.",
-  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
-  "metadata_fields_targeted": [
+  "template": "Follow the red and blue lines from left to right. Say whether red is above or below blue at each end, and count their crossings exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "subfacts": [
     "red_at_left",
     "red_at_right",
-    "total_crossings",
-    "order_transition",
-    "red_segments_with_crossings",
-    "blue_segments_with_crossings"
+    "total_crossings"
   ],
-  "selection_distribution": {
-    "[\"left red and blue endpoints\"]": 3000
-  },
   "answer_distributions": {
     "red_at_left": {
       "above": 1508,
@@ -31,83 +24,39 @@
       "3": 383,
       "4": 188,
       "5": 95
-    },
-    "order_transition": {
-      "the start and end order is the same": 1765,
-      "red changes from above to below": 625,
-      "red changes from below to above": 610
-    },
-    "red_segments_with_crossings": {
-      "2": 819,
-      "0": 758,
-      "1": 757,
-      "3": 383,
-      "4": 188,
-      "5": 95
-    },
-    "blue_segments_with_crossings": {
-      "2": 819,
-      "0": 758,
-      "1": 757,
-      "3": 383,
-      "4": 188,
-      "5": 95
-    },
-    "acceptance_set": {
-      "[\"red_at_left=below; red_at_right=below; total_crossings=2; order_transition=the start and end order is the same; red_segments_with_crossings=2; blue_segments_with_crossings=2\"]": 419,
-      "[\"red_at_left=above; red_at_right=above; total_crossings=2; order_transition=the start and end order is the same; red_segments_with_crossings=2; blue_segments_with_crossings=2\"]": 400,
-      "[\"red_at_left=below; red_at_right=above; total_crossings=1; order_transition=red changes from below to above; red_segments_with_crossings=1; blue_segments_with_crossings=1\"]": 396,
-      "[\"red_at_left=below; red_at_right=below; total_crossings=0; order_transition=the start and end order is the same; red_segments_with_crossings=0; blue_segments_with_crossings=0\"]": 381,
-      "[\"red_at_left=above; red_at_right=above; total_crossings=0; order_transition=the start and end order is the same; red_segments_with_crossings=0; blue_segments_with_crossings=0\"]": 377,
-      "[\"red_at_left=above; red_at_right=below; total_crossings=1; order_transition=red changes from above to below; red_segments_with_crossings=1; blue_segments_with_crossings=1\"]": 361,
-      "[\"red_at_left=above; red_at_right=below; total_crossings=3; order_transition=red changes from above to below; red_segments_with_crossings=3; blue_segments_with_crossings=3\"]": 209,
-      "[\"red_at_left=below; red_at_right=above; total_crossings=3; order_transition=red changes from below to above; red_segments_with_crossings=3; blue_segments_with_crossings=3\"]": 174,
-      "[\"red_at_left=above; red_at_right=above; total_crossings=4; order_transition=the start and end order is the same; red_segments_with_crossings=4; blue_segments_with_crossings=4\"]": 106,
-      "[\"red_at_left=below; red_at_right=below; total_crossings=4; order_transition=the start and end order is the same; red_segments_with_crossings=4; blue_segments_with_crossings=4\"]": 82,
-      "[\"red_at_left=above; red_at_right=below; total_crossings=5; order_transition=red changes from above to below; red_segments_with_crossings=5; blue_segments_with_crossings=5\"]": 55,
-      "[\"red_at_left=below; red_at_right=above; total_crossings=5; order_transition=red changes from below to above; red_segments_with_crossings=5; blue_segments_with_crossings=5\"]": 40
     }
   },
   "constant_answer_baselines": {
-    "targets": 1.0,
     "red_at_left": 0.5026666666666667,
     "red_at_right": 0.5023333333333333,
-    "total_crossings": 0.273,
-    "order_transition": 0.5883333333333334,
-    "red_segments_with_crossings": 0.273,
-    "blue_segments_with_crossings": 0.273,
-    "acceptance_set": 0.13966666666666666
+    "total_crossings": 0.273
   },
   "fields_at_or_above_60_percent": {},
-  "preflight": {
-    "intended_answer_field": "acceptance_set",
-    "baseline": 0.13966666666666666,
-    "template_changed_after_check": false,
-    "change": null
-  },
-  "derivation": {
-    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
-    "mismatches": []
+  "composite_answer_baseline": 0.13966666666666666,
+  "independent_derivation": {
+    "mismatches": [],
+    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
   },
   "assertions": {
-    "public_exactly_three_columns": true,
-    "no_prompt_answer_leaks": true,
-    "no_absent_coordinate_scheme": true,
-    "fixed_frame_and_vocabulary": true,
-    "no_exact_L1_L5_paraphrase": true
+    "at_most_three_subfacts": true,
+    "no_derivable_redundancy": true,
+    "no_none_placeholders": true,
+    "numeric_tolerances_stored_and_stated": true,
+    "no_trap_named": true,
+    "no_unrendered_coordinates_indices_or_schema_terms": true
   },
-  "png_recoverability": {
+  "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": [],
-    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+    "failures": []
   },
-  "protected_existing_files_unchanged": {
+  "protected_closed_files_unchanged": {
     "question_set.csv": true,
     "answer_key.csv": true,
     "dataset_final.csv": true,
     "dataset_final.jsonl": true
   },
+  "closed_questions_in_annotations_unchanged": true,
   "images_unchanged": true,
   "issues": []
 }

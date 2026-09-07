@@ -24,11 +24,16 @@
     "open_ground_truth_rederived_from_scene_metadata": true,
     "open_prompt_no_unrendered_coordinate_scheme": true,
     "open_png_recoverability_all_items": true,
-    "open_composite_answer_baseline_below_0_60": true
+    "open_composite_answer_baseline_below_0_60": true,
+    "open_maximum_subfacts": 3,
+    "open_no_deterministically_redundant_subfacts": true,
+    "open_no_none_placeholders": true,
+    "open_numeric_tolerances_stored_and_stated": true,
+    "open_prompt_does_not_name_reasoning_trap": true
   },
   "constraint_source": "generator constants and exhaustive validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "polyhedron-6.0.0",
+  "dataset_version": "polyhedron-7.0.0",
   "generator_commit": "c39ae792a598a8117382e7de98d8837c228bcc4b",
   "images": 3000,
   "metadata_only_rebuild": true,

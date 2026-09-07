@@ -17,11 +17,19 @@
       "image",
       "prompt"
     ],
-    "open_question_count_per_image": 1
+    "open_question_count_per_image": 1,
+    "open_ground_truth_rederived_from_scene_metadata": true,
+    "open_prompt_no_unrendered_coordinate_scheme": true,
+    "open_maximum_subfacts": 3,
+    "open_no_deterministically_redundant_subfacts": true,
+    "open_no_none_placeholders": true,
+    "open_numeric_tolerances_stored_and_stated": true,
+    "open_prompt_does_not_name_reasoning_trap": true,
+    "open_composite_answer_baseline_below_0_60": true
   },
   "constraint_source": "generator constants and open-question validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "hex-pathfinding-3.0.0",
+  "dataset_version": "hex-pathfinding-4.0.0",
   "generator_commit": "e6975d7f82e6fc42f77fdc6434e733c10adb83d6",
   "images": 3000,
   "open_question_files": [
@@ -36,5 +44,7 @@
     "image",
     "prompt"
   ],
-  "questions": 15000
+  "questions": 15000,
+  "open_question_builder": "../build_remaining_open_questions.py",
+  "open_question_validator": "../validate_remaining_open_questions.py"
 }

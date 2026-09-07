@@ -1,12 +1,10 @@
-Supplementary open-question validation: nested_hexagons_dataset_3000
+Open-question validation: nested_hexagons_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the outermost hexagon and work inward one outline at a time: count the outlines, compare outer and inner side length as a ratio to two decimals, count clockwise and counterclockwise rotation steps, and identify the numbered outer-to-inner transition with the largest proportional shrink. Justify by following adjacent corners through the nesting and explain how centre drift and changing gaps can imitate rotation or scale change. Number transitions from 1 at the outside. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: shape_count, outer_to_inner_size_ratio, clockwise_steps, counterclockwise_steps, largest_shrink_step
-Selection distribution: {"[\"outermost hexagon\"]": 3000}
-Constant-answer baselines: {"acceptance_set": 0.004, "clockwise_steps": 0.564, "counterclockwise_steps": 0.586, "largest_shrink_step": 0.122, "outer_to_inner_size_ratio": 0.006666666666666667, "shape_count": 0.11466666666666667, "targets": 1.0}
+Template: Count the nested hexagons exactly (tolerance 0), estimate the cumulative rotation from the outermost to the innermost hexagon to the nearest 5 degrees, and say whether the shrink factor is constant, increasing, or decreasing inward. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: shape_count, cumulative_rotation_degrees_nearest_5, shrink_pattern
+Constant-answer baselines: {"cumulative_rotation_degrees_nearest_5": 0.15, "shape_count": 0.11466666666666667, "shrink_pattern": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

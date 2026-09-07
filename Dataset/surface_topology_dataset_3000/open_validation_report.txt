@@ -1,12 +1,10 @@
-Supplementary open-question validation: surface_topology_dataset_3000
+Open-question validation: surface_topology_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the most prominent hole or twist in the rendered surface and inspect the whole connected sheet: identify its family using only sphere with handles, polyhedral mesh, Möbius-or-cylinder, or Klein-or-torus; count its handles or crosscaps; derive the Euler characteristic; and give the signature in the exact form 'orientable genus N with B boundary loops' or 'non-orientable genus N with B boundary loops'. Justify how you followed the surface through occlusion and distinguished a true handle, crosscap, or boundary opening from one caused only by viewing angle. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: surface_type, handle_or_crosscap_genus, euler_characteristic, topological_signature
-Selection distribution: {"[\"most prominent hole or twist\"]": 3000}
-Constant-answer baselines: {"acceptance_set": 0.125, "euler_characteristic": 0.5233333333333333, "handle_or_crosscap_genus": 0.2733333333333333, "surface_type": 0.25, "targets": 1.0, "topological_signature": 0.25}
+Template: Identify the surface family, then give its exact Euler characteristic (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: surface_family, euler_characteristic
+Constant-answer baselines: {"euler_characteristic": 0.5233333333333333, "surface_family": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

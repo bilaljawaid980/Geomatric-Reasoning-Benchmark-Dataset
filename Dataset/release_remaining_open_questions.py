@@ -1,4 +1,4 @@
-"""Apply version, manifest, README, and open-annotation metadata for the 32-domain release."""
+"""Apply version, manifest, README, and open-annotation metadata for the 34-domain rewrite."""
 from __future__ import annotations
 
 import json
@@ -49,6 +49,11 @@ def main():
             "open_public_fields_exact":["question_id","image","prompt"],
             "open_ground_truth_rederived_from_scene_metadata":True,
             "open_prompt_no_unrendered_coordinate_scheme":True,
+            "open_maximum_subfacts":3,
+            "open_no_deterministically_redundant_subfacts":True,
+            "open_no_none_placeholders":True,
+            "open_numeric_tolerances_stored_and_stated":True,
+            "open_prompt_does_not_name_reasoning_trap":True,
             "open_png_recoverability_all_items":True,
             "open_composite_answer_baseline_below_0_60":True,
         })
@@ -60,14 +65,14 @@ def main():
         heading="### Supplementary open-ended questions"
         if heading in text:text=text.split(heading)[0].rstrip()+"\n"
         section=(
-            f"\n{heading}\n\nVersion `{new}` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.\n\n"
+            f"\n{heading}\n\nVersion `{new}` rewrites the one parameterized free-response question per image without changing any image or existing five-level question or answer. Each plain-English prompt scores at most three visible sub-facts, does not name its own reasoning trap, requires a brief visual justification, and ends with a confidence score from 0 to 1.\n\n"
             "- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.\n"
-            "- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.\n"
+            "- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.\n"
             "- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.\n"
             "- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.\n\n"
-            f"The composite acceptance-set preflight baseline is `{metrics['preflight']['baseline']:.6f}`. "
+            f"The composite acceptance-set baseline is `{metrics['composite_answer_baseline']:.6f}`. "
             f"Scored fields at or above 60% after template revision: `{json.dumps(metrics['fields_at_or_above_60_percent'],sort_keys=True)}`. "
-            f"Targeted fields: `{', '.join(metrics['metadata_fields_targeted'])}`. "
+            f"Targeted fields: `{', '.join(metrics['subfacts'])}`. "
             "Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.\n"
         )
         readme_path.write_text(text.rstrip()+"\n"+section,encoding="utf-8")

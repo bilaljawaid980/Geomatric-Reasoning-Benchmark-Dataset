@@ -1,12 +1,10 @@
-ROUTE OPEN-QUESTION VALIDATION REPORT
-=====================================
-Questions: 3000
-Derivation mismatches: 0
-PNG-recoverable items: 3000/3000
-Selected target degrees: {1: 93, 2: 1090, 3: 1506, 4: 247, 5: 63, 6: 1}
-Connected-pair diagnostic (of canonical 15): {2: 4, 3: 96, 4: 405, 5: 809, 6: 755, 7: 484, 8: 301, 9: 119, 10: 26, 11: 1}
-Constant baselines: {'target': 0.212, 'target_degree': 0.502, 'lines_at_target': 0.502, 'colors': 0.006666666666666667, 'reached': 0.06833333333333333, 'unreached': 0.087, 'answer': 0.913}
-Fields over 60%: {'answer': 0.913}
-Issues: 0
-None
-Summary: PASS
+Open-question validation: route_dataset_3000
+Status: PASS
+Items: 3000
+Template: Trace every coloured line touching label D. For each colour, name its far-end label, then give the exact total number of bends across those lines (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: far_ends_by_colour, total_bends
+Constant-answer baselines: {"far_ends_by_colour": 0.0013333333333333333, "total_bends": 0.07933333333333334}
+Fields >=60%: {}
+Independent derivation mismatches: 0
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

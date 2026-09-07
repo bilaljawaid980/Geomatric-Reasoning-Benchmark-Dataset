@@ -1,12 +1,10 @@
-Supplementary open-question validation: optical_illusion_dataset_3000
+Open-question validation: optical_illusion_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the central measurable element labelled A and compare only its actual endpoint-to-endpoint geometry with B: report both true lengths or diameters, their true relation using only A larger, B larger, or equal, the absolute difference, and the stated percent difference. Justify from the matching endpoints or circle boundaries and explain how you ignored the surrounding illusion context that biases apparent size. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: illusion_type, element_A_true_value, element_B_true_value, true_relation, absolute_difference, percent_difference
-Selection distribution: {"[\"A\",\"B\"]": 3000}
-Constant-answer baselines: {"absolute_difference": 0.5, "acceptance_set": 0.013, "element_A_true_value": 0.024333333333333332, "element_B_true_value": 0.025666666666666667, "illusion_type": 0.35, "percent_difference": 0.5, "targets": 1.0, "true_relation": 0.5}
+Template: Compare the actual central elements A and B, ignoring apparent size. Answer A larger, B larger, or equal. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: true_relation
+Constant-answer baselines: {"true_relation": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

@@ -1,12 +1,10 @@
-Supplementary open-question validation: physical_stability_dataset_3000
+Open-question validation: physical_stability_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the contact supporting block C and consider that block together with every labelled block above it: list those labels, locate their combined centre of mass relative to the supporting base using only left, inside, or right, decide whether this joint is stable, and then conclude whether the whole stack is stable. Justify from visible block widths and offsets, explaining how a dramatic single-block overhang can mislead compared with the combined mass. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: supporting_block, upper_block, blocks_above, combined_com_relation, joint_stable, whole_stack_stable
-Selection distribution: {"[\"B\"]": 777, "[\"C\"]": 855, "[\"D\"]": 859, "[\"E\"]": 509}
-Constant-answer baselines: {"acceptance_set": 0.11466666666666667, "blocks_above": 0.17733333333333334, "combined_com_relation": 0.5, "joint_stable": 0.5, "supporting_block": 0.28633333333333333, "targets": 0.28633333333333333, "upper_block": 0.28633333333333333, "whole_stack_stable": 0.5}
+Template: At the contact below block A, list the blocks above that contact and say whether their combined centre of mass lies left of, inside, or right of the supporting base. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: blocks_above_contact, combined_centre_of_mass
+Constant-answer baselines: {"blocks_above_contact": 0.12633333333333333, "combined_centre_of_mass": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

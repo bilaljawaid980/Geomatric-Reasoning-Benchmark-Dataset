@@ -1,4 +1,4 @@
-"""Build one supplementary, metadata-derived open question for every remaining domain."""
+"""Build one concise open-ended visual question per image for all 34 domains."""
 from __future__ import annotations
 
 import argparse
@@ -6,26 +6,17 @@ import csv
 import hashlib
 import json
 import math
-import re
 from collections import Counter, defaultdict, deque
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parent
-EXCLUDED = {"route_dataset_3000", "hex_pathfinding_dataset_3000"}
 PUBLIC_COLUMNS = ["question_id", "image", "prompt"]
-COMMON_PRIVATE = ["question_id", "image", "acceptance_set", "targets"]
-CONFIDENCE = " End with a confidence score from 0 to 1."
+COMMON_PRIVATE = ["question_id", "image", "acceptance_set", "targets", "tolerances"]
+CONFIDENCE = " Explain briefly what you used in the image, then end with a confidence score from 0 to 1."
 
 
 def compact(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-
-
-def fmt(value, digits=2):
-    if isinstance(value, int) or (isinstance(value, float) and value.is_integer()):
-        return str(int(value))
-    return str(round(float(value), digits))
 
 
 def seeded_index(record, count, salt="open"):
@@ -33,417 +24,301 @@ def seeded_index(record, count, salt="open"):
     return int.from_bytes(digest[:8], "big") % count
 
 
-def position_name(x, y, width, height):
-    vertical = "top" if y < height / 3 else ("bottom" if y > 2 * height / 3 else "middle")
-    horizontal = "left" if x < width / 3 else ("right" if x > 2 * width / 3 else "centre")
-    return f"{vertical}-{horizontal}"
+def nearest(value, step):
+    return int(math.floor(float(value) / step + 0.5 + 1e-9) * step)
 
 
 def acceptance(facts):
-    return ["; ".join(f"{key}={value}" for key, value in facts.items())]
+    return ["; ".join(f"{key}={compact(value) if isinstance(value, (list, dict)) else value}" for key, value in facts.items())]
 
 
-def result(prompt, facts, targets, derivation, acceptance_set=None):
-    return {
-        "prompt": prompt + CONFIDENCE,
-        "facts": facts,
-        "targets": targets,
-        "acceptance_set": acceptance_set or acceptance(facts),
-        "derivation": derivation,
-    }
+def result(prompt, facts, targets, derivation, tolerances=None):
+    return {"prompt": prompt + CONFIDENCE, "facts": facts, "targets": targets,
+            "tolerances": tolerances or {}, "acceptance_set": acceptance(facts), "derivation": derivation}
+
+
+def angle_class(value):
+    if value < 90: return "acute"
+    if value == 90: return "right"
+    if value < 180: return "obtuse"
+    return "reflex"
 
 
 def derive_angle(r):
-    scene = r["scene_type"]
-    if scene == "single":
-        a = r["angle_degrees"]
-        facts = {"scene_form": "one marked angle", "primary_label": "marked angle", "primary_measure_degrees": round(a), "secondary_label": "none", "secondary_measure_degrees": "none", "comparison_summary": r["marked_sweep"]}
-        start = "the marked arc"
-        request_clause = "classify the marked sweep as minor or reflex, give its rounded measure, and use the marked-angle label as the primary result"
-    elif scene == "comparison":
-        vals = [r["angle_1_degrees"], r["angle_2_degrees"]]
-        wider="Angle 1" if vals[0] > vals[1] else "Angle 2"; narrower="Angle 2" if wider=="Angle 1" else "Angle 1"
-        facts = {"scene_form": "two labelled angles", "primary_label": wider, "primary_measure_degrees": round(max(vals)), "secondary_label": narrower, "secondary_measure_degrees": round(min(vals)), "comparison_summary": f"wider-to-narrower ratio {fmt(max(vals)/min(vals),2)}"}
-        start = "the printed label Angle 1"
-        request_clause = "name the wider and narrower labels, give both rounded measures, and report the wider-to-narrower ratio to two decimals"
+    if r["scene_type"] == "single":
+        label, value = "marked angle", r["angle_degrees"]
+    elif r["scene_type"] == "comparison":
+        index = seeded_index(r, 2, "angle"); label, value = f"Angle {index + 1}", r[f"angle_{index + 1}_degrees"]
     else:
-        vals = r["interior_angles_degrees"]
-        facts = {"scene_form": "labelled triangle", "primary_label": r["largest_angle_vertex"], "primary_measure_degrees": round(max(vals)), "secondary_label": r["smallest_angle_vertex"], "secondary_measure_degrees": round(min(vals)), "comparison_summary": f"middle vertex {next(k for k in 'ABC' if k not in {r['largest_angle_vertex'],r['smallest_angle_vertex']})}"}
-        start = "the printed vertex A"
-        request_clause = "name the largest and smallest-angle vertices with their rounded measures and identify the remaining middle-angle vertex"
-    prompt = f"Start at {start} and inspect the whole angular construction: identify the scene form, then {request_clause}. Justify the result by explaining how you followed the rays or triangle sides and overcame the misleading effect of orientation and unequal ray lengths. Use only labels printed in the image and degrees for measures."
-    return result(prompt, facts, [start], {"scene_type": scene, "source_values": vals if scene != "single" else [a]})
+        index = seeded_index(r, 3, "angle"); label, value = "ABC"[index], r["interior_angles_degrees"][index]
+    facts = {"angle_degrees_nearest_5": nearest(value, 5), "angle_class": angle_class(value)}
+    prompt = f"Look at {label}. Estimate its measure to the nearest 5 degrees, and classify it as acute, right, obtuse, or reflex."
+    return result(prompt, facts, [label], {"source_angle_degrees": value},
+                  {"angle_degrees_nearest_5": {"absolute_tolerance": 2.5, "unit": "degrees"}})
 
 
 def derive_clock(r):
-    h, m = r["hour"], r["minute"]
-    minute_ticks = m
-    hour_past = (m / 60) * 5
-    nearer = "hour hand" if min(r["hour_angle"] % 360, 360 - r["hour_angle"] % 360) < min(r["minute_angle"] % 360, 360 - r["minute_angle"] % 360) else "minute hand"
-    facts = {"read_time": r["time"], "minute_hand_ticks_from_12": minute_ticks, "hour_hand_ticks_past_hour": fmt(hour_past, 2), "nearer_to_12": nearer, "smaller_separation_degrees": fmt(r["angle_between_hands"], 1)}
-    prompt = "Start at the printed 12 and trace both hands from the centre: read the time, count the minute-hand tick displacement from 12, estimate how far the hour hand has advanced beyond its numbered hour in five-minute tick units, identify which hand tip is nearer to 12, and give their smaller angular separation. Justify how the tick marks resolved the misleading hand lengths and near-alignment."
-    return result(prompt, facts, ["12"], {"hour_angle": r["hour_angle"], "minute_angle": r["minute_angle"]})
+    facts = {"time": r["time"], "smaller_angle_degrees_nearest_5": nearest(r["angle_between_hands"], 5)}
+    return result("Read the time on the clock, then estimate the smaller angle between the hands to the nearest 5 degrees.",
+                  facts, ["clock hands"], {"hour": r["hour"], "minute": r["minute"], "angle": r["angle_between_hands"]},
+                  {"smaller_angle_degrees_nearest_5": {"absolute_tolerance": 2.5, "unit": "degrees"}})
 
 
 def derive_combination(r, is3d):
     invalid = [c for c in r["candidates"] if not c["is_valid_assembly"]]
-    c = invalid[seeded_index(r, len(invalid), "invalid-candidate")]
-    key = "total_cube_count" if is3d else "total_cell_count"
-    target = r["target_cube_count"] if is3d else r["target_cell_count"]
-    counts = [len(piece) for piece in c["pieces"]]
-    reason_words = {"gap_or_overlap": "gap or overlap", "wrong_count": "wrong cube count", "wrong_area": "wrong cell count", "requires_3d_tumble": "requires a forbidden 3D tumble", "requires_reflection": "requires a reflection"}
-    facts = {"candidate": c["choice_label"], "piece_counts": counts, "candidate_total": c[key], "target_total": target, "blocking_reason": reason_words[c["failure_reason"]]}
-    noun = "cubes" if is3d else "cells"
-    difficulty = "occluded cube faces and the drawn vertical z direction" if is3d else "rotated outlines and apparent near-fits"
-    prompt = f"Start at candidate {c['choice_label']} and compare each of its separated pieces with the target: count the {noun} in every piece, combine those counts, decide whether the pieces can reproduce the target under the rotations allowed by the drawing, and name the single blocking reason using only: gap or overlap, wrong {noun[:-1]} count, " + ("requires a forbidden 3D tumble" if is3d else "requires a reflection") + f". Justify the verdict by describing the fit and how you overcame {difficulty}."
-    return result(prompt, facts, [c["choice_label"]], {"candidate": c, "target_count": target})
+    candidate = invalid[seeded_index(r, len(invalid), "invalid-candidate")]
+    words = {"gap_or_overlap": "gap or overlap", "wrong_count": "wrong cube count", "wrong_area": "wrong cell count",
+             "requires_3d_tumble": "requires a forbidden 3D tumble", "requires_reflection": "requires a reflection"}
+    noun = "cube" if is3d else "cell"
+    choices = f"gap or overlap, wrong {noun} count, " + ("or requires a forbidden 3D tumble" if is3d else "or requires a reflection")
+    facts = {"blocking_reason": words[candidate["failure_reason"]]}
+    prompt = f"Candidate {candidate['choice_label']} does not make the target using the allowed moves. Choose its single blocking reason from: {choices}."
+    return result(prompt, facts, [candidate["choice_label"]], {"candidate": candidate})
+
+
+def bearing_word(value):
+    names = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"]
+    return names[int((value + 22.5) // 45) % 8]
 
 
 def derive_compass(r):
-    labels = sorted(r["landmarks"])
-    target = labels[seeded_index(r, len(labels), "landmark")]
-    pairs = [(b, r["all_pairwise_distances"]["-".join(sorted((target,b)))], r["all_pairwise_bearings"][f"{target}-to-{b}"]) for b in labels if b != target]
-    mind, maxd = min(x[1] for x in pairs), max(x[1] for x in pairs)
-    nearest, farthest = sorted(x[0] for x in pairs if abs(x[1]-mind)<1e-8), sorted(x[0] for x in pairs if abs(x[1]-maxd)<1e-8)
-    bearing = next(x[2] for x in pairs if x[0] == nearest[0])
-    sectors = ["north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west"]
-    sector = sectors[int((bearing + 22.5)//45)%8]
-    facts = {"target": target, "nearest_labels": nearest, "nearest_distance": fmt(mind, 2), "farthest_labels": farthest, "farthest_distance": fmt(maxd, 2), "bearing_to_first_nearest": sector}
-    prompt = f"Start at landmark {target} and compare every straight-line displacement to the other printed landmarks: name all nearest and all farthest landmarks, give both distances to two decimals, and classify the direction from {target} to the alphabetically first nearest landmark using only north, north-east, east, south-east, south, south-west, west, or north-west. Justify the comparison using the compass rose and explain how you resisted judging distance from horizontal or vertical separation alone."
-    return result(prompt, facts, [target], {"pair_values": pairs})
+    labels = sorted(r["landmarks"]); target = labels[seeded_index(r, len(labels), "landmark")]
+    pairs = [(x, r["all_pairwise_distances"]["-".join(sorted((target, x)))], r["all_pairwise_bearings"][f"{target}-to-{x}"]) for x in labels if x != target]
+    low, high = min(x[1] for x in pairs), max(x[1] for x in pairs)
+    nearest_labels = sorted(x[0] for x in pairs if abs(x[1] - low) < 1e-8)
+    bearing = next(x[2] for x in pairs if x[0] == nearest_labels[0])
+    facts = {"nearest_landmarks": nearest_labels, "farthest_landmarks": sorted(x[0] for x in pairs if abs(x[1] - high) < 1e-8),
+             "direction_to_first_nearest": bearing_word(bearing)}
+    prompt = f"From landmark {target}, name the nearest and farthest landmarks. Then give the direction to the alphabetically first nearest landmark using one of eight equal 45-degree sectors centred on north, north-east, east, south-east, south, south-west, west, and north-west."
+    return result(prompt, facts, [target], {"pair_values": pairs, "sector_boundaries_degrees": [22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5]})
 
 
 def derive_coordinate(r):
-    labels = sorted(r["points"])
-    target = labels[seeded_index(r, len(labels), "point")]
-    pairs = [(b, r["all_pairwise_distances"]["-".join(sorted((target,b)))]) for b in labels if b != target]
-    mind, maxd = min(v for _,v in pairs), max(v for _,v in pairs)
-    facts = {"target": target, "target_coordinates": r["points"][target], "nearest_labels": sorted(k for k,v in pairs if abs(v-mind)<1e-8), "nearest_distance": fmt(mind,2), "farthest_labels": sorted(k for k,v in pairs if abs(v-maxd)<1e-8), "farthest_distance": fmt(maxd,2)}
-    prompt = f"Start at point {target} on the printed coordinate grid, read its ordered pair, then compare its displacement to every other labelled point and name all nearest and all farthest points with the corresponding Euclidean distances to two decimals. Justify using horizontal and vertical grid differences and explain how you avoided the misleading visual shortcut of judging only one axis."
-    return result(prompt, facts, [target], {"points": r["points"], "distances_from_target": pairs})
+    labels = sorted(r["points"]); target = labels[seeded_index(r, len(labels), "point")]
+    pairs = [(x, r["all_pairwise_distances"]["-".join(sorted((target, x)))]) for x in labels if x != target]
+    low, high = min(x[1] for x in pairs), max(x[1] for x in pairs)
+    facts = {"target_coordinates": r["points"][target], "nearest_points": sorted(x for x,v in pairs if abs(v-low)<1e-8),
+             "farthest_points": sorted(x for x,v in pairs if abs(v-high)<1e-8)}
+    return result(f"Read the exact grid coordinates of point {target} (tolerance 0), then name the point or points nearest to it and the point or points farthest from it.", facts, [target], {"points": r["points"], "distances": pairs}, {"target_coordinates":{"absolute_tolerance":0,"unit":"grid unit per coordinate"}})
 
 
 def derive_cube_net(r):
-    labels = sorted(r["net_edge_neighbors"])
-    preferred = [x for x in labels if len(r["net_edge_neighbors"][x]) in (2,3)] or labels
-    target = preferred[seeded_index(r, len(preferred), "face")]
+    labels = sorted(r["net_edge_neighbors"]); target = labels[seeded_index(r, len(labels), "face")]
     opposite = next(b if a == target else a for a,b in r["opposite_pairs"] if target in (a,b))
-    facts = {"target_face": target, "flat_net_neighbours": sorted(r["net_edge_neighbors"][target]), "opposite_after_folding": opposite, "adjacent_after_folding": sorted(r["cube_adjacent_faces"][target])}
-    prompt = f"Start at face {target} in the labelled net and work outward across shared edges: list its edge-neighbours while flat, then mentally fold the net and name its opposite face and all four faces adjacent to it on the cube. Justify the fold path and explain how you avoided treating a corner touch or a distant flat square as a folded edge contact."
-    return result(prompt, facts, [target], {"net": r["net_edge_neighbors"], "folded": r["cube_adjacent_faces"]})
+    facts = {"opposite_face": opposite, "flat_edge_neighbours": sorted(r["net_edge_neighbors"][target])}
+    return result(f"For face {target}, name the face opposite it after folding and list the faces that share an edge with it while the net is still flat.", facts, [target], {"opposite_pairs": r["opposite_pairs"], "net_edge_neighbors": r["net_edge_neighbors"]})
 
 
 def derive_cube_structure(r):
     columns = Counter((c["x"], c["y"]) for c in r["cubes"])
-    hist = Counter(columns.values())
-    facts = {"visible_vertical_columns": len(columns), "height_histogram": {str(k): hist[k] for k in sorted(hist)}, "tallest_column_height": max(columns.values()), "cube_total_from_columns": sum(columns.values())}
-    prompt = "Start at the visibly tallest vertical stack and scan the structure column by column in the renderer's drawn vertical z direction: report how many occupied columns there are, give a histogram stating how many columns have each height, identify the tallest height, and sum the histogram to recover the cube total. Justify how you separated stacked cubes from cubes merely offset in depth despite occluded faces. Use z as the vertical axis."
-    return result(prompt, facts, ["visibly tallest vertical stack"], {"column_heights": sorted(columns.values())})
+    facts = {"occupied_columns": len(columns), "tallest_column_height": max(columns.values())}
+    return result("Count the occupied vertical columns and give the height of the tallest column. Give both counts exactly (tolerance 0).", facts, ["whole cube structure"], {"column_heights": sorted(columns.values())}, {k:{"absolute_tolerance":0,"unit":"count"} for k in facts})
 
 
 def derive_depth(r):
-    width, height = r["canvas_size"]
     if r["scene_type"] == "stack_height":
-        stacks=sorted(r["stacks"],key=lambda o:o["position_x"])
-        target=stacks[seeded_index(r,len(stacks),"visible-object")]
-        heights=[o["block_count"] for o in stacks]; rank=1+sorted(heights,reverse=True).index(target["block_count"])
-        facts={"target_color":target["color"],"target_shape":"block stack","target_position":"left" if target is stacks[0] else ("right" if target is stacks[-1] else "middle"),"height_units":target["block_count"],"height_rank_tallest_first":rank,"tallest_colors":sorted(o["color"] for o in stacks if o["block_count"]==max(heights))}
-        prompt=f"Start at the {target['color']} stack and compare it with every other coloured stack: identify its plain-language image position, count its blocks, rank it from tallest to shortest, and name every colour tied for tallest. Justify from the visible block boundaries and how you overcame overlap and unequal base placement rather than relying on overall pixel height."
-        return result(prompt,facts,[target["color"]],{"scene_type":r["scene_type"],"stacks":stacks})
-    objects = r["objects"]
-    ordered = sorted(objects, key=lambda o:o["canvas_position"][0])
-    target = ordered[seeded_index(r, len(ordered), "visible-object")]
-    if r["scene_type"] == "depth_ordering":
-        rank = r["depth_ordering"].index(target["color"])+1
-        facts = {"target_color": target["color"], "target_shape": target["shape_type"], "target_position": position_name(*target["canvas_position"], width, height), "depth_rank_nearest_first": rank, "rendered_size": fmt(target["rendered_size"],1), "nearest_color": r["closest_object_color"], "farthest_color": r["farthest_object_color"]}
-        action = "rank it from nearest to farthest and report the nearest and farthest colours"
-        visual = "perspective size and vertical-position cues"
-    prompt = f"Start at the {target['color']} element and compare it with every other coloured element: identify its shape and plain-language image position, {action}. Justify which visible cues support the ordering and how you overcame {visual} rather than relying on a single cue."
-    return result(prompt, facts, [target["color"]], {"scene_type": r["scene_type"], "objects": objects})
+        stacks = sorted(r["stacks"], key=lambda x:x["position_x"]); target = stacks[seeded_index(r,len(stacks),"stack")]
+        maximum = max(x["block_count"] for x in stacks)
+        facts = {"block_count": target["block_count"], "tallest_stack_colors": sorted(x["color"] for x in stacks if x["block_count"]==maximum)}
+        return result(f"Count the blocks in the {target['color']} stack and name every colour tied for tallest. Give the block count exactly (tolerance 0).", facts, [target["color"]], {"stacks":stacks}, {"block_count":{"absolute_tolerance":0,"unit":"count"}})
+    facts = {"nearest_object_color": r["closest_object_color"], "farthest_object_color": r["farthest_object_color"]}
+    return result("Using the depth cues in the scene, name the nearest object colour and the farthest object colour.", facts, ["all coloured objects"], {"objects":r["objects"],"depth_ordering":r["depth_ordering"]})
 
 
 def derive_embedded(r):
-    invalid = [c for c in r["candidate_choices"] if not c["is_correct"]]
-    c = invalid[seeded_index(r,len(invalid),"candidate")]
-    signature=f"{c['description']}; side difference {c['side_count']-len(r['target_vertices']):+d}"
-    facts = {"candidate": c["label"], "target_sides": len(r["target_vertices"]), "candidate_sides": c["side_count"], "side_difference": c["side_count"]-len(r["target_vertices"]), "mismatch_signature": signature}
-    prompt = f"Start at candidate {c['label']} and compare its complete outline with the shape hidden in the dense line drawing: report the side count of each, their signed side-count difference, decide whether they are the same shape up to rotation and scale, and name the mismatch. Justify by tracing a closed boundary through the clutter and explaining how you separated target edges from crossing distractor segments."
-    return result(prompt, facts, [c["label"]], {"candidate":c,"target_vertices":r["target_vertices"]})
+    facts = {"target_shape": r["target_shape_type"], "matching_candidate": r["correct_answer_choice"]}
+    return result("Name the shape hidden in the line drawing, then give the letter of the candidate with the same outline under rotation and scaling.", facts, ["hidden outline","candidate panel"], {"target_edges":r["target_edges"],"candidate_choices":r["candidate_choices"]})
 
 
-def direction8(deg):
+def math_direction8(value):
     names=["right","upper-right","up","upper-left","left","lower-left","down","lower-right"]
-    return names[int(((360-deg)%360+22.5)//45)%8]
-
-
-def math_direction8(deg):
-    names=["right","upper-right","up","upper-left","left","lower-left","down","lower-right"]
-    return names[int(((deg%360)+22.5)//45)%8]
+    return names[int(((360-value)%360+22.5)//45)%8]
 
 
 def derive_fbd(r):
-    shown=r["shown_forces"]
-    f=shown[seeded_index(r,len(shown),"shown-arrow")]
-    mags=sorted({x["magnitude"] for x in shown},reverse=True)
-    same=sorted(x["arrow_label"] for x in shown if abs(((x["direction_degrees"]-f["direction_degrees"]+180)%360)-180)<1e-8)
-    facts={"target_arrow":f["arrow_label"],"force_type_as_drawn":f["type"],"direction_as_drawn":math_direction8(f["direction_degrees"]),"magnitude_rank_largest_first":mags.index(f["magnitude"])+1,"same_direction_arrow_labels":same,"shown_arrow_count":len(shown)}
-    prompt=f"Treat only the diagram as drawn, including any deliberately incorrect arrows, and start at arrow {f['arrow_label']}: identify its displayed force type, classify its arrow direction using only up, upper-right, right, lower-right, down, lower-left, left, or upper-left, rank its drawn magnitude from largest to smallest with ties sharing a rank, and list every arrow label drawn in the same direction. Justify from the arrowheads and relative lengths, explaining how you kept the drawn frame separate from the physically correct scenario."
-    return result(prompt,facts,[f["arrow_label"]],{"shown_forces":shown,"physical_frame_not_used":True})
+    shown=r["shown_forces"]; force=shown[seeded_index(r,len(shown),"shown-arrow")]; ranks=sorted({x["magnitude"] for x in shown},reverse=True)
+    facts={"force_type_as_drawn":force["type"],"direction_as_drawn":math_direction8(force["direction_degrees"]),"magnitude_rank_largest_first":ranks.index(force["magnitude"])+1}
+    prompt=f"For arrow {force['arrow_label']} in the diagram as drawn, name its force type, give its direction as up, upper-right, right, lower-right, down, lower-left, left, or upper-left, and give its exact rank by arrow length from largest to smallest (tolerance 0), with ties sharing a rank."
+    return result(prompt,facts,[force["arrow_label"]],{"shown_forces":shown},{"magnitude_rank_largest_first":{"absolute_tolerance":0,"unit":"rank"}})
 
 
 def derive_fold(r):
-    axes=[x["axis"] for x in r["fold_sequence"]]
-    directions=[x["direction"] for x in r["fold_sequence"]]
-    xs={round(x,6) for x,_ in r["unfolded_hole_positions"]}; ys={round(y,6) for _,y in r["unfolded_hole_positions"]}
-    facts={"fold_directions":directions,"horizontal_folds":axes.count("horizontal"),"vertical_folds":axes.count("vertical"),"unfolded_holes":len(r["unfolded_hole_positions"]),"distinct_hole_columns":len(xs),"distinct_hole_rows":len(ys)}
-    prompt="Start at the punched hole in the final folded panel and read the fold arrows backward: state the fold directions in displayed order, count horizontal and vertical folds, then predict the number of holes after full unfolding and how many distinct rows and columns those holes occupy. Justify each reflection and explain how you kept overlapping fold layers separate. Use only horizontal, vertical, left over right, right over left, top over bottom, and bottom over top."
-    return result(prompt,facts,["punched hole"],{"fold_sequence":r["fold_sequence"],"unfolded_holes":r["unfolded_hole_positions"]})
+    facts={"fold_directions":[x["direction"] for x in r["fold_sequence"]],"unfolded_hole_count":len(r["unfolded_hole_positions"])}
+    return result("State the fold directions in the order shown, then give the exact number of holes after the paper is fully unfolded (tolerance 0).",facts,["fold panels","punched hole"],{"fold_sequence":r["fold_sequence"],"unfolded_hole_positions":r["unfolded_hole_positions"]},{"unfolded_hole_count":{"absolute_tolerance":0,"unit":"count"}})
 
 
 def derive_gauge(r):
-    v,step=r["needle_value"],r["tick_interval"]
-    lower=math.floor((v-r["min_value"])/step)*step+r["min_value"]
-    upper=min(lower+step,r["max_value"])
-    frac=0 if upper==lower else (v-lower)/(upper-lower)
-    facts={"instrument":r["instrument_type"],"unit":r["unit"],"lower_bracketing_tick":fmt(lower),"upper_bracketing_tick":fmt(upper),"fraction_from_lower_tick":fmt(frac,2),"exact_needle_value":fmt(v,2)}
-    prompt="Start at the needle tip and locate the two labelled scale ticks that bracket it: name the instrument and unit, give both bracketing values, state the fraction of that interval traversed from the lower tick to two decimals, and use that interpolation to report the exact reading. Justify from the minor ticks and explain how you avoided snapping the needle to the visually nearest labelled mark."
-    return result(prompt,facts,["needle tip"],{"min":r["min_value"],"max":r["max_value"],"tick_interval":step,"needle_value":v})
+    facts={"instrument":r["instrument_type"],"reading_nearest_tick":r["rounded_tick_value"]}
+    return result(f"Name the instrument and read the needle to the nearest minor tick in {r['unit']}; answers within half a minor-tick interval are accepted.",facts,["needle","dial labels"],{"needle_value":r["needle_value"],"tick_interval":r["tick_interval"]},{"reading_nearest_tick":{"absolute_tolerance":r["tick_interval"]/2,"unit":r["unit"]}})
 
 
 def graph_dist(edges,start):
-    adj=defaultdict(list)
-    for a,b in edges: adj[a].append(b);adj[b].append(a)
-    q=deque([(start,[start])]);seen={start}
-    while q:
-        node,path=q.popleft()
-        yield node,path
-        for nxt in sorted(adj[node]):
-            if nxt not in seen:seen.add(nxt);q.append((nxt,path+[nxt]))
+    adjacency=defaultdict(list)
+    for a,b in edges: adjacency[a].append(b);adjacency[b].append(a)
+    queue,seen=deque([(start,[start])]),{start}
+    while queue:
+        node,path=queue.popleft();yield node,path
+        for nxt in sorted(adjacency[node]):
+            if nxt not in seen: seen.add(nxt);queue.append((nxt,path+[nxt]))
 
 
 def derive_gear(r):
-    paths=list(graph_dist(r["mesh_edges"],r["driver_label"]))
-    preferred=[x for x in paths if len(x[1]) in (3,4)] or [x for x in paths if x[0]!=r["driver_label"]]
-    target,path=preferred[seeded_index(r,len(preferred),"gear")]
-    gear=next(x for x in r["gears"] if x["label"]==target); rot=r["computed_rotation"][target]
-    facts={"target_gear":target,"mesh_path":path,"target_teeth":gear["tooth_count"],"target_direction":rot["direction"],"target_rpm":fmt(rot["rpm"],2)}
-    prompt=f"Start at the arrowed driver gear {r['driver_label']} and trace tooth contacts to gear {target}: list the printed gear labels along the shortest mesh path, count the contacts, read the target tooth count, and derive its rotation direction and speed in rpm. Justify every direction reversal and tooth-ratio step, explaining how touching outlines and unequal gear sizes can mislead the eye. Use only CW or CCW for direction."
-    return result(prompt,facts,[r["driver_label"],target],{"path":path,"computed_rotation":r["computed_rotation"]})
+    paths=[x for x in graph_dist(r["mesh_edges"],r["driver_label"]) if x[0]!=r["driver_label"]];target,path=paths[seeded_index(r,len(paths),"gear")]
+    rotation=r["computed_rotation"][target];facts={"rotation_direction":rotation["direction"],"speed_rpm_nearest_whole":nearest(rotation["rpm"],1)}
+    return result(f"Trace the meshing gears from driver {r['driver_label']} to gear {target}. Give gear {target}'s rotation direction as CW or CCW and its speed to the nearest whole rpm.",facts,[r["driver_label"],target],{"mesh_path":path,"gears":r["gears"],"computed_rotation":r["computed_rotation"]},{"speed_rpm_nearest_whole":{"absolute_tolerance":0.5,"unit":"rpm"}})
+
+
+HEX_DIRECTIONS=[("upper-left",(0,-1)),("upper-right",(1,-1)),("left",(-1,0)),("right",(1,0)),("lower-left",(-1,1)),("lower-right",(0,1))]
+def derive_hex(r):
+    tiles={tuple(x["coordinate"]):x["color"] for x in r["all_tiles"]};q,s=r["home_coordinate"]
+    neighbours=[tiles[(q+dq,s+ds)] for _,(dq,ds) in HEX_DIRECTIONS if (q+dq,s+ds) in tiles]
+    facts={"grey_holes_touching_home":sum(x=="grey" for x in neighbours),"walkable_hexes_touching_home":sum(x!="grey" for x in neighbours)}
+    return result("Look at the hexes directly touching HOME. Count the grey holes and the walkable hexes separately; give both counts exactly (tolerance 0).",facts,["HOME"],{"home_coordinate":r["home_coordinate"],"neighbour_colours":neighbours},{k:{"absolute_tolerance":0,"unit":"count"} for k in facts})
 
 
 def derive_impossible(r):
-    crossings=r["crossings"]
-    choices=[x for x in crossings if x["crossing_id"]!=r.get("reference_crossing_id")] or crossings
-    x=choices[seeded_index(r,len(choices),"crossing")]
-    facts={"crossing":x["crossing_id"],"crossing_beams":sorted([x["beam_a"],x["beam_b"]]),"front_beam":x["front_beam"],"back_beam":x["back_beam"],"total_crossings":len(crossings),"front_beam_wins":sum(y["front_beam"]==x["front_beam"] for y in crossings)}
-    prompt=f"Start at printed crossing {x['crossing_id']} and trace both labelled beams through the full drawing: name the two beams there, state which is in front and which is behind, count all printed crossings, and count how many crossings place that same front beam in front. Justify using the visible interruptions at overlaps and explain how you kept local over-under cues attached to the correct long beam."
-    return result(prompt,facts,[x["crossing_id"]],{"selected_crossing":x,"crossings":crossings})
+    crossings=r["crossings"]; crossing=crossings[seeded_index(r,len(crossings),"crossing")];facts={"front_beam":crossing["front_beam"],"total_crossings":len(crossings)}
+    return result(f"At crossing {crossing['crossing_id']}, name the beam drawn in front, then count all labelled crossings exactly (tolerance 0).",facts,[crossing["crossing_id"]],{"selected_crossing":crossing,"crossings":crossings},{"total_crossings":{"absolute_tolerance":0,"unit":"count"}})
 
 
 def derive_laser(r):
-    hits=[]
-    mirror_by_cell={tuple(x["cell"]):x for x in r["mirrors"]}
-    for cell in r["path_cells"]:
-        if tuple(cell) in mirror_by_cell: hits.append(mirror_by_cell[tuple(cell)])
-    facts={"entry_edge":r["entry_edge"],"entry_position":r["entry_position"],"mirrors_hit_in_order":[x["cell_label"] for x in hits],"mirror_orientations":[x["orientation"] for x in hits],"reflection_count":len(hits),"exit_edge":r["exit_edge"],"exit_position":r["exit_position"]}
-    prompt="Start where the laser enters the labelled grid and trace the beam cell by cell: state the entry edge and numbered position, list every printed mirror-cell label hit in order with its slash orientation, count reflections, and give the final exit edge and numbered position. Justify each change of direction and explain how you distinguished mirrors crossed by the beam from nearby unused mirrors. Use top, right, bottom, or left and / or \\ for orientations."
-    return result(prompt,facts,[f"{r['entry_edge']} {r['entry_position']}"],{"path_cells":r["path_cells"],"hit_mirrors":hits})
+    mirrors={tuple(x["cell"]):x for x in r["mirrors"]};hits=[mirrors[tuple(cell)]["cell_label"] for cell in r["path_cells"] if tuple(cell) in mirrors]
+    facts={"mirrors_hit_in_order":hits,"exit_edge":r["exit_edge"],"exit_position":r["exit_position"]}
+    return result("Trace the laser through the grid. List the printed mirror-cell labels it hits in order, then give its exit edge and exact numbered exit position (tolerance 0).",facts,[f"{r['entry_edge']} entry {r['entry_position']}"],{"path_cells":r["path_cells"],"mirrors":r["mirrors"]},{"exit_position":{"absolute_tolerance":0,"unit":"grid position"}})
 
 
 def derive_line(r):
-    crossings=r["intersections"]
-    transition="red changes from above to below" if r["red_above_blue_at_start"] and not r["red_above_blue_at_end"] else ("red changes from below to above" if not r["red_above_blue_at_start"] and r["red_above_blue_at_end"] else "the start and end order is the same")
-    facts={"red_at_left":"above" if r["red_above_blue_at_start"] else "below","red_at_right":"above" if r["red_above_blue_at_end"] else "below","total_crossings":len(crossings),"order_transition":transition,"red_segments_with_crossings":len({x["red_segment_index"] for x in crossings}),"blue_segments_with_crossings":len({x["blue_segment_index"] for x in crossings})}
-    prompt="Start at the left endpoints of the red and blue polylines and follow both to the right: state whether red begins above or below blue and where it ends, count their mutual crossings, describe the resulting order transition, and count how many red segments and blue segments participate in at least one crossing. Justify by tracing through every bend and explain how you excluded self-bends and near touches. Use only above or below for endpoint order."
-    return result(prompt,facts,["left red and blue endpoints"],{"intersections":crossings})
+    facts={"red_at_left":"above" if r["red_above_blue_at_start"] else "below","red_at_right":"above" if r["red_above_blue_at_end"] else "below","total_crossings":r["total_intersections"]}
+    return result("Follow the red and blue lines from left to right. Say whether red is above or below blue at each end, and count their crossings exactly (tolerance 0).",facts,["red and blue lines"],{"intersections":r["intersections"]},{"total_crossings":{"absolute_tolerance":0,"unit":"count"}})
 
 
-def derive_nested(r,name):
-    shapes=r[name]
-    outer,inner=shapes[0],shapes[-1]
-    deltas=[((b["rotation_angle"]-a["rotation_angle"]+180)%360)-180 for a,b in zip(shapes,shapes[1:])]
-    ratios=[b["side_length"]/a["side_length"] for a,b in zip(shapes,shapes[1:])]
-    facts={"shape_count":len(shapes),"outer_to_inner_size_ratio":fmt(outer["side_length"]/inner["side_length"],2),"clockwise_steps":sum(d>1e-6 for d in deltas),"counterclockwise_steps":sum(d<-1e-6 for d in deltas),"largest_shrink_step":1+max(range(len(ratios)),key=lambda i:1-ratios[i])}
-    singular=name[:-1]
-    prompt=f"Start at the outermost {singular} and work inward one outline at a time: count the outlines, compare outer and inner side length as a ratio to two decimals, count clockwise and counterclockwise rotation steps, and identify the numbered outer-to-inner transition with the largest proportional shrink. Justify by following adjacent corners through the nesting and explain how centre drift and changing gaps can imitate rotation or scale change. Number transitions from 1 at the outside."
-    return result(prompt,facts,[f"outermost {singular}"],{"rotation_deltas":deltas,"adjacent_size_ratios":ratios})
+def derive_nested(r,key):
+    facts={"shape_count":r[f"num_{key}"],"cumulative_rotation_degrees_nearest_5":nearest(r["cumulative_rotation_degrees"],5),"shrink_pattern":r["factor_progression_direction"]};noun=key[:-1]
+    prompt=f"Count the nested {key} exactly (tolerance 0), estimate the cumulative rotation from the outermost to the innermost {noun} to the nearest 5 degrees, and say whether the shrink factor is constant, increasing, or decreasing inward."
+    return result(prompt,facts,[f"nested {key}"],{"shapes":r[key],"cumulative_rotation_degrees":r["cumulative_rotation_degrees"],"factor_progression_direction":r["factor_progression_direction"]},{"shape_count":{"absolute_tolerance":0,"unit":"count"},"cumulative_rotation_degrees_nearest_5":{"absolute_tolerance":2.5,"unit":"degrees"}})
 
 
 def derive_occluded(r):
-    facts={"pattern_type":r["pattern_type"],"repeated_shape":r["shape_type"],"visible_count":r["visible_object_count"],"hidden_count":r["occluded_object_count"],"completed_total":r["total_object_count"],"occluder_style":r["occluder_style"]}
-    prompt="Start at the coloured repeated element nearest the occluder edge and reconstruct the full arrangement: name the pattern type and repeated shape, count visible elements, infer the hidden count and completed total, and identify the occluder style. Justify the continuation from spacing and alignment on both sides and explain how you separated genuinely hidden elements from empty pattern positions."
-    return result(prompt,facts,["coloured element nearest the occluder edge"],{"pattern_params":r["pattern_params"],"object_positions":r["object_positions"]})
+    facts={"pattern_type":r["pattern_type"],"visible_count":r["visible_object_count"],"hidden_count":r["occluded_object_count"]}
+    return result("Name the repeated pattern, count the visible objects exactly, and infer the hidden objects exactly (tolerance 0 for both counts).",facts,["repeated objects","occluder"],{"pattern_params":r["pattern_params"],"object_positions":r["object_positions"]},{"visible_count":{"absolute_tolerance":0,"unit":"count"},"hidden_count":{"absolute_tolerance":0,"unit":"count"}})
 
 
 def derive_optical(r):
-    a,b=r["element_a_true_value"],r["element_b_true_value"]
-    relation="equal" if a==b else ("A larger" if a>b else "B larger")
-    facts={"illusion_type":r["illusion_type"],"element_A_true_value":fmt(a,2),"element_B_true_value":fmt(b,2),"true_relation":relation,"absolute_difference":fmt(abs(a-b),2),"percent_difference":fmt(r["percent_difference"],2)}
-    prompt="Start at the central measurable element labelled A and compare only its actual endpoint-to-endpoint geometry with B: report both true lengths or diameters, their true relation using only A larger, B larger, or equal, the absolute difference, and the stated percent difference. Justify from the matching endpoints or circle boundaries and explain how you ignored the surrounding illusion context that biases apparent size."
-    return result(prompt,facts,["A","B"],{"construction":r["construction"],"definition":r["percent_difference_definition"]})
+    a,b=r["element_a_true_value"],r["element_b_true_value"];facts={"true_relation":"equal" if a==b else ("A larger" if a>b else "B larger")}
+    return result("Compare the actual central elements A and B, ignoring apparent size. Answer A larger, B larger, or equal.",facts,["A","B"],{"element_a_true_value":a,"element_b_true_value":b})
 
 
 def derive_orthographic(r):
-    counts=r["view_filled_counts"]; mx=max(counts.values())
-    facts={"top_filled":counts["top"],"front_filled":counts["front"],"side_filled":counts["side"],"largest_views":sorted(k for k,v in counts.items() if v==mx),"cube_total":r["total_cube_count"]}
-    prompt="Start at the panel labelled TOP and compare it with FRONT and SIDE: count filled cells in each view, name every view tied for the largest silhouette, then reconcile the three silhouettes with the pictured solid to give the cube total. Justify the reconciliation and explain how you avoided counting the same vertical-z stack once in every projection. Use z as vertical."
-    return result(prompt,facts,["TOP","FRONT","SIDE"],{"view_filled_counts":counts,"target_cubes":r["target_cubes"]})
+    counts=r["view_filled_counts"];facts={"top_filled":counts["top"],"front_filled":counts["front"],"side_filled":counts["side"]}
+    return result("Count the filled cells in the TOP, FRONT, and SIDE views. Give all three counts exactly (tolerance 0).",facts,["TOP","FRONT","SIDE"],{"view_cells":{"top":r["top_view_cells"],"front":r["front_view_cells"],"side":r["side_view_cells"]}},{k:{"absolute_tolerance":0,"unit":"count"} for k in facts})
 
 
 def derive_overlap(r):
-    idx=r["largest_circle_index"]
-    degree=sum(idx in (x["circle_i"],x["circle_j"]) for x in r["pairwise_overlaps"])
-    facts={"direct_overlap_degree":degree,"total_overlap_pairs":r["total_overlapping_pairs"],"above_average_radius_count":r["above_average_radius_count"],"circles_isolated_after_removal":r["isolated_after_largest_removal"],"three_plus_overlap_percent":fmt(r["three_plus_overlap_percent"],2)}
-    prompt="Start at the visibly largest circle and trace every boundary it crosses: count how many circles overlap it directly, count all overlapping pairs in the scene, count circles whose radii are above the scene average, predict how many become isolated if the largest circle is removed, and report the percentage of the canvas covered by three or more circles. Justify how you distinguished pairwise crossings from deeper stacks and tangent-looking near misses."
-    return result(prompt,facts,["largest circle"],{"largest_circle_index":idx,"overlap_pairs":r["pairwise_overlaps"]})
+    largest=r["largest_circle_index"];degree=sum(largest in (x["circle_i"],x["circle_j"]) for x in r["pairwise_overlaps"])
+    facts={"largest_circle_direct_overlaps":degree,"total_overlap_pairs":r["total_overlapping_pairs"],"isolated_after_largest_removal":r["isolated_after_largest_removal"]}
+    return result("For the largest circle, count its direct overlaps, count all overlapping pairs, and say how many circles would be isolated if the largest were removed. Give all counts exactly (tolerance 0).",facts,["largest circle"],{"largest_circle_index":largest,"pairwise_overlaps":r["pairwise_overlaps"]},{k:{"absolute_tolerance":0,"unit":"count"} for k in facts})
 
 
 def derive_physical(r):
-    joints=r["per_joint_stability"]
-    unstable=[x for x in joints if not x["is_stable_at_this_joint"]]
-    if unstable: joint=unstable[0]
-    else:
-        def margin(x):
-            lo,hi=x["supporting_base_range"]; c=x["combined_com_x"]; return min(c-lo,hi-c)
-        joint=min(joints,key=margin)
-    lo,hi=joint["supporting_base_range"]; c=joint["combined_com_x"]
-    relation="inside" if lo<=c<=hi else ("left" if c<lo else "right")
-    facts={"supporting_block":joint["block_below"],"upper_block":joint["upper_block"],"blocks_above":joint["blocks_above"],"combined_com_relation":relation,"joint_stable":joint["is_stable_at_this_joint"],"whole_stack_stable":r["is_stable"]}
-    prompt=f"Start at the contact supporting block {joint['upper_block']} and consider that block together with every labelled block above it: list those labels, locate their combined centre of mass relative to the supporting base using only left, inside, or right, decide whether this joint is stable, and then conclude whether the whole stack is stable. Justify from visible block widths and offsets, explaining how a dramatic single-block overhang can mislead compared with the combined mass."
-    return result(prompt,facts,[joint["upper_block"]],{"selected_joint":joint})
+    joints=r["per_joint_stability"];unstable=[x for x in joints if not x["is_stable_at_this_joint"]];joint=unstable[0] if unstable else joints[seeded_index(r,len(joints),"joint")]
+    low,high=joint["supporting_base_range"];value=joint["combined_com_x"];relation="inside" if low<=value<=high else ("left" if value<low else "right")
+    facts={"blocks_above_contact":joint["blocks_above"],"combined_centre_of_mass":relation}
+    return result(f"At the contact below block {joint['upper_block']}, list the blocks above that contact and say whether their combined centre of mass lies left of, inside, or right of the supporting base.",facts,[joint["upper_block"]],{"selected_joint":joint})
 
 
 def derive_polyhedron(r):
-    face_sizes=Counter(len(x) for x in r["faces"])
-    facts={"solid_name":r["solid_name"],"vertices":len(r["vertices"]),"edges":len(r["edges"]),"faces":len(r["faces"]),"face_size_histogram":{str(k):v for k,v in sorted(face_sizes.items())}}
-    prompt="Start at one clearly visible polygonal face and trace shared edges around the entire solid: identify the solid, report its vertex, edge, and face totals, and give a histogram of faces by number of sides. Justify how hidden rear elements were inferred from repeated symmetry, reconcile the counts with the closed mesh, and explain how you avoided treating projected line crossings as vertices."
-    return result(prompt,facts,["one clearly visible face"],{"stored_counts":[r["vertex_count"],r["edge_count"],r["face_count"]],"face_sizes":dict(face_sizes)})
+    facts={"solid_name":r["solid_name"],"face_count":r["face_count"],"face_shapes":r["face_shape_types"]}
+    return result("Identify the solid, give its exact total number of faces (tolerance 0), and name the face shape or shapes.",facts,["polyhedron"],{"vertices":r["vertices"],"edges":r["edges"],"faces":r["faces"]},{"face_count":{"absolute_tolerance":0,"unit":"count"}})
 
 
 def derive_projectile(r):
-    vx,vy=r["initial_velocity_x_m_s"],r["initial_velocity_y_m_s"]
-    facts={"launch_speed_m_s":fmt(r["initial_speed_m_s"]),"launch_angle_degrees":fmt(r["launch_angle_degrees"]),"horizontal_component_m_s":fmt(vx,2),"vertical_component_m_s":fmt(vy,2),"larger_component":"horizontal" if vx>vy else ("vertical" if vy>vx else "equal"),"time_to_peak_s":fmt(vy/r["gravity_m_s2"],2)}
-    prompt="Start at the launch arrow and read its displayed speed and angle: resolve it into horizontal and vertical velocity components, identify the larger component using only horizontal, vertical, or equal, and derive the time to the trajectory peak to two decimals. Justify with the arrow direction and trajectory shape, explaining how the stretched plot axes can mislead visual estimates of angle and component size."
-    return result(prompt,facts,["launch arrow"],{"speed":r["initial_speed_m_s"],"angle":r["launch_angle_degrees"],"gravity":r["gravity_m_s2"]})
+    facts={"maximum_height_m_nearest_whole":nearest(r["max_height_m"],1),"range_m_nearest_whole":nearest(r["range_m"],1)}
+    return result("Read the plotted trajectory and estimate its maximum height and horizontal range to the nearest whole metre.",facts,["trajectory","plot axes"],{"max_height_m":r["max_height_m"],"range_m":r["range_m"]},{k:{"absolute_tolerance":0.5,"unit":"metres"} for k in facts})
 
 
 def derive_rotation(r):
-    cands=r["candidates"]
-    pool=[c for c in cands if c["transformation_type"] in ({"reflection"} if seeded_index(r,2,"kind")==0 else {"wrong_angle_rotation"})] or cands
-    c=pool[seeded_index(r,len(pool),"candidate")]
-    angle=c["applied_angle"]%360
-    kind="reflection" if c["transformation_type"]=="reflection" else "rotation"
-    facts={"candidate":c["choice_label"],"transformation_type":kind,"clockwise_degrees":fmt(angle) if kind=="rotation" else "not applicable","counterclockwise_equivalent_degrees":fmt((360-angle)%360) if kind=="rotation" else "not applicable"}
-    prompt=f"Start at candidate {c['choice_label']} and match distinctive corners back to the reference polygon: decide whether it is a rotation or reflection, and if it is a rotation report both its clockwise angle and equivalent counterclockwise angle; then state whether rotation alone makes it match. Justify by tracking vertex order and explain how near-symmetry and page orientation can disguise a reflection. Use only rotation or reflection."
-    return result(prompt,facts,[c["choice_label"]],{"candidate":c})
+    facts={"matching_rotation_candidate":r["correct_answer_choice"],"reflection_candidate":r["reflection_answer_choice"]}
+    return result("Name the candidate that is a true rotation of the reference and the candidate that is its reflection.",facts,["reference","candidate panel"],{"candidates":r["candidates"]})
 
 
-COLOR_NAMES={"#246EB9":"blue","#7040A0":"purple","#B23A2E":"red","#C65D00":"orange","#8A6800":"olive","#147A68":"teal"}
+def derive_route(r):
+    degrees={x:sum(x in (route["start"],route["end"]) for route in r["routes"]) for x in r["endpoint_letters"]};preferred=[x for x in r["endpoint_letters"] if degrees[x] in (2,3)] or [x for x in r["endpoint_letters"] if degrees[x]>0]
+    target=preferred[seeded_index(r,len(preferred),"route-target")];routes=[x for x in r["routes"] if target in (x["start"],x["end"])]
+    far_ends=[{"color":x["color"],"label":x["end"] if x["start"]==target else x["start"]} for x in routes];facts={"far_ends_by_colour":far_ends,"total_bends":sum(x["num_bends"] for x in routes)}
+    return result(f"Trace every coloured line touching label {target}. For each colour, name its far-end label, then give the exact total number of bends across those lines (tolerance 0).",facts,[target],{"incident_routes":routes},{"total_bends":{"absolute_tolerance":0,"unit":"count"}})
+
+
 def derive_rpm(r):
-    missing=next(x for x in r["grid_panels"] if not x["shown_in_image"])
-    a=missing["attributes"]
-    facts={"shape":a["shape"],"color":COLOR_NAMES.get(a["color"],a["color"]),"count":a["count"],"size":a["size"],"rotation_degrees":a["rotation"]}
-    prompt="Start at the empty bottom-right panel and scan complete rows and columns of the matrix: infer the missing shape, colour, count, size, and rotation in degrees. Justify each attribute from its own repeating or progressing rule and explain how answer choices that violate only one attribute can look convincing. Use only star, circle, triangle, square, hexagon, or pentagon for shape; blue, purple, red, orange, olive, or teal for colour; and small, medium, or large for size."
-    return result(prompt,facts,["empty bottom-right panel"],{"active_rules":r["active_rules"],"missing_attributes":a})
+    missing=next(x for x in r["grid_panels"] if not x["shown_in_image"])["attributes"];facts={"shape":missing["shape"],"count":missing["count"],"rotation_degrees":missing["rotation"]}
+    return result("Complete the empty panel: name the shape, give the exact number of copies (tolerance 0), and give its rotation to the nearest 5 degrees.",facts,["empty panel"],{"active_rules":r["active_rules"],"missing_attributes":missing},{"count":{"absolute_tolerance":0,"unit":"count"},"rotation_degrees":{"absolute_tolerance":2.5,"unit":"degrees"}})
+
+
+def screen_direction8(value):
+    names=["right","upper-right","up","upper-left","left","lower-left","down","lower-right"]
+    return names[int(((value%360)+22.5)//45)%8]
 
 
 def derive_shadow(r):
-    objs=r["objects"]; target=max(objs,key=lambda x:(x["height_px"],x["color"])); longest=max(x["shadow_length"] for x in objs)
-    facts={"target_color":target["color"],"target_type":target["type"],"target_shadow_direction":direction8(target["shadow_screen_angle_degrees"]),"target_shadow_length":fmt(target["shadow_length"],1),"longest_shadow_colors":sorted(x["color"] for x in objs if abs(x["shadow_length"]-longest)<1e-8)}
-    prompt=f"Start at the tallest visible object, the {target['color']} one, and compare all objects and their ground shadows: identify its object type, classify its shadow direction using only up, upper-right, right, lower-right, down, lower-left, left, or upper-left, give its shadow length to one decimal, and name every colour tied for the longest shadow. Justify by matching each shadow to its base and explain how perspective and overlapping silhouettes can mislead height and length comparisons."
-    return result(prompt,facts,[target["color"]],{"objects":objs})
+    objects=r["objects"];target=max(objects,key=lambda x:(x["height_px"],x["color"]));longest=max(x["shadow_length"] for x in objects)
+    facts={"tallest_object_type":target["type"],"its_shadow_direction":screen_direction8(target["shadow_screen_angle_degrees"]),"longest_shadow_colours":sorted(x["color"] for x in objects if abs(x["shadow_length"]-longest)<1e-8)}
+    return result(f"For the tallest object, the {target['color']} one, name its object type and its shadow direction using eight compass-like screen directions. Then name every colour tied for the longest shadow.",facts,[target["color"]],{"objects":objects})
 
 
 def derive_surface(r):
-    orientation="orientable" if r["is_orientable"] else "non-orientable"
-    signature=f"{orientation} genus {r['genus']} with {r['boundary_count']} boundary loops"
-    family_names={"sphere_handles":"sphere with handles","polyhedral_mesh":"polyhedral mesh","mobius_vs_cylinder":"Möbius-or-cylinder","klein_vs_torus":"Klein-or-torus"}
-    facts={"surface_type":family_names[r["surface_type"]],"handle_or_crosscap_genus":r["genus"],"euler_characteristic":r["euler_characteristic"],"topological_signature":signature}
-    prompt="Start at the most prominent hole or twist in the rendered surface and inspect the whole connected sheet: identify its family using only sphere with handles, polyhedral mesh, Möbius-or-cylinder, or Klein-or-torus; count its handles or crosscaps; derive the Euler characteristic; and give the signature in the exact form 'orientable genus N with B boundary loops' or 'non-orientable genus N with B boundary loops'. Justify how you followed the surface through occlusion and distinguished a true handle, crosscap, or boundary opening from one caused only by viewing angle."
-    return result(prompt,facts,["most prominent hole or twist"],{"genus_kind":r["genus_kind"],"surface_variant":r["surface_variant"]})
+    names={"sphere_handles":"sphere with handles","polyhedral_mesh":"polyhedral mesh","mobius_vs_cylinder":"Möbius strip or cylinder","klein_vs_torus":"Klein bottle or torus"};facts={"surface_family":names[r["surface_type"]],"euler_characteristic":r["euler_characteristic"]}
+    return result("Identify the surface family, then give its exact Euler characteristic (tolerance 0).",facts,["rendered surface"],{"surface_type":r["surface_type"],"genus":r["genus"],"boundary_count":r["boundary_count"],"is_orientable":r["is_orientable"]},{"euler_characteristic":{"absolute_tolerance":0,"unit":"integer"}})
 
 
 def derive_symmetry(r):
-    symmetry_names={"rotational_2":"2-fold rotation","rotational_3":"3-fold rotation","rotational_4":"4-fold rotation","rotational_6":"6-fold rotation","mirror_horizontal":"horizontal mirror","mirror_vertical":"vertical mirror","mirror_both":"horizontal and vertical mirrors"}
-    if r["is_broken"]:
-        facts={"symmetry_type":symmetry_names[r["symmetry_type"]],"orbit_count":len({x["orbit_id"] for x in r["shapes"]}),"partnered_shape_count":r["symmetric_partner_count"],"pattern_status":"broken","break_location":r["broken_location"],"break_type":r["break_type"]}
-    else:
-        facts={"symmetry_type":symmetry_names[r["symmetry_type"]],"orbit_count":len({x["orbit_id"] for x in r["shapes"]}),"partnered_shape_count":r["symmetric_partner_count"],"pattern_status":"intact","break_location":"none","break_type":"none"}
-    prompt="Start at the topmost shape and pair every visible shape under the pattern's symmetry: name the symmetry using only 2-fold rotation, 3-fold rotation, 4-fold rotation, 6-fold rotation, horizontal mirror, vertical mirror, or horizontal and vertical mirrors; count the symmetry orbits and partnered shapes; decide whether the pattern is intact or broken; and if broken name the defect location and type. Justify by following partners around the centre or across the axis and explain how rotation, fill, and small size differences can hide the mismatch. Use intact or broken; top-left, top-right, bottom-left, bottom-right, center, or none for location; and fill, rotation, position, size, or none for type."
-    return result(prompt,facts,["topmost shape"],{"shapes":r["shapes"],"broken_shape_index":r["broken_shape_index"]})
+    names={"rotational_2":"2-fold rotation","rotational_3":"3-fold rotation","rotational_4":"4-fold rotation","rotational_6":"6-fold rotation","mirror_horizontal":"horizontal mirror","mirror_vertical":"vertical mirror","mirror_both":"horizontal and vertical mirrors"};facts={"symmetry_type":names[r["symmetry_type"]],"pattern_status":"broken" if r["is_broken"] else "intact"}
+    return result("Name the pattern's intended symmetry and say whether the visible pattern is intact or broken.",facts,["whole pattern"],{"shapes":r["shapes"],"is_broken":r["is_broken"]})
 
 
 DERIVERS={
-    "angle_estimation_dataset_3000":derive_angle,
-    "clock_reading_dataset_3000":derive_clock,
-    "combination3d_dataset_3000":lambda r:derive_combination(r,True),
-    "combination_dataset_3000":lambda r:derive_combination(r,False),
-    "compass_bearing_dataset_3000":derive_compass,
-    "coordinate_geometry_dataset_3000":derive_coordinate,
-    "cube_net_dataset_3000":derive_cube_net,
-    "cube_structure_dataset_3000":derive_cube_structure,
-    "depth_height_dataset_3000":derive_depth,
-    "embedded_figures_dataset_3000":derive_embedded,
-    "fbd_dataset_3000":derive_fbd,
-    "fold_punch_dataset_3000":derive_fold,
-    "gauge_reading_dataset_3000":derive_gauge,
-    "gear_train_dataset_3000":derive_gear,
-    "impossible_object_dataset_3000":derive_impossible,
-    "laser_mirror_dataset_3000":derive_laser,
-    "line_intersection_dataset_3000":derive_line,
-    "nested_hexagons_dataset_3000":lambda r:derive_nested(r,"hexagons"),
-    "nested_squares_dataset_3000":lambda r:derive_nested(r,"squares"),
-    "nested_triangles_dataset_3000":lambda r:derive_nested(r,"triangles"),
-    "occluded_pattern_dataset_3000":derive_occluded,
-    "optical_illusion_dataset_3000":derive_optical,
-    "orthographic_dataset_3000":derive_orthographic,
-    "overlap_circles_dataset_3000":derive_overlap,
-    "physical_stability_dataset_3000":derive_physical,
-    "polyhedron_dataset_3000":derive_polyhedron,
-    "projectile_motion_dataset_1000":derive_projectile,
-    "rotation_matching_dataset_3000":derive_rotation,
-    "rpm_dataset_3000":derive_rpm,
-    "shadow_inference_dataset_3000":derive_shadow,
-    "surface_topology_dataset_3000":derive_surface,
-    "symmetry_pattern_dataset_3000":derive_symmetry,
-}
+"angle_estimation_dataset_3000":derive_angle,"clock_reading_dataset_3000":derive_clock,
+"combination3d_dataset_3000":lambda r:derive_combination(r,True),"combination_dataset_3000":lambda r:derive_combination(r,False),
+"compass_bearing_dataset_3000":derive_compass,"coordinate_geometry_dataset_3000":derive_coordinate,
+"cube_net_dataset_3000":derive_cube_net,"cube_structure_dataset_3000":derive_cube_structure,"depth_height_dataset_3000":derive_depth,
+"embedded_figures_dataset_3000":derive_embedded,"fbd_dataset_3000":derive_fbd,"fold_punch_dataset_3000":derive_fold,
+"gauge_reading_dataset_3000":derive_gauge,"gear_train_dataset_3000":derive_gear,"hex_pathfinding_dataset_3000":derive_hex,
+"impossible_object_dataset_3000":derive_impossible,"laser_mirror_dataset_3000":derive_laser,"line_intersection_dataset_3000":derive_line,
+"nested_hexagons_dataset_3000":lambda r:derive_nested(r,"hexagons"),"nested_squares_dataset_3000":lambda r:derive_nested(r,"squares"),"nested_triangles_dataset_3000":lambda r:derive_nested(r,"triangles"),
+"occluded_pattern_dataset_3000":derive_occluded,"optical_illusion_dataset_3000":derive_optical,"orthographic_dataset_3000":derive_orthographic,
+"overlap_circles_dataset_3000":derive_overlap,"physical_stability_dataset_3000":derive_physical,"polyhedron_dataset_3000":derive_polyhedron,
+"projectile_motion_dataset_1000":derive_projectile,"rotation_matching_dataset_3000":derive_rotation,"route_dataset_3000":derive_route,
+"rpm_dataset_3000":derive_rpm,"shadow_inference_dataset_3000":derive_shadow,"surface_topology_dataset_3000":derive_surface,"symmetry_pattern_dataset_3000":derive_symmetry}
 
 
 def read_records(folder):
-    with (folder/"annotations.jsonl").open(encoding="utf-8-sig") as h:
-        return [json.loads(line) for line in h if line.strip()]
+    with (folder/"annotations.jsonl").open(encoding="utf-8-sig") as handle: return [json.loads(line) for line in handle if line.strip()]
 
 
-def write_csv(path, columns, rows):
-    with path.open("w",encoding="utf-8-sig",newline="") as h:
-        w=csv.DictWriter(h,fieldnames=columns,lineterminator="\n",extrasaction="ignore");w.writeheader();w.writerows(rows)
+def write_csv(path,columns,rows):
+    with path.open("w",encoding="utf-8-sig",newline="") as handle:
+        writer=csv.DictWriter(handle,fieldnames=columns,lineterminator="\n",extrasaction="ignore");writer.writeheader();writer.writerows(rows)
 
 
 def build_domain(folder):
-    records=read_records(folder); derive=DERIVERS[folder.name]
-    public=[]; answers=[]; annotations=[]; fact_columns=[]
-    for r in records:
-        out=derive(r); qid=f"{r['id']}_open_q1"; image=Path(r["image_path"]).name
-        p={"question_id":qid,"image":image,"prompt":out["prompt"]}; public.append(p)
+    records,derive=read_records(folder),DERIVERS[folder.name];public=[];answers=[];annotations=[];fact_columns=[]
+    for record in records:
+        out=derive(record);qid,image=f"{record['id']}_open_q1",Path(record["image_path"]).name
+        public_row={"question_id":qid,"image":image,"prompt":out["prompt"]};public.append(public_row)
         for key in out["facts"]:
             if key not in fact_columns: fact_columns.append(key)
-        a={"question_id":qid,"image":image,"acceptance_set":compact(out["acceptance_set"]),"targets":compact(out["targets"]),**{k:(compact(v) if isinstance(v,(list,dict)) else v) for k,v in out["facts"].items()}}
-        answers.append(a)
-        annotations.append({**p,**out["facts"],"acceptance_set":out["acceptance_set"],"targets":out["targets"],"dataset_version":r.get("dataset_version"),"derivation":out["derivation"],"scoring":{"partial_credit_fields":list(out["facts"]),"confidence_range":[0,1]}})
-    expected=int(folder.name.rsplit("_",1)[1]);
+        answers.append({"question_id":qid,"image":image,"acceptance_set":compact(out["acceptance_set"]),"targets":compact(out["targets"]),"tolerances":compact(out["tolerances"]),**{k:compact(v) if isinstance(v,(list,dict)) else v for k,v in out["facts"].items()}})
+        annotations.append({**public_row,**out["facts"],"acceptance_set":out["acceptance_set"],"targets":out["targets"],"tolerances":out["tolerances"],"dataset_version":record.get("dataset_version"),"derivation":out["derivation"],"scoring":{"partial_credit_fields":list(out["facts"]),"confidence_range":[0,1]}})
+    expected=int(folder.name.rsplit("_",1)[1])
     if len(records)!=expected: raise RuntimeError(f"{folder.name}: expected {expected}, found {len(records)}")
-    write_csv(folder/"open_questions.csv",PUBLIC_COLUMNS,public)
-    write_csv(folder/"open_answer_key.csv",COMMON_PRIVATE+fact_columns,answers)
-    with (folder/"open_annotations.jsonl").open("w",encoding="utf-8",newline="\n") as h:
-        for row in annotations:h.write(compact(row)+"\n")
+    write_csv(folder/"open_questions.csv",PUBLIC_COLUMNS,public);write_csv(folder/"open_answer_key.csv",COMMON_PRIVATE+fact_columns,answers)
+    with (folder/"open_annotations.jsonl").open("w",encoding="utf-8",newline="\n") as handle:
+        for row in annotations: handle.write(compact(row)+"\n")
     return len(records),fact_columns
 
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--domain",action="append");args=parser.parse_args()
-    names=args.domain or sorted(DERIVERS)
-    for name in names:
+    for name in args.domain or sorted(DERIVERS):
         count,fields=build_domain(ROOT/name);print(f"{name}: {count} rows; {len(fields)} sub-facts")
 
 
-if __name__=="__main__":main()
+if __name__=="__main__": main()

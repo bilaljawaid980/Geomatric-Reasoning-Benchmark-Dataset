@@ -2,18 +2,12 @@
   "status": "PASS",
   "dataset": "polyhedron_dataset_3000",
   "items": 3000,
-  "template": "Start at one clearly visible polygonal face and trace shared edges around the entire solid: identify the solid, report its vertex, edge, and face totals, and give a histogram of faces by number of sides. Justify how hidden rear elements were inferred from repeated symmetry, reconcile the counts with the closed mesh, and explain how you avoided treating projected line crossings as vertices. End with a confidence score from 0 to 1.",
-  "rationale": "Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.",
-  "metadata_fields_targeted": [
+  "template": "Identify the solid, give its exact total number of faces (tolerance 0), and name the face shape or shapes. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "subfacts": [
     "solid_name",
-    "vertices",
-    "edges",
-    "faces",
-    "face_size_histogram"
+    "face_count",
+    "face_shapes"
   ],
-  "selection_distribution": {
-    "[\"one clearly visible face\"]": 3000
-  },
   "answer_distributions": {
     "solid_name": {
       "dodecahedron": 315,
@@ -34,28 +28,7 @@
       "truncated octahedron": 158,
       "truncated tetrahedron": 158
     },
-    "vertices": {
-      "12": 631,
-      "14": 474,
-      "24": 474,
-      "8": 474,
-      "20": 315,
-      "30": 158,
-      "32": 158,
-      "4": 158,
-      "6": 158
-    },
-    "edges": {
-      "30": 630,
-      "12": 474,
-      "24": 474,
-      "36": 474,
-      "18": 316,
-      "60": 316,
-      "48": 158,
-      "6": 158
-    },
-    "faces": {
+    "face_count": {
       "14": 632,
       "12": 631,
       "8": 474,
@@ -67,82 +40,44 @@
       "4": 158,
       "6": 158
     },
-    "face_size_histogram": {
-      "{\"3\":8,\"4\":6}": 316,
-      "{\"3\":8}": 316,
-      "{\"3\":20}": 315,
-      "{\"5\":12}": 315,
-      "{\"3\":12}": 158,
-      "{\"3\":20,\"5\":12}": 158,
-      "{\"3\":24}": 158,
-      "{\"3\":4,\"6\":4}": 158,
-      "{\"3\":4}": 158,
-      "{\"3\":8,\"4\":18}": 158,
-      "{\"3\":8,\"8\":6}": 158,
-      "{\"4\":12}": 158,
-      "{\"4\":30}": 158,
-      "{\"4\":6,\"6\":8}": 158,
-      "{\"4\":6}": 158
-    },
-    "acceptance_set": {
-      "[\"solid_name=dodecahedron; vertices=20; edges=30; faces=12; face_size_histogram={'5': 12}\"]": 315,
-      "[\"solid_name=icosahedron; vertices=12; edges=30; faces=20; face_size_histogram={'3': 20}\"]": 315,
-      "[\"solid_name=compound of cube and octahedron; vertices=14; edges=24; faces=14; face_size_histogram={'3': 8, '4': 6}\"]": 158,
-      "[\"solid_name=cube; vertices=8; edges=12; faces=6; face_size_histogram={'4': 6}\"]": 158,
-      "[\"solid_name=cuboctahedron; vertices=12; edges=24; faces=14; face_size_histogram={'3': 8, '4': 6}\"]": 158,
-      "[\"solid_name=icosidodecahedron; vertices=30; edges=60; faces=32; face_size_histogram={'3': 20, '5': 12}\"]": 158,
-      "[\"solid_name=octahedron; vertices=6; edges=12; faces=8; face_size_histogram={'3': 8}\"]": 158,
-      "[\"solid_name=rhombic dodecahedron; vertices=14; edges=24; faces=12; face_size_histogram={'4': 12}\"]": 158,
-      "[\"solid_name=rhombic triacontahedron; vertices=32; edges=60; faces=30; face_size_histogram={'4': 30}\"]": 158,
-      "[\"solid_name=rhombicuboctahedron; vertices=24; edges=48; faces=26; face_size_histogram={'3': 8, '4': 18}\"]": 158,
-      "[\"solid_name=stella octangula; vertices=8; edges=12; faces=8; face_size_histogram={'3': 8}\"]": 158,
-      "[\"solid_name=tetrahedron; vertices=4; edges=6; faces=4; face_size_histogram={'3': 4}\"]": 158,
-      "[\"solid_name=triakis octahedron; vertices=14; edges=36; faces=24; face_size_histogram={'3': 24}\"]": 158,
-      "[\"solid_name=triakis tetrahedron; vertices=8; edges=18; faces=12; face_size_histogram={'3': 12}\"]": 158,
-      "[\"solid_name=truncated cube; vertices=24; edges=36; faces=14; face_size_histogram={'3': 8, '8': 6}\"]": 158,
-      "[\"solid_name=truncated octahedron; vertices=24; edges=36; faces=14; face_size_histogram={'4': 6, '6': 8}\"]": 158,
-      "[\"solid_name=truncated tetrahedron; vertices=12; edges=18; faces=8; face_size_histogram={'3': 4, '6': 4}\"]": 158
+    "face_shapes": {
+      "mixed": 1106,
+      "triangles": 1105,
+      "squares": 474,
+      "pentagons": 315
     }
   },
   "constant_answer_baselines": {
-    "targets": 1.0,
     "solid_name": 0.105,
-    "vertices": 0.21033333333333334,
-    "edges": 0.21,
-    "faces": 0.21066666666666667,
-    "face_size_histogram": 0.10533333333333333,
-    "acceptance_set": 0.105
+    "face_count": 0.21066666666666667,
+    "face_shapes": 0.36866666666666664
   },
   "fields_at_or_above_60_percent": {},
-  "preflight": {
-    "intended_answer_field": "acceptance_set",
-    "baseline": 0.105,
-    "template_changed_after_check": true,
-    "change": "removed Euler characteristic because it is structurally constant for most connected solids"
-  },
-  "derivation": {
-    "method": "recomputed from annotations geometry/scene fields without using L1-L5 ground_truth",
-    "mismatches": []
+  "composite_answer_baseline": 0.105,
+  "independent_derivation": {
+    "mismatches": [],
+    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
   },
   "assertions": {
-    "public_exactly_three_columns": true,
-    "no_prompt_answer_leaks": true,
-    "no_absent_coordinate_scheme": true,
-    "fixed_frame_and_vocabulary": true,
-    "no_exact_L1_L5_paraphrase": true
+    "at_most_three_subfacts": true,
+    "no_derivable_redundancy": true,
+    "no_none_placeholders": true,
+    "numeric_tolerances_stored_and_stated": true,
+    "no_trap_named": true,
+    "no_unrendered_coordinates_indices_or_schema_terms": true
   },
-  "png_recoverability": {
+  "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": [],
-    "method": "every referenced PNG decoded; every scored fact is tied to visible labels, boundaries, arrows, ticks, or rendered geometry named by the template"
+    "failures": []
   },
-  "protected_existing_files_unchanged": {
+  "protected_closed_files_unchanged": {
     "question_set.csv": true,
     "answer_key.csv": true,
     "dataset_final.csv": true,
     "dataset_final.jsonl": true
   },
+  "closed_questions_in_annotations_unchanged": true,
   "images_unchanged": true,
   "issues": []
 }

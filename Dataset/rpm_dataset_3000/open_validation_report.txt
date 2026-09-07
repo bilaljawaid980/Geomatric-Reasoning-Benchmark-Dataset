@@ -1,12 +1,10 @@
-Supplementary open-question validation: rpm_dataset_3000
+Open-question validation: rpm_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the empty bottom-right panel and scan complete rows and columns of the matrix: infer the missing shape, colour, count, size, and rotation in degrees. Justify each attribute from its own repeating or progressing rule and explain how answer choices that violate only one attribute can look convincing. Use only star, circle, triangle, square, hexagon, or pentagon for shape; blue, purple, red, orange, olive, or teal for colour; and small, medium, or large for size. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: shape, color, count, size, rotation_degrees
-Selection distribution: {"[\"empty bottom-right panel\"]": 3000}
-Constant-answer baselines: {"acceptance_set": 0.002, "color": 0.17566666666666667, "count": 0.4236666666666667, "rotation_degrees": 0.13333333333333333, "shape": 0.17933333333333334, "size": 0.38333333333333336, "targets": 1.0}
+Template: Complete the empty panel: name the shape, give the exact number of copies (tolerance 0), and give its rotation to the nearest 5 degrees. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: shape, count, rotation_degrees
+Constant-answer baselines: {"count": 0.4236666666666667, "rotation_degrees": 0.13333333333333333, "shape": 0.17933333333333334}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

@@ -1,12 +1,10 @@
-Supplementary open-question validation: symmetry_pattern_dataset_3000
+Open-question validation: symmetry_pattern_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the topmost shape and pair every visible shape under the pattern's symmetry: name the symmetry using only 2-fold rotation, 3-fold rotation, 4-fold rotation, 6-fold rotation, horizontal mirror, vertical mirror, or horizontal and vertical mirrors; count the symmetry orbits and partnered shapes; decide whether the pattern is intact or broken; and if broken name the defect location and type. Justify by following partners around the centre or across the axis and explain how rotation, fill, and small size differences can hide the mismatch. Use intact or broken; top-left, top-right, bottom-left, bottom-right, center, or none for location; and fill, rotation, position, size, or none for type. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: symmetry_type, orbit_count, partnered_shape_count, pattern_status, break_location, break_type
-Selection distribution: {"[\"topmost shape\"]": 3000}
-Constant-answer baselines: {"acceptance_set": 0.07166666666666667, "break_location": 0.5, "break_type": 0.5, "orbit_count": 0.42866666666666664, "partnered_shape_count": 0.49933333333333335, "pattern_status": 0.5, "symmetry_type": 0.143, "targets": 1.0}
+Template: Name the pattern's intended symmetry and say whether the visible pattern is intact or broken. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: symmetry_type, pattern_status
+Constant-answer baselines: {"pattern_status": 0.5, "symmetry_type": 0.143}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

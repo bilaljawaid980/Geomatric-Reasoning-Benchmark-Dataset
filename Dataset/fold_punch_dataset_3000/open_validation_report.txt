@@ -1,12 +1,10 @@
-Supplementary open-question validation: fold_punch_dataset_3000
+Open-question validation: fold_punch_dataset_3000
 Status: PASS
 Items: 3000
-Template: Start at the punched hole in the final folded panel and read the fold arrows backward: state the fold directions in displayed order, count horizontal and vertical folds, then predict the number of holes after full unfolding and how many distinct rows and columns those holes occupy. Justify each reflection and explain how you kept overlapping fold layers separate. Use only horizontal, vertical, left over right, right over left, top over bottom, and bottom over top. End with a confidence score from 0 to 1.
-Rationale: Combines multiple visible observations into one exact, metadata-derived answer; the composite acceptance-set baseline is the preflight degeneracy check.
-Targeted fields: fold_directions, horizontal_folds, vertical_folds, unfolded_holes, distinct_hole_columns, distinct_hole_rows
-Selection distribution: {"[\"punched hole\"]": 3000}
-Constant-answer baselines: {"acceptance_set": 0.036, "distinct_hole_columns": 0.42333333333333334, "distinct_hole_rows": 0.45566666666666666, "fold_directions": 0.036, "horizontal_folds": 0.45566666666666666, "targets": 1.0, "unfolded_holes": 0.5, "vertical_folds": 0.42333333333333334}
+Template: State the fold directions in the order shown, then give the exact number of holes after the paper is fully unfolded (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
+Sub-facts: fold_directions, unfolded_hole_count
+Constant-answer baselines: {"fold_directions": 0.036, "unfolded_hole_count": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recoverability: 3000/3000
-Protected existing files unchanged: True
+PNG recovery: 3000/3000
+Closed questions/answers unchanged: True

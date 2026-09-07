@@ -12,11 +12,11 @@ All 3,000 PNG outline counts were independently recovered. Every guard injection
 
 ### Supplementary open-ended questions
 
-Version `nested-triangles-9.0.0` adds one parameterized free-response question per image without changing any image or existing five-level question or answer. The template starts from a visible label, coloured element, marked object, or named panel; scores multiple independently derived sub-facts; requires a visual justification; and ends with a confidence score from 0 to 1.
+Version `nested-triangles-10.0.0` rewrites the one parameterized free-response question per image without changing any image or existing five-level question or answer. Each plain-English prompt scores at most three visible sub-facts, does not name its own reasoning trap, requires a brief visual justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
-- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, and deterministic `targets`.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.
 - `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
 - `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
 
-The composite acceptance-set preflight baseline is `0.003333`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `shape_count, outer_to_inner_size_ratio, clockwise_steps, counterclockwise_steps, largest_shrink_step`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.
+The composite acceptance-set baseline is `0.028667`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `shape_count, cumulative_rotation_degrees_nearest_5, shrink_pattern`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

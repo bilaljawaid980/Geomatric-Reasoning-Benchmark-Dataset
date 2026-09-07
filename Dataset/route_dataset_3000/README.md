@@ -306,15 +306,13 @@ Comparative Reasoning,route_puzzle_0001.png,How many routes does letter A have i
 Compound Reasoning,route_puzzle_0001.png,"Is there any letter-pair with zero directly connecting routes? If yes, name one such pair; if no, answer 'none'.",CD,"{""colors_used"":[""orange"",""amber"",""olive"",""cyan"",""brown"",""magenta"",""gray-blue"",""teal""],""crossing_count"":83,""difficulty_score"":0.4971,""line_width_px"":2.95,""num_endpoints"":4,""num_routes"":8,""seed"":1}"
 ```
 
-### Supplementary open-ended questions (v3)
+### Supplementary open-ended questions
 
-Version `route-3.0.0` adds one open-ended route-tracing question per image without changing the existing images or five-level questions and answers. Target selection prefers an incident-line degree of 2 or 3, uses the stored seed to choose deterministically among qualifying labels, and otherwise selects among labels with the lowest non-zero degree. Because scenes contain four, five, or six endpoint labels, the common prompt inserts the actual number of other labels instead of assuming that every image has six.
+Version `route-4.0.0` rewrites the one parameterized free-response question per image without changing any image or existing five-level question or answer. Each plain-English prompt scores at most three visible sub-facts, does not name its own reasoning trap, requires a brief visual justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
-- `open_answer_key.csv` is answer-key-side and stores the target, target position, selected degree, incident-line count and colors, exact reached and unreached label sets, and overall conclusion.
-- `open_annotations.jsonl` is answer-key-side and adds the complete derivation, including per-label degrees and incident route paths. Its scoring declaration requires an exact reached set for the conclusion while retaining separate fields for partial-credit logging.
-- `build_open_questions.py` rebuilds the three open-question artifacts; `validate_open_questions.py` independently re-derives every answer and validates all 3,000 PNGs.
+- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.
+- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
+- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
 
-The selected target-degree distribution is `{1: 93, 2: 1090, 3: 1506, 4: 247, 5: 63, 6: 1}`. The broad conclusion is structurally skewed: `some labelled sides remain unreached` occurs in 91.3% of images. Exact reached-set, unreached-set, incident-color, and incident-count fields are therefore the meaningful scoring components; their complete distributions and baselines are in `open_validation_metrics.json`. The connected-pair diagnostic ranges from 2 to 11 of the 15 canonical A–F pairs, and the worked `route_puzzle_0332` case has 7.
-
-Do not provide `open_answer_key.csv` or `open_annotations.jsonl` to a model under evaluation. The latter contains the stored path geometry and directly leaks the derivation.
+The composite acceptance-set baseline is `0.001000`. Scored fields at or above 60% after template revision: `{}`. Targeted fields: `far_ends_by_colour, total_bends`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.
