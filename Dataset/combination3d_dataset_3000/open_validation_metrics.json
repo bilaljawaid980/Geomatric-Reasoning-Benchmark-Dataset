@@ -47,12 +47,42 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "correct_candidate": {
+        "visual_signal": "the target silhouette and candidate pieces",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_cube_piece_height_recovery"
+        ]
+      },
+      "rejected_candidate": {
+        "visual_signal": "the labelled candidate panels",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_cube_piece_height_recovery"
+        ]
+      },
+      "rejection_reason": {
+        "visual_signal": "the visible fit, count, reflection, or rotation defect in the rejected panel",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_cube_piece_height_recovery"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

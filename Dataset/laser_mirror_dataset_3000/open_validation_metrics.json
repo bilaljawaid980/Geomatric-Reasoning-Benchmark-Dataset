@@ -56,12 +56,42 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 2250,
     "total": 2250,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "reflection_count": {
+        "visual_signal": "mirror strikes along the rendered laser path",
+        "checked_items": 2250,
+        "passed_items": 2250,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "pngs_checked"
+        ]
+      },
+      "exit_edge": {
+        "visual_signal": "the rendered laser endpoint on the grid border",
+        "checked_items": 2250,
+        "passed_items": 2250,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "pngs_checked"
+        ]
+      },
+      "exit_position": {
+        "visual_signal": "the endpoint's labelled grid-border position",
+        "checked_items": 2250,
+        "passed_items": 2250,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "pngs_checked"
+        ]
+      }
+    }
   },
   "special_checks": {
     "zero_reflection_exclusions": 750,

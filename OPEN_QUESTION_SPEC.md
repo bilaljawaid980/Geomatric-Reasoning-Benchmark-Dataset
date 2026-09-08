@@ -82,12 +82,13 @@ Tolerance: ±10°.
 Triangle scenes:
 
 > Look at the triangle's three interior angles, judging each opening rather than the
-> lengths of the sides: name the vertex with the largest interior angle and estimate
-> that angle to the nearest 10 degrees. State your conclusion, justify it by comparing
+> lengths of the sides: estimate the size of the largest interior angle to the nearest
+> 10 degrees. State your conclusion, justify it by comparing
 > the three openings, and end with a confidence score from 0 to 1.
 
-Targets: `largest_angle_vertex`, and the corresponding value from
-`interior_angles_degrees` rounded to the nearest 10 degrees. Tolerance: ±10°.
+Target: the largest value from `interior_angles_degrees`, rounded to the nearest
+10 degrees. Tolerance: ±10°. The vertex label is deliberately not scored because
+the source generator assigns labels in a geometry-correlated order.
 
 ## clock_reading
 
@@ -138,7 +139,7 @@ south-east boundary.
 
 > Read the position of each labelled point against the printed grid: name the pair of
 > points that lie farthest apart, give that distance to the nearest whole unit, and say
-> whether it is greater or less than 10 units. State your conclusion, justify it by
+> whether it is greater or less than 12 units. State your conclusion, justify it by
 > describing the horizontal and vertical grid separations you used, and end with a
 > confidence score from 0 to 1.
 
@@ -157,13 +158,14 @@ fields — flat neighbours from `net_edge_neighbors`, opposite from `opposite_pa
 
 ## cube_structure
 
-> Scan the structure column by column, taking as vertical the direction the drawing
-> renders as up: count the cubes resting directly on the ground, then work out how many
-> cubes are completely hidden from this viewpoint. State your conclusion, justify it by
-> describing how you separated cubes stacked above one another from cubes set behind one
-> another, and end with a confidence score from 0 to 1.
+> Scan the structure cube by cube, taking as vertical the direction the drawing
+> renders as up: count exactly how many cubes have a visible top face, then work out
+> exactly how many cubes are completely hidden from this viewpoint (tolerance 0 for both
+> counts). State your conclusion, justify it by describing how you separated visible top
+> faces from side faces and how the visible stacks imply any concealed cubes, and end
+> with a confidence score from 0 to 1.
 
-Targets: `base_layer_count`, `hidden_cube_count`. **Exclude items with
+Targets: visible top-face count, `hidden_cube_count`. **Exclude items with
 `has_ambiguous_visual_floater` true.**
 
 ## depth_height
@@ -175,6 +177,16 @@ Targets: `base_layer_count`, `hidden_cube_count`. **Exclude items with
 
 Targets: `depth_ordering`, `closest_object_color`. **Only for items with
 `scene_type = depth_ordering`; the stack-height items carry no depth cues.**
+
+For `scene_type = stack_height`:
+
+> Compare the coloured stacks by counting the visible blocks from the common baseline
+> upward: rank every stack from shortest to tallest by colour, and name which one is
+> tallest. State your conclusion, justify it by describing how you counted the blocks
+> in each stack, and end with a confidence score from 0 to 1.
+
+Targets: `height_ordering` reversed into the prompt's shortest-to-tallest order, and
+`tallest_stack_color`.
 
 ## embedded_figures
 
@@ -223,12 +235,14 @@ interpolation.**
 ## gear_train
 
 > Follow the mesh from the driver gear through every gear it turns: name the gear that
-> rotates fastest, and say whether the last gear in the chain turns in the same
+> rotates fastest, and say whether gear {TARGET} turns in the same
 > direction as the driver or the opposite. State your conclusion, justify it by
 > describing the tooth counts you compared and how direction alternates along the
 > chain, and end with a confidence score from 0 to 1.
 
-Targets: fastest gear from `gears`, final direction from `computed_rotation`.
+Targets: fastest gear from `gears`, and the direction of `{TARGET}` from
+`computed_rotation`. `{TARGET}` is chosen deterministically so same/opposite relations
+are balanced without changing any image.
 
 ## hex_pathfinding
 
@@ -325,12 +339,13 @@ Targets: `minimum_possible_cube_count`, `is_uniquely_determined`.
 ## overlap_circles
 
 > Examine every circle and the way they lie across one another: count how many circles
-> there are, say whether any circle stands clear of all the others, and give how many
+> there are, and give how many
 > are larger than the average size. State your conclusion, justify it by describing how
 > you traced individual outlines where several circles overlap, and end with a
 > confidence score from 0 to 1.
 
-Targets: `total_circle_count`, `non_overlapping_count`, `above_average_radius_count`.
+Targets: `total_circle_count`, `above_average_radius_count`. The isolated-circle
+sub-fact is omitted because its source distribution has a fixable 72.0% majority.
 **Exclude items with `max_stack_depth` above 4 — outlines become untraceable.**
 
 ## physical_stability
@@ -357,11 +372,11 @@ are not edges and made a convex dodecahedron read as non-convex in an earlier bu
 
 > Read the launch values printed beside the trajectory and follow the arc from launch
 > to landing: give the horizontal distance at which the projectile reaches its highest
-> point, to the nearest metre, and say whether that peak rises above 20 metres. State
+> point, to the nearest metre, and say whether that peak rises above 13 metres. State
 > your conclusion, justify it by describing which printed values you used and how they
 > determine the shape of the arc, and end with a confidence score from 0 to 1.
 
-Targets: `horizontal_position_at_peak_m`, `max_height_m` against 20 m. Tolerance:
+Targets: `horizontal_position_at_peak_m`, `max_height_m` against 13 m. Tolerance:
 ±2 m. **Note this domain's answers are computable from the printed labels alone, which
 makes it the natural text-only control.**
 

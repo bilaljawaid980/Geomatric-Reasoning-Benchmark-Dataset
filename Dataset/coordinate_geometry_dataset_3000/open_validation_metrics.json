@@ -5,11 +5,11 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Read the position of each labelled point against the printed grid: name the pair of points that lie farthest apart, give that distance to the nearest whole unit, and say whether it is greater or less than 10 units. State your conclusion, justify it by describing the horizontal and vertical grid separations you used, and end with a confidence score from 0 to 1.",
+  "template": "Read the position of each labelled point against the printed grid: name the pair of points that lie farthest apart, give that distance to the nearest whole unit, and say whether it is greater or less than 12 units. State your conclusion, justify it by describing the horizontal and vertical grid separations you used, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "farthest_pair",
     "distance_nearest_unit",
-    "relation_to_10"
+    "relation_to_12"
   ],
   "answer_distributions": {
     "farthest_pair": {
@@ -43,19 +43,17 @@
       "20": 7,
       "22": 4
     },
-    "relation_to_10": {
-      "greater": 1946,
-      "less": 1054
+    "relation_to_12": {
+      "less": 1551,
+      "greater": 1449
     }
   },
   "constant_answer_baselines": {
     "farthest_pair": 0.42,
     "distance_nearest_unit": 0.12433333333333334,
-    "relation_to_10": 0.6486666666666666
+    "relation_to_12": 0.517
   },
-  "fields_at_or_above_60_percent": {
-    "relation_to_10": 0.6486666666666666
-  },
+  "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -67,12 +65,42 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "farthest_pair": {
+        "visual_signal": "the largest horizontal/vertical grid separation",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      },
+      "distance_nearest_unit": {
+        "visual_signal": "the printed coordinate grid separations",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      },
+      "relation_to_12": {
+        "visual_signal": "the recovered farthest distance compared with 12 grid units",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

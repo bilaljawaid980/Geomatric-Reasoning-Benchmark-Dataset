@@ -62,7 +62,16 @@ def main():
             "open_numeric_tolerances_stored_and_stated":True,
             "open_prompt_does_not_name_reasoning_trap":True,
             "open_png_recoverability_all_items":True,
+            "open_quantity_recovery_signals_documented_per_subfact":True,
         })
+        if name=="angle_estimation_dataset_3000":constraints["open_triangle_vertex_label_subfact_removed_for_fixed_order_bias"]=True
+        elif name=="coordinate_geometry_dataset_3000":constraints["open_distance_relation_threshold_units"]=12
+        elif name=="cube_structure_dataset_3000":constraints.update({"open_visible_top_face_count_replaces_unrecoverable_base_layer_count":True,"open_cube_manual_visual_audit_items":20})
+        elif name=="depth_height_dataset_3000":constraints["open_stack_height_variant_covers_all_stack_scenes"]=True
+        elif name=="gear_train_dataset_3000":constraints["open_direction_target_relation_balanced"]=True
+        elif name=="hex_pathfinding_dataset_3000":constraints.update({"open_hex_orientation":"pointy-top","open_axial_direction_vocabulary_verified":True})
+        elif name=="overlap_circles_dataset_3000":constraints["open_isolated_circle_subfact_removed_for_sampling_bias"]=True
+        elif name=="projectile_motion_dataset_1000":constraints["open_peak_threshold_metres"]=13
         if name=="fold_punch_dataset_3000":constraints["approved_closed_repair"]="312 duplicated Level 5 rows replaced by additional-fold counterfactual"
         elif name=="overlap_circles_dataset_3000":constraints["approved_closed_repair"]="1034 leaked Level 3 field-name answers corrected to clustered or spread"
         manifest["generator_commit"]=SOURCE_COMMIT

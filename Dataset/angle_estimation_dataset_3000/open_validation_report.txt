@@ -4,10 +4,10 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: angle_degrees_nearest_10, angle_class, larger_angle, difference_degrees_nearest_10, largest_angle_vertex, largest_angle_degrees_nearest_10
-Constant-answer baselines: {"angle_class": 0.4058333333333333, "angle_degrees_nearest_10": 0.049166666666666664, "difference_degrees_nearest_10": 0.12571428571428572, "larger_angle": 0.5009523809523809, "largest_angle_degrees_nearest_10": 0.35733333333333334, "largest_angle_vertex": 0.748}
-Fields >=60%: {"largest_angle_vertex": 0.748}
+Sub-facts: angle_degrees_nearest_10, angle_class, larger_angle, difference_degrees_nearest_10, largest_angle_degrees_nearest_10
+Constant-answer baselines: {"angle_class": 0.4058333333333333, "angle_degrees_nearest_10": 0.049166666666666664, "difference_degrees_nearest_10": 0.12571428571428572, "larger_angle": 0.5009523809523809, "largest_angle_degrees_nearest_10": 0.35733333333333334}
+Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Special checks: {"scene_type_distribution": {"comparison": 1050, "single": 1200, "triangle": 750}, "variant_mapping_violations": 0}
+Special checks: {"pre_fix_largest_angle_vertex_distribution": {"A": 561, "B": 51, "C": 138}, "scene_type_distribution": {"comparison": 1050, "single": 1200, "triangle": 750}, "source_vertex_label_assignment": "fixed A/B/C order equals triangle_vertices index 0/1/2", "variant_mapping_violations": 0, "vertex_subfact_disposition": "removed because fixed geometry-correlated labels produce a 74.8% A baseline"}
 Issues: []

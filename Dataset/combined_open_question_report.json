@@ -2,7 +2,7 @@
   "status": "PASS",
   "datasets": {
     "angle_estimation_dataset_3000": {
-      "dataset_version": "angle-estimation-7.0.0",
+      "dataset_version": "angle-estimation-8.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -32,7 +32,7 @@
       "open_answers": 1118
     },
     "coordinate_geometry_dataset_3000": {
-      "dataset_version": "coordinate-geometry-5.0.0",
+      "dataset_version": "coordinate-geometry-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -44,16 +44,16 @@
       "open_answers": 3000
     },
     "cube_structure_dataset_3000": {
-      "dataset_version": "cube-structure-5.0.0",
+      "dataset_version": "cube-structure-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "depth_height_dataset_3000": {
-      "dataset_version": "depth-height-5.0.0",
-      "images": 1500,
-      "open_questions": 1500,
-      "open_answers": 1500
+      "dataset_version": "depth-height-6.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
     },
     "embedded_figures_dataset_3000": {
       "dataset_version": "embedded-figures-4.0.0",
@@ -80,13 +80,13 @@
       "open_answers": 3000
     },
     "gear_train_dataset_3000": {
-      "dataset_version": "gear-train-4.0.0",
+      "dataset_version": "gear-train-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "hex_pathfinding_dataset_3000": {
-      "dataset_version": "hex-pathfinding-5.0.0",
+      "dataset_version": "hex-pathfinding-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -146,7 +146,7 @@
       "open_answers": 3000
     },
     "overlap_circles_dataset_3000": {
-      "dataset_version": "overlap-circles-5.0.0",
+      "dataset_version": "overlap-circles-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -164,7 +164,7 @@
       "open_answers": 3000
     },
     "projectile_motion_dataset_1000": {
-      "dataset_version": "projectile-motion-4.0.0",
+      "dataset_version": "projectile-motion-5.0.0",
       "images": 1000,
       "open_questions": 1000,
       "open_answers": 1000
@@ -206,10 +206,10 @@
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 95868,
-  "combined_open_answers": 95868,
-  "unique_question_ids": 95868,
-  "resolved_image_paths": 95868,
+  "combined_open_questions": 97368,
+  "combined_open_answers": 97368,
+  "unique_question_ids": 97368,
+  "resolved_image_paths": 97368,
   "public_columns": [
     "dataset",
     "dataset_version",
@@ -232,7 +232,6 @@
     "angle_class",
     "larger_angle",
     "difference_degrees_nearest_10",
-    "largest_angle_vertex",
     "largest_angle_degrees_nearest_10",
     "time",
     "smaller_angle_degrees_nearest_5",
@@ -243,13 +242,15 @@
     "direction_from_earlier",
     "farthest_pair",
     "distance_nearest_unit",
-    "relation_to_10",
+    "relation_to_12",
     "flat_edge_neighbours",
     "opposite_face",
-    "base_layer_count",
+    "visible_top_face_count",
     "hidden_cube_count",
     "depth_ordering",
     "nearest_colour",
+    "height_ordering_shortest_to_tallest",
+    "tallest_stack_colour",
     "candidate",
     "side_count",
     "arrow_count",
@@ -260,8 +261,8 @@
     "rounded_tick_value",
     "range_half",
     "fastest_gear",
-    "last_gear",
-    "last_direction_relation",
+    "direction_target",
+    "target_direction_relation",
     "boundary_status",
     "neighbourhood",
     "crossing_count",
@@ -280,13 +281,12 @@
     "minimum_cube_count",
     "uniqueness",
     "circle_count",
-    "any_isolated",
     "above_average_radius_count",
     "stability_conclusion",
     "face_shapes",
     "convexity",
     "peak_horizontal_distance_m_nearest_1",
-    "peak_above_20_m",
+    "peak_above_13_m",
     "rotation_candidate",
     "reflection_candidate",
     "connectivity",

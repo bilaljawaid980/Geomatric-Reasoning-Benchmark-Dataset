@@ -33,8 +33,65 @@
       "angle_class",
       "larger_angle",
       "difference_degrees_nearest_10",
-      "largest_angle_vertex",
       "largest_angle_degrees_nearest_10"
+    ]
+  },
+  "coordinate_geometry_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "farthest_pair",
+      "distance_nearest_unit",
+      "relation_to_12"
+    ]
+  },
+  "cube_structure_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "visible_top_face_count",
+      "hidden_cube_count"
+    ]
+  },
+  "depth_height_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "depth_ordering",
+      "nearest_colour",
+      "height_ordering_shortest_to_tallest",
+      "tallest_stack_colour"
+    ]
+  },
+  "gear_train_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "fastest_gear",
+      "direction_target",
+      "target_direction_relation"
+    ]
+  },
+  "overlap_circles_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "circle_count",
+      "above_average_radius_count"
+    ]
+  },
+  "projectile_motion_dataset_1000": {
+    "included": 1000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "peak_horizontal_distance_m_nearest_1",
+      "peak_above_13_m"
     ]
   }
 }

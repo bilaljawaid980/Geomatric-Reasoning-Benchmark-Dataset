@@ -721,12 +721,33 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "time": {
+        "visual_signal": "the printed clock numerals and two hand-tip positions",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      },
+      "smaller_angle_degrees_nearest_5": {
+        "visual_signal": "the smaller rendered opening between the clock hands",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

@@ -1,8 +1,8 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "depth-height-5.0.0",
-  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
+  "dataset_version": "depth-height-6.0.0",
+  "generator_commit": "3d93a01c0d716959cf26bd4d55d5b4a91f3c603e",
   "images": 3000,
   "question_set_fields": [
     "question_id",
@@ -11,7 +11,7 @@
     "prompt"
   ],
   "questions": 15000,
-  "open_questions": 1500,
+  "open_questions": 3000,
   "open_question_files": [
     "open_questions.csv",
     "open_answer_key.csv",
@@ -36,12 +36,12 @@
     "open_prompt_does_not_name_reasoning_trap": true,
     "existing_five_level_questions_unchanged_except_approved_defect_repairs": true,
     "open_question_count_per_eligible_image": 1,
-    "open_exclusions_are_explicitly_reported": true
+    "open_exclusions_are_explicitly_reported": true,
+    "open_quantity_recovery_signals_documented_per_subfact": true,
+    "open_stack_height_variant_covers_all_stack_scenes": true
   },
   "open_question_builder": "../build_remaining_open_questions.py",
   "open_question_validator": "../validate_remaining_open_questions.py",
-  "open_excluded_items": 1500,
-  "open_exclusion_counts": {
-    "not_depth_ordering_scene": 1500
-  }
+  "open_excluded_items": 0,
+  "open_exclusion_counts": {}
 }

@@ -4,9 +4,9 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: circle_count, any_isolated, above_average_radius_count
-Constant-answer baselines: {"above_average_radius_count": 0.254, "any_isolated": 0.7203333333333334, "circle_count": 0.133}
-Fields >=60%: {"any_isolated": 0.7203333333333334}
+Sub-facts: circle_count, above_average_radius_count
+Constant-answer baselines: {"above_average_radius_count": 0.254, "circle_count": 0.133}
+Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
 Special checks: {"invalid_cluster_distribution_answers": 0}

@@ -9,5 +9,5 @@ Constant-answer baselines: {"boundary_status": 0.5353333333333333, "neighbourhoo
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"axial_offset_to_direction_name": {"left": [-1, 0], "lower-left": [-1, 1], "lower-right": [0, 1], "right": [1, 0], "upper-left": [0, -1], "upper-right": [1, -1]}, "item_0124_right_offset": [1, 0], "item_0124_visual_alignment": "same screen y; directly right", "orientation_inadmissible_stored_direction_count": 0, "renderer_hex_orientation": "pointy-top"}
 Issues: []

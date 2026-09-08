@@ -4,10 +4,10 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: base_layer_count, hidden_cube_count
-Constant-answer baselines: {"base_layer_count": 0.18633333333333332, "hidden_cube_count": 0.3333333333333333}
+Sub-facts: visible_top_face_count, hidden_cube_count
+Constant-answer baselines: {"hidden_cube_count": 0.3333333333333333, "visible_top_face_count": 0.19033333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"cube_structure_0251_cubes_per_layer": {"0": 9, "1": 1}, "cube_structure_0251_visible_top_faces": 8, "cube_structure_0251_z0_entries": 9, "human_vs_stored_20": {"hidden_cube_divergences": 0, "item_ids": ["cube_structure_0251", "cube_structure_0045", "cube_structure_0141", "cube_structure_0287", "cube_structure_0403", "cube_structure_0577", "cube_structure_0688", "cube_structure_0844", "cube_structure_0999", "cube_structure_1123", "cube_structure_1288", "cube_structure_1444", "cube_structure_1607", "cube_structure_1777", "cube_structure_1933", "cube_structure_2111", "cube_structure_2284", "cube_structure_2475", "cube_structure_2699", "cube_structure_2921"], "review_method": "manual count of rendered top-face rhombi and visual column/occlusion inference", "visible_top_face_divergences": 0}}
 Issues: []

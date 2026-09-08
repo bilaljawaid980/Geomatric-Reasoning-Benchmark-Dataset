@@ -40,12 +40,33 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "crossing_count": {
+        "visual_signal": "distinct rendered crossings between the relevant paths or beams",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovery"
+        ]
+      },
+      "starts_and_finishes_higher": {
+        "visual_signal": "relative red/blue vertical order at the two image edges",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovery"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

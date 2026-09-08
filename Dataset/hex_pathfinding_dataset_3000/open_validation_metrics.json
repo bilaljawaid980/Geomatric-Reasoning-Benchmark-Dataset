@@ -132,13 +132,68 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "boundary_status": {
+        "visual_signal": "presence or absence of all six rendered neighbours around HOME",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_full_tile_class_recovery"
+        ]
+      },
+      "neighbourhood": {
+        "visual_signal": "the six rendered adjacent hex fills and their centre offsets",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_full_tile_class_recovery"
+        ]
+      }
+    }
   },
-  "special_checks": {},
+  "special_checks": {
+    "renderer_hex_orientation": "pointy-top",
+    "axial_offset_to_direction_name": {
+      "upper-left": [
+        0,
+        -1
+      ],
+      "upper-right": [
+        1,
+        -1
+      ],
+      "left": [
+        -1,
+        0
+      ],
+      "right": [
+        1,
+        0
+      ],
+      "lower-left": [
+        -1,
+        1
+      ],
+      "lower-right": [
+        0,
+        1
+      ]
+    },
+    "orientation_inadmissible_stored_direction_count": 0,
+    "item_0124_right_offset": [
+      1,
+      0
+    ],
+    "item_0124_visual_alignment": "same screen y; directly right"
+  },
   "issues": []
 }

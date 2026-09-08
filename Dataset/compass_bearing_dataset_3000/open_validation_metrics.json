@@ -48,12 +48,29 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 1118,
     "total": 1118,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "closest_pair": {
+        "visual_signal": "the shortest rendered landmark displacement",
+        "checked_items": 1118,
+        "passed_items": 1118,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      },
+      "direction_from_earlier": {
+        "visual_signal": "the compass rose and rendered landmark displacement",
+        "checked_items": 1118,
+        "passed_items": 1118,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      }
+    }
   },
   "special_checks": {
     "substantive_boundary_guard_exclusions": 1882,

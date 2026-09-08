@@ -11,7 +11,6 @@
     "angle_class",
     "larger_angle",
     "difference_degrees_nearest_10",
-    "largest_angle_vertex",
     "largest_angle_degrees_nearest_10"
   ],
   "answer_distributions": {
@@ -79,11 +78,6 @@
       "150": 12,
       "160": 2
     },
-    "largest_angle_vertex": {
-      "A": 561,
-      "C": 138,
-      "B": 51
-    },
     "largest_angle_degrees_nearest_10": {
       "90": 268,
       "70": 129,
@@ -101,12 +95,9 @@
     "angle_class": 0.4058333333333333,
     "larger_angle": 0.5009523809523809,
     "difference_degrees_nearest_10": 0.12571428571428572,
-    "largest_angle_vertex": 0.748,
     "largest_angle_degrees_nearest_10": 0.35733333333333334
   },
-  "fields_at_or_above_60_percent": {
-    "largest_angle_vertex": 0.748
-  },
+  "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -118,12 +109,50 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "angle_degrees_nearest_10": {
+        "visual_signal": "the opening between the two rendered rays",
+        "checked_items": 1200,
+        "passed_items": 1200,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      },
+      "angle_class": {
+        "visual_signal": "the rendered ray opening relative to 90 and 180 degrees",
+        "checked_items": 1200,
+        "passed_items": 1200,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      },
+      "larger_angle": {
+        "visual_signal": "the two rendered angle openings",
+        "checked_items": 1050,
+        "passed_items": 1050,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      },
+      "difference_degrees_nearest_10": {
+        "visual_signal": "the difference between the two rendered openings",
+        "checked_items": 1050,
+        "passed_items": 1050,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      },
+      "largest_angle_degrees_nearest_10": {
+        "visual_signal": "the three rendered triangle-corner openings",
+        "checked_items": 750,
+        "passed_items": 750,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      }
+    }
   },
   "special_checks": {
     "scene_type_distribution": {
@@ -131,7 +160,14 @@
       "single": 1200,
       "triangle": 750
     },
-    "variant_mapping_violations": 0
+    "variant_mapping_violations": 0,
+    "source_vertex_label_assignment": "fixed A/B/C order equals triangle_vertices index 0/1/2",
+    "pre_fix_largest_angle_vertex_distribution": {
+      "C": 138,
+      "A": 561,
+      "B": 51
+    },
+    "vertex_subfact_disposition": "removed because fixed geometry-correlated labels produce a 74.8% A baseline"
   },
   "issues": []
 }

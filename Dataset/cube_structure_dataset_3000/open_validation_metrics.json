@@ -5,20 +5,22 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Scan the structure column by column, taking as vertical the direction the drawing renders as up: count the cubes resting directly on the ground, then work out how many cubes are completely hidden from this viewpoint. State your conclusion, justify it by describing how you separated cubes stacked above one another from cubes set behind one another, and end with a confidence score from 0 to 1.",
+  "template": "Scan the structure cube by cube, taking as vertical the direction the drawing renders as up: count exactly how many cubes have a visible top face, then work out exactly how many cubes are completely hidden from this viewpoint (tolerance 0 for both counts). State your conclusion, justify it by describing how you separated visible top faces from side faces and how the visible stacks imply any concealed cubes, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "base_layer_count",
+    "visible_top_face_count",
     "hidden_cube_count"
   ],
   "answer_distributions": {
-    "base_layer_count": {
-      "8": 559,
-      "7": 463,
-      "10": 459,
-      "9": 441,
-      "4": 367,
-      "6": 359,
-      "5": 352
+    "visible_top_face_count": {
+      "4": 571,
+      "8": 515,
+      "6": 458,
+      "7": 433,
+      "5": 412,
+      "9": 281,
+      "3": 190,
+      "10": 129,
+      "2": 11
     },
     "hidden_cube_count": {
       "0": 1000,
@@ -27,7 +29,7 @@
     }
   },
   "constant_answer_baselines": {
-    "base_layer_count": 0.18633333333333332,
+    "visible_top_face_count": 0.19033333333333333,
     "hidden_cube_count": 0.3333333333333333
   },
   "fields_at_or_above_60_percent": {},
@@ -42,13 +44,68 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "visible_top_face_count": {
+        "visual_signal": "distinct rendered top-face rhombi with top-fill colour and boundary outline",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_face_recovery"
+        ]
+      },
+      "hidden_cube_count": {
+        "visual_signal": "the visible column/occlusion geometry implied by the rendered top and side faces",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_face_recovery"
+        ]
+      }
+    }
   },
-  "special_checks": {},
+  "special_checks": {
+    "cube_structure_0251_cubes_per_layer": {
+      "0": 9,
+      "1": 1
+    },
+    "cube_structure_0251_z0_entries": 9,
+    "cube_structure_0251_visible_top_faces": 8,
+    "human_vs_stored_20": {
+      "item_ids": [
+        "cube_structure_0251",
+        "cube_structure_0045",
+        "cube_structure_0141",
+        "cube_structure_0287",
+        "cube_structure_0403",
+        "cube_structure_0577",
+        "cube_structure_0688",
+        "cube_structure_0844",
+        "cube_structure_0999",
+        "cube_structure_1123",
+        "cube_structure_1288",
+        "cube_structure_1444",
+        "cube_structure_1607",
+        "cube_structure_1777",
+        "cube_structure_1933",
+        "cube_structure_2111",
+        "cube_structure_2284",
+        "cube_structure_2475",
+        "cube_structure_2699",
+        "cube_structure_2921"
+      ],
+      "visible_top_face_divergences": 0,
+      "hidden_cube_divergences": 0,
+      "review_method": "manual count of rendered top-face rhombi and visual column/occlusion inference"
+    }
+  },
   "issues": []
 }

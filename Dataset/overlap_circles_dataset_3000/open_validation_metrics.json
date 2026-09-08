@@ -5,10 +5,9 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Examine every circle and the way they lie across one another: count how many circles there are, say whether any circle stands clear of all the others, and give how many are larger than the average size. State your conclusion, justify it by describing how you traced individual outlines where several circles overlap, and end with a confidence score from 0 to 1.",
+  "template": "Examine every circle and the way they lie across one another: count how many circles there are, and give how many are larger than the average size. State your conclusion, justify it by describing how you traced individual outlines where several circles overlap, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "circle_count",
-    "any_isolated",
     "above_average_radius_count"
   ],
   "answer_distributions": {
@@ -21,10 +20,6 @@
       "5": 363,
       "6": 360,
       "8": 353
-    },
-    "any_isolated": {
-      "no": 2161,
-      "yes": 839
     },
     "above_average_radius_count": {
       "4": 762,
@@ -39,12 +34,9 @@
   },
   "constant_answer_baselines": {
     "circle_count": 0.133,
-    "any_isolated": 0.7203333333333334,
     "above_average_radius_count": 0.254
   },
-  "fields_at_or_above_60_percent": {
-    "any_isolated": 0.7203333333333334
-  },
+  "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -56,12 +48,35 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "circle_count": {
+        "visual_signal": "closed rendered circle outlines",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_circle_recovery",
+          "png_failure_depth_distribution"
+        ]
+      },
+      "above_average_radius_count": {
+        "visual_signal": "relative diameters of all rendered circle outlines",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_circle_recovery",
+          "png_failure_depth_distribution"
+        ]
+      }
+    }
   },
   "special_checks": {
     "invalid_cluster_distribution_answers": 0

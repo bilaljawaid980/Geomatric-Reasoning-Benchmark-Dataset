@@ -57,12 +57,42 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "shape_count": {
+        "visual_signal": "separately outlined nested polygons",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovered_shape_count_matches"
+        ]
+      },
+      "shrink_pattern": {
+        "visual_signal": "successive rendered polygon side-length ratios",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovered_shape_count_matches"
+        ]
+      },
+      "rotation_degrees_nearest_10": {
+        "visual_signal": "corresponding rendered polygon corners",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovered_shape_count_matches"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

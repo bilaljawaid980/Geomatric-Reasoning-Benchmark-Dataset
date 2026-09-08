@@ -14,7 +14,6 @@
         "angle_class",
         "larger_angle",
         "difference_degrees_nearest_10",
-        "largest_angle_vertex",
         "largest_angle_degrees_nearest_10"
       ],
       "answer_distributions": {
@@ -82,11 +81,6 @@
           "150": 12,
           "160": 2
         },
-        "largest_angle_vertex": {
-          "A": 561,
-          "C": 138,
-          "B": 51
-        },
         "largest_angle_degrees_nearest_10": {
           "90": 268,
           "70": 129,
@@ -104,12 +98,9 @@
         "angle_class": 0.4058333333333333,
         "larger_angle": 0.5009523809523809,
         "difference_degrees_nearest_10": 0.12571428571428572,
-        "largest_angle_vertex": 0.748,
         "largest_angle_degrees_nearest_10": 0.35733333333333334
       },
-      "fields_at_or_above_60_percent": {
-        "largest_angle_vertex": 0.748
-      },
+      "fields_at_or_above_60_percent": {},
       "independent_derivation": {
         "mismatches": [],
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -121,12 +112,50 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "angle_degrees_nearest_10": {
+            "visual_signal": "the opening between the two rendered rays",
+            "checked_items": 1200,
+            "passed_items": 1200,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "angle_class": {
+            "visual_signal": "the rendered ray opening relative to 90 and 180 degrees",
+            "checked_items": 1200,
+            "passed_items": 1200,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "larger_angle": {
+            "visual_signal": "the two rendered angle openings",
+            "checked_items": 1050,
+            "passed_items": 1050,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "difference_degrees_nearest_10": {
+            "visual_signal": "the difference between the two rendered openings",
+            "checked_items": 1050,
+            "passed_items": 1050,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "largest_angle_degrees_nearest_10": {
+            "visual_signal": "the three rendered triangle-corner openings",
+            "checked_items": 750,
+            "passed_items": 750,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          }
+        }
       },
       "special_checks": {
         "scene_type_distribution": {
@@ -134,11 +163,18 @@
           "single": 1200,
           "triangle": 750
         },
-        "variant_mapping_violations": 0
+        "variant_mapping_violations": 0,
+        "source_vertex_label_assignment": "fixed A/B/C order equals triangle_vertices index 0/1/2",
+        "pre_fix_largest_angle_vertex_distribution": {
+          "C": 138,
+          "A": 561,
+          "B": 51
+        },
+        "vertex_subfact_disposition": "removed because fixed geometry-correlated labels produce a 74.8% A baseline"
       },
       "issues": [],
-      "dataset_version_before": "angle-estimation-6.0.0",
-      "dataset_version_after": "angle-estimation-7.0.0"
+      "dataset_version_before": "angle-estimation-7.0.0",
+      "dataset_version_after": "angle-estimation-8.0.0"
     },
     "clock_reading_dataset_3000": {
       "status": "PASS",
@@ -863,12 +899,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "time": {
+            "visual_signal": "the printed clock numerals and two hand-tip positions",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "smaller_angle_degrees_nearest_5": {
+            "visual_signal": "the smaller rendered opening between the clock hands",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -922,12 +979,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "correct_candidate": {
+            "visual_signal": "the target silhouette and candidate pieces",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_cube_piece_height_recovery"
+            ]
+          },
+          "rejected_candidate": {
+            "visual_signal": "the labelled candidate panels",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_cube_piece_height_recovery"
+            ]
+          },
+          "rejection_reason": {
+            "visual_signal": "the visible fit, count, reflection, or rotation defect in the rejected panel",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_cube_piece_height_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -981,12 +1068,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "correct_candidate": {
+            "visual_signal": "the target silhouette and candidate pieces",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "rejected_candidate": {
+            "visual_signal": "the labelled candidate panels",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "rejection_reason": {
+            "visual_signal": "the visible fit, count, reflection, or rotation defect in the rejected panel",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -1041,12 +1158,29 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 1118,
         "total": 1118,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "closest_pair": {
+            "visual_signal": "the shortest rendered landmark displacement",
+            "checked_items": 1118,
+            "passed_items": 1118,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "direction_from_earlier": {
+            "visual_signal": "the compass rose and rendered landmark displacement",
+            "checked_items": 1118,
+            "passed_items": 1118,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          }
+        }
       },
       "special_checks": {
         "substantive_boundary_guard_exclusions": 1882,
@@ -1061,11 +1195,11 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Read the position of each labelled point against the printed grid: name the pair of points that lie farthest apart, give that distance to the nearest whole unit, and say whether it is greater or less than 10 units. State your conclusion, justify it by describing the horizontal and vertical grid separations you used, and end with a confidence score from 0 to 1.",
+      "template": "Read the position of each labelled point against the printed grid: name the pair of points that lie farthest apart, give that distance to the nearest whole unit, and say whether it is greater or less than 12 units. State your conclusion, justify it by describing the horizontal and vertical grid separations you used, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "farthest_pair",
         "distance_nearest_unit",
-        "relation_to_10"
+        "relation_to_12"
       ],
       "answer_distributions": {
         "farthest_pair": {
@@ -1099,19 +1233,17 @@
           "20": 7,
           "22": 4
         },
-        "relation_to_10": {
-          "greater": 1946,
-          "less": 1054
+        "relation_to_12": {
+          "less": 1551,
+          "greater": 1449
         }
       },
       "constant_answer_baselines": {
         "farthest_pair": 0.42,
         "distance_nearest_unit": 0.12433333333333334,
-        "relation_to_10": 0.6486666666666666
+        "relation_to_12": 0.517
       },
-      "fields_at_or_above_60_percent": {
-        "relation_to_10": 0.6486666666666666
-      },
+      "fields_at_or_above_60_percent": {},
       "independent_derivation": {
         "mismatches": [],
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -1123,15 +1255,47 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "farthest_pair": {
+            "visual_signal": "the largest horizontal/vertical grid separation",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "distance_nearest_unit": {
+            "visual_signal": "the printed coordinate grid separations",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "relation_to_12": {
+            "visual_signal": "the recovered farthest distance compared with 12 grid units",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
-      "issues": []
+      "issues": [],
+      "dataset_version_before": "coordinate-geometry-5.0.0",
+      "dataset_version_after": "coordinate-geometry-6.0.0"
     },
     "cube_net_dataset_3000": {
       "status": "PASS",
@@ -1229,12 +1393,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "flat_edge_neighbours": {
+            "visual_signal": "shared full edges between labelled net squares",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_face_and_layout_recovery"
+            ]
+          },
+          "opposite_face": {
+            "visual_signal": "the labelled net-square arrangement under folding",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_face_and_layout_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -1246,20 +1431,22 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Scan the structure column by column, taking as vertical the direction the drawing renders as up: count the cubes resting directly on the ground, then work out how many cubes are completely hidden from this viewpoint. State your conclusion, justify it by describing how you separated cubes stacked above one another from cubes set behind one another, and end with a confidence score from 0 to 1.",
+      "template": "Scan the structure cube by cube, taking as vertical the direction the drawing renders as up: count exactly how many cubes have a visible top face, then work out exactly how many cubes are completely hidden from this viewpoint (tolerance 0 for both counts). State your conclusion, justify it by describing how you separated visible top faces from side faces and how the visible stacks imply any concealed cubes, and end with a confidence score from 0 to 1.",
       "subfacts": [
-        "base_layer_count",
+        "visible_top_face_count",
         "hidden_cube_count"
       ],
       "answer_distributions": {
-        "base_layer_count": {
-          "8": 559,
-          "7": 463,
-          "10": 459,
-          "9": 441,
-          "4": 367,
-          "6": 359,
-          "5": 352
+        "visible_top_face_count": {
+          "4": 571,
+          "8": 515,
+          "6": 458,
+          "7": 433,
+          "5": 412,
+          "9": 281,
+          "3": 190,
+          "10": 129,
+          "2": 11
         },
         "hidden_cube_count": {
           "0": 1000,
@@ -1268,7 +1455,7 @@
         }
       },
       "constant_answer_baselines": {
-        "base_layer_count": 0.18633333333333332,
+        "visible_top_face_count": 0.19033333333333333,
         "hidden_cube_count": 0.3333333333333333
       },
       "fields_at_or_above_60_percent": {},
@@ -1283,29 +1470,86 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "visible_top_face_count": {
+            "visual_signal": "distinct rendered top-face rhombi with top-fill colour and boundary outline",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_face_recovery"
+            ]
+          },
+          "hidden_cube_count": {
+            "visual_signal": "the visible column/occlusion geometry implied by the rendered top and side faces",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_face_recovery"
+            ]
+          }
+        }
       },
-      "special_checks": {},
-      "issues": []
+      "special_checks": {
+        "cube_structure_0251_cubes_per_layer": {
+          "0": 9,
+          "1": 1
+        },
+        "cube_structure_0251_z0_entries": 9,
+        "cube_structure_0251_visible_top_faces": 8,
+        "human_vs_stored_20": {
+          "item_ids": [
+            "cube_structure_0251",
+            "cube_structure_0045",
+            "cube_structure_0141",
+            "cube_structure_0287",
+            "cube_structure_0403",
+            "cube_structure_0577",
+            "cube_structure_0688",
+            "cube_structure_0844",
+            "cube_structure_0999",
+            "cube_structure_1123",
+            "cube_structure_1288",
+            "cube_structure_1444",
+            "cube_structure_1607",
+            "cube_structure_1777",
+            "cube_structure_1933",
+            "cube_structure_2111",
+            "cube_structure_2284",
+            "cube_structure_2475",
+            "cube_structure_2699",
+            "cube_structure_2921"
+          ],
+          "visible_top_face_divergences": 0,
+          "hidden_cube_divergences": 0,
+          "review_method": "manual count of rendered top-face rhombi and visual column/occlusion inference"
+        }
+      },
+      "issues": [],
+      "dataset_version_before": "cube-structure-5.0.0",
+      "dataset_version_after": "cube-structure-6.0.0"
     },
     "depth_height_dataset_3000": {
       "status": "PASS",
       "dataset": "depth_height_dataset_3000",
       "source_items": 3000,
-      "included_items": 1500,
-      "excluded_items": 1500,
-      "exclusion_counts": {
-        "not_depth_ordering_scene": 1500
-      },
+      "included_items": 3000,
+      "excluded_items": 0,
+      "exclusion_counts": {},
       "template": "Compare the objects in the scene using the cues that indicate distance from the camera: rank every object from closest to farthest by colour, and name which one lies nearest. State your conclusion, justify it by describing the cues you used to order them, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "depth_ordering",
-        "nearest_colour"
+        "nearest_colour",
+        "height_ordering_shortest_to_tallest",
+        "tallest_stack_colour"
       ],
       "answer_distributions": {
         "depth_ordering": {
@@ -1516,11 +1760,220 @@
           "magenta": 307,
           "teal": 290,
           "purple": 279
+        },
+        "height_ordering_shortest_to_tallest": {
+          "[\"magenta\",\"orange\"]": 33,
+          "[\"orange\",\"magenta\"]": 31,
+          "[\"blue\",\"purple\"]": 29,
+          "[\"blue\",\"magenta\"]": 28,
+          "[\"orange\",\"blue\"]": 27,
+          "[\"purple\",\"orange\"]": 27,
+          "[\"teal\",\"orange\"]": 27,
+          "[\"orange\",\"teal\"]": 25,
+          "[\"purple\",\"blue\"]": 25,
+          "[\"magenta\",\"teal\"]": 24,
+          "[\"purple\",\"teal\"]": 24,
+          "[\"teal\",\"blue\"]": 24,
+          "[\"orange\",\"purple\"]": 23,
+          "[\"teal\",\"purple\"]": 23,
+          "[\"blue\",\"orange\"]": 20,
+          "[\"magenta\",\"blue\"]": 20,
+          "[\"purple\",\"magenta\"]": 20,
+          "[\"blue\",\"teal\"]": 18,
+          "[\"teal\",\"magenta\",\"orange\"]": 18,
+          "[\"teal\",\"magenta\"]": 18,
+          "[\"magenta\",\"purple\"]": 15,
+          "[\"blue\",\"purple\",\"teal\"]": 14,
+          "[\"magenta\",\"orange\",\"teal\"]": 14,
+          "[\"magenta\",\"teal\",\"purple\"]": 14,
+          "[\"blue\",\"orange\",\"magenta\"]": 13,
+          "[\"magenta\",\"teal\",\"orange\"]": 13,
+          "[\"orange\",\"purple\",\"magenta\"]": 12,
+          "[\"purple\",\"teal\",\"orange\"]": 12,
+          "[\"blue\",\"orange\",\"purple\"]": 11,
+          "[\"blue\",\"teal\",\"orange\"]": 11,
+          "[\"magenta\",\"blue\",\"orange\"]": 11,
+          "[\"orange\",\"magenta\",\"teal\"]": 11,
+          "[\"purple\",\"blue\",\"teal\"]": 11,
+          "[\"purple\",\"magenta\",\"blue\"]": 11,
+          "[\"purple\",\"teal\",\"magenta\"]": 11,
+          "[\"teal\",\"purple\",\"blue\"]": 11,
+          "[\"orange\",\"blue\",\"teal\"]": 10,
+          "[\"purple\",\"magenta\",\"orange\",\"teal\"]": 10,
+          "[\"purple\",\"magenta\",\"teal\",\"blue\"]": 10,
+          "[\"purple\",\"magenta\",\"teal\"]": 10,
+          "[\"teal\",\"magenta\",\"blue\"]": 10,
+          "[\"teal\",\"magenta\",\"purple\"]": 10,
+          "[\"blue\",\"magenta\",\"orange\"]": 9,
+          "[\"blue\",\"magenta\",\"teal\"]": 9,
+          "[\"blue\",\"orange\",\"teal\"]": 9,
+          "[\"blue\",\"teal\",\"purple\"]": 9,
+          "[\"magenta\",\"orange\",\"purple\"]": 9,
+          "[\"magenta\",\"purple\",\"teal\"]": 9,
+          "[\"orange\",\"blue\",\"magenta\",\"purple\"]": 9,
+          "[\"orange\",\"blue\",\"purple\"]": 9,
+          "[\"orange\",\"purple\",\"teal\"]": 9,
+          "[\"orange\",\"teal\",\"magenta\"]": 9,
+          "[\"purple\",\"blue\",\"orange\"]": 9,
+          "[\"purple\",\"orange\",\"magenta\"]": 9,
+          "[\"purple\",\"orange\",\"teal\"]": 9,
+          "[\"purple\",\"teal\",\"blue\"]": 9,
+          "[\"teal\",\"blue\",\"magenta\",\"orange\"]": 9,
+          "[\"teal\",\"orange\",\"blue\"]": 9,
+          "[\"teal\",\"purple\",\"magenta\"]": 9,
+          "[\"blue\",\"orange\",\"purple\",\"magenta\"]": 8,
+          "[\"blue\",\"purple\",\"magenta\"]": 8,
+          "[\"magenta\",\"orange\",\"teal\",\"blue\"]": 8,
+          "[\"magenta\",\"orange\",\"teal\",\"purple\"]": 8,
+          "[\"magenta\",\"purple\",\"orange\"]": 8,
+          "[\"purple\",\"blue\",\"magenta\"]": 8,
+          "[\"teal\",\"blue\",\"magenta\",\"purple\"]": 8,
+          "[\"teal\",\"orange\",\"magenta\"]": 8,
+          "[\"blue\",\"purple\",\"magenta\",\"orange\"]": 7,
+          "[\"blue\",\"purple\",\"teal\",\"orange\"]": 7,
+          "[\"magenta\",\"orange\",\"blue\"]": 7,
+          "[\"magenta\",\"purple\",\"blue\"]": 7,
+          "[\"orange\",\"teal\",\"blue\"]": 7,
+          "[\"orange\",\"teal\",\"purple\"]": 7,
+          "[\"purple\",\"orange\",\"blue\"]": 7,
+          "[\"purple\",\"orange\",\"magenta\",\"blue\"]": 7,
+          "[\"purple\",\"teal\",\"blue\",\"magenta\"]": 7,
+          "[\"teal\",\"blue\",\"magenta\"]": 7,
+          "[\"teal\",\"blue\",\"orange\"]": 7,
+          "[\"teal\",\"blue\",\"purple\",\"orange\"]": 7,
+          "[\"teal\",\"blue\",\"purple\"]": 7,
+          "[\"teal\",\"magenta\",\"blue\",\"orange\"]": 7,
+          "[\"teal\",\"purple\",\"orange\"]": 7,
+          "[\"blue\",\"orange\",\"teal\",\"purple\"]": 6,
+          "[\"blue\",\"purple\",\"magenta\",\"teal\"]": 6,
+          "[\"magenta\",\"orange\",\"blue\",\"purple\"]": 6,
+          "[\"magenta\",\"orange\",\"blue\",\"teal\"]": 6,
+          "[\"magenta\",\"purple\",\"orange\",\"teal\"]": 6,
+          "[\"magenta\",\"teal\",\"blue\",\"purple\"]": 6,
+          "[\"orange\",\"magenta\",\"purple\"]": 6,
+          "[\"orange\",\"teal\",\"magenta\",\"blue\"]": 6,
+          "[\"orange\",\"teal\",\"purple\",\"magenta\"]": 6,
+          "[\"purple\",\"blue\",\"orange\",\"magenta\"]": 6,
+          "[\"purple\",\"blue\",\"teal\",\"magenta\"]": 6,
+          "[\"purple\",\"magenta\",\"orange\",\"blue\"]": 6,
+          "[\"purple\",\"orange\",\"magenta\",\"teal\"]": 6,
+          "[\"purple\",\"teal\",\"orange\",\"magenta\"]": 6,
+          "[\"teal\",\"purple\",\"magenta\",\"blue\"]": 6,
+          "[\"blue\",\"magenta\",\"orange\",\"purple\"]": 5,
+          "[\"blue\",\"magenta\",\"teal\",\"purple\"]": 5,
+          "[\"blue\",\"orange\",\"magenta\",\"purple\"]": 5,
+          "[\"magenta\",\"blue\",\"purple\",\"orange\"]": 5,
+          "[\"magenta\",\"blue\",\"purple\"]": 5,
+          "[\"magenta\",\"orange\",\"purple\",\"blue\"]": 5,
+          "[\"magenta\",\"teal\",\"blue\"]": 5,
+          "[\"magenta\",\"teal\",\"orange\",\"purple\"]": 5,
+          "[\"orange\",\"blue\",\"magenta\"]": 5,
+          "[\"orange\",\"blue\",\"purple\",\"magenta\"]": 5,
+          "[\"orange\",\"magenta\",\"blue\",\"teal\"]": 5,
+          "[\"orange\",\"magenta\",\"blue\"]": 5,
+          "[\"orange\",\"magenta\",\"purple\",\"blue\"]": 5,
+          "[\"orange\",\"purple\",\"blue\",\"magenta\"]": 5,
+          "[\"orange\",\"purple\",\"blue\",\"teal\"]": 5,
+          "[\"purple\",\"blue\",\"orange\",\"teal\"]": 5,
+          "[\"purple\",\"blue\",\"teal\",\"orange\"]": 5,
+          "[\"purple\",\"magenta\",\"orange\"]": 5,
+          "[\"teal\",\"magenta\",\"purple\",\"blue\"]": 5,
+          "[\"teal\",\"orange\",\"blue\",\"magenta\"]": 5,
+          "[\"teal\",\"orange\",\"magenta\",\"purple\"]": 5,
+          "[\"teal\",\"orange\",\"purple\",\"blue\"]": 5,
+          "[\"teal\",\"purple\",\"magenta\",\"orange\"]": 5,
+          "[\"blue\",\"magenta\",\"purple\",\"teal\"]": 4,
+          "[\"blue\",\"magenta\",\"purple\"]": 4,
+          "[\"blue\",\"magenta\",\"teal\",\"orange\"]": 4,
+          "[\"blue\",\"orange\",\"teal\",\"magenta\"]": 4,
+          "[\"blue\",\"purple\",\"orange\",\"magenta\"]": 4,
+          "[\"blue\",\"purple\",\"orange\",\"teal\"]": 4,
+          "[\"blue\",\"teal\",\"magenta\",\"purple\"]": 4,
+          "[\"blue\",\"teal\",\"purple\",\"magenta\"]": 4,
+          "[\"magenta\",\"blue\",\"orange\",\"teal\"]": 4,
+          "[\"magenta\",\"blue\",\"teal\",\"purple\"]": 4,
+          "[\"magenta\",\"blue\",\"teal\"]": 4,
+          "[\"magenta\",\"purple\",\"orange\",\"blue\"]": 4,
+          "[\"magenta\",\"teal\",\"blue\",\"orange\"]": 4,
+          "[\"magenta\",\"teal\",\"orange\",\"blue\"]": 4,
+          "[\"magenta\",\"teal\",\"purple\",\"orange\"]": 4,
+          "[\"orange\",\"blue\",\"teal\",\"magenta\"]": 4,
+          "[\"orange\",\"blue\",\"teal\",\"purple\"]": 4,
+          "[\"orange\",\"magenta\",\"blue\",\"purple\"]": 4,
+          "[\"orange\",\"magenta\",\"purple\",\"teal\"]": 4,
+          "[\"orange\",\"magenta\",\"teal\",\"blue\"]": 4,
+          "[\"orange\",\"purple\",\"blue\"]": 4,
+          "[\"orange\",\"purple\",\"teal\",\"magenta\"]": 4,
+          "[\"purple\",\"blue\",\"magenta\",\"teal\"]": 4,
+          "[\"purple\",\"magenta\",\"blue\",\"teal\"]": 4,
+          "[\"purple\",\"orange\",\"teal\",\"blue\"]": 4,
+          "[\"purple\",\"teal\",\"magenta\",\"orange\"]": 4,
+          "[\"teal\",\"magenta\",\"orange\",\"blue\"]": 4,
+          "[\"teal\",\"magenta\",\"orange\",\"purple\"]": 4,
+          "[\"teal\",\"magenta\",\"purple\",\"orange\"]": 4,
+          "[\"teal\",\"orange\",\"magenta\",\"blue\"]": 4,
+          "[\"teal\",\"orange\",\"purple\",\"magenta\"]": 4,
+          "[\"teal\",\"orange\",\"purple\"]": 4,
+          "[\"blue\",\"magenta\",\"purple\",\"orange\"]": 3,
+          "[\"blue\",\"purple\",\"orange\"]": 3,
+          "[\"blue\",\"teal\",\"magenta\",\"orange\"]": 3,
+          "[\"blue\",\"teal\",\"magenta\"]": 3,
+          "[\"magenta\",\"blue\",\"teal\",\"orange\"]": 3,
+          "[\"magenta\",\"orange\",\"purple\",\"teal\"]": 3,
+          "[\"magenta\",\"purple\",\"blue\",\"orange\"]": 3,
+          "[\"magenta\",\"teal\",\"purple\",\"blue\"]": 3,
+          "[\"orange\",\"blue\",\"magenta\",\"teal\"]": 3,
+          "[\"orange\",\"magenta\",\"teal\",\"purple\"]": 3,
+          "[\"orange\",\"purple\",\"magenta\",\"blue\"]": 3,
+          "[\"orange\",\"purple\",\"magenta\",\"teal\"]": 3,
+          "[\"orange\",\"teal\",\"purple\",\"blue\"]": 3,
+          "[\"purple\",\"blue\",\"magenta\",\"orange\"]": 3,
+          "[\"purple\",\"orange\",\"blue\",\"magenta\"]": 3,
+          "[\"purple\",\"teal\",\"orange\",\"blue\"]": 3,
+          "[\"teal\",\"magenta\",\"blue\",\"purple\"]": 3,
+          "[\"teal\",\"orange\",\"blue\",\"purple\"]": 3,
+          "[\"teal\",\"purple\",\"blue\",\"orange\"]": 3,
+          "[\"teal\",\"purple\",\"orange\",\"magenta\"]": 3,
+          "[\"blue\",\"magenta\",\"orange\",\"teal\"]": 2,
+          "[\"blue\",\"orange\",\"magenta\",\"teal\"]": 2,
+          "[\"blue\",\"orange\",\"purple\",\"teal\"]": 2,
+          "[\"blue\",\"teal\",\"purple\",\"orange\"]": 2,
+          "[\"magenta\",\"blue\",\"orange\",\"purple\"]": 2,
+          "[\"magenta\",\"blue\",\"purple\",\"teal\"]": 2,
+          "[\"magenta\",\"purple\",\"blue\",\"teal\"]": 2,
+          "[\"magenta\",\"purple\",\"teal\",\"blue\"]": 2,
+          "[\"magenta\",\"purple\",\"teal\",\"orange\"]": 2,
+          "[\"orange\",\"purple\",\"teal\",\"blue\"]": 2,
+          "[\"orange\",\"teal\",\"blue\",\"magenta\"]": 2,
+          "[\"orange\",\"teal\",\"blue\",\"purple\"]": 2,
+          "[\"orange\",\"teal\",\"magenta\",\"purple\"]": 2,
+          "[\"purple\",\"magenta\",\"blue\",\"orange\"]": 2,
+          "[\"purple\",\"magenta\",\"teal\",\"orange\"]": 2,
+          "[\"purple\",\"orange\",\"blue\",\"teal\"]": 2,
+          "[\"purple\",\"teal\",\"blue\",\"orange\"]": 2,
+          "[\"purple\",\"teal\",\"magenta\",\"blue\"]": 2,
+          "[\"teal\",\"blue\",\"purple\",\"magenta\"]": 2,
+          "[\"teal\",\"purple\",\"blue\",\"magenta\"]": 2,
+          "[\"blue\",\"purple\",\"teal\",\"magenta\"]": 1,
+          "[\"blue\",\"teal\",\"orange\",\"purple\"]": 1,
+          "[\"orange\",\"blue\",\"purple\",\"teal\"]": 1,
+          "[\"purple\",\"orange\",\"teal\",\"magenta\"]": 1,
+          "[\"teal\",\"blue\",\"orange\",\"magenta\"]": 1,
+          "[\"teal\",\"blue\",\"orange\",\"purple\"]": 1
+        },
+        "tallest_stack_colour": {
+          "orange": 320,
+          "teal": 305,
+          "blue": 293,
+          "magenta": 292,
+          "purple": 290
         }
       },
       "constant_answer_baselines": {
         "depth_ordering": 0.02266666666666667,
-        "nearest_colour": 0.20866666666666667
+        "nearest_colour": 0.20866666666666667,
+        "height_ordering_shortest_to_tallest": 0.022,
+        "tallest_stack_colour": 0.21333333333333335
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -1534,22 +1987,63 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
-        "passed": 1500,
-        "total": 1500,
-        "failures": []
+        "passed": 3000,
+        "total": 3000,
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "depth_ordering": {
+            "visual_signal": "relative rendered size and vertical-position perspective cues",
+            "checked_items": 1500,
+            "passed_items": 1500,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "nearest_colour": {
+            "visual_signal": "the nearest object's rendered perspective cues",
+            "checked_items": 1500,
+            "passed_items": 1500,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "height_ordering_shortest_to_tallest": {
+            "visual_signal": "visible block counts above the common baseline",
+            "checked_items": 1500,
+            "passed_items": 1500,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "tallest_stack_colour": {
+            "visual_signal": "the stack with the greatest visible block count",
+            "checked_items": 1500,
+            "passed_items": 1500,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {
         "scene_type_distribution": {
           "depth_ordering": 1500,
           "stack_height": 1500
         },
-        "stack_height_excluded_for_no_depth_cues": 1500,
+        "stack_height_items_recovered_by_variant": 1500,
         "template_failure_exclusions": 0
       },
-      "issues": []
+      "issues": [],
+      "dataset_version_before": "depth-height-5.0.0",
+      "dataset_version_after": "depth-height-6.0.0"
     },
     "embedded_figures_dataset_3000": {
       "status": "PASS",
@@ -1593,12 +2087,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "candidate": {
+            "visual_signal": "the candidate polygon whose edges occur in the complex figure",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "side_count": {
+            "visual_signal": "the rendered boundary-edge count of the matched candidate",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -1669,12 +2184,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "arrow_count": {
+            "visual_signal": "distinct rendered force arrows",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_arrow_count_and_direction_recovery"
+            ]
+          },
+          "weight_arrow": {
+            "visual_signal": "the downward force arrow's printed label",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_arrow_count_and_direction_recovery"
+            ]
+          },
+          "drawn_magnitude_ranking": {
+            "visual_signal": "rendered force-arrow shaft lengths",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_arrow_count_and_direction_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -1719,12 +2264,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "unfolded_hole_count": {
+            "visual_signal": "fold panels, mirror lines, and the rendered punch",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "correct_pattern": {
+            "visual_signal": "the candidate panel matching reflected punch positions",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {
         "identical_l4_l5_count": 0
@@ -1797,12 +2363,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "rounded_tick_value": {
+            "visual_signal": "needle intersection with the printed tick scale",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "range_half": {
+            "visual_signal": "needle position relative to the scale midpoint",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {
         "needle_exactly_on_tick_count": 1380
@@ -1816,11 +2403,11 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Follow the mesh from the driver gear through every gear it turns: name the gear that rotates fastest, and say whether the last gear in the chain turns in the same direction as the driver or the opposite. State your conclusion, justify it by describing the tooth counts you compared and how direction alternates along the chain, and end with a confidence score from 0 to 1.",
+      "template": "Follow the mesh from the driver gear through every gear it turns: name the gear that rotates fastest, and say whether gear B turns in the same direction as the driver or the opposite. State your conclusion, justify it by describing the tooth counts you compared and how direction alternates along the chain, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "fastest_gear",
-        "last_gear",
-        "last_direction_relation"
+        "direction_target",
+        "target_direction_relation"
       ],
       "answer_distributions": {
         "fastest_gear": {
@@ -1830,24 +2417,23 @@
           "D": 497,
           "E": 214
         },
-        "last_gear": {
-          "E": 1143,
-          "D": 1137,
-          "C": 720
+        "direction_target": {
+          "C": 1255,
+          "B": 1010,
+          "D": 470,
+          "E": 265
         },
-        "last_direction_relation": {
-          "same": 1853,
-          "opposite": 1147
+        "target_direction_relation": {
+          "opposite": 1500,
+          "same": 1500
         }
       },
       "constant_answer_baselines": {
         "fastest_gear": 0.261,
-        "last_gear": 0.381,
-        "last_direction_relation": 0.6176666666666667
+        "direction_target": 0.41833333333333333,
+        "target_direction_relation": 0.5
       },
-      "fields_at_or_above_60_percent": {
-        "last_direction_relation": 0.6176666666666667
-      },
+      "fields_at_or_above_60_percent": {},
       "independent_derivation": {
         "mismatches": [],
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -1859,15 +2445,47 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "fastest_gear": {
+            "visual_signal": "printed tooth counts on the meshed gears",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "direction_target": {
+            "visual_signal": "the printed target gear label",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "target_direction_relation": {
+            "visual_signal": "mesh-parity path from driver to target gear",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
-      "issues": []
+      "issues": [],
+      "dataset_version_before": "gear-train-4.0.0",
+      "dataset_version_after": "gear-train-5.0.0"
     },
     "hex_pathfinding_dataset_3000": {
       "status": "PASS",
@@ -2003,15 +2621,72 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "boundary_status": {
+            "visual_signal": "presence or absence of all six rendered neighbours around HOME",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_full_tile_class_recovery"
+            ]
+          },
+          "neighbourhood": {
+            "visual_signal": "the six rendered adjacent hex fills and their centre offsets",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_full_tile_class_recovery"
+            ]
+          }
+        }
       },
-      "special_checks": {},
-      "issues": []
+      "special_checks": {
+        "renderer_hex_orientation": "pointy-top",
+        "axial_offset_to_direction_name": {
+          "upper-left": [
+            0,
+            -1
+          ],
+          "upper-right": [
+            1,
+            -1
+          ],
+          "left": [
+            -1,
+            0
+          ],
+          "right": [
+            1,
+            0
+          ],
+          "lower-left": [
+            -1,
+            1
+          ],
+          "lower-right": [
+            0,
+            1
+          ]
+        },
+        "orientation_inadmissible_stored_direction_count": 0,
+        "item_0124_right_offset": [
+          1,
+          0
+        ],
+        "item_0124_visual_alignment": "same screen y; directly right"
+      },
+      "issues": [],
+      "dataset_version_before": "hex-pathfinding-5.0.0",
+      "dataset_version_after": "hex-pathfinding-6.0.0"
     },
     "impossible_object_dataset_3000": {
       "status": "PASS",
@@ -2053,12 +2728,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "crossing_count": {
+            "visual_signal": "distinct rendered crossings between the relevant paths or beams",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery"
+            ]
+          },
+          "constructible": {
+            "visual_signal": "front/back ordering at rendered beam crossings",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2121,12 +2817,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 2250,
         "total": 2250,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "reflection_count": {
+            "visual_signal": "mirror strikes along the rendered laser path",
+            "checked_items": 2250,
+            "passed_items": 2250,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "pngs_checked"
+            ]
+          },
+          "exit_edge": {
+            "visual_signal": "the rendered laser endpoint on the grid border",
+            "checked_items": 2250,
+            "passed_items": 2250,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "pngs_checked"
+            ]
+          },
+          "exit_position": {
+            "visual_signal": "the endpoint's labelled grid-border position",
+            "checked_items": 2250,
+            "passed_items": 2250,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "pngs_checked"
+            ]
+          }
+        }
       },
       "special_checks": {
         "zero_reflection_exclusions": 750,
@@ -2176,12 +2902,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "crossing_count": {
+            "visual_signal": "distinct rendered crossings between the relevant paths or beams",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery"
+            ]
+          },
+          "starts_and_finishes_higher": {
+            "visual_signal": "relative red/blue vertical order at the two image edges",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2241,12 +2988,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "shape_count": {
+            "visual_signal": "separately outlined nested polygons",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          },
+          "shrink_pattern": {
+            "visual_signal": "successive rendered polygon side-length ratios",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          },
+          "rotation_degrees_nearest_10": {
+            "visual_signal": "corresponding rendered polygon corners",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2309,12 +3086,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "shape_count": {
+            "visual_signal": "separately outlined nested polygons",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          },
+          "shrink_pattern": {
+            "visual_signal": "successive rendered polygon side-length ratios",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          },
+          "rotation_degrees_nearest_10": {
+            "visual_signal": "corresponding rendered polygon corners",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2378,12 +3185,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "shape_count": {
+            "visual_signal": "separately outlined nested polygons",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          },
+          "shrink_pattern": {
+            "visual_signal": "successive rendered polygon side-length ratios",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          },
+          "rotation_degrees_nearest_10": {
+            "visual_signal": "corresponding rendered polygon corners",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovered_shape_count_matches"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2438,12 +3275,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "pattern_type": {
+            "visual_signal": "the visible repeated-object arrangement",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "hidden_object_count": {
+            "visual_signal": "gaps implied by continuation of the visible pattern behind the occluder",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2487,12 +3345,29 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "true_size_relation": {
+            "visual_signal": "rendered target-element endpoints or diameters without context",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "perceived_larger": {
+            "visual_signal": "the labelled target and surrounding illusion context",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2540,12 +3415,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "minimum_cube_count": {
+            "visual_signal": "filled cells in the three rendered orthographic views",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "uniqueness": {
+            "visual_signal": "compatibility of the three rendered silhouettes",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2557,10 +3453,9 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Examine every circle and the way they lie across one another: count how many circles there are, say whether any circle stands clear of all the others, and give how many are larger than the average size. State your conclusion, justify it by describing how you traced individual outlines where several circles overlap, and end with a confidence score from 0 to 1.",
+      "template": "Examine every circle and the way they lie across one another: count how many circles there are, and give how many are larger than the average size. State your conclusion, justify it by describing how you traced individual outlines where several circles overlap, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "circle_count",
-        "any_isolated",
         "above_average_radius_count"
       ],
       "answer_distributions": {
@@ -2573,10 +3468,6 @@
           "5": 363,
           "6": 360,
           "8": 353
-        },
-        "any_isolated": {
-          "no": 2161,
-          "yes": 839
         },
         "above_average_radius_count": {
           "4": 762,
@@ -2591,12 +3482,9 @@
       },
       "constant_answer_baselines": {
         "circle_count": 0.133,
-        "any_isolated": 0.7203333333333334,
         "above_average_radius_count": 0.254
       },
-      "fields_at_or_above_60_percent": {
-        "any_isolated": 0.7203333333333334
-      },
+      "fields_at_or_above_60_percent": {},
       "independent_derivation": {
         "mismatches": [],
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -2608,17 +3496,42 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "circle_count": {
+            "visual_signal": "closed rendered circle outlines",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_circle_recovery",
+              "png_failure_depth_distribution"
+            ]
+          },
+          "above_average_radius_count": {
+            "visual_signal": "relative diameters of all rendered circle outlines",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_circle_recovery",
+              "png_failure_depth_distribution"
+            ]
+          }
+        }
       },
       "special_checks": {
         "invalid_cluster_distribution_answers": 0
       },
-      "issues": []
+      "issues": [],
+      "dataset_version_before": "overlap-circles-5.0.0",
+      "dataset_version_after": "overlap-circles-6.0.0"
     },
     "physical_stability_dataset_3000": {
       "status": "PASS",
@@ -2655,12 +3568,24 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "stability_conclusion": {
+            "visual_signal": "block edges and cumulative support overlap at each rendered joint",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -2707,12 +3632,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "face_shapes": {
+            "visual_signal": "boundary-edge counts of visible polyhedron faces",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery_all_items"
+            ]
+          },
+          "convexity": {
+            "visual_signal": "rendered inward folds, stellation, or compound interpenetration",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery_all_items"
+            ]
+          }
+        }
       },
       "special_checks": {
         "boundary_edge_set_mismatches": 0
@@ -2726,10 +3672,10 @@
       "included_items": 1000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Read the launch values printed beside the trajectory and follow the arc from launch to landing: give the horizontal distance at which the projectile reaches its highest point, to the nearest metre, and say whether that peak rises above 20 metres. State your conclusion, justify it by describing which printed values you used and how they determine the shape of the arc, and end with a confidence score from 0 to 1.",
+      "template": "Read the launch values printed beside the trajectory and follow the arc from launch to landing: give the horizontal distance at which the projectile reaches its highest point, to the nearest metre, and say whether that peak rises above 13 metres. State your conclusion, justify it by describing which printed values you used and how they determine the shape of the arc, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "peak_horizontal_distance_m_nearest_1",
-        "peak_above_20_m"
+        "peak_above_13_m"
       ],
       "answer_distributions": {
         "peak_horizontal_distance_m_nearest_1": {
@@ -2812,18 +3758,16 @@
           "79": 2,
           "81": 1
         },
-        "peak_above_20_m": {
-          "no": 654,
-          "yes": 346
+        "peak_above_13_m": {
+          "no": 507,
+          "yes": 493
         }
       },
       "constant_answer_baselines": {
         "peak_horizontal_distance_m_nearest_1": 0.039,
-        "peak_above_20_m": 0.654
+        "peak_above_13_m": 0.507
       },
-      "fields_at_or_above_60_percent": {
-        "peak_above_20_m": 0.654
-      },
+      "fields_at_or_above_60_percent": {},
       "independent_derivation": {
         "mismatches": [],
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -2835,15 +3779,38 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 1000,
         "total": 1000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "peak_horizontal_distance_m_nearest_1": {
+            "visual_signal": "printed launch speed/angle and rendered trajectory scale",
+            "checked_items": 1000,
+            "passed_items": 1000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery"
+            ]
+          },
+          "peak_above_13_m": {
+            "visual_signal": "printed launch values and the trajectory peak relative to 13 metres",
+            "checked_items": 1000,
+            "passed_items": 1000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
-      "issues": []
+      "issues": [],
+      "dataset_version_before": "projectile-motion-4.0.0",
+      "dataset_version_after": "projectile-motion-5.0.0"
     },
     "rotation_matching_dataset_3000": {
       "status": "PASS",
@@ -2887,12 +3854,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "rotation_candidate": {
+            "visual_signal": "corner order and orientation of reference and candidates",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_vertex_and_candidate_congruence_recovery"
+            ]
+          },
+          "reflection_candidate": {
+            "visual_signal": "reversed corner order in the reflected candidate",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_vertex_and_candidate_congruence_recovery"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -4307,12 +5295,24 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "connectivity": {
+            "visual_signal": "coloured rendered paths traced from the selected endpoint label",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {
         "num_endpoints_distribution": {
@@ -4322,9 +5322,7 @@
         },
         "chosen_target_degree_below_1": 0
       },
-      "issues": [],
-      "dataset_version_before": "route-5.0.0",
-      "dataset_version_after": "route-6.0.0"
+      "issues": []
     },
     "rpm_dataset_3000": {
       "status": "PASS",
@@ -4374,12 +5372,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "correct_choice": {
+            "visual_signal": "row/column attribute progression and numbered panels",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "attributes_changed_together": {
+            "visual_signal": "rendered shape, colour, count, or orientation progression",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -4424,12 +5443,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "light_direction": {
+            "visual_signal": "rendered shadow direction opposite the light",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "light_height": {
+            "visual_signal": "rendered shadow-length to object-height ratio",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {
         "azimuth_exclusion_violations": 0
@@ -4486,12 +5526,36 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "genus": {
+            "visual_signal": "visible handles or cross-caps in the rendered surface",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "orientability": {
+            "visual_signal": "rendered twist/cross-cap structure",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "euler_characteristic": {
+            "visual_signal": "rendered surface type combined with visible genus/orientability",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          }
+        }
       },
       "special_checks": {},
       "issues": []
@@ -4539,12 +5603,33 @@
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
         "no_derivable_redundancy": true,
-        "exact_spec_wording": true
+        "exact_spec_wording": true,
+        "variant_specific_fields_only": true
       },
       "png_recovery": {
         "passed": 3000,
         "total": 3000,
-        "failures": []
+        "failures": [],
+        "quantity_recovery_by_subfact": {
+          "pattern_status": {
+            "visual_signal": "paired shape locations around the rendered centre",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          },
+          "symmetry_type": {
+            "visual_signal": "rendered rotational orbit or mirror pairing",
+            "checked_items": 3000,
+            "passed_items": 3000,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": [
+              "png_asset_presence"
+            ]
+          }
+        }
       },
       "special_checks": {
         "intact_rotational_orbit_violations": 0,
@@ -4556,13 +5641,37 @@
   "failures": [],
   "version_bumps": {
     "angle_estimation_dataset_3000": {
-      "before": "angle-estimation-6.0.0",
-      "after": "angle-estimation-7.0.0"
+      "before": "angle-estimation-7.0.0",
+      "after": "angle-estimation-8.0.0"
     },
-    "route_dataset_3000": {
-      "before": "route-5.0.0",
-      "after": "route-6.0.0"
+    "coordinate_geometry_dataset_3000": {
+      "before": "coordinate-geometry-5.0.0",
+      "after": "coordinate-geometry-6.0.0"
+    },
+    "cube_structure_dataset_3000": {
+      "before": "cube-structure-5.0.0",
+      "after": "cube-structure-6.0.0"
+    },
+    "depth_height_dataset_3000": {
+      "before": "depth-height-5.0.0",
+      "after": "depth-height-6.0.0"
+    },
+    "gear_train_dataset_3000": {
+      "before": "gear-train-4.0.0",
+      "after": "gear-train-5.0.0"
+    },
+    "hex_pathfinding_dataset_3000": {
+      "before": "hex-pathfinding-5.0.0",
+      "after": "hex-pathfinding-6.0.0"
+    },
+    "overlap_circles_dataset_3000": {
+      "before": "overlap-circles-5.0.0",
+      "after": "overlap-circles-6.0.0"
+    },
+    "projectile_motion_dataset_1000": {
+      "before": "projectile-motion-4.0.0",
+      "after": "projectile-motion-5.0.0"
     }
   },
-  "source_commit_before_release": "41891ebad13c56da01fc53d544a2bd301d1ab123"
+  "source_commit_before_release": "3d93a01c0d716959cf26bd4d55d5b4a91f3c603e"
 }

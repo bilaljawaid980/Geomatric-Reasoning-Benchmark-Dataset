@@ -5,10 +5,10 @@
   "included_items": 1000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Read the launch values printed beside the trajectory and follow the arc from launch to landing: give the horizontal distance at which the projectile reaches its highest point, to the nearest metre, and say whether that peak rises above 20 metres. State your conclusion, justify it by describing which printed values you used and how they determine the shape of the arc, and end with a confidence score from 0 to 1.",
+  "template": "Read the launch values printed beside the trajectory and follow the arc from launch to landing: give the horizontal distance at which the projectile reaches its highest point, to the nearest metre, and say whether that peak rises above 13 metres. State your conclusion, justify it by describing which printed values you used and how they determine the shape of the arc, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "peak_horizontal_distance_m_nearest_1",
-    "peak_above_20_m"
+    "peak_above_13_m"
   ],
   "answer_distributions": {
     "peak_horizontal_distance_m_nearest_1": {
@@ -91,18 +91,16 @@
       "79": 2,
       "81": 1
     },
-    "peak_above_20_m": {
-      "no": 654,
-      "yes": 346
+    "peak_above_13_m": {
+      "no": 507,
+      "yes": 493
     }
   },
   "constant_answer_baselines": {
     "peak_horizontal_distance_m_nearest_1": 0.039,
-    "peak_above_20_m": 0.654
+    "peak_above_13_m": 0.507
   },
-  "fields_at_or_above_60_percent": {
-    "peak_above_20_m": 0.654
-  },
+  "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -114,12 +112,33 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 1000,
     "total": 1000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "peak_horizontal_distance_m_nearest_1": {
+        "visual_signal": "printed launch speed/angle and rendered trajectory scale",
+        "checked_items": 1000,
+        "passed_items": 1000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovery"
+        ]
+      },
+      "peak_above_13_m": {
+        "visual_signal": "printed launch values and the trajectory peak relative to 13 metres",
+        "checked_items": 1000,
+        "passed_items": 1000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_recovery"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

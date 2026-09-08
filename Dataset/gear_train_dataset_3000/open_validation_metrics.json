@@ -5,11 +5,11 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Follow the mesh from the driver gear through every gear it turns: name the gear that rotates fastest, and say whether the last gear in the chain turns in the same direction as the driver or the opposite. State your conclusion, justify it by describing the tooth counts you compared and how direction alternates along the chain, and end with a confidence score from 0 to 1.",
+  "template": "Follow the mesh from the driver gear through every gear it turns: name the gear that rotates fastest, and say whether gear B turns in the same direction as the driver or the opposite. State your conclusion, justify it by describing the tooth counts you compared and how direction alternates along the chain, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "fastest_gear",
-    "last_gear",
-    "last_direction_relation"
+    "direction_target",
+    "target_direction_relation"
   ],
   "answer_distributions": {
     "fastest_gear": {
@@ -19,24 +19,23 @@
       "D": 497,
       "E": 214
     },
-    "last_gear": {
-      "E": 1143,
-      "D": 1137,
-      "C": 720
+    "direction_target": {
+      "C": 1255,
+      "B": 1010,
+      "D": 470,
+      "E": 265
     },
-    "last_direction_relation": {
-      "same": 1853,
-      "opposite": 1147
+    "target_direction_relation": {
+      "opposite": 1500,
+      "same": 1500
     }
   },
   "constant_answer_baselines": {
     "fastest_gear": 0.261,
-    "last_gear": 0.381,
-    "last_direction_relation": 0.6176666666666667
+    "direction_target": 0.41833333333333333,
+    "target_direction_relation": 0.5
   },
-  "fields_at_or_above_60_percent": {
-    "last_direction_relation": 0.6176666666666667
-  },
+  "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -48,12 +47,42 @@
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
     "no_derivable_redundancy": true,
-    "exact_spec_wording": true
+    "exact_spec_wording": true,
+    "variant_specific_fields_only": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
-    "failures": []
+    "failures": [],
+    "quantity_recovery_by_subfact": {
+      "fastest_gear": {
+        "visual_signal": "printed tooth counts on the meshed gears",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      },
+      "direction_target": {
+        "visual_signal": "the printed target gear label",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      },
+      "target_direction_relation": {
+        "visual_signal": "mesh-parity path from driver to target gear",
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "png_asset_presence"
+        ]
+      }
+    }
   },
   "special_checks": {},
   "issues": []

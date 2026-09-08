@@ -4,9 +4,9 @@ Source items: 1000
 Included: 1000
 Excluded: 0
 Exclusions: {}
-Sub-facts: peak_horizontal_distance_m_nearest_1, peak_above_20_m
-Constant-answer baselines: {"peak_above_20_m": 0.654, "peak_horizontal_distance_m_nearest_1": 0.039}
-Fields >=60%: {"peak_above_20_m": 0.654}
+Sub-facts: peak_horizontal_distance_m_nearest_1, peak_above_13_m
+Constant-answer baselines: {"peak_above_13_m": 0.507, "peak_horizontal_distance_m_nearest_1": 0.039}
+Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 1000/1000
 Special checks: {}

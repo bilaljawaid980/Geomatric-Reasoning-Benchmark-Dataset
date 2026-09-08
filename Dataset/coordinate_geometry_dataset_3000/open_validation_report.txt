@@ -4,9 +4,9 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: farthest_pair, distance_nearest_unit, relation_to_10
-Constant-answer baselines: {"distance_nearest_unit": 0.12433333333333334, "farthest_pair": 0.42, "relation_to_10": 0.6486666666666666}
-Fields >=60%: {"relation_to_10": 0.6486666666666666}
+Sub-facts: farthest_pair, distance_nearest_unit, relation_to_12
+Constant-answer baselines: {"distance_nearest_unit": 0.12433333333333334, "farthest_pair": 0.42, "relation_to_12": 0.517}
+Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
 Special checks: {}
