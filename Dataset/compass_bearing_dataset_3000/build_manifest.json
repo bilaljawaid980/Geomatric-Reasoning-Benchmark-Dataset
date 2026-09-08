@@ -1,8 +1,8 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "compass-bearing-6.0.0",
-  "generator_commit": "66c27c0905fda94c836c365dcf0e3eadd96d1ab8",
+  "dataset_version": "compass-bearing-7.0.0",
+  "generator_commit": "783e4b4d2c58288e602c14dc6984cf2b0c652963",
   "images": 3000,
   "question_set_fields": [
     "question_id",
@@ -11,7 +11,7 @@
     "prompt"
   ],
   "questions": 15000,
-  "open_questions": 2717,
+  "open_questions": 2965,
   "open_question_files": [
     "open_questions.csv",
     "open_answer_key.csv",
@@ -40,12 +40,13 @@
     "open_quantity_recovery_signals_documented_per_subfact": true,
     "open_bearing_numeric_tolerance_degrees": 10,
     "open_closest_pair_minimum_relative_margin": 0.05,
-    "open_sector_boundary_exclusion_removed": true
+    "open_sector_boundary_exclusion_removed": true,
+    "open_farthest_pair_fallback_minimum_relative_margin": 0.05
   },
   "open_question_builder": "../build_remaining_open_questions.py",
   "open_question_validator": "../validate_remaining_open_questions.py",
-  "open_excluded_items": 283,
+  "open_excluded_items": 35,
   "open_exclusion_counts": {
-    "closest_pair_distance_margin_below_5_percent": 283
+    "closest_and_farthest_pair_margins_below_5_percent": 35
   }
 }

@@ -10,5 +10,5 @@ Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"gravity_constraint_changes_minimum": 1883, "gravity_constraint_does_not_change_minimum": 1117, "gravity_minimum_minus_unconstrained_distribution": {"0": 1117, "1": 1044, "2": 677, "3": 156, "4": 6}, "item_0223_gravity_minimum": 11, "item_0223_unconstrained_minimum": 10, "rendered_axis_directions": {"front": "+x right; +z up", "side": "+y right; +z up", "top": "+x right; +y up"}, "side_view_convention_consistent_items": 3000, "unconstrained_solver_failures": []}
 Issues: []

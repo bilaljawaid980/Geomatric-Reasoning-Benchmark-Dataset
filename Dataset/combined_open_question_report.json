@@ -26,10 +26,10 @@
       "open_answers": 3000
     },
     "compass_bearing_dataset_3000": {
-      "dataset_version": "compass-bearing-6.0.0",
-      "images": 2717,
-      "open_questions": 2717,
-      "open_answers": 2717
+      "dataset_version": "compass-bearing-7.0.0",
+      "images": 2965,
+      "open_questions": 2965,
+      "open_answers": 2965
     },
     "coordinate_geometry_dataset_3000": {
       "dataset_version": "coordinate-geometry-7.0.0",
@@ -140,7 +140,7 @@
       "open_answers": 3000
     },
     "orthographic_dataset_3000": {
-      "dataset_version": "orthographic-4.0.0",
+      "dataset_version": "orthographic-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -182,7 +182,7 @@
       "open_answers": 3000
     },
     "rpm_dataset_3000": {
-      "dataset_version": "rpm-5.0.0",
+      "dataset_version": "rpm-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -206,10 +206,10 @@
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 99717,
-  "combined_open_answers": 99717,
-  "unique_question_ids": 99717,
-  "resolved_image_paths": 99717,
+  "combined_open_questions": 99965,
+  "combined_open_answers": 99965,
+  "unique_question_ids": 99965,
+  "resolved_image_paths": 99965,
   "public_columns": [
     "dataset",
     "dataset_version",

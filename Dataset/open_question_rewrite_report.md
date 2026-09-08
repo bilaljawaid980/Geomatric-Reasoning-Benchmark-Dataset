@@ -8,7 +8,7 @@
 | `clock_reading_dataset_3000` | `clock-reading-5.0.0` | 3,000 | 3,000 | 0 | none | 0.004 | PASS |
 | `combination3d_dataset_3000` | `combination3d-5.0.0` | 3,000 | 3,000 | 0 | none | 0.353 | PASS |
 | `combination_dataset_3000` | `combination-4.0.0` | 3,000 | 3,000 | 0 | none | 0.351 | PASS |
-| `compass_bearing_dataset_3000` | `compass-bearing-6.0.0` | 3,000 | 2,717 | 283 | closest_pair_distance_margin_below_5_percent: 283 | 0.264 | PASS |
+| `compass_bearing_dataset_3000` | `compass-bearing-7.0.0` | 3,000 | 2,965 | 35 | closest_and_farthest_pair_margins_below_5_percent: 35 | 0.264 | PASS |
 | `coordinate_geometry_dataset_3000` | `coordinate-geometry-7.0.0` | 3,000 | 3,000 | 0 | none | 0.531 | PASS |
 | `cube_net_dataset_3000` | `cube-net-5.0.0` | 3,000 | 3,000 | 0 | none | 0.178 | PASS |
 | `cube_structure_dataset_3000` | `cube-structure-6.0.0` | 3,000 | 3,000 | 0 | none | 0.333 | PASS |
@@ -27,14 +27,14 @@
 | `nested_triangles_dataset_3000` | `nested-triangles-11.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
 | `occluded_pattern_dataset_3000` | `occluded-pattern-5.0.0` | 3,000 | 3,000 | 0 | none | 0.369 | PASS |
 | `optical_illusion_dataset_3000` | `optical-illusion-6.0.0` | 3,000 | 3,000 | 0 | none | 0.512 | PASS |
-| `orthographic_dataset_3000` | `orthographic-4.0.0` | 3,000 | 3,000 | 0 | none | 0.561 | PASS |
+| `orthographic_dataset_3000` | `orthographic-5.0.0` | 3,000 | 3,000 | 0 | none | 0.561 | PASS |
 | `overlap_circles_dataset_3000` | `overlap-circles-6.0.0` | 3,000 | 3,000 | 0 | none | 0.254 | PASS |
 | `physical_stability_dataset_3000` | `physical-stability-4.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
 | `polyhedron_dataset_3000` | `polyhedron-8.0.0` | 3,000 | 3,000 | 0 | none | 0.895 | PASS |
 | `projectile_motion_dataset_1000` | `projectile-motion-5.0.0` | 1,000 | 1,000 | 0 | none | 0.507 | PASS |
 | `rotation_matching_dataset_3000` | `rotation-matching-5.0.0` | 3,000 | 3,000 | 0 | none | 0.260 | PASS |
 | `route_dataset_3000` | `route-6.0.0` | 3,000 | 3,000 | 0 | none | 0.004 | PASS |
-| `rpm_dataset_3000` | `rpm-5.0.0` | 3,000 | 3,000 | 0 | none | 0.220 | PASS |
+| `rpm_dataset_3000` | `rpm-6.0.0` | 3,000 | 3,000 | 0 | none | 0.151 | PASS |
 | `shadow_inference_dataset_3000` | `shadow-inference-5.0.0` | 3,000 | 3,000 | 0 | none | 0.505 | PASS |
 | `surface_topology_dataset_3000` | `surface-topology-7.0.0` | 3,000 | 3,000 | 0 | none | 0.750 | PASS |
 | `symmetry_pattern_dataset_3000` | `symmetry-pattern-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
@@ -43,7 +43,15 @@
 
 - **Clock reading:** the former smaller-hand-angle sub-fact was deterministically recoverable from the exact-time sub-fact in all 3,000 items. This was reported before modification; the recommended fix was applied by retaining exact time and removing the redundant angle from the open question.
 - **Surface topology:** the former Euler-characteristic sub-fact was deterministically fixed by genus and orientability in all 3,000 closed-surface items. This was reported before modification; the recommended fix was applied by retaining genus and orientability and removing the redundant Euler value from the open question.
-- **Compass bearing ambiguity:** 283 of 3,000 scenes have a closest-versus-second-closest distance gap below 5% of the smaller distance. This was measured before generation and is a substantive visual ambiguity rather than a template failure, so the required margin guard excludes those rows. The resulting valid suite total is 99,717, not the 100,000 target.
+- **Compass bearing ambiguity:** 283 of 3,000 scenes have a closest-versus-second-closest distance gap below 5%. The farthest-pair fallback recovers 248; 35 remain excluded because both extrema fail the 5% visual-separation guard.
+- **RPM option identity:** all 3,000 records admitted multiple answers under the matrix-derived semantic attributes. The pre-fix satisfying-option distribution was 2 options: 844, 3 options: 1,916, and 4 options: 240; `rpm_0151` admitted choices 1, 4, and 7. Rotation distinguished options in all 3,000 and size/shape spacing did so in 2,156, although neither was always taught; stroke width never discriminated. Equal circumradius also made triangles appear smaller than circles.
+- **Orthographic convention:** all 3,000 stored projections consistently used top `(x,y)`, front `(x,z)`, and side `(y,z)`, with each first coordinate increasing left-to-right and z increasing bottom-to-top. The side panel did not print that direction, so a viewer could reasonably mirror it. Before the label repair, gravity support changed the computed minimum in 1,883 records and made no difference in 1,117; `orthographic_0223` required 11 cubes with gravity versus 10 without it.
+
+## Final ambiguity and convention repairs
+
+- **RPM:** all 3,000 images were regenerated. Options satisfying the independently derived rule set: `{"1": 3000}`; multi-valid items: 0. Undeclared option attributes are frozen: `{}`. Shape areas are normalised, spacing depends only on size/count, and stroke width is fixed.
+- **Orthographic:** axes are printed as `{"front": "+x right; +z up", "side": "+y right; +z up", "top": "+x right; +y up"}`. The side projection agrees with the +y-right convention in 3000/3,000 records. Gravity-supported minus unconstrained minimum counts: `{"0": 1117, "1": 1044, "2": 677, "3": 156, "4": 6}`; gravity changes 1883 items and changes nothing in 1117. Item 0223 is 11 with gravity versus 10 without it.
+- **Compass:** the guarded farthest-pair fallback recovered 248 closest-pair near-ties; 35 remain excluded.
 
 ## Six manual-review findings
 
@@ -66,6 +74,24 @@ All 750 zero-reflection scenes now use the straight-path prompt. Near-miss distr
 | `laser_mirror_dataset_3000` | `reflection_count` | 0.697 | Inherent among the nonzero-reflection trace variant; zero-reflection scenes now use a separate varying prompt. |
 | `polyhedron_dataset_3000` | `convexity` | 0.895 | Inherent to the generated solid inventory after geometry-identity repair; retained and reported. |
 | `surface_topology_dataset_3000` | `orientability` | 0.750 | Inherent to the generated surface inventory; retained and reported. |
+
+## Shared deterministic-dependency audit
+
+Method: for each target sub-fact, the validator tests every one-to-three-field subset of the other populated sub-facts. It flags a mapping when repeated predictor tuples cover at least 80% of eligible rows and every tuple maps to exactly one target value. Explicit prohibited semantic identities are validation failures; empirical findings outside this pass remain visible below.
+
+| Dataset | Finding |
+|---|---|
+| `angle_estimation_dataset_3000` | angle_class is empirically determined by angle_degrees_nearest_10 (100.0% repeat coverage) |
+| `depth_height_dataset_3000` | nearest_colour is empirically determined by depth_ordering (99.5% repeat coverage) |
+| `depth_height_dataset_3000` | tallest_stack_colour is empirically determined by height_ordering_shortest_to_tallest (99.6% repeat coverage) |
+| `embedded_figures_dataset_3000` | candidate is empirically determined by side_count (100.0% repeat coverage) |
+| `embedded_figures_dataset_3000` | side_count is empirically determined by candidate (100.0% repeat coverage) |
+| `fbd_dataset_3000` | arrow_count is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage) |
+| `fbd_dataset_3000` | arrow_count is empirically determined by weight_arrow, drawn_magnitude_ranking (100.0% repeat coverage) |
+| `fbd_dataset_3000` | weight_arrow is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage) |
+| `fbd_dataset_3000` | weight_arrow is empirically determined by arrow_count, drawn_magnitude_ranking (100.0% repeat coverage) |
+| `fold_punch_dataset_3000` | unfolded_hole_count is empirically determined by correct_pattern (100.0% repeat coverage) |
+| `hex_pathfinding_dataset_3000` | boundary_status is empirically determined by neighbourhood (99.5% repeat coverage) |
 
 ## Twelve-domain manual render review
 
@@ -183,12 +209,12 @@ All 750 zero-reflection scenes now use the straight-path prompt. Near-miss distr
 
 **Derivable redundancy:** Closest-pair identity does not determine its bearing; the same pair labels occur with varying bearings.
 
-**Nearest-alternative margin:** Relative closest-pair margin over all 3,000: min 0.000, p25 0.137, p50 0.324, p75 0.634, p95 1.547, max 3.772. The 283 items below 5% are excluded.
+**Nearest-alternative margin:** Closest-pair near-ties use the guarded farthest-pair fallback; only records ambiguous under both extrema are excluded.
 
 **Answer distributions and baselines:**
 
 - `closest_pair`: baseline 0.264; distribution {"A-B": 674, "A-C": 716, "A-D": 239, "B-C": 657, "B-D": 206, "C-D": 225}
-- `bearing_degrees_nearest_10`: baseline 0.051; distribution 36 distinct answers; full counts in `compass_bearing_dataset_3000/open_validation_metrics.json`
+- `bearing_degrees_nearest_10`: baseline 0.049; distribution 36 distinct answers; full counts in `compass_bearing_dataset_3000/open_validation_metrics.json`
 
 ### `impossible_object_dataset_3000`
 
@@ -355,25 +381,25 @@ All 750 zero-reflection scenes now use the straight-path prompt. Near-miss distr
 
 **Stored sub-facts:**
 
-- `correct_choice`: `6`
-- `attributes_changed_together`: `["shape","size"]`
+- `correct_choice`: `4`
+- `attributes_changed_together`: `["color","count"]`
 
 **Written derivation:**
 
-1. Across rows, the active shape progression reaches square/diamond-like squares in the missing bottom-right panel.
-2. The active size progression requires small while colour, count=3, and rotation=135 remain fixed.
-3. Choice 6 has exactly those attributes, and the jointly changing attributes are shape and size.
+1. Within each row, the count decreases from three to two to one.
+2. Within each column, the colour progresses from purple to blue to green.
+3. The missing panel must therefore contain one green star; choice 4 is the only option that satisfies both progressions while shape, size, and rotation remain fixed.
 
-**Visual recoverability:** Compare visible shape, size, colour, count, and orientation across rows and columns and against each numbered choice.
+**Visual recoverability:** Compare rendered colour and count progressions along perpendicular axes, then check the numbered choices; all untaught attributes are visibly frozen.
 
-**Derivable redundancy:** The choice number alone does not encode which attribute rules generated it.
+**Derivable redundancy:** The valid choice does not determine which two attributes were sampled as rules across the domain.
 
-**Nearest-alternative margin:** Correct-to-nearest-wrong attribute Hamming gap is exactly 1 for all 3,000 items; there are 0 duplicate-correct candidates. Each nearest foil differs in one clearly rendered attribute.
+**Nearest-alternative margin:** Exactly one option satisfies the independently derived matrix patterns in every item; undeclared option attributes never vary.
 
 **Answer distributions and baselines:**
 
-- `correct_choice`: baseline 0.131; distribution {"1": 361, "2": 343, "3": 383, "4": 389, "5": 368, "6": 378, "7": 392, "8": 386}
-- `attributes_changed_together`: baseline 0.220; distribution {"[\"color\",\"shape\"]": 383, "[\"count\",\"shape\"]": 653, "[\"shape\",\"color\"]": 460, "[\"shape\",\"count\"]": 660, "[\"shape\",\"size\"]": 461, "[\"size\",\"shape\"]": 383}
+- `correct_choice`: baseline 0.136; distribution {"1": 358, "2": 407, "3": 355, "4": 385, "5": 363, "6": 387, "7": 366, "8": 379}
+- `attributes_changed_together`: baseline 0.151; distribution {"[\"color\",\"count\"]": 395, "[\"color\",\"rotation\"]": 318, "[\"rotation\",\"count\"]": 380, "[\"shape\",\"color\"]": 255, "[\"shape\",\"count\"]": 454, "[\"shape\",\"size\"]": 318, "[\"size\",\"color\"]": 256, "[\"size\",\"count\"]": 369, "[\"size\",\"rotation\"]": 255}
 
 ### `shadow_inference_dataset_3000`
 
@@ -438,7 +464,7 @@ All 750 zero-reflection scenes now use the straight-path prompt. Near-miss distr
 
 - Independent ground-truth mismatches: 0.
 - Deterministic sub-fact dependency violations: 0.
-- Quantity-aware PNG recovery: 99,717/99,717 included images. Every per-domain metrics file states the image signal used for every sub-fact.
+- Quantity-aware PNG recovery: 99,965/99,965 included images. Every per-domain metrics file states the image signal used for every sub-fact.
 - Exact prompt wording, three-column public schema, answer-leak checks, numeric tolerances, and one-to-one resolution: PASS in all 34 domains.
-- Combined open files: 99,717 questions and 99,717 answers; 99,717 image paths resolve.
+- Combined open files: 99,965 questions and 99,965 answers; 99,965 image paths resolve.
 - Full answer distributions and constant-answer baselines are retained in each `open_validation_metrics.json` and the consolidated JSON report.

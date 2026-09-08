@@ -50,7 +50,103 @@
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
-    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+    "tested_relationships": [
+      {
+        "target": "shape_count",
+        "predictors": [
+          "shrink_pattern"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 2,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "shape_count",
+        "predictors": [
+          "rotation_degrees_nearest_10"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 9,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "shape_count",
+        "predictors": [
+          "shrink_pattern",
+          "rotation_degrees_nearest_10"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 18,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "shrink_pattern",
+        "predictors": [
+          "shape_count"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 9,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "shrink_pattern",
+        "predictors": [
+          "rotation_degrees_nearest_10"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 9,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "shrink_pattern",
+        "predictors": [
+          "shape_count",
+          "rotation_degrees_nearest_10"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 81,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "rotation_degrees_nearest_10",
+        "predictors": [
+          "shape_count"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 9,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "rotation_degrees_nearest_10",
+        "predictors": [
+          "shrink_pattern"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 2,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "rotation_degrees_nearest_10",
+        "predictors": [
+          "shape_count",
+          "shrink_pattern"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 18,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      }
+    ],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -59,7 +155,7 @@
     "no_answer_leak": true,
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_derivable_redundancy": true,
+    "no_prohibited_derivable_redundancy": true,
     "exact_spec_wording": true,
     "variant_specific_fields_only": true
   },

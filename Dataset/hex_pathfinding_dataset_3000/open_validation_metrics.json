@@ -126,7 +126,32 @@
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
-    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+    "tested_relationships": [
+      {
+        "target": "boundary_status",
+        "predictors": [
+          "neighbourhood"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 98,
+        "repeat_coverage": 0.995,
+        "deterministic": true
+      },
+      {
+        "target": "neighbourhood",
+        "predictors": [
+          "boundary_status"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 2,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      }
+    ],
+    "empirical_findings": [
+      "boundary_status is empirically determined by neighbourhood (99.5% repeat coverage)"
+    ],
     "violations": []
   },
   "assertions": {
@@ -135,7 +160,7 @@
     "no_answer_leak": true,
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_derivable_redundancy": true,
+    "no_prohibited_derivable_redundancy": true,
     "exact_spec_wording": true,
     "variant_specific_fields_only": true
   },

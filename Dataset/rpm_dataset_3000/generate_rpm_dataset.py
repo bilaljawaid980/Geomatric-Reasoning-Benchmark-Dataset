@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
 import math
 import random
@@ -18,7 +19,7 @@ except ImportError:  # pragma: no cover
 
 
 BG = "#FDFAF4"
-DATASET_VERSION = "rpm-2.0.0"
+DATASET_VERSION = "rpm-6.0.0"
 PANEL_BG = "#FFFFFF"
 BORDER = "#3F494D"
 TEXT = "#15191B"
@@ -75,13 +76,12 @@ def compatible(first: str, second: str) -> bool:
 
 
 def choose_rule_types(index: int) -> tuple[str, list[str]]:
-    single = (index - 1) % 5 < 2
-    first = RULE_TYPES[(index - 1) % len(RULE_TYPES)]
-    if single:
-        return "single_rule", [first]
-    candidates = [rule_type for rule_type in RULE_TYPES if compatible(first, rule_type)]
-    # Advancing once per five-image difficulty block produces a balanced rule
-    # histogram without accepting/rejecting samples based on their answer.
+    # Every released puzzle has two visible, non-constant rules.  A constant
+    # rule is not evidence available to a solver and therefore cannot be used
+    # to make an otherwise ambiguous option uniquely correct.
+    visible_rule_types = [rule_type for rule_type in RULE_TYPES if rule_type != "constant"]
+    first = visible_rule_types[(index - 1) % len(visible_rule_types)]
+    candidates = [rule_type for rule_type in visible_rule_types if compatible(first, rule_type)]
     second = candidates[((index - 1) // 5) % len(candidates)]
     return "combined_rules", [first, second]
 
@@ -110,7 +110,7 @@ def make_rules(index: int, orientation: str, base: dict, rng: random.Random) -> 
         details: dict = {}
         domain = DOMAINS[attribute]
         if rule_type == "shape_progression":
-            details = {"start_index": rng.randrange(len(SHAPES)), "step": rng.choice((-1, 1)), "changes_between_sequences": True}
+            details = {"start_index": rng.randrange(len(SHAPES)), "step": rng.choice((-1, 1)), "cyclic": True}
         elif rule_type in {"size_progression", "count_progression"}:
             step = rng.choice((-1, 1))
             details = {"start_index": 0 if step == 1 else 2, "step": step, "cyclic": False}
@@ -122,7 +122,8 @@ def make_rules(index: int, orientation: str, base: dict, rng: random.Random) -> 
             details = {"left": left, "middle": middle, "operation": "modular_addition_1_to_3"}
         elif rule_type == "constant":
             details = {"value": base[attribute]}
-        rules.append({"rule_type": rule_type, "attribute": attribute, "applies_to": orientation, "details": details})
+        applies_to = orientation if not rules else ("column" if orientation == "row" else "row")
+        rules.append({"rule_type": rule_type, "attribute": attribute, "applies_to": applies_to, "details": details})
     if any(r["rule_type"] == "rotation_progression" for r in rules):
         base["shape"] = rng.choice(("triangle", "pentagon", "star"))
     return tier, rules
@@ -138,7 +139,7 @@ def rule_value(rule: dict, group: int, position: int):
     details = rule["details"]
     domain = DOMAINS[attribute]
     if rule_type == "shape_progression":
-        return domain[(details["start_index"] + details["step"] * group) % len(domain)]
+        return domain[(details["start_index"] + details["step"] * position) % len(domain)]
     if rule_type in {"size_progression", "count_progression", "color_progression", "rotation_progression"}:
         raw = details["start_index"] + details["step"] * position
         return domain[raw % len(domain)]
@@ -178,51 +179,24 @@ def violated_rule_name(attribute: str, rules: list[dict]) -> str:
 
 
 def make_distractors(correct: dict, rules: list[dict], rng: random.Random) -> tuple[list[dict], list[dict]]:
-    candidates: list[tuple[dict, dict]] = []
-    seen = {tuple(correct[a] for a in ATTRS)}
-
-    def add(panel: dict, violation_type: str, changed: list[str]) -> bool:
-        key = tuple(panel[a] for a in ATTRS)
-        if key in seen:
-            return False
-        seen.add(key)
-        claim = {
-            "violation_type": violation_type,
-            "violated_attributes": changed,
-            "violates_rule": ",".join(violated_rule_name(a, rules) for a in changed),
-        }
-        candidates.append((panel, claim))
-        return True
-
-    # Near misses alter background constants first, preserving two distinct
-    # active-rule alternatives for the deliberately wrong-progression group.
-    active_set = {r["attribute"] for r in rules}
-    priority = [a for a in ATTRS if a not in active_set] + [r["attribute"] for r in rules]
-    for salt, attribute in enumerate(priority[:3]):
+    active = sorted({rule["attribute"] for rule in rules}, key=ATTRS.index)
+    variants = []
+    for values in itertools.product(*(DOMAINS[attr] for attr in active)):
         panel = dict(correct)
-        panel[attribute] = different_value(attribute, panel[attribute], rng, salt)
-        add(panel, "single_attribute", [attribute])
-
-    active = [r["attribute"] for r in rules]
-    attempts = 0
-    while sum(c[1]["violation_type"] == "wrong_progression" for c in candidates) < 2 and attempts < 50:
-        attribute = active[attempts % len(active)]
-        panel = dict(correct)
-        panel[attribute] = different_value(attribute, panel[attribute], rng, attempts)
-        add(panel, "wrong_progression", [attribute])
-        attempts += 1
-
-    attempts = 0
-    while len(candidates) < 7 and attempts < 100:
-        changed = rng.sample(list(ATTRS), 2 + int(attempts % 3 == 0))
-        panel = dict(correct)
-        for salt, attribute in enumerate(changed):
-            panel[attribute] = different_value(attribute, panel[attribute], rng, attempts + salt)
-        add(panel, "random", changed)
-        attempts += 1
-    if len(candidates) != 7:
-        raise RuntimeError("Could not construct seven unique distractors")
-    return [p for p, _ in candidates], [c for _, c in candidates]
+        for attr, value in zip(active, values):
+            panel[attr] = value
+        changed = [attr for attr in active if panel[attr] != correct[attr]]
+        if changed:
+            variants.append((panel, {
+                "violation_type": "wrong_progression" if len(changed) == 1 else "multiple_rule_violations",
+                "violated_attributes": changed,
+                "violates_rule": ",".join(violated_rule_name(attr, rules) for attr in changed),
+            }))
+    rng.shuffle(variants)
+    if len(variants) < 7:
+        raise RuntimeError("Active rule domains cannot supply seven unique distractors")
+    selected = variants[:7]
+    return [panel for panel, _ in selected], [claim for _, claim in selected]
 
 
 def classification(correct: dict, distractor: dict) -> str:
@@ -308,15 +282,15 @@ def draw_one_shape(draw, shape, center, radius, color, rotation):
     if shape == "circle":
         draw.ellipse((cx - radius, cy - radius, cx + radius, cy + radius), fill=color, outline="#111719", width=width)
     elif shape == "square":
-        draw.polygon(regular_polygon(cx, cy, radius, 4, rotation + 45), fill=color, outline="#111719")
+        draw.polygon(regular_polygon(cx, cy, radius, 4, rotation + 45), fill=color, outline="#111719", width=width)
     elif shape == "triangle":
-        draw.polygon(regular_polygon(cx, cy, radius, 3, rotation), fill=color, outline="#111719")
+        draw.polygon(regular_polygon(cx, cy, radius, 3, rotation), fill=color, outline="#111719", width=width)
     elif shape == "pentagon":
-        draw.polygon(regular_polygon(cx, cy, radius, 5, rotation), fill=color, outline="#111719")
+        draw.polygon(regular_polygon(cx, cy, radius, 5, rotation), fill=color, outline="#111719", width=width)
     elif shape == "hexagon":
-        draw.polygon(regular_polygon(cx, cy, radius, 6, rotation), fill=color, outline="#111719")
+        draw.polygon(regular_polygon(cx, cy, radius, 6, rotation), fill=color, outline="#111719", width=width)
     else:
-        draw.polygon(star_points(cx, cy, radius, rotation), fill=color, outline="#111719")
+        draw.polygon(star_points(cx, cy, radius, rotation), fill=color, outline="#111719", width=width)
 
 
 def draw_panel(draw, box, attributes, missing=False, label=None):
@@ -329,9 +303,22 @@ def draw_panel(draw, box, attributes, missing=False, label=None):
         return
     count = int(attributes["count"])
     available_w = (x1 - x0) / AA - 14
-    base_radius = {"small": 10, "medium": 15, "large": 20}[attributes["size"]]
-    radius = min(base_radius, available_w / (2.5 * count)) * AA
-    spacing = min(2.25 * radius, available_w * AA / max(1, count))
+    base_radius = {"small": 7, "medium": 11, "large": 15}[attributes["size"]]
+    base_radius = min(base_radius, available_w / (3.0 * count))
+    # Equalise filled area across shape types.  Equal circumradii made a
+    # triangle look materially smaller than a circle and introduced an
+    # undeclared, shape-correlated size cue.
+    sides = {"square": 4, "triangle": 3, "pentagon": 5, "hexagon": 6}.get(attributes["shape"])
+    if sides:
+        area_scale = math.sqrt(math.pi / (0.5 * sides * math.sin(2 * math.pi / sides)))
+    elif attributes["shape"] == "star":
+        area_scale = math.sqrt(math.pi / (5 * 0.43 * math.sin(math.pi / 5)))
+    else:
+        area_scale = 1.0
+    radius = base_radius * area_scale * AA
+    # Centre spacing depends only on the declared size and count attributes,
+    # never on shape or its area-normalisation scale.
+    spacing = min(3.0 * base_radius * AA, available_w * AA / max(1, count))
     center_x = (x0 + x1) / 2
     center_y = (y0 + y1) / 2 + (5 * AA if label is not None else 0)
     starts = center_x - spacing * (count - 1) / 2
@@ -383,6 +370,10 @@ def generate_one(index: int, images_dir: Path, output_index: int | None = None) 
         raise ValueError("identical matrix rows")
     if not any(len({panels[r * 3 + c]["attributes"][a] for r in range(3)}) > 1 for a in ATTRS for c in range(3)):
         raise ValueError("no attribute varies across rows")
+    active_attrs = {rule["attribute"] for rule in rules}
+    shown_values = {attr: {panel[attr] for panel in shown} for attr in ATTRS}
+    if any(len(shown_values[attr]) < 2 for attr in active_attrs):
+        raise ValueError("declared rule has no visible variation")
     distractors, claims = make_distractors(correct, rules, rng)
     all_panels = [correct] + distractors
     rng.shuffle(all_panels)
@@ -396,7 +387,6 @@ def generate_one(index: int, images_dir: Path, output_index: int | None = None) 
             violations.append({"choice_index": choice_index, **claims[original_index]})
     correct_index = next(c["choice_index"] for c in choices if c["is_correct"])
     iid = f"rpm_{(output_index or index):04d}"
-    active_attrs = {r["attribute"] for r in rules}
     size = (rng.randint(620, 650), rng.randint(620, 650))
     difficulty = round(min(1.0, 0.35 + 0.3 * (tier == "combined_rules") + 0.12 * (orientation == "column") + 0.08 * any(r["rule_type"] == "xor_addition" for r in rules) + 0.08 * correct["count"] / 3), 4)
     record = {
@@ -451,10 +441,17 @@ def main():
     parser.add_argument("--n", type=int, default=3000)
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--sample", action="store_true")
+    parser.add_argument("--rerender-existing", action="store_true")
     args = parser.parse_args()
     root = Path(__file__).resolve().parent
     # A bare --sample must never overwrite a completed full dataset.
     output_dir = args.output_dir or (root / "sample_output" if args.sample else root)
+    if args.rerender_existing:
+        records = [json.loads(line) for line in (output_dir / "annotations.jsonl").read_text(encoding="utf-8-sig").splitlines() if line]
+        for record in tqdm(records, desc="Rerendering RPM puzzles"):
+            render(output_dir / record["image_path"], tuple(record["canvas_size"]), record["grid_panels"], record["answer_choices"])
+        print(f"Rerendered {len(records)} RPM puzzles")
+        return
     generate_dataset(5 if args.sample else args.n, output_dir)
 
 

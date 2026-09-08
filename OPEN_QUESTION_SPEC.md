@@ -135,6 +135,20 @@ Targets: closest pair from `all_pairwise_distances`, bearing from
 smallest pairwise distance is less than 5% larger than the smallest**, because the
 closest pair is not visually separable there.
 
+Those items use this fallback when the largest pairwise distance is at least 5%
+larger than the second largest:
+
+> Read the compass rose in the corner, then take the two landmarks that lie farthest
+> apart and give the bearing in degrees from the alphabetically earlier of them to
+> the other, measuring clockwise from north and answering to the nearest 10 degrees.
+> State your conclusion, justify it by describing the displacement you measured and
+> how you read the direction against the rose, and end with a confidence score from 0
+> to 1.
+
+Fallback targets: farthest pair from `all_pairwise_distances`, bearing from
+`all_pairwise_bearings`. Bearing tolerance: +/-10 degrees. **Reject the item if the
+largest pairwise distance is less than 5% larger than the second largest.**
+
 ## coordinate_geometry
 
 > Read the position of each labelled point against the printed grid: name the pair of

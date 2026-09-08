@@ -30,34 +30,34 @@ def sequence_cells(orientation, group, matrix):
     return [matrix[(group, p)] for p in range(3)] if orientation == "row" else [matrix[(p, group)] for p in range(3)]
 
 
-def independently_infer_missing(record):
-    matrix = grid(record)
-    missing = dict(record["background_constants"])
-    for rule in record["active_rules"]:
-        attr = rule["attribute"]
-        kind = rule["rule_type"]
-        orientation = rule["applies_to"]
-        seq = sequence_cells(orientation, 2, matrix)
-        if kind in {"shape_progression", "constant"}:
-            expected = seq[0][attr]
-        elif kind == "xor_addition":
-            expected = add_counts(seq[0][attr], seq[1][attr])
-        else:
-            domain = DOMAINS[attr]
-            first, second = domain.index(seq[0][attr]), domain.index(seq[1][attr])
-            step = (second - first) % len(domain)
-            if step == len(domain) - 1:
-                step = -1
-            expected = domain[(second + step) % len(domain)]
-        missing[attr] = expected
-    return missing
+def attribute_pattern_valid(matrix, attribute, missing_value):
+    values={(r,c):(missing_value if (r,c)==(2,2) else matrix[(r,c)][attribute]) for r in range(3) for c in range(3)}
+    if len(set(values.values()))==1:
+        return True
+    domain=DOMAINS[attribute]
+    def progression(seq):
+        indices=[domain.index(value) for value in seq]
+        return any(all(indices[i]==(indices[0]+step*i)%len(domain) for i in range(3)) for step in (-1,1))
+    rows=[[values[(r,c)] for c in range(3)] for r in range(3)]
+    cols=[[values[(r,c)] for r in range(3)] for c in range(3)]
+    if all(row==rows[0] for row in rows) and progression(rows[0]):return True
+    if all(col==cols[0] for col in cols) and progression(cols[0]):return True
+    if attribute=="count":
+        if all(row==rows[0] for row in rows) and rows[0][2]==add_counts(rows[0][0],rows[0][1]):return True
+        if all(col==cols[0] for col in cols) and cols[0][2]==add_counts(cols[0][0],cols[0][1]):return True
+    return False
+
+
+def independently_valid_choices(record):
+    matrix=grid(record)
+    return [choice for choice in record["answer_choices"] if all(attribute_pattern_valid(matrix,attribute,choice["attributes"][attribute]) for attribute in ATTRS)]
 
 
 def expected_from_rule(rule, group, position):
     kind, attr, details = rule["rule_type"], rule["attribute"], rule["details"]
     domain = DOMAINS[attr]
     if kind == "shape_progression":
-        return domain[(details["start_index"] + details["step"] * group) % len(domain)]
+        return domain[(details["start_index"] + details["step"] * position) % len(domain)]
     if kind in {"size_progression", "count_progression", "color_progression", "rotation_progression"}:
         return domain[(details["start_index"] + details["step"] * position) % len(domain)]
     if kind == "xor_addition":
@@ -124,6 +124,9 @@ def validate(root: Path):
     orientations = Counter()
     rule_counts = Counter()
     question_counts = Counter()
+    satisfying_option_counts = Counter()
+    semantic_discriminators = Counter()
+    frozen_option_attributes = Counter()
     for line in (root / "annotations.jsonl").read_text(encoding="utf-8").splitlines():
         if not line:
             continue
@@ -143,6 +146,12 @@ def validate(root: Path):
             issues.append(f"{iid}: incomplete grid")
             continue
         active_attrs = {r["attribute"] for r in record["active_rules"]}
+        shown_matrix = [panel for position, panel in matrix.items() if position != (2, 2)]
+        derived_attrs = {attr for attr in ATTRS if len({panel[attr] for panel in shown_matrix}) > 1}
+        if derived_attrs != active_attrs:
+            issues.append(f"{iid}: independently derived rule attributes {sorted(derived_attrs)} != declared {sorted(active_attrs)}")
+        if any(len({panel[attr] for panel in shown_matrix}) < 2 for attr in active_attrs):
+            issues.append(f"{iid}: declared rule has no visible variation")
         for attr in ATTRS:
             if attr not in active_attrs:
                 expected = record["background_constants"].get(attr)
@@ -156,9 +165,10 @@ def validate(root: Path):
                     expected = expected_from_rule(rule, group, position)
                     if actual != expected:
                         issues.append(f"{iid}: {rule['rule_type']} fails at ({row + 1},{col + 1})")
-        inferred = independently_infer_missing(record)
+        independently_valid = independently_valid_choices(record)
         stored_correct = matrix[(2, 2)]
-        if record.get("dataset_version") != "rpm-2.0.0":
+        inferred = independently_valid[0]["attributes"] if len(independently_valid)==1 else stored_correct
+        if record.get("dataset_version") != "rpm-6.0.0":
             issues.append(f"{iid}: dataset version mismatch")
         if any(stored_correct == panel for position, panel in matrix.items() if position != (2, 2)):
             issues.append(f"{iid}: missing panel is directly copyable")
@@ -175,6 +185,19 @@ def validate(root: Path):
             issues.append(f"{iid}: expected one valid choice, found {len(exact)}")
         elif exact[0]["choice_index"] != record["correct_answer_index"]:
             issues.append(f"{iid}: correct answer index mismatch")
+        satisfying = independently_valid
+        satisfying_option_counts[len(satisfying)] += 1
+        if len(satisfying) != 1:
+            issues.append(f"{iid}: independently derived rule set admits {len(satisfying)} options")
+        for attr in ATTRS:
+            option_values = {c["attributes"][attr] for c in choices}
+            if attr not in derived_attrs:
+                if option_values != {inferred[attr]}:
+                    issues.append(f"{iid}: undeclared option attribute {attr} is not frozen")
+                else:
+                    frozen_option_attributes[attr] += 1
+            elif len(option_values) > 1:
+                semantic_discriminators[attr] += 1
         violation_map = {v["choice_index"]: v for v in record["distractor_violations"]}
         for choice in choices:
             if choice["attributes"] == inferred:
@@ -214,20 +237,24 @@ def validate(root: Path):
     if checked:
         if tiers != Counter({"combined_rules": checked}):
             issues.append(f"dataset: anti-copy build must use two rules, got {tiers}")
-    return checked, tiers, orientations, rule_counts, question_counts, issues
+    return checked, tiers, orientations, rule_counts, question_counts, satisfying_option_counts, semantic_discriminators, frozen_option_attributes, issues
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("dataset", type=Path, nargs="?", default=Path(__file__).resolve().parent)
     args = parser.parse_args()
-    checked, tiers, orientations, rules, questions, issues = validate(args.dataset)
+    checked, tiers, orientations, rules, questions, satisfying, discriminators, frozen, issues = validate(args.dataset)
     lines = [
         f"Total images checked: {checked}",
         f"Difficulty tiers: {json.dumps(dict(tiers), sort_keys=True)}",
         f"Orientations: {json.dumps(dict(orientations), sort_keys=True)}",
         f"Rule distribution: {json.dumps(dict(sorted(rules.items())), sort_keys=True)}",
         f"Question types: {json.dumps(dict(sorted(questions.items())), sort_keys=True)}",
+        f"Options satisfying independently derived rules: {json.dumps(dict(sorted(satisfying.items())), sort_keys=True)}",
+        f"Declared-rule option discriminators: {json.dumps(dict(sorted(discriminators.items())), sort_keys=True)}",
+        f"Frozen undeclared option attributes: {json.dumps(dict(sorted(frozen.items())), sort_keys=True)}",
+        "Shape visual scale: equal filled-area normalization; centre spacing depends only on declared size and count",
         f"Total mismatches found: {len(issues)}",
         f"Summary: {'PASS' if not issues else 'FAIL'}",
     ]

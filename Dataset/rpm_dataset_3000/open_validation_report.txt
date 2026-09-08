@@ -5,10 +5,10 @@ Included: 3000
 Excluded: 0
 Exclusions: {}
 Sub-facts: correct_choice, attributes_changed_together
-Constant-answer baselines: {"attributes_changed_together": 0.22, "correct_choice": 0.13066666666666665}
+Constant-answer baselines: {"attributes_changed_together": 0.15133333333333332, "correct_choice": 0.13566666666666666}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {"correct_to_nearest_wrong_attribute_hamming_gap_distribution": {"count": 3000, "max": 1, "min": 1, "p25": 1.0, "p50": 1.0, "p75": 1.0, "p95": 1.0}, "duplicate_correct_candidate_violations": 0}
+Special checks: {"active_attribute_pair_distribution": {"color + count": 395, "color + rotation": 318, "color + shape": 255, "color + size": 256, "count + rotation": 380, "count + shape": 454, "count + size": 369, "rotation + size": 255, "shape + size": 318}, "correct_to_nearest_wrong_attribute_hamming_gap_distribution": {"count": 3000, "max": 2, "min": 1, "p25": 1.0, "p50": 1.0, "p75": 1.0, "p95": 1.0}, "declared_rule_discriminator_counts": {"color": 1224, "count": 1598, "rotation": 953, "shape": 1027, "size": 1198}, "duplicate_correct_candidate_violations": 0, "multi_valid_items": 0, "options_satisfying_independently_derived_rules": {"1": 3000}, "render_style_controls": {"shape_area": "equalised analytically", "spacing": "depends only on declared size and count", "stroke_width": "fixed"}, "unfrozen_undeclared_attribute_counts": {}}
 Issues: []

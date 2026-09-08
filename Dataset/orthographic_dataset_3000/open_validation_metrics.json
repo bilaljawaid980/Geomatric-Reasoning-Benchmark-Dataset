@@ -35,7 +35,30 @@
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
-    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+    "tested_relationships": [
+      {
+        "target": "minimum_cube_count",
+        "predictors": [
+          "uniqueness"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 2,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "uniqueness",
+        "predictors": [
+          "minimum_cube_count"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 7,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      }
+    ],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -44,7 +67,7 @@
     "no_answer_leak": true,
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_derivable_redundancy": true,
+    "no_prohibited_derivable_redundancy": true,
     "exact_spec_wording": true,
     "variant_specific_fields_only": true
   },
@@ -73,6 +96,25 @@
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "rendered_axis_directions": {
+      "top": "+x right; +y up",
+      "front": "+x right; +z up",
+      "side": "+y right; +z up"
+    },
+    "side_view_convention_consistent_items": 3000,
+    "gravity_minimum_minus_unconstrained_distribution": {
+      "0": 1117,
+      "1": 1044,
+      "2": 677,
+      "3": 156,
+      "4": 6
+    },
+    "gravity_constraint_changes_minimum": 1883,
+    "gravity_constraint_does_not_change_minimum": 1117,
+    "item_0223_gravity_minimum": 11,
+    "item_0223_unconstrained_minimum": 10,
+    "unconstrained_solver_failures": []
+  },
   "issues": []
 }

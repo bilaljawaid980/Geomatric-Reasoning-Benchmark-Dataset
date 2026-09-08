@@ -242,9 +242,15 @@ Example flattened row:
 Image Description,orthographic_0001.png,How many unit cells are filled in the top view?,5,"{""difficulty_score"":0.31,""has_candidate_panel"":false,""is_uniquely_determined"":false,""minimum_possible_cube_count"":7,""seed"":1,""total_cube_count"":8}"
 ```
 
+### Axis and gravity semantics
+
+Version 5 prints the coordinate direction on every projection: top is `+x right; +y up`, front is `+x right; +z up`, and side is `+y right; +z up`. This removes the otherwise implicit near/far convention from the side view.
+
+The minimum-cube answer is explicitly over gravity-supported structures. An unconstrained silhouette reconstruction can require fewer cubes because floating voxels are then permitted; `open_validation_metrics.json` reports both minima across all 3,000 records and their difference distribution. The views alone do not encode a physical support law, so users must retain this stated task convention when interpreting Level 2.
+
 ### Supplementary open-ended questions
 
-Version `orthographic-4.0.0` replaces the supplementary free-response set with the exact domain template in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+Version `orthographic-5.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
 - `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.

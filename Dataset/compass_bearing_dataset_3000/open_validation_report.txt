@@ -1,14 +1,14 @@
 Open-question validation: compass_bearing_dataset_3000
 Status: PASS
 Source items: 3000
-Included: 2717
-Excluded: 283
-Exclusions: {"closest_pair_distance_margin_below_5_percent": 283}
-Sub-facts: closest_pair, bearing_degrees_nearest_10
-Constant-answer baselines: {"bearing_degrees_nearest_10": 0.05079131394920869, "closest_pair": 0.26352594773647403}
+Included: 2965
+Excluded: 35
+Exclusions: {"closest_and_farthest_pair_margins_below_5_percent": 35}
+Sub-facts: closest_pair, bearing_degrees_nearest_10, farthest_pair
+Constant-answer baselines: {"bearing_degrees_nearest_10": 0.04924114671163575, "closest_pair": 0.26352594773647403, "farthest_pair": 0.2620967741935484}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
-PNG recovery: 2717/2717
-Special checks: {"closest_pair_margin_below_5_percent": 283, "closest_pair_relative_margin_distribution": {"count": 3000, "max": 3.7722197804285713, "min": 0.0, "p25": 0.13652185791820035, "p50": 0.3237242065416767, "p75": 0.6336956181392733, "p95": 1.5472192644480744}, "old_sector_boundary_exclusions_recovered": 1882, "other_exclusion_reasons": 0}
+PNG recovery: 2965/2965
+Special checks: {"closest_and_farthest_margin_failures": 35, "closest_pair_margin_below_5_percent": 283, "closest_pair_relative_margin_distribution": {"count": 3000, "max": 3.7722197804285713, "min": 0.0, "p25": 0.13652185791820035, "p50": 0.3237242065416767, "p75": 0.6336956181392733, "p95": 1.5472192644480744}, "farthest_fallback_items": 248, "farthest_pair_relative_margin_distribution": {"count": 3000, "max": 0.9889234212658229, "min": 0.0, "p25": 0.09681689383531221, "p50": 0.224139278091003, "p75": 0.39601822670015246, "p95": 0.7059644500761902}, "old_sector_boundary_exclusions_recovered": 1882, "other_exclusion_reasons": 0}
 Issues: []

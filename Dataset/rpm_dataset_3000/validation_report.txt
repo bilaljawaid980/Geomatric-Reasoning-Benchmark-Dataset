@@ -1,7 +1,11 @@
 Total images checked: 3000
 Difficulty tiers: {"combined_rules": 3000}
-Orientations: {"column": 597, "row": 2403}
-Rule distribution: {"color_progression": 843, "count_progression": 922, "shape_progression": 3000, "size_progression": 844, "xor_addition": 391}
-Question types: {"add_same_shape_distractor": 3000, "choices_matching_correct_shape": 1002, "combined_rule_attributes": 1041, "consistent_attribute": 1340, "correct_choice": 3000, "distractor_classification": 1660, "rule_extrapolation": 957, "top_left_shape_count": 3000}
+Orientations: {"column": 1004, "row": 1996}
+Rule distribution: {"color_progression": 1224, "count_progression": 1203, "rotation_progression": 953, "shape_progression": 1027, "size_progression": 1198, "xor_addition": 395}
+Question types: {"add_same_shape_distractor": 3000, "choices_matching_correct_shape": 1023, "combined_rule_attributes": 983, "consistent_attribute": 633, "correct_choice": 3000, "distractor_classification": 2367, "rule_extrapolation": 994, "top_left_shape_count": 3000}
+Options satisfying independently derived rules: {"1": 3000}
+Declared-rule option discriminators: {"color": 1224, "count": 1598, "rotation": 953, "shape": 1027, "size": 1198}
+Frozen undeclared option attributes: {"color": 1776, "count": 1402, "rotation": 2047, "shape": 1973, "size": 1802}
+Shape visual scale: equal filled-area normalization; centre spacing depends only on declared size and count
 Total mismatches found: 0
 Summary: PASS

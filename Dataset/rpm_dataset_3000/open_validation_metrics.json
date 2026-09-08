@@ -12,27 +12,30 @@
   ],
   "answer_distributions": {
     "correct_choice": {
-      "7": 392,
-      "4": 389,
-      "8": 386,
-      "3": 383,
-      "6": 378,
-      "5": 368,
-      "1": 361,
-      "2": 343
+      "2": 407,
+      "6": 387,
+      "4": 385,
+      "8": 379,
+      "7": 366,
+      "5": 363,
+      "1": 358,
+      "3": 355
     },
     "attributes_changed_together": {
-      "[\"shape\",\"count\"]": 660,
-      "[\"count\",\"shape\"]": 653,
-      "[\"shape\",\"size\"]": 461,
-      "[\"shape\",\"color\"]": 460,
-      "[\"color\",\"shape\"]": 383,
-      "[\"size\",\"shape\"]": 383
+      "[\"shape\",\"count\"]": 454,
+      "[\"color\",\"count\"]": 395,
+      "[\"rotation\",\"count\"]": 380,
+      "[\"size\",\"count\"]": 369,
+      "[\"color\",\"rotation\"]": 318,
+      "[\"shape\",\"size\"]": 318,
+      "[\"size\",\"color\"]": 256,
+      "[\"shape\",\"color\"]": 255,
+      "[\"size\",\"rotation\"]": 255
     }
   },
   "constant_answer_baselines": {
-    "correct_choice": 0.13066666666666665,
-    "attributes_changed_together": 0.22
+    "correct_choice": 0.13566666666666666,
+    "attributes_changed_together": 0.15133333333333332
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
@@ -40,7 +43,30 @@
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
-    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+    "tested_relationships": [
+      {
+        "target": "correct_choice",
+        "predictors": [
+          "attributes_changed_together"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 9,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "attributes_changed_together",
+        "predictors": [
+          "correct_choice"
+        ],
+        "rows": 3000,
+        "distinct_predictor_tuples": 8,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      }
+    ],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -49,7 +75,7 @@
     "no_answer_leak": true,
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_derivable_redundancy": true,
+    "no_prohibited_derivable_redundancy": true,
     "exact_spec_wording": true,
     "variant_specific_fields_only": true
   },
@@ -86,9 +112,37 @@
       "p50": 1.0,
       "p75": 1.0,
       "p95": 1.0,
-      "max": 1
+      "max": 2
     },
-    "duplicate_correct_candidate_violations": 0
+    "duplicate_correct_candidate_violations": 0,
+    "options_satisfying_independently_derived_rules": {
+      "1": 3000
+    },
+    "multi_valid_items": 0,
+    "declared_rule_discriminator_counts": {
+      "color": 1224,
+      "count": 1598,
+      "rotation": 953,
+      "shape": 1027,
+      "size": 1198
+    },
+    "unfrozen_undeclared_attribute_counts": {},
+    "active_attribute_pair_distribution": {
+      "color + count": 395,
+      "color + rotation": 318,
+      "color + shape": 255,
+      "color + size": 256,
+      "count + rotation": 380,
+      "count + shape": 454,
+      "count + size": 369,
+      "rotation + size": 255,
+      "shape + size": 318
+    },
+    "render_style_controls": {
+      "shape_area": "equalised analytically",
+      "spacing": "depends only on declared size and count",
+      "stroke_width": "fixed"
+    }
   },
   "issues": []
 }

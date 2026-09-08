@@ -28,6 +28,7 @@ MUTED = "#AEB8BC"
 ISO_EDGE = "#18282D"
 ISO_COLORS = {"top": "#BFD8DC", "left": "#79AAB3", "right": "#55838D"}
 AA = 2
+DATASET_VERSION = "orthographic-5.0.0"
 
 Cube = tuple[int, int, int]
 Cell = tuple[int, int]
@@ -345,7 +346,11 @@ def render_image(path: Path, size: tuple[int, int], target: set[Cube], candidate
     panel_width = (width - 2 * margin - 2 * gap) // 3
     view_bottom = 215 if candidates else height - 58
     boxes = [(margin + i * (panel_width + gap), 38, margin + i * (panel_width + gap) + panel_width, view_bottom) for i in range(3)]
-    labels = (("TOP VIEW", "x-y footprint"), ("FRONT VIEW", "x-z silhouette"), ("SIDE VIEW", "y-z silhouette"))
+    labels = (
+        ("TOP VIEW", "+x right; +y up"),
+        ("FRONT VIEW", "+x right; +z up"),
+        ("SIDE VIEW", "+y right; +z up"),
+    )
     for cells, box, (label, note) in zip(views, boxes, labels):
         draw_projection(draw, cells, box, label, note)
     if candidates:
@@ -513,9 +518,11 @@ def generate_one(index: int, images_dir: Path) -> dict:
     difficulty = round(min(1.0, 0.3 * complexity + 0.25 * ambiguity + 0.25 * has_panel + 0.2 * (max(view_counts.values()) / 12)), 4)
     record = {
         "id": iid,
+        "dataset_version": DATASET_VERSION,
         "image_path": f"images/{iid}.png",
         "canvas_size": list(size),
         "seed": index,
+        "frame_conventions": {"top_view": "+x right; +y up", "front_view": "+x right; +z up", "side_view": "+y right; +z up", "vertical_axis": "z", "support_rule": "every cube above z=0 has a cube directly below"},
         "difficulty_score": difficulty,
         "target_cubes": cubes_json(target),
         "total_cube_count": len(target),
@@ -554,7 +561,21 @@ def main() -> None:
     parser.add_argument("--n", type=int, default=3000)
     parser.add_argument("--output-dir", type=Path, default=Path(__file__).resolve().parent)
     parser.add_argument("--sample", action="store_true", help="Generate five images for manual review")
+    parser.add_argument("--rerender-existing", action="store_true", help="Redraw current annotations without changing geometry")
     args = parser.parse_args()
+    if args.rerender_existing:
+        rows = [json.loads(line) for line in (args.output_dir / "annotations.jsonl").read_text(encoding="utf-8-sig").splitlines() if line]
+        images_dir = args.output_dir / "images"
+        for record in tqdm(rows, desc="Rerendering orthographic puzzles"):
+            record["frame_conventions"] = {"top_view": "+x right; +y up", "front_view": "+x right; +z up", "side_view": "+y right; +z up", "vertical_axis": "z", "support_rule": "every cube above z=0 has a cube directly below"}
+            target = {tuple(cube) for cube in record["target_cubes"]}
+            candidates = record.get("candidates") or None
+            render_image(images_dir / Path(record["image_path"]).name, tuple(record["canvas_size"]), target, candidates)
+        with (args.output_dir / "annotations.jsonl").open("w", encoding="utf-8", newline="\n") as handle:
+            for record in rows:
+                handle.write(json.dumps(record, sort_keys=True, separators=(",", ":")) + "\n")
+        print(f"Rerendered {len(rows)} images with explicit axis directions")
+        return
     generate_dataset(5 if args.sample else args.n, args.output_dir)
 
 

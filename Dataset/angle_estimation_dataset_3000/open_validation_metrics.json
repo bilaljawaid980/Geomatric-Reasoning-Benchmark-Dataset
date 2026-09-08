@@ -103,7 +103,52 @@
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
-    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+    "tested_relationships": [
+      {
+        "target": "angle_degrees_nearest_10",
+        "predictors": [
+          "angle_class"
+        ],
+        "rows": 1200,
+        "distinct_predictor_tuples": 4,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "angle_class",
+        "predictors": [
+          "angle_degrees_nearest_10"
+        ],
+        "rows": 1200,
+        "distinct_predictor_tuples": 34,
+        "repeat_coverage": 1.0,
+        "deterministic": true
+      },
+      {
+        "target": "larger_angle",
+        "predictors": [
+          "difference_degrees_nearest_10"
+        ],
+        "rows": 1050,
+        "distinct_predictor_tuples": 16,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "difference_degrees_nearest_10",
+        "predictors": [
+          "larger_angle"
+        ],
+        "rows": 1050,
+        "distinct_predictor_tuples": 2,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      }
+    ],
+    "empirical_findings": [
+      "angle_class is empirically determined by angle_degrees_nearest_10 (100.0% repeat coverage)"
+    ],
     "violations": []
   },
   "assertions": {
@@ -112,7 +157,7 @@
     "no_answer_leak": true,
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_derivable_redundancy": true,
+    "no_prohibited_derivable_redundancy": true,
     "exact_spec_wording": true,
     "variant_specific_fields_only": true
   },

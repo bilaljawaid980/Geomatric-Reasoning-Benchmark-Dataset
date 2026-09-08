@@ -66,7 +66,7 @@ def main():
         })
         if name=="angle_estimation_dataset_3000":constraints["open_triangle_vertex_label_subfact_removed_for_fixed_order_bias"]=True
         elif name=="clock_reading_dataset_3000":constraints["open_time_derived_angle_subfact_removed"]=True
-        elif name=="compass_bearing_dataset_3000":constraints.update({"open_bearing_numeric_tolerance_degrees":10,"open_closest_pair_minimum_relative_margin":0.05,"open_sector_boundary_exclusion_removed":True})
+        elif name=="compass_bearing_dataset_3000":constraints.update({"open_bearing_numeric_tolerance_degrees":10,"open_closest_pair_minimum_relative_margin":0.05,"open_farthest_pair_fallback_minimum_relative_margin":0.05,"open_sector_boundary_exclusion_removed":True})
         elif name=="coordinate_geometry_dataset_3000":constraints.update({"open_distance_relation_threshold_units":12,"open_farthest_pair_minimum_separation_units":1,"open_farthest_guard_fallback":"report all labelled point coordinates"})
         elif name=="cube_structure_dataset_3000":constraints.update({"open_visible_top_face_count_replaces_unrecoverable_base_layer_count":True,"open_cube_manual_visual_audit_items":20})
         elif name=="depth_height_dataset_3000":constraints["open_stack_height_variant_covers_all_stack_scenes"]=True
@@ -75,8 +75,10 @@ def main():
         elif name=="laser_mirror_dataset_3000":constraints.update({"open_zero_reflection_variant":True,"open_near_miss_definition":"mirror cell shares an edge with a traversed path cell without lying on the path"})
         elif name=="line_intersection_dataset_3000":constraints.update({"open_endpoint_parity_redundancy_removed":True,"open_independent_left_edge_colour_subfact":True})
         elif name=="overlap_circles_dataset_3000":constraints["open_isolated_circle_subfact_removed_for_sampling_bias"]=True
+        elif name=="orthographic_dataset_3000":constraints.update({"rendered_axis_directions":{"top":"+x right; +y up","front":"+x right; +z up","side":"+y right; +z up"},"gravity_supported_minimum_compared_with_unconstrained_minimum":True})
         elif name=="projectile_motion_dataset_1000":constraints["open_peak_threshold_metres"]=13
         elif name=="surface_topology_dataset_3000":constraints["open_euler_subfact_removed_as_derivable_from_genus_and_orientability"]=True
+        elif name=="rpm_dataset_3000":constraints.update({"rpm_exactly_one_option_satisfies_independently_derived_rules":True,"rpm_undeclared_option_attributes_frozen":True,"rpm_declared_rules_visibly_vary":True,"rpm_equal_area_shape_rendering":True,"rpm_spacing_depends_only_on_size_and_count":True})
         if name=="fold_punch_dataset_3000":constraints["approved_closed_repair"]="312 duplicated Level 5 rows replaced by additional-fold counterfactual"
         elif name=="overlap_circles_dataset_3000":constraints["approved_closed_repair"]="1034 leaked Level 3 field-name answers corrected to clustered or spread"
         manifest["generator_commit"]=SOURCE_COMMIT

@@ -17,6 +17,7 @@ GEAR_TEMPLATE="Follow the mesh from the driver gear through every gear it turns:
 ROUTE_TEMPLATE="Trace the coloured lines that touch the label {TARGET} {POSITION} of the frame and follow each one through its bends to wherever it terminates: decide whether {TARGET} is connected to every other labelled side of the frame or whether some remain unreached from it, and name the label at the far end of each line that begins at {TARGET}. State your conclusion, justify it by describing the paths you followed and how you distinguished each line by colour where they overlap, and end with a confidence score from 0 to 1 for your conclusion."
 COORDINATE_FALLBACK="Read every labelled point against the printed coordinate grid: report the coordinates of all points in alphabetical order. State your conclusion, justify it by describing how you projected each point to the horizontal and vertical axes, and end with a confidence score from 0 to 1."
 LASER_STRAIGHT="Follow the laser from where it enters the grid and trace its straight path across: name the edge and position where it leaves, and say how many mirrors it passes without striking. State your conclusion, justify it by describing the path you traced and where the nearest mirrors sit relative to it, and end with a confidence score from 0 to 1."
+COMPASS_FARTHEST="Read the compass rose in the corner, then take the two landmarks that lie farthest apart and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacement you measured and how you read the direction against the rose, and end with a confidence score from 0 to 1."
 
 P={
 "angle_estimation_dataset_3000":ANGLE_COMPARISON,
@@ -60,6 +61,9 @@ def closest(r):
 def closest_gap_ratio(r):
  values=sorted(float(v) for v in r["all_pairwise_distances"].values())
  return math.inf if len(values)<2 else (values[1]-values[0])/values[0]
+def farthest_gap_ratio(r):
+ values=sorted((float(v) for v in r["all_pairwise_distances"].values()),reverse=True)
+ return math.inf if len(values)<2 else (values[0]-values[1])/values[1]
 def farthest_gap(r):
  labels=sorted(r["points"]);values=sorted((math.dist(r["points"][a],r["points"][b]) for i,a in enumerate(labels) for b in labels[i+1:]),reverse=True);return math.inf if len(values)<2 else values[0]-values[1]
 def laser_near_misses(r):
@@ -68,7 +72,9 @@ def laser_near_misses(r):
 def bd(v):return min(abs(((v-x+180)%360)-180) for x in (22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5))
 def excluded(n,r):
  if n=="compass_bearing_dataset_3000":
-  return closest_gap_ratio(r)<.05,"closest_pair_distance_margin_below_5_percent"
+  close=closest_gap_ratio(r)
+  far=farthest_gap_ratio(r)
+  return close<.05 and far<.05,"closest_and_farthest_pair_margins_below_5_percent"
  if n=="cube_structure_dataset_3000":return bool(r["has_ambiguous_visual_floater"]),"ambiguous_visual_floater"
  if n=="overlap_circles_dataset_3000":return r["max_stack_depth"]>4,"max_stack_depth_above_4"
  if n=="rpm_dataset_3000":
@@ -89,7 +95,9 @@ def derive(n,r):
  if n in ("combination_dataset_3000","combination3d_dataset_3000"):
   z=pick(r,[x for x in r["candidates"] if not x["is_valid_assembly"]],"rejected");return out(p,{"correct_candidate":r["correct_answer_choice"],"rejected_candidate":z["choice_label"],"rejection_reason":FAIL[z["failure_reason"]]},["target","candidate panel"])
  if n=="compass_bearing_dataset_3000":
-  a,b,_=closest(r);a,b=sorted((a,b));v=r["all_pairwise_bearings"][f"{a}-to-{b}"];return out(p,{"closest_pair":f"{a}-{b}","bearing_degrees_nearest_10":near(v,10)%360},[a,b],{"bearing_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
+  if closest_gap_ratio(r)>=.05:
+   a,b,_=closest(r);a,b=sorted((a,b));v=r["all_pairwise_bearings"][f"{a}-to-{b}"];return out(p,{"closest_pair":f"{a}-{b}","bearing_degrees_nearest_10":near(v,10)%360},[a,b],{"bearing_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
+  distances=r["all_pairwise_distances"];pair=max(distances,key=distances.get);a,b=sorted(pair.split("-"));v=r["all_pairwise_bearings"][f"{a}-to-{b}"];return out(COMPASS_FARTHEST,{"farthest_pair":f"{a}-{b}","bearing_degrees_nearest_10":near(v,10)%360},[a,b],{"bearing_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
  if n=="coordinate_geometry_dataset_3000":
   if farthest_gap(r)<1:
    points={label:list(r["points"][label]) for label in sorted(r["points"])};return out(COORDINATE_FALLBACK,{"point_coordinates":points},sorted(points))
@@ -128,7 +136,7 @@ def derive(n,r):
  if n=="rotation_matching_dataset_3000":return out(p,{"rotation_candidate":r["correct_answer_choice"],"reflection_candidate":r["reflection_answer_choice"]},["reference","candidates"])
  if n=="route_dataset_3000":
   d={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if d[x] in (2,3)] or [x for x in r["endpoint_letters"] if d[x]>0];t=pick(r,c,"route-target");inc=[z for z in r["routes"] if t in (z["start"],z["end"])];ends=[z["end"] if z["start"]==t else z["start"] for z in inc];un=sorted(set(r["endpoint_letters"])-{t}-set(ends));pt=next(z["points"][0] if z["start"]==t else z["points"][-1] for z in inc);w,h=r["canvas_size"];pos="at the top" if pt[1]<h/4 else ("at the bottom" if pt[1]>3*h/4 else ("at the left" if pt[0]<w/4 else "at the right"));q=ROUTE_TEMPLATE.replace("{TARGET}",t).replace("{POSITION}",pos);return out(q,{"connectivity":{"connected_to_all_other_labels":"yes" if not un else "no","far_end_labels":ends,"unreached_labels":un}},[t])
- if n=="rpm_dataset_3000":return out(p,{"correct_choice":r["correct_answer_index"],"attributes_changed_together":[x["attribute"] for x in r["active_rules"]]},["matrix","numbered choices"])
+ if n=="rpm_dataset_3000":return out(p,{"correct_choice":r["correct_answer_index"],"attributes_changed_together":sorted((x["attribute"] for x in r["active_rules"]),key=("shape","size","color","rotation","count").index)},["matrix","numbered choices"])
  if n=="shadow_inference_dataset_3000":
   v=r["light_azimuth_degrees"];direction=["north","east","south","west"][int((v+45)%360//90)];return out(p,{"light_direction":direction,"light_height":"high" if r["light_elevation_degrees"]>=45 else "low"},["objects","shadows"])
  if n=="surface_topology_dataset_3000":return out(p,{"genus":r["genus"],"orientability":"orientable" if r["is_orientable"] else "non-orientable"},["surface"],{"genus":{"absolute_tolerance":0,"unit":"count"}})

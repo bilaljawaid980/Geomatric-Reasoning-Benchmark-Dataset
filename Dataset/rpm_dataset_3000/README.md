@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This folder contains 3,000 synthetic Raven-style Progressive Matrices (RPM) images and 12,000 grounded questions. It follows the procedural visual-reasoning tradition of [RAVEN (Zhang et al., 2019)](https://openaccess.thecvf.com/content_CVPR_2019/html/Zhang_RAVEN_A_Dataset_for_Relational_and_Analogical_Visual_REasoNing_CVPR_2019_paper.html) and [Procedurally Generated Matrices / PGM (Barrett et al., 2018)](https://proceedings.mlr.press/v80/barrett18a.html), while using an original compact rule grammar and rendering pipeline.
+This folder contains 3,000 synthetic Raven-style Progressive Matrices (RPM) images and 15,000 grounded questions. It follows the procedural visual-reasoning tradition of [RAVEN (Zhang et al., 2019)](https://openaccess.thecvf.com/content_CVPR_2019/html/Zhang_RAVEN_A_Dataset_for_Relational_and_Analogical_Visual_REasoNing_CVPR_2019_paper.html) and [Procedurally Generated Matrices / PGM (Barrett et al., 2018)](https://proceedings.mlr.press/v80/barrett18a.html), while using an original compact rule grammar and rendering pipeline.
 
 Unlike the suite's 20 single-image spatial/geometric datasets, this category tests inductive and analogical rule discovery across a matrix of panels. It contains exactly one correct completion among eight choices per puzzle. No model inference, scoring, or evaluation code is included.
 
@@ -218,9 +218,15 @@ The flattened schema is `task,image,prompt,groundtruth,metadata`. Compact metada
 
 Version 2 requires three distinct matrix rows, forbids the missing panel from duplicating any shown panel, and requires variation across rows as well as within them. Consequently all released matrices combine two rules; a single oriented rule cannot satisfy the anti-copy condition in a 3×3 grid.
 
+### Version 6 option-identity repair
+
+Version 6 regenerates all 3,000 matrices. Every puzzle has two visible, non-constant rules on perpendicular matrix axes. The validator derives the admissible answer directly from the nine panel attribute records without trusting `active_rules`, and requires exactly one of the eight choices to satisfy every derived pattern. Attributes that do not vary in the matrix are frozen across all choices, so size, rotation, colour, count, or shape cannot act as an untaught discriminator. Shape areas are analytically normalised; centre spacing depends only on declared size and count; stroke width is fixed.
+
+The historical design notes above describe earlier generator targets. This version's validator report is authoritative for the released rule and question distributions.
+
 ### Supplementary open-ended questions
 
-Version `rpm-5.0.0` replaces the supplementary free-response set with the exact domain template in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+Version `rpm-6.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
 - `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.

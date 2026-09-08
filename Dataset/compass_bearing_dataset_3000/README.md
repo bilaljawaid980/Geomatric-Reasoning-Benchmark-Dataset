@@ -64,13 +64,17 @@ Skills tested include coordinate-to-bearing conversion, ordered directional reas
 
 Limitations: maps are flat 2D abstractions rather than spherical Earth navigation; distances use abstract map units rather than a geographic scale; there is no terrain, route obstruction, magnetic declination, or great-circle calculation; landmark count is limited to three or four; and bearings are inferred from clean schematic diagrams rather than noisy real maps.
 
+### Supplementary extrema guard
+
+Version 7 uses the closest-pair question when its top-two distance margin is at least 5%. A closest-pair near-tie uses the approved farthest-pair bearing fallback when the farthest-versus-second-farthest margin is at least 5%. Records ambiguous under both extrema remain explicitly excluded.
+
 ### Supplementary open-ended questions
 
-Version `compass-bearing-6.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `2717` eligible items and excludes `283` under `{"closest_pair_distance_margin_below_5_percent": 283}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+Version `compass-bearing-7.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `2965` eligible items and excludes `35` under `{"closest_and_farthest_pair_margins_below_5_percent": 35}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
 - `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.
 - `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.
 - `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.
 
-Scored fields at or above 60% after template revision: `{}`. Targeted fields: `closest_pair, bearing_degrees_nearest_10`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.
+Scored fields at or above 60% after template revision: `{}`. Targeted fields: `closest_pair, bearing_degrees_nearest_10, farthest_pair`. Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.

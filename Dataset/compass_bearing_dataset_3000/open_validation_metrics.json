@@ -2,15 +2,16 @@
   "status": "PASS",
   "dataset": "compass_bearing_dataset_3000",
   "source_items": 3000,
-  "included_items": 2717,
-  "excluded_items": 283,
+  "included_items": 2965,
+  "excluded_items": 35,
   "exclusion_counts": {
-    "closest_pair_distance_margin_below_5_percent": 283
+    "closest_and_farthest_pair_margins_below_5_percent": 35
   },
   "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "closest_pair",
-    "bearing_degrees_nearest_10"
+    "bearing_degrees_nearest_10",
+    "farthest_pair"
   ],
   "answer_distributions": {
     "closest_pair": {
@@ -22,47 +23,56 @@
       "B-D": 206
     },
     "bearing_degrees_nearest_10": {
-      "90": 138,
-      "270": 130,
-      "150": 90,
-      "0": 88,
-      "320": 88,
-      "160": 84,
-      "10": 83,
-      "350": 82,
-      "340": 81,
-      "300": 79,
-      "180": 78,
-      "20": 77,
-      "200": 77,
-      "40": 77,
-      "210": 75,
-      "140": 72,
-      "220": 72,
-      "290": 72,
-      "60": 72,
-      "100": 71,
-      "120": 70,
-      "330": 69,
-      "170": 68,
-      "230": 68,
-      "80": 68,
-      "240": 66,
-      "30": 66,
-      "310": 66,
-      "110": 65,
-      "190": 65,
-      "260": 65,
-      "280": 64,
-      "250": 61,
-      "130": 60,
-      "50": 55,
-      "70": 55
+      "90": 146,
+      "270": 136,
+      "320": 98,
+      "150": 97,
+      "0": 91,
+      "10": 91,
+      "300": 91,
+      "160": 89,
+      "340": 88,
+      "350": 88,
+      "330": 86,
+      "40": 85,
+      "180": 84,
+      "20": 84,
+      "140": 82,
+      "200": 80,
+      "120": 79,
+      "220": 79,
+      "290": 79,
+      "210": 78,
+      "60": 78,
+      "240": 76,
+      "310": 76,
+      "100": 74,
+      "130": 74,
+      "80": 74,
+      "230": 73,
+      "170": 72,
+      "190": 72,
+      "110": 71,
+      "30": 71,
+      "280": 70,
+      "260": 69,
+      "250": 64,
+      "70": 62,
+      "50": 58
+    },
+    "farthest_pair": {
+      "A-B": 65,
+      "B-C": 57,
+      "A-C": 52,
+      "C-D": 32,
+      "A-D": 21,
+      "B-D": 21
     }
   },
   "constant_answer_baselines": {
     "closest_pair": 0.26352594773647403,
-    "bearing_degrees_nearest_10": 0.05079131394920869
+    "bearing_degrees_nearest_10": 0.04924114671163575,
+    "farthest_pair": 0.2620967741935484
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
@@ -70,7 +80,50 @@
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
-    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+    "tested_relationships": [
+      {
+        "target": "closest_pair",
+        "predictors": [
+          "bearing_degrees_nearest_10"
+        ],
+        "rows": 2717,
+        "distinct_predictor_tuples": 36,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "bearing_degrees_nearest_10",
+        "predictors": [
+          "closest_pair"
+        ],
+        "rows": 2717,
+        "distinct_predictor_tuples": 6,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "bearing_degrees_nearest_10",
+        "predictors": [
+          "farthest_pair"
+        ],
+        "rows": 248,
+        "distinct_predictor_tuples": 6,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      },
+      {
+        "target": "farthest_pair",
+        "predictors": [
+          "bearing_degrees_nearest_10"
+        ],
+        "rows": 248,
+        "distinct_predictor_tuples": 36,
+        "repeat_coverage": 1.0,
+        "deterministic": false
+      }
+    ],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -79,13 +132,13 @@
     "no_answer_leak": true,
     "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_derivable_redundancy": true,
+    "no_prohibited_derivable_redundancy": true,
     "exact_spec_wording": true,
     "variant_specific_fields_only": true
   },
   "png_recovery": {
-    "passed": 2717,
-    "total": 2717,
+    "passed": 2965,
+    "total": 2965,
     "failures": [],
     "quantity_recovery_by_subfact": {
       "closest_pair": {
@@ -97,8 +150,15 @@
       },
       "bearing_degrees_nearest_10": {
         "visual_signal": "the compass rose and the screen-space displacement from the alphabetically earlier landmark",
-        "checked_items": 2717,
-        "passed_items": 2717,
+        "checked_items": 2965,
+        "passed_items": 2965,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": []
+      },
+      "farthest_pair": {
+        "visual_signal": "the greatest rendered separation between the relevant labelled points or landmarks",
+        "checked_items": 248,
+        "passed_items": 248,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
         "supporting_closed_validator_metrics": []
       }
@@ -115,6 +175,17 @@
       "p75": 0.6336956181392733,
       "p95": 1.5472192644480744,
       "max": 3.7722197804285713
+    },
+    "farthest_fallback_items": 248,
+    "closest_and_farthest_margin_failures": 35,
+    "farthest_pair_relative_margin_distribution": {
+      "count": 3000,
+      "min": 0.0,
+      "p25": 0.09681689383531221,
+      "p50": 0.224139278091003,
+      "p75": 0.39601822670015246,
+      "p95": 0.7059644500761902,
+      "max": 0.9889234212658229
     },
     "other_exclusion_reasons": 0
   },

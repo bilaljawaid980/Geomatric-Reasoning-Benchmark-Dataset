@@ -124,14 +124,15 @@
     ]
   },
   "compass_bearing_dataset_3000": {
-    "included": 2717,
-    "excluded": 283,
+    "included": 2965,
+    "excluded": 35,
     "exclusion_reasons": {
-      "closest_pair_distance_margin_below_5_percent": 283
+      "closest_and_farthest_pair_margins_below_5_percent": 35
     },
     "subfacts": [
       "closest_pair",
-      "bearing_degrees_nearest_10"
+      "bearing_degrees_nearest_10",
+      "farthest_pair"
     ]
   },
   "surface_topology_dataset_3000": {
@@ -141,6 +142,15 @@
     "subfacts": [
       "genus",
       "orientability"
+    ]
+  },
+  "rpm_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "correct_choice",
+      "attributes_changed_together"
     ]
   }
 }

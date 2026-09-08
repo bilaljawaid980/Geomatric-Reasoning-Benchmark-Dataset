@@ -106,7 +106,52 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "angle_degrees_nearest_10",
+            "predictors": [
+              "angle_class"
+            ],
+            "rows": 1200,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "angle_class",
+            "predictors": [
+              "angle_degrees_nearest_10"
+            ],
+            "rows": 1200,
+            "distinct_predictor_tuples": 34,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "larger_angle",
+            "predictors": [
+              "difference_degrees_nearest_10"
+            ],
+            "rows": 1050,
+            "distinct_predictor_tuples": 16,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "difference_degrees_nearest_10",
+            "predictors": [
+              "larger_angle"
+            ],
+            "rows": 1050,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [
+          "angle_class is empirically determined by angle_degrees_nearest_10 (100.0% repeat coverage)"
+        ],
         "violations": []
       },
       "assertions": {
@@ -115,7 +160,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -856,7 +901,9 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -865,7 +912,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -934,7 +981,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "correct_candidate",
+            "predictors": [
+              "rejected_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "correct_candidate",
+            "predictors": [
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "correct_candidate",
+            "predictors": [
+              "rejected_candidate",
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejected_candidate",
+            "predictors": [
+              "correct_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejected_candidate",
+            "predictors": [
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejected_candidate",
+            "predictors": [
+              "correct_candidate",
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejection_reason",
+            "predictors": [
+              "correct_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejection_reason",
+            "predictors": [
+              "rejected_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejection_reason",
+            "predictors": [
+              "correct_candidate",
+              "rejected_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -943,7 +1086,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -1032,7 +1175,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "correct_candidate",
+            "predictors": [
+              "rejected_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "correct_candidate",
+            "predictors": [
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "correct_candidate",
+            "predictors": [
+              "rejected_candidate",
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejected_candidate",
+            "predictors": [
+              "correct_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejected_candidate",
+            "predictors": [
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejected_candidate",
+            "predictors": [
+              "correct_candidate",
+              "rejection_reason"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejection_reason",
+            "predictors": [
+              "correct_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejection_reason",
+            "predictors": [
+              "rejected_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rejection_reason",
+            "predictors": [
+              "correct_candidate",
+              "rejected_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -1041,7 +1280,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -1086,15 +1325,16 @@
       "status": "PASS",
       "dataset": "compass_bearing_dataset_3000",
       "source_items": 3000,
-      "included_items": 2717,
-      "excluded_items": 283,
+      "included_items": 2965,
+      "excluded_items": 35,
       "exclusion_counts": {
-        "closest_pair_distance_margin_below_5_percent": 283
+        "closest_and_farthest_pair_margins_below_5_percent": 35
       },
       "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "closest_pair",
-        "bearing_degrees_nearest_10"
+        "bearing_degrees_nearest_10",
+        "farthest_pair"
       ],
       "answer_distributions": {
         "closest_pair": {
@@ -1106,47 +1346,56 @@
           "B-D": 206
         },
         "bearing_degrees_nearest_10": {
-          "90": 138,
-          "270": 130,
-          "150": 90,
-          "0": 88,
-          "320": 88,
-          "160": 84,
-          "10": 83,
-          "350": 82,
-          "340": 81,
-          "300": 79,
-          "180": 78,
-          "20": 77,
-          "200": 77,
-          "40": 77,
-          "210": 75,
-          "140": 72,
-          "220": 72,
-          "290": 72,
-          "60": 72,
-          "100": 71,
-          "120": 70,
-          "330": 69,
-          "170": 68,
-          "230": 68,
-          "80": 68,
-          "240": 66,
-          "30": 66,
-          "310": 66,
-          "110": 65,
-          "190": 65,
-          "260": 65,
-          "280": 64,
-          "250": 61,
-          "130": 60,
-          "50": 55,
-          "70": 55
+          "90": 146,
+          "270": 136,
+          "320": 98,
+          "150": 97,
+          "0": 91,
+          "10": 91,
+          "300": 91,
+          "160": 89,
+          "340": 88,
+          "350": 88,
+          "330": 86,
+          "40": 85,
+          "180": 84,
+          "20": 84,
+          "140": 82,
+          "200": 80,
+          "120": 79,
+          "220": 79,
+          "290": 79,
+          "210": 78,
+          "60": 78,
+          "240": 76,
+          "310": 76,
+          "100": 74,
+          "130": 74,
+          "80": 74,
+          "230": 73,
+          "170": 72,
+          "190": 72,
+          "110": 71,
+          "30": 71,
+          "280": 70,
+          "260": 69,
+          "250": 64,
+          "70": 62,
+          "50": 58
+        },
+        "farthest_pair": {
+          "A-B": 65,
+          "B-C": 57,
+          "A-C": 52,
+          "C-D": 32,
+          "A-D": 21,
+          "B-D": 21
         }
       },
       "constant_answer_baselines": {
         "closest_pair": 0.26352594773647403,
-        "bearing_degrees_nearest_10": 0.05079131394920869
+        "bearing_degrees_nearest_10": 0.04924114671163575,
+        "farthest_pair": 0.2620967741935484
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -1154,7 +1403,50 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "closest_pair",
+            "predictors": [
+              "bearing_degrees_nearest_10"
+            ],
+            "rows": 2717,
+            "distinct_predictor_tuples": 36,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "bearing_degrees_nearest_10",
+            "predictors": [
+              "closest_pair"
+            ],
+            "rows": 2717,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "bearing_degrees_nearest_10",
+            "predictors": [
+              "farthest_pair"
+            ],
+            "rows": 248,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "farthest_pair",
+            "predictors": [
+              "bearing_degrees_nearest_10"
+            ],
+            "rows": 248,
+            "distinct_predictor_tuples": 36,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -1163,13 +1455,13 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
       "png_recovery": {
-        "passed": 2717,
-        "total": 2717,
+        "passed": 2965,
+        "total": 2965,
         "failures": [],
         "quantity_recovery_by_subfact": {
           "closest_pair": {
@@ -1181,8 +1473,15 @@
           },
           "bearing_degrees_nearest_10": {
             "visual_signal": "the compass rose and the screen-space displacement from the alphabetically earlier landmark",
-            "checked_items": 2717,
-            "passed_items": 2717,
+            "checked_items": 2965,
+            "passed_items": 2965,
+            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+            "supporting_closed_validator_metrics": []
+          },
+          "farthest_pair": {
+            "visual_signal": "the greatest rendered separation between the relevant labelled points or landmarks",
+            "checked_items": 248,
+            "passed_items": 248,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
             "supporting_closed_validator_metrics": []
           }
@@ -1199,6 +1498,17 @@
           "p75": 0.6336956181392733,
           "p95": 1.5472192644480744,
           "max": 3.7722197804285713
+        },
+        "farthest_fallback_items": 248,
+        "closest_and_farthest_margin_failures": 35,
+        "farthest_pair_relative_margin_distribution": {
+          "count": 3000,
+          "min": 0.0,
+          "p25": 0.09681689383531221,
+          "p50": 0.224139278091003,
+          "p75": 0.39601822670015246,
+          "p95": 0.7059644500761902,
+          "max": 0.9889234212658229
         },
         "other_exclusion_reasons": 0
       },
@@ -1625,7 +1935,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "farthest_pair",
+            "predictors": [
+              "distance_nearest_unit"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 21,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "farthest_pair",
+            "predictors": [
+              "relation_to_12"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "farthest_pair",
+            "predictors": [
+              "distance_nearest_unit",
+              "relation_to_12"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 22,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "distance_nearest_unit",
+            "predictors": [
+              "farthest_pair"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "distance_nearest_unit",
+            "predictors": [
+              "relation_to_12"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "distance_nearest_unit",
+            "predictors": [
+              "farthest_pair",
+              "relation_to_12"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "relation_to_12",
+            "predictors": [
+              "farthest_pair"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "relation_to_12",
+            "predictors": [
+              "distance_nearest_unit"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 21,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "relation_to_12",
+            "predictors": [
+              "farthest_pair",
+              "distance_nearest_unit"
+            ],
+            "rows": 2644,
+            "distinct_predictor_tuples": 93,
+            "repeat_coverage": 0.995839636913767,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -1634,7 +2040,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -1644,7 +2050,7 @@
         "failures": [],
         "quantity_recovery_by_subfact": {
           "farthest_pair": {
-            "visual_signal": "the largest horizontal/vertical grid separation",
+            "visual_signal": "the greatest rendered separation between the relevant labelled points or landmarks",
             "checked_items": 2644,
             "passed_items": 2644,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
@@ -1799,7 +2205,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "flat_edge_neighbours",
+            "predictors": [
+              "opposite_face"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "opposite_face",
+            "predictors": [
+              "flat_edge_neighbours"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 56,
+            "repeat_coverage": 0.999,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -1808,7 +2237,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -1880,7 +2309,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "visible_top_face_count",
+            "predictors": [
+              "hidden_cube_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "hidden_cube_count",
+            "predictors": [
+              "visible_top_face_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -1889,7 +2341,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -2399,7 +2851,53 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "depth_ordering",
+            "predictors": [
+              "nearest_colour"
+            ],
+            "rows": 1500,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "nearest_colour",
+            "predictors": [
+              "depth_ordering"
+            ],
+            "rows": 1500,
+            "distinct_predictor_tuples": 200,
+            "repeat_coverage": 0.9946666666666667,
+            "deterministic": true
+          },
+          {
+            "target": "height_ordering_shortest_to_tallest",
+            "predictors": [
+              "tallest_stack_colour"
+            ],
+            "rows": 1500,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "tallest_stack_colour",
+            "predictors": [
+              "height_ordering_shortest_to_tallest"
+            ],
+            "rows": 1500,
+            "distinct_predictor_tuples": 198,
+            "repeat_coverage": 0.996,
+            "deterministic": true
+          }
+        ],
+        "empirical_findings": [
+          "nearest_colour is empirically determined by depth_ordering (99.5% repeat coverage)",
+          "tallest_stack_colour is empirically determined by height_ordering_shortest_to_tallest (99.6% repeat coverage)"
+        ],
         "violations": []
       },
       "assertions": {
@@ -2408,7 +2906,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -2501,7 +2999,33 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "candidate",
+            "predictors": [
+              "side_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "side_count",
+            "predictors": [
+              "candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          }
+        ],
+        "empirical_findings": [
+          "candidate is empirically determined by side_count (100.0% repeat coverage)",
+          "side_count is empirically determined by candidate (100.0% repeat coverage)"
+        ],
         "violations": []
       },
       "assertions": {
@@ -2510,7 +3034,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -2608,7 +3132,108 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "arrow_count",
+            "predictors": [
+              "weight_arrow"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "arrow_count",
+            "predictors": [
+              "drawn_magnitude_ranking"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 20,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "arrow_count",
+            "predictors": [
+              "weight_arrow",
+              "drawn_magnitude_ranking"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 20,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "weight_arrow",
+            "predictors": [
+              "arrow_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "weight_arrow",
+            "predictors": [
+              "drawn_magnitude_ranking"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 20,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "weight_arrow",
+            "predictors": [
+              "arrow_count",
+              "drawn_magnitude_ranking"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 20,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "drawn_magnitude_ranking",
+            "predictors": [
+              "arrow_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "drawn_magnitude_ranking",
+            "predictors": [
+              "weight_arrow"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "drawn_magnitude_ranking",
+            "predictors": [
+              "arrow_count",
+              "weight_arrow"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [
+          "arrow_count is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage)",
+          "arrow_count is empirically determined by weight_arrow, drawn_magnitude_ranking (100.0% repeat coverage)",
+          "weight_arrow is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage)",
+          "weight_arrow is empirically determined by arrow_count, drawn_magnitude_ranking (100.0% repeat coverage)"
+        ],
         "violations": []
       },
       "assertions": {
@@ -2617,7 +3242,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -2692,7 +3317,32 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "unfolded_hole_count",
+            "predictors": [
+              "correct_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": true
+          },
+          {
+            "target": "correct_pattern",
+            "predictors": [
+              "unfolded_hole_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [
+          "unfolded_hole_count is empirically determined by correct_pattern (100.0% repeat coverage)"
+        ],
         "violations": []
       },
       "assertions": {
@@ -2701,7 +3351,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -2795,7 +3445,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "rounded_tick_value",
+            "predictors": [
+              "range_half"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "range_half",
+            "predictors": [
+              "rounded_tick_value"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 30,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -2804,7 +3477,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -2881,7 +3554,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "fastest_gear",
+            "predictors": [
+              "direction_target"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "fastest_gear",
+            "predictors": [
+              "target_direction_relation"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "fastest_gear",
+            "predictors": [
+              "direction_target",
+              "target_direction_relation"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "direction_target",
+            "predictors": [
+              "fastest_gear"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "direction_target",
+            "predictors": [
+              "target_direction_relation"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "direction_target",
+            "predictors": [
+              "fastest_gear",
+              "target_direction_relation"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 10,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "target_direction_relation",
+            "predictors": [
+              "fastest_gear"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "target_direction_relation",
+            "predictors": [
+              "direction_target"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "target_direction_relation",
+            "predictors": [
+              "fastest_gear",
+              "direction_target"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 20,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -2890,7 +3659,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3059,7 +3828,32 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "boundary_status",
+            "predictors": [
+              "neighbourhood"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 98,
+            "repeat_coverage": 0.995,
+            "deterministic": true
+          },
+          {
+            "target": "neighbourhood",
+            "predictors": [
+              "boundary_status"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [
+          "boundary_status is empirically determined by neighbourhood (99.5% repeat coverage)"
+        ],
         "violations": []
       },
       "assertions": {
@@ -3068,7 +3862,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3204,7 +3998,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "crossing_count",
+            "predictors": [
+              "constructible"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "constructible",
+            "predictors": [
+              "crossing_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3213,7 +4030,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3305,7 +4122,176 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "reflection_count",
+            "predictors": [
+              "exit_edge"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "reflection_count",
+            "predictors": [
+              "exit_position"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 7,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "reflection_count",
+            "predictors": [
+              "exit_edge",
+              "exit_position"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 28,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_edge",
+            "predictors": [
+              "reflection_count"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_edge",
+            "predictors": [
+              "exit_position"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 8,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_edge",
+            "predictors": [
+              "near_miss_mirror_count"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_edge",
+            "predictors": [
+              "reflection_count",
+              "exit_position"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 29,
+            "repeat_coverage": 0.9977777777777778,
+            "deterministic": false
+          },
+          {
+            "target": "exit_edge",
+            "predictors": [
+              "exit_position",
+              "near_miss_mirror_count"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 33,
+            "repeat_coverage": 0.9946666666666667,
+            "deterministic": false
+          },
+          {
+            "target": "exit_position",
+            "predictors": [
+              "reflection_count"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_position",
+            "predictors": [
+              "exit_edge"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_position",
+            "predictors": [
+              "near_miss_mirror_count"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 5,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "exit_position",
+            "predictors": [
+              "reflection_count",
+              "exit_edge"
+            ],
+            "rows": 2250,
+            "distinct_predictor_tuples": 17,
+            "repeat_coverage": 0.9995555555555555,
+            "deterministic": false
+          },
+          {
+            "target": "exit_position",
+            "predictors": [
+              "exit_edge",
+              "near_miss_mirror_count"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 19,
+            "repeat_coverage": 0.996,
+            "deterministic": false
+          },
+          {
+            "target": "near_miss_mirror_count",
+            "predictors": [
+              "exit_edge"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "near_miss_mirror_count",
+            "predictors": [
+              "exit_position"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 8,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "near_miss_mirror_count",
+            "predictors": [
+              "exit_edge",
+              "exit_position"
+            ],
+            "rows": 750,
+            "distinct_predictor_tuples": 32,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3314,7 +4300,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3412,7 +4398,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "crossing_count",
+            "predictors": [
+              "left_edge_higher_colour"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "left_edge_higher_colour",
+            "predictors": [
+              "crossing_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3421,7 +4430,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3532,7 +4541,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "shape_count",
+            "predictors": [
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shape_count",
+            "predictors": [
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shape_count",
+            "predictors": [
+              "shrink_pattern",
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 12,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "shape_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 6,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "shape_count",
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 54,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shape_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shape_count",
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 18,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3541,7 +4646,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3666,7 +4771,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "shape_count",
+            "predictors": [
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shape_count",
+            "predictors": [
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shape_count",
+            "predictors": [
+              "shrink_pattern",
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 18,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "shape_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "shape_count",
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 81,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shape_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shape_count",
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 18,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3675,7 +4876,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3811,7 +5012,103 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "shape_count",
+            "predictors": [
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shape_count",
+            "predictors": [
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 10,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shape_count",
+            "predictors": [
+              "shrink_pattern",
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 20,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "shape_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 10,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "shrink_pattern",
+            "predictors": [
+              "shape_count",
+              "rotation_degrees_nearest_10"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 47,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shape_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "rotation_degrees_nearest_10",
+            "predictors": [
+              "shape_count",
+              "shrink_pattern"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 18,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3820,7 +5117,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -3937,7 +5234,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "pattern_type",
+            "predictors": [
+              "hidden_object_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 13,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "hidden_object_count",
+            "predictors": [
+              "pattern_type"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3946,7 +5266,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4011,7 +5331,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "true_size_relation",
+            "predictors": [
+              "perceived_larger"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "perceived_larger",
+            "predictors": [
+              "true_size_relation"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 3,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4020,7 +5363,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4085,7 +5428,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "minimum_cube_count",
+            "predictors": [
+              "uniqueness"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "uniqueness",
+            "predictors": [
+              "minimum_cube_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 7,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4094,7 +5460,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4123,7 +5489,26 @@
           }
         }
       },
-      "special_checks": {},
+      "special_checks": {
+        "rendered_axis_directions": {
+          "top": "+x right; +y up",
+          "front": "+x right; +z up",
+          "side": "+y right; +z up"
+        },
+        "side_view_convention_consistent_items": 3000,
+        "gravity_minimum_minus_unconstrained_distribution": {
+          "0": 1117,
+          "1": 1044,
+          "2": 677,
+          "3": 156,
+          "4": 6
+        },
+        "gravity_constraint_changes_minimum": 1883,
+        "gravity_constraint_does_not_change_minimum": 1117,
+        "item_0223_gravity_minimum": 11,
+        "item_0223_unconstrained_minimum": 10,
+        "unconstrained_solver_failures": []
+      },
       "issues": []
     },
     "overlap_circles_dataset_3000": {
@@ -4170,7 +5555,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "circle_count",
+            "predictors": [
+              "above_average_radius_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 8,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "above_average_radius_count",
+            "predictors": [
+              "circle_count"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 8,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4179,7 +5587,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4244,7 +5652,9 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4253,7 +5663,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4312,7 +5722,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "face_shapes",
+            "predictors": [
+              "convexity"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "convexity",
+            "predictors": [
+              "face_shapes"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4321,7 +5754,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4465,7 +5898,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "peak_horizontal_distance_m_nearest_1",
+            "predictors": [
+              "peak_above_13_m"
+            ],
+            "rows": 1000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "peak_above_13_m",
+            "predictors": [
+              "peak_horizontal_distance_m_nearest_1"
+            ],
+            "rows": 1000,
+            "distinct_predictor_tuples": 78,
+            "repeat_coverage": 0.999,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4474,7 +5930,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -4542,7 +5998,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "rotation_candidate",
+            "predictors": [
+              "reflection_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "reflection_candidate",
+            "predictors": [
+              "rotation_candidate"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -4551,7 +6030,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -6027,7 +7506,9 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -6036,7 +7517,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -6080,27 +7561,30 @@
       ],
       "answer_distributions": {
         "correct_choice": {
-          "7": 392,
-          "4": 389,
-          "8": 386,
-          "3": 383,
-          "6": 378,
-          "5": 368,
-          "1": 361,
-          "2": 343
+          "2": 407,
+          "6": 387,
+          "4": 385,
+          "8": 379,
+          "7": 366,
+          "5": 363,
+          "1": 358,
+          "3": 355
         },
         "attributes_changed_together": {
-          "[\"shape\",\"count\"]": 660,
-          "[\"count\",\"shape\"]": 653,
-          "[\"shape\",\"size\"]": 461,
-          "[\"shape\",\"color\"]": 460,
-          "[\"color\",\"shape\"]": 383,
-          "[\"size\",\"shape\"]": 383
+          "[\"shape\",\"count\"]": 454,
+          "[\"color\",\"count\"]": 395,
+          "[\"rotation\",\"count\"]": 380,
+          "[\"size\",\"count\"]": 369,
+          "[\"color\",\"rotation\"]": 318,
+          "[\"shape\",\"size\"]": 318,
+          "[\"size\",\"color\"]": 256,
+          "[\"shape\",\"color\"]": 255,
+          "[\"size\",\"rotation\"]": 255
         }
       },
       "constant_answer_baselines": {
-        "correct_choice": 0.13066666666666665,
-        "attributes_changed_together": 0.22
+        "correct_choice": 0.13566666666666666,
+        "attributes_changed_together": 0.15133333333333332
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -6108,7 +7592,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "correct_choice",
+            "predictors": [
+              "attributes_changed_together"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 9,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "attributes_changed_together",
+            "predictors": [
+              "correct_choice"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 8,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -6117,7 +7624,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -6154,9 +7661,37 @@
           "p50": 1.0,
           "p75": 1.0,
           "p95": 1.0,
-          "max": 1
+          "max": 2
         },
-        "duplicate_correct_candidate_violations": 0
+        "duplicate_correct_candidate_violations": 0,
+        "options_satisfying_independently_derived_rules": {
+          "1": 3000
+        },
+        "multi_valid_items": 0,
+        "declared_rule_discriminator_counts": {
+          "color": 1224,
+          "count": 1598,
+          "rotation": 953,
+          "shape": 1027,
+          "size": 1198
+        },
+        "unfrozen_undeclared_attribute_counts": {},
+        "active_attribute_pair_distribution": {
+          "color + count": 395,
+          "color + rotation": 318,
+          "color + shape": 255,
+          "color + size": 256,
+          "count + rotation": 380,
+          "count + shape": 454,
+          "count + size": 369,
+          "rotation + size": 255,
+          "shape + size": 318
+        },
+        "render_style_controls": {
+          "shape_area": "equalised analytically",
+          "spacing": "depends only on declared size and count",
+          "stroke_width": "fixed"
+        }
       },
       "issues": []
     },
@@ -6194,7 +7729,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "light_direction",
+            "predictors": [
+              "light_height"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "light_height",
+            "predictors": [
+              "light_direction"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -6203,7 +7761,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -6273,7 +7831,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "genus",
+            "predictors": [
+              "orientability"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "orientability",
+            "predictors": [
+              "genus"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 4,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -6282,7 +7863,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -6350,7 +7931,30 @@
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
-        "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+        "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
+        "tested_relationships": [
+          {
+            "target": "pattern_status",
+            "predictors": [
+              "symmetry_type"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 7,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          },
+          {
+            "target": "symmetry_type",
+            "predictors": [
+              "pattern_status"
+            ],
+            "rows": 3000,
+            "distinct_predictor_tuples": 2,
+            "repeat_coverage": 1.0,
+            "deterministic": false
+          }
+        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -6359,7 +7963,7 @@
         "no_answer_leak": true,
         "no_unrendered_coordinates_or_vocabulary": true,
         "numeric_tolerances_stored_and_stated": true,
-        "no_derivable_redundancy": true,
+        "no_prohibited_derivable_redundancy": true,
         "exact_spec_wording": true,
         "variant_specific_fields_only": true
       },
@@ -6395,5 +7999,20 @@
       "issues": []
     }
   },
-  "failures": []
+  "failures": [],
+  "version_bumps": {
+    "rpm_dataset_3000": {
+      "before": "rpm-5.0.0",
+      "after": "rpm-6.0.0"
+    },
+    "orthographic_dataset_3000": {
+      "before": "orthographic-4.0.0",
+      "after": "orthographic-5.0.0"
+    },
+    "compass_bearing_dataset_3000": {
+      "before": "compass-bearing-6.0.0",
+      "after": "compass-bearing-7.0.0"
+    }
+  },
+  "source_commit_before_release": "783e4b4d2c58288e602c14dc6984cf2b0c652963"
 }

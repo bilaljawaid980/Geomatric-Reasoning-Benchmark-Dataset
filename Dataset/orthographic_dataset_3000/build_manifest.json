@@ -1,8 +1,8 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "orthographic-4.0.0",
-  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
+  "dataset_version": "orthographic-5.0.0",
+  "generator_commit": "783e4b4d2c58288e602c14dc6984cf2b0c652963",
   "images": 3000,
   "question_set_fields": [
     "question_id",
@@ -36,7 +36,14 @@
     "open_prompt_does_not_name_reasoning_trap": true,
     "existing_five_level_questions_unchanged_except_approved_defect_repairs": true,
     "open_question_count_per_eligible_image": 1,
-    "open_exclusions_are_explicitly_reported": true
+    "open_exclusions_are_explicitly_reported": true,
+    "open_quantity_recovery_signals_documented_per_subfact": true,
+    "rendered_axis_directions": {
+      "top": "+x right; +y up",
+      "front": "+x right; +z up",
+      "side": "+y right; +z up"
+    },
+    "gravity_supported_minimum_compared_with_unconstrained_minimum": true
   },
   "open_question_builder": "../build_remaining_open_questions.py",
   "open_question_validator": "../validate_remaining_open_questions.py",
