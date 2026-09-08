@@ -1,10 +1,11 @@
 """Independent exhaustive validation for the OPEN_QUESTION_SPEC.md export."""
 from __future__ import annotations
-import argparse,csv,hashlib,json,math,re,statistics
+import argparse,csv,hashlib,itertools,json,math,re,statistics
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from PIL import Image
+import numpy as np
 import build_remaining_open_questions as builder
 
 ROOT=Path(__file__).resolve().parent
@@ -14,7 +15,7 @@ HEX=[("upper-left",(0,-1)),("upper-right",(1,-1)),("left",(-1,0)),("right",(1,0)
 DIR8=["north","north-east","east","south-east","south","south-west","west","north-west"]
 VISUAL_SIGNALS={
  "angle_degrees_nearest_10":"the opening between the two rendered rays","angle_class":"the rendered ray opening relative to 90 and 180 degrees","larger_angle":"the two rendered angle openings","difference_degrees_nearest_10":"the difference between the two rendered openings","largest_angle_degrees_nearest_10":"the three rendered triangle-corner openings",
- "time":"the printed clock numerals and two hand-tip positions","smaller_angle_degrees_nearest_5":"the smaller rendered opening between the clock hands","correct_candidate":"the target silhouette and candidate pieces","rejected_candidate":"the labelled candidate panels","rejection_reason":"the visible fit, count, reflection, or rotation defect in the rejected panel","closest_pair":"the shortest rendered landmark displacement","direction_from_earlier":"the compass rose and rendered landmark displacement","farthest_pair":"the largest horizontal/vertical grid separation","distance_nearest_unit":"the printed coordinate grid separations","relation_to_12":"the recovered farthest distance compared with 12 grid units","point_coordinates":"each labelled point's projection onto the printed x and y grid axes","flat_edge_neighbours":"shared full edges between labelled net squares","opposite_face":"the labelled net-square arrangement under folding","visible_top_face_count":"distinct rendered top-face rhombi with top-fill colour and boundary outline","hidden_cube_count":"the visible column/occlusion geometry implied by the rendered top and side faces","depth_ordering":"relative rendered size and vertical-position perspective cues","nearest_colour":"the nearest object's rendered perspective cues","height_ordering_shortest_to_tallest":"visible block counts above the common baseline","tallest_stack_colour":"the stack with the greatest visible block count","candidate":"the candidate polygon whose edges occur in the complex figure","side_count":"the rendered boundary-edge count of the matched candidate","arrow_count":"distinct rendered force arrows","weight_arrow":"the downward force arrow's printed label","drawn_magnitude_ranking":"rendered force-arrow shaft lengths","unfolded_hole_count":"fold panels, mirror lines, and the rendered punch","correct_pattern":"the candidate panel matching reflected punch positions","rounded_tick_value":"needle intersection with the printed tick scale","range_half":"needle position relative to the scale midpoint","fastest_gear":"printed tooth counts on the meshed gears","direction_target":"the printed target gear label","target_direction_relation":"mesh-parity path from driver to target gear","boundary_status":"presence or absence of all six rendered neighbours around HOME","neighbourhood":"the six rendered adjacent hex fills and their centre offsets","constructible":"front/back ordering at rendered beam crossings","reflection_count":"mirror strikes along the rendered laser path","exit_edge":"the rendered laser endpoint on the grid border","exit_position":"the endpoint's labelled grid-border position","near_miss_mirror_count":"mirror cells sharing an edge with the rendered straight laser path without lying on it","crossing_count":"distinct rendered crossings between the relevant paths or beams","left_edge_higher_colour":"the relative red/blue vertical order where the two polylines enter at the left edge","shape_count":"separately outlined nested polygons","shrink_pattern":"successive rendered polygon side-length ratios","rotation_degrees_nearest_10":"corresponding rendered polygon corners","pattern_type":"the visible repeated-object arrangement","hidden_object_count":"gaps implied by continuation of the visible pattern behind the occluder","true_size_relation":"rendered target-element endpoints or diameters without context","perceived_larger":"the labelled target and surrounding illusion context","minimum_cube_count":"filled cells in the three rendered orthographic views","uniqueness":"compatibility of the three rendered silhouettes","circle_count":"closed rendered circle outlines","above_average_radius_count":"relative diameters of all rendered circle outlines","stability_conclusion":"block edges and cumulative support overlap at each rendered joint","face_shapes":"boundary-edge counts of visible polyhedron faces","convexity":"rendered inward folds, stellation, or compound interpenetration","peak_horizontal_distance_m_nearest_1":"printed launch speed/angle and rendered trajectory scale","peak_above_13_m":"printed launch values and the trajectory peak relative to 13 metres","rotation_candidate":"corner order and orientation of reference and candidates","reflection_candidate":"reversed corner order in the reflected candidate","connectivity":"coloured rendered paths traced from the selected endpoint label","correct_choice":"row/column attribute progression and numbered panels","attributes_changed_together":"rendered shape, colour, count, or orientation progression","light_direction":"rendered shadow direction opposite the light","light_height":"rendered shadow-length to object-height ratio","genus":"visible handles or cross-caps in the rendered surface","orientability":"rendered twist/cross-cap structure","euler_characteristic":"rendered surface type combined with visible genus/orientability","pattern_status":"paired shape locations around the rendered centre","symmetry_type":"rendered rotational orbit or mirror pairing",
+ "time":"the printed clock numerals and two hand-tip positions","smaller_angle_degrees_nearest_5":"the smaller rendered opening between the clock hands","correct_candidate":"the target silhouette and candidate pieces","rejected_candidate":"the labelled candidate panels","rejection_reason":"the visible fit, count, reflection, or rotation defect in the rejected panel","closest_pair":"the shortest rendered landmark displacement","direction_from_earlier":"the compass rose and rendered landmark displacement","bearing_degrees_nearest_10":"the compass rose and the screen-space displacement from the alphabetically earlier landmark","farthest_pair":"the largest horizontal/vertical grid separation","distance_nearest_unit":"the printed coordinate grid separations","relation_to_12":"the recovered farthest distance compared with 12 grid units","point_coordinates":"each labelled point's projection onto the printed x and y grid axes","flat_edge_neighbours":"shared full edges between labelled net squares","opposite_face":"the labelled net-square arrangement under folding","visible_top_face_count":"distinct rendered top-face rhombi with top-fill colour and boundary outline","hidden_cube_count":"the visible column/occlusion geometry implied by the rendered top and side faces","depth_ordering":"relative rendered size and vertical-position perspective cues","nearest_colour":"the nearest object's rendered perspective cues","height_ordering_shortest_to_tallest":"visible block counts above the common baseline","tallest_stack_colour":"the stack with the greatest visible block count","candidate":"the candidate polygon whose edges occur in the complex figure","side_count":"the rendered boundary-edge count of the matched candidate","arrow_count":"distinct rendered force arrows","weight_arrow":"the downward force arrow's printed label","drawn_magnitude_ranking":"rendered force-arrow shaft lengths","unfolded_hole_count":"fold panels, mirror lines, and the rendered punch","correct_pattern":"the candidate panel matching reflected punch positions","rounded_tick_value":"needle intersection with the printed tick scale","range_half":"needle position relative to the scale midpoint","fastest_gear":"printed tooth counts on the meshed gears","direction_target":"the printed target gear label","target_direction_relation":"mesh-parity path from driver to target gear","boundary_status":"presence or absence of all six rendered neighbours around HOME","neighbourhood":"the six rendered adjacent hex fills and their centre offsets","constructible":"front/back ordering at rendered beam crossings","reflection_count":"mirror strikes along the rendered laser path","exit_edge":"the rendered laser endpoint on the grid border","exit_position":"the endpoint's labelled grid-border position","near_miss_mirror_count":"mirror cells sharing an edge with the rendered straight laser path without lying on it","crossing_count":"distinct rendered crossings between the relevant paths or beams","left_edge_higher_colour":"the relative red/blue vertical order where the two polylines enter at the left edge","shape_count":"separately outlined nested polygons","shrink_pattern":"successive rendered polygon side-length ratios","rotation_degrees_nearest_10":"corresponding rendered polygon corners","pattern_type":"the visible repeated-object arrangement","hidden_object_count":"gaps implied by continuation of the visible pattern behind the occluder","true_size_relation":"rendered target-element endpoints or diameters without context","perceived_larger":"the labelled target and surrounding illusion context","minimum_cube_count":"filled cells in the three rendered orthographic views","uniqueness":"compatibility of the three rendered silhouettes","circle_count":"closed rendered circle outlines","above_average_radius_count":"relative diameters of all rendered circle outlines","stability_conclusion":"block edges and cumulative support overlap at each rendered joint","face_shapes":"boundary-edge counts of visible polyhedron faces","convexity":"rendered inward folds, stellation, or compound interpenetration","peak_horizontal_distance_m_nearest_1":"printed launch speed/angle and rendered trajectory scale","peak_above_13_m":"printed launch values and the trajectory peak relative to 13 metres","rotation_candidate":"corner order and orientation of reference and candidates","reflection_candidate":"reversed corner order in the reflected candidate","connectivity":"coloured rendered paths traced from the selected endpoint label","correct_choice":"row/column attribute progression and numbered panels","attributes_changed_together":"rendered shape, colour, count, or orientation progression","light_direction":"rendered shadow direction opposite the light","light_height":"rendered shadow-length to object-height ratio","genus":"visible handles or cross-caps in the rendered surface","orientability":"rendered twist/cross-cap structure","euler_characteristic":"rendered surface type combined with visible genus/orientability","pattern_status":"paired shape locations around the rendered centre","symmetry_type":"rendered rotational orbit or mirror pairing",
 }
 ANGLE_COMPARISON="Look at each marked angle in turn, judging the opening between its rays rather than how long the rays are drawn: decide which of the two angles is larger, and estimate how many degrees larger it is, to the nearest 10 degrees. State your conclusion, justify it by describing the direction the rays point at each vertex, and end with a confidence score from 0 to 1."
 ANGLE_SINGLE="Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it is acute, right, obtuse or reflex. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1."
@@ -32,10 +33,13 @@ def csv_rows(p):
 def records(f):return [json.loads(x) for x in (f/"annotations.jsonl").read_text(encoding="utf-8-sig").splitlines() if x]
 def closest(r):
  d=r["all_pairwise_distances"];m=min(d.values());k=min(k for k,v in d.items() if abs(v-m)<1e-9);a,b=k.split("-");return a,b
+def closest_gap_ratio(r):
+ values=sorted(float(v) for v in r["all_pairwise_distances"].values())
+ return math.inf if len(values)<2 else (values[1]-values[0])/values[0]
 def boundary(v):return min(abs(((v-x+180)%360)-180) for x in (22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5))
 def skip(n,r):
  if n=="compass_bearing_dataset_3000":
-  a,b=closest(r);v=r["all_pairwise_bearings"][f"{min(a,b)}-to-{max(a,b)}"];return boundary(v)<=15,"closest_pair_bearing_within_15_degrees_of_sector_boundary"
+  return closest_gap_ratio(r)<.05,"closest_pair_distance_margin_below_5_percent"
  if n=="cube_structure_dataset_3000":return bool(r["has_ambiguous_visual_floater"]),"ambiguous_visual_floater"
  if n=="overlap_circles_dataset_3000":return r["max_stack_depth"]>4,"max_stack_depth_above_4"
  if n=="rpm_dataset_3000":
@@ -56,11 +60,11 @@ def fresh(n,r):
    values=[interior(i) for i in range(3)];return {"largest_angle_degrees_nearest_10":near(max(values),10)}
   raise ValueError(f"Unsupported angle scene_type: {scene}")
  if n=="clock_reading_dataset_3000":
-  a=abs((30*(r["hour"]%12)+.5*r["minute"])-6*r["minute"]);return {"time":f"{r['hour']:02d}:{r['minute']:02d}","smaller_angle_degrees_nearest_5":near(min(a,360-a),5)}
+  return {"time":f"{r['hour']:02d}:{r['minute']:02d}"}
  if n in ("combination_dataset_3000","combination3d_dataset_3000"):
   z=pick(r,[x for x in r["candidates"] if not x["is_valid_assembly"]],"rejected");m={"gap_or_overlap":"gap or overlap","wrong_area":"wrong cell count","wrong_count":"wrong cube count","requires_reflection":"requires being flipped over","requires_3d_tumble":"requires turning about a forbidden axis"};return {"correct_candidate":next(x["choice_label"] for x in r["candidates"] if x["is_valid_assembly"]),"rejected_candidate":z["choice_label"],"rejection_reason":m[z["failure_reason"]]}
  if n=="compass_bearing_dataset_3000":
-  a,b=closest(r);a,b=sorted((a,b));x0,y0=r["landmarks"][a];x1,y1=r["landmarks"][b];v=(math.degrees(math.atan2(x1-x0,-(y1-y0)))+360)%360;return {"closest_pair":f"{a}-{b}","direction_from_earlier":DIR8[int((v+22.5)//45)%8]}
+  a,b=closest(r);a,b=sorted((a,b));x0,y0=r["landmarks"][a];x1,y1=r["landmarks"][b];v=(math.degrees(math.atan2(x1-x0,-(y1-y0)))+360)%360;return {"closest_pair":f"{a}-{b}","bearing_degrees_nearest_10":near(v,10)%360}
  if n=="coordinate_geometry_dataset_3000":
   values={}
   for a,(x0,y0) in r["points"].items():
@@ -125,7 +129,7 @@ def fresh(n,r):
  if n=="shadow_inference_dataset_3000":
   v=r["light_azimuth_degrees"];return {"light_direction":["north","east","south","west"][int((v+45)%360//90)],"light_height":"high" if r["light_elevation_degrees"]>=45 else "low"}
  if n=="surface_topology_dataset_3000":
-  chi=2-(2*r["genus"] if r["is_orientable"] else r["genus"])-r["boundary_count"];return {"genus":r["genus"],"orientability":"orientable" if r["is_orientable"] else "non-orientable","euler_characteristic":chi}
+  return {"genus":r["genus"],"orientability":"orientable" if r["is_orientable"] else "non-orientable"}
  if n=="symmetry_pattern_dataset_3000":return {"pattern_status":"broken" if r["is_broken"] else "fully symmetric","symmetry_type":r["symmetry_type"]}
  raise KeyError(n)
 def png(p):
@@ -133,8 +137,25 @@ def png(p):
   with Image.open(p) as im:im.verify()
   return None
  except Exception as e:return str(e)
+def geometry_convexity(row):
+ if row["solid_class"]=="Compound":return False
+ vertices=np.asarray(row["vertices"],float);eps=1e-7
+ for face in row["faces"]:
+  points=vertices[face];normal=np.cross(points[1]-points[0],points[2]-points[0]);distance=(vertices-points[0])@normal
+  if not (np.all(distance<=eps) or np.all(distance>=-eps)):return False
+ on_hull=set()
+ for i,j,k in itertools.combinations(range(len(vertices)),3):
+  normal=np.cross(vertices[j]-vertices[i],vertices[k]-vertices[i])
+  if np.linalg.norm(normal)<eps:continue
+  distance=(vertices-vertices[i])@normal
+  if np.all(distance<=eps) or np.all(distance>=-eps):on_hull.update(np.where(np.abs(distance)<=eps)[0].tolist())
+ return len(on_hull)==len(vertices)
 def special_checks(n,rs):
  issues=[];info={}
+ if n=="clock_reading_dataset_3000":
+  exceptions=sum(near(min(abs((30*(r["hour"]%12)+.5*r["minute"])-6*r["minute"]),360-abs((30*(r["hour"]%12)+.5*r["minute"])-6*r["minute"])),5)!=near(r["angle_between_hands"],5) for r in rs);info["old_time_to_smaller_angle_derivation_exceptions"]=exceptions;info["old_smaller_angle_subfact_disposition"]="removed because exact time determines the hand angle"
+ if n=="combination3d_dataset_3000":
+  target=next(r for r in rs if r["id"]=="combination3d_1531");info["unique_valid_candidate_items"]=sum(sum(bool(c["is_valid_assembly"]) for c in r["candidates"])==1 for r in rs);info["graded_target_cube_count_subfact"]=False;info["item_1531_target_cube_count"]=len(target["target_cubes"]);info["item_1531_visual_recovery"]="the upper cube visibly establishes a two-cube supported column; base footprint and column continuity imply the supporting cube, but no target-total count is graded"
  if n=="angle_estimation_dataset_3000":
   scenes=Counter(r["scene_type"] for r in rs);bad=[r["id"] for r in rs if r["scene_type"] not in {"comparison","single","triangle"} or (bool(r.get("triangle_class"))!=(r["scene_type"]=="triangle"))];info["scene_type_distribution"]=dict(sorted(scenes.items()));info["variant_mapping_violations"]=len(bad);issues += [f"{len(bad)} angle variant mapping violations"] if bad else []
   triangles=[r for r in rs if r["scene_type"]=="triangle"];info["source_vertex_label_assignment"]="fixed A/B/C order equals triangle_vertices index 0/1/2";info["pre_fix_largest_angle_vertex_distribution"]=dict(Counter(r["largest_angle_vertex"] for r in triangles));info["vertex_subfact_disposition"]="removed because fixed geometry-correlated labels produce a 74.8% A baseline"
@@ -159,6 +180,11 @@ def special_checks(n,rs):
    degree={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if degree[x] in (2,3)] or [x for x in r["endpoint_letters"] if degree[x]>0]
    if not c or degree[pick(r,c,"route-target")]<1:bad.append(r["id"])
   info["num_endpoints_distribution"]={str(k):v for k,v in sorted(endpoint_counts.items())};info["chosen_target_degree_below_1"]=len(bad);issues += [f"{len(bad)} route targets have degree below 1"] if bad else []
+ if n=="rpm_dataset_3000":
+  gaps=[]
+  for r in rs:
+   correct=next(c["attributes"] for c in r["answer_choices"] if c["is_correct"]);gaps.append(min(sum(correct[k]!=c["attributes"][k] for k in correct) for c in r["answer_choices"] if not c["is_correct"]))
+  q=statistics.quantiles(gaps,n=100,method="inclusive");info["correct_to_nearest_wrong_attribute_hamming_gap_distribution"]={"count":len(gaps),"min":min(gaps),"p25":q[24],"p50":q[49],"p75":q[74],"p95":q[94],"max":max(gaps)};info["duplicate_correct_candidate_violations"]=sum(v==0 for v in gaps);issues += [f"{sum(v==0 for v in gaps)} RPM duplicate correct candidates"] if any(v==0 for v in gaps) else []
  if n=="line_intersection_dataset_3000":
   exceptions=[];by_crossing={}
   for r in rs:
@@ -183,7 +209,8 @@ def special_checks(n,rs):
   info["rotation_match_0078_minimum_vertex_position_difference_normalized"]=item_sep;info["rotation_match_0078_difference_rendered_pixels"]=item_sep*43;info["minimum_vertex_position_difference_distribution"]={"count":len(values),"min":min(values),"p25":qv[24],"p50":qv[49],"p75":qv[74],"p95":qv[94],"max":max(values)};info["minimum_vertex_position_difference_rendered_pixel_distribution"]={k:(v*43 if k!="count" else v) for k,v in info["minimum_vertex_position_difference_distribution"].items()};info["rotation_match_0078_minimum_turning_angle_degrees"]=target["minimum_turning_angle_degrees"];info["minimum_turning_angle_degrees_distribution"]={"count":len(turns),"min":min(turns),"p25":qt[24],"p50":qt[49],"p75":qt[74],"p95":qt[94],"max":max(turns)};info["transformation_type_distribution"]=dict(sorted(transforms.items()));info["distorted_distractors"]=transforms.get("distorted",0);info["existing_normalized_separation_guard"]=.08;info["separation_guard_violations"]=sum(v<.08 for v in values);info["guard_disposition"]="existing 0.08 normalized guard retained; item 0078 is separated by about 16.8 pixels and no item violates the guard"
  if n=="embedded_figures_dataset_3000":
   distribution=Counter(str(bool(r["same_side_foil_exists"])).lower() for r in rs);info["same_side_foil_exists_distribution"]=dict(sorted(distribution.items()));info["disposition"]="retained because same-side foils are exactly balanced at 1500/1500"
- if n=="compass_bearing_dataset_3000":info["substantive_boundary_guard_exclusions"]=sum(skip(n,r)[0] for r in rs);info["other_exclusion_reasons"]=0
+ if n=="compass_bearing_dataset_3000":
+  gaps=[closest_gap_ratio(r) for r in rs];q=statistics.quantiles(gaps,n=100,method="inclusive");info["old_sector_boundary_exclusions_recovered"]=1882;info["closest_pair_margin_below_5_percent"]=sum(v<.05 for v in gaps);info["closest_pair_relative_margin_distribution"]={"count":len(gaps),"min":min(gaps),"p25":q[24],"p50":q[49],"p75":q[74],"p95":q[94],"max":max(gaps)};info["other_exclusion_reasons"]=0
  if n=="depth_height_dataset_3000":info["scene_type_distribution"]=dict(sorted(Counter(r["scene_type"] for r in rs).items()));info["stack_height_items_recovered_by_variant"]=sum(r["scene_type"]=="stack_height" for r in rs);info["template_failure_exclusions"]=0
  if n=="laser_mirror_dataset_3000":
   zero=[r for r in rs if r["num_reflections"]==0];counts=Counter(fresh(n,r)["near_miss_mirror_count"] for r in zero);info["zero_reflection_items_recovered_by_variant"]=len(zero);info["zero_reflection_exclusions"]=0;info["other_exclusion_reasons"]=0;info["near_miss_count_distribution_zero_reflection_variant"]={str(k):v for k,v in sorted(counts.items())};info["near_miss_count_constant_answer_baseline"]=max(counts.values())/sum(counts.values())
@@ -197,11 +224,16 @@ def special_checks(n,rs):
  if n=="shadow_inference_dataset_3000":
   bad=[r["id"] for r in rs if min(abs(((r["light_azimuth_degrees"]-x+180)%360)-180) for x in (0,180))<r["azimuth_exclusion_degrees"]];info["azimuth_exclusion_violations"]=len(bad);issues += [f"{len(bad)} azimuth exclusion violations"] if bad else []
  if n=="polyhedron_dataset_3000":
-  bad=[]
+  bad=[];convexity_bad=[];convexity_cache={}
   for r in rs:
    boundary={tuple(sorted((f[i],f[(i+1)%len(f)]))) for f in r["faces"] for i in range(len(f))};stored={tuple(sorted(e)) for e in r["edges"]}
    if stored!=boundary:bad.append(r["id"])
-  info["boundary_edge_set_mismatches"]=len(bad);issues += [f"{len(bad)} boundary-edge mismatches"] if bad else []
+   key=r["solid_name"]
+   if key not in convexity_cache:convexity_cache[key]=geometry_convexity(r)
+   if convexity_cache[key]!=r["is_convex"]:convexity_bad.append(r["id"])
+  shape_bad=sum(("triangles" if {len(f) for f in r["faces"]}=={3} else "squares" if {len(f) for f in r["faces"]}=={4} else "pentagons" if {len(f) for f in r["faces"]}=={5} else "mixed")!=r["face_shape_types"] for r in rs);info["boundary_edge_set_mismatches"]=len(bad);info["face_shape_labels_vs_actual_faces_mismatches"]=shape_bad;info["convexity_vs_face_support_and_compound_geometry_mismatches"]=len(convexity_bad);issues += [f"{len(bad)} boundary-edge mismatches"] if bad else [];issues += [f"{shape_bad} face-shape geometry mismatches"] if shape_bad else [];issues += [f"{len(convexity_bad)} direct convexity geometry mismatches"] if convexity_bad else []
+ if n=="surface_topology_dataset_3000":
+  exceptions=sum((2-(2*r["genus"] if r["is_orientable"] else r["genus"])-r["boundary_count"])!=r["euler_characteristic"] for r in rs);info["old_genus_orientability_to_euler_exceptions"]=exceptions;info["old_euler_subfact_disposition"]="removed because genus and orientability determine Euler characteristic for these closed surfaces"
  return issues,info
 
 def exact_changed_prompt(n,r):

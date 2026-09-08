@@ -10,5 +10,5 @@ Fields >=60%: {"convexity": 0.8946666666666667}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {"boundary_edge_set_mismatches": 0}
+Special checks: {"boundary_edge_set_mismatches": 0, "convexity_vs_face_support_and_compound_geometry_mismatches": 0, "face_shape_labels_vs_actual_faces_mismatches": 0}
 Issues: []

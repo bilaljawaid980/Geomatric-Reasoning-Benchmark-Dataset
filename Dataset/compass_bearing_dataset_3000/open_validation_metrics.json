@@ -2,39 +2,67 @@
   "status": "PASS",
   "dataset": "compass_bearing_dataset_3000",
   "source_items": 3000,
-  "included_items": 1118,
-  "excluded_items": 1882,
+  "included_items": 2717,
+  "excluded_items": 283,
   "exclusion_counts": {
-    "closest_pair_bearing_within_15_degrees_of_sector_boundary": 1882
+    "closest_pair_distance_margin_below_5_percent": 283
   },
-  "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the compass direction from the alphabetically earlier of them to the other, using only north, north-east, east, south-east, south, south-west, west or north-west. State your conclusion, justify it by describing the displacements you compared, and end with a confidence score from 0 to 1.",
+  "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "closest_pair",
-    "direction_from_earlier"
+    "bearing_degrees_nearest_10"
   ],
   "answer_distributions": {
     "closest_pair": {
-      "A-B": 291,
-      "B-C": 291,
-      "A-C": 281,
-      "A-D": 99,
-      "B-D": 78,
-      "C-D": 78
+      "A-C": 716,
+      "A-B": 674,
+      "B-C": 657,
+      "A-D": 239,
+      "C-D": 225,
+      "B-D": 206
     },
-    "direction_from_earlier": {
-      "east": 189,
-      "west": 184,
-      "north": 155,
-      "north-west": 134,
-      "south-west": 118,
-      "south": 115,
-      "north-east": 112,
-      "south-east": 111
+    "bearing_degrees_nearest_10": {
+      "90": 138,
+      "270": 130,
+      "150": 90,
+      "0": 88,
+      "320": 88,
+      "160": 84,
+      "10": 83,
+      "350": 82,
+      "340": 81,
+      "300": 79,
+      "180": 78,
+      "20": 77,
+      "200": 77,
+      "40": 77,
+      "210": 75,
+      "140": 72,
+      "220": 72,
+      "290": 72,
+      "60": 72,
+      "100": 71,
+      "120": 70,
+      "330": 69,
+      "170": 68,
+      "230": 68,
+      "80": 68,
+      "240": 66,
+      "30": 66,
+      "310": 66,
+      "110": 65,
+      "190": 65,
+      "260": 65,
+      "280": 64,
+      "250": 61,
+      "130": 60,
+      "50": 55,
+      "70": 55
     }
   },
   "constant_answer_baselines": {
-    "closest_pair": 0.26028622540250446,
-    "direction_from_earlier": 0.16905187835420393
+    "closest_pair": 0.26352594773647403,
+    "bearing_degrees_nearest_10": 0.05079131394920869
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
@@ -56,28 +84,38 @@
     "variant_specific_fields_only": true
   },
   "png_recovery": {
-    "passed": 1118,
-    "total": 1118,
+    "passed": 2717,
+    "total": 2717,
     "failures": [],
     "quantity_recovery_by_subfact": {
       "closest_pair": {
         "visual_signal": "the shortest rendered landmark displacement",
-        "checked_items": 1118,
-        "passed_items": 1118,
+        "checked_items": 2717,
+        "passed_items": 2717,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
         "supporting_closed_validator_metrics": []
       },
-      "direction_from_earlier": {
-        "visual_signal": "the compass rose and rendered landmark displacement",
-        "checked_items": 1118,
-        "passed_items": 1118,
+      "bearing_degrees_nearest_10": {
+        "visual_signal": "the compass rose and the screen-space displacement from the alphabetically earlier landmark",
+        "checked_items": 2717,
+        "passed_items": 2717,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
         "supporting_closed_validator_metrics": []
       }
     }
   },
   "special_checks": {
-    "substantive_boundary_guard_exclusions": 1882,
+    "old_sector_boundary_exclusions_recovered": 1882,
+    "closest_pair_margin_below_5_percent": 283,
+    "closest_pair_relative_margin_distribution": {
+      "count": 3000,
+      "min": 0.0,
+      "p25": 0.13652185791820035,
+      "p50": 0.3237242065416767,
+      "p75": 0.6336956181392733,
+      "p95": 1.5472192644480744,
+      "max": 3.7722197804285713
+    },
     "other_exclusion_reasons": 0
   },
   "issues": []

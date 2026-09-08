@@ -4,11 +4,11 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: time, smaller_angle_degrees_nearest_5
-Constant-answer baselines: {"smaller_angle_degrees_nearest_5": 0.03966666666666667, "time": 0.004}
+Sub-facts: time
+Constant-answer baselines: {"time": 0.004}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"old_smaller_angle_subfact_disposition": "removed because exact time determines the hand angle", "old_time_to_smaller_angle_derivation_exceptions": 0}
 Issues: []

@@ -4,11 +4,11 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: genus, orientability, euler_characteristic
-Constant-answer baselines: {"euler_characteristic": 0.5233333333333333, "genus": 0.2733333333333333, "orientability": 0.75}
+Sub-facts: genus, orientability
+Constant-answer baselines: {"genus": 0.2733333333333333, "orientability": 0.75}
 Fields >=60%: {"orientability": 0.75}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"old_euler_subfact_disposition": "removed because genus and orientability determine Euler characteristic for these closed surfaces", "old_genus_orientability_to_euler_exceptions": 0}
 Issues: []

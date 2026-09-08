@@ -78,6 +78,17 @@
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "correct_to_nearest_wrong_attribute_hamming_gap_distribution": {
+      "count": 3000,
+      "min": 1,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p95": 1.0,
+      "max": 1
+    },
+    "duplicate_correct_candidate_violations": 0
+  },
   "issues": []
 }

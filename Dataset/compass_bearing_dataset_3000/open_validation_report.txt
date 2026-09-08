@@ -1,14 +1,14 @@
 Open-question validation: compass_bearing_dataset_3000
 Status: PASS
 Source items: 3000
-Included: 1118
-Excluded: 1882
-Exclusions: {"closest_pair_bearing_within_15_degrees_of_sector_boundary": 1882}
-Sub-facts: closest_pair, direction_from_earlier
-Constant-answer baselines: {"closest_pair": 0.26028622540250446, "direction_from_earlier": 0.16905187835420393}
+Included: 2717
+Excluded: 283
+Exclusions: {"closest_pair_distance_margin_below_5_percent": 283}
+Sub-facts: closest_pair, bearing_degrees_nearest_10
+Constant-answer baselines: {"bearing_degrees_nearest_10": 0.05079131394920869, "closest_pair": 0.26352594773647403}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
-PNG recovery: 1118/1118
-Special checks: {"other_exclusion_reasons": 0, "substantive_boundary_guard_exclusions": 1882}
+PNG recovery: 2717/2717
+Special checks: {"closest_pair_margin_below_5_percent": 283, "closest_pair_relative_margin_distribution": {"count": 3000, "max": 3.7722197804285713, "min": 0.0, "p25": 0.13652185791820035, "p50": 0.3237242065416767, "p75": 0.6336956181392733, "p95": 1.5472192644480744}, "old_sector_boundary_exclusions_recovered": 1882, "other_exclusion_reasons": 0}
 Issues: []

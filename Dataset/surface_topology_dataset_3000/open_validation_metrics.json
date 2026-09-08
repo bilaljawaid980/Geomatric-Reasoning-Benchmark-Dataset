@@ -5,11 +5,10 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Examine the surface and trace how it closes back on itself: count how many holes or handles it has, decide whether it is orientable, and give its Euler characteristic. State your conclusion, justify it by describing the feature that fixes the genus, and end with a confidence score from 0 to 1.",
+  "template": "Examine the surface and trace how it closes back on itself: count how many holes or handles it has and decide whether it is orientable. State your conclusion, justify it by describing the feature that fixes the genus and whether the surface has a consistent inside and outside, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "genus",
-    "orientability",
-    "euler_characteristic"
+    "orientability"
   ],
   "answer_distributions": {
     "genus": {
@@ -21,18 +20,11 @@
     "orientability": {
       "orientable": 2250,
       "non-orientable": 750
-    },
-    "euler_characteristic": {
-      "0": 1570,
-      "-4": 750,
-      "2": 380,
-      "-2": 300
     }
   },
   "constant_answer_baselines": {
     "genus": 0.2733333333333333,
-    "orientability": 0.75,
-    "euler_characteristic": 0.5233333333333333
+    "orientability": 0.75
   },
   "fields_at_or_above_60_percent": {
     "orientability": 0.75
@@ -73,16 +65,12 @@
         "passed_items": 3000,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
         "supporting_closed_validator_metrics": []
-      },
-      "euler_characteristic": {
-        "visual_signal": "rendered surface type combined with visible genus/orientability",
-        "checked_items": 3000,
-        "passed_items": 3000,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": []
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "old_genus_orientability_to_euler_exceptions": 0,
+    "old_euler_subfact_disposition": "removed because genus and orientability determine Euler characteristic for these closed surfaces"
+  },
   "issues": []
 }

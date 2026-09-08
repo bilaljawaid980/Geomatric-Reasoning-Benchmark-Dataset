@@ -114,5 +114,33 @@
       "exit_position",
       "near_miss_mirror_count"
     ]
+  },
+  "clock_reading_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "time"
+    ]
+  },
+  "compass_bearing_dataset_3000": {
+    "included": 2717,
+    "excluded": 283,
+    "exclusion_reasons": {
+      "closest_pair_distance_margin_below_5_percent": 283
+    },
+    "subfacts": [
+      "closest_pair",
+      "bearing_degrees_nearest_10"
+    ]
+  },
+  "surface_topology_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "genus",
+      "orientability"
+    ]
   }
 }

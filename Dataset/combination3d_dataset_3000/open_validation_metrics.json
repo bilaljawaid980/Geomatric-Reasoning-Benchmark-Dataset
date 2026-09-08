@@ -88,6 +88,11 @@
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "unique_valid_candidate_items": 3000,
+    "graded_target_cube_count_subfact": false,
+    "item_1531_target_cube_count": 11,
+    "item_1531_visual_recovery": "the upper cube visibly establishes a two-cube supported column; base footprint and column continuity imply the supporting cube, but no target-total count is graded"
+  },
   "issues": []
 }

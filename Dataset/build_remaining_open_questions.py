@@ -20,10 +20,10 @@ LASER_STRAIGHT="Follow the laser from where it enters the grid and trace its str
 
 P={
 "angle_estimation_dataset_3000":ANGLE_COMPARISON,
-"clock_reading_dataset_3000":"Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, read the time they show, and give the smaller angle between them to the nearest 5 degrees. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
+"clock_reading_dataset_3000":"Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, and read the time they show. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
 "combination_dataset_3000":"Compare each separated piece of every candidate with the target shape: decide which single candidate could be slid and turned, without being flipped over, to reproduce the target exactly, and say what disqualifies one of the candidates you rejected. State your conclusion, justify it by describing how you tried to fit the pieces together, and end with a confidence score from 0 to 1.",
 "combination3d_dataset_3000":"Compare each separated group of cubes in every candidate with the target structure: decide which single candidate could be moved and turned about the upright axis to reproduce the target exactly, and say what disqualifies one of the candidates you rejected. State your conclusion, justify it by describing how you tried to fit the groups together and how you accounted for cubes hidden behind others, and end with a confidence score from 0 to 1.",
-"compass_bearing_dataset_3000":"Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the compass direction from the alphabetically earlier of them to the other, using only north, north-east, east, south-east, south, south-west, west or north-west. State your conclusion, justify it by describing the displacements you compared, and end with a confidence score from 0 to 1.",
+"compass_bearing_dataset_3000":"Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
 "coordinate_geometry_dataset_3000":"Read the position of each labelled point against the printed grid: name the pair of points that lie farthest apart, give that distance to the nearest whole unit, and say whether it is greater or less than 12 units. State your conclusion, justify it by describing the horizontal and vertical grid separations you used, and end with a confidence score from 0 to 1.",
 "cube_structure_dataset_3000":"Scan the structure cube by cube, taking as vertical the direction the drawing renders as up: count exactly how many cubes have a visible top face, then work out exactly how many cubes are completely hidden from this viewpoint (tolerance 0 for both counts). State your conclusion, justify it by describing how you separated visible top faces from side faces and how the visible stacks imply any concealed cubes, and end with a confidence score from 0 to 1.",
 "depth_height_dataset_3000":DEPTH_ORDERING,
@@ -45,7 +45,7 @@ P={
 "rotation_matching_dataset_3000":"Compare each candidate figure with the reference above them: decide which candidate is the reference turned rather than flipped over, and identify the one candidate that is a mirror image rather than a rotation. State your conclusion, justify it by describing which corners you matched between the reference and each candidate, and end with a confidence score from 0 to 1.",
 "rpm_dataset_3000":"Read across the rows and down the columns of the matrix to work out what changes from one panel to the next: decide which of the numbered choices completes the pattern, and say which attributes had to change together for that choice to be the right one. State your conclusion, justify it by describing the progression you found along the rows and down the columns, and end with a confidence score from 0 to 1.",
 "shadow_inference_dataset_3000":"Compare each object with the shadow it casts on the ground: say from which general direction the light is coming, and whether it sits high in the sky or low near the horizon. State your conclusion, justify it by describing the direction the shadows fall and how their length compares with the height of the objects casting them, and end with a confidence score from 0 to 1.",
-"surface_topology_dataset_3000":"Examine the surface and trace how it closes back on itself: count how many holes or handles it has, decide whether it is orientable, and give its Euler characteristic. State your conclusion, justify it by describing the feature that fixes the genus, and end with a confidence score from 0 to 1.",
+"surface_topology_dataset_3000":"Examine the surface and trace how it closes back on itself: count how many holes or handles it has and decide whether it is orientable. State your conclusion, justify it by describing the feature that fixes the genus and whether the surface has a consistent inside and outside, and end with a confidence score from 0 to 1.",
 "symmetry_pattern_dataset_3000":"Examine every shape and where it sits relative to the centre of the arrangement: work out which shapes pair with which, decide whether the pattern is fully symmetric or whether one element has been displaced from where its partner requires it to be, and say what kind of symmetry the arrangement is built on. State your conclusion, justify it by describing which shapes you paired and how you judged their positions, and end with a confidence score from 0 to 1.",
 }
 FAIL={"gap_or_overlap":"gap or overlap","wrong_area":"wrong cell count","wrong_count":"wrong cube count","requires_reflection":"requires being flipped over","requires_3d_tumble":"requires turning about a forbidden axis"}
@@ -57,6 +57,9 @@ def near(v,s):return int(math.floor(float(v)/s+.5+1e-9)*s)
 def out(prompt,facts,targets,tolerances=None,derivation=None):return {"prompt":prompt,"facts":facts,"targets":targets,"tolerances":tolerances or {},"derivation":derivation or {},"acceptance_set":["; ".join(f"{k}={compact(v) if isinstance(v,(list,dict)) else v}" for k,v in facts.items())]}
 def closest(r):
  d=r["all_pairwise_distances"];m=min(d.values());k=min(k for k,v in d.items() if abs(v-m)<1e-9);a,b=k.split("-");return a,b,m
+def closest_gap_ratio(r):
+ values=sorted(float(v) for v in r["all_pairwise_distances"].values())
+ return math.inf if len(values)<2 else (values[1]-values[0])/values[0]
 def farthest_gap(r):
  labels=sorted(r["points"]);values=sorted((math.dist(r["points"][a],r["points"][b]) for i,a in enumerate(labels) for b in labels[i+1:]),reverse=True);return math.inf if len(values)<2 else values[0]-values[1]
 def laser_near_misses(r):
@@ -65,7 +68,7 @@ def laser_near_misses(r):
 def bd(v):return min(abs(((v-x+180)%360)-180) for x in (22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5))
 def excluded(n,r):
  if n=="compass_bearing_dataset_3000":
-  a,b,_=closest(r);v=r["all_pairwise_bearings"][f"{min(a,b)}-to-{max(a,b)}"];return bd(v)<=15,"closest_pair_bearing_within_15_degrees_of_sector_boundary"
+  return closest_gap_ratio(r)<.05,"closest_pair_distance_margin_below_5_percent"
  if n=="cube_structure_dataset_3000":return bool(r["has_ambiguous_visual_floater"]),"ambiguous_visual_floater"
  if n=="overlap_circles_dataset_3000":return r["max_stack_depth"]>4,"max_stack_depth_above_4"
  if n=="rpm_dataset_3000":
@@ -82,11 +85,11 @@ def derive(n,r):
   if scene=="triangle":
    angles=r["interior_angles_degrees"];return out(ANGLE_TRIANGLE,{"largest_angle_degrees_nearest_10":near(max(angles),10)},["triangle interior angles"],{"largest_angle_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
   raise ValueError(f"Unsupported angle scene_type: {scene}")
- if n=="clock_reading_dataset_3000":return out(p,{"time":r["time"],"smaller_angle_degrees_nearest_5":near(r["angle_between_hands"],5)},["clock hands"],{"smaller_angle_degrees_nearest_5":{"absolute_tolerance":5,"unit":"degrees"}})
+ if n=="clock_reading_dataset_3000":return out(p,{"time":r["time"]},["clock hands"])
  if n in ("combination_dataset_3000","combination3d_dataset_3000"):
   z=pick(r,[x for x in r["candidates"] if not x["is_valid_assembly"]],"rejected");return out(p,{"correct_candidate":r["correct_answer_choice"],"rejected_candidate":z["choice_label"],"rejection_reason":FAIL[z["failure_reason"]]},["target","candidate panel"])
  if n=="compass_bearing_dataset_3000":
-  a,b,_=closest(r);a,b=sorted((a,b));v=r["all_pairwise_bearings"][f"{a}-to-{b}"];return out(p,{"closest_pair":f"{a}-{b}","direction_from_earlier":DIR8[int((v+22.5)//45)%8]},[a,b])
+  a,b,_=closest(r);a,b=sorted((a,b));v=r["all_pairwise_bearings"][f"{a}-to-{b}"];return out(p,{"closest_pair":f"{a}-{b}","bearing_degrees_nearest_10":near(v,10)%360},[a,b],{"bearing_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
  if n=="coordinate_geometry_dataset_3000":
   if farthest_gap(r)<1:
    points={label:list(r["points"][label]) for label in sorted(r["points"])};return out(COORDINATE_FALLBACK,{"point_coordinates":points},sorted(points))
@@ -128,7 +131,7 @@ def derive(n,r):
  if n=="rpm_dataset_3000":return out(p,{"correct_choice":r["correct_answer_index"],"attributes_changed_together":[x["attribute"] for x in r["active_rules"]]},["matrix","numbered choices"])
  if n=="shadow_inference_dataset_3000":
   v=r["light_azimuth_degrees"];direction=["north","east","south","west"][int((v+45)%360//90)];return out(p,{"light_direction":direction,"light_height":"high" if r["light_elevation_degrees"]>=45 else "low"},["objects","shadows"])
- if n=="surface_topology_dataset_3000":return out(p,{"genus":r["genus"],"orientability":"orientable" if r["is_orientable"] else "non-orientable","euler_characteristic":r["euler_characteristic"]},["surface"],{"genus":{"absolute_tolerance":0,"unit":"count"},"euler_characteristic":{"absolute_tolerance":0,"unit":"integer"}})
+ if n=="surface_topology_dataset_3000":return out(p,{"genus":r["genus"],"orientability":"orientable" if r["is_orientable"] else "non-orientable"},["surface"],{"genus":{"absolute_tolerance":0,"unit":"count"}})
  if n=="symmetry_pattern_dataset_3000":return out(p,{"pattern_status":"broken" if r["is_broken"] else "fully symmetric","symmetry_type":r["symmetry_type"]},["whole pattern"])
  raise KeyError(n)
 

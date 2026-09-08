@@ -93,12 +93,12 @@ the source generator assigns labels in a geometry-correlated order.
 ## clock_reading
 
 > Trace both hands from the centre of the dial out towards the printed numerals: work
-> out which is the hour hand and which is the minute hand, read the time they show,
-> and give the smaller angle between them to the nearest 5 degrees. State your
-> conclusion, justify it by describing where each hand tip falls among the numerals,
-> and end with a confidence score from 0 to 1.
+> out which is the hour hand and which is the minute hand, and read the time they show.
+> State your conclusion, justify it by describing where each hand tip falls among the
+> numerals, and end with a confidence score from 0 to 1.
 
-Targets: exact time, smaller hand angle. Tolerance: ±5°.
+Target: exact time. The smaller-angle sub-fact was removed because it is exactly
+derivable from the reported time.
 
 ## combination
 
@@ -125,15 +125,15 @@ Targets: `correct_answer_choice`, one rejected candidate's failure reason.
 
 > Read the compass rose in the corner, then compare the straight-line displacement
 > between every pair of landmarks: name the two landmarks that lie closest together,
-> and give the compass direction from the alphabetically earlier of them to the other,
-> using only north, north-east, east, south-east, south, south-west, west or
-> north-west. State your conclusion, justify it by describing the displacements you
-> compared, and end with a confidence score from 0 to 1.
+> and give the bearing in degrees from the alphabetically earlier of them to the other,
+> measuring clockwise from north and answering to the nearest 10 degrees. State your
+> conclusion, justify it by describing the displacements you compared and how you read
+> the direction against the rose, and end with a confidence score from 0 to 1.
 
-Targets: closest pair from `all_pairwise_distances`, sector from
-`all_pairwise_bearings`. **Reject items whose bearing falls within 15° of a sector
-boundary** — `compass_bearing_0115` sits at 162.34°, only 18° from the south /
-south-east boundary.
+Targets: closest pair from `all_pairwise_distances`, bearing from
+`all_pairwise_bearings`. Bearing tolerance: ±10°. **Reject items where the second
+smallest pairwise distance is less than 5% larger than the smallest**, because the
+closest pair is not visually separable there.
 
 ## coordinate_geometry
 
@@ -450,11 +450,12 @@ existing azimuth exclusion — near 0° or 180° the shadows foreshorten to noth
 ## surface_topology
 
 > Examine the surface and trace how it closes back on itself: count how many holes or
-> handles it has, decide whether it is orientable, and give its Euler characteristic.
-> State your conclusion, justify it by describing the feature that fixes the genus, and
-> end with a confidence score from 0 to 1.
+> handles it has and decide whether it is orientable. State your conclusion, justify it
+> by describing the feature that fixes the genus and whether the surface has a
+> consistent inside and outside, and end with a confidence score from 0 to 1.
 
-Targets: `genus`, `is_orientable`, `euler_characteristic`.
+Targets: `genus`, `is_orientable`. Euler characteristic was removed because it is
+determined by genus and orientability for these closed surfaces.
 
 ## symmetry_pattern
 

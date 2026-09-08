@@ -10,5 +10,5 @@ Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"correct_to_nearest_wrong_attribute_hamming_gap_distribution": {"count": 3000, "max": 1, "min": 1, "p25": 1.0, "p50": 1.0, "p75": 1.0, "p95": 1.0}, "duplicate_correct_candidate_violations": 0}
 Issues: []

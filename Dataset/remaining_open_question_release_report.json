@@ -185,10 +185,9 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, read the time they show, and give the smaller angle between them to the nearest 5 degrees. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
+      "template": "Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, and read the time they show. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
       "subfacts": [
-        "time",
-        "smaller_angle_degrees_nearest_5"
+        "time"
       ],
       "answer_distributions": {
         "time": {
@@ -846,48 +845,10 @@
           "12:05": 1,
           "12:53": 1,
           "12:57": 1
-        },
-        "smaller_angle_degrees_nearest_5": {
-          "50": 119,
-          "35": 117,
-          "100": 105,
-          "130": 98,
-          "55": 97,
-          "75": 95,
-          "25": 94,
-          "20": 92,
-          "165": 91,
-          "70": 91,
-          "80": 91,
-          "90": 91,
-          "140": 90,
-          "15": 89,
-          "95": 89,
-          "40": 88,
-          "125": 87,
-          "120": 86,
-          "60": 86,
-          "110": 85,
-          "145": 85,
-          "30": 85,
-          "175": 84,
-          "45": 84,
-          "85": 84,
-          "135": 83,
-          "170": 83,
-          "155": 82,
-          "160": 82,
-          "150": 81,
-          "65": 77,
-          "105": 76,
-          "115": 76,
-          "180": 50,
-          "10": 7
         }
       },
       "constant_answer_baselines": {
-        "time": 0.004,
-        "smaller_angle_degrees_nearest_5": 0.03966666666666667
+        "time": 0.004
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -921,19 +882,13 @@
             "supporting_closed_validator_metrics": [
               "png_asset_presence"
             ]
-          },
-          "smaller_angle_degrees_nearest_5": {
-            "visual_signal": "the smaller rendered opening between the clock hands",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_asset_presence"
-            ]
           }
         }
       },
-      "special_checks": {},
+      "special_checks": {
+        "old_time_to_smaller_angle_derivation_exceptions": 0,
+        "old_smaller_angle_subfact_disposition": "removed because exact time determines the hand angle"
+      },
       "issues": []
     },
     "combination3d_dataset_3000": {
@@ -1026,7 +981,12 @@
           }
         }
       },
-      "special_checks": {},
+      "special_checks": {
+        "unique_valid_candidate_items": 3000,
+        "graded_target_cube_count_subfact": false,
+        "item_1531_target_cube_count": 11,
+        "item_1531_visual_recovery": "the upper cube visibly establishes a two-cube supported column; base footprint and column continuity imply the supporting cube, but no target-total count is graded"
+      },
       "issues": []
     },
     "combination_dataset_3000": {
@@ -1126,39 +1086,67 @@
       "status": "PASS",
       "dataset": "compass_bearing_dataset_3000",
       "source_items": 3000,
-      "included_items": 1118,
-      "excluded_items": 1882,
+      "included_items": 2717,
+      "excluded_items": 283,
       "exclusion_counts": {
-        "closest_pair_bearing_within_15_degrees_of_sector_boundary": 1882
+        "closest_pair_distance_margin_below_5_percent": 283
       },
-      "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the compass direction from the alphabetically earlier of them to the other, using only north, north-east, east, south-east, south, south-west, west or north-west. State your conclusion, justify it by describing the displacements you compared, and end with a confidence score from 0 to 1.",
+      "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "closest_pair",
-        "direction_from_earlier"
+        "bearing_degrees_nearest_10"
       ],
       "answer_distributions": {
         "closest_pair": {
-          "A-B": 291,
-          "B-C": 291,
-          "A-C": 281,
-          "A-D": 99,
-          "B-D": 78,
-          "C-D": 78
+          "A-C": 716,
+          "A-B": 674,
+          "B-C": 657,
+          "A-D": 239,
+          "C-D": 225,
+          "B-D": 206
         },
-        "direction_from_earlier": {
-          "east": 189,
-          "west": 184,
-          "north": 155,
-          "north-west": 134,
-          "south-west": 118,
-          "south": 115,
-          "north-east": 112,
-          "south-east": 111
+        "bearing_degrees_nearest_10": {
+          "90": 138,
+          "270": 130,
+          "150": 90,
+          "0": 88,
+          "320": 88,
+          "160": 84,
+          "10": 83,
+          "350": 82,
+          "340": 81,
+          "300": 79,
+          "180": 78,
+          "20": 77,
+          "200": 77,
+          "40": 77,
+          "210": 75,
+          "140": 72,
+          "220": 72,
+          "290": 72,
+          "60": 72,
+          "100": 71,
+          "120": 70,
+          "330": 69,
+          "170": 68,
+          "230": 68,
+          "80": 68,
+          "240": 66,
+          "30": 66,
+          "310": 66,
+          "110": 65,
+          "190": 65,
+          "260": 65,
+          "280": 64,
+          "250": 61,
+          "130": 60,
+          "50": 55,
+          "70": 55
         }
       },
       "constant_answer_baselines": {
-        "closest_pair": 0.26028622540250446,
-        "direction_from_earlier": 0.16905187835420393
+        "closest_pair": 0.26352594773647403,
+        "bearing_degrees_nearest_10": 0.05079131394920869
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -1180,28 +1168,38 @@
         "variant_specific_fields_only": true
       },
       "png_recovery": {
-        "passed": 1118,
-        "total": 1118,
+        "passed": 2717,
+        "total": 2717,
         "failures": [],
         "quantity_recovery_by_subfact": {
           "closest_pair": {
             "visual_signal": "the shortest rendered landmark displacement",
-            "checked_items": 1118,
-            "passed_items": 1118,
+            "checked_items": 2717,
+            "passed_items": 2717,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
             "supporting_closed_validator_metrics": []
           },
-          "direction_from_earlier": {
-            "visual_signal": "the compass rose and rendered landmark displacement",
-            "checked_items": 1118,
-            "passed_items": 1118,
+          "bearing_degrees_nearest_10": {
+            "visual_signal": "the compass rose and the screen-space displacement from the alphabetically earlier landmark",
+            "checked_items": 2717,
+            "passed_items": 2717,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
             "supporting_closed_validator_metrics": []
           }
         }
       },
       "special_checks": {
-        "substantive_boundary_guard_exclusions": 1882,
+        "old_sector_boundary_exclusions_recovered": 1882,
+        "closest_pair_margin_below_5_percent": 283,
+        "closest_pair_relative_margin_distribution": {
+          "count": 3000,
+          "min": 0.0,
+          "p25": 0.13652185791820035,
+          "p50": 0.3237242065416767,
+          "p75": 0.6336956181392733,
+          "p95": 1.5472192644480744,
+          "max": 3.7722197804285713
+        },
         "other_exclusion_reasons": 0
       },
       "issues": []
@@ -1709,9 +1707,7 @@
         "eligible_three_or_four_point_scenes": 2000,
         "guard_disposition": "routed to the all-point-coordinate variant; no image excluded"
       },
-      "issues": [],
-      "dataset_version_before": "coordinate-geometry-6.0.0",
-      "dataset_version_after": "coordinate-geometry-7.0.0"
+      "issues": []
     },
     "cube_net_dataset_3000": {
       "status": "PASS",
@@ -3378,9 +3374,7 @@
         },
         "near_miss_count_constant_answer_baseline": 0.4653333333333333
       },
-      "issues": [],
-      "dataset_version_before": "laser-mirror-4.0.0",
-      "dataset_version_after": "laser-mirror-5.0.0"
+      "issues": []
     },
     "line_intersection_dataset_3000": {
       "status": "PASS",
@@ -3487,9 +3481,7 @@
         },
         "new_subfacts_deterministically_linked": false
       },
-      "issues": [],
-      "dataset_version_before": "line-intersection-6.0.0",
-      "dataset_version_after": "line-intersection-7.0.0"
+      "issues": []
     },
     "nested_hexagons_dataset_3000": {
       "status": "PASS",
@@ -4359,7 +4351,9 @@
         }
       },
       "special_checks": {
-        "boundary_edge_set_mismatches": 0
+        "boundary_edge_set_mismatches": 0,
+        "face_shape_labels_vs_actual_faces_mismatches": 0,
+        "convexity_vs_face_support_and_compound_geometry_mismatches": 0
       },
       "issues": []
     },
@@ -6152,7 +6146,18 @@
           }
         }
       },
-      "special_checks": {},
+      "special_checks": {
+        "correct_to_nearest_wrong_attribute_hamming_gap_distribution": {
+          "count": 3000,
+          "min": 1,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p95": 1.0,
+          "max": 1
+        },
+        "duplicate_correct_candidate_violations": 0
+      },
       "issues": []
     },
     "shadow_inference_dataset_3000": {
@@ -6239,11 +6244,10 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Examine the surface and trace how it closes back on itself: count how many holes or handles it has, decide whether it is orientable, and give its Euler characteristic. State your conclusion, justify it by describing the feature that fixes the genus, and end with a confidence score from 0 to 1.",
+      "template": "Examine the surface and trace how it closes back on itself: count how many holes or handles it has and decide whether it is orientable. State your conclusion, justify it by describing the feature that fixes the genus and whether the surface has a consistent inside and outside, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "genus",
-        "orientability",
-        "euler_characteristic"
+        "orientability"
       ],
       "answer_distributions": {
         "genus": {
@@ -6255,18 +6259,11 @@
         "orientability": {
           "orientable": 2250,
           "non-orientable": 750
-        },
-        "euler_characteristic": {
-          "0": 1570,
-          "-4": 750,
-          "2": 380,
-          "-2": 300
         }
       },
       "constant_answer_baselines": {
         "genus": 0.2733333333333333,
-        "orientability": 0.75,
-        "euler_characteristic": 0.5233333333333333
+        "orientability": 0.75
       },
       "fields_at_or_above_60_percent": {
         "orientability": 0.75
@@ -6307,17 +6304,13 @@
             "passed_items": 3000,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
             "supporting_closed_validator_metrics": []
-          },
-          "euler_characteristic": {
-            "visual_signal": "rendered surface type combined with visible genus/orientability",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": []
           }
         }
       },
-      "special_checks": {},
+      "special_checks": {
+        "old_genus_orientability_to_euler_exceptions": 0,
+        "old_euler_subfact_disposition": "removed because genus and orientability determine Euler characteristic for these closed surfaces"
+      },
       "issues": []
     },
     "symmetry_pattern_dataset_3000": {
@@ -6402,20 +6395,5 @@
       "issues": []
     }
   },
-  "failures": [],
-  "version_bumps": {
-    "coordinate_geometry_dataset_3000": {
-      "before": "coordinate-geometry-6.0.0",
-      "after": "coordinate-geometry-7.0.0"
-    },
-    "laser_mirror_dataset_3000": {
-      "before": "laser-mirror-4.0.0",
-      "after": "laser-mirror-5.0.0"
-    },
-    "line_intersection_dataset_3000": {
-      "before": "line-intersection-6.0.0",
-      "after": "line-intersection-7.0.0"
-    }
-  },
-  "source_commit_before_release": "4f2cf3f829b4814892c94ff10fc4db0f714dad19"
+  "failures": []
 }

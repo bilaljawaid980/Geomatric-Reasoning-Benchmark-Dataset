@@ -5,10 +5,9 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, read the time they show, and give the smaller angle between them to the nearest 5 degrees. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
+  "template": "Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, and read the time they show. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "time",
-    "smaller_angle_degrees_nearest_5"
+    "time"
   ],
   "answer_distributions": {
     "time": {
@@ -666,48 +665,10 @@
       "12:05": 1,
       "12:53": 1,
       "12:57": 1
-    },
-    "smaller_angle_degrees_nearest_5": {
-      "50": 119,
-      "35": 117,
-      "100": 105,
-      "130": 98,
-      "55": 97,
-      "75": 95,
-      "25": 94,
-      "20": 92,
-      "165": 91,
-      "70": 91,
-      "80": 91,
-      "90": 91,
-      "140": 90,
-      "15": 89,
-      "95": 89,
-      "40": 88,
-      "125": 87,
-      "120": 86,
-      "60": 86,
-      "110": 85,
-      "145": 85,
-      "30": 85,
-      "175": 84,
-      "45": 84,
-      "85": 84,
-      "135": 83,
-      "170": 83,
-      "155": 82,
-      "160": 82,
-      "150": 81,
-      "65": 77,
-      "105": 76,
-      "115": 76,
-      "180": 50,
-      "10": 7
     }
   },
   "constant_answer_baselines": {
-    "time": 0.004,
-    "smaller_angle_degrees_nearest_5": 0.03966666666666667
+    "time": 0.004
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
@@ -741,18 +702,12 @@
         "supporting_closed_validator_metrics": [
           "png_asset_presence"
         ]
-      },
-      "smaller_angle_degrees_nearest_5": {
-        "visual_signal": "the smaller rendered opening between the clock hands",
-        "checked_items": 3000,
-        "passed_items": 3000,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_asset_presence"
-        ]
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "old_time_to_smaller_angle_derivation_exceptions": 0,
+    "old_smaller_angle_subfact_disposition": "removed because exact time determines the hand angle"
+  },
   "issues": []
 }

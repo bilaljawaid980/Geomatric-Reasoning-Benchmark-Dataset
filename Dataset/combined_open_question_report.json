@@ -8,7 +8,7 @@
       "open_answers": 3000
     },
     "clock_reading_dataset_3000": {
-      "dataset_version": "clock-reading-4.0.0",
+      "dataset_version": "clock-reading-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -26,10 +26,10 @@
       "open_answers": 3000
     },
     "compass_bearing_dataset_3000": {
-      "dataset_version": "compass-bearing-5.0.0",
-      "images": 1118,
-      "open_questions": 1118,
-      "open_answers": 1118
+      "dataset_version": "compass-bearing-6.0.0",
+      "images": 2717,
+      "open_questions": 2717,
+      "open_answers": 2717
     },
     "coordinate_geometry_dataset_3000": {
       "dataset_version": "coordinate-geometry-7.0.0",
@@ -194,7 +194,7 @@
       "open_answers": 3000
     },
     "surface_topology_dataset_3000": {
-      "dataset_version": "surface-topology-6.0.0",
+      "dataset_version": "surface-topology-7.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -206,10 +206,10 @@
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 98118,
-  "combined_open_answers": 98118,
-  "unique_question_ids": 98118,
-  "resolved_image_paths": 98118,
+  "combined_open_questions": 99717,
+  "combined_open_answers": 99717,
+  "unique_question_ids": 99717,
+  "resolved_image_paths": 99717,
   "public_columns": [
     "dataset",
     "dataset_version",
@@ -234,12 +234,11 @@
     "difference_degrees_nearest_10",
     "largest_angle_degrees_nearest_10",
     "time",
-    "smaller_angle_degrees_nearest_5",
     "correct_candidate",
     "rejected_candidate",
     "rejection_reason",
     "closest_pair",
-    "direction_from_earlier",
+    "bearing_degrees_nearest_10",
     "farthest_pair",
     "distance_nearest_unit",
     "relation_to_12",
@@ -298,7 +297,6 @@
     "light_height",
     "genus",
     "orientability",
-    "euler_characteristic",
     "pattern_status",
     "symmetry_type"
   ]

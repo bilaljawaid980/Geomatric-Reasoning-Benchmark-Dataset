@@ -73,7 +73,9 @@
     }
   },
   "special_checks": {
-    "boundary_edge_set_mismatches": 0
+    "boundary_edge_set_mismatches": 0,
+    "face_shape_labels_vs_actual_faces_mismatches": 0,
+    "convexity_vs_face_support_and_compound_geometry_mismatches": 0
   },
   "issues": []
 }
