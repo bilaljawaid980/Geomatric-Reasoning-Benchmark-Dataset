@@ -8,10 +8,9 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it is acute, right, obtuse or reflex. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1.",
+      "template": "Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "angle_degrees_nearest_10",
-        "angle_class",
         "larger_angle",
         "difference_degrees_nearest_10",
         "largest_angle_degrees_nearest_10"
@@ -53,12 +52,6 @@
           "10": 20,
           "350": 13
         },
-        "angle_class": {
-          "reflex": 487,
-          "obtuse": 358,
-          "acute": 330,
-          "right": 25
-        },
         "larger_angle": {
           "Angle 2": 526,
           "Angle 1": 524
@@ -95,7 +88,6 @@
       },
       "constant_answer_baselines": {
         "angle_degrees_nearest_10": 0.049166666666666664,
-        "angle_class": 0.4058333333333333,
         "larger_angle": 0.5009523809523809,
         "difference_degrees_nearest_10": 0.12571428571428572,
         "largest_angle_degrees_nearest_10": 0.35733333333333334
@@ -108,26 +100,6 @@
       "deterministic_subfact_dependency_check": {
         "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
         "tested_relationships": [
-          {
-            "target": "angle_degrees_nearest_10",
-            "predictors": [
-              "angle_class"
-            ],
-            "rows": 1200,
-            "distinct_predictor_tuples": 4,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "angle_class",
-            "predictors": [
-              "angle_degrees_nearest_10"
-            ],
-            "rows": 1200,
-            "distinct_predictor_tuples": 34,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
           {
             "target": "larger_angle",
             "predictors": [
@@ -149,9 +121,7 @@
             "deterministic": false
           }
         ],
-        "empirical_findings": [
-          "angle_class is empirically determined by angle_degrees_nearest_10 (100.0% repeat coverage)"
-        ],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -171,13 +141,6 @@
         "quantity_recovery_by_subfact": {
           "angle_degrees_nearest_10": {
             "visual_signal": "the opening between the two rendered rays",
-            "checked_items": 1200,
-            "passed_items": 1200,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": []
-          },
-          "angle_class": {
-            "visual_signal": "the rendered ray opening relative to 90 and 180 degrees",
             "checked_items": 1200,
             "passed_items": 1200,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
@@ -1325,11 +1288,9 @@
       "status": "PASS",
       "dataset": "compass_bearing_dataset_3000",
       "source_items": 3000,
-      "included_items": 2965,
-      "excluded_items": 35,
-      "exclusion_counts": {
-        "closest_and_farthest_pair_margins_below_5_percent": 35
-      },
+      "included_items": 3000,
+      "excluded_items": 0,
+      "exclusion_counts": {},
       "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "closest_pair",
@@ -1348,40 +1309,40 @@
         "bearing_degrees_nearest_10": {
           "90": 146,
           "270": 136,
-          "320": 98,
+          "320": 101,
           "150": 97,
           "0": 91,
           "10": 91,
+          "160": 91,
           "300": 91,
-          "160": 89,
-          "340": 88,
+          "330": 91,
+          "340": 89,
           "350": 88,
-          "330": 86,
           "40": 85,
           "180": 84,
           "20": 84,
           "140": 82,
-          "200": 80,
-          "120": 79,
-          "220": 79,
-          "290": 79,
+          "120": 81,
+          "200": 81,
+          "220": 80,
+          "290": 80,
+          "60": 79,
           "210": 78,
-          "60": 78,
-          "240": 76,
-          "310": 76,
-          "100": 74,
-          "130": 74,
-          "80": 74,
-          "230": 73,
-          "170": 72,
+          "310": 78,
+          "240": 77,
+          "80": 76,
+          "100": 75,
+          "130": 75,
+          "170": 74,
+          "230": 74,
+          "30": 74,
           "190": 72,
+          "280": 72,
           "110": 71,
-          "30": 71,
-          "280": 70,
-          "260": 69,
+          "260": 70,
           "250": 64,
-          "70": 62,
-          "50": 58
+          "70": 63,
+          "50": 59
         },
         "farthest_pair": {
           "A-B": 65,
@@ -1394,7 +1355,7 @@
       },
       "constant_answer_baselines": {
         "closest_pair": 0.26352594773647403,
-        "bearing_degrees_nearest_10": 0.04924114671163575,
+        "bearing_degrees_nearest_10": 0.048666666666666664,
         "farthest_pair": 0.2620967741935484
       },
       "fields_at_or_above_60_percent": {},
@@ -1460,8 +1421,8 @@
         "variant_specific_fields_only": true
       },
       "png_recovery": {
-        "passed": 2965,
-        "total": 2965,
+        "passed": 3000,
+        "total": 3000,
         "failures": [],
         "quantity_recovery_by_subfact": {
           "closest_pair": {
@@ -1473,8 +1434,8 @@
           },
           "bearing_degrees_nearest_10": {
             "visual_signal": "the compass rose and the screen-space displacement from the alphabetically earlier landmark",
-            "checked_items": 2965,
-            "passed_items": 2965,
+            "checked_items": 3000,
+            "passed_items": 3000,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
             "supporting_closed_validator_metrics": []
           },
@@ -1500,7 +1461,50 @@
           "max": 3.7722197804285713
         },
         "farthest_fallback_items": 248,
-        "closest_and_farthest_margin_failures": 35,
+        "pre_fix_closest_and_farthest_margin_failures": 35,
+        "named_ab_fallback_items": 35,
+        "named_ab_labels_present": 35,
+        "named_ab_labels_legible_manual_contact_sheet_review": 35,
+        "named_ab_distance_pixels_by_item": {
+          "compass_bearing_0071": 314.1018943,
+          "compass_bearing_0145": 220.04544985,
+          "compass_bearing_0440": 231.29418497,
+          "compass_bearing_0923": 111.80339887,
+          "compass_bearing_1004": 274.85450697,
+          "compass_bearing_1014": 184.4478246,
+          "compass_bearing_1055": 284.52240685,
+          "compass_bearing_1089": 98.59513173,
+          "compass_bearing_1110": 202.37094653,
+          "compass_bearing_1171": 235.05318547,
+          "compass_bearing_1175": 263.41222447,
+          "compass_bearing_1206": 161.83942659,
+          "compass_bearing_1309": 269.75729833,
+          "compass_bearing_1381": 201.06963968,
+          "compass_bearing_1397": 116.10770862,
+          "compass_bearing_1472": 315.54555931,
+          "compass_bearing_1541": 201.6754819,
+          "compass_bearing_1735": 196.70282154,
+          "compass_bearing_1843": 158.85842754,
+          "compass_bearing_1857": 196.43064934,
+          "compass_bearing_1947": 118.70130581,
+          "compass_bearing_1949": 215.74522011,
+          "compass_bearing_2059": 198.09341231,
+          "compass_bearing_2067": 143.95138068,
+          "compass_bearing_2081": 142.29898102,
+          "compass_bearing_2093": 290.63034941,
+          "compass_bearing_2319": 186.2068742,
+          "compass_bearing_2473": 119.28118041,
+          "compass_bearing_2493": 279.54606061,
+          "compass_bearing_2624": 292.24989307,
+          "compass_bearing_2626": 171.67993476,
+          "compass_bearing_2633": 242.6952822,
+          "compass_bearing_2679": 203.0,
+          "compass_bearing_2859": 351.1039732,
+          "compass_bearing_2881": 91.23595782
+        },
+        "named_ab_minimum_distance_pixels": 91.23595782,
+        "named_ab_maximum_distance_pixels": 351.1039732,
+        "remaining_exclusions": 0,
         "farthest_pair_relative_margin_distribution": {
           "count": 3000,
           "min": 0.0,
@@ -2414,12 +2418,10 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Compare the objects in the scene using the cues that indicate distance from the camera: rank every object from closest to farthest by colour, and name which one lies nearest. State your conclusion, justify it by describing the cues you used to order them, and end with a confidence score from 0 to 1.",
+      "template": "Compare the objects in the scene using the cues that indicate distance from the camera: rank every object from closest to farthest by colour. State your conclusion, justify it by describing the cues you used to order them, and end with a confidence score from 0 to 1.",
       "subfacts": [
         "depth_ordering",
-        "nearest_colour",
-        "height_ordering_shortest_to_tallest",
-        "tallest_stack_colour"
+        "height_ordering_shortest_to_tallest"
       ],
       "answer_distributions": {
         "depth_ordering": {
@@ -2624,13 +2626,6 @@
           "[\"teal\",\"magenta\",\"blue\",\"orange\"]": 1,
           "[\"teal\",\"orange\",\"purple\",\"magenta\"]": 1
         },
-        "nearest_colour": {
-          "blue": 313,
-          "orange": 311,
-          "magenta": 307,
-          "teal": 290,
-          "purple": 279
-        },
         "height_ordering_shortest_to_tallest": {
           "[\"magenta\",\"orange\"]": 33,
           "[\"orange\",\"magenta\"]": 31,
@@ -2830,20 +2825,11 @@
           "[\"purple\",\"orange\",\"teal\",\"magenta\"]": 1,
           "[\"teal\",\"blue\",\"orange\",\"magenta\"]": 1,
           "[\"teal\",\"blue\",\"orange\",\"purple\"]": 1
-        },
-        "tallest_stack_colour": {
-          "orange": 320,
-          "teal": 305,
-          "blue": 293,
-          "magenta": 292,
-          "purple": 290
         }
       },
       "constant_answer_baselines": {
         "depth_ordering": 0.02266666666666667,
-        "nearest_colour": 0.20866666666666667,
-        "height_ordering_shortest_to_tallest": 0.022,
-        "tallest_stack_colour": 0.21333333333333335
+        "height_ordering_shortest_to_tallest": 0.022
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -2852,52 +2838,8 @@
       },
       "deterministic_subfact_dependency_check": {
         "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-        "tested_relationships": [
-          {
-            "target": "depth_ordering",
-            "predictors": [
-              "nearest_colour"
-            ],
-            "rows": 1500,
-            "distinct_predictor_tuples": 5,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "nearest_colour",
-            "predictors": [
-              "depth_ordering"
-            ],
-            "rows": 1500,
-            "distinct_predictor_tuples": 200,
-            "repeat_coverage": 0.9946666666666667,
-            "deterministic": true
-          },
-          {
-            "target": "height_ordering_shortest_to_tallest",
-            "predictors": [
-              "tallest_stack_colour"
-            ],
-            "rows": 1500,
-            "distinct_predictor_tuples": 5,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "tallest_stack_colour",
-            "predictors": [
-              "height_ordering_shortest_to_tallest"
-            ],
-            "rows": 1500,
-            "distinct_predictor_tuples": 198,
-            "repeat_coverage": 0.996,
-            "deterministic": true
-          }
-        ],
-        "empirical_findings": [
-          "nearest_colour is empirically determined by depth_ordering (99.5% repeat coverage)",
-          "tallest_stack_colour is empirically determined by height_ordering_shortest_to_tallest (99.6% repeat coverage)"
-        ],
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -2924,26 +2866,8 @@
               "png_asset_presence"
             ]
           },
-          "nearest_colour": {
-            "visual_signal": "the nearest object's rendered perspective cues",
-            "checked_items": 1500,
-            "passed_items": 1500,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_asset_presence"
-            ]
-          },
           "height_ordering_shortest_to_tallest": {
             "visual_signal": "visible block counts above the common baseline",
-            "checked_items": 1500,
-            "passed_items": 1500,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_asset_presence"
-            ]
-          },
-          "tallest_stack_colour": {
-            "visual_signal": "the stack with the greatest visible block count",
             "checked_items": 1500,
             "passed_items": 1500,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
@@ -2970,10 +2894,9 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Study the complex figure and each of the candidate shapes beneath it: decide which candidate is hidden inside the figure, and say how many sides that shape has. State your conclusion, justify it by describing where in the figure you located the shape and which lines belong to it rather than to the surrounding clutter, and end with a confidence score from 0 to 1.",
+      "template": "Study the complex figure and each of the candidate shapes beneath it: decide which candidate is hidden inside the figure. State your conclusion, justify it by describing where in the figure you located the shape and which lines belong to it rather than to the surrounding clutter, and end with a confidence score from 0 to 1.",
       "subfacts": [
-        "candidate",
-        "side_count"
+        "candidate"
       ],
       "answer_distributions": {
         "candidate": {
@@ -2981,17 +2904,10 @@
           "B": 750,
           "C": 750,
           "D": 750
-        },
-        "side_count": {
-          "3": 750,
-          "4": 750,
-          "5": 750,
-          "6": 750
         }
       },
       "constant_answer_baselines": {
-        "candidate": 0.25,
-        "side_count": 0.25
+        "candidate": 0.25
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -3000,32 +2916,8 @@
       },
       "deterministic_subfact_dependency_check": {
         "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-        "tested_relationships": [
-          {
-            "target": "candidate",
-            "predictors": [
-              "side_count"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 4,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
-          {
-            "target": "side_count",
-            "predictors": [
-              "candidate"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 4,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          }
-        ],
-        "empirical_findings": [
-          "candidate is empirically determined by side_count (100.0% repeat coverage)",
-          "side_count is empirically determined by candidate (100.0% repeat coverage)"
-        ],
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3051,15 +2943,6 @@
             "supporting_closed_validator_metrics": [
               "png_asset_presence"
             ]
-          },
-          "side_count": {
-            "visual_signal": "the rendered boundary-edge count of the matched candidate",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_asset_presence"
-            ]
           }
         }
       },
@@ -3079,23 +2962,11 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Examine only the force arrows as they are drawn in this diagram, setting aside what the scenario physically requires: count the arrows, name which one represents the weight of the body, and rank their drawn magnitudes from largest to smallest, grouping any that appear equal. State your conclusion, justify it by describing the length and direction of each arrow as drawn, and end with a confidence score from 0 to 1.",
+      "template": "Examine only the force arrows as they are drawn in this diagram, setting aside what the scenario physically requires: rank their drawn magnitudes from largest to smallest, grouping any that appear equal. State your conclusion, justify it by describing the length and direction of each arrow as drawn, and end with a confidence score from 0 to 1.",
       "subfacts": [
-        "arrow_count",
-        "weight_arrow",
         "drawn_magnitude_ranking"
       ],
       "answer_distributions": {
-        "arrow_count": {
-          "4": 1125,
-          "2": 875,
-          "3": 750,
-          "1": 250
-        },
-        "weight_arrow": {
-          "W": 2500,
-          "W1": 500
-        },
         "drawn_magnitude_ranking": {
           "[[\"W\"],[\"N\"],[\"F\"],[\"A\"]]": 367,
           "[[\"N\",\"W\"]]": 250,
@@ -3120,120 +2991,17 @@
         }
       },
       "constant_answer_baselines": {
-        "arrow_count": 0.375,
-        "weight_arrow": 0.8333333333333334,
         "drawn_magnitude_ranking": 0.12233333333333334
       },
-      "fields_at_or_above_60_percent": {
-        "weight_arrow": 0.8333333333333334
-      },
+      "fields_at_or_above_60_percent": {},
       "independent_derivation": {
         "mismatches": [],
         "method": "separate formulas and geometry traversals; generator answer derivation is not called"
       },
       "deterministic_subfact_dependency_check": {
         "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-        "tested_relationships": [
-          {
-            "target": "arrow_count",
-            "predictors": [
-              "weight_arrow"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 2,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "arrow_count",
-            "predictors": [
-              "drawn_magnitude_ranking"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 20,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
-          {
-            "target": "arrow_count",
-            "predictors": [
-              "weight_arrow",
-              "drawn_magnitude_ranking"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 20,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
-          {
-            "target": "weight_arrow",
-            "predictors": [
-              "arrow_count"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 4,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "weight_arrow",
-            "predictors": [
-              "drawn_magnitude_ranking"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 20,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
-          {
-            "target": "weight_arrow",
-            "predictors": [
-              "arrow_count",
-              "drawn_magnitude_ranking"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 20,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
-          {
-            "target": "drawn_magnitude_ranking",
-            "predictors": [
-              "arrow_count"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 4,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "drawn_magnitude_ranking",
-            "predictors": [
-              "weight_arrow"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 2,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          },
-          {
-            "target": "drawn_magnitude_ranking",
-            "predictors": [
-              "arrow_count",
-              "weight_arrow"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 6,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          }
-        ],
-        "empirical_findings": [
-          "arrow_count is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage)",
-          "arrow_count is empirically determined by weight_arrow, drawn_magnitude_ranking (100.0% repeat coverage)",
-          "weight_arrow is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage)",
-          "weight_arrow is empirically determined by arrow_count, drawn_magnitude_ranking (100.0% repeat coverage)"
-        ],
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3251,24 +3019,6 @@
         "total": 3000,
         "failures": [],
         "quantity_recovery_by_subfact": {
-          "arrow_count": {
-            "visual_signal": "distinct rendered force arrows",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_arrow_count_and_direction_recovery"
-            ]
-          },
-          "weight_arrow": {
-            "visual_signal": "the downward force arrow's printed label",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_arrow_count_and_direction_recovery"
-            ]
-          },
           "drawn_magnitude_ranking": {
             "visual_signal": "rendered force-arrow shaft lengths",
             "checked_items": 3000,
@@ -3290,16 +3040,11 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Follow the fold sequence from the first panel through to the punch: work out how many holes will appear once the paper is fully unfolded, and decide which of the unfolded patterns below shows them in the right places. State your conclusion, justify it by describing how each fold doubles the holes and where the mirror lines fall, and end with a confidence score from 0 to 1.",
+      "template": "Follow the fold sequence from the first panel through to the punch: decide which of the unfolded patterns below shows the holes in the right places. State your conclusion, justify it by describing how you reflected the punch across each fold line, and end with a confidence score from 0 to 1.",
       "subfacts": [
-        "unfolded_hole_count",
         "correct_pattern"
       ],
       "answer_distributions": {
-        "unfolded_hole_count": {
-          "4": 1500,
-          "8": 1500
-        },
         "correct_pattern": {
           "A": 750,
           "B": 750,
@@ -3308,7 +3053,6 @@
         }
       },
       "constant_answer_baselines": {
-        "unfolded_hole_count": 0.5,
         "correct_pattern": 0.25
       },
       "fields_at_or_above_60_percent": {},
@@ -3318,31 +3062,8 @@
       },
       "deterministic_subfact_dependency_check": {
         "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-        "tested_relationships": [
-          {
-            "target": "unfolded_hole_count",
-            "predictors": [
-              "correct_pattern"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 4,
-            "repeat_coverage": 1.0,
-            "deterministic": true
-          },
-          {
-            "target": "correct_pattern",
-            "predictors": [
-              "unfolded_hole_count"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 2,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          }
-        ],
-        "empirical_findings": [
-          "unfolded_hole_count is empirically determined by correct_pattern (100.0% repeat coverage)"
-        ],
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3360,15 +3081,6 @@
         "total": 3000,
         "failures": [],
         "quantity_recovery_by_subfact": {
-          "unfolded_hole_count": {
-            "visual_signal": "fold panels, mirror lines, and the rendered punch",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_asset_presence"
-            ]
-          },
           "correct_pattern": {
             "visual_signal": "the candidate panel matching reflected punch positions",
             "checked_items": 3000,
@@ -3707,120 +3419,65 @@
       "included_items": 3000,
       "excluded_items": 0,
       "exclusion_counts": {},
-      "template": "Look closely at the green HOME hex and everything that immediately surrounds it: state whether it sits on the outer boundary of the hexagonal field or fully inside it, count how many hexes lie directly against it, and say how many of those are grey holes and how many are walkable. Name the position of any hole touching it using these six direction names only: upper-left, upper-right, left, right, lower-left, lower-right. State your conclusion, justify it by describing exactly what you see around HOME, and end with a confidence score from 0 to 1.",
+      "template": "Look closely at the green HOME hex and everything that immediately surrounds it: name the position of every grey hole touching it using these six direction names only: upper-left, upper-right, left, right, lower-left, lower-right. State your conclusion, justify it by describing exactly what you see around HOME, and end with a confidence score from 0 to 1.",
       "subfacts": [
-        "boundary_status",
-        "neighbourhood"
+        "hole_directions"
       ],
       "answer_distributions": {
-        "boundary_status": {
-          "outer boundary": 1606,
-          "fully inside": 1394
-        },
-        "neighbourhood": {
-          "{\"grey_holes\":0,\"hole_directions\":[],\"total\":4,\"walkable\":4}": 540,
-          "{\"grey_holes\":0,\"hole_directions\":[],\"total\":6,\"walkable\":6}": 469,
-          "{\"grey_holes\":0,\"hole_directions\":[],\"total\":3,\"walkable\":3}": 248,
-          "{\"grey_holes\":1,\"hole_directions\":[\"right\"],\"total\":6,\"walkable\":5}": 97,
-          "{\"grey_holes\":1,\"hole_directions\":[\"lower-right\"],\"total\":6,\"walkable\":5}": 94,
-          "{\"grey_holes\":1,\"hole_directions\":[\"left\"],\"total\":6,\"walkable\":5}": 93,
-          "{\"grey_holes\":1,\"hole_directions\":[\"lower-left\"],\"total\":6,\"walkable\":5}": 92,
-          "{\"grey_holes\":1,\"hole_directions\":[\"lower-left\"],\"total\":4,\"walkable\":3}": 86,
-          "{\"grey_holes\":1,\"hole_directions\":[\"upper-right\"],\"total\":6,\"walkable\":5}": 83,
-          "{\"grey_holes\":1,\"hole_directions\":[\"upper-left\"],\"total\":6,\"walkable\":5}": 79,
-          "{\"grey_holes\":1,\"hole_directions\":[\"lower-right\"],\"total\":4,\"walkable\":3}": 72,
-          "{\"grey_holes\":1,\"hole_directions\":[\"upper-right\"],\"total\":4,\"walkable\":3}": 72,
-          "{\"grey_holes\":1,\"hole_directions\":[\"left\"],\"total\":4,\"walkable\":3}": 65,
-          "{\"grey_holes\":1,\"hole_directions\":[\"upper-left\"],\"total\":4,\"walkable\":3}": 64,
-          "{\"grey_holes\":1,\"hole_directions\":[\"right\"],\"total\":4,\"walkable\":3}": 61,
-          "{\"grey_holes\":1,\"hole_directions\":[\"lower-right\"],\"total\":3,\"walkable\":2}": 39,
-          "{\"grey_holes\":1,\"hole_directions\":[\"lower-left\"],\"total\":3,\"walkable\":2}": 35,
-          "{\"grey_holes\":1,\"hole_directions\":[\"right\"],\"total\":3,\"walkable\":2}": 35,
-          "{\"grey_holes\":1,\"hole_directions\":[\"upper-right\"],\"total\":3,\"walkable\":2}": 35,
-          "{\"grey_holes\":1,\"hole_directions\":[\"upper-left\"],\"total\":3,\"walkable\":2}": 30,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"lower-right\"],\"total\":6,\"walkable\":4}": 27,
-          "{\"grey_holes\":1,\"hole_directions\":[\"left\"],\"total\":3,\"walkable\":2}": 25,
-          "{\"grey_holes\":2,\"hole_directions\":[\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":4}": 25,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"lower-right\"],\"total\":6,\"walkable\":4}": 25,
-          "{\"grey_holes\":2,\"hole_directions\":[\"right\",\"lower-left\"],\"total\":6,\"walkable\":4}": 24,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"lower-right\"],\"total\":6,\"walkable\":4}": 23,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"right\"],\"total\":6,\"walkable\":4}": 22,
-          "{\"grey_holes\":2,\"hole_directions\":[\"right\",\"lower-right\"],\"total\":6,\"walkable\":4}": 21,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"left\"],\"total\":6,\"walkable\":4}": 19,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"lower-left\"],\"total\":6,\"walkable\":4}": 18,
-          "{\"grey_holes\":2,\"hole_directions\":[\"right\",\"lower-right\"],\"total\":4,\"walkable\":2}": 17,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"left\"],\"total\":6,\"walkable\":4}": 17,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"lower-left\"],\"total\":6,\"walkable\":4}": 17,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"right\"],\"total\":6,\"walkable\":4}": 16,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"upper-right\"],\"total\":6,\"walkable\":4}": 15,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"upper-right\"],\"total\":4,\"walkable\":2}": 14,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"lower-left\"],\"total\":4,\"walkable\":2}": 14,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"lower-left\"],\"total\":6,\"walkable\":4}": 14,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"right\"],\"total\":6,\"walkable\":4}": 14,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"lower-right\"],\"total\":4,\"walkable\":2}": 13,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"right\"],\"total\":4,\"walkable\":2}": 13,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"left\"],\"total\":4,\"walkable\":2}": 13,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"right\"],\"total\":4,\"walkable\":2}": 12,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"lower-right\"],\"total\":4,\"walkable\":2}": 10,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"lower-left\"],\"total\":4,\"walkable\":2}": 9,
-          "{\"grey_holes\":2,\"hole_directions\":[\"lower-left\",\"lower-right\"],\"total\":4,\"walkable\":2}": 8,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"lower-left\"],\"total\":4,\"walkable\":2}": 8,
-          "{\"grey_holes\":2,\"hole_directions\":[\"right\",\"lower-left\"],\"total\":4,\"walkable\":2}": 7,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"left\"],\"total\":4,\"walkable\":2}": 7,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"left\",\"right\"],\"total\":6,\"walkable\":3}": 7,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"right\",\"lower-left\"],\"total\":6,\"walkable\":3}": 7,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"left\",\"right\"],\"total\":6,\"walkable\":3}": 7,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":3}": 7,
-          "{\"grey_holes\":2,\"hole_directions\":[\"right\",\"lower-right\"],\"total\":3,\"walkable\":1}": 6,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"right\"],\"total\":4,\"walkable\":2}": 6,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"left\",\"lower-left\"],\"total\":6,\"walkable\":3}": 6,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"lower-left\"],\"total\":6,\"walkable\":3}": 6,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"lower-right\"],\"total\":4,\"walkable\":2}": 5,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":3}": 5,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"right\",\"lower-left\"],\"total\":6,\"walkable\":3}": 5,
-          "{\"grey_holes\":2,\"hole_directions\":[\"lower-left\",\"lower-right\"],\"total\":3,\"walkable\":1}": 4,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"left\"],\"total\":3,\"walkable\":1}": 4,
-          "{\"grey_holes\":3,\"hole_directions\":[\"left\",\"lower-left\",\"lower-right\"],\"total\":4,\"walkable\":1}": 4,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"right\"],\"total\":6,\"walkable\":3}": 4,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"left\",\"lower-right\"],\"total\":6,\"walkable\":3}": 4,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"lower-left\"],\"total\":3,\"walkable\":1}": 3,
-          "{\"grey_holes\":3,\"hole_directions\":[\"left\",\"right\",\"lower-left\"],\"total\":6,\"walkable\":3}": 3,
-          "{\"grey_holes\":3,\"hole_directions\":[\"right\",\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":3}": 3,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"left\",\"lower-right\"],\"total\":6,\"walkable\":3}": 3,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"left\",\"lower-left\"],\"total\":6,\"walkable\":3}": 3,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"right\",\"lower-right\"],\"total\":6,\"walkable\":3}": 3,
-          "{\"grey_holes\":2,\"hole_directions\":[\"right\",\"lower-left\"],\"total\":3,\"walkable\":1}": 2,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"right\"],\"total\":3,\"walkable\":1}": 2,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"lower-right\"],\"total\":3,\"walkable\":1}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"left\",\"right\",\"lower-right\"],\"total\":6,\"walkable\":3}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"right\",\"lower-right\"],\"total\":6,\"walkable\":3}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"left\"],\"total\":6,\"walkable\":3}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"lower-right\"],\"total\":6,\"walkable\":3}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"right\"],\"total\":4,\"walkable\":1}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"left\",\"right\"],\"total\":4,\"walkable\":1}": 2,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-right\",\"right\",\"lower-right\"],\"total\":4,\"walkable\":1}": 2,
-          "{\"grey_holes\":4,\"hole_directions\":[\"left\",\"right\",\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":2}": 2,
-          "{\"grey_holes\":4,\"hole_directions\":[\"upper-left\",\"upper-right\",\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":2}": 2,
-          "{\"grey_holes\":2,\"hole_directions\":[\"left\",\"lower-right\"],\"total\":3,\"walkable\":1}": 1,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"lower-left\"],\"total\":3,\"walkable\":1}": 1,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-left\",\"upper-right\"],\"total\":3,\"walkable\":1}": 1,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"left\"],\"total\":3,\"walkable\":1}": 1,
-          "{\"grey_holes\":2,\"hole_directions\":[\"upper-right\",\"right\"],\"total\":3,\"walkable\":1}": 1,
-          "{\"grey_holes\":3,\"hole_directions\":[\"left\",\"right\",\"lower-left\"],\"total\":4,\"walkable\":1}": 1,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"left\",\"lower-left\"],\"total\":4,\"walkable\":1}": 1,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"left\"],\"total\":4,\"walkable\":1}": 1,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"lower-left\"],\"total\":4,\"walkable\":1}": 1,
-          "{\"grey_holes\":3,\"hole_directions\":[\"upper-left\",\"upper-right\",\"lower-right\"],\"total\":4,\"walkable\":1}": 1,
-          "{\"grey_holes\":4,\"hole_directions\":[\"upper-left\",\"left\",\"right\",\"lower-right\"],\"total\":6,\"walkable\":2}": 1,
-          "{\"grey_holes\":4,\"hole_directions\":[\"upper-left\",\"upper-right\",\"left\",\"lower-left\"],\"total\":6,\"walkable\":2}": 1,
-          "{\"grey_holes\":4,\"hole_directions\":[\"upper-left\",\"upper-right\",\"right\",\"lower-right\"],\"total\":6,\"walkable\":2}": 1,
-          "{\"grey_holes\":4,\"hole_directions\":[\"upper-right\",\"left\",\"right\",\"lower-left\"],\"total\":6,\"walkable\":2}": 1,
-          "{\"grey_holes\":4,\"hole_directions\":[\"upper-right\",\"right\",\"lower-left\",\"lower-right\"],\"total\":6,\"walkable\":2}": 1
+        "hole_directions": {
+          "[]": 1257,
+          "[\"lower-left\"]": 213,
+          "[\"lower-right\"]": 205,
+          "[\"right\"]": 193,
+          "[\"upper-right\"]": 190,
+          "[\"left\"]": 183,
+          "[\"upper-left\"]": 173,
+          "[\"right\",\"lower-right\"]": 44,
+          "[\"left\",\"lower-right\"]": 41,
+          "[\"lower-left\",\"lower-right\"]": 37,
+          "[\"left\",\"right\"]": 35,
+          "[\"upper-left\",\"left\"]": 34,
+          "[\"right\",\"lower-left\"]": 33,
+          "[\"upper-left\",\"lower-right\"]": 33,
+          "[\"upper-right\",\"lower-right\"]": 32,
+          "[\"left\",\"lower-left\"]": 30,
+          "[\"upper-left\",\"upper-right\"]": 30,
+          "[\"upper-right\",\"lower-left\"]": 28,
+          "[\"upper-right\",\"left\"]": 27,
+          "[\"upper-right\",\"right\"]": 27,
+          "[\"upper-left\",\"lower-left\"]": 26,
+          "[\"upper-left\",\"right\"]": 24,
+          "[\"upper-right\",\"left\",\"right\"]": 9,
+          "[\"upper-left\",\"left\",\"lower-left\"]": 7,
+          "[\"upper-left\",\"left\",\"right\"]": 7,
+          "[\"upper-left\",\"right\",\"lower-left\"]": 7,
+          "[\"upper-left\",\"upper-right\",\"lower-left\"]": 7,
+          "[\"upper-right\",\"lower-left\",\"lower-right\"]": 7,
+          "[\"upper-left\",\"upper-right\",\"right\"]": 6,
+          "[\"upper-left\",\"lower-left\",\"lower-right\"]": 5,
+          "[\"upper-right\",\"right\",\"lower-left\"]": 5,
+          "[\"upper-right\",\"right\",\"lower-right\"]": 5,
+          "[\"left\",\"lower-left\",\"lower-right\"]": 4,
+          "[\"left\",\"right\",\"lower-left\"]": 4,
+          "[\"upper-right\",\"left\",\"lower-right\"]": 4,
+          "[\"right\",\"lower-left\",\"lower-right\"]": 3,
+          "[\"upper-left\",\"left\",\"lower-right\"]": 3,
+          "[\"upper-left\",\"upper-right\",\"left\"]": 3,
+          "[\"upper-left\",\"upper-right\",\"lower-right\"]": 3,
+          "[\"upper-right\",\"left\",\"lower-left\"]": 3,
+          "[\"left\",\"right\",\"lower-left\",\"lower-right\"]": 2,
+          "[\"left\",\"right\",\"lower-right\"]": 2,
+          "[\"upper-left\",\"right\",\"lower-right\"]": 2,
+          "[\"upper-left\",\"upper-right\",\"lower-left\",\"lower-right\"]": 2,
+          "[\"upper-left\",\"left\",\"right\",\"lower-right\"]": 1,
+          "[\"upper-left\",\"upper-right\",\"left\",\"lower-left\"]": 1,
+          "[\"upper-left\",\"upper-right\",\"right\",\"lower-right\"]": 1,
+          "[\"upper-right\",\"left\",\"right\",\"lower-left\"]": 1,
+          "[\"upper-right\",\"right\",\"lower-left\",\"lower-right\"]": 1
         }
       },
       "constant_answer_baselines": {
-        "boundary_status": 0.5353333333333333,
-        "neighbourhood": 0.18
+        "hole_directions": 0.419
       },
       "fields_at_or_above_60_percent": {},
       "independent_derivation": {
@@ -3829,31 +3486,8 @@
       },
       "deterministic_subfact_dependency_check": {
         "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-        "tested_relationships": [
-          {
-            "target": "boundary_status",
-            "predictors": [
-              "neighbourhood"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 98,
-            "repeat_coverage": 0.995,
-            "deterministic": true
-          },
-          {
-            "target": "neighbourhood",
-            "predictors": [
-              "boundary_status"
-            ],
-            "rows": 3000,
-            "distinct_predictor_tuples": 2,
-            "repeat_coverage": 1.0,
-            "deterministic": false
-          }
-        ],
-        "empirical_findings": [
-          "boundary_status is empirically determined by neighbourhood (99.5% repeat coverage)"
-        ],
+        "tested_relationships": [],
+        "empirical_findings": [],
         "violations": []
       },
       "assertions": {
@@ -3871,17 +3505,8 @@
         "total": 3000,
         "failures": [],
         "quantity_recovery_by_subfact": {
-          "boundary_status": {
-            "visual_signal": "presence or absence of all six rendered neighbours around HOME",
-            "checked_items": 3000,
-            "passed_items": 3000,
-            "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-            "supporting_closed_validator_metrics": [
-              "png_full_tile_class_recovery"
-            ]
-          },
-          "neighbourhood": {
-            "visual_signal": "the six rendered adjacent hex fills and their centre offsets",
+          "hole_directions": {
+            "visual_signal": "the positions of grey rendered hexes immediately touching HOME",
             "checked_items": 3000,
             "passed_items": 3000,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
@@ -4337,7 +3962,7 @@
             ]
           },
           "near_miss_mirror_count": {
-            "visual_signal": "mirror cells sharing an edge with the rendered straight laser path without lying on it",
+            "visual_signal": "mirror cells sharing an edge with a traversed path cell without lying on it",
             "checked_items": 750,
             "passed_items": 750,
             "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
@@ -8001,18 +7626,34 @@
   },
   "failures": [],
   "version_bumps": {
-    "rpm_dataset_3000": {
-      "before": "rpm-5.0.0",
-      "after": "rpm-6.0.0"
-    },
-    "orthographic_dataset_3000": {
-      "before": "orthographic-4.0.0",
-      "after": "orthographic-5.0.0"
-    },
     "compass_bearing_dataset_3000": {
-      "before": "compass-bearing-6.0.0",
-      "after": "compass-bearing-7.0.0"
+      "before": "compass-bearing-7.0.0",
+      "after": "compass-bearing-8.0.0"
+    },
+    "angle_estimation_dataset_3000": {
+      "before": "angle-estimation-8.0.0",
+      "after": "angle-estimation-9.0.0"
+    },
+    "depth_height_dataset_3000": {
+      "before": "depth-height-6.0.0",
+      "after": "depth-height-7.0.0"
+    },
+    "embedded_figures_dataset_3000": {
+      "before": "embedded-figures-4.0.0",
+      "after": "embedded-figures-5.0.0"
+    },
+    "fbd_dataset_3000": {
+      "before": "free-body-diagram-5.0.0",
+      "after": "free-body-diagram-6.0.0"
+    },
+    "fold_punch_dataset_3000": {
+      "before": "fold-punch-5.0.0",
+      "after": "fold-punch-6.0.0"
+    },
+    "hex_pathfinding_dataset_3000": {
+      "before": "hex-pathfinding-6.0.0",
+      "after": "hex-pathfinding-7.0.0"
     }
   },
-  "source_commit_before_release": "783e4b4d2c58288e602c14dc6984cf2b0c652963"
+  "source_commit_before_release": "bc6621403716278267e13342974c20c295ba563c"
 }

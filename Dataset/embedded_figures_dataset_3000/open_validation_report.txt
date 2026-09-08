@@ -4,8 +4,8 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: candidate, side_count
-Constant-answer baselines: {"candidate": 0.25, "side_count": 0.25}
+Sub-facts: candidate
+Constant-answer baselines: {"candidate": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0

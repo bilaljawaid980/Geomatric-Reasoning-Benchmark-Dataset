@@ -70,7 +70,7 @@ Version 7 uses the closest-pair question when its top-two distance margin is at 
 
 ### Supplementary open-ended questions
 
-Version `compass-bearing-7.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `2965` eligible items and excludes `35` under `{"closest_and_farthest_pair_margins_below_5_percent": 35}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+Version `compass-bearing-8.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
 - `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.

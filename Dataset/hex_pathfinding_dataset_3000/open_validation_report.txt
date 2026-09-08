@@ -4,8 +4,8 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: boundary_status, neighbourhood
-Constant-answer baselines: {"boundary_status": 0.5353333333333333, "neighbourhood": 0.18}
+Sub-facts: hole_directions
+Constant-answer baselines: {"hole_directions": 0.419}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0

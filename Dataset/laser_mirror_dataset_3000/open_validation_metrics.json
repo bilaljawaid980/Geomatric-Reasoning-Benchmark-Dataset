@@ -273,7 +273,7 @@
         ]
       },
       "near_miss_mirror_count": {
-        "visual_signal": "mirror cells sharing an edge with the rendered straight laser path without lying on it",
+        "visual_signal": "mirror cells sharing an edge with a traversed path cell without lying on it",
         "checked_items": 750,
         "passed_items": 750,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",

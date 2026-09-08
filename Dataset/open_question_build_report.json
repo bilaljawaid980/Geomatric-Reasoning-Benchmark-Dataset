@@ -4,8 +4,7 @@
     "excluded": 0,
     "exclusion_reasons": {},
     "subfacts": [
-      "boundary_status",
-      "neighbourhood"
+      "hole_directions"
     ]
   },
   "physical_stability_dataset_3000": {
@@ -30,7 +29,6 @@
     "exclusion_reasons": {},
     "subfacts": [
       "angle_degrees_nearest_10",
-      "angle_class",
       "larger_angle",
       "difference_degrees_nearest_10",
       "largest_angle_degrees_nearest_10"
@@ -62,9 +60,7 @@
     "exclusion_reasons": {},
     "subfacts": [
       "depth_ordering",
-      "nearest_colour",
-      "height_ordering_shortest_to_tallest",
-      "tallest_stack_colour"
+      "height_ordering_shortest_to_tallest"
     ]
   },
   "gear_train_dataset_3000": {
@@ -124,11 +120,9 @@
     ]
   },
   "compass_bearing_dataset_3000": {
-    "included": 2965,
-    "excluded": 35,
-    "exclusion_reasons": {
-      "closest_and_farthest_pair_margins_below_5_percent": 35
-    },
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
     "subfacts": [
       "closest_pair",
       "bearing_degrees_nearest_10",
@@ -151,6 +145,30 @@
     "subfacts": [
       "correct_choice",
       "attributes_changed_together"
+    ]
+  },
+  "embedded_figures_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "candidate"
+    ]
+  },
+  "fbd_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "drawn_magnitude_ranking"
+    ]
+  },
+  "fold_punch_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "correct_pattern"
     ]
   }
 }

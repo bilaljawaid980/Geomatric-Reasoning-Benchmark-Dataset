@@ -4,9 +4,9 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: arrow_count, weight_arrow, drawn_magnitude_ranking
-Constant-answer baselines: {"arrow_count": 0.375, "drawn_magnitude_ranking": 0.12233333333333334, "weight_arrow": 0.8333333333333334}
-Fields >=60%: {"weight_arrow": 0.8333333333333334}
+Sub-facts: drawn_magnitude_ranking
+Constant-answer baselines: {"drawn_magnitude_ranking": 0.12233333333333334}
+Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000

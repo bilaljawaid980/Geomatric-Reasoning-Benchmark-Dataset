@@ -1,14 +1,14 @@
 Open-question validation: compass_bearing_dataset_3000
 Status: PASS
 Source items: 3000
-Included: 2965
-Excluded: 35
-Exclusions: {"closest_and_farthest_pair_margins_below_5_percent": 35}
+Included: 3000
+Excluded: 0
+Exclusions: {}
 Sub-facts: closest_pair, bearing_degrees_nearest_10, farthest_pair
-Constant-answer baselines: {"bearing_degrees_nearest_10": 0.04924114671163575, "closest_pair": 0.26352594773647403, "farthest_pair": 0.2620967741935484}
+Constant-answer baselines: {"bearing_degrees_nearest_10": 0.048666666666666664, "closest_pair": 0.26352594773647403, "farthest_pair": 0.2620967741935484}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
-PNG recovery: 2965/2965
-Special checks: {"closest_and_farthest_margin_failures": 35, "closest_pair_margin_below_5_percent": 283, "closest_pair_relative_margin_distribution": {"count": 3000, "max": 3.7722197804285713, "min": 0.0, "p25": 0.13652185791820035, "p50": 0.3237242065416767, "p75": 0.6336956181392733, "p95": 1.5472192644480744}, "farthest_fallback_items": 248, "farthest_pair_relative_margin_distribution": {"count": 3000, "max": 0.9889234212658229, "min": 0.0, "p25": 0.09681689383531221, "p50": 0.224139278091003, "p75": 0.39601822670015246, "p95": 0.7059644500761902}, "old_sector_boundary_exclusions_recovered": 1882, "other_exclusion_reasons": 0}
+PNG recovery: 3000/3000
+Special checks: {"closest_pair_margin_below_5_percent": 283, "closest_pair_relative_margin_distribution": {"count": 3000, "max": 3.7722197804285713, "min": 0.0, "p25": 0.13652185791820035, "p50": 0.3237242065416767, "p75": 0.6336956181392733, "p95": 1.5472192644480744}, "farthest_fallback_items": 248, "farthest_pair_relative_margin_distribution": {"count": 3000, "max": 0.9889234212658229, "min": 0.0, "p25": 0.09681689383531221, "p50": 0.224139278091003, "p75": 0.39601822670015246, "p95": 0.7059644500761902}, "named_ab_distance_pixels_by_item": {"compass_bearing_0071": 314.1018943, "compass_bearing_0145": 220.04544985, "compass_bearing_0440": 231.29418497, "compass_bearing_0923": 111.80339887, "compass_bearing_1004": 274.85450697, "compass_bearing_1014": 184.4478246, "compass_bearing_1055": 284.52240685, "compass_bearing_1089": 98.59513173, "compass_bearing_1110": 202.37094653, "compass_bearing_1171": 235.05318547, "compass_bearing_1175": 263.41222447, "compass_bearing_1206": 161.83942659, "compass_bearing_1309": 269.75729833, "compass_bearing_1381": 201.06963968, "compass_bearing_1397": 116.10770862, "compass_bearing_1472": 315.54555931, "compass_bearing_1541": 201.6754819, "compass_bearing_1735": 196.70282154, "compass_bearing_1843": 158.85842754, "compass_bearing_1857": 196.43064934, "compass_bearing_1947": 118.70130581, "compass_bearing_1949": 215.74522011, "compass_bearing_2059": 198.09341231, "compass_bearing_2067": 143.95138068, "compass_bearing_2081": 142.29898102, "compass_bearing_2093": 290.63034941, "compass_bearing_2319": 186.2068742, "compass_bearing_2473": 119.28118041, "compass_bearing_2493": 279.54606061, "compass_bearing_2624": 292.24989307, "compass_bearing_2626": 171.67993476, "compass_bearing_2633": 242.6952822, "compass_bearing_2679": 203.0, "compass_bearing_2859": 351.1039732, "compass_bearing_2881": 91.23595782}, "named_ab_fallback_items": 35, "named_ab_labels_legible_manual_contact_sheet_review": 35, "named_ab_labels_present": 35, "named_ab_maximum_distance_pixels": 351.1039732, "named_ab_minimum_distance_pixels": 91.23595782, "old_sector_boundary_exclusions_recovered": 1882, "other_exclusion_reasons": 0, "pre_fix_closest_and_farthest_margin_failures": 35, "remaining_exclusions": 0}
 Issues: []

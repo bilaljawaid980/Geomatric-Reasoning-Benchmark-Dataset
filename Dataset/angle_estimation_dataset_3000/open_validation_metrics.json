@@ -5,10 +5,9 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it is acute, right, obtuse or reflex. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1.",
+  "template": "Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "angle_degrees_nearest_10",
-    "angle_class",
     "larger_angle",
     "difference_degrees_nearest_10",
     "largest_angle_degrees_nearest_10"
@@ -50,12 +49,6 @@
       "10": 20,
       "350": 13
     },
-    "angle_class": {
-      "reflex": 487,
-      "obtuse": 358,
-      "acute": 330,
-      "right": 25
-    },
     "larger_angle": {
       "Angle 2": 526,
       "Angle 1": 524
@@ -92,7 +85,6 @@
   },
   "constant_answer_baselines": {
     "angle_degrees_nearest_10": 0.049166666666666664,
-    "angle_class": 0.4058333333333333,
     "larger_angle": 0.5009523809523809,
     "difference_degrees_nearest_10": 0.12571428571428572,
     "largest_angle_degrees_nearest_10": 0.35733333333333334
@@ -105,26 +97,6 @@
   "deterministic_subfact_dependency_check": {
     "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
     "tested_relationships": [
-      {
-        "target": "angle_degrees_nearest_10",
-        "predictors": [
-          "angle_class"
-        ],
-        "rows": 1200,
-        "distinct_predictor_tuples": 4,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "angle_class",
-        "predictors": [
-          "angle_degrees_nearest_10"
-        ],
-        "rows": 1200,
-        "distinct_predictor_tuples": 34,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
       {
         "target": "larger_angle",
         "predictors": [
@@ -146,9 +118,7 @@
         "deterministic": false
       }
     ],
-    "empirical_findings": [
-      "angle_class is empirically determined by angle_degrees_nearest_10 (100.0% repeat coverage)"
-    ],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -168,13 +138,6 @@
     "quantity_recovery_by_subfact": {
       "angle_degrees_nearest_10": {
         "visual_signal": "the opening between the two rendered rays",
-        "checked_items": 1200,
-        "passed_items": 1200,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": []
-      },
-      "angle_class": {
-        "visual_signal": "the rendered ray opening relative to 90 and 180 degrees",
         "checked_items": 1200,
         "passed_items": 1200,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",

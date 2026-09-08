@@ -31,12 +31,13 @@
     "open_exclusions_are_explicitly_reported": true,
     "open_quantity_recovery_signals_documented_per_subfact": true,
     "open_hex_orientation": "pointy-top",
-    "open_axial_direction_vocabulary_verified": true
+    "open_axial_direction_vocabulary_verified": true,
+    "open_boundary_and_neighbour_counts_removed_as_determined_by_hole_neighbourhood": true
   },
   "constraint_source": "generator constants and open-question validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "hex-pathfinding-6.0.0",
-  "generator_commit": "3d93a01c0d716959cf26bd4d55d5b4a91f3c603e",
+  "dataset_version": "hex-pathfinding-7.0.0",
+  "generator_commit": "bc6621403716278267e13342974c20c295ba563c",
   "images": 3000,
   "open_question_files": [
     "open_questions.csv",

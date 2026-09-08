@@ -4,8 +4,8 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: unfolded_hole_count, correct_pattern
-Constant-answer baselines: {"correct_pattern": 0.25, "unfolded_hole_count": 0.5}
+Sub-facts: correct_pattern
+Constant-answer baselines: {"correct_pattern": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0

@@ -4,21 +4,21 @@
 
 | Dataset | Version | Source | Included | Excluded | Exclusion reason(s) | Highest baseline | Result |
 |---|---|---:|---:|---:|---|---:|---|
-| `angle_estimation_dataset_3000` | `angle-estimation-8.0.0` | 3,000 | 3,000 | 0 | none | 0.501 | PASS |
+| `angle_estimation_dataset_3000` | `angle-estimation-9.0.0` | 3,000 | 3,000 | 0 | none | 0.501 | PASS |
 | `clock_reading_dataset_3000` | `clock-reading-5.0.0` | 3,000 | 3,000 | 0 | none | 0.004 | PASS |
 | `combination3d_dataset_3000` | `combination3d-5.0.0` | 3,000 | 3,000 | 0 | none | 0.353 | PASS |
 | `combination_dataset_3000` | `combination-4.0.0` | 3,000 | 3,000 | 0 | none | 0.351 | PASS |
-| `compass_bearing_dataset_3000` | `compass-bearing-7.0.0` | 3,000 | 2,965 | 35 | closest_and_farthest_pair_margins_below_5_percent: 35 | 0.264 | PASS |
+| `compass_bearing_dataset_3000` | `compass-bearing-8.0.0` | 3,000 | 3,000 | 0 | none | 0.264 | PASS |
 | `coordinate_geometry_dataset_3000` | `coordinate-geometry-7.0.0` | 3,000 | 3,000 | 0 | none | 0.531 | PASS |
 | `cube_net_dataset_3000` | `cube-net-5.0.0` | 3,000 | 3,000 | 0 | none | 0.178 | PASS |
 | `cube_structure_dataset_3000` | `cube-structure-6.0.0` | 3,000 | 3,000 | 0 | none | 0.333 | PASS |
-| `depth_height_dataset_3000` | `depth-height-6.0.0` | 3,000 | 3,000 | 0 | none | 0.213 | PASS |
-| `embedded_figures_dataset_3000` | `embedded-figures-4.0.0` | 3,000 | 3,000 | 0 | none | 0.250 | PASS |
-| `fbd_dataset_3000` | `free-body-diagram-5.0.0` | 3,000 | 3,000 | 0 | none | 0.833 | PASS |
-| `fold_punch_dataset_3000` | `fold-punch-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
+| `depth_height_dataset_3000` | `depth-height-7.0.0` | 3,000 | 3,000 | 0 | none | 0.023 | PASS |
+| `embedded_figures_dataset_3000` | `embedded-figures-5.0.0` | 3,000 | 3,000 | 0 | none | 0.250 | PASS |
+| `fbd_dataset_3000` | `free-body-diagram-6.0.0` | 3,000 | 3,000 | 0 | none | 0.122 | PASS |
+| `fold_punch_dataset_3000` | `fold-punch-6.0.0` | 3,000 | 3,000 | 0 | none | 0.250 | PASS |
 | `gauge_reading_dataset_3000` | `gauge-reading-4.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
 | `gear_train_dataset_3000` | `gear-train-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
-| `hex_pathfinding_dataset_3000` | `hex-pathfinding-6.0.0` | 3,000 | 3,000 | 0 | none | 0.535 | PASS |
+| `hex_pathfinding_dataset_3000` | `hex-pathfinding-7.0.0` | 3,000 | 3,000 | 0 | none | 0.419 | PASS |
 | `impossible_object_dataset_3000` | `impossible-object-7.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
 | `laser_mirror_dataset_3000` | `laser-mirror-5.0.0` | 3,000 | 3,000 | 0 | none | 0.697 | PASS |
 | `line_intersection_dataset_3000` | `line-intersection-7.0.0` | 3,000 | 3,000 | 0 | none | 0.503 | PASS |
@@ -43,7 +43,7 @@
 
 - **Clock reading:** the former smaller-hand-angle sub-fact was deterministically recoverable from the exact-time sub-fact in all 3,000 items. This was reported before modification; the recommended fix was applied by retaining exact time and removing the redundant angle from the open question.
 - **Surface topology:** the former Euler-characteristic sub-fact was deterministically fixed by genus and orientability in all 3,000 closed-surface items. This was reported before modification; the recommended fix was applied by retaining genus and orientability and removing the redundant Euler value from the open question.
-- **Compass bearing ambiguity:** 283 of 3,000 scenes have a closest-versus-second-closest distance gap below 5%. The farthest-pair fallback recovers 248; 35 remain excluded because both extrema fail the 5% visual-separation guard.
+- **Compass bearing ambiguity:** 283 of 3,000 scenes have a closest-versus-second-closest distance gap below 5%. The farthest-pair fallback recovers 248; the explicitly named A-to-B variant recovers the final 35 after render review confirmed legible labels and readable separation.
 - **RPM option identity:** all 3,000 records admitted multiple answers under the matrix-derived semantic attributes. The pre-fix satisfying-option distribution was 2 options: 844, 3 options: 1,916, and 4 options: 240; `rpm_0151` admitted choices 1, 4, and 7. Rotation distinguished options in all 3,000 and size/shape spacing did so in 2,156, although neither was always taught; stroke width never discriminated. Equal circumradius also made triangles appear smaller than circles.
 - **Orthographic convention:** all 3,000 stored projections consistently used top `(x,y)`, front `(x,z)`, and side `(y,z)`, with each first coordinate increasing left-to-right and z increasing bottom-to-top. The side panel did not print that direction, so a viewer could reasonably mirror it. Before the label repair, gravity support changed the computed minimum in 1,883 records and made no difference in 1,117; `orthographic_0223` required 11 cubes with gravity versus 10 without it.
 
@@ -51,7 +51,47 @@
 
 - **RPM:** all 3,000 images were regenerated. Options satisfying the independently derived rule set: `{"1": 3000}`; multi-valid items: 0. Undeclared option attributes are frozen: `{}`. Shape areas are normalised, spacing depends only on size/count, and stroke width is fixed.
 - **Orthographic:** axes are printed as `{"front": "+x right; +z up", "side": "+y right; +z up", "top": "+x right; +y up"}`. The side projection agrees with the +y-right convention in 3000/3,000 records. Gravity-supported minus unconstrained minimum counts: `{"0": 1117, "1": 1044, "2": 677, "3": 156, "4": 6}`; gravity changes 1883 items and changes nothing in 1117. Item 0223 is 11 with gravity versus 10 without it.
-- **Compass:** the guarded farthest-pair fallback recovered 248 closest-pair near-ties; 35 remain excluded.
+- **Compass:** the guarded farthest-pair fallback recovered 248 closest-pair near-ties. The named A-to-B variant recovered the final 35; labels A and B were present and manually confirmed legible in 35/35 renders. Their separation ranged from 91.236 to 351.104 pixels. Remaining exclusions: 0.
+
+### Named A-to-B fallback render audit
+
+| Item | A-to-B distance (px) | A and B present | Labels legible | Bearing readable |
+|---|---:|---|---|---|
+| `compass_bearing_0071` | 314.102 | yes | yes | yes |
+| `compass_bearing_0145` | 220.045 | yes | yes | yes |
+| `compass_bearing_0440` | 231.294 | yes | yes | yes |
+| `compass_bearing_0923` | 111.803 | yes | yes | yes |
+| `compass_bearing_1004` | 274.855 | yes | yes | yes |
+| `compass_bearing_1014` | 184.448 | yes | yes | yes |
+| `compass_bearing_1055` | 284.522 | yes | yes | yes |
+| `compass_bearing_1089` | 98.595 | yes | yes | yes |
+| `compass_bearing_1110` | 202.371 | yes | yes | yes |
+| `compass_bearing_1171` | 235.053 | yes | yes | yes |
+| `compass_bearing_1175` | 263.412 | yes | yes | yes |
+| `compass_bearing_1206` | 161.839 | yes | yes | yes |
+| `compass_bearing_1309` | 269.757 | yes | yes | yes |
+| `compass_bearing_1381` | 201.070 | yes | yes | yes |
+| `compass_bearing_1397` | 116.108 | yes | yes | yes |
+| `compass_bearing_1472` | 315.546 | yes | yes | yes |
+| `compass_bearing_1541` | 201.675 | yes | yes | yes |
+| `compass_bearing_1735` | 196.703 | yes | yes | yes |
+| `compass_bearing_1843` | 158.858 | yes | yes | yes |
+| `compass_bearing_1857` | 196.431 | yes | yes | yes |
+| `compass_bearing_1947` | 118.701 | yes | yes | yes |
+| `compass_bearing_1949` | 215.745 | yes | yes | yes |
+| `compass_bearing_2059` | 198.093 | yes | yes | yes |
+| `compass_bearing_2067` | 143.951 | yes | yes | yes |
+| `compass_bearing_2081` | 142.299 | yes | yes | yes |
+| `compass_bearing_2093` | 290.630 | yes | yes | yes |
+| `compass_bearing_2319` | 186.207 | yes | yes | yes |
+| `compass_bearing_2473` | 119.281 | yes | yes | yes |
+| `compass_bearing_2493` | 279.546 | yes | yes | yes |
+| `compass_bearing_2624` | 292.250 | yes | yes | yes |
+| `compass_bearing_2626` | 171.680 | yes | yes | yes |
+| `compass_bearing_2633` | 242.695 | yes | yes | yes |
+| `compass_bearing_2679` | 203.000 | yes | yes | yes |
+| `compass_bearing_2859` | 351.104 | yes | yes | yes |
+| `compass_bearing_2881` | 91.236 | yes | yes | yes |
 
 ## Six manual-review findings
 
@@ -70,28 +110,26 @@ All 750 zero-reflection scenes now use the straight-path prompt. Near-miss distr
 
 | Dataset | Sub-fact | Baseline | Disposition |
 |---|---|---:|---|
-| `fbd_dataset_3000` | `weight_arrow` | 0.833 | Inherent label convention: the rendered weight arrow is normally labelled W; retained and reported. |
 | `laser_mirror_dataset_3000` | `reflection_count` | 0.697 | Inherent among the nonzero-reflection trace variant; zero-reflection scenes now use a separate varying prompt. |
 | `polyhedron_dataset_3000` | `convexity` | 0.895 | Inherent to the generated solid inventory after geometry-identity repair; retained and reported. |
 | `surface_topology_dataset_3000` | `orientability` | 0.750 | Inherent to the generated surface inventory; retained and reported. |
 
+## Previous empirical-redundancy findings: classification and treatment
+
+| Dataset | Classification | Construction reason | Treatment |
+|---|---|---|---|
+| `angle_estimation_dataset_3000` | Deterministic | The single-angle boundary guard makes class uniquely recoverable from the rounded size. | Removed `angle_class`; retained the rounded size. |
+| `depth_height_dataset_3000` | Deterministic | Nearest is the first depth-order entry and tallest is the final height-order entry. | Removed both extrema; retained each complete ordering. |
+| `embedded_figures_dataset_3000` | Deterministic | Side count and correct candidate letter share the same modulo-4 item schedule. | Removed side count; retained candidate identity. |
+| `fbd_dataset_3000` | Deterministic | The magnitude ranking enumerates every arrow label, revealing arrow count and the conventional weight label. | Removed arrow count and weight label; retained ranking. |
+| `fold_punch_dataset_3000` | Deterministic | Fold parity and candidate letter share the item-index schedule. | Removed hole count; retained correct pattern. |
+| `hex_pathfinding_dataset_3000` | Deterministic | Boundary and neighbour counts are functions of the same six-cell neighbourhood. | Removed boundary/count fields; retained hole directions. |
+
 ## Shared deterministic-dependency audit
 
-Method: for each target sub-fact, the validator tests every one-to-three-field subset of the other populated sub-facts. It flags a mapping when repeated predictor tuples cover at least 80% of eligible rows and every tuple maps to exactly one target value. Explicit prohibited semantic identities are validation failures; empirical findings outside this pass remain visible below.
+Method: for each target sub-fact, the validator tests every one-to-three-field subset of the other populated sub-facts. It flags a mapping when repeated predictor tuples cover at least 80% of eligible rows and every tuple maps to exactly one target value. Explicit prohibited semantic identities are validation failures.
 
-| Dataset | Finding |
-|---|---|
-| `angle_estimation_dataset_3000` | angle_class is empirically determined by angle_degrees_nearest_10 (100.0% repeat coverage) |
-| `depth_height_dataset_3000` | nearest_colour is empirically determined by depth_ordering (99.5% repeat coverage) |
-| `depth_height_dataset_3000` | tallest_stack_colour is empirically determined by height_ordering_shortest_to_tallest (99.6% repeat coverage) |
-| `embedded_figures_dataset_3000` | candidate is empirically determined by side_count (100.0% repeat coverage) |
-| `embedded_figures_dataset_3000` | side_count is empirically determined by candidate (100.0% repeat coverage) |
-| `fbd_dataset_3000` | arrow_count is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage) |
-| `fbd_dataset_3000` | arrow_count is empirically determined by weight_arrow, drawn_magnitude_ranking (100.0% repeat coverage) |
-| `fbd_dataset_3000` | weight_arrow is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage) |
-| `fbd_dataset_3000` | weight_arrow is empirically determined by arrow_count, drawn_magnitude_ranking (100.0% repeat coverage) |
-| `fold_punch_dataset_3000` | unfolded_hole_count is empirically determined by correct_pattern (100.0% repeat coverage) |
-| `hex_pathfinding_dataset_3000` | boundary_status is empirically determined by neighbourhood (99.5% repeat coverage) |
+No empirical deterministic relationships were flagged.
 
 ## Twelve-domain manual render review
 
@@ -209,7 +247,7 @@ Method: for each target sub-fact, the validator tests every one-to-three-field s
 
 **Derivable redundancy:** Closest-pair identity does not determine its bearing; the same pair labels occur with varying bearings.
 
-**Nearest-alternative margin:** Closest-pair near-ties use the guarded farthest-pair fallback; only records ambiguous under both extrema are excluded.
+**Nearest-alternative margin:** Closest-pair near-ties use the guarded farthest-pair fallback; dual-margin failures use the explicitly named A-to-B pair.
 
 **Answer distributions and baselines:**
 
@@ -464,7 +502,7 @@ Method: for each target sub-fact, the validator tests every one-to-three-field s
 
 - Independent ground-truth mismatches: 0.
 - Deterministic sub-fact dependency violations: 0.
-- Quantity-aware PNG recovery: 99,965/99,965 included images. Every per-domain metrics file states the image signal used for every sub-fact.
+- Quantity-aware PNG recovery: 100,000/100,000 included images. Every per-domain metrics file states the image signal used for every sub-fact.
 - Exact prompt wording, three-column public schema, answer-leak checks, numeric tolerances, and one-to-one resolution: PASS in all 34 domains.
-- Combined open files: 99,965 questions and 99,965 answers; 99,965 image paths resolve.
+- Combined open files: 100,000 questions and 100,000 answers; 100,000 image paths resolve.
 - Full answer distributions and constant-answer baselines are retained in each `open_validation_metrics.json` and the consolidated JSON report.

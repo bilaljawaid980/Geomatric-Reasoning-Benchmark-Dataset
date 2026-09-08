@@ -64,14 +64,17 @@ def main():
             "open_png_recoverability_all_items":True,
             "open_quantity_recovery_signals_documented_per_subfact":True,
         })
-        if name=="angle_estimation_dataset_3000":constraints["open_triangle_vertex_label_subfact_removed_for_fixed_order_bias"]=True
+        if name=="angle_estimation_dataset_3000":constraints.update({"open_triangle_vertex_label_subfact_removed_for_fixed_order_bias":True,"open_single_angle_class_removed_as_determined_by_rounded_size":True})
         elif name=="clock_reading_dataset_3000":constraints["open_time_derived_angle_subfact_removed"]=True
-        elif name=="compass_bearing_dataset_3000":constraints.update({"open_bearing_numeric_tolerance_degrees":10,"open_closest_pair_minimum_relative_margin":0.05,"open_farthest_pair_fallback_minimum_relative_margin":0.05,"open_sector_boundary_exclusion_removed":True})
+        elif name=="compass_bearing_dataset_3000":constraints.update({"open_bearing_numeric_tolerance_degrees":10,"open_closest_pair_minimum_relative_margin":0.05,"open_farthest_pair_fallback_minimum_relative_margin":0.05,"open_named_ab_fallback_for_dual_margin_failures":True,"open_sector_boundary_exclusion_removed":True})
         elif name=="coordinate_geometry_dataset_3000":constraints.update({"open_distance_relation_threshold_units":12,"open_farthest_pair_minimum_separation_units":1,"open_farthest_guard_fallback":"report all labelled point coordinates"})
         elif name=="cube_structure_dataset_3000":constraints.update({"open_visible_top_face_count_replaces_unrecoverable_base_layer_count":True,"open_cube_manual_visual_audit_items":20})
-        elif name=="depth_height_dataset_3000":constraints["open_stack_height_variant_covers_all_stack_scenes"]=True
+        elif name=="depth_height_dataset_3000":constraints.update({"open_stack_height_variant_covers_all_stack_scenes":True,"open_order_extrema_subfacts_removed_as_deterministic":True})
+        elif name=="embedded_figures_dataset_3000":constraints["open_side_count_removed_as_determined_by_candidate_schedule"]=True
+        elif name=="fbd_dataset_3000":constraints["open_arrow_count_and_weight_label_removed_as_determined_by_ranking"]=True
+        elif name=="fold_punch_dataset_3000":constraints["open_hole_count_removed_as_determined_by_candidate_schedule"]=True
         elif name=="gear_train_dataset_3000":constraints["open_direction_target_relation_balanced"]=True
-        elif name=="hex_pathfinding_dataset_3000":constraints.update({"open_hex_orientation":"pointy-top","open_axial_direction_vocabulary_verified":True})
+        elif name=="hex_pathfinding_dataset_3000":constraints.update({"open_hex_orientation":"pointy-top","open_axial_direction_vocabulary_verified":True,"open_boundary_and_neighbour_counts_removed_as_determined_by_hole_neighbourhood":True})
         elif name=="laser_mirror_dataset_3000":constraints.update({"open_zero_reflection_variant":True,"open_near_miss_definition":"mirror cell shares an edge with a traversed path cell without lying on the path"})
         elif name=="line_intersection_dataset_3000":constraints.update({"open_endpoint_parity_redundancy_removed":True,"open_independent_left_edge_colour_subfact":True})
         elif name=="overlap_circles_dataset_3000":constraints["open_isolated_circle_subfact_removed_for_sampling_bias"]=True

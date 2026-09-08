@@ -4,8 +4,8 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: depth_ordering, nearest_colour, height_ordering_shortest_to_tallest, tallest_stack_colour
-Constant-answer baselines: {"depth_ordering": 0.02266666666666667, "height_ordering_shortest_to_tallest": 0.022, "nearest_colour": 0.20866666666666667, "tallest_stack_colour": 0.21333333333333335}
+Sub-facts: depth_ordering, height_ordering_shortest_to_tallest
+Constant-answer baselines: {"depth_ordering": 0.02266666666666667, "height_ordering_shortest_to_tallest": 0.022}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0

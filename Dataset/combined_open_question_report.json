@@ -2,7 +2,7 @@
   "status": "PASS",
   "datasets": {
     "angle_estimation_dataset_3000": {
-      "dataset_version": "angle-estimation-8.0.0",
+      "dataset_version": "angle-estimation-9.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -26,10 +26,10 @@
       "open_answers": 3000
     },
     "compass_bearing_dataset_3000": {
-      "dataset_version": "compass-bearing-7.0.0",
-      "images": 2965,
-      "open_questions": 2965,
-      "open_answers": 2965
+      "dataset_version": "compass-bearing-8.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
     },
     "coordinate_geometry_dataset_3000": {
       "dataset_version": "coordinate-geometry-7.0.0",
@@ -50,25 +50,25 @@
       "open_answers": 3000
     },
     "depth_height_dataset_3000": {
-      "dataset_version": "depth-height-6.0.0",
+      "dataset_version": "depth-height-7.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "embedded_figures_dataset_3000": {
-      "dataset_version": "embedded-figures-4.0.0",
+      "dataset_version": "embedded-figures-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "fbd_dataset_3000": {
-      "dataset_version": "free-body-diagram-5.0.0",
+      "dataset_version": "free-body-diagram-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "fold_punch_dataset_3000": {
-      "dataset_version": "fold-punch-5.0.0",
+      "dataset_version": "fold-punch-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -86,7 +86,7 @@
       "open_answers": 3000
     },
     "hex_pathfinding_dataset_3000": {
-      "dataset_version": "hex-pathfinding-6.0.0",
+      "dataset_version": "hex-pathfinding-7.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -206,10 +206,10 @@
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 99965,
-  "combined_open_answers": 99965,
-  "unique_question_ids": 99965,
-  "resolved_image_paths": 99965,
+  "combined_open_questions": 100000,
+  "combined_open_answers": 100000,
+  "unique_question_ids": 100000,
+  "resolved_image_paths": 100000,
   "public_columns": [
     "dataset",
     "dataset_version",
@@ -229,7 +229,6 @@
     "tolerances",
     "targets",
     "angle_degrees_nearest_10",
-    "angle_class",
     "larger_angle",
     "difference_degrees_nearest_10",
     "largest_angle_degrees_nearest_10",
@@ -248,23 +247,16 @@
     "visible_top_face_count",
     "hidden_cube_count",
     "depth_ordering",
-    "nearest_colour",
     "height_ordering_shortest_to_tallest",
-    "tallest_stack_colour",
     "candidate",
-    "side_count",
-    "arrow_count",
-    "weight_arrow",
     "drawn_magnitude_ranking",
-    "unfolded_hole_count",
     "correct_pattern",
     "rounded_tick_value",
     "range_half",
     "fastest_gear",
     "direction_target",
     "target_direction_relation",
-    "boundary_status",
-    "neighbourhood",
+    "hole_directions",
     "crossing_count",
     "constructible",
     "reflection_count",

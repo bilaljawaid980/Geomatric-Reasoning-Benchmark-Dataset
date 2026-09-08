@@ -5,10 +5,9 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Study the complex figure and each of the candidate shapes beneath it: decide which candidate is hidden inside the figure, and say how many sides that shape has. State your conclusion, justify it by describing where in the figure you located the shape and which lines belong to it rather than to the surrounding clutter, and end with a confidence score from 0 to 1.",
+  "template": "Study the complex figure and each of the candidate shapes beneath it: decide which candidate is hidden inside the figure. State your conclusion, justify it by describing where in the figure you located the shape and which lines belong to it rather than to the surrounding clutter, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "candidate",
-    "side_count"
+    "candidate"
   ],
   "answer_distributions": {
     "candidate": {
@@ -16,17 +15,10 @@
       "B": 750,
       "C": 750,
       "D": 750
-    },
-    "side_count": {
-      "3": 750,
-      "4": 750,
-      "5": 750,
-      "6": 750
     }
   },
   "constant_answer_baselines": {
-    "candidate": 0.25,
-    "side_count": 0.25
+    "candidate": 0.25
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
@@ -35,32 +27,8 @@
   },
   "deterministic_subfact_dependency_check": {
     "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-    "tested_relationships": [
-      {
-        "target": "candidate",
-        "predictors": [
-          "side_count"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 4,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
-      {
-        "target": "side_count",
-        "predictors": [
-          "candidate"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 4,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      }
-    ],
-    "empirical_findings": [
-      "candidate is empirically determined by side_count (100.0% repeat coverage)",
-      "side_count is empirically determined by candidate (100.0% repeat coverage)"
-    ],
+    "tested_relationships": [],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -80,15 +48,6 @@
     "quantity_recovery_by_subfact": {
       "candidate": {
         "visual_signal": "the candidate polygon whose edges occur in the complex figure",
-        "checked_items": 3000,
-        "passed_items": 3000,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_asset_presence"
-        ]
-      },
-      "side_count": {
-        "visual_signal": "the rendered boundary-edge count of the matched candidate",
         "checked_items": 3000,
         "passed_items": 3000,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",

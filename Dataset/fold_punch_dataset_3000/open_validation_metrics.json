@@ -5,16 +5,11 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Follow the fold sequence from the first panel through to the punch: work out how many holes will appear once the paper is fully unfolded, and decide which of the unfolded patterns below shows them in the right places. State your conclusion, justify it by describing how each fold doubles the holes and where the mirror lines fall, and end with a confidence score from 0 to 1.",
+  "template": "Follow the fold sequence from the first panel through to the punch: decide which of the unfolded patterns below shows the holes in the right places. State your conclusion, justify it by describing how you reflected the punch across each fold line, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "unfolded_hole_count",
     "correct_pattern"
   ],
   "answer_distributions": {
-    "unfolded_hole_count": {
-      "4": 1500,
-      "8": 1500
-    },
     "correct_pattern": {
       "A": 750,
       "B": 750,
@@ -23,7 +18,6 @@
     }
   },
   "constant_answer_baselines": {
-    "unfolded_hole_count": 0.5,
     "correct_pattern": 0.25
   },
   "fields_at_or_above_60_percent": {},
@@ -33,31 +27,8 @@
   },
   "deterministic_subfact_dependency_check": {
     "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-    "tested_relationships": [
-      {
-        "target": "unfolded_hole_count",
-        "predictors": [
-          "correct_pattern"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 4,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
-      {
-        "target": "correct_pattern",
-        "predictors": [
-          "unfolded_hole_count"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 2,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      }
-    ],
-    "empirical_findings": [
-      "unfolded_hole_count is empirically determined by correct_pattern (100.0% repeat coverage)"
-    ],
+    "tested_relationships": [],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -75,15 +46,6 @@
     "total": 3000,
     "failures": [],
     "quantity_recovery_by_subfact": {
-      "unfolded_hole_count": {
-        "visual_signal": "fold panels, mirror lines, and the rendered punch",
-        "checked_items": 3000,
-        "passed_items": 3000,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_asset_presence"
-        ]
-      },
       "correct_pattern": {
         "visual_signal": "the candidate panel matching reflected punch positions",
         "checked_items": 3000,

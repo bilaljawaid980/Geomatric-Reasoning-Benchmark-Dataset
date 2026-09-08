@@ -5,12 +5,10 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Compare the objects in the scene using the cues that indicate distance from the camera: rank every object from closest to farthest by colour, and name which one lies nearest. State your conclusion, justify it by describing the cues you used to order them, and end with a confidence score from 0 to 1.",
+  "template": "Compare the objects in the scene using the cues that indicate distance from the camera: rank every object from closest to farthest by colour. State your conclusion, justify it by describing the cues you used to order them, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "depth_ordering",
-    "nearest_colour",
-    "height_ordering_shortest_to_tallest",
-    "tallest_stack_colour"
+    "height_ordering_shortest_to_tallest"
   ],
   "answer_distributions": {
     "depth_ordering": {
@@ -215,13 +213,6 @@
       "[\"teal\",\"magenta\",\"blue\",\"orange\"]": 1,
       "[\"teal\",\"orange\",\"purple\",\"magenta\"]": 1
     },
-    "nearest_colour": {
-      "blue": 313,
-      "orange": 311,
-      "magenta": 307,
-      "teal": 290,
-      "purple": 279
-    },
     "height_ordering_shortest_to_tallest": {
       "[\"magenta\",\"orange\"]": 33,
       "[\"orange\",\"magenta\"]": 31,
@@ -421,20 +412,11 @@
       "[\"purple\",\"orange\",\"teal\",\"magenta\"]": 1,
       "[\"teal\",\"blue\",\"orange\",\"magenta\"]": 1,
       "[\"teal\",\"blue\",\"orange\",\"purple\"]": 1
-    },
-    "tallest_stack_colour": {
-      "orange": 320,
-      "teal": 305,
-      "blue": 293,
-      "magenta": 292,
-      "purple": 290
     }
   },
   "constant_answer_baselines": {
     "depth_ordering": 0.02266666666666667,
-    "nearest_colour": 0.20866666666666667,
-    "height_ordering_shortest_to_tallest": 0.022,
-    "tallest_stack_colour": 0.21333333333333335
+    "height_ordering_shortest_to_tallest": 0.022
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
@@ -443,52 +425,8 @@
   },
   "deterministic_subfact_dependency_check": {
     "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-    "tested_relationships": [
-      {
-        "target": "depth_ordering",
-        "predictors": [
-          "nearest_colour"
-        ],
-        "rows": 1500,
-        "distinct_predictor_tuples": 5,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "nearest_colour",
-        "predictors": [
-          "depth_ordering"
-        ],
-        "rows": 1500,
-        "distinct_predictor_tuples": 200,
-        "repeat_coverage": 0.9946666666666667,
-        "deterministic": true
-      },
-      {
-        "target": "height_ordering_shortest_to_tallest",
-        "predictors": [
-          "tallest_stack_colour"
-        ],
-        "rows": 1500,
-        "distinct_predictor_tuples": 5,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "tallest_stack_colour",
-        "predictors": [
-          "height_ordering_shortest_to_tallest"
-        ],
-        "rows": 1500,
-        "distinct_predictor_tuples": 198,
-        "repeat_coverage": 0.996,
-        "deterministic": true
-      }
-    ],
-    "empirical_findings": [
-      "nearest_colour is empirically determined by depth_ordering (99.5% repeat coverage)",
-      "tallest_stack_colour is empirically determined by height_ordering_shortest_to_tallest (99.6% repeat coverage)"
-    ],
+    "tested_relationships": [],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -515,26 +453,8 @@
           "png_asset_presence"
         ]
       },
-      "nearest_colour": {
-        "visual_signal": "the nearest object's rendered perspective cues",
-        "checked_items": 1500,
-        "passed_items": 1500,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_asset_presence"
-        ]
-      },
       "height_ordering_shortest_to_tallest": {
         "visual_signal": "visible block counts above the common baseline",
-        "checked_items": 1500,
-        "passed_items": 1500,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_asset_presence"
-        ]
-      },
-      "tallest_stack_colour": {
-        "visual_signal": "the stack with the greatest visible block count",
         "checked_items": 1500,
         "passed_items": 1500,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",

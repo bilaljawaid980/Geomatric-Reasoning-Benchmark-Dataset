@@ -5,23 +5,11 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Examine only the force arrows as they are drawn in this diagram, setting aside what the scenario physically requires: count the arrows, name which one represents the weight of the body, and rank their drawn magnitudes from largest to smallest, grouping any that appear equal. State your conclusion, justify it by describing the length and direction of each arrow as drawn, and end with a confidence score from 0 to 1.",
+  "template": "Examine only the force arrows as they are drawn in this diagram, setting aside what the scenario physically requires: rank their drawn magnitudes from largest to smallest, grouping any that appear equal. State your conclusion, justify it by describing the length and direction of each arrow as drawn, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "arrow_count",
-    "weight_arrow",
     "drawn_magnitude_ranking"
   ],
   "answer_distributions": {
-    "arrow_count": {
-      "4": 1125,
-      "2": 875,
-      "3": 750,
-      "1": 250
-    },
-    "weight_arrow": {
-      "W": 2500,
-      "W1": 500
-    },
     "drawn_magnitude_ranking": {
       "[[\"W\"],[\"N\"],[\"F\"],[\"A\"]]": 367,
       "[[\"N\",\"W\"]]": 250,
@@ -46,120 +34,17 @@
     }
   },
   "constant_answer_baselines": {
-    "arrow_count": 0.375,
-    "weight_arrow": 0.8333333333333334,
     "drawn_magnitude_ranking": 0.12233333333333334
   },
-  "fields_at_or_above_60_percent": {
-    "weight_arrow": 0.8333333333333334
-  },
+  "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "deterministic_subfact_dependency_check": {
     "method": "For every target sub-fact, test every 1-to-3-field subset of the other populated sub-facts. A relation is flagged when every repeated predictor tuple maps to one target and repeated tuples cover at least 80% of eligible rows. Explicit prohibited semantic identities remain validation failures.",
-    "tested_relationships": [
-      {
-        "target": "arrow_count",
-        "predictors": [
-          "weight_arrow"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 2,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "arrow_count",
-        "predictors": [
-          "drawn_magnitude_ranking"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 20,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
-      {
-        "target": "arrow_count",
-        "predictors": [
-          "weight_arrow",
-          "drawn_magnitude_ranking"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 20,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
-      {
-        "target": "weight_arrow",
-        "predictors": [
-          "arrow_count"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 4,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "weight_arrow",
-        "predictors": [
-          "drawn_magnitude_ranking"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 20,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
-      {
-        "target": "weight_arrow",
-        "predictors": [
-          "arrow_count",
-          "drawn_magnitude_ranking"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 20,
-        "repeat_coverage": 1.0,
-        "deterministic": true
-      },
-      {
-        "target": "drawn_magnitude_ranking",
-        "predictors": [
-          "arrow_count"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 4,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "drawn_magnitude_ranking",
-        "predictors": [
-          "weight_arrow"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 2,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      },
-      {
-        "target": "drawn_magnitude_ranking",
-        "predictors": [
-          "arrow_count",
-          "weight_arrow"
-        ],
-        "rows": 3000,
-        "distinct_predictor_tuples": 6,
-        "repeat_coverage": 1.0,
-        "deterministic": false
-      }
-    ],
-    "empirical_findings": [
-      "arrow_count is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage)",
-      "arrow_count is empirically determined by weight_arrow, drawn_magnitude_ranking (100.0% repeat coverage)",
-      "weight_arrow is empirically determined by drawn_magnitude_ranking (100.0% repeat coverage)",
-      "weight_arrow is empirically determined by arrow_count, drawn_magnitude_ranking (100.0% repeat coverage)"
-    ],
+    "tested_relationships": [],
+    "empirical_findings": [],
     "violations": []
   },
   "assertions": {
@@ -177,24 +62,6 @@
     "total": 3000,
     "failures": [],
     "quantity_recovery_by_subfact": {
-      "arrow_count": {
-        "visual_signal": "distinct rendered force arrows",
-        "checked_items": 3000,
-        "passed_items": 3000,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_arrow_count_and_direction_recovery"
-        ]
-      },
-      "weight_arrow": {
-        "visual_signal": "the downward force arrow's printed label",
-        "checked_items": 3000,
-        "passed_items": 3000,
-        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
-        "supporting_closed_validator_metrics": [
-          "png_arrow_count_and_direction_recovery"
-        ]
-      },
       "drawn_magnitude_ranking": {
         "visual_signal": "rendered force-arrow shaft lengths",
         "checked_items": 3000,

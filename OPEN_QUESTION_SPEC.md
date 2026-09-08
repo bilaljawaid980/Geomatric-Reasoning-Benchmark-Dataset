@@ -71,12 +71,13 @@ Tolerance: ±10°.
 Single-angle scenes:
 
 > Look at the marked angle, judging the opening between its rays rather than how long
-> the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it
-> is acute, right, obtuse or reflex. State your conclusion, justify it by describing
-> the direction each ray points from the vertex, and end with a confidence score from
-> 0 to 1.
+> the rays are drawn: estimate its size to the nearest 10 degrees. State your
+> conclusion, justify it by describing the direction each ray points from the vertex,
+> and end with a confidence score from 0 to 1.
 
-Targets: the nearest-10-degree estimate from `angle_degrees`, and the angle class.
+Target: the nearest-10-degree estimate from `angle_degrees`. The angle class is not
+scored because the guarded sampling makes it deterministically recoverable from the
+rounded size.
 Tolerance: ±10°.
 
 Triangle scenes:
@@ -149,6 +150,18 @@ Fallback targets: farthest pair from `all_pairwise_distances`, bearing from
 `all_pairwise_bearings`. Bearing tolerance: +/-10 degrees. **Reject the item if the
 largest pairwise distance is less than 5% larger than the second largest.**
 
+If both pair-selection margins fail, use the fixed labelled pair:
+
+> Read the compass rose in the corner, then give the bearing in degrees from landmark
+> A to landmark B, measuring clockwise from north and answering to the nearest 10
+> degrees. State your conclusion, justify it by describing the displacement you
+> measured and how you read the direction against the rose, and end with a confidence
+> score from 0 to 1.
+
+Target: `all_pairwise_bearings["A-to-B"]`. Bearing tolerance: +/-10 degrees. This
+variant is used only after confirming that A and B are legibly labelled and separated
+enough for their bearing to be read from the render.
+
 ## coordinate_geometry
 
 > Read the position of each labelled point against the printed grid: name the pair of
@@ -195,55 +208,55 @@ Targets: visible top-face count, `hidden_cube_count`. **Exclude items with
 ## depth_height
 
 > Compare the objects in the scene using the cues that indicate distance from the
-> camera: rank every object from closest to farthest by colour, and name which one lies
-> nearest. State your conclusion, justify it by describing the cues you used to order
-> them, and end with a confidence score from 0 to 1.
+> camera: rank every object from closest to farthest by colour. State your conclusion,
+> justify it by describing the cues you used to order them, and end with a confidence
+> score from 0 to 1.
 
-Targets: `depth_ordering`, `closest_object_color`. **Only for items with
-`scene_type = depth_ordering`; the stack-height items carry no depth cues.**
+Target: `depth_ordering`. The nearest-colour field is not scored because it is the
+first element of that order.
 
 For `scene_type = stack_height`:
 
 > Compare the coloured stacks by counting the visible blocks from the common baseline
-> upward: rank every stack from shortest to tallest by colour, and name which one is
-> tallest. State your conclusion, justify it by describing how you counted the blocks
-> in each stack, and end with a confidence score from 0 to 1.
+> upward: rank every stack from shortest to tallest by colour. State your conclusion,
+> justify it by describing how you counted the blocks in each stack, and end with a
+> confidence score from 0 to 1.
 
-Targets: `height_ordering` reversed into the prompt's shortest-to-tallest order, and
-`tallest_stack_color`.
+Target: `height_ordering` reversed into the prompt's shortest-to-tallest order. The
+tallest-colour field is not scored because it is the final element of that order.
 
 ## embedded_figures
 
 > Study the complex figure and each of the candidate shapes beneath it: decide which
-> candidate is hidden inside the figure, and say how many sides that shape has. State
-> your conclusion, justify it by describing where in the figure you located the shape
-> and which lines belong to it rather than to the surrounding clutter, and end with a
-> confidence score from 0 to 1.
+> candidate is hidden inside the figure. State your conclusion, justify it by
+> describing where in the figure you located the shape and which lines belong to it
+> rather than to the surrounding clutter, and end with a confidence score from 0 to 1.
 
-Targets: `correct_answer_choice`, `target_shape_type` side count.
+Target: `correct_answer_choice`. Side count is not scored because the source generator
+couples it deterministically to the correct candidate letter.
 
 ## fbd
 
 > Examine only the force arrows as they are drawn in this diagram, setting aside what
-> the scenario physically requires: count the arrows, name which one represents the
-> weight of the body, and rank their drawn magnitudes from largest to smallest,
-> grouping any that appear equal. State your conclusion, justify it by describing the
-> length and direction of each arrow as drawn, and end with a confidence score from 0
-> to 1.
+> the scenario physically requires: rank their drawn magnitudes from largest to
+> smallest, grouping any that appear equal. State your conclusion, justify it by
+> describing the length and direction of each arrow as drawn, and end with a confidence
+> score from 0 to 1.
 
-Targets: `shown_forces` count, weight arrow label, drawn magnitude ranking.
+Target: drawn magnitude ranking. The ranking already enumerates every arrow label, so
+arrow count and the conventional weight label are not scored separately.
 **Entirely in the rendered frame. Do not mix in the physical frame — that mixing was
 the defect already fixed in L3.**
 
 ## fold_punch
 
-> Follow the fold sequence from the first panel through to the punch: work out how many
-> holes will appear once the paper is fully unfolded, and decide which of the unfolded
-> patterns below shows them in the right places. State your conclusion, justify it by
-> describing how each fold doubles the holes and where the mirror lines fall, and end
-> with a confidence score from 0 to 1.
+> Follow the fold sequence from the first panel through to the punch: decide which of
+> the unfolded patterns below shows the holes in the right places. State your
+> conclusion, justify it by describing how you reflected the punch across each fold
+> line, and end with a confidence score from 0 to 1.
 
-Targets: `num_holes`, `correct_answer_choice`.
+Target: `correct_answer_choice`. Hole count is not scored because the source generator
+couples fold parity and candidate-letter assignment to the same item-index schedule.
 
 ## gauge_reading
 
@@ -271,15 +284,14 @@ are balanced without changing any image.
 ## hex_pathfinding
 
 > Look closely at the green HOME hex and everything that immediately surrounds it:
-> state whether it sits on the outer boundary of the hexagonal field or fully inside
-> it, count how many hexes lie directly against it, and say how many of those are grey
-> holes and how many are walkable. Name the position of any hole touching it using
-> these six direction names only: upper-left, upper-right, left, right, lower-left,
-> lower-right. State your conclusion, justify it by describing exactly what you see
-> around HOME, and end with a confidence score from 0 to 1.
+> name the position of every grey hole touching it using these six direction names
+> only: upper-left, upper-right, left, right, lower-left, lower-right. State your
+> conclusion, justify it by describing exactly what you see around HOME, and end with
+> a confidence score from 0 to 1.
 
-Targets: boundary status, neighbour count, hole count, hole directions, all from
-`all_tiles` and `home_coordinate`.
+Target: hole directions from `all_tiles` and `home_coordinate`. Boundary status and
+neighbour counts are not scored because they are deterministic functions of the same
+neighbourhood.
 
 ## impossible_object
 
