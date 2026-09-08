@@ -8,6 +8,7 @@ Sub-facts: connectivity
 Constant-answer baselines: {"connectivity": 0.004333333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"chosen_target_degree_below_1": 0, "num_endpoints_distribution": {"4": 994, "5": 1020, "6": 986}}
 Issues: []

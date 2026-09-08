@@ -8,6 +8,7 @@ Sub-facts: unfolded_hole_count, correct_pattern
 Constant-answer baselines: {"correct_pattern": 0.25, "unfolded_hole_count": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"identical_l4_l5_count": 0}
 Issues: []

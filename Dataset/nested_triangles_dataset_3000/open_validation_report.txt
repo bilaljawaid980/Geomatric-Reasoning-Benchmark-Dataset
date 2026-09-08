@@ -8,6 +8,7 @@ Sub-facts: shape_count, shrink_pattern, rotation_degrees_nearest_10
 Constant-answer baselines: {"rotation_degrees_nearest_10": 0.15, "shape_count": 0.11466666666666667, "shrink_pattern": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"human_constant_vs_changing_20": {"agreement_rate": 0.95, "agreements": 19, "disagreements": [356], "items": [61, 356, 796, 818, 872, 913, 1204, 1487, 1501, 2308, 2343, 2398, 2426, 2445, 2452, 2504, 2552, 2682, 2739, 2884], "review_method": "manual render-only judgment before comparison with stored factor progression"}, "span_threshold_disposition": "retained at 1.35 because manual agreement was 95%"}
 Issues: []

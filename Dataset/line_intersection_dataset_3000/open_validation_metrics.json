@@ -5,10 +5,10 @@
   "included_items": 3000,
   "excluded_items": 0,
   "exclusion_counts": {},
-  "template": "Follow both polylines across the image from left edge to right: count how many times they cross one another, and say whether the line that starts higher also finishes higher. State your conclusion, justify it by describing where along the width of the image the crossings fall, and end with a confidence score from 0 to 1.",
+  "template": "Follow both polylines across the image from left edge to right: count how many times they cross one another, and say which colour is higher at the left edge. State your conclusion, justify it by describing where along the width of the image the crossings fall and how you compared the two starting heights, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "crossing_count",
-    "starts_and_finishes_higher"
+    "left_edge_higher_colour"
   ],
   "answer_distributions": {
     "crossing_count": {
@@ -19,19 +19,23 @@
       "4": 188,
       "5": 95
     },
-    "starts_and_finishes_higher": {
-      "True": 1765,
-      "False": 1235
+    "left_edge_higher_colour": {
+      "red": 1508,
+      "blue": 1492
     }
   },
   "constant_answer_baselines": {
     "crossing_count": 0.273,
-    "starts_and_finishes_higher": 0.5883333333333334
+    "left_edge_higher_colour": 0.5026666666666667
   },
   "fields_at_or_above_60_percent": {},
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
+  },
+  "deterministic_subfact_dependency_check": {
+    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "violations": []
   },
   "assertions": {
     "public_schema_exact": true,
@@ -57,8 +61,8 @@
           "png_recovery"
         ]
       },
-      "starts_and_finishes_higher": {
-        "visual_signal": "relative red/blue vertical order at the two image edges",
+      "left_edge_higher_colour": {
+        "visual_signal": "the relative red/blue vertical order where the two polylines enter at the left edge",
         "checked_items": 3000,
         "passed_items": 3000,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
@@ -68,6 +72,36 @@
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "old_parity_dependency_exceptions": 0,
+    "old_second_subfact_disposition": "replaced because parity determined it in all 3000 items",
+    "new_left_edge_colour_varies_within_crossing_counts": {
+      "0": [
+        "blue",
+        "red"
+      ],
+      "1": [
+        "blue",
+        "red"
+      ],
+      "2": [
+        "blue",
+        "red"
+      ],
+      "3": [
+        "blue",
+        "red"
+      ],
+      "4": [
+        "blue",
+        "red"
+      ],
+      "5": [
+        "blue",
+        "red"
+      ]
+    },
+    "new_subfacts_deterministically_linked": false
+  },
   "issues": []
 }

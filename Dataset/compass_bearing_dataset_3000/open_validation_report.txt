@@ -8,6 +8,7 @@ Sub-facts: closest_pair, direction_from_earlier
 Constant-answer baselines: {"closest_pair": 0.26028622540250446, "direction_from_earlier": 0.16905187835420393}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 1118/1118
 Special checks: {"other_exclusion_reasons": 0, "substantive_boundary_guard_exclusions": 1882}
 Issues: []

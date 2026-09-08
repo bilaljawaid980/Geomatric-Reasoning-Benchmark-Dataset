@@ -4,10 +4,11 @@ Source items: 3000
 Included: 3000
 Excluded: 0
 Exclusions: {}
-Sub-facts: crossing_count, starts_and_finishes_higher
-Constant-answer baselines: {"crossing_count": 0.273, "starts_and_finishes_higher": 0.5883333333333334}
+Sub-facts: crossing_count, left_edge_higher_colour
+Constant-answer baselines: {"crossing_count": 0.273, "left_edge_higher_colour": 0.5026666666666667}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"new_left_edge_colour_varies_within_crossing_counts": {"0": ["blue", "red"], "1": ["blue", "red"], "2": ["blue", "red"], "3": ["blue", "red"], "4": ["blue", "red"], "5": ["blue", "red"]}, "new_subfacts_deterministically_linked": false, "old_parity_dependency_exceptions": 0, "old_second_subfact_disposition": "replaced because parity determined it in all 3000 items"}
 Issues: []

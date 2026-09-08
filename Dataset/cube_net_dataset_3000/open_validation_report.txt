@@ -8,6 +8,7 @@ Sub-facts: flat_edge_neighbours, opposite_face
 Constant-answer baselines: {"flat_edge_neighbours": 0.08266666666666667, "opposite_face": 0.178}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

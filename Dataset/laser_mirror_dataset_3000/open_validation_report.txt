@@ -1,13 +1,14 @@
 Open-question validation: laser_mirror_dataset_3000
 Status: PASS
 Source items: 3000
-Included: 2250
-Excluded: 750
-Exclusions: {"zero_reflections": 750}
-Sub-facts: reflection_count, exit_edge, exit_position
-Constant-answer baselines: {"exit_edge": 0.2568888888888889, "exit_position": 0.17733333333333334, "reflection_count": 0.6968888888888889}
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: reflection_count, exit_edge, exit_position, near_miss_mirror_count
+Constant-answer baselines: {"exit_edge": 0.25766666666666665, "exit_position": 0.16733333333333333, "near_miss_mirror_count": 0.4653333333333333, "reflection_count": 0.6968888888888889}
 Fields >=60%: {"reflection_count": 0.6968888888888889}
 Independent derivation mismatches: 0
-PNG recovery: 2250/2250
-Special checks: {"other_exclusion_reasons": 0, "zero_reflection_exclusions": 750}
+Deterministic sub-fact dependency violations: 0
+PNG recovery: 3000/3000
+Special checks: {"near_miss_count_constant_answer_baseline": 0.4653333333333333, "near_miss_count_distribution_zero_reflection_variant": {"0": 255, "1": 349, "2": 118, "3": 25, "4": 3}, "other_exclusion_reasons": 0, "zero_reflection_exclusions": 0, "zero_reflection_items_recovered_by_variant": 750}
 Issues: []

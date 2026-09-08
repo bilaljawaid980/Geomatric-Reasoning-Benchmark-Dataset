@@ -8,6 +8,7 @@ Sub-facts: candidate, side_count
 Constant-answer baselines: {"candidate": 0.25, "side_count": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"disposition": "retained because same-side foils are exactly balanced at 1500/1500", "same_side_foil_exists_distribution": {"false": 1500, "true": 1500}}
 Issues: []

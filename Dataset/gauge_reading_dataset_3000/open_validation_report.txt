@@ -8,6 +8,7 @@ Sub-facts: rounded_tick_value, range_half
 Constant-answer baselines: {"range_half": 0.5, "rounded_tick_value": 0.09866666666666667}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"needle_exactly_on_tick_count": 1380}
 Issues: []

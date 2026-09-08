@@ -8,6 +8,7 @@ Sub-facts: correct_choice, attributes_changed_together
 Constant-answer baselines: {"attributes_changed_together": 0.22, "correct_choice": 0.13066666666666665}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

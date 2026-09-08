@@ -43,7 +43,8 @@
     "subfacts": [
       "farthest_pair",
       "distance_nearest_unit",
-      "relation_to_12"
+      "relation_to_12",
+      "point_coordinates"
     ]
   },
   "cube_structure_dataset_3000": {
@@ -92,6 +93,26 @@
     "subfacts": [
       "peak_horizontal_distance_m_nearest_1",
       "peak_above_13_m"
+    ]
+  },
+  "line_intersection_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "crossing_count",
+      "left_edge_higher_colour"
+    ]
+  },
+  "laser_mirror_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "reflection_count",
+      "exit_edge",
+      "exit_position",
+      "near_miss_mirror_count"
     ]
   }
 }

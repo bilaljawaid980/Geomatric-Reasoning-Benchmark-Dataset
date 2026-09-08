@@ -8,6 +8,7 @@ Sub-facts: circle_count, above_average_radius_count
 Constant-answer baselines: {"above_average_radius_count": 0.254, "circle_count": 0.133}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"invalid_cluster_distribution_answers": 0}
 Issues: []

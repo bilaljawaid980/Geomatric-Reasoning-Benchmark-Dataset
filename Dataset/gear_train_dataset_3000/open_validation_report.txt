@@ -8,6 +8,7 @@ Sub-facts: fastest_gear, direction_target, target_direction_relation
 Constant-answer baselines: {"direction_target": 0.41833333333333333, "fastest_gear": 0.261, "target_direction_relation": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

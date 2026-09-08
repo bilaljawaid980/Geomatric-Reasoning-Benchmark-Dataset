@@ -8,6 +8,7 @@ Sub-facts: correct_candidate, rejected_candidate, rejection_reason
 Constant-answer baselines: {"correct_candidate": 0.25, "rejected_candidate": 0.25533333333333336, "rejection_reason": 0.35333333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

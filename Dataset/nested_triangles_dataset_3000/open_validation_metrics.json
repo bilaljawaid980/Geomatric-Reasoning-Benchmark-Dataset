@@ -50,6 +50,10 @@
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
+  "deterministic_subfact_dependency_check": {
+    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "violations": []
+  },
   "assertions": {
     "public_schema_exact": true,
     "one_to_one_resolution": true,
@@ -94,6 +98,38 @@
       }
     }
   },
-  "special_checks": {},
+  "special_checks": {
+    "human_constant_vs_changing_20": {
+      "items": [
+        61,
+        356,
+        796,
+        818,
+        872,
+        913,
+        1204,
+        1487,
+        1501,
+        2308,
+        2343,
+        2398,
+        2426,
+        2445,
+        2452,
+        2504,
+        2552,
+        2682,
+        2739,
+        2884
+      ],
+      "disagreements": [
+        356
+      ],
+      "agreements": 19,
+      "agreement_rate": 0.95,
+      "review_method": "manual render-only judgment before comparison with stored factor progression"
+    },
+    "span_threshold_disposition": "retained at 1.35 because manual agreement was 95%"
+  },
   "issues": []
 }

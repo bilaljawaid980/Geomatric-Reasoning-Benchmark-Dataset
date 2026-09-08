@@ -8,6 +8,7 @@ Sub-facts: boundary_status, neighbourhood
 Constant-answer baselines: {"boundary_status": 0.5353333333333333, "neighbourhood": 0.18}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {"axial_offset_to_direction_name": {"left": [-1, 0], "lower-left": [-1, 1], "lower-right": [0, 1], "right": [1, 0], "upper-left": [0, -1], "upper-right": [1, -1]}, "item_0124_right_offset": [1, 0], "item_0124_visual_alignment": "same screen y; directly right", "orientation_inadmissible_stored_direction_count": 0, "renderer_hex_orientation": "pointy-top"}
+Special checks: {"axial_offset_to_direction_name": {"left": [-1, 0], "lower-left": [-1, 1], "lower-right": [0, 1], "right": [1, 0], "upper-left": [0, -1], "upper-right": [1, -1]}, "axial_offset_to_screen_delta_in_hex_size_units": {"left": [-1.7320508075688772, 0.0], "lower-left": [-0.8660254037844386, 1.5], "lower-right": [0.8660254037844386, 1.5], "right": [1.7320508075688772, 0.0], "upper-left": [-0.8660254037844386, -1.5], "upper-right": [0.8660254037844386, -1.5]}, "item_0124_home_coordinate": [1, 1], "item_0124_right_offset": [1, 0], "item_0124_touching_grey_coordinates": [[2, 1]], "item_0124_visual_alignment": "same screen y; directly right across the hex's right side", "orientation_inadmissible_stored_direction_count": 0, "renderer_hex_orientation": "pointy-top (vertices at top and bottom; vertical left/right sides)"}
 Issues: []

@@ -26,6 +26,10 @@
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
+  "deterministic_subfact_dependency_check": {
+    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "violations": []
+  },
   "assertions": {
     "public_schema_exact": true,
     "one_to_one_resolution": true,

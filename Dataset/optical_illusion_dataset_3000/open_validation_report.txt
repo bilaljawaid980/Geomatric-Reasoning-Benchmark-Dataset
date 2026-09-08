@@ -8,6 +8,7 @@ Sub-facts: true_size_relation, perceived_larger
 Constant-answer baselines: {"perceived_larger": 0.5116666666666667, "true_size_relation": 0.5}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

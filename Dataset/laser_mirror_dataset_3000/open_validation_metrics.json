@@ -2,16 +2,15 @@
   "status": "PASS",
   "dataset": "laser_mirror_dataset_3000",
   "source_items": 3000,
-  "included_items": 2250,
-  "excluded_items": 750,
-  "exclusion_counts": {
-    "zero_reflections": 750
-  },
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
   "template": "Follow the laser from where it enters the grid, turning it at each mirror it meets: count how many times it reflects, and name the edge and position where it leaves the grid. State your conclusion, justify it by describing the path you traced and which mirrors it struck, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "reflection_count",
     "exit_edge",
-    "exit_position"
+    "exit_position",
+    "near_miss_mirror_count"
   ],
   "answer_distributions": {
     "reflection_count": {
@@ -22,25 +21,34 @@
       "5": 2
     },
     "exit_edge": {
-      "left": 578,
-      "top": 563,
-      "right": 559,
-      "bottom": 550
+      "top": 773,
+      "right": 756,
+      "left": 748,
+      "bottom": 723
     },
     "exit_position": {
-      "1": 399,
-      "5": 382,
-      "2": 377,
-      "4": 368,
-      "3": 359,
-      "6": 243,
-      "7": 122
+      "1": 502,
+      "2": 489,
+      "3": 465,
+      "5": 462,
+      "4": 438,
+      "6": 337,
+      "7": 216,
+      "8": 91
+    },
+    "near_miss_mirror_count": {
+      "1": 349,
+      "0": 255,
+      "2": 118,
+      "3": 25,
+      "4": 3
     }
   },
   "constant_answer_baselines": {
     "reflection_count": 0.6968888888888889,
-    "exit_edge": 0.2568888888888889,
-    "exit_position": 0.17733333333333334
+    "exit_edge": 0.25766666666666665,
+    "exit_position": 0.16733333333333333,
+    "near_miss_mirror_count": 0.4653333333333333
   },
   "fields_at_or_above_60_percent": {
     "reflection_count": 0.6968888888888889
@@ -48,6 +56,10 @@
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
+  },
+  "deterministic_subfact_dependency_check": {
+    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "violations": []
   },
   "assertions": {
     "public_schema_exact": true,
@@ -60,8 +72,8 @@
     "variant_specific_fields_only": true
   },
   "png_recovery": {
-    "passed": 2250,
-    "total": 2250,
+    "passed": 3000,
+    "total": 3000,
     "failures": [],
     "quantity_recovery_by_subfact": {
       "reflection_count": {
@@ -75,8 +87,8 @@
       },
       "exit_edge": {
         "visual_signal": "the rendered laser endpoint on the grid border",
-        "checked_items": 2250,
-        "passed_items": 2250,
+        "checked_items": 3000,
+        "passed_items": 3000,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
         "supporting_closed_validator_metrics": [
           "pngs_checked"
@@ -84,8 +96,17 @@
       },
       "exit_position": {
         "visual_signal": "the endpoint's labelled grid-border position",
-        "checked_items": 2250,
-        "passed_items": 2250,
+        "checked_items": 3000,
+        "passed_items": 3000,
+        "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
+        "supporting_closed_validator_metrics": [
+          "pngs_checked"
+        ]
+      },
+      "near_miss_mirror_count": {
+        "visual_signal": "mirror cells sharing an edge with the rendered straight laser path without lying on it",
+        "checked_items": 750,
+        "passed_items": 750,
         "verification_basis": "exhaustive PNG decode plus domain renderer/geometry recovery",
         "supporting_closed_validator_metrics": [
           "pngs_checked"
@@ -94,8 +115,17 @@
     }
   },
   "special_checks": {
-    "zero_reflection_exclusions": 750,
-    "other_exclusion_reasons": 0
+    "zero_reflection_items_recovered_by_variant": 750,
+    "zero_reflection_exclusions": 0,
+    "other_exclusion_reasons": 0,
+    "near_miss_count_distribution_zero_reflection_variant": {
+      "0": 255,
+      "1": 349,
+      "2": 118,
+      "3": 25,
+      "4": 3
+    },
+    "near_miss_count_constant_answer_baseline": 0.4653333333333333
   },
   "issues": []
 }

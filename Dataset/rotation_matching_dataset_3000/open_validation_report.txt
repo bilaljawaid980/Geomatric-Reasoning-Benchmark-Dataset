@@ -8,6 +8,7 @@ Sub-facts: rotation_candidate, reflection_candidate
 Constant-answer baselines: {"reflection_candidate": 0.25966666666666666, "rotation_candidate": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {}
+Special checks: {"distorted_distractors": 0, "existing_normalized_separation_guard": 0.08, "guard_disposition": "existing 0.08 normalized guard retained; item 0078 is separated by about 16.8 pixels and no item violates the guard", "minimum_turning_angle_degrees_distribution": {"count": 3000, "max": 68.581572, "min": 25.00046, "p25": 28.0750085, "p50": 32.6145645, "p75": 41.86463175000001, "p95": 57.72688725}, "minimum_vertex_position_difference_distribution": {"count": 3000, "max": 0.7278911553062037, "min": 0.08394328795681048, "p25": 0.22145090200569262, "p50": 0.2899200804457257, "p75": 0.3710620589095073, "p95": 0.4688282983219353}, "minimum_vertex_position_difference_rendered_pixel_distribution": {"count": 3000, "max": 31.29931967816676, "min": 3.609561382142851, "p25": 9.522388786244782, "p50": 12.466563459166204, "p75": 15.955668533108813, "p95": 20.159616827843216}, "rotation_match_0078_difference_rendered_pixels": 16.814637689502913, "rotation_match_0078_minimum_turning_angle_degrees": 34.70729, "rotation_match_0078_minimum_vertex_position_difference_normalized": 0.39103808580239335, "separation_guard_violations": 0, "transformation_type_distribution": {"reflection": 3000, "target_rotation": 3000, "wrong_angle_rotation": 6000}}
 Issues: []

@@ -8,6 +8,7 @@ Sub-facts: time, smaller_angle_degrees_nearest_5
 Constant-answer baselines: {"smaller_angle_degrees_nearest_5": 0.03966666666666667, "time": 0.004}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

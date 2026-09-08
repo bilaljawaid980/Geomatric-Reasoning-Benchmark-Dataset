@@ -8,6 +8,7 @@ Sub-facts: pattern_status, symmetry_type
 Constant-answer baselines: {"pattern_status": 0.5, "symmetry_type": 0.143}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"intact_rotational_orbit_violations": 0, "symmetry_pattern_0143_num_shapes": 8}
 Issues: []

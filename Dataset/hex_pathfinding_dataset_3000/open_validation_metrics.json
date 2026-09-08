@@ -125,6 +125,10 @@
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
+  "deterministic_subfact_dependency_check": {
+    "method": "explicit semantic dependency rules plus empirical conditional-variation checks for suspected relationships; the line-order parity rule is evaluated over all 3000 source records",
+    "violations": []
+  },
   "assertions": {
     "public_schema_exact": true,
     "one_to_one_resolution": true,
@@ -161,7 +165,7 @@
     }
   },
   "special_checks": {
-    "renderer_hex_orientation": "pointy-top",
+    "renderer_hex_orientation": "pointy-top (vertices at top and bottom; vertical left/right sides)",
     "axial_offset_to_direction_name": {
       "upper-left": [
         0,
@@ -188,12 +192,48 @@
         1
       ]
     },
+    "axial_offset_to_screen_delta_in_hex_size_units": {
+      "upper-left": [
+        -0.8660254037844386,
+        -1.5
+      ],
+      "upper-right": [
+        0.8660254037844386,
+        -1.5
+      ],
+      "left": [
+        -1.7320508075688772,
+        0.0
+      ],
+      "right": [
+        1.7320508075688772,
+        0.0
+      ],
+      "lower-left": [
+        -0.8660254037844386,
+        1.5
+      ],
+      "lower-right": [
+        0.8660254037844386,
+        1.5
+      ]
+    },
     "orientation_inadmissible_stored_direction_count": 0,
+    "item_0124_home_coordinate": [
+      1,
+      1
+    ],
+    "item_0124_touching_grey_coordinates": [
+      [
+        2,
+        1
+      ]
+    ],
     "item_0124_right_offset": [
       1,
       0
     ],
-    "item_0124_visual_alignment": "same screen y; directly right"
+    "item_0124_visual_alignment": "same screen y; directly right across the hex's right side"
   },
   "issues": []
 }

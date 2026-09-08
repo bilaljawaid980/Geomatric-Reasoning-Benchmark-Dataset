@@ -8,6 +8,7 @@ Sub-facts: light_direction, light_height
 Constant-answer baselines: {"light_direction": 0.45266666666666666, "light_height": 0.5046666666666667}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"azimuth_exclusion_violations": 0}
 Issues: []

@@ -8,6 +8,7 @@ Sub-facts: minimum_cube_count, uniqueness
 Constant-answer baselines: {"minimum_cube_count": 0.18766666666666668, "uniqueness": 0.5606666666666666}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {}
 Issues: []

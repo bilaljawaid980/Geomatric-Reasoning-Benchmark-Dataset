@@ -8,6 +8,7 @@ Sub-facts: depth_ordering, nearest_colour, height_ordering_shortest_to_tallest, 
 Constant-answer baselines: {"depth_ordering": 0.02266666666666667, "height_ordering_shortest_to_tallest": 0.022, "nearest_colour": 0.20866666666666667, "tallest_stack_colour": 0.21333333333333335}
 Fields >=60%: {}
 Independent derivation mismatches: 0
+Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
 Special checks: {"scene_type_distribution": {"depth_ordering": 1500, "stack_height": 1500}, "stack_height_items_recovered_by_variant": 1500, "template_failure_exclusions": 0}
 Issues: []

@@ -144,6 +144,16 @@ south-east boundary.
 > confidence score from 0 to 1.
 
 Targets: farthest pair and distance from `all_pairwise_distances`. Tolerance: ±1 unit.
+The farthest-pair variant requires the two largest exact pairwise distances to differ
+by at least 1 grid unit. Items below that visual-separation guard use this fallback
+instead, so coverage is preserved:
+
+> Read every labelled point against the printed coordinate grid: report the
+> coordinates of all points in alphabetical order. State your conclusion, justify it
+> by describing how you projected each point to the horizontal and vertical axes, and
+> end with a confidence score from 0 to 1.
+
+Fallback target: the complete `points` mapping.
 
 ## cube_net
 
@@ -276,17 +286,29 @@ count: ±1.
 > mirrors it struck, and end with a confidence score from 0 to 1.
 
 Targets: `num_reflections`, `exit_edge`, `exit_position`. **Exclude items where
-`num_reflections` is 0 — those collapse every level to one observation.**
+`num_reflections` is 0 from this variant.** Zero-reflection items use the following
+straight-path variant instead:
+
+> Follow the laser from where it enters the grid and trace its straight path across:
+> name the edge and position where it leaves, and say how many mirrors it passes
+> without striking. State your conclusion, justify it by describing the path you
+> traced and where the nearest mirrors sit relative to it, and end with a confidence
+> score from 0 to 1.
+
+Targets: `exit_edge`, `exit_position`, and the count of mirror cells sharing an edge
+with a traversed `path_cells` cell without lying on the path. Tolerance: 0.
 
 ## line_intersection
 
 > Follow both polylines across the image from left edge to right: count how many times
-> they cross one another, and say whether the line that starts higher also finishes
-> higher. State your conclusion, justify it by describing where along the width of the
-> image the crossings fall, and end with a confidence score from 0 to 1.
+> they cross one another, and say which colour is higher at the left edge. State your
+> conclusion, justify it by describing where along the width of the image the crossings
+> fall and how you compared the two starting heights, and end with a confidence score
+> from 0 to 1.
 
-Targets: `total_intersections`, `red_above_blue_at_start` versus
-`red_above_blue_at_end`.
+Targets: `total_intersections` and the colour identified by
+`red_above_blue_at_start`. The former endpoint-order target was removed because it was
+determined exactly by crossing-count parity in every source item.
 
 ## nested_hexagons / nested_squares / nested_triangles
 

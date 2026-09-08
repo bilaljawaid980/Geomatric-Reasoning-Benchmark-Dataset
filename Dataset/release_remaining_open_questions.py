@@ -65,11 +65,13 @@ def main():
             "open_quantity_recovery_signals_documented_per_subfact":True,
         })
         if name=="angle_estimation_dataset_3000":constraints["open_triangle_vertex_label_subfact_removed_for_fixed_order_bias"]=True
-        elif name=="coordinate_geometry_dataset_3000":constraints["open_distance_relation_threshold_units"]=12
+        elif name=="coordinate_geometry_dataset_3000":constraints.update({"open_distance_relation_threshold_units":12,"open_farthest_pair_minimum_separation_units":1,"open_farthest_guard_fallback":"report all labelled point coordinates"})
         elif name=="cube_structure_dataset_3000":constraints.update({"open_visible_top_face_count_replaces_unrecoverable_base_layer_count":True,"open_cube_manual_visual_audit_items":20})
         elif name=="depth_height_dataset_3000":constraints["open_stack_height_variant_covers_all_stack_scenes"]=True
         elif name=="gear_train_dataset_3000":constraints["open_direction_target_relation_balanced"]=True
         elif name=="hex_pathfinding_dataset_3000":constraints.update({"open_hex_orientation":"pointy-top","open_axial_direction_vocabulary_verified":True})
+        elif name=="laser_mirror_dataset_3000":constraints.update({"open_zero_reflection_variant":True,"open_near_miss_definition":"mirror cell shares an edge with a traversed path cell without lying on the path"})
+        elif name=="line_intersection_dataset_3000":constraints.update({"open_endpoint_parity_redundancy_removed":True,"open_independent_left_edge_colour_subfact":True})
         elif name=="overlap_circles_dataset_3000":constraints["open_isolated_circle_subfact_removed_for_sampling_bias"]=True
         elif name=="projectile_motion_dataset_1000":constraints["open_peak_threshold_metres"]=13
         if name=="fold_punch_dataset_3000":constraints["approved_closed_repair"]="312 duplicated Level 5 rows replaced by additional-fold counterfactual"

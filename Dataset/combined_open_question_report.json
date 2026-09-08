@@ -32,7 +32,7 @@
       "open_answers": 1118
     },
     "coordinate_geometry_dataset_3000": {
-      "dataset_version": "coordinate-geometry-6.0.0",
+      "dataset_version": "coordinate-geometry-7.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -98,13 +98,13 @@
       "open_answers": 3000
     },
     "laser_mirror_dataset_3000": {
-      "dataset_version": "laser-mirror-4.0.0",
-      "images": 2250,
-      "open_questions": 2250,
-      "open_answers": 2250
+      "dataset_version": "laser-mirror-5.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
     },
     "line_intersection_dataset_3000": {
-      "dataset_version": "line-intersection-6.0.0",
+      "dataset_version": "line-intersection-7.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
@@ -206,10 +206,10 @@
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 97368,
-  "combined_open_answers": 97368,
-  "unique_question_ids": 97368,
-  "resolved_image_paths": 97368,
+  "combined_open_questions": 98118,
+  "combined_open_answers": 98118,
+  "unique_question_ids": 98118,
+  "resolved_image_paths": 98118,
   "public_columns": [
     "dataset",
     "dataset_version",
@@ -243,6 +243,7 @@
     "farthest_pair",
     "distance_nearest_unit",
     "relation_to_12",
+    "point_coordinates",
     "flat_edge_neighbours",
     "opposite_face",
     "visible_top_face_count",
@@ -270,7 +271,8 @@
     "reflection_count",
     "exit_edge",
     "exit_position",
-    "starts_and_finishes_higher",
+    "near_miss_mirror_count",
+    "left_edge_higher_colour",
     "shape_count",
     "shrink_pattern",
     "rotation_degrees_nearest_10",
