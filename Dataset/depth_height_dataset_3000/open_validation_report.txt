@@ -1,10 +1,13 @@
 Open-question validation: depth_height_dataset_3000
 Status: PASS
-Items: 3000
-Template: Using the depth cues in the scene, name the nearest object colour and the farthest object colour. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: nearest_object_color, farthest_object_color, block_count, tallest_stack_colors
-Constant-answer baselines: {"block_count": 0.17733333333333334, "farthest_object_color": 0.20733333333333334, "nearest_object_color": 0.20866666666666667, "tallest_stack_colors": 0.21333333333333335}
+Source items: 3000
+Included: 1500
+Excluded: 1500
+Exclusions: {"not_depth_ordering_scene": 1500}
+Sub-facts: depth_ordering, nearest_colour
+Constant-answer baselines: {"depth_ordering": 0.02266666666666667, "nearest_colour": 0.20866666666666667}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+PNG recovery: 1500/1500
+Special checks: {}
+Issues: []

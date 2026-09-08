@@ -1,64 +1,45 @@
 {
   "status": "PASS",
   "dataset": "physical_stability_dataset_3000",
-  "items": 3000,
-  "template": "At the contact below block A, list the blocks above that contact and say whether their combined centre of mass lies left of, inside, or right of the supporting base. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Work up the stack from the ground, tracking where the combined weight of everything above each joint falls relative to the block beneath it: decide whether the stack stands or tips, and if it tips, name the lowest joint at which it first fails. State your conclusion, justify it by describing how each block sits relative to the one it rests on, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "blocks_above_contact",
-    "combined_centre_of_mass"
+    "stability_conclusion"
   ],
   "answer_distributions": {
-    "blocks_above_contact": {
-      "[\"B\",\"C\"]": 379,
-      "[\"D\",\"E\"]": 333,
-      "[\"C\",\"D\"]": 328,
-      "[\"C\"]": 318,
-      "[\"B\"]": 298,
-      "[\"D\"]": 284,
-      "[\"E\"]": 278,
-      "[\"A\",\"B\",\"C\"]": 144,
-      "[\"B\",\"C\",\"D\"]": 124,
-      "[\"C\",\"D\",\"E\"]": 113,
-      "[\"A\",\"B\",\"C\",\"D\"]": 109,
-      "[\"A\",\"B\",\"C\",\"D\",\"E\"]": 102,
-      "[\"B\",\"C\",\"D\",\"E\"]": 97,
-      "[\"A\",\"B\"]": 93
-    },
-    "combined_centre_of_mass": {
-      "inside": 1500,
-      "right": 1500
+    "stability_conclusion": {
+      "{\"lowest_failing_joint\":\"none\",\"status\":\"stable\"}": 1500,
+      "{\"lowest_failing_joint\":\"D\",\"status\":\"tips\"}": 457,
+      "{\"lowest_failing_joint\":\"B\",\"status\":\"tips\"}": 443,
+      "{\"lowest_failing_joint\":\"C\",\"status\":\"tips\"}": 413,
+      "{\"lowest_failing_joint\":\"E\",\"status\":\"tips\"}": 187
     }
   },
   "constant_answer_baselines": {
-    "blocks_above_contact": 0.12633333333333333,
-    "combined_centre_of_mass": 0.5
+    "stability_conclusion": 0.5
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.08966666666666667,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

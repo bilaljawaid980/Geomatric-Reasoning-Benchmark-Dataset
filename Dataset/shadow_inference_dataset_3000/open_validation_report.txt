@@ -1,10 +1,13 @@
 Open-question validation: shadow_inference_dataset_3000
 Status: PASS
-Items: 3000
-Template: For the tallest object, the blue one, name its object type and its shadow direction using eight compass-like screen directions. Then name every colour tied for the longest shadow. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: tallest_object_type, its_shadow_direction, longest_shadow_colours
-Constant-answer baselines: {"its_shadow_direction": 0.41633333333333333, "longest_shadow_colours": 0.259, "tallest_object_type": 0.26066666666666666}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: light_direction, light_height
+Constant-answer baselines: {"light_direction": 0.45266666666666666, "light_height": 0.5046666666666667}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {"azimuth_exclusion_violations": 0}
+Issues: []

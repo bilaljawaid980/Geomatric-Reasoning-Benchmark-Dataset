@@ -1,10 +1,13 @@
 Open-question validation: orthographic_dataset_3000
 Status: PASS
-Items: 3000
-Template: Count the filled cells in the TOP, FRONT, and SIDE views. Give all three counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: top_filled, front_filled, side_filled
-Constant-answer baselines: {"front_filled": 0.20633333333333334, "side_filled": 0.22066666666666668, "top_filled": 0.235}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: minimum_cube_count, uniqueness
+Constant-answer baselines: {"minimum_cube_count": 0.18766666666666668, "uniqueness": 0.5606666666666666}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

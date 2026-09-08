@@ -1,10 +1,13 @@
 Open-question validation: impossible_object_dataset_3000
 Status: PASS
-Items: 3000
-Template: At crossing X1, name the beam drawn in front, then count all labelled crossings exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: front_beam, total_crossings
-Constant-answer baselines: {"front_beam": 0.192, "total_crossings": 0.25}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: crossing_count, constructible
+Constant-answer baselines: {"constructible": 0.5, "crossing_count": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

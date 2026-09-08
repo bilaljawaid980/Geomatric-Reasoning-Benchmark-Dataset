@@ -1,10 +1,13 @@
 Open-question validation: overlap_circles_dataset_3000
 Status: PASS
-Items: 3000
-Template: For the largest circle, count its direct overlaps, count all overlapping pairs, and say how many circles would be isolated if the largest were removed. Give all counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: largest_circle_direct_overlaps, total_overlap_pairs, isolated_after_largest_removal
-Constant-answer baselines: {"isolated_after_largest_removal": 0.5793333333333334, "largest_circle_direct_overlaps": 0.21633333333333332, "total_overlap_pairs": 0.07866666666666666}
-Fields >=60%: {}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: circle_count, any_isolated, above_average_radius_count
+Constant-answer baselines: {"above_average_radius_count": 0.254, "any_isolated": 0.7203333333333334, "circle_count": 0.133}
+Fields >=60%: {"any_isolated": 0.7203333333333334}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {"invalid_cluster_distribution_answers": 0}
+Issues: []

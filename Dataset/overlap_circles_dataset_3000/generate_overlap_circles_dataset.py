@@ -57,7 +57,7 @@ def questions(iid,row,rng):
  t=rng.choice(["ratio","depth","distribution"])
  if t=="ratio":text="Which is larger: the biggest circle or the smallest circle? Estimate the ratio of their sizes (diameter), rounded to 1 decimal, e.g. {2.3}.";gt=f"{row['largest_radius']/row['smallest_radius']:.1f}";typ="largest_smallest_ratio";fmt={"type":"numeric_tolerance","absolute_tolerance":0.1}
  elif t=="depth":text="Roughly how many circles overlap at the most densely overlapped point in the image? Answer with a number in curly brackets, e.g. {4}.";gt=str(row["max_stack_depth"]);typ="max_stack_depth";fmt="numeric"
- else:text="Are the circles clustered tightly in one area, or spread evenly across the whole image? Answer 'clustered' or 'spread'.";gt=row["generation_mode"];typ="cluster_distribution";fmt="choice"
+ else:text="Are the circles clustered tightly in one area, or spread evenly across the whole image? Answer 'clustered' or 'spread'.";gt="clustered" if row["target_overlap_density"]>=.40 else "spread";typ="cluster_distribution";fmt="choice"
  qs.append({"question_id":iid+"_q3","question_text":text,"question_type":typ,"ground_truth":gt,"answer_format":fmt,"difficulty_level":3})
  t=rng.choice(["remove","average","percentage"])
  if t=="remove":text="If you removed the largest circle from the image, how many circles would remain that don't overlap with any other circle? Answer with a number in curly brackets.";gt=str(row["isolated_after_largest_removal"]);typ="isolated_after_largest_removal"

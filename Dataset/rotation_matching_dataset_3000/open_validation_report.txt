@@ -1,10 +1,13 @@
 Open-question validation: rotation_matching_dataset_3000
 Status: PASS
-Items: 3000
-Template: Name the candidate that is a true rotation of the reference and the candidate that is its reflection. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: matching_rotation_candidate, reflection_candidate
-Constant-answer baselines: {"matching_rotation_candidate": 0.25, "reflection_candidate": 0.25966666666666666}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: rotation_candidate, reflection_candidate
+Constant-answer baselines: {"reflection_candidate": 0.25966666666666666, "rotation_candidate": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

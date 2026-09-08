@@ -1,10 +1,13 @@
 Open-question validation: cube_structure_dataset_3000
 Status: PASS
-Items: 3000
-Template: Count the occupied vertical columns and give the height of the tallest column. Give both counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: occupied_columns, tallest_column_height
-Constant-answer baselines: {"occupied_columns": 0.18633333333333332, "tallest_column_height": 0.38}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: base_layer_count, hidden_cube_count
+Constant-answer baselines: {"base_layer_count": 0.18633333333333332, "hidden_cube_count": 0.3333333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

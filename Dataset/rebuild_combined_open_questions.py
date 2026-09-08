@@ -59,13 +59,13 @@ def main() -> None:
         private_header, private = read_csv(folder / "open_answer_key.csv")
         if public_header != SOURCE_PUBLIC_COLUMNS:
             raise RuntimeError(f"{folder.name}: public schema is {public_header}")
-        expected_rows = int(folder.name.rsplit("_", 1)[1])
+        manifest = json.loads((folder / "build_manifest.json").read_text(encoding="utf-8"))
+        expected_rows = int(manifest.get("open_questions", manifest["images"]))
         if len(public) != expected_rows or len(private) != expected_rows:
             raise RuntimeError(f"{folder.name}: expected {expected_rows} public/private rows")
         private_by_id = {row["question_id"]: row for row in private}
         if len(private_by_id) != len(private):
             raise RuntimeError(f"{folder.name}: duplicate private question_id")
-        manifest = json.loads((folder / "build_manifest.json").read_text(encoding="utf-8"))
         version = str(manifest["dataset_version"])
         dataset = folder.name.rsplit("_dataset_", 1)[0]
         for row in public:
@@ -99,7 +99,7 @@ def main() -> None:
     duplicate_ids = [qid for qid, count in Counter(row["question_id"] for row in public_rows).items() if count != 1]
     if duplicate_ids:
         raise RuntimeError(f"Combined open question IDs are not unique: {duplicate_ids[:5]}")
-    expected_total=sum(int(json.loads((folder / "build_manifest.json").read_text(encoding="utf-8"))["images"]) for folder in discovered)
+    expected_total=sum(int(json.loads((folder / "build_manifest.json").read_text(encoding="utf-8")).get("open_questions", json.loads((folder / "build_manifest.json").read_text(encoding="utf-8"))["images"])) for folder in discovered)
     if len(public_rows) != expected_total or len(private_rows) != expected_total:
         raise RuntimeError(f"Combined open row count must be exactly {expected_total}")
     write_csv(PUBLIC_OUT, public_rows, PUBLIC_COLUMNS)

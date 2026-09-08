@@ -1,12 +1,15 @@
 {
   "status": "PASS",
   "dataset": "nested_triangles_dataset_3000",
-  "items": 3000,
-  "template": "Count the nested triangles exactly (tolerance 0), estimate the cumulative rotation from the outermost to the innermost triangle to the nearest 5 degrees, and say whether the shrink factor is constant, increasing, or decreasing inward. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Work outward from the innermost shape to the outermost: count how many shapes are nested inside one another, decide whether each step shrinks by roughly the same factor or by a changing one, and estimate through how many degrees the innermost shape has been turned relative to the outermost, giving a value from 0 to 120 degrees to the nearest 10. State your conclusion, justify it by describing how you matched corresponding corners between the innermost and outermost shapes, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "shape_count",
-    "cumulative_rotation_degrees_nearest_5",
-    "shrink_pattern"
+    "shrink_pattern",
+    "rotation_degrees_nearest_10"
   ],
   "answer_distributions": {
     "shape_count": {
@@ -20,64 +23,47 @@
       "8": 332,
       "9": 332
     },
-    "cumulative_rotation_degrees_nearest_5": {
-      "0": 450,
-      "100": 144,
-      "20": 144,
-      "30": 144,
-      "35": 144,
-      "45": 144,
-      "55": 144,
-      "60": 144,
-      "70": 144,
-      "75": 144,
-      "85": 144,
-      "95": 144,
-      "25": 142,
-      "40": 142,
-      "50": 142,
-      "65": 142,
-      "80": 142,
-      "90": 142,
-      "15": 58,
-      "105": 56
-    },
     "shrink_pattern": {
       "changing": 1500,
       "constant": 1500
+    },
+    "rotation_degrees_nearest_10": {
+      "0": 450,
+      "30": 288,
+      "70": 288,
+      "100": 286,
+      "40": 286,
+      "50": 286,
+      "60": 286,
+      "80": 286,
+      "90": 286,
+      "20": 258
     }
   },
   "constant_answer_baselines": {
     "shape_count": 0.11466666666666667,
-    "cumulative_rotation_degrees_nearest_5": 0.15,
-    "shrink_pattern": 0.5
+    "shrink_pattern": 0.5,
+    "rotation_degrees_nearest_10": 0.15
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.028666666666666667,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

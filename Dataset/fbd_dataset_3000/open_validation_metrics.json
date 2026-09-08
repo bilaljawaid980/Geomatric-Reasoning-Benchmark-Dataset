@@ -1,67 +1,76 @@
 {
   "status": "PASS",
   "dataset": "fbd_dataset_3000",
-  "items": 3000,
-  "template": "For arrow A in the diagram as drawn, name its force type, give its direction as up, upper-right, right, lower-right, down, lower-left, left, or upper-left, and give its exact rank by arrow length from largest to smallest (tolerance 0), with ties sharing a rank. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Examine only the force arrows as they are drawn in this diagram, setting aside what the scenario physically requires: count the arrows, name which one represents the weight of the body, and rank their drawn magnitudes from largest to smallest, grouping any that appear equal. State your conclusion, justify it by describing the length and direction of each arrow as drawn, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "force_type_as_drawn",
-    "direction_as_drawn",
-    "magnitude_rank_largest_first"
+    "arrow_count",
+    "weight_arrow",
+    "drawn_magnitude_ranking"
   ],
   "answer_distributions": {
-    "force_type_as_drawn": {
-      "weight": 1355,
-      "normal": 508,
-      "friction": 465,
-      "tension": 399,
-      "applied": 273
+    "arrow_count": {
+      "4": 1125,
+      "2": 875,
+      "3": 750,
+      "1": 250
     },
-    "direction_as_drawn": {
-      "up": 1355,
-      "down": 708,
-      "lower-right": 343,
-      "lower-left": 272,
-      "left": 190,
-      "right": 132
+    "weight_arrow": {
+      "W": 2500,
+      "W1": 500
     },
-    "magnitude_rank_largest_first": {
-      "1": 1747,
-      "2": 755,
-      "3": 390,
-      "4": 108
+    "drawn_magnitude_ranking": {
+      "[[\"W\"],[\"N\"],[\"F\"],[\"A\"]]": 367,
+      "[[\"N\",\"W\"]]": 250,
+      "[[\"T1\",\"T2\",\"W1\",\"W2\"]]": 250,
+      "[[\"W\"]]": 250,
+      "[[\"N\"],[\"W\"],[\"F\"]]": 204,
+      "[[\"W\"],[\"N\"],[\"F\"]]": 171,
+      "[[\"A\",\"N\"],[\"F\",\"W\"]]": 125,
+      "[[\"A\",\"N\"],[\"W\"],[\"F\"]]": 125,
+      "[[\"A\"],[\"F\",\"W\"]]": 125,
+      "[[\"N\"],[\"A\"],[\"F\",\"W\"]]": 125,
+      "[[\"T\",\"W\"]]": 125,
+      "[[\"T\"],[\"W\"]]": 125,
+      "[[\"T2\",\"W1\",\"W2\"]]": 125,
+      "[[\"W\"],[\"F\"],[\"A\"]]": 125,
+      "[[\"W\"],[\"F\"]]": 125,
+      "[[\"W\"],[\"T\"]]": 125,
+      "[[\"W2\"],[\"T1\",\"T2\"],[\"W1\"]]": 125,
+      "[[\"N\"],[\"W\"]]": 69,
+      "[[\"W\"],[\"N\"]]": 56,
+      "[[\"W\"],[\"N\"],[\"A\"],[\"F\"]]": 8
     }
   },
   "constant_answer_baselines": {
-    "force_type_as_drawn": 0.45166666666666666,
-    "direction_as_drawn": 0.45166666666666666,
-    "magnitude_rank_largest_first": 0.5823333333333334
+    "arrow_count": 0.375,
+    "weight_arrow": 0.8333333333333334,
+    "drawn_magnitude_ranking": 0.12233333333333334
   },
-  "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.3423333333333333,
+  "fields_at_or_above_60_percent": {
+    "weight_arrow": 0.8333333333333334
+  },
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

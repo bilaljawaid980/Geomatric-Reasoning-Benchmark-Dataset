@@ -1,79 +1,53 @@
 {
   "status": "PASS",
   "dataset": "orthographic_dataset_3000",
-  "items": 3000,
-  "template": "Count the filled cells in the TOP, FRONT, and SIDE views. Give all three counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Compare the three orthographic views against one another: work out the smallest number of cubes a gravity-supported structure could have while still producing all three, and decide whether those views pin down a single arrangement or whether some different arrangement could produce the same three silhouettes. State your conclusion, justify it by describing which view constrains which direction, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "top_filled",
-    "front_filled",
-    "side_filled"
+    "minimum_cube_count",
+    "uniqueness"
   ],
   "answer_distributions": {
-    "top_filled": {
-      "4": 705,
-      "6": 658,
-      "5": 626,
-      "7": 557,
-      "8": 454
+    "minimum_cube_count": {
+      "10": 563,
+      "9": 478,
+      "6": 474,
+      "8": 468,
+      "7": 460,
+      "11": 392,
+      "12": 165
     },
-    "front_filled": {
-      "4": 619,
-      "5": 611,
-      "6": 531,
-      "7": 385,
-      "3": 356,
-      "8": 249,
-      "9": 136,
-      "10": 47,
-      "2": 45,
-      "11": 14,
-      "12": 7
-    },
-    "side_filled": {
-      "5": 662,
-      "4": 559,
-      "6": 517,
-      "7": 393,
-      "3": 363,
-      "8": 227,
-      "9": 140,
-      "10": 62,
-      "2": 57,
-      "11": 18,
-      "12": 2
+    "uniqueness": {
+      "unique": 1682,
+      "not unique": 1318
     }
   },
   "constant_answer_baselines": {
-    "top_filled": 0.235,
-    "front_filled": 0.20633333333333334,
-    "side_filled": 0.22066666666666668
+    "minimum_cube_count": 0.18766666666666668,
+    "uniqueness": 0.5606666666666666
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.025666666666666667,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

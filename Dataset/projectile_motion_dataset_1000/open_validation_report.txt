@@ -1,10 +1,13 @@
 Open-question validation: projectile_motion_dataset_1000
 Status: PASS
-Items: 1000
-Template: Read the plotted trajectory and estimate its maximum height and horizontal range to the nearest whole metre. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: maximum_height_m_nearest_whole, range_m_nearest_whole
-Constant-answer baselines: {"maximum_height_m_nearest_whole": 0.058, "range_m_nearest_whole": 0.026}
-Fields >=60%: {}
+Source items: 1000
+Included: 1000
+Excluded: 0
+Exclusions: {}
+Sub-facts: peak_horizontal_distance_m_nearest_1, peak_above_20_m
+Constant-answer baselines: {"peak_above_20_m": 0.654, "peak_horizontal_distance_m_nearest_1": 0.039}
+Fields >=60%: {"peak_above_20_m": 0.654}
 Independent derivation mismatches: 0
 PNG recovery: 1000/1000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

@@ -1,8 +1,8 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "angle-estimation-5.0.0",
-  "generator_commit": "269045bc25630d3cc96a3d617e35043d72f941cd",
+  "dataset_version": "angle-estimation-6.0.0",
+  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
   "images": 3000,
   "constraints": {
     "angle_sum_boundary_margin_degrees": 2,
@@ -20,7 +20,7 @@
     "prompt"
   ],
   "questions": 15000,
-  "open_questions": 3000,
+  "open_questions": 1050,
   "open_question_files": [
     "open_questions.csv",
     "open_answer_key.csv",
@@ -42,8 +42,15 @@
     "open_no_deterministically_redundant_subfacts": true,
     "open_no_none_placeholders": true,
     "open_numeric_tolerances_stored_and_stated": true,
-    "open_prompt_does_not_name_reasoning_trap": true
+    "open_prompt_does_not_name_reasoning_trap": true,
+    "existing_five_level_questions_unchanged_except_approved_defect_repairs": true,
+    "open_question_count_per_eligible_image": 1,
+    "open_exclusions_are_explicitly_reported": true
   },
   "open_question_builder": "../build_remaining_open_questions.py",
-  "open_question_validator": "../validate_remaining_open_questions.py"
+  "open_question_validator": "../validate_remaining_open_questions.py",
+  "open_excluded_items": 1950,
+  "open_exclusion_counts": {
+    "template_requires_two_angles": 1950
+  }
 }

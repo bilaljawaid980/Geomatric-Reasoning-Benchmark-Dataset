@@ -1,10 +1,13 @@
 Open-question validation: gear_train_dataset_3000
 Status: PASS
-Items: 3000
-Template: Trace the meshing gears from driver A to gear C. Give gear C's rotation direction as CW or CCW and its speed to the nearest whole rpm. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: rotation_direction, speed_rpm_nearest_whole
-Constant-answer baselines: {"rotation_direction": 0.5103333333333333, "speed_rpm_nearest_whole": 0.016}
-Fields >=60%: {}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: fastest_gear, last_gear, last_direction_relation
+Constant-answer baselines: {"fastest_gear": 0.261, "last_direction_relation": 0.6176666666666667, "last_gear": 0.381}
+Fields >=60%: {"last_direction_relation": 0.6176666666666667}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

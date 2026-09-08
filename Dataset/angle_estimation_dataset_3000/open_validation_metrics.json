@@ -1,120 +1,64 @@
 {
   "status": "PASS",
   "dataset": "angle_estimation_dataset_3000",
-  "items": 3000,
-  "template": "Look at marked angle. Estimate its measure to the nearest 5 degrees, and classify it as acute, right, obtuse, or reflex. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 1050,
+  "excluded_items": 1950,
+  "exclusion_counts": {
+    "template_requires_two_angles": 1950
+  },
+  "template": "Look at each marked angle in turn, judging the opening between its rays rather than how long the rays are drawn: decide which of the two angles is larger, and estimate how many degrees larger it is, to the nearest 10 degrees. State your conclusion, justify it by describing the direction the rays point at each vertex, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "angle_degrees_nearest_5",
-    "angle_class"
+    "larger_angle",
+    "difference_degrees_nearest_10"
   ],
   "answer_distributions": {
-    "angle_degrees_nearest_5": {
-      "45": 148,
-      "30": 140,
-      "55": 134,
-      "35": 127,
-      "60": 126,
-      "90": 126,
-      "50": 120,
-      "40": 113,
-      "25": 112,
-      "70": 104,
-      "65": 95,
-      "20": 83,
-      "75": 72,
-      "80": 70,
-      "120": 66,
-      "15": 65,
-      "110": 63,
-      "135": 60,
-      "130": 55,
-      "160": 54,
-      "115": 53,
-      "140": 53,
-      "145": 48,
-      "155": 47,
-      "150": 45,
-      "100": 44,
-      "125": 44,
-      "85": 44,
-      "105": 41,
-      "180": 35,
-      "10": 34,
-      "165": 30,
-      "170": 30,
-      "95": 29,
-      "325": 24,
-      "195": 21,
-      "205": 21,
-      "225": 21,
-      "340": 20,
-      "190": 19,
-      "310": 19,
-      "215": 17,
-      "235": 17,
-      "260": 17,
-      "300": 17,
-      "320": 17,
-      "200": 16,
-      "230": 16,
-      "250": 16,
-      "290": 16,
-      "305": 16,
-      "280": 15,
-      "315": 15,
-      "210": 14,
-      "245": 14,
-      "295": 14,
-      "330": 14,
-      "220": 13,
-      "240": 12,
-      "255": 12,
-      "285": 12,
-      "345": 12,
-      "335": 9,
-      "350": 9,
-      "185": 6,
-      "275": 4,
-      "175": 3,
-      "265": 2
+    "larger_angle": {
+      "Angle 2": 526,
+      "Angle 1": 524
     },
-    "angle_class": {
-      "acute": 1646,
-      "obtuse": 866,
-      "reflex": 487,
-      "right": 1
+    "difference_degrees_nearest_10": {
+      "20": 132,
+      "30": 125,
+      "50": 124,
+      "40": 117,
+      "10": 101,
+      "60": 88,
+      "70": 63,
+      "80": 61,
+      "90": 52,
+      "100": 51,
+      "110": 40,
+      "130": 30,
+      "120": 28,
+      "140": 24,
+      "150": 12,
+      "160": 2
     }
   },
   "constant_answer_baselines": {
-    "angle_degrees_nearest_5": 0.04933333333333333,
-    "angle_class": 0.5486666666666666
+    "larger_angle": 0.5009523809523809,
+    "difference_degrees_nearest_10": 0.12571428571428572
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.04933333333333333,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
-    "passed": 3000,
-    "total": 3000,
+    "passed": 1050,
+    "total": 1050,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

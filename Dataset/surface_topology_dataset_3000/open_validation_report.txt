@@ -1,10 +1,13 @@
 Open-question validation: surface_topology_dataset_3000
 Status: PASS
-Items: 3000
-Template: Identify the surface family, then give its exact Euler characteristic (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: surface_family, euler_characteristic
-Constant-answer baselines: {"euler_characteristic": 0.5233333333333333, "surface_family": 0.25}
-Fields >=60%: {}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: genus, orientability, euler_characteristic
+Constant-answer baselines: {"euler_characteristic": 0.5233333333333333, "genus": 0.2733333333333333, "orientability": 0.75}
+Fields >=60%: {"orientability": 0.75}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

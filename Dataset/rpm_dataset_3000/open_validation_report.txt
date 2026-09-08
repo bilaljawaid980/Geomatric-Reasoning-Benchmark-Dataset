@@ -1,10 +1,13 @@
 Open-question validation: rpm_dataset_3000
 Status: PASS
-Items: 3000
-Template: Complete the empty panel: name the shape, give the exact number of copies (tolerance 0), and give its rotation to the nearest 5 degrees. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: shape, count, rotation_degrees
-Constant-answer baselines: {"count": 0.4236666666666667, "rotation_degrees": 0.13333333333333333, "shape": 0.17933333333333334}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: correct_choice, attributes_changed_together
+Constant-answer baselines: {"attributes_changed_together": 0.22, "correct_choice": 0.13066666666666665}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

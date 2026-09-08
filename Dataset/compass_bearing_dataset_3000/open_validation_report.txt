@@ -1,10 +1,13 @@
 Open-question validation: compass_bearing_dataset_3000
 Status: PASS
-Items: 3000
-Template: From landmark C, name the nearest and farthest landmarks. Then give the direction to the alphabetically first nearest landmark using one of eight equal 45-degree sectors centred on north, north-east, east, south-east, south, south-west, west, and north-west. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: nearest_landmarks, farthest_landmarks, direction_to_first_nearest
-Constant-answer baselines: {"direction_to_first_nearest": 0.13966666666666666, "farthest_landmarks": 0.304, "nearest_landmarks": 0.302}
+Source items: 3000
+Included: 1118
+Excluded: 1882
+Exclusions: {"closest_pair_bearing_within_15_degrees_of_sector_boundary": 1882}
+Sub-facts: closest_pair, direction_from_earlier
+Constant-answer baselines: {"closest_pair": 0.26028622540250446, "direction_from_earlier": 0.16905187835420393}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+PNG recovery: 1118/1118
+Special checks: {}
+Issues: []

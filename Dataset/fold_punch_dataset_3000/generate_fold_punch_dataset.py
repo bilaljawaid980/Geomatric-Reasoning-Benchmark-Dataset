@@ -142,8 +142,7 @@ def questions(iid,row,rng):
     elif kind=='count':q={'question_text':'Which candidate has the wrong total number of holes?','question_type':'wrong_count_choice','ground_truth':next(c['choice_label'] for c in row['candidates'] if c['error_type']=='wrong_count'),'answer_format':'letter'}
     else:q={'question_text':"If the last fold were removed, would the unfolded hole count be 'exactly half' or have a 'different relationship'?",'question_type':'remove_last_fold','ground_truth':'exactly half','answer_format':'short_text'}
     qs.append({'question_id':iid+'_q4','difficulty_level':4,**q})
-    if int(iid[-4:])%3:q5={'question_text':'If one additional fold were made and the punch stayed away from the new crease, how many holes would appear after fully unfolding?','question_type':'additional_fold_hole_count','ground_truth':str(row['num_holes']*2),'answer_format':'numeric'}
-    else:q5={'question_text':"If the last fold were removed, would the unfolded hole count be 'exactly half' or have a 'different relationship'?",'question_type':'remove_last_fold','ground_truth':'exactly half','answer_format':'short_text'}
+    q5={'question_text':'If one additional fold were made and the punch stayed away from the new crease, how many holes would appear after fully unfolding?','question_type':'additional_fold_hole_count','ground_truth':str(row['num_holes']*2),'answer_format':'numeric'}
     qs.append({'question_id':iid+'_q5','difficulty_level':5,**q5});return qs
 
 def generate_one(i,images):

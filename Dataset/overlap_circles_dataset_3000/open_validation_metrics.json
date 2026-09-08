@@ -1,103 +1,70 @@
 {
   "status": "PASS",
   "dataset": "overlap_circles_dataset_3000",
-  "items": 3000,
-  "template": "For the largest circle, count its direct overlaps, count all overlapping pairs, and say how many circles would be isolated if the largest were removed. Give all counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Examine every circle and the way they lie across one another: count how many circles there are, say whether any circle stands clear of all the others, and give how many are larger than the average size. State your conclusion, justify it by describing how you traced individual outlines where several circles overlap, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "largest_circle_direct_overlaps",
-    "total_overlap_pairs",
-    "isolated_after_largest_removal"
+    "circle_count",
+    "any_isolated",
+    "above_average_radius_count"
   ],
   "answer_distributions": {
-    "largest_circle_direct_overlaps": {
-      "3": 649,
-      "4": 601,
-      "2": 501,
-      "5": 479,
-      "6": 292,
-      "7": 171,
-      "1": 156,
-      "8": 83,
-      "0": 32,
-      "9": 27,
-      "10": 8,
-      "11": 1
+    "circle_count": {
+      "11": 399,
+      "12": 394,
+      "7": 391,
+      "10": 375,
+      "9": 365,
+      "5": 363,
+      "6": 360,
+      "8": 353
     },
-    "total_overlap_pairs": {
-      "5": 236,
-      "6": 202,
-      "4": 159,
-      "13": 140,
-      "7": 139,
-      "11": 136,
-      "15": 129,
-      "18": 129,
-      "8": 128,
-      "9": 125,
-      "12": 123,
-      "10": 118,
-      "14": 111,
-      "17": 107,
-      "22": 101,
-      "3": 97,
-      "16": 95,
-      "21": 93,
-      "20": 87,
-      "23": 77,
-      "19": 76,
-      "26": 76,
-      "27": 63,
-      "24": 53,
-      "31": 52,
-      "28": 39,
-      "25": 37,
-      "32": 25,
-      "29": 18,
-      "30": 12,
-      "33": 11,
-      "34": 4,
-      "35": 1,
-      "36": 1
+    "any_isolated": {
+      "no": 2161,
+      "yes": 839
     },
-    "isolated_after_largest_removal": {
-      "0": 1738,
-      "1": 922,
-      "2": 316,
-      "3": 20,
-      "4": 4
+    "above_average_radius_count": {
+      "4": 762,
+      "3": 741,
+      "5": 643,
+      "6": 384,
+      "2": 288,
+      "7": 146,
+      "1": 20,
+      "8": 16
     }
   },
   "constant_answer_baselines": {
-    "largest_circle_direct_overlaps": 0.21633333333333332,
-    "total_overlap_pairs": 0.07866666666666666,
-    "isolated_after_largest_removal": 0.5793333333333334
+    "circle_count": 0.133,
+    "any_isolated": 0.7203333333333334,
+    "above_average_radius_count": 0.254
   },
-  "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.019666666666666666,
+  "fields_at_or_above_60_percent": {
+    "any_isolated": 0.7203333333333334
+  },
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
+  "special_checks": {
+    "invalid_cluster_distribution_answers": 0
   },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
   "issues": []
 }

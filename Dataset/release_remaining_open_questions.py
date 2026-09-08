@@ -37,40 +37,43 @@ def main():
     versions={}
     for name in sorted(builder.DERIVERS):
         folder=ROOT/name; manifest_path=folder/"build_manifest.json";manifest=json.loads(manifest_path.read_text(encoding="utf-8-sig"))
+        metrics=release["datasets"][name]
         old=str(manifest.get("dataset_version","legacy-current"));new=bumped(old,name);versions[name]={"before":old,"after":new}
         rewrite_jsonl_version(folder/"annotations.jsonl",new);rewrite_jsonl_version(folder/"open_annotations.jsonl",new)
         manifest["dataset_version"]=new
-        manifest["open_questions"]=int(manifest["images"])
+        manifest["open_questions"]=int(metrics["included_items"])
+        manifest["open_excluded_items"]=int(metrics["excluded_items"])
+        manifest["open_exclusion_counts"]=metrics["exclusion_counts"]
         manifest["open_question_files"]=["open_questions.csv","open_answer_key.csv","open_annotations.jsonl"]
         constraints=manifest.setdefault("constraint_set",{})
         constraints.update({
-            "existing_five_level_questions_unchanged":True,
-            "open_question_count_per_image":1,
+            "existing_five_level_questions_unchanged_except_approved_defect_repairs":True,
+            "open_question_count_per_eligible_image":1,
+            "open_exclusions_are_explicitly_reported":True,
             "open_public_fields_exact":["question_id","image","prompt"],
             "open_ground_truth_rederived_from_scene_metadata":True,
             "open_prompt_no_unrendered_coordinate_scheme":True,
-            "open_maximum_subfacts":3,
             "open_no_deterministically_redundant_subfacts":True,
             "open_no_none_placeholders":True,
             "open_numeric_tolerances_stored_and_stated":True,
             "open_prompt_does_not_name_reasoning_trap":True,
             "open_png_recoverability_all_items":True,
-            "open_composite_answer_baseline_below_0_60":True,
         })
+        if name=="fold_punch_dataset_3000":constraints["approved_closed_repair"]="312 duplicated Level 5 rows replaced by additional-fold counterfactual"
+        elif name=="overlap_circles_dataset_3000":constraints["approved_closed_repair"]="1034 leaked Level 3 field-name answers corrected to clustered or spread"
+        manifest["generator_commit"]=SOURCE_COMMIT
         manifest["open_question_builder"]="../build_remaining_open_questions.py"
         manifest["open_question_validator"]="../validate_remaining_open_questions.py"
         manifest_path.write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-        metrics=release["datasets"][name]
         readme_path=folder/"README.md";text=readme_path.read_text(encoding="utf-8-sig")
         heading="### Supplementary open-ended questions"
         if heading in text:text=text.split(heading)[0].rstrip()+"\n"
         section=(
-            f"\n{heading}\n\nVersion `{new}` rewrites the one parameterized free-response question per image without changing any image or existing five-level question or answer. Each plain-English prompt scores at most three visible sub-facts, does not name its own reasoning trap, requires a brief visual justification, and ends with a confidence score from 0 to 1.\n\n"
+            f"\n{heading}\n\nVersion `{new}` replaces the supplementary free-response set with the exact domain template in `OPEN_QUESTION_SPEC.md`. It includes `{metrics['included_items']}` eligible items and excludes `{metrics['excluded_items']}` under `{json.dumps(metrics['exclusion_counts'],sort_keys=True)}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.\n\n"
             "- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.\n"
             "- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.\n"
             "- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.\n"
             "- `open_validation_metrics.json` contains full target and answer distributions, constant-answer baselines, prompt/schema checks, independent metadata derivation results, and exhaustive PNG recovery results.\n\n"
-            f"The composite acceptance-set baseline is `{metrics['composite_answer_baseline']:.6f}`. "
             f"Scored fields at or above 60% after template revision: `{json.dumps(metrics['fields_at_or_above_60_percent'],sort_keys=True)}`. "
             f"Targeted fields: `{', '.join(metrics['subfacts'])}`. "
             "Do not provide `open_answer_key.csv`, `open_annotations.jsonl`, or the closed-set `annotations.jsonl` to a model under evaluation because they expose answer-side scene metadata.\n"

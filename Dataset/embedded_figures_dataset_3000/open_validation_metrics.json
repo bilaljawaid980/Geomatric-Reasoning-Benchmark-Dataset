@@ -1,56 +1,52 @@
 {
   "status": "PASS",
   "dataset": "embedded_figures_dataset_3000",
-  "items": 3000,
-  "template": "Name the shape hidden in the line drawing, then give the letter of the candidate with the same outline under rotation and scaling. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Study the complex figure and each of the candidate shapes beneath it: decide which candidate is hidden inside the figure, and say how many sides that shape has. State your conclusion, justify it by describing where in the figure you located the shape and which lines belong to it rather than to the surrounding clutter, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "target_shape",
-    "matching_candidate"
+    "candidate",
+    "side_count"
   ],
   "answer_distributions": {
-    "target_shape": {
-      "hexagon": 750,
-      "pentagon": 750,
-      "square": 750,
-      "triangle": 750
-    },
-    "matching_candidate": {
+    "candidate": {
       "A": 750,
       "B": 750,
       "C": 750,
       "D": 750
+    },
+    "side_count": {
+      "3": 750,
+      "4": 750,
+      "5": 750,
+      "6": 750
     }
   },
   "constant_answer_baselines": {
-    "target_shape": 0.25,
-    "matching_candidate": 0.25
+    "candidate": 0.25,
+    "side_count": 0.25
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.25,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

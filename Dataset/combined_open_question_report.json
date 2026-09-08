@@ -2,214 +2,214 @@
   "status": "PASS",
   "datasets": {
     "angle_estimation_dataset_3000": {
-      "dataset_version": "angle-estimation-5.0.0",
-      "images": 3000,
-      "open_questions": 3000,
-      "open_answers": 3000
+      "dataset_version": "angle-estimation-6.0.0",
+      "images": 1050,
+      "open_questions": 1050,
+      "open_answers": 1050
     },
     "clock_reading_dataset_3000": {
-      "dataset_version": "clock-reading-3.0.0",
+      "dataset_version": "clock-reading-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "combination3d_dataset_3000": {
-      "dataset_version": "combination3d-4.0.0",
+      "dataset_version": "combination3d-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "combination_dataset_3000": {
-      "dataset_version": "combination-3.0.0",
+      "dataset_version": "combination-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "compass_bearing_dataset_3000": {
-      "dataset_version": "compass-bearing-4.0.0",
-      "images": 3000,
-      "open_questions": 3000,
-      "open_answers": 3000
+      "dataset_version": "compass-bearing-5.0.0",
+      "images": 1118,
+      "open_questions": 1118,
+      "open_answers": 1118
     },
     "coordinate_geometry_dataset_3000": {
-      "dataset_version": "coordinate-geometry-4.0.0",
+      "dataset_version": "coordinate-geometry-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "cube_net_dataset_3000": {
-      "dataset_version": "cube-net-4.0.0",
+      "dataset_version": "cube-net-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "cube_structure_dataset_3000": {
-      "dataset_version": "cube-structure-4.0.0",
+      "dataset_version": "cube-structure-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "depth_height_dataset_3000": {
-      "dataset_version": "depth-height-4.0.0",
-      "images": 3000,
-      "open_questions": 3000,
-      "open_answers": 3000
+      "dataset_version": "depth-height-5.0.0",
+      "images": 1500,
+      "open_questions": 1500,
+      "open_answers": 1500
     },
     "embedded_figures_dataset_3000": {
-      "dataset_version": "embedded-figures-3.0.0",
+      "dataset_version": "embedded-figures-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "fbd_dataset_3000": {
-      "dataset_version": "free-body-diagram-4.0.0",
+      "dataset_version": "free-body-diagram-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "fold_punch_dataset_3000": {
-      "dataset_version": "fold-punch-4.0.0",
+      "dataset_version": "fold-punch-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "gauge_reading_dataset_3000": {
-      "dataset_version": "gauge-reading-3.0.0",
+      "dataset_version": "gauge-reading-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "gear_train_dataset_3000": {
-      "dataset_version": "gear-train-3.0.0",
+      "dataset_version": "gear-train-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "hex_pathfinding_dataset_3000": {
-      "dataset_version": "hex-pathfinding-4.0.0",
+      "dataset_version": "hex-pathfinding-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "impossible_object_dataset_3000": {
-      "dataset_version": "impossible-object-6.0.0",
+      "dataset_version": "impossible-object-7.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "laser_mirror_dataset_3000": {
-      "dataset_version": "laser-mirror-3.0.0",
-      "images": 3000,
-      "open_questions": 3000,
-      "open_answers": 3000
+      "dataset_version": "laser-mirror-4.0.0",
+      "images": 2250,
+      "open_questions": 2250,
+      "open_answers": 2250
     },
     "line_intersection_dataset_3000": {
-      "dataset_version": "line-intersection-5.0.0",
+      "dataset_version": "line-intersection-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "nested_hexagons_dataset_3000": {
-      "dataset_version": "nested-hexagons-10.0.0",
+      "dataset_version": "nested-hexagons-11.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "nested_squares_dataset_3000": {
-      "dataset_version": "nested-squares-10.0.0",
+      "dataset_version": "nested-squares-11.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "nested_triangles_dataset_3000": {
-      "dataset_version": "nested-triangles-10.0.0",
+      "dataset_version": "nested-triangles-11.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "occluded_pattern_dataset_3000": {
-      "dataset_version": "occluded-pattern-4.0.0",
+      "dataset_version": "occluded-pattern-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "optical_illusion_dataset_3000": {
-      "dataset_version": "optical-illusion-5.0.0",
+      "dataset_version": "optical-illusion-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "orthographic_dataset_3000": {
-      "dataset_version": "orthographic-3.0.0",
+      "dataset_version": "orthographic-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "overlap_circles_dataset_3000": {
-      "dataset_version": "overlap-circles-4.0.0",
+      "dataset_version": "overlap-circles-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "physical_stability_dataset_3000": {
-      "dataset_version": "physical-stability-3.0.0",
+      "dataset_version": "physical-stability-4.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "polyhedron_dataset_3000": {
-      "dataset_version": "polyhedron-7.0.0",
+      "dataset_version": "polyhedron-8.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "projectile_motion_dataset_1000": {
-      "dataset_version": "projectile-motion-3.0.0",
+      "dataset_version": "projectile-motion-4.0.0",
       "images": 1000,
       "open_questions": 1000,
       "open_answers": 1000
     },
     "rotation_matching_dataset_3000": {
-      "dataset_version": "rotation-matching-4.0.0",
+      "dataset_version": "rotation-matching-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "route_dataset_3000": {
-      "dataset_version": "route-4.0.0",
-      "images": 3000,
-      "open_questions": 3000,
-      "open_answers": 3000
+      "dataset_version": "route-5.0.0",
+      "images": 986,
+      "open_questions": 986,
+      "open_answers": 986
     },
     "rpm_dataset_3000": {
-      "dataset_version": "rpm-4.0.0",
+      "dataset_version": "rpm-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "shadow_inference_dataset_3000": {
-      "dataset_version": "shadow-inference-4.0.0",
+      "dataset_version": "shadow-inference-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "surface_topology_dataset_3000": {
-      "dataset_version": "surface-topology-5.0.0",
+      "dataset_version": "surface-topology-6.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     },
     "symmetry_pattern_dataset_3000": {
-      "dataset_version": "symmetry-pattern-4.0.0",
+      "dataset_version": "symmetry-pattern-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 100000,
-  "combined_open_answers": 100000,
-  "unique_question_ids": 100000,
-  "resolved_image_paths": 100000,
+  "combined_open_questions": 91904,
+  "combined_open_answers": 91904,
+  "unique_question_ids": 91904,
+  "resolved_image_paths": 91904,
   "public_columns": [
     "dataset",
     "dataset_version",
@@ -226,80 +226,74 @@
     "image_path",
     "prompt",
     "acceptance_set",
-    "targets",
     "tolerances",
-    "angle_degrees_nearest_5",
-    "angle_class",
+    "targets",
+    "larger_angle",
+    "difference_degrees_nearest_10",
     "time",
     "smaller_angle_degrees_nearest_5",
-    "blocking_reason",
-    "nearest_landmarks",
-    "farthest_landmarks",
-    "direction_to_first_nearest",
-    "target_coordinates",
-    "nearest_points",
-    "farthest_points",
-    "opposite_face",
+    "correct_candidate",
+    "rejected_candidate",
+    "rejection_reason",
+    "closest_pair",
+    "direction_from_earlier",
+    "farthest_pair",
+    "distance_nearest_unit",
+    "relation_to_10",
     "flat_edge_neighbours",
-    "occupied_columns",
-    "tallest_column_height",
-    "nearest_object_color",
-    "farthest_object_color",
-    "block_count",
-    "tallest_stack_colors",
-    "target_shape",
-    "matching_candidate",
-    "force_type_as_drawn",
-    "direction_as_drawn",
-    "magnitude_rank_largest_first",
-    "fold_directions",
+    "opposite_face",
+    "base_layer_count",
+    "hidden_cube_count",
+    "depth_ordering",
+    "nearest_colour",
+    "candidate",
+    "side_count",
+    "arrow_count",
+    "weight_arrow",
+    "drawn_magnitude_ranking",
     "unfolded_hole_count",
-    "instrument",
-    "reading_nearest_tick",
-    "rotation_direction",
-    "speed_rpm_nearest_whole",
-    "grey_holes_touching_home",
-    "walkable_hexes_touching_home",
-    "front_beam",
-    "total_crossings",
-    "mirrors_hit_in_order",
+    "correct_pattern",
+    "rounded_tick_value",
+    "range_half",
+    "fastest_gear",
+    "last_gear",
+    "last_direction_relation",
+    "boundary_status",
+    "neighbourhood",
+    "crossing_count",
+    "constructible",
+    "reflection_count",
     "exit_edge",
     "exit_position",
-    "red_at_left",
-    "red_at_right",
+    "starts_and_finishes_higher",
     "shape_count",
-    "cumulative_rotation_degrees_nearest_5",
     "shrink_pattern",
+    "rotation_degrees_nearest_10",
     "pattern_type",
-    "visible_count",
-    "hidden_count",
-    "true_relation",
-    "top_filled",
-    "front_filled",
-    "side_filled",
-    "largest_circle_direct_overlaps",
-    "total_overlap_pairs",
-    "isolated_after_largest_removal",
-    "blocks_above_contact",
-    "combined_centre_of_mass",
-    "solid_name",
-    "face_count",
+    "hidden_object_count",
+    "true_size_relation",
+    "perceived_larger",
+    "minimum_cube_count",
+    "uniqueness",
+    "circle_count",
+    "any_isolated",
+    "above_average_radius_count",
+    "stability_conclusion",
     "face_shapes",
-    "maximum_height_m_nearest_whole",
-    "range_m_nearest_whole",
-    "matching_rotation_candidate",
+    "convexity",
+    "peak_horizontal_distance_m_nearest_1",
+    "peak_above_20_m",
+    "rotation_candidate",
     "reflection_candidate",
-    "far_ends_by_colour",
-    "total_bends",
-    "shape",
-    "count",
-    "rotation_degrees",
-    "tallest_object_type",
-    "its_shadow_direction",
-    "longest_shadow_colours",
-    "surface_family",
+    "connectivity",
+    "correct_choice",
+    "attributes_changed_together",
+    "light_direction",
+    "light_height",
+    "genus",
+    "orientability",
     "euler_characteristic",
-    "symmetry_type",
-    "pattern_status"
+    "pattern_status",
+    "symmetry_type"
   ]
 }

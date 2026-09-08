@@ -1,83 +1,54 @@
 {
   "status": "PASS",
   "dataset": "polyhedron_dataset_3000",
-  "items": 3000,
-  "template": "Identify the solid, give its exact total number of faces (tolerance 0), and name the face shape or shapes. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Examine the solid's visible faces and the edges bounding them: say what shapes its faces are, and decide whether the solid is convex or whether some part of it folds inward. State your conclusion, justify it by describing the faces you could identify and how you judged convexity, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "solid_name",
-    "face_count",
-    "face_shapes"
+    "face_shapes",
+    "convexity"
   ],
   "answer_distributions": {
-    "solid_name": {
-      "dodecahedron": 315,
-      "icosahedron": 315,
-      "compound of cube and octahedron": 158,
-      "cube": 158,
-      "cuboctahedron": 158,
-      "icosidodecahedron": 158,
-      "octahedron": 158,
-      "rhombic dodecahedron": 158,
-      "rhombic triacontahedron": 158,
-      "rhombicuboctahedron": 158,
-      "stella octangula": 158,
-      "tetrahedron": 158,
-      "triakis octahedron": 158,
-      "triakis tetrahedron": 158,
-      "truncated cube": 158,
-      "truncated octahedron": 158,
-      "truncated tetrahedron": 158
-    },
-    "face_count": {
-      "14": 632,
-      "12": 631,
-      "8": 474,
-      "20": 315,
-      "24": 158,
-      "26": 158,
-      "30": 158,
-      "32": 158,
-      "4": 158,
-      "6": 158
-    },
     "face_shapes": {
       "mixed": 1106,
       "triangles": 1105,
       "squares": 474,
       "pentagons": 315
+    },
+    "convexity": {
+      "convex": 2684,
+      "non-convex": 316
     }
   },
   "constant_answer_baselines": {
-    "solid_name": 0.105,
-    "face_count": 0.21066666666666667,
-    "face_shapes": 0.36866666666666664
+    "face_shapes": 0.36866666666666664,
+    "convexity": 0.8946666666666667
   },
-  "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.105,
+  "fields_at_or_above_60_percent": {
+    "convexity": 0.8946666666666667
+  },
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
+  "special_checks": {
+    "boundary_edge_set_mismatches": 0
   },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
   "issues": []
 }

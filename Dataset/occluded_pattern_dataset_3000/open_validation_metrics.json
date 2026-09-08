@@ -1,12 +1,14 @@
 {
   "status": "PASS",
   "dataset": "occluded_pattern_dataset_3000",
-  "items": 3000,
-  "template": "Name the repeated pattern, count the visible objects exactly, and infer the hidden objects exactly (tolerance 0 for both counts). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Look at the objects visible around the occluder and the arrangement they suggest: name the kind of pattern they form, then work out how many objects the occluder is hiding from view. State your conclusion, justify it by describing how the visible objects let you infer where the pattern continues, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "pattern_type",
-    "visible_count",
-    "hidden_count"
+    "hidden_object_count"
   ],
   "answer_distributions": {
     "pattern_type": {
@@ -14,35 +16,7 @@
       "grid": 1000,
       "triangle": 1000
     },
-    "visible_count": {
-      "4": 434,
-      "8": 368,
-      "7": 307,
-      "10": 246,
-      "9": 232,
-      "11": 213,
-      "6": 204,
-      "12": 188,
-      "5": 169,
-      "14": 80,
-      "3": 73,
-      "18": 65,
-      "16": 62,
-      "20": 56,
-      "21": 55,
-      "15": 44,
-      "13": 43,
-      "24": 40,
-      "17": 36,
-      "19": 31,
-      "22": 17,
-      "30": 16,
-      "25": 6,
-      "26": 6,
-      "28": 6,
-      "27": 3
-    },
-    "hidden_count": {
+    "hidden_object_count": {
       "2": 1108,
       "3": 643,
       "4": 498,
@@ -60,35 +34,27 @@
   },
   "constant_answer_baselines": {
     "pattern_type": 0.3333333333333333,
-    "visible_count": 0.14466666666666667,
-    "hidden_count": 0.36933333333333335
+    "hidden_object_count": 0.36933333333333335
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.08933333333333333,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

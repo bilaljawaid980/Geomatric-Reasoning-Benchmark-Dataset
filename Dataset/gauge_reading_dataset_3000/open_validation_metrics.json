@@ -1,20 +1,17 @@
 {
   "status": "PASS",
   "dataset": "gauge_reading_dataset_3000",
-  "items": 3000,
-  "template": "Name the instrument and read the needle to the nearest minor tick in km/h; answers within half a minor-tick interval are accepted. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Read the needle against the printed scale: give the value it points to, rounded to the nearest tick mark, and say whether that value lies in the lower or upper half of the gauge's range. State your conclusion, justify it by describing which numbered marks the needle falls between, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "instrument",
-    "reading_nearest_tick"
+    "rounded_tick_value",
+    "range_half"
   ],
   "answer_distributions": {
-    "instrument": {
-      "pressure gauge": 1200,
-      "analog meter": 600,
-      "speedometer": 600,
-      "temperature dial": 600
-    },
-    "reading_nearest_tick": {
+    "rounded_tick_value": {
       "20": 296,
       "40": 249,
       "80": 223,
@@ -45,38 +42,37 @@
       "140": 46,
       "200": 44,
       "7": 40
+    },
+    "range_half": {
+      "lower": 1500,
+      "upper": 1500
     }
   },
   "constant_answer_baselines": {
-    "instrument": 0.4,
-    "reading_nearest_tick": 0.09866666666666667
+    "rounded_tick_value": 0.09866666666666667,
+    "range_half": 0.5
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.035333333333333335,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
+  "special_checks": {
+    "needle_exactly_on_tick_count": 1380
   },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
   "issues": []
 }

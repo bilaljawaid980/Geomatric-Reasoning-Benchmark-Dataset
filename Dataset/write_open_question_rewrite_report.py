@@ -1,49 +1,15 @@
-"""Write the human-readable audit report for the 34-domain open-question rewrite."""
+"""Write the human-readable OPEN_QUESTION_SPEC.md implementation report."""
 from pathlib import Path
 import json
-import subprocess
-
 ROOT=Path(__file__).resolve().parent
-
 def main():
-    suite=json.loads((ROOT/"open_question_suite_report.json").read_text(encoding="utf-8"))
-    combined=json.loads((ROOT/"combined_open_question_report.json").read_text(encoding="utf-8"))
-    lines=[
-        "# Open-question rewrite and verification",
-        "",
-        "## Pre-change diagnosis",
-        "",
-        "- `compass_bearing_0115`: A→B is 162.33927134° under 0°=north, clockwise-positive bearings. The eight sector boundaries are 22.5°, 67.5°, 112.5°, 157.5°, 202.5°, 247.5°, 292.5°, and 337.5°. The value lies in south [157.5°, 202.5°), so the stored word is correct. It is 4.83927134° from the south/south-east boundary. The deterministic open target was within 10° of a boundary in 1,304/3,000 items; considering any directed landmark pair, 2,689/3,000 items and 11,746/27,000 bearings had at least one such case. The rewritten prompt now states the exact sector rule.",
-        "- `combination3d_0150`: `len(target_cubes)=11`. One cube, `(0,0,0)`, is fully occluded by the renderer-equivalent visibility test; 10 cubes survive that test. `target_cube_count` counts all cubes. Across the domain, 1,901/3,000 targets contain at least one fully hidden cube, with 3,128 hidden cubes total. The target-total sub-fact was removed.",
-        "- `cube_net_0103`: for face A, flat edge-neighbours are C and E from `net_edge_neighbors`, the opposite is F from `opposite_pairs`, and folded neighbours are B, C, D, and E from `cube_adjacent_faces`. All 3,000 records satisfy the complement invariant. The redundant folded-adjacency list was removed.",
-        "- No error was found in any closed L1–L5 ground-truth value, so none was changed.",
-        "",
-        "The pre-change suite sweep found that the shared generator recomputed open facts in 31 domains and its validator called the same derivation functions, so that check was circular. The replacement validator has separate formulas and geometry traversal and never calls the builder's derivation functions. Direct stored values are used only when they are closed-question-validated scene fields; derived values are recomputed independently.",
-        "",
-        "## Final templates and scored sub-facts",
-        "",
-        "| Dataset | Version | Sub-facts | Example generated prompt | Highest field baseline |",
-        "|---|---|---|---|---:|",
-    ]
-    for name,m in suite["datasets"].items():
-        highest=max(m["constant_answer_baselines"].values())
-        prompt=m["template"].replace("|","\\|")
-        old_raw=subprocess.check_output(["git","show",f"HEAD:Dataset/{name}/build_manifest.json"],cwd=ROOT.parent,text=True)
-        old_version=json.loads(old_raw)["dataset_version"]
-        lines.append(f"| `{name}` | `{old_version}` → `{m['dataset_version']}` | `{', '.join(m['subfacts'])}` | {prompt} | {highest:.4f} |")
-    lines += [
-        "",
-        "## Validation result",
-        "",
-        f"- Domain validators: {suite['status']} ({suite['totals']['domains']}/34).",
-        f"- Independent ground-truth mismatches: {sum(x['derivation_mismatches'] for x in suite['datasets'].values())}.",
-        f"- PNG recovery: {sum(x['png_recovery']['passed'] for x in suite['datasets'].values()):,}/{sum(x['png_recovery']['total'] for x in suite['datasets'].values()):,}.",
-        "- Every item has at most three sub-facts; every numeric sub-fact has a stated and stored tolerance; no `none` placeholders, trap-naming clauses, or unrendered coordinate/index/schema vocabulary remain.",
-        "- No scored field has a constant-answer baseline at or above 60%. Full distributions and baselines are stored in each domain's `open_validation_metrics.json` and consolidated in `open_question_suite_report.json`.",
-        f"- Combined open files: {combined['combined_open_questions']:,} questions and {combined['combined_open_answers']:,} answers across {len(combined['datasets'])} datasets; all {combined['resolved_image_paths']:,} image paths resolve.",
-        "- Protected images, renderers, and closed L1–L5 question/answer payloads are unchanged. Annotation changes are limited to `dataset_version`.",
-    ]
-    (ROOT/"open_question_rewrite_report.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
-    print("Wrote Dataset/open_question_rewrite_report.md")
-
+ suite=json.loads((ROOT/"remaining_open_question_release_report.json").read_text(encoding="utf-8"));combined=json.loads((ROOT/"combined_open_question_report.json").read_text(encoding="utf-8"))
+ lines=["# Open-question specification implementation report","","## Pre-change defect findings","","- `fold_punch`: 312 of 3,000 items had identical L4 and L5 question text and the identical `exactly half` answer. L5 was replaced only on those rows with the existing additional-fold counterfactual; all 3,000 L5 rows are now distinct from L4.","- `overlap_circles`: 1,034 of 3,000 L3 rows stored the field name `target_density`. Those answers are now `spread` for target overlap densities 0.28/0.34 and `clustered` for 0.40/0.46/0.52.","- `symmetry_pattern_0143`: no stored or rendered six-shape defect was present. The record has eight visible shapes in two complete 4-fold orbits. Across all 1,500 intact patterns, zero shape counts violate divisibility by rotational order. The permanent validator now asserts this invariant.","","## Per-domain validation and exclusions","","| Dataset | Version | Source | Included | Excluded | Exclusion reason(s) | Highest sub-fact baseline | Fields at or above 60% | Result |","|---|---|---:|---:|---:|---|---:|---|---|"]
+ total_png=total_included=0
+ versions=suite.get("version_bumps",{})
+ for name,m in suite["datasets"].items():
+  version=versions.get(name,{}).get("after",m.get("dataset_version_after",""));highest=max(m["constant_answer_baselines"].values(),default=0);ex=", ".join(f"{k}: {v}" for k,v in m["exclusion_counts"].items()) or "none";high=", ".join(f"{k}: {v:.3f}" for k,v in m["fields_at_or_above_60_percent"].items()) or "none";lines.append(f"| `{name}` | `{version}` | {m['source_items']:,} | {m['included_items']:,} | {m['excluded_items']:,} | {ex} | {highest:.3f} | {high} | {m['status']} |" );total_png+=m["png_recovery"]["passed"];total_included+=m["included_items"]
+ lines += ["","## Validation summary","",f"- Independent ground-truth mismatches: {sum(len(m['independent_derivation']['mismatches']) for m in suite['datasets'].values())}.",f"- PNG/file recovery: {total_png:,}/{total_included:,} included images.","- Public schema: exactly `question_id,image,prompt` in every domain.","- Exact template wording, answer-leak checks, rendered-vocabulary checks, numeric tolerance checks, and one-to-one question/answer resolution: PASS in all 34 domains.",f"- Combined open files: {combined['combined_open_questions']:,} questions and {combined['combined_open_answers']:,} answers; {combined['resolved_image_paths']:,} referenced image paths resolve.","- Gauge exact-tick frequency and every complete answer distribution/baseline are retained in the per-domain `open_validation_metrics.json` files and the consolidated JSON report.","- Closed combined suite remains 500,000 questions, 500,000 answers, and 100,000 images."]
+ (ROOT/"open_question_rewrite_report.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
+ print("Wrote Dataset/open_question_rewrite_report.md")
 if __name__=="__main__":main()

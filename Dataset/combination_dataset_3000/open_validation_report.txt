@@ -1,10 +1,13 @@
 Open-question validation: combination_dataset_3000
 Status: PASS
-Items: 3000
-Template: Candidate C does not make the target using the allowed moves. Choose its single blocking reason from: gap or overlap, wrong cell count, or requires a reflection. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: blocking_reason
-Constant-answer baselines: {"blocking_reason": 0.3396666666666667}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: correct_candidate, rejected_candidate, rejection_reason
+Constant-answer baselines: {"correct_candidate": 0.25, "rejected_candidate": 0.25866666666666666, "rejection_reason": 0.35133333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

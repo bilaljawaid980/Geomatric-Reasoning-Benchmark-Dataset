@@ -1,14 +1,17 @@
 {
   "status": "PASS",
   "dataset": "cube_structure_dataset_3000",
-  "items": 3000,
-  "template": "Count the occupied vertical columns and give the height of the tallest column. Give both counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Scan the structure column by column, taking as vertical the direction the drawing renders as up: count the cubes resting directly on the ground, then work out how many cubes are completely hidden from this viewpoint. State your conclusion, justify it by describing how you separated cubes stacked above one another from cubes set behind one another, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "occupied_columns",
-    "tallest_column_height"
+    "base_layer_count",
+    "hidden_cube_count"
   ],
   "answer_distributions": {
-    "occupied_columns": {
+    "base_layer_count": {
       "8": 559,
       "7": 463,
       "10": 459,
@@ -17,45 +20,35 @@
       "6": 359,
       "5": 352
     },
-    "tallest_column_height": {
-      "2": 1140,
-      "3": 811,
-      "4": 383,
-      "1": 288,
-      "6": 201,
-      "5": 177
+    "hidden_cube_count": {
+      "0": 1000,
+      "1": 1000,
+      "2": 1000
     }
   },
   "constant_answer_baselines": {
-    "occupied_columns": 0.18633333333333332,
-    "tallest_column_height": 0.38
+    "base_layer_count": 0.18633333333333332,
+    "hidden_cube_count": 0.3333333333333333
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.089,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

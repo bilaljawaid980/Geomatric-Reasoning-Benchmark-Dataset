@@ -1,10 +1,13 @@
 Open-question validation: hex_pathfinding_dataset_3000
 Status: PASS
-Items: 3000
-Template: Look at the hexes directly touching HOME. Count the grey holes and the walkable hexes separately; give both counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: grey_holes_touching_home, walkable_hexes_touching_home
-Constant-answer baselines: {"grey_holes_touching_home": 0.419, "walkable_hexes_touching_home": 0.279}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: boundary_status, neighbourhood
+Constant-answer baselines: {"boundary_status": 0.5353333333333333, "neighbourhood": 0.18}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

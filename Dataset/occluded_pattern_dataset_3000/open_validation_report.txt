@@ -1,10 +1,13 @@
 Open-question validation: occluded_pattern_dataset_3000
 Status: PASS
-Items: 3000
-Template: Name the repeated pattern, count the visible objects exactly, and infer the hidden objects exactly (tolerance 0 for both counts). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: pattern_type, visible_count, hidden_count
-Constant-answer baselines: {"hidden_count": 0.36933333333333335, "pattern_type": 0.3333333333333333, "visible_count": 0.14466666666666667}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: pattern_type, hidden_object_count
+Constant-answer baselines: {"hidden_object_count": 0.36933333333333335, "pattern_type": 0.3333333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

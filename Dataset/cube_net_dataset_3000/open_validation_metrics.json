@@ -1,21 +1,16 @@
 {
   "status": "PASS",
   "dataset": "cube_net_dataset_3000",
-  "items": 3000,
-  "template": "For face E, name the face opposite it after folding and list the faces that share an edge with it while the net is still flat. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Look at the labelled squares and the edges they share while the net lies flat: name the faces that touch face E along a fold edge, then fold the net in your mind and name the face that ends up directly opposite E on the finished cube. State your conclusion, justify it by describing the fold you followed and why a square touching only at a corner does not count, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "opposite_face",
-    "flat_edge_neighbours"
+    "flat_edge_neighbours",
+    "opposite_face"
   ],
   "answer_distributions": {
-    "opposite_face": {
-      "D": 534,
-      "B": 515,
-      "A": 512,
-      "F": 490,
-      "C": 487,
-      "E": 462
-    },
     "flat_edge_neighbours": {
       "[\"E\"]": 248,
       "[\"C\"]": 246,
@@ -73,38 +68,39 @@
       "[\"A\",\"B\",\"C\",\"D\"]": 1,
       "[\"A\",\"B\",\"D\",\"F\"]": 1,
       "[\"B\",\"C\",\"D\",\"E\"]": 1
+    },
+    "opposite_face": {
+      "D": 534,
+      "B": 515,
+      "A": 512,
+      "F": 490,
+      "C": 487,
+      "E": 462
     }
   },
   "constant_answer_baselines": {
-    "opposite_face": 0.178,
-    "flat_edge_neighbours": 0.08266666666666667
+    "flat_edge_neighbours": 0.08266666666666667,
+    "opposite_face": 0.178
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.019666666666666666,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

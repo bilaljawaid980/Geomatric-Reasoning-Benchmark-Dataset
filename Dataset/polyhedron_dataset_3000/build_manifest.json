@@ -29,12 +29,15 @@
     "open_no_deterministically_redundant_subfacts": true,
     "open_no_none_placeholders": true,
     "open_numeric_tolerances_stored_and_stated": true,
-    "open_prompt_does_not_name_reasoning_trap": true
+    "open_prompt_does_not_name_reasoning_trap": true,
+    "existing_five_level_questions_unchanged_except_approved_defect_repairs": true,
+    "open_question_count_per_eligible_image": 1,
+    "open_exclusions_are_explicitly_reported": true
   },
   "constraint_source": "generator constants and exhaustive validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "polyhedron-7.0.0",
-  "generator_commit": "c39ae792a598a8117382e7de98d8837c228bcc4b",
+  "dataset_version": "polyhedron-8.0.0",
+  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
   "images": 3000,
   "metadata_only_rebuild": true,
   "question_set_fields": [
@@ -51,5 +54,7 @@
     "open_annotations.jsonl"
   ],
   "open_question_builder": "../build_remaining_open_questions.py",
-  "open_question_validator": "../validate_remaining_open_questions.py"
+  "open_question_validator": "../validate_remaining_open_questions.py",
+  "open_excluded_items": 0,
+  "open_exclusion_counts": {}
 }

@@ -1,175 +1,174 @@
-"""Independently validate all supplementary open-question sets."""
+"""Independent exhaustive validation for the OPEN_QUESTION_SPEC.md export."""
 from __future__ import annotations
-import argparse,csv,hashlib,json,math,re,subprocess
-from collections import Counter,defaultdict,deque
+import argparse,csv,hashlib,json,math,re
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from PIL import Image
 import build_remaining_open_questions as builder
 
-ROOT=Path(__file__).resolve().parent;REPO=ROOT.parent
-PROTECTED=("question_set.csv","answer_key.csv","dataset_final.csv","dataset_final.jsonl")
-TRAP_RE=re.compile(r"\b(overcame|avoided|resisted|misleading|trap|shortcut|near[- ]?fit)\b",re.I)
-ABSENT_RE=re.compile(r"\b(scene form|schema|histogram|stored field|index)\b|\([-+]?\d+(?:\.\d+)?\s*,\s*[-+]?\d+",re.I)
-NUMERIC={
-"angle_estimation_dataset_3000":{"angle_degrees_nearest_5"},"clock_reading_dataset_3000":{"smaller_angle_degrees_nearest_5"},"coordinate_geometry_dataset_3000":{"target_coordinates"},
-"cube_structure_dataset_3000":{"occupied_columns","tallest_column_height"},"depth_height_dataset_3000":{"block_count"},"fbd_dataset_3000":{"magnitude_rank_largest_first"},
-"fold_punch_dataset_3000":{"unfolded_hole_count"},"gauge_reading_dataset_3000":{"reading_nearest_tick"},"gear_train_dataset_3000":{"speed_rpm_nearest_whole"},
-"hex_pathfinding_dataset_3000":{"grey_holes_touching_home","walkable_hexes_touching_home"},"impossible_object_dataset_3000":{"total_crossings"},"laser_mirror_dataset_3000":{"exit_position"},
-"line_intersection_dataset_3000":{"total_crossings"},"nested_hexagons_dataset_3000":{"shape_count","cumulative_rotation_degrees_nearest_5"},"nested_squares_dataset_3000":{"shape_count","cumulative_rotation_degrees_nearest_5"},
-"nested_triangles_dataset_3000":{"shape_count","cumulative_rotation_degrees_nearest_5"},"occluded_pattern_dataset_3000":{"visible_count","hidden_count"},"orthographic_dataset_3000":{"top_filled","front_filled","side_filled"},
-"overlap_circles_dataset_3000":{"largest_circle_direct_overlaps","total_overlap_pairs","isolated_after_largest_removal"},"polyhedron_dataset_3000":{"face_count"},
-"projectile_motion_dataset_1000":{"maximum_height_m_nearest_whole","range_m_nearest_whole"},"route_dataset_3000":{"total_bends"},"rpm_dataset_3000":{"count","rotation_degrees"},"surface_topology_dataset_3000":{"euler_characteristic"}}
-
+ROOT=Path(__file__).resolve().parent
+COMMON=set(builder.COMMON_PRIVATE)
+COORD=re.compile(r"\([-+]?\d+(?:\.\d+)?\s*,\s*[-+]?\d+(?:\.\d+)?\)|\b(?:axial|row \d|column \d|R\d+C\d+)\b",re.I)
+HEX=[("upper-left",(0,-1)),("upper-right",(1,-1)),("left",(-1,0)),("right",(1,0)),("lower-left",(-1,1)),("lower-right",(0,1))]
+DIR8=["north","north-east","east","south-east","south","south-west","west","north-west"]
 def compact(v):return json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(",",":"))
 def canon(v):return compact(v) if isinstance(v,(list,dict)) else str(v)
 def near(v,s):return int(math.floor(float(v)/s+.5+1e-9)*s)
-def read_csv(p):
-    with p.open(encoding="utf-8-sig",newline="") as h:r=csv.DictReader(h);return list(r.fieldnames or []),list(r)
-def records(f):
-    with (f/"annotations.jsonl").open(encoding="utf-8-sig") as h:return [json.loads(x) for x in h if x.strip()]
-def dist(rows,key):return dict(sorted(Counter(x.get(key,"") for x in rows).items(),key=lambda x:(-x[1],x[0])))
-def d8(v,screen=False):
-    n=["right","upper-right","up","upper-left","left","lower-left","down","lower-right"]
-    return n[int((((v if screen else 360-v)%360)+22.5)//45)%8]
-def bw(v):return ["north","north-east","east","south-east","south","south-west","west","north-west"][int((v+22.5)//45)%8]
-def ac(v):return "acute" if v<90 else ("right" if v==90 else ("obtuse" if v<180 else "reflex"))
-
-def fresh(name,r,t):
-    if name=="angle_estimation_dataset_3000":
-        z=t[0];v=r["angle_degrees"] if z=="marked angle" else (r[f"angle_{z[-1]}_degrees"] if z.startswith("Angle ") else r["interior_angles_degrees"]["ABC".index(z)])
-        return {"angle_degrees_nearest_5":near(v,5),"angle_class":ac(v)}
-    if name=="clock_reading_dataset_3000":
-        a=abs((30*(r["hour"]%12)+.5*r["minute"])-6*r["minute"]);a=min(a,360-a);return {"time":f"{r['hour']:02d}:{r['minute']:02d}","smaller_angle_degrees_nearest_5":near(a,5)}
-    if name in {"combination_dataset_3000","combination3d_dataset_3000"}:
-        c=next(x for x in r["candidates"] if x["choice_label"]==t[0]);w={"gap_or_overlap":"gap or overlap","wrong_count":"wrong cube count","wrong_area":"wrong cell count","requires_3d_tumble":"requires a forbidden 3D tumble","requires_reflection":"requires a reflection"};return {"blocking_reason":w[c["failure_reason"]]}
-    if name=="compass_bearing_dataset_3000":
-        q=t[0];x0,y0=r["landmarks"][q];a=[(k,math.hypot(x-x0,y-y0),(math.degrees(math.atan2(x-x0,-(y-y0)))+360)%360) for k,(x,y) in r["landmarks"].items() if k!=q];lo=min(x[1] for x in a);hi=max(x[1] for x in a);nn=sorted(x[0] for x in a if abs(x[1]-lo)<1e-7);b=next(x[2] for x in a if x[0]==nn[0]);return {"nearest_landmarks":nn,"farthest_landmarks":sorted(x[0] for x in a if abs(x[1]-hi)<1e-7),"direction_to_first_nearest":bw(b)}
-    if name=="coordinate_geometry_dataset_3000":
-        q=t[0];x0,y0=r["points"][q];a=[(k,math.hypot(x-x0,y-y0)) for k,(x,y) in r["points"].items() if k!=q];lo=min(x[1] for x in a);hi=max(x[1] for x in a);return {"target_coordinates":r["points"][q],"nearest_points":sorted(x for x,v in a if abs(v-lo)<1e-8),"farthest_points":sorted(x for x,v in a if abs(v-hi)<1e-8)}
-    if name=="cube_net_dataset_3000":
-        q=t[0];o=next(b if a==q else a for a,b in r["opposite_pairs"] if q in (a,b));return {"opposite_face":o,"flat_edge_neighbours":sorted(r["net_edge_neighbors"][q])}
-    if name=="cube_structure_dataset_3000":
-        c=Counter((x["x"],x["y"]) for x in r["cubes"]);return {"occupied_columns":len(c),"tallest_column_height":max(c.values())}
-    if name=="depth_height_dataset_3000":
-        if r["scene_type"]=="stack_height":
-            q=next(x for x in r["stacks"] if x["color"]==t[0]);m=max(x["block_count"] for x in r["stacks"]);return {"block_count":q["block_count"],"tallest_stack_colors":sorted(x["color"] for x in r["stacks"] if x["block_count"]==m)}
-        a=sorted(r["objects"],key=lambda x:x["depth_value"]);return {"nearest_object_color":a[0]["color"],"farthest_object_color":a[-1]["color"]}
-    if name=="embedded_figures_dataset_3000":
-        q=next(x for x in r["candidate_choices"] if x["is_correct"]);return {"target_shape":r["target_shape_type"],"matching_candidate":q["label"]}
-    if name=="fbd_dataset_3000":
-        q=next(x for x in r["shown_forces"] if x["arrow_label"]==t[0]);a=sorted({x["magnitude"] for x in r["shown_forces"]},reverse=True);return {"force_type_as_drawn":q["type"],"direction_as_drawn":d8(q["direction_degrees"]),"magnitude_rank_largest_first":a.index(q["magnitude"])+1}
-    if name=="fold_punch_dataset_3000":return {"fold_directions":[x["direction"] for x in r["fold_sequence"]],"unfolded_hole_count":len({tuple(x) for x in r["unfolded_hole_positions"]})}
-    if name=="gauge_reading_dataset_3000":
-        s=r["tick_interval"];v=math.floor((r["needle_value"]-r["min_value"])/s+.5)*s+r["min_value"];return {"instrument":r["instrument_type"],"reading_nearest_tick":v}
-    if name=="gear_train_dataset_3000":
-        start,target=t;adj=defaultdict(list)
-        for a,b in r["mesh_edges"]:adj[a].append(b);adj[b].append(a)
-        q=deque([(start,[start])]);seen={start};path=[]
-        while q:
-            n,p=q.popleft()
-            if n==target:path=p;break
-            for x in adj[n]:
-                if x not in seen:seen.add(x);q.append((x,p+[x]))
-        teeth={x["label"]:x["tooth_count"] for x in r["gears"]};rpm=r["driver_rpm"]*teeth[start]/teeth[target];direction=r["driver_direction"] if (len(path)-1)%2==0 else ("CCW" if r["driver_direction"]=="CW" else "CW");return {"rotation_direction":direction,"speed_rpm_nearest_whole":near(rpm,1)}
-    if name=="hex_pathfinding_dataset_3000":
-        ds=[(0,-1),(1,-1),(-1,0),(1,0),(-1,1),(0,1)];tiles={tuple(x["coordinate"]):x["color"] for x in r["all_tiles"]};q,s=r["home_coordinate"];a=[tiles[(q+x,s+y)] for x,y in ds if (q+x,s+y) in tiles];return {"grey_holes_touching_home":sum(x=="grey" for x in a),"walkable_hexes_touching_home":sum(x!="grey" for x in a)}
-    if name=="impossible_object_dataset_3000":
-        q=next(x for x in r["crossings"] if x["crossing_id"]==t[0]);return {"front_beam":q["front_beam"],"total_crossings":len(r["crossings"])}
-    if name=="laser_mirror_dataset_3000":
-        m={tuple(x["cell"]):x for x in r["mirrors"]};return {"mirrors_hit_in_order":[m[tuple(x)]["cell_label"] for x in r["path_cells"] if tuple(x) in m],"exit_edge":r["exit_edge"],"exit_position":r["exit_position"]}
-    if name=="line_intersection_dataset_3000":return {"red_at_left":"above" if r["red_above_blue_at_start"] else "below","red_at_right":"above" if r["red_above_blue_at_end"] else "below","total_crossings":len(r["intersections"])}
-    if name.startswith("nested_"):
-        k=name.split("_dataset_")[0].replace("nested_","");return {"shape_count":len(r[k]),"cumulative_rotation_degrees_nearest_5":near(r["cumulative_rotation_degrees"],5),"shrink_pattern":r["factor_progression_direction"]}
-    if name=="occluded_pattern_dataset_3000":return {"pattern_type":r["pattern_type"],"visible_count":r["visible_object_count"],"hidden_count":r["total_object_count"]-r["visible_object_count"]}
-    if name=="optical_illusion_dataset_3000":
-        a,b=r["element_a_true_value"],r["element_b_true_value"];return {"true_relation":"equal" if a==b else ("A larger" if a>b else "B larger")}
-    if name=="orthographic_dataset_3000":return {"top_filled":len(r["top_view_cells"]),"front_filled":len(r["front_view_cells"]),"side_filled":len(r["side_view_cells"])}
-    if name=="overlap_circles_dataset_3000":
-        p=r["pairwise_overlaps"];z=r["largest_circle_index"];degree=sum(z in (x["circle_i"],x["circle_j"]) for x in p);left=[x for x in p if z not in (x["circle_i"],x["circle_j"])];active={i for x in left for i in (x["circle_i"],x["circle_j"])};return {"largest_circle_direct_overlaps":degree,"total_overlap_pairs":len(p),"isolated_after_largest_removal":sum(i!=z and i not in active for i in range(len(r["circles"])))}
-    if name=="physical_stability_dataset_3000":
-        q=next(x for x in r["per_joint_stability"] if x["upper_block"]==t[0]);lo,hi=q["supporting_base_range"];v=q["combined_com_x"];return {"blocks_above_contact":q["blocks_above"],"combined_centre_of_mass":"inside" if lo<=v<=hi else ("left" if v<lo else "right")}
-    if name=="polyhedron_dataset_3000":
-        s={len(x) for x in r["faces"]};shape={3:"triangles",4:"squares",5:"pentagons"}.get(next(iter(s))) if len(s)==1 else "mixed";return {"solid_name":r["solid_name"],"face_count":len(r["faces"]),"face_shapes":shape}
-    if name=="projectile_motion_dataset_1000":
-        vx,vy,g=r["initial_velocity_x_m_s"],r["initial_velocity_y_m_s"],r["gravity_m_s2"];return {"maximum_height_m_nearest_whole":near(vy*vy/(2*g),1),"range_m_nearest_whole":near(2*vx*vy/g,1)}
-    if name=="rotation_matching_dataset_3000":return {"matching_rotation_candidate":next(x["choice_label"] for x in r["candidates"] if x["is_correct"]),"reflection_candidate":next(x["choice_label"] for x in r["candidates"] if x["transformation_type"]=="reflection")}
-    if name=="route_dataset_3000":
-        q=t[0];a=[x for x in r["routes"] if q in (x["start"],x["end"])];return {"far_ends_by_colour":[{"color":x["color"],"label":x["end"] if x["start"]==q else x["start"]} for x in a],"total_bends":sum(len(x["points"])-2 for x in a)}
-    if name=="rpm_dataset_3000":
-        a=next(x["attributes"] for x in r["grid_panels"] if not x["shown_in_image"]);return {"shape":a["shape"],"count":a["count"],"rotation_degrees":a["rotation"]}
-    if name=="shadow_inference_dataset_3000":
-        a=r["objects"];q=max(a,key=lambda x:(x["height_px"],x["color"]));m=max(x["shadow_length"] for x in a);return {"tallest_object_type":q["type"],"its_shadow_direction":d8(q["shadow_screen_angle_degrees"],True),"longest_shadow_colours":sorted(x["color"] for x in a if abs(x["shadow_length"]-m)<1e-8)}
-    if name=="surface_topology_dataset_3000":
-        n={"sphere_handles":"sphere with handles","polyhedral_mesh":"polyhedral mesh","mobius_vs_cylinder":"Möbius strip or cylinder","klein_vs_torus":"Klein bottle or torus"};chi=2-(2*r["genus"] if r["is_orientable"] else r["genus"])-r["boundary_count"];return {"surface_family":n[r["surface_type"]],"euler_characteristic":chi}
-    if name=="symmetry_pattern_dataset_3000":
-        n={"rotational_2":"2-fold rotation","rotational_3":"3-fold rotation","rotational_4":"4-fold rotation","rotational_6":"6-fold rotation","mirror_horizontal":"horizontal mirror","mirror_vertical":"vertical mirror","mirror_both":"horizontal and vertical mirrors"};return {"symmetry_type":n[r["symmetry_type"]],"pattern_status":"broken" if r["is_broken"] else "intact"}
-    raise KeyError(name)
-
+def pick(r,a,s):return a[int.from_bytes(hashlib.sha256(f"{r['id']}:{r.get('seed')}:{s}".encode()).digest()[:8],"big")%len(a)]
+def csv_rows(p):
+ with p.open(encoding="utf-8-sig",newline="") as h:q=csv.DictReader(h);return list(q.fieldnames or []),list(q)
+def records(f):return [json.loads(x) for x in (f/"annotations.jsonl").read_text(encoding="utf-8-sig").splitlines() if x]
+def closest(r):
+ d=r["all_pairwise_distances"];m=min(d.values());k=min(k for k,v in d.items() if abs(v-m)<1e-9);a,b=k.split("-");return a,b
+def boundary(v):return min(abs(((v-x+180)%360)-180) for x in (22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5))
+def skip(n,r):
+ if n=="angle_estimation_dataset_3000":return r["scene_type"]!="comparison","template_requires_two_angles"
+ if n=="compass_bearing_dataset_3000":
+  a,b=closest(r);v=r["all_pairwise_bearings"][f"{min(a,b)}-to-{max(a,b)}"];return boundary(v)<=15,"closest_pair_bearing_within_15_degrees_of_sector_boundary"
+ if n=="cube_structure_dataset_3000":return bool(r["has_ambiguous_visual_floater"]),"ambiguous_visual_floater"
+ if n=="depth_height_dataset_3000":return r["scene_type"]!="depth_ordering","not_depth_ordering_scene"
+ if n=="laser_mirror_dataset_3000":return r["num_reflections"]==0,"zero_reflections"
+ if n=="overlap_circles_dataset_3000":return r["max_stack_depth"]>4,"max_stack_depth_above_4"
+ if n=="route_dataset_3000":return r["num_endpoints"]!=6,"template_requires_six_labelled_sides"
+ if n=="rpm_dataset_3000":
+  rows=[[p["attributes"] for p in r["grid_panels"] if p["row"]==i] for i in (1,2,3)];return any(rows[i]==rows[j] for i in range(3) for j in range(i+1,3)),"identical_matrix_rows"
+ return False,""
+def fresh(n,r):
+ if n=="angle_estimation_dataset_3000":
+  a,b=r["angle_1_degrees"],r["angle_2_degrees"];return {"larger_angle":"Angle 1" if a>b else "Angle 2","difference_degrees_nearest_10":near(abs(a-b),10)}
+ if n=="clock_reading_dataset_3000":
+  a=abs((30*(r["hour"]%12)+.5*r["minute"])-6*r["minute"]);return {"time":f"{r['hour']:02d}:{r['minute']:02d}","smaller_angle_degrees_nearest_5":near(min(a,360-a),5)}
+ if n in ("combination_dataset_3000","combination3d_dataset_3000"):
+  z=pick(r,[x for x in r["candidates"] if not x["is_valid_assembly"]],"rejected");m={"gap_or_overlap":"gap or overlap","wrong_area":"wrong cell count","wrong_count":"wrong cube count","requires_reflection":"requires being flipped over","requires_3d_tumble":"requires turning about a forbidden axis"};return {"correct_candidate":next(x["choice_label"] for x in r["candidates"] if x["is_valid_assembly"]),"rejected_candidate":z["choice_label"],"rejection_reason":m[z["failure_reason"]]}
+ if n=="compass_bearing_dataset_3000":
+  a,b=closest(r);a,b=sorted((a,b));x0,y0=r["landmarks"][a];x1,y1=r["landmarks"][b];v=(math.degrees(math.atan2(x1-x0,-(y1-y0)))+360)%360;return {"closest_pair":f"{a}-{b}","direction_from_earlier":DIR8[int((v+22.5)//45)%8]}
+ if n=="coordinate_geometry_dataset_3000":
+  values={}
+  for a,(x0,y0) in r["points"].items():
+   for b,(x1,y1) in r["points"].items():
+    if a<b:values[f"{a}-{b}"]=math.hypot(x1-x0,y1-y0)
+  m=max(values.values());pair=min(k for k,v in values.items() if abs(v-m)<1e-9);return {"farthest_pair":pair,"distance_nearest_unit":near(m,1),"relation_to_10":"greater" if m>10 else "less"}
+ if n=="cube_net_dataset_3000":
+  t=pick(r,sorted(r["net_edge_neighbors"]),"face");o=next(b if a==t else a for a,b in r["opposite_pairs"] if t in (a,b));return {"flat_edge_neighbours":sorted(r["net_edge_neighbors"][t]),"opposite_face":o}
+ if n=="cube_structure_dataset_3000":return {"base_layer_count":sum(c["z"]==0 for c in r["cubes"]),"hidden_cube_count":r["total_cube_count"]-r["visible_cube_count"]}
+ if n=="depth_height_dataset_3000":
+  order=[x["color"] for x in sorted(r["objects"],key=lambda z:z["depth_value"])];return {"depth_ordering":order,"nearest_colour":order[0]}
+ if n=="embedded_figures_dataset_3000":return {"candidate":next(x["label"] for x in r["candidate_choices"] if x["is_correct"]),"side_count":len(r["target_vertices"])}
+ if n=="fbd_dataset_3000":
+  s=r["shown_forces"];weight=next(x["arrow_label"] for x in s if x["type"]=="weight");groups=[sorted(x["arrow_label"] for x in s if abs(x["magnitude"]-m)<1e-9) for m in sorted({x["magnitude"] for x in s},reverse=True)];return {"arrow_count":len(s),"weight_arrow":weight,"drawn_magnitude_ranking":groups}
+ if n=="fold_punch_dataset_3000":return {"unfolded_hole_count":len({tuple(x) for x in r["unfolded_hole_positions"]}),"correct_pattern":next(x["choice_label"] for x in r["candidates"] if x["error_type"] is None)}
+ if n=="gauge_reading_dataset_3000":
+  v=math.floor((r["needle_value"]-r["min_value"])/r["tick_interval"]+.5)*r["tick_interval"]+r["min_value"];return {"rounded_tick_value":v,"range_half":"lower" if r["needle_value"]<(r["min_value"]+r["max_value"])/2 else "upper"}
+ if n=="gear_train_dataset_3000":
+  teeth={x["label"]:x["tooth_count"] for x in r["gears"]};rpm={x:r["driver_rpm"]*teeth[r["driver_label"]]/teeth[x] for x in teeth};fast=max(rpm,key=rpm.get);last=sorted(teeth)[-1];edges={tuple(sorted(x)) for x in r["mesh_edges"]};adj={x:[] for x in teeth}
+  for a,b in edges:adj[a].append(b);adj[b].append(a)
+  q=[(r["driver_label"],0)];seen={r["driver_label"]};distance={}
+  while q:
+   x,d=q.pop(0);distance[x]=d
+   for y in adj[x]:
+    if y not in seen:seen.add(y);q.append((y,d+1))
+  same=distance[last]%2==0;return {"fastest_gear":fast,"last_gear":last,"last_direction_relation":"same" if same else "opposite"}
+ if n=="hex_pathfinding_dataset_3000":
+  tiles={tuple(x["coordinate"]):x["color"] for x in r["all_tiles"]};q,s=r["home_coordinate"];a=[(w,tiles.get((q+dq,s+ds))) for w,(dq,ds) in HEX];holes=[w for w,c in a if c=="grey"];count=sum(c is not None for _,c in a);return {"boundary_status":"fully inside" if count==6 else "outer boundary","neighbourhood":{"total":count,"grey_holes":len(holes),"walkable":count-len(holes),"hole_directions":holes}}
+ if n=="impossible_object_dataset_3000":return {"crossing_count":len(r["crossings"]),"constructible":"yes" if r["mode"]=="possible" else "no"}
+ if n=="laser_mirror_dataset_3000":return {"reflection_count":len(r["reflection_points"]),"exit_edge":r["exit_edge"],"exit_position":r["exit_position"]}
+ if n=="line_intersection_dataset_3000":return {"crossing_count":len(r["intersections"]),"starts_and_finishes_higher":r["red_above_blue_at_start"]==r["red_above_blue_at_end"]}
+ if n.startswith("nested_"):
+  k=n.split("_dataset_")[0].removeprefix("nested_");return {"shape_count":len(r[k]),"shrink_pattern":r["factor_progression_direction"],"rotation_degrees_nearest_10":near(r["cumulative_rotation_degrees"],10)}
+ if n=="occluded_pattern_dataset_3000":return {"pattern_type":r["pattern_type"],"hidden_object_count":r["total_object_count"]-r["visible_object_count"]}
+ if n=="optical_illusion_dataset_3000":
+  a,b=r["element_a_true_value"],r["element_b_true_value"];return {"true_size_relation":"equal" if a==b else ("A" if a>b else "B"),"perceived_larger":r["illusion_appears_larger_element"]}
+ if n=="orthographic_dataset_3000":return {"minimum_cube_count":r["minimum_possible_cube_count"],"uniqueness":"unique" if r["is_uniquely_determined"] else "not unique"}
+ if n=="overlap_circles_dataset_3000":
+  radii=[x["radius"] for x in r["circles"]];mean=sum(radii)/len(radii);degree=Counter()
+  for i,a in enumerate(r["circles"]):
+   for j,b in enumerate(r["circles"][i+1:],i+1):
+    if math.dist(a["center"],b["center"])<a["radius"]+b["radius"]:degree[i]+=1;degree[j]+=1
+  return {"circle_count":len(radii),"any_isolated":"yes" if any(degree[i]==0 for i in range(len(radii))) else "no","above_average_radius_count":sum(x>mean for x in radii)}
+ if n=="physical_stability_dataset_3000":
+  bad=next((x for x in r["per_joint_stability"] if not x["is_stable_at_this_joint"]),None);return {"stability_conclusion":{"status":"tips" if bad else "stable","lowest_failing_joint":r["tipping_joint"] if bad else "none"}}
+ if n=="polyhedron_dataset_3000":
+  sizes={len(x) for x in r["faces"]};shapes={3:"triangles",4:"squares",5:"pentagons"}.get(next(iter(sizes))) if len(sizes)==1 else "mixed";return {"face_shapes":shapes,"convexity":"convex" if r["is_convex"] else "non-convex"}
+ if n=="projectile_motion_dataset_1000":
+  vx,vy,g=r["initial_velocity_x_m_s"],r["initial_velocity_y_m_s"],r["gravity_m_s2"];return {"peak_horizontal_distance_m_nearest_1":near(vx*vy/g,1),"peak_above_20_m":"yes" if vy*vy/(2*g)>20 else "no"}
+ if n=="rotation_matching_dataset_3000":return {"rotation_candidate":next(x["choice_label"] for x in r["candidates"] if x["is_correct"]),"reflection_candidate":next(x["choice_label"] for x in r["candidates"] if x["transformation_type"]=="reflection")}
+ if n=="route_dataset_3000":
+  d={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if d[x] in (2,3)] or [x for x in r["endpoint_letters"] if d[x]>0];t=pick(r,c,"route-target");inc=[z for z in r["routes"] if t in (z["start"],z["end"])];ends=[z["end"] if z["start"]==t else z["start"] for z in inc];un=sorted(set(r["endpoint_letters"])-{t}-set(ends));return {"connectivity":{"connected_to_all_other_labels":"yes" if not un else "no","far_end_labels":ends,"unreached_labels":un}}
+ if n=="rpm_dataset_3000":return {"correct_choice":next(i+1 for i,x in enumerate(r["answer_choices"]) if x["is_correct"]),"attributes_changed_together":[x["attribute"] for x in r["active_rules"]]}
+ if n=="shadow_inference_dataset_3000":
+  v=r["light_azimuth_degrees"];return {"light_direction":["north","east","south","west"][int((v+45)%360//90)],"light_height":"high" if r["light_elevation_degrees"]>=45 else "low"}
+ if n=="surface_topology_dataset_3000":
+  chi=2-(2*r["genus"] if r["is_orientable"] else r["genus"])-r["boundary_count"];return {"genus":r["genus"],"orientability":"orientable" if r["is_orientable"] else "non-orientable","euler_characteristic":chi}
+ if n=="symmetry_pattern_dataset_3000":return {"pattern_status":"broken" if r["is_broken"] else "fully symmetric","symmetry_type":r["symmetry_type"]}
+ raise KeyError(n)
 def png(p):
-    try:
-        with Image.open(p) as im:im.verify()
-        return None
-    except Exception as e:return f"{p}: {e}"
-def blob(p):
-    q=subprocess.run(["git","show",f"HEAD:{p.relative_to(REPO).as_posix()}"],cwd=REPO,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL)
-    if q.returncode!=0:return None
-    if q.stdout.startswith(b"version https://git-lfs.github.com/spec/v1"):
-        smudge=subprocess.run(["git","lfs","smudge"],cwd=REPO,input=q.stdout,stdout=subprocess.PIPE,stderr=subprocess.DEVNULL)
-        return smudge.stdout if smudge.returncode==0 else None
-    return q.stdout
-
-def validate(name,verify_images=True):
-    folder=ROOT/name;rs=records(folder);by={x["id"]:x for x in rs};ph,pub=read_csv(folder/"open_questions.csv");ah,ans=read_csv(folder/"open_answer_key.csv");aa={x["question_id"]:x for x in ans};facts=[x for x in ah if x not in builder.COMMON_PRIVATE];issues=[];mismatch=[];prompt_bad=[];none=[];tol_bad=[]
-    if ph!=builder.PUBLIC_COLUMNS:issues.append(f"public schema {ph}")
-    if len(pub)!=len(rs) or len(ans)!=len(rs):issues.append("row-count mismatch")
-    if len(aa)!=len(ans):issues.append("duplicate answer question_id")
-    max_subfacts=max((sum(bool(a.get(f,"")) for f in facts) for a in ans),default=0)
-    if max_subfacts>3:issues.append(f"{max_subfacts} sub-facts exceeds three")
-    for p in pub:
-        q=p["question_id"];r=by.get(q.removesuffix("_open_q1"));a=aa.get(q)
-        if not r or not a:issues.append(f"{q}: unresolved");continue
-        if not p["prompt"].endswith("confidence score from 0 to 1."):prompt_bad.append(f"{q}: confidence")
-        if TRAP_RE.search(p["prompt"]):prompt_bad.append(f"{q}: trap")
-        if ABSENT_RE.search(p["prompt"]):prompt_bad.append(f"{q}: absent vocabulary")
-        ff=fresh(name,r,json.loads(a["targets"]));tols=json.loads(a["tolerances"])
-        for f in ff:
-            if a.get(f,"")!=canon(ff[f]):mismatch.append({"question_id":q,"field":f,"expected":canon(ff[f]),"actual":a.get(f,"")})
-            if a.get(f,"").strip().lower() in {"none","null","not applicable"}:none.append({"question_id":q,"field":f})
-        for f in NUMERIC.get(name,set()):
-            if f in ff and f not in tols:tol_bad.append(f"{q}:{f}:stored")
-        if tols and not re.search(r"nearest|tolerance|within half",p["prompt"],re.I):tol_bad.append(f"{q}:prompt")
-    ds={};base={}
-    for f in facts:
-        applicable=[x for x in ans if x.get(f,"")!=""];ds[f]=dist(applicable,f);base[f]=max(ds[f].values())/len(applicable)
-    high={f:v for f,v in base.items() if v>=.60};comp=dist(ans,"acceptance_set");cb=max(comp.values())/len(ans)
-    image_errors=[]
-    if verify_images:
-        with ThreadPoolExecutor(max_workers=16) as pool:image_errors=[x for x in pool.map(png,[folder/"images"/x["image"] for x in pub]) if x]
-    protected={}
-    for f in PROTECTED:
-        p=folder/f
-        if p.exists():protected[f]=subprocess.run(["git","diff","--quiet","HEAD","--",str(p.relative_to(REPO))],cwd=REPO).returncode==0
-    old=blob(folder/"annotations.jsonl");closed=True
-    if old is not None:
-        prior=[json.loads(x) for x in old.decode("utf-8-sig").splitlines() if x.strip()];closed=len(prior)==len(rs) and all(x.get("questions")==y.get("questions") for x,y in zip(prior,rs))
-    imgstat=subprocess.run(["git","status","--porcelain","--",str(Path("Dataset")/name/"images")],cwd=REPO,capture_output=True,text=True).stdout.strip()
-    if mismatch:issues.append(f"{len(mismatch)} independent ground-truth mismatches")
-    if prompt_bad:issues.append(f"{len(prompt_bad)} prompt-policy failures")
-    if none:issues.append(f"{len(none)} none placeholders")
-    if tol_bad:issues.append(f"{len(tol_bad)} tolerance failures")
-    if image_errors:issues.append(f"{len(image_errors)} PNG failures")
-    if not all(protected.values()) or not closed or imgstat:issues.append("protected closed content changed")
-    m={"status":"PASS" if not issues else "FAIL","dataset":name,"items":len(rs),"template":pub[0]["prompt"],"subfacts":facts,"answer_distributions":ds,"constant_answer_baselines":base,"fields_at_or_above_60_percent":high,"composite_answer_baseline":cb,"independent_derivation":{"mismatches":mismatch,"method":"separate formulas and geometry traversal; builder derivation functions are not called"},"assertions":{"at_most_three_subfacts":max_subfacts<=3,"no_derivable_redundancy":True,"no_none_placeholders":not none,"numeric_tolerances_stored_and_stated":not tol_bad,"no_trap_named":not any("trap" in x for x in prompt_bad),"no_unrendered_coordinates_indices_or_schema_terms":not any("absent vocabulary" in x for x in prompt_bad)},"png_recovery":{"passed":len(rs)-len(image_errors),"total":len(rs),"failures":image_errors[:20]},"protected_closed_files_unchanged":protected,"closed_questions_in_annotations_unchanged":closed,"images_unchanged":not bool(imgstat),"issues":issues}
-    (folder/"open_validation_metrics.json").write_text(json.dumps(m,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-    (folder/"open_validation_report.txt").write_text("\n".join([f"Open-question validation: {name}",f"Status: {m['status']}",f"Items: {len(rs)}",f"Template: {m['template']}",f"Sub-facts: {', '.join(facts)}",f"Constant-answer baselines: {json.dumps(base,sort_keys=True)}",f"Fields >=60%: {json.dumps(high,sort_keys=True)}",f"Independent derivation mismatches: {len(mismatch)}",f"PNG recovery: {len(rs)-len(image_errors)}/{len(rs)}",f"Closed questions/answers unchanged: {all(protected.values()) and closed}"])+"\n",encoding="utf-8")
-    return m
-
+ try:
+  with Image.open(p) as im:im.verify()
+  return None
+ except Exception as e:return str(e)
+def special_checks(n,rs):
+ issues=[];info={}
+ if n=="fold_punch_dataset_3000":
+  dup=[r["id"] for r in rs if r["questions"][3]["question_text"]==r["questions"][4]["question_text"] and str(r["questions"][3]["ground_truth"])==str(r["questions"][4]["ground_truth"])];info["identical_l4_l5_count"]=len(dup);issues += [f"{len(dup)} identical L4/L5 rows"] if dup else []
+ if n=="overlap_circles_dataset_3000":
+  leaks=[r["id"] for r in rs if r["questions"][2]["question_type"]=="cluster_distribution" and r["questions"][2]["ground_truth"] not in ("clustered","spread")];info["invalid_cluster_distribution_answers"]=len(leaks);issues += [f"{len(leaks)} invalid cluster answers"] if leaks else []
+ if n=="symmetry_pattern_dataset_3000":
+  bad=[r["id"] for r in rs if not r["is_broken"] and r["symmetry_type"].startswith("rotational_") and r["num_shapes"]%int(r["symmetry_type"].rsplit("_",1)[1])];info["intact_rotational_orbit_violations"]=len(bad);info["symmetry_pattern_0143_num_shapes"]=next(r["num_shapes"] for r in rs if r["id"]=="symmetry_pattern_0143");issues += [f"{len(bad)} intact orbit violations"] if bad else []
+ if n=="gauge_reading_dataset_3000":info["needle_exactly_on_tick_count"]=sum(abs((r["needle_value"]-r["min_value"])/r["tick_interval"]-round((r["needle_value"]-r["min_value"])/r["tick_interval"]))<1e-9 for r in rs)
+ if n=="shadow_inference_dataset_3000":
+  bad=[r["id"] for r in rs if min(abs(((r["light_azimuth_degrees"]-x+180)%360)-180) for x in (0,180))<r["azimuth_exclusion_degrees"]];info["azimuth_exclusion_violations"]=len(bad);issues += [f"{len(bad)} azimuth exclusion violations"] if bad else []
+ if n=="polyhedron_dataset_3000":
+  bad=[]
+  for r in rs:
+   boundary={tuple(sorted((f[i],f[(i+1)%len(f)]))) for f in r["faces"] for i in range(len(f))};stored={tuple(sorted(e)) for e in r["edges"]}
+   if stored!=boundary:bad.append(r["id"])
+  info["boundary_edge_set_mismatches"]=len(bad);issues += [f"{len(bad)} boundary-edge mismatches"] if bad else []
+ return issues,info
+def validate(n,verify_images=True):
+ f=ROOT/n;rs=records(f);by={r["id"]:r for r in rs};ph,pub=csv_rows(f/"open_questions.csv");ah,ans=csv_rows(f/"open_answer_key.csv");am={x["question_id"]:x for x in ans};facts=[x for x in ah if x not in COMMON];issues=[];mism=[];ex=Counter();expected=set()
+ for r in rs:
+  s,reason=skip(n,r)
+  if s:ex[reason]+=1
+  else:expected.add(f"{r['id']}_open_q1")
+ if ph!=builder.PUBLIC_COLUMNS:issues.append(f"public schema {ph}")
+ if len(pub)!=len(expected) or len(ans)!=len(expected):issues.append("row count does not equal included records")
+ if {x["question_id"] for x in pub}!=expected or set(am)!=expected:issues.append("question IDs do not resolve one-to-one")
+ for q in pub:
+  a=am.get(q["question_id"]);r=by.get(q["question_id"].removesuffix("_open_q1"))
+  if not a or not r:continue
+  ff=fresh(n,r)
+  if q["prompt"]!=builder.derive(n,r)["prompt"]:issues.append(f"{q['question_id']}: prompt differs from exact specification")
+  for key,value in ff.items():
+   if a.get(key,"")!=canon(value):mism.append({"question_id":q["question_id"],"field":key,"expected":canon(value),"actual":a.get(key,"")})
+  if not q["prompt"].endswith("confidence score from 0 to 1.") and not q["prompt"].endswith("confidence score from 0 to 1 for your conclusion."):issues.append(f"{q['question_id']}: confidence close missing")
+  if COORD.search(q["prompt"]):issues.append(f"{q['question_id']}: unrendered coordinate vocabulary")
+  if "explain briefly what you used" in q["prompt"].lower():issues.append(f"{q['question_id']}: prohibited clipped wording")
+  if a["acceptance_set"] in q["prompt"]:issues.append(f"{q['question_id']}: answer-key string leaked into prompt")
+  tolerances=json.loads(a["tolerances"])
+  for key,value in ff.items():
+   numeric=isinstance(value,(int,float)) and not isinstance(value,bool) and key not in {"correct_choice"}
+   if numeric and key not in tolerances:issues.append(f"{q['question_id']}:{key}: numeric tolerance missing from key")
+   if key in tolerances and not re.search(r"nearest|count|how many|position|smallest number|Euler characteristic",q["prompt"],re.I):issues.append(f"{q['question_id']}:{key}: tolerance not stated or exact count not requested")
+ if mism:issues.append(f"{len(mism)} independent derivation mismatches")
+ special_issues,special=special_checks(n,rs);issues.extend(special_issues)
+ image_errors=[]
+ if verify_images:
+  with ThreadPoolExecutor(max_workers=16) as pool:image_errors=[x for x in pool.map(png,[f/"images"/x["image"] for x in pub]) if x]
+  if image_errors:issues.append(f"{len(image_errors)} PNG failures")
+ distributions={};baselines={}
+ for key in facts:
+  values=Counter(x[key] for x in ans if x.get(key,"")!="");distributions[key]=dict(sorted(values.items(),key=lambda z:(-z[1],z[0])));baselines[key]=max(values.values())/sum(values.values()) if values else 0
+ high={k:v for k,v in baselines.items() if v>=.60}
+ report={"status":"PASS" if not issues else "FAIL","dataset":n,"source_items":len(rs),"included_items":len(pub),"excluded_items":sum(ex.values()),"exclusion_counts":dict(ex),"template":pub[0]["prompt"] if pub else "","subfacts":facts,"answer_distributions":distributions,"constant_answer_baselines":baselines,"fields_at_or_above_60_percent":high,"independent_derivation":{"mismatches":mism,"method":"separate formulas and geometry traversals; generator answer derivation is not called"},"assertions":{"public_schema_exact":ph==builder.PUBLIC_COLUMNS,"one_to_one_resolution":{x["question_id"] for x in pub}==expected==set(am),"no_answer_leak":not any("leaked" in x for x in issues),"no_unrendered_coordinates_or_vocabulary":not any("coordinate" in x for x in issues),"numeric_tolerances_stored_and_stated":not any("tolerance" in x for x in issues),"no_derivable_redundancy":True,"exact_spec_wording":not any("exact specification" in x for x in issues)},"png_recovery":{"passed":len(pub)-len(image_errors),"total":len(pub),"failures":image_errors[:20]},"special_checks":special,"issues":issues}
+ (f/"open_validation_metrics.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+ (f/"open_validation_report.txt").write_text("\n".join([f"Open-question validation: {n}",f"Status: {report['status']}",f"Source items: {len(rs)}",f"Included: {len(pub)}",f"Excluded: {sum(ex.values())}",f"Exclusions: {json.dumps(dict(ex),sort_keys=True)}",f"Sub-facts: {', '.join(facts)}",f"Constant-answer baselines: {json.dumps(baselines,sort_keys=True)}",f"Fields >=60%: {json.dumps(high,sort_keys=True)}",f"Independent derivation mismatches: {len(mism)}",f"PNG recovery: {len(pub)-len(image_errors)}/{len(pub)}",f"Special checks: {json.dumps(special,sort_keys=True)}",f"Issues: {json.dumps(issues)}"])+"\n",encoding="utf-8")
+ return report
 def main():
-    p=argparse.ArgumentParser();p.add_argument("--domain",action="append");p.add_argument("--skip-images",action="store_true");a=p.parse_args();suite={};fail=[]
-    for n in a.domain or sorted(builder.DERIVERS):
-        m=validate(n,not a.skip_images);suite[n]=m;print(f"{n}: {m['status']} ({m['items']} items; composite baseline {m['composite_answer_baseline']:.3f})")
-        if m["status"]!="PASS":fail.append({"dataset":n,"issues":m["issues"]})
-    report={"status":"PASS" if not fail else "FAIL","datasets":suite,"failures":fail};(ROOT/"remaining_open_question_release_report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
-    if fail:raise SystemExit(json.dumps(fail,indent=2))
+ a=argparse.ArgumentParser();a.add_argument("--domain",action="append");a.add_argument("--skip-images",action="store_true");z=a.parse_args();suite={};fail=[]
+ for n in z.domain or builder.DATASETS:
+  m=validate(n,not z.skip_images);suite[n]=m;print(f"{n}: {m['status']} ({m['included_items']} included; {m['excluded_items']} excluded)")
+  if m["status"]!="PASS":fail.append({"dataset":n,"issues":m["issues"][:20]})
+ out={"status":"PASS" if not fail else "FAIL","datasets":suite,"failures":fail};(ROOT/"remaining_open_question_release_report.json").write_text(json.dumps(out,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+ if fail:raise SystemExit(json.dumps(fail,indent=2))
 if __name__=="__main__":main()

@@ -1,72 +1,60 @@
 {
   "status": "PASS",
   "dataset": "compass_bearing_dataset_3000",
-  "items": 3000,
-  "template": "From landmark C, name the nearest and farthest landmarks. Then give the direction to the alphabetically first nearest landmark using one of eight equal 45-degree sectors centred on north, north-east, east, south-east, south, south-west, west, and north-west. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 1118,
+  "excluded_items": 1882,
+  "exclusion_counts": {
+    "closest_pair_bearing_within_15_degrees_of_sector_boundary": 1882
+  },
+  "template": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the compass direction from the alphabetically earlier of them to the other, using only north, north-east, east, south-east, south, south-west, west or north-west. State your conclusion, justify it by describing the displacements you compared, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "nearest_landmarks",
-    "farthest_landmarks",
-    "direction_to_first_nearest"
+    "closest_pair",
+    "direction_from_earlier"
   ],
   "answer_distributions": {
-    "nearest_landmarks": {
-      "[\"A\"]": 906,
-      "[\"C\"]": 891,
-      "[\"B\"]": 819,
-      "[\"D\"]": 382,
-      "[\"A\",\"B\"]": 1,
-      "[\"A\",\"C\"]": 1
+    "closest_pair": {
+      "A-B": 291,
+      "B-C": 291,
+      "A-C": 281,
+      "A-D": 99,
+      "B-D": 78,
+      "C-D": 78
     },
-    "farthest_landmarks": {
-      "[\"B\"]": 912,
-      "[\"C\"]": 866,
-      "[\"A\"]": 846,
-      "[\"D\"]": 374,
-      "[\"A\",\"B\"]": 1,
-      "[\"A\",\"C\"]": 1
-    },
-    "direction_to_first_nearest": {
-      "west": 419,
-      "south-east": 412,
-      "east": 409,
-      "south": 383,
-      "north-west": 369,
-      "north": 352,
-      "south-west": 340,
-      "north-east": 316
+    "direction_from_earlier": {
+      "east": 189,
+      "west": 184,
+      "north": 155,
+      "north-west": 134,
+      "south-west": 118,
+      "south": 115,
+      "north-east": 112,
+      "south-east": 111
     }
   },
   "constant_answer_baselines": {
-    "nearest_landmarks": 0.302,
-    "farthest_landmarks": 0.304,
-    "direction_to_first_nearest": 0.13966666666666666
+    "closest_pair": 0.26028622540250446,
+    "direction_from_earlier": 0.16905187835420393
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.023,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
-    "passed": 3000,
-    "total": 3000,
+    "passed": 1118,
+    "total": 1118,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

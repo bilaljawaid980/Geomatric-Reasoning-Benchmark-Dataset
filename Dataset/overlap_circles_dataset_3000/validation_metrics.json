@@ -5,12 +5,8 @@
   "mismatches": 0,
   "overlap_density_before": {
     "source": "archive/v1",
-    "count": 3000,
-    "min": 0.2,
-    "p25": 0.9272727272727272,
-    "p50": 1.0,
-    "p75": 1.0,
-    "p95": 1.0,
+    "min": 0.1071428571,
+    "p50": 0.8888888889,
     "max": 1.0
   },
   "overlap_density_after": {
@@ -93,8 +89,9 @@
     },
     "3": {
       "counts": {
-        "target_density": 1034,
+        "spread": 415,
         "3": 344,
+        "clustered": 619,
         "1.7": 110,
         "4": 593,
         "2.1": 148,
@@ -110,7 +107,7 @@
         "1.4": 25,
         "1.1": 2
       },
-      "constant_answer_baseline": 0.3446666666666667
+      "constant_answer_baseline": 0.20633333333333334
     },
     "4": {
       "counts": {
@@ -263,23 +260,23 @@
     "canvas_size": {
       "levels": {
         "1": {
-          "cramers_v": 0.39405938532430235,
+          "cramers_v": 0.09266752911160774,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.38121791312044906,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 0.3870357372880322,
+          "cramers_v": 0.047438143429883686,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.38329489820586726,
+          "cramers_v": 0.014233129519920252,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.3798910481844596,
+          "cramers_v": 0.0,
           "kind": "categorical"
         }
       },
@@ -289,23 +286,23 @@
     "seed": {
       "levels": {
         "1": {
-          "cramers_v": 0.052688767027137,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.10343402779850669,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.07026344266023832,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.1284673789092049,
+          "cramers_v": 0.02888738637581072,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.09863785409778128,
+          "cramers_v": 0.0077275807301715,
           "kind": "numeric_deciles"
         }
       },
@@ -315,23 +312,23 @@
     "line_width_px": {
       "levels": {
         "1": {
-          "cramers_v": 0.050707540495550305,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.11146417578355451,
+          "cramers_v": 0.027494986997257664,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.07515601213741205,
+          "cramers_v": 0.028542259399607577,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.11851860236582681,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.10834791487018243,
+          "cramers_v": 0.045558858617094085,
           "kind": "numeric_deciles"
         }
       },
@@ -345,19 +342,19 @@
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.44541767432484564,
+          "cramers_v": 0.4326236326409741,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.20240445010632888,
+          "cramers_v": 0.19067151143972605,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.5499283220297393,
+          "cramers_v": 0.5361157891310447,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.5541664584843471,
+          "cramers_v": 0.5460095549029351,
           "kind": "numeric_deciles"
         }
       },
@@ -367,23 +364,23 @@
     "total_overlapping_pairs": {
       "levels": {
         "1": {
-          "cramers_v": 0.5774813719981557,
+          "cramers_v": 0.5755492378825143,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.7143899928388376,
+          "cramers_v": 0.7072365629931989,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.19347586060187633,
+          "cramers_v": 0.18920593787573145,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.40100052929439656,
+          "cramers_v": 0.38153162203798757,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.6491348739480709,
+          "cramers_v": 0.6426083130706274,
           "kind": "numeric_deciles"
         }
       },
@@ -393,23 +390,23 @@
     "non_overlapping_count": {
       "levels": {
         "1": {
-          "cramers_v": 0.20968197144868791,
+          "cramers_v": 0.20410830582822015,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.5486668968517527,
+          "cramers_v": 0.5381058537340534,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.12210539611176176,
+          "cramers_v": 0.1359979925623964,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.37100146130278977,
+          "cramers_v": 0.3493588248719241,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.30558134904257145,
+          "cramers_v": 0.28942345014853155,
           "kind": "numeric_deciles"
         }
       },
@@ -419,23 +416,23 @@
     "largest_circle_index": {
       "levels": {
         "1": {
-          "cramers_v": 0.21381599025572026,
+          "cramers_v": 0.20772683930871594,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.16116161863445122,
+          "cramers_v": 0.11975293424749694,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.09557795528677131,
+          "cramers_v": 0.06655476173763152,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.1779709348457226,
+          "cramers_v": 0.12666713380749103,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.19667816349417405,
+          "cramers_v": 0.1705579351907895,
           "kind": "numeric_deciles"
         }
       },
@@ -445,23 +442,23 @@
     "smallest_circle_index": {
       "levels": {
         "1": {
-          "cramers_v": 0.21792340562236856,
+          "cramers_v": 0.2119620759448467,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.16603269322731018,
+          "cramers_v": 0.12624902395685084,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.10955725508347484,
+          "cramers_v": 0.08323076691019499,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.18307797070219292,
+          "cramers_v": 0.1337661553917847,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.19963701704747838,
+          "cramers_v": 0.17397064201258242,
           "kind": "numeric_deciles"
         }
       },
@@ -471,23 +468,23 @@
     "largest_radius": {
       "levels": {
         "1": {
-          "cramers_v": 0.11271314055390232,
+          "cramers_v": 0.09862024730236947,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.135312567739369,
+          "cramers_v": 0.08160219083899853,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.15305072229019823,
+          "cramers_v": 0.13778034781901052,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.1430939901308607,
+          "cramers_v": 0.06941512501009818,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.1298855285153105,
+          "cramers_v": 0.08498255044692317,
           "kind": "numeric_deciles"
         }
       },
@@ -497,23 +494,23 @@
     "smallest_radius": {
       "levels": {
         "1": {
-          "cramers_v": 0.12321658480329972,
+          "cramers_v": 0.1104980793034184,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.12313446547073059,
+          "cramers_v": 0.059178115768019623,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.21116966534636128,
+          "cramers_v": 0.20120511067477323,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.13283794864502543,
+          "cramers_v": 0.04449687479182259,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.12901559624024744,
+          "cramers_v": 0.08364286877467997,
           "kind": "numeric_deciles"
         }
       },
@@ -523,23 +520,23 @@
     "max_stack_depth": {
       "levels": {
         "1": {
-          "cramers_v": 0.713154516747917,
+          "cramers_v": 0.7116348204766582,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.5773872567102993,
+          "cramers_v": 0.5672854608214583,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.598582253364823,
+          "cramers_v": 0.6048426076910074,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.5773577424104175,
+          "cramers_v": 0.5637162697275263,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.7705882480992549,
+          "cramers_v": 0.7644155938750958,
           "kind": "numeric_deciles"
         }
       },
@@ -549,23 +546,23 @@
     "max_stack_location": {
       "levels": {
         "1": {
-          "cramers_v": 0.9999999999999711,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "2": {
-          "cramers_v": 0.9999999999998499,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "3": {
-          "cramers_v": 1.0000000000000253,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "4": {
-          "cramers_v": 0.9999999999996123,
+          "cramers_v": 0.0,
           "kind": "categorical"
         },
         "5": {
-          "cramers_v": 0.9999999999998891,
+          "cramers_v": 0.0,
           "kind": "categorical"
         }
       },
@@ -601,23 +598,23 @@
     "above_average_radius_count": {
       "levels": {
         "1": {
-          "cramers_v": 0.44634144905324724,
+          "cramers_v": 0.44408938252629204,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.3337712177745038,
+          "cramers_v": 0.3160683837174722,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.1937582848903618,
+          "cramers_v": 0.18107222694404954,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.6021977421602023,
+          "cramers_v": 0.5895334364008205,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.4237085828292372,
+          "cramers_v": 0.4124836226891273,
           "kind": "numeric_deciles"
         }
       },
@@ -627,23 +624,23 @@
     "three_plus_overlap_percent": {
       "levels": {
         "1": {
-          "cramers_v": 0.44351990765855986,
+          "cramers_v": 0.4406382917211995,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.3525452629756956,
+          "cramers_v": 0.3360901491469696,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.19465598674719323,
+          "cramers_v": 0.19743922166736322,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.5875181459307305,
+          "cramers_v": 0.5748891234736004,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.43084266723340037,
+          "cramers_v": 0.4201013519702657,
           "kind": "numeric_deciles"
         }
       },
@@ -653,23 +650,23 @@
     "isolated_after_largest_removal": {
       "levels": {
         "1": {
-          "cramers_v": 0.23560327484212323,
+          "cramers_v": 0.23071202294636406,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.37541759045509815,
+          "cramers_v": 0.35971829362487984,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.13932926516523736,
+          "cramers_v": 0.14871018787980153,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.4812027317669266,
+          "cramers_v": 0.46486594932093067,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.4605990230174377,
+          "cramers_v": 0.45020475558040574,
           "kind": "numeric_deciles"
         }
       },
@@ -679,23 +676,23 @@
     "overlapping_pairs_after_largest_removal": {
       "levels": {
         "1": {
-          "cramers_v": 0.5352692057731451,
+          "cramers_v": 0.5330810626848219,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.4766447507017952,
+          "cramers_v": 0.46493911742128224,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.18407467393987254,
+          "cramers_v": 0.17717123365559687,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.3610438585402357,
+          "cramers_v": 0.3391547878685173,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.9999999999999999,
+          "cramers_v": 0.9966499068325334,
           "kind": "numeric_deciles"
         }
       },
@@ -705,23 +702,23 @@
     "overlap_density": {
       "levels": {
         "1": {
-          "cramers_v": 0.2975821067759815,
+          "cramers_v": 0.2928383000161651,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.43710544808856266,
+          "cramers_v": 0.42418225758505435,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.112390583160187,
+          "cramers_v": 0.18839297157823348,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.2822306888131542,
+          "cramers_v": 0.2533275742069084,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.26005525027413867,
+          "cramers_v": 0.2411084844802738,
           "kind": "numeric_deciles"
         }
       },
@@ -731,23 +728,23 @@
     "target_overlap_density": {
       "levels": {
         "1": {
-          "cramers_v": 0.04818941049877276,
+          "cramers_v": 0.0,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.2770613812412002,
+          "cramers_v": 0.25530254003934394,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.11046444246121288,
+          "cramers_v": 0.30554343186129107,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.25849801428481667,
+          "cramers_v": 0.2263131585309848,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.21803779023840453,
+          "cramers_v": 0.19473357805840316,
           "kind": "numeric_deciles"
         }
       },
@@ -757,23 +754,23 @@
     "difficulty_score": {
       "levels": {
         "1": {
-          "cramers_v": 0.6624788219215413,
+          "cramers_v": 0.6609818116349503,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.4980891269610819,
+          "cramers_v": 0.48696392098236135,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.23087313319684372,
+          "cramers_v": 0.2235360646267008,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.4264972947947842,
+          "cramers_v": 0.40832389574032424,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.5658181709820291,
+          "cramers_v": 0.5580455794782012,
           "kind": "numeric_deciles"
         }
       },
@@ -783,23 +780,23 @@
     "generation_attempt": {
       "levels": {
         "1": {
-          "cramers_v": 0.20476806753819707,
+          "cramers_v": 0.19837908877652236,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.2203074679378359,
+          "cramers_v": 0.19225874643071036,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.09855610185684173,
+          "cramers_v": 0.07885757587409996,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.1948304408260699,
+          "cramers_v": 0.14948786205450967,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.25012575084286365,
+          "cramers_v": 0.2302921485679386,
           "kind": "numeric_deciles"
         }
       },
@@ -809,23 +806,23 @@
     "rejections_max_stack_depth": {
       "levels": {
         "1": {
-          "cramers_v": 0.3723479319424499,
+          "cramers_v": 0.3693851132764092,
           "kind": "numeric_deciles"
         },
         "2": {
-          "cramers_v": 0.4088323584262741,
+          "cramers_v": 0.39449844278412904,
           "kind": "numeric_deciles"
         },
         "3": {
-          "cramers_v": 0.17728825842377832,
+          "cramers_v": 0.1938889925586324,
           "kind": "numeric_deciles"
         },
         "4": {
-          "cramers_v": 0.3425145410354194,
+          "cramers_v": 0.3189766452538288,
           "kind": "numeric_deciles"
         },
         "5": {
-          "cramers_v": 0.4999079266510997,
+          "cramers_v": 0.49038617838954135,
           "kind": "numeric_deciles"
         }
       },

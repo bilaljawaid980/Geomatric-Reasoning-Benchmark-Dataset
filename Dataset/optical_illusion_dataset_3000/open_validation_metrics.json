@@ -1,47 +1,49 @@
 {
   "status": "PASS",
   "dataset": "optical_illusion_dataset_3000",
-  "items": 3000,
-  "template": "Compare the actual central elements A and B, ignoring apparent size. Answer A larger, B larger, or equal. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Measure the two marked elements against one another, disregarding the lines and shapes surrounding them: decide whether they are truly equal in size or whether one is genuinely larger, and separately say which one a typical human viewer would perceive as larger. State your conclusion, justify it by describing what you measured and what the surrounding context does to the impression, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "true_relation"
+    "true_size_relation",
+    "perceived_larger"
   ],
   "answer_distributions": {
-    "true_relation": {
+    "true_size_relation": {
       "equal": 1500,
-      "B larger": 759,
-      "A larger": 741
+      "B": 759,
+      "A": 741
+    },
+    "perceived_larger": {
+      "B": 1535,
+      "A": 1465
     }
   },
   "constant_answer_baselines": {
-    "true_relation": 0.5
+    "true_size_relation": 0.5,
+    "perceived_larger": 0.5116666666666667
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.5,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

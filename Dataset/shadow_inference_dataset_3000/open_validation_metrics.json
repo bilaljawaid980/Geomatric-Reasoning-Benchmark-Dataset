@@ -1,65 +1,52 @@
 {
   "status": "PASS",
   "dataset": "shadow_inference_dataset_3000",
-  "items": 3000,
-  "template": "For the tallest object, the blue one, name its object type and its shadow direction using eight compass-like screen directions. Then name every colour tied for the longest shadow. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Compare each object with the shadow it casts on the ground: say from which general direction the light is coming, and whether it sits high in the sky or low near the horizon. State your conclusion, justify it by describing the direction the shadows fall and how their length compares with the height of the objects casting them, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "tallest_object_type",
-    "its_shadow_direction",
-    "longest_shadow_colours"
+    "light_direction",
+    "light_height"
   ],
   "answer_distributions": {
-    "tallest_object_type": {
-      "sphere": 782,
-      "cone": 766,
-      "cube": 729,
-      "cylinder": 723
+    "light_direction": {
+      "east": 1358,
+      "west": 1353,
+      "south": 146,
+      "north": 143
     },
-    "its_shadow_direction": {
-      "right": 1249,
-      "left": 1215,
-      "lower-left": 300,
-      "lower-right": 235,
-      "down": 1
-    },
-    "longest_shadow_colours": {
-      "[\"teal\"]": 777,
-      "[\"blue\"]": 772,
-      "[\"orange\"]": 747,
-      "[\"purple\"]": 704
+    "light_height": {
+      "high": 1514,
+      "low": 1486
     }
   },
   "constant_answer_baselines": {
-    "tallest_object_type": 0.26066666666666666,
-    "its_shadow_direction": 0.41633333333333333,
-    "longest_shadow_colours": 0.259
+    "light_direction": 0.45266666666666666,
+    "light_height": 0.5046666666666667
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.031,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
+  "special_checks": {
+    "azimuth_exclusion_violations": 0
   },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
   "issues": []
 }

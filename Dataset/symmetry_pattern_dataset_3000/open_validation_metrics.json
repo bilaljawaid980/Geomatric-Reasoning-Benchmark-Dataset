@@ -1,57 +1,56 @@
 {
   "status": "PASS",
   "dataset": "symmetry_pattern_dataset_3000",
-  "items": 3000,
-  "template": "Name the pattern's intended symmetry and say whether the visible pattern is intact or broken. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Examine every shape and where it sits relative to the centre of the arrangement: work out which shapes pair with which, decide whether the pattern is fully symmetric or whether one element has been displaced from where its partner requires it to be, and say what kind of symmetry the arrangement is built on. State your conclusion, justify it by describing which shapes you paired and how you judged their positions, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "symmetry_type",
-    "pattern_status"
+    "pattern_status",
+    "symmetry_type"
   ],
   "answer_distributions": {
-    "symmetry_type": {
-      "2-fold rotation": 429,
-      "3-fold rotation": 429,
-      "4-fold rotation": 429,
-      "6-fold rotation": 429,
-      "horizontal and vertical mirrors": 428,
-      "horizontal mirror": 428,
-      "vertical mirror": 428
-    },
     "pattern_status": {
       "broken": 1500,
-      "intact": 1500
+      "fully symmetric": 1500
+    },
+    "symmetry_type": {
+      "rotational_2": 429,
+      "rotational_3": 429,
+      "rotational_4": 429,
+      "rotational_6": 429,
+      "mirror_both": 428,
+      "mirror_horizontal": 428,
+      "mirror_vertical": 428
     }
   },
   "constant_answer_baselines": {
-    "symmetry_type": 0.143,
-    "pattern_status": 0.5
+    "pattern_status": 0.5,
+    "symmetry_type": 0.143
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.07166666666666667,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
+  "special_checks": {
+    "intact_rotational_orbit_violations": 0,
+    "symmetry_pattern_0143_num_shapes": 8
   },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
   "issues": []
 }

@@ -1,59 +1,56 @@
-# Open-question rewrite and verification
+# Open-question specification implementation report
 
-## Pre-change diagnosis
+## Pre-change defect findings
 
-- `compass_bearing_0115`: A→B is 162.33927134° under 0°=north, clockwise-positive bearings. The eight sector boundaries are 22.5°, 67.5°, 112.5°, 157.5°, 202.5°, 247.5°, 292.5°, and 337.5°. The value lies in south [157.5°, 202.5°), so the stored word is correct. It is 4.83927134° from the south/south-east boundary. The deterministic open target was within 10° of a boundary in 1,304/3,000 items; considering any directed landmark pair, 2,689/3,000 items and 11,746/27,000 bearings had at least one such case. The rewritten prompt now states the exact sector rule.
-- `combination3d_0150`: `len(target_cubes)=11`. One cube, `(0,0,0)`, is fully occluded by the renderer-equivalent visibility test; 10 cubes survive that test. `target_cube_count` counts all cubes. Across the domain, 1,901/3,000 targets contain at least one fully hidden cube, with 3,128 hidden cubes total. The target-total sub-fact was removed.
-- `cube_net_0103`: for face A, flat edge-neighbours are C and E from `net_edge_neighbors`, the opposite is F from `opposite_pairs`, and folded neighbours are B, C, D, and E from `cube_adjacent_faces`. All 3,000 records satisfy the complement invariant. The redundant folded-adjacency list was removed.
-- No error was found in any closed L1–L5 ground-truth value, so none was changed.
+- `fold_punch`: 312 of 3,000 items had identical L4 and L5 question text and the identical `exactly half` answer. L5 was replaced only on those rows with the existing additional-fold counterfactual; all 3,000 L5 rows are now distinct from L4.
+- `overlap_circles`: 1,034 of 3,000 L3 rows stored the field name `target_density`. Those answers are now `spread` for target overlap densities 0.28/0.34 and `clustered` for 0.40/0.46/0.52.
+- `symmetry_pattern_0143`: no stored or rendered six-shape defect was present. The record has eight visible shapes in two complete 4-fold orbits. Across all 1,500 intact patterns, zero shape counts violate divisibility by rotational order. The permanent validator now asserts this invariant.
 
-The pre-change suite sweep found that the shared generator recomputed open facts in 31 domains and its validator called the same derivation functions, so that check was circular. The replacement validator has separate formulas and geometry traversal and never calls the builder's derivation functions. Direct stored values are used only when they are closed-question-validated scene fields; derived values are recomputed independently.
+## Per-domain validation and exclusions
 
-## Final templates and scored sub-facts
+| Dataset | Version | Source | Included | Excluded | Exclusion reason(s) | Highest sub-fact baseline | Fields at or above 60% | Result |
+|---|---|---:|---:|---:|---|---:|---|---|
+| `angle_estimation_dataset_3000` | `angle-estimation-6.0.0` | 3,000 | 1,050 | 1,950 | template_requires_two_angles: 1950 | 0.501 | none | PASS |
+| `clock_reading_dataset_3000` | `clock-reading-4.0.0` | 3,000 | 3,000 | 0 | none | 0.040 | none | PASS |
+| `combination3d_dataset_3000` | `combination3d-5.0.0` | 3,000 | 3,000 | 0 | none | 0.353 | none | PASS |
+| `combination_dataset_3000` | `combination-4.0.0` | 3,000 | 3,000 | 0 | none | 0.351 | none | PASS |
+| `compass_bearing_dataset_3000` | `compass-bearing-5.0.0` | 3,000 | 1,118 | 1,882 | closest_pair_bearing_within_15_degrees_of_sector_boundary: 1882 | 0.260 | none | PASS |
+| `coordinate_geometry_dataset_3000` | `coordinate-geometry-5.0.0` | 3,000 | 3,000 | 0 | none | 0.649 | relation_to_10: 0.649 | PASS |
+| `cube_net_dataset_3000` | `cube-net-5.0.0` | 3,000 | 3,000 | 0 | none | 0.178 | none | PASS |
+| `cube_structure_dataset_3000` | `cube-structure-5.0.0` | 3,000 | 3,000 | 0 | none | 0.333 | none | PASS |
+| `depth_height_dataset_3000` | `depth-height-5.0.0` | 3,000 | 1,500 | 1,500 | not_depth_ordering_scene: 1500 | 0.209 | none | PASS |
+| `embedded_figures_dataset_3000` | `embedded-figures-4.0.0` | 3,000 | 3,000 | 0 | none | 0.250 | none | PASS |
+| `fbd_dataset_3000` | `free-body-diagram-5.0.0` | 3,000 | 3,000 | 0 | none | 0.833 | weight_arrow: 0.833 | PASS |
+| `fold_punch_dataset_3000` | `fold-punch-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `gauge_reading_dataset_3000` | `gauge-reading-4.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `gear_train_dataset_3000` | `gear-train-4.0.0` | 3,000 | 3,000 | 0 | none | 0.618 | last_direction_relation: 0.618 | PASS |
+| `hex_pathfinding_dataset_3000` | `hex-pathfinding-5.0.0` | 3,000 | 3,000 | 0 | none | 0.535 | none | PASS |
+| `impossible_object_dataset_3000` | `impossible-object-7.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `laser_mirror_dataset_3000` | `laser-mirror-4.0.0` | 3,000 | 2,250 | 750 | zero_reflections: 750 | 0.697 | reflection_count: 0.697 | PASS |
+| `line_intersection_dataset_3000` | `line-intersection-6.0.0` | 3,000 | 3,000 | 0 | none | 0.588 | none | PASS |
+| `nested_hexagons_dataset_3000` | `nested-hexagons-11.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `nested_squares_dataset_3000` | `nested-squares-11.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `nested_triangles_dataset_3000` | `nested-triangles-11.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `occluded_pattern_dataset_3000` | `occluded-pattern-5.0.0` | 3,000 | 3,000 | 0 | none | 0.369 | none | PASS |
+| `optical_illusion_dataset_3000` | `optical-illusion-6.0.0` | 3,000 | 3,000 | 0 | none | 0.512 | none | PASS |
+| `orthographic_dataset_3000` | `orthographic-4.0.0` | 3,000 | 3,000 | 0 | none | 0.561 | none | PASS |
+| `overlap_circles_dataset_3000` | `overlap-circles-5.0.0` | 3,000 | 3,000 | 0 | none | 0.720 | any_isolated: 0.720 | PASS |
+| `physical_stability_dataset_3000` | `physical-stability-4.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
+| `polyhedron_dataset_3000` | `polyhedron-8.0.0` | 3,000 | 3,000 | 0 | none | 0.895 | convexity: 0.895 | PASS |
+| `projectile_motion_dataset_1000` | `projectile-motion-4.0.0` | 1,000 | 1,000 | 0 | none | 0.654 | peak_above_20_m: 0.654 | PASS |
+| `rotation_matching_dataset_3000` | `rotation-matching-5.0.0` | 3,000 | 3,000 | 0 | none | 0.260 | none | PASS |
+| `route_dataset_3000` | `route-5.0.0` | 3,000 | 986 | 2,014 | template_requires_six_labelled_sides: 2014 | 0.010 | none | PASS |
+| `rpm_dataset_3000` | `rpm-5.0.0` | 3,000 | 3,000 | 0 | none | 0.220 | none | PASS |
+| `shadow_inference_dataset_3000` | `shadow-inference-5.0.0` | 3,000 | 3,000 | 0 | none | 0.505 | none | PASS |
+| `surface_topology_dataset_3000` | `surface-topology-6.0.0` | 3,000 | 3,000 | 0 | none | 0.750 | orientability: 0.750 | PASS |
+| `symmetry_pattern_dataset_3000` | `symmetry-pattern-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
 
-| Dataset | Version | Sub-facts | Example generated prompt | Highest field baseline |
-|---|---|---|---|---:|
-| `angle_estimation_dataset_3000` | `angle-estimation-4.0.0` → `angle-estimation-5.0.0` | `angle_degrees_nearest_5, angle_class` | Look at marked angle. Estimate its measure to the nearest 5 degrees, and classify it as acute, right, obtuse, or reflex. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5487 |
-| `clock_reading_dataset_3000` | `clock-reading-2.0.0` → `clock-reading-3.0.0` | `time, smaller_angle_degrees_nearest_5` | Read the time on the clock, then estimate the smaller angle between the hands to the nearest 5 degrees. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.0397 |
-| `combination3d_dataset_3000` | `combination3d-3.0.0` → `combination3d-4.0.0` | `blocking_reason` | Candidate C does not make the target using the allowed moves. Choose its single blocking reason from: gap or overlap, wrong cube count, or requires a forbidden 3D tumble. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.3403 |
-| `combination_dataset_3000` | `combination-2.0.0` → `combination-3.0.0` | `blocking_reason` | Candidate C does not make the target using the allowed moves. Choose its single blocking reason from: gap or overlap, wrong cell count, or requires a reflection. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.3397 |
-| `compass_bearing_dataset_3000` | `compass-bearing-3.0.0` → `compass-bearing-4.0.0` | `nearest_landmarks, farthest_landmarks, direction_to_first_nearest` | From landmark C, name the nearest and farthest landmarks. Then give the direction to the alphabetically first nearest landmark using one of eight equal 45-degree sectors centred on north, north-east, east, south-east, south, south-west, west, and north-west. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.3040 |
-| `coordinate_geometry_dataset_3000` | `coordinate-geometry-3.0.0` → `coordinate-geometry-4.0.0` | `target_coordinates, nearest_points, farthest_points` | Read the exact grid coordinates of point B (tolerance 0), then name the point or points nearest to it and the point or points farthest from it. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.4433 |
-| `cube_net_dataset_3000` | `cube-net-3.0.0` → `cube-net-4.0.0` | `opposite_face, flat_edge_neighbours` | For face E, name the face opposite it after folding and list the faces that share an edge with it while the net is still flat. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.1780 |
-| `cube_structure_dataset_3000` | `cube-structure-3.0.0` → `cube-structure-4.0.0` | `occupied_columns, tallest_column_height` | Count the occupied vertical columns and give the height of the tallest column. Give both counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.3800 |
-| `depth_height_dataset_3000` | `depth-height-3.0.0` → `depth-height-4.0.0` | `nearest_object_color, farthest_object_color, block_count, tallest_stack_colors` | Using the depth cues in the scene, name the nearest object colour and the farthest object colour. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.2133 |
-| `embedded_figures_dataset_3000` | `embedded-figures-2.0.0` → `embedded-figures-3.0.0` | `target_shape, matching_candidate` | Name the shape hidden in the line drawing, then give the letter of the candidate with the same outline under rotation and scaling. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.2500 |
-| `fbd_dataset_3000` | `free-body-diagram-3.0.0` → `free-body-diagram-4.0.0` | `force_type_as_drawn, direction_as_drawn, magnitude_rank_largest_first` | For arrow A in the diagram as drawn, name its force type, give its direction as up, upper-right, right, lower-right, down, lower-left, left, or upper-left, and give its exact rank by arrow length from largest to smallest (tolerance 0), with ties sharing a rank. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5823 |
-| `fold_punch_dataset_3000` | `fold-punch-3.0.0` → `fold-punch-4.0.0` | `fold_directions, unfolded_hole_count` | State the fold directions in the order shown, then give the exact number of holes after the paper is fully unfolded (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
-| `gauge_reading_dataset_3000` | `gauge-reading-2.0.0` → `gauge-reading-3.0.0` | `instrument, reading_nearest_tick` | Name the instrument and read the needle to the nearest minor tick in km/h; answers within half a minor-tick interval are accepted. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.4000 |
-| `gear_train_dataset_3000` | `gear-train-2.0.0` → `gear-train-3.0.0` | `rotation_direction, speed_rpm_nearest_whole` | Trace the meshing gears from driver A to gear C. Give gear C's rotation direction as CW or CCW and its speed to the nearest whole rpm. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5103 |
-| `hex_pathfinding_dataset_3000` | `hex-pathfinding-3.0.0` → `hex-pathfinding-4.0.0` | `grey_holes_touching_home, walkable_hexes_touching_home` | Look at the hexes directly touching HOME. Count the grey holes and the walkable hexes separately; give both counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.4190 |
-| `impossible_object_dataset_3000` | `impossible-object-5.0.0` → `impossible-object-6.0.0` | `front_beam, total_crossings` | At crossing X1, name the beam drawn in front, then count all labelled crossings exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.2500 |
-| `laser_mirror_dataset_3000` | `laser-mirror-2.0.0` → `laser-mirror-3.0.0` | `mirrors_hit_in_order, exit_edge, exit_position` | Trace the laser through the grid. List the printed mirror-cell labels it hits in order, then give its exit edge and exact numbered exit position (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.2577 |
-| `line_intersection_dataset_3000` | `line-intersection-4.0.0` → `line-intersection-5.0.0` | `red_at_left, red_at_right, total_crossings` | Follow the red and blue lines from left to right. Say whether red is above or below blue at each end, and count their crossings exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5027 |
-| `nested_hexagons_dataset_3000` | `nested-hexagons-9.0.0` → `nested-hexagons-10.0.0` | `shape_count, cumulative_rotation_degrees_nearest_5, shrink_pattern` | Count the nested hexagons exactly (tolerance 0), estimate the cumulative rotation from the outermost to the innermost hexagon to the nearest 5 degrees, and say whether the shrink factor is constant, increasing, or decreasing inward. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
-| `nested_squares_dataset_3000` | `nested-squares-9.0.0` → `nested-squares-10.0.0` | `shape_count, cumulative_rotation_degrees_nearest_5, shrink_pattern` | Count the nested squares exactly (tolerance 0), estimate the cumulative rotation from the outermost to the innermost square to the nearest 5 degrees, and say whether the shrink factor is constant, increasing, or decreasing inward. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
-| `nested_triangles_dataset_3000` | `nested-triangles-9.0.0` → `nested-triangles-10.0.0` | `shape_count, cumulative_rotation_degrees_nearest_5, shrink_pattern` | Count the nested triangles exactly (tolerance 0), estimate the cumulative rotation from the outermost to the innermost triangle to the nearest 5 degrees, and say whether the shrink factor is constant, increasing, or decreasing inward. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
-| `occluded_pattern_dataset_3000` | `occluded-pattern-3.0.0` → `occluded-pattern-4.0.0` | `pattern_type, visible_count, hidden_count` | Name the repeated pattern, count the visible objects exactly, and infer the hidden objects exactly (tolerance 0 for both counts). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.3693 |
-| `optical_illusion_dataset_3000` | `optical-illusion-4.0.0` → `optical-illusion-5.0.0` | `true_relation` | Compare the actual central elements A and B, ignoring apparent size. Answer A larger, B larger, or equal. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
-| `orthographic_dataset_3000` | `orthographic-2.0.0` → `orthographic-3.0.0` | `top_filled, front_filled, side_filled` | Count the filled cells in the TOP, FRONT, and SIDE views. Give all three counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.2350 |
-| `overlap_circles_dataset_3000` | `overlap-circles-3.0.0` → `overlap-circles-4.0.0` | `largest_circle_direct_overlaps, total_overlap_pairs, isolated_after_largest_removal` | For the largest circle, count its direct overlaps, count all overlapping pairs, and say how many circles would be isolated if the largest were removed. Give all counts exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5793 |
-| `physical_stability_dataset_3000` | `physical-stability-2.0.0` → `physical-stability-3.0.0` | `blocks_above_contact, combined_centre_of_mass` | At the contact below block A, list the blocks above that contact and say whether their combined centre of mass lies left of, inside, or right of the supporting base. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
-| `polyhedron_dataset_3000` | `polyhedron-6.0.0` → `polyhedron-7.0.0` | `solid_name, face_count, face_shapes` | Identify the solid, give its exact total number of faces (tolerance 0), and name the face shape or shapes. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.3687 |
-| `projectile_motion_dataset_1000` | `projectile-motion-2.0.0` → `projectile-motion-3.0.0` | `maximum_height_m_nearest_whole, range_m_nearest_whole` | Read the plotted trajectory and estimate its maximum height and horizontal range to the nearest whole metre. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.0580 |
-| `rotation_matching_dataset_3000` | `rotation-matching-3.0.0` → `rotation-matching-4.0.0` | `matching_rotation_candidate, reflection_candidate` | Name the candidate that is a true rotation of the reference and the candidate that is its reflection. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.2597 |
-| `route_dataset_3000` | `route-3.0.0` → `route-4.0.0` | `far_ends_by_colour, total_bends` | Trace every coloured line touching label D. For each colour, name its far-end label, then give the exact total number of bends across those lines (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.0793 |
-| `rpm_dataset_3000` | `rpm-3.0.0` → `rpm-4.0.0` | `shape, count, rotation_degrees` | Complete the empty panel: name the shape, give the exact number of copies (tolerance 0), and give its rotation to the nearest 5 degrees. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.4237 |
-| `shadow_inference_dataset_3000` | `shadow-inference-3.0.0` → `shadow-inference-4.0.0` | `tallest_object_type, its_shadow_direction, longest_shadow_colours` | For the tallest object, the blue one, name its object type and its shadow direction using eight compass-like screen directions. Then name every colour tied for the longest shadow. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.4163 |
-| `surface_topology_dataset_3000` | `surface-topology-4.0.0` → `surface-topology-5.0.0` | `surface_family, euler_characteristic` | Identify the surface family, then give its exact Euler characteristic (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5233 |
-| `symmetry_pattern_dataset_3000` | `symmetry-pattern-3.0.0` → `symmetry-pattern-4.0.0` | `symmetry_type, pattern_status` | Name the pattern's intended symmetry and say whether the visible pattern is intact or broken. Explain briefly what you used in the image, then end with a confidence score from 0 to 1. | 0.5000 |
+## Validation summary
 
-## Validation result
-
-- Domain validators: PASS (34/34).
 - Independent ground-truth mismatches: 0.
-- PNG recovery: 100,000/100,000.
-- Every item has at most three sub-facts; every numeric sub-fact has a stated and stored tolerance; no `none` placeholders, trap-naming clauses, or unrendered coordinate/index/schema vocabulary remain.
-- No scored field has a constant-answer baseline at or above 60%. Full distributions and baselines are stored in each domain's `open_validation_metrics.json` and consolidated in `open_question_suite_report.json`.
-- Combined open files: 100,000 questions and 100,000 answers across 34 datasets; all 100,000 image paths resolve.
-- Protected images, renderers, and closed L1–L5 question/answer payloads are unchanged. Annotation changes are limited to `dataset_version`.
+- PNG/file recovery: 91,904/91,904 included images.
+- Public schema: exactly `question_id,image,prompt` in every domain.
+- Exact template wording, answer-leak checks, rendered-vocabulary checks, numeric tolerance checks, and one-to-one question/answer resolution: PASS in all 34 domains.
+- Combined open files: 91,904 questions and 91,904 answers; 91,904 referenced image paths resolve.
+- Gauge exact-tick frequency and every complete answer distribution/baseline are retained in the per-domain `open_validation_metrics.json` files and the consolidated JSON report.
+- Closed combined suite remains 500,000 questions, 500,000 answers, and 100,000 images.

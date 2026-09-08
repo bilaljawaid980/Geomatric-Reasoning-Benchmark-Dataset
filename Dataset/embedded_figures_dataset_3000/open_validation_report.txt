@@ -1,10 +1,13 @@
 Open-question validation: embedded_figures_dataset_3000
 Status: PASS
-Items: 3000
-Template: Name the shape hidden in the line drawing, then give the letter of the candidate with the same outline under rotation and scaling. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: target_shape, matching_candidate
-Constant-answer baselines: {"matching_candidate": 0.25, "target_shape": 0.25}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: candidate, side_count
+Constant-answer baselines: {"candidate": 0.25, "side_count": 0.25}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

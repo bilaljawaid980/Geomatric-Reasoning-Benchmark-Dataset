@@ -1,0 +1,29 @@
+{
+  "hex_pathfinding_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "boundary_status",
+      "neighbourhood"
+    ]
+  },
+  "physical_stability_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "stability_conclusion"
+    ]
+  },
+  "route_dataset_3000": {
+    "included": 986,
+    "excluded": 2014,
+    "exclusion_reasons": {
+      "template_requires_six_labelled_sides": 2014
+    },
+    "subfacts": [
+      "connectivity"
+    ]
+  }
+}

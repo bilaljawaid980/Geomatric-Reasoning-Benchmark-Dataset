@@ -1,10 +1,13 @@
 Open-question validation: polyhedron_dataset_3000
 Status: PASS
-Items: 3000
-Template: Identify the solid, give its exact total number of faces (tolerance 0), and name the face shape or shapes. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: solid_name, face_count, face_shapes
-Constant-answer baselines: {"face_count": 0.21066666666666667, "face_shapes": 0.36866666666666664, "solid_name": 0.105}
-Fields >=60%: {}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: face_shapes, convexity
+Constant-answer baselines: {"convexity": 0.8946666666666667, "face_shapes": 0.36866666666666664}
+Fields >=60%: {"convexity": 0.8946666666666667}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {"boundary_edge_set_mismatches": 0}
+Issues: []

@@ -1,15 +1,18 @@
-GRIP Five-Level Validation Summary — symmetry_pattern
-Images checked: 3000
-Questions checked: 15000
-Base geometry/Levels 1-4: PASS
-Level 5 independent validation: PASS
+Total images checked: 3000
 Total mismatches found: 0
-Summary: PASS
-
-Dataset: symmetry_pattern
-Images checked: 3000
-Level 5 questions checked: 3000
-Total mismatches found: 0
-Level 5 templates:
-  counterfactual_symmetry_repair_break: 3000
+Class distribution: broken=1500, unbroken=1500
+Symmetry distribution:
+  mirror_both: 428
+  mirror_horizontal: 428
+  mirror_vertical: 428
+  rotational_2: 429
+  rotational_3: 429
+  rotational_4: 429
+  rotational_6: 429
+Break distribution:
+  None: 1500
+  fill: 375
+  position: 375
+  rotation: 375
+  size: 375
 Summary: PASS

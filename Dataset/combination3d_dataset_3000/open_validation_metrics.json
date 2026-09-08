@@ -1,47 +1,59 @@
 {
   "status": "PASS",
   "dataset": "combination3d_dataset_3000",
-  "items": 3000,
-  "template": "Candidate C does not make the target using the allowed moves. Choose its single blocking reason from: gap or overlap, wrong cube count, or requires a forbidden 3D tumble. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Compare each separated group of cubes in every candidate with the target structure: decide which single candidate could be moved and turned about the upright axis to reproduce the target exactly, and say what disqualifies one of the candidates you rejected. State your conclusion, justify it by describing how you tried to fit the groups together and how you accounted for cubes hidden behind others, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "blocking_reason"
+    "correct_candidate",
+    "rejected_candidate",
+    "rejection_reason"
   ],
   "answer_distributions": {
-    "blocking_reason": {
-      "gap or overlap": 1021,
-      "requires a forbidden 3D tumble": 991,
-      "wrong cube count": 988
+    "correct_candidate": {
+      "A": 750,
+      "B": 750,
+      "C": 750,
+      "D": 750
+    },
+    "rejected_candidate": {
+      "C": 766,
+      "B": 753,
+      "A": 750,
+      "D": 731
+    },
+    "rejection_reason": {
+      "gap or overlap": 1060,
+      "requires turning about a forbidden axis": 980,
+      "wrong cube count": 960
     }
   },
   "constant_answer_baselines": {
-    "blocking_reason": 0.3403333333333333
+    "correct_candidate": 0.25,
+    "rejected_candidate": 0.25533333333333336,
+    "rejection_reason": 0.35333333333333333
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.3403333333333333,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

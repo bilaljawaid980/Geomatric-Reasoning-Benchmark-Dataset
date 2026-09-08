@@ -48,6 +48,9 @@ def validate(root):
   with Image.open(p) as im:
    if list(im.size)!=r['canvas_size']:issues.append(f'{iid}: canvas mismatch')
   bad=mismatch_indices(s,kind);derived=bool(bad)
+  if not r['is_broken'] and kind.startswith('rotational_'):
+   order=int(kind.rsplit('_',1)[1])
+   if r['num_shapes']%order:issues.append(f'{iid}: intact shape count is not a multiple of rotational symmetry order')
   if derived!=r['is_broken']:issues.append(f'{iid}: symmetry status mismatch')
   if derived:
    bi=r['broken_shape_index']
@@ -58,7 +61,7 @@ def validate(root):
   pc=partners(s,kind)
   if pc!=r['symmetric_partner_count']:issues.append(f'{iid}: partner count mismatch')
   qs=r.get('questions',[])
-  if len(qs)!=4 or [q.get('difficulty_level') for q in qs]!=[1,2,3,4]:issues.append(f'{iid}: question structure mismatch');continue
+  if len(qs)!=5 or [q.get('difficulty_level') for q in qs]!=[1,2,3,4,5]:issues.append(f'{iid}: question structure mismatch');continue
   for q in qs:
    t=q['question_type']
    if t=='shape_count':e=str(len(s))
@@ -68,6 +71,7 @@ def validate(root):
    elif t=='break_type':e={'fill':'filled','rotation':'rotated','position':'shifted','size':'different size'}[r['break_type']]
    elif t=='rotation_90_invariant':e='yes' if not derived and kind in ('rotational_4','rotational_6') else 'no'
    elif t=='symmetric_partner_count':e=str(pc)
+   elif t=='counterfactual_symmetry_repair_break':e='yes'
    else:issues.append(f'{iid}: unknown question {t}');continue
    if q['ground_truth']!=e:issues.append(f'{iid}: {t} answer mismatch')
  if len(lines)>=3000:

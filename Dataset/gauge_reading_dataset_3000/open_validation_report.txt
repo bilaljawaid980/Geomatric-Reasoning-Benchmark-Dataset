@@ -1,10 +1,13 @@
 Open-question validation: gauge_reading_dataset_3000
 Status: PASS
-Items: 3000
-Template: Name the instrument and read the needle to the nearest minor tick in km/h; answers within half a minor-tick interval are accepted. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: instrument, reading_nearest_tick
-Constant-answer baselines: {"instrument": 0.4, "reading_nearest_tick": 0.09866666666666667}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: rounded_tick_value, range_half
+Constant-answer baselines: {"range_half": 0.5, "rounded_tick_value": 0.09866666666666667}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {"needle_exactly_on_tick_count": 1380}
+Issues: []

@@ -1,8 +1,11 @@
 {
   "status": "PASS",
   "dataset": "clock_reading_dataset_3000",
-  "items": 3000,
-  "template": "Read the time on the clock, then estimate the smaller angle between the hands to the nearest 5 degrees. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, read the time they show, and give the smaller angle between them to the nearest 5 degrees. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
   "subfacts": [
     "time",
     "smaller_angle_degrees_nearest_5"
@@ -707,31 +710,24 @@
     "smaller_angle_degrees_nearest_5": 0.03966666666666667
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.004,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

@@ -24,7 +24,8 @@ for d in datasets:
         if not open_files <= names:errors.append(f'{d.name}: missing declared open-question files')
         with (d/'open_questions.csv').open(encoding='utf-8-sig',newline='') as f:
             reader=csv.reader(f);open_header=next(reader);open_questions=sum(1 for _ in reader)
-        if open_header!=['question_id','image','prompt'] or open_questions!=len(rows):errors.append(f'{d.name}: open_questions contract')
+        expected_open=int(manifest.get('open_questions',len(rows)))
+        if open_header!=['question_id','image','prompt'] or open_questions!=expected_open:errors.append(f'{d.name}: open_questions contract')
     if any(re.search(r'_v\d+$',p.stem) for p in d.iterdir() if p.is_file()):errors.append(f'{d.name}: version-suffixed top-level file')
     images=sum(1 for _ in (d/'images').glob('*.png'))
     if images!=len(rows):errors.append(f'{d.name}: images {images}/{len(rows)}')

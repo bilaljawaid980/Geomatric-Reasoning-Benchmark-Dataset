@@ -1,58 +1,50 @@
 {
   "status": "PASS",
   "dataset": "impossible_object_dataset_3000",
-  "items": 3000,
-  "template": "At crossing X1, name the beam drawn in front, then count all labelled crossings exactly (tolerance 0). Explain briefly what you used in the image, then end with a confidence score from 0 to 1.",
+  "source_items": 3000,
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Trace each beam through the structure and look closely at the points where one beam passes in front of another: count those crossings, then decide whether the depth relationships they imply could all hold at once in a real three-dimensional object. State your conclusion, justify it by describing which beam passes in front at the crossings that decide the matter, and end with a confidence score from 0 to 1.",
   "subfacts": [
-    "front_beam",
-    "total_crossings"
+    "crossing_count",
+    "constructible"
   ],
   "answer_distributions": {
-    "front_beam": {
-      "A": 576,
-      "D": 570,
-      "B": 557,
-      "C": 534,
-      "E": 529,
-      "F": 234
-    },
-    "total_crossings": {
+    "crossing_count": {
       "6": 750,
       "7": 750,
       "8": 750,
       "9": 750
+    },
+    "constructible": {
+      "no": 1500,
+      "yes": 1500
     }
   },
   "constant_answer_baselines": {
-    "front_beam": 0.192,
-    "total_crossings": 0.25
+    "crossing_count": 0.25,
+    "constructible": 0.5
   },
   "fields_at_or_above_60_percent": {},
-  "composite_answer_baseline": 0.051,
   "independent_derivation": {
     "mismatches": [],
-    "method": "separate formulas and geometry traversal; builder derivation functions are not called"
+    "method": "separate formulas and geometry traversals; generator answer derivation is not called"
   },
   "assertions": {
-    "at_most_three_subfacts": true,
-    "no_derivable_redundancy": true,
-    "no_none_placeholders": true,
+    "public_schema_exact": true,
+    "one_to_one_resolution": true,
+    "no_answer_leak": true,
+    "no_unrendered_coordinates_or_vocabulary": true,
     "numeric_tolerances_stored_and_stated": true,
-    "no_trap_named": true,
-    "no_unrendered_coordinates_indices_or_schema_terms": true
+    "no_derivable_redundancy": true,
+    "exact_spec_wording": true
   },
   "png_recovery": {
     "passed": 3000,
     "total": 3000,
     "failures": []
   },
-  "protected_closed_files_unchanged": {
-    "question_set.csv": true,
-    "answer_key.csv": true,
-    "dataset_final.csv": true,
-    "dataset_final.jsonl": true
-  },
-  "closed_questions_in_annotations_unchanged": true,
-  "images_unchanged": true,
+  "special_checks": {},
   "issues": []
 }

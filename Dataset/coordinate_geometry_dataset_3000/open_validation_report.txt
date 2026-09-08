@@ -1,10 +1,13 @@
 Open-question validation: coordinate_geometry_dataset_3000
 Status: PASS
-Items: 3000
-Template: Read the exact grid coordinates of point B (tolerance 0), then name the point or points nearest to it and the point or points farthest from it. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: target_coordinates, nearest_points, farthest_points
-Constant-answer baselines: {"farthest_points": 0.3893333333333333, "nearest_points": 0.44333333333333336, "target_coordinates": 0.007666666666666666}
-Fields >=60%: {}
+Source items: 3000
+Included: 3000
+Excluded: 0
+Exclusions: {}
+Sub-facts: farthest_pair, distance_nearest_unit, relation_to_10
+Constant-answer baselines: {"distance_nearest_unit": 0.12433333333333334, "farthest_pair": 0.42, "relation_to_10": 0.6486666666666666}
+Fields >=60%: {"relation_to_10": 0.6486666666666666}
 Independent derivation mismatches: 0
 PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+Special checks: {}
+Issues: []

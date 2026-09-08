@@ -1,10 +1,13 @@
 Open-question validation: angle_estimation_dataset_3000
 Status: PASS
-Items: 3000
-Template: Look at marked angle. Estimate its measure to the nearest 5 degrees, and classify it as acute, right, obtuse, or reflex. Explain briefly what you used in the image, then end with a confidence score from 0 to 1.
-Sub-facts: angle_degrees_nearest_5, angle_class
-Constant-answer baselines: {"angle_class": 0.5486666666666666, "angle_degrees_nearest_5": 0.04933333333333333}
+Source items: 3000
+Included: 1050
+Excluded: 1950
+Exclusions: {"template_requires_two_angles": 1950}
+Sub-facts: larger_angle, difference_degrees_nearest_10
+Constant-answer baselines: {"difference_degrees_nearest_10": 0.12571428571428572, "larger_angle": 0.5009523809523809}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recovery: 3000/3000
-Closed questions/answers unchanged: True
+PNG recovery: 1050/1050
+Special checks: {}
+Issues: []

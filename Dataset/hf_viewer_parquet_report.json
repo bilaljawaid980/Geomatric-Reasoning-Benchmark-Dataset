@@ -542,9 +542,9 @@
       "rows": 17103
     },
     {
-      "bytes": 304471900,
+      "bytes": 304469994,
       "file": "all_annotations_combined-00001-of-00006.parquet",
-      "mib": 290.3670310974121,
+      "mib": 290.36521339416504,
       "row_groups": 44,
       "rows": 21805
     },
@@ -556,16 +556,16 @@
       "rows": 8966
     },
     {
-      "bytes": 480251680,
+      "bytes": 480251767,
       "file": "all_annotations_combined-00003-of-00006.parquet",
-      "mib": 458.0036926269531,
+      "mib": 458.00377559661865,
       "row_groups": 31,
       "rows": 15154
     },
     {
-      "bytes": 435153596,
+      "bytes": 435153997,
       "file": "all_annotations_combined-00004-of-00006.parquet",
-      "mib": 414.9948081970215,
+      "mib": 414.99519062042236,
       "row_groups": 37,
       "rows": 18099
     },
@@ -577,7 +577,7 @@
       "rows": 18873
     }
   ],
-  "annotations_total_gib": 2.386545022018254,
+  "annotations_total_gib": 2.386543701402843,
   "compression": "zstd level 9; five adjacent question rows contain identical embedded PNG bytes",
   "default_answer_shards": [
     {
@@ -588,9 +588,9 @@
       "rows": 85515
     },
     {
-      "bytes": 365028764,
+      "bytes": 365028473,
       "file": "all_answers_combined-00001-of-00006.parquet",
-      "mib": 348.11855697631836,
+      "mib": 348.1182794570923,
       "row_groups": 219,
       "rows": 109025
     },
@@ -602,16 +602,16 @@
       "rows": 44830
     },
     {
-      "bytes": 474818753,
+      "bytes": 474819200,
       "file": "all_answers_combined-00003-of-00006.parquet",
-      "mib": 452.82244968414307,
+      "mib": 452.8228759765625,
       "row_groups": 152,
       "rows": 75770
     },
     {
-      "bytes": 441361763,
+      "bytes": 441361922,
       "file": "all_answers_combined-00004-of-00006.parquet",
-      "mib": 420.9153776168823,
+      "mib": 420.91552925109863,
       "row_groups": 181,
       "rows": 90495
     },
@@ -623,7 +623,7 @@
       "rows": 94365
     }
   ],
-  "default_total_gib": 2.476512497290969,
+  "default_total_gib": 2.47651279065758,
   "logical_rows": {
     "annotations": 100000,
     "default_answers": 500000
