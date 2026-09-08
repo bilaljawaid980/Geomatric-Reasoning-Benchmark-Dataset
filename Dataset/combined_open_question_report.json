@@ -2,10 +2,10 @@
   "status": "PASS",
   "datasets": {
     "angle_estimation_dataset_3000": {
-      "dataset_version": "angle-estimation-6.0.0",
-      "images": 1050,
-      "open_questions": 1050,
-      "open_answers": 1050
+      "dataset_version": "angle-estimation-7.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
     },
     "clock_reading_dataset_3000": {
       "dataset_version": "clock-reading-4.0.0",
@@ -176,10 +176,10 @@
       "open_answers": 3000
     },
     "route_dataset_3000": {
-      "dataset_version": "route-5.0.0",
-      "images": 986,
-      "open_questions": 986,
-      "open_answers": 986
+      "dataset_version": "route-6.0.0",
+      "images": 3000,
+      "open_questions": 3000,
+      "open_answers": 3000
     },
     "rpm_dataset_3000": {
       "dataset_version": "rpm-5.0.0",
@@ -206,10 +206,10 @@
       "open_answers": 3000
     }
   },
-  "combined_open_questions": 91904,
-  "combined_open_answers": 91904,
-  "unique_question_ids": 91904,
-  "resolved_image_paths": 91904,
+  "combined_open_questions": 95868,
+  "combined_open_answers": 95868,
+  "unique_question_ids": 95868,
+  "resolved_image_paths": 95868,
   "public_columns": [
     "dataset",
     "dataset_version",
@@ -228,8 +228,12 @@
     "acceptance_set",
     "tolerances",
     "targets",
+    "angle_degrees_nearest_10",
+    "angle_class",
     "larger_angle",
     "difference_degrees_nearest_10",
+    "largest_angle_vertex",
+    "largest_angle_degrees_nearest_10",
     "time",
     "smaller_angle_degrees_nearest_5",
     "correct_candidate",

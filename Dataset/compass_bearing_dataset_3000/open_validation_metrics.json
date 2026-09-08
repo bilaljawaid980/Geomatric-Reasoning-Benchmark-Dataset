@@ -55,6 +55,9 @@
     "total": 1118,
     "failures": []
   },
-  "special_checks": {},
+  "special_checks": {
+    "substantive_boundary_guard_exclusions": 1882,
+    "other_exclusion_reasons": 0
+  },
   "issues": []
 }

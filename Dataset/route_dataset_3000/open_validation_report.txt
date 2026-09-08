@@ -1,13 +1,13 @@
 Open-question validation: route_dataset_3000
 Status: PASS
 Source items: 3000
-Included: 986
-Excluded: 2014
-Exclusions: {"template_requires_six_labelled_sides": 2014}
+Included: 3000
+Excluded: 0
+Exclusions: {}
 Sub-facts: connectivity
-Constant-answer baselines: {"connectivity": 0.010141987829614604}
+Constant-answer baselines: {"connectivity": 0.004333333333333333}
 Fields >=60%: {}
 Independent derivation mismatches: 0
-PNG recovery: 986/986
-Special checks: {}
+PNG recovery: 3000/3000
+Special checks: {"chosen_target_degree_below_1": 0, "num_endpoints_distribution": {"4": 994, "5": 1020, "6": 986}}
 Issues: []

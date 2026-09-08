@@ -1,8 +1,8 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "angle-estimation-6.0.0",
-  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
+  "dataset_version": "angle-estimation-7.0.0",
+  "generator_commit": "41891ebad13c56da01fc53d544a2bd301d1ab123",
   "images": 3000,
   "constraints": {
     "angle_sum_boundary_margin_degrees": 2,
@@ -20,7 +20,7 @@
     "prompt"
   ],
   "questions": 15000,
-  "open_questions": 1050,
+  "open_questions": 3000,
   "open_question_files": [
     "open_questions.csv",
     "open_answer_key.csv",
@@ -49,8 +49,6 @@
   },
   "open_question_builder": "../build_remaining_open_questions.py",
   "open_question_validator": "../validate_remaining_open_questions.py",
-  "open_excluded_items": 1950,
-  "open_exclusion_counts": {
-    "template_requires_two_angles": 1950
-  }
+  "open_excluded_items": 0,
+  "open_exclusion_counts": {}
 }

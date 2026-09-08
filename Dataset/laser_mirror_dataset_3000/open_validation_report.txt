@@ -9,5 +9,5 @@ Constant-answer baselines: {"exit_edge": 0.2568888888888889, "exit_position": 0.
 Fields >=60%: {"reflection_count": 0.6968888888888889}
 Independent derivation mismatches: 0
 PNG recovery: 2250/2250
-Special checks: {}
+Special checks: {"other_exclusion_reasons": 0, "zero_reflection_exclusions": 750}
 Issues: []

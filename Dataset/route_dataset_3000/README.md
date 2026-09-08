@@ -308,7 +308,7 @@ Compound Reasoning,route_puzzle_0001.png,"Is there any letter-pair with zero dir
 
 ### Supplementary open-ended questions
 
-Version `route-5.0.0` replaces the supplementary free-response set with the exact domain template in `OPEN_QUESTION_SPEC.md`. It includes `986` eligible items and excludes `2014` under `{"template_requires_six_labelled_sides": 2014}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+Version `route-6.0.0` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
 - `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.

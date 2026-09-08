@@ -1,6 +1,7 @@
 """Apply version, manifest, README, and open-annotation metadata for the 34-domain rewrite."""
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import subprocess
@@ -33,9 +34,12 @@ def rewrite_jsonl_version(path,version):
 
 
 def main():
+    parser=argparse.ArgumentParser()
+    parser.add_argument("--domain",action="append",choices=sorted(builder.DERIVERS))
+    args=parser.parse_args()
     release=json.loads((ROOT/"remaining_open_question_release_report.json").read_text(encoding="utf-8"))
     versions={}
-    for name in sorted(builder.DERIVERS):
+    for name in args.domain or sorted(builder.DERIVERS):
         folder=ROOT/name; manifest_path=folder/"build_manifest.json";manifest=json.loads(manifest_path.read_text(encoding="utf-8-sig"))
         metrics=release["datasets"][name]
         old=str(manifest.get("dataset_version","legacy-current"));new=bumped(old,name);versions[name]={"before":old,"after":new}
@@ -69,7 +73,7 @@ def main():
         heading="### Supplementary open-ended questions"
         if heading in text:text=text.split(heading)[0].rstrip()+"\n"
         section=(
-            f"\n{heading}\n\nVersion `{new}` replaces the supplementary free-response set with the exact domain template in `OPEN_QUESTION_SPEC.md`. It includes `{metrics['included_items']}` eligible items and excludes `{metrics['excluded_items']}` under `{json.dumps(metrics['exclusion_counts'],sort_keys=True)}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.\n\n"
+            f"\n{heading}\n\nVersion `{new}` replaces the supplementary free-response set with the exact approved domain template or scene-specific variant in `OPEN_QUESTION_SPEC.md`. It includes `{metrics['included_items']}` eligible items and excludes `{metrics['excluded_items']}` under `{json.dumps(metrics['exclusion_counts'],sort_keys=True)}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.\n\n"
             "- `open_questions.csv` is public and contains exactly `question_id,image,prompt`.\n"
             "- `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.\n"
             "- `open_annotations.jsonl` is answer-key-side and adds the complete derivation and scoring declaration.\n"

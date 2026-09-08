@@ -27,15 +27,15 @@
   },
   "constraint_source": "generator constants and open-question validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "route-5.0.0",
-  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
+  "dataset_version": "route-6.0.0",
+  "generator_commit": "41891ebad13c56da01fc53d544a2bd301d1ab123",
   "images": 3000,
   "open_question_files": [
     "open_questions.csv",
     "open_answer_key.csv",
     "open_annotations.jsonl"
   ],
-  "open_questions": 986,
+  "open_questions": 3000,
   "question_set_fields": [
     "question_id",
     "task",
@@ -45,8 +45,6 @@
   "questions": 15000,
   "open_question_builder": "../build_remaining_open_questions.py",
   "open_question_validator": "../validate_remaining_open_questions.py",
-  "open_excluded_items": 2014,
-  "open_exclusion_counts": {
-    "template_requires_six_labelled_sides": 2014
-  }
+  "open_excluded_items": 0,
+  "open_exclusion_counts": {}
 }

@@ -12,6 +12,10 @@ COMMON=set(builder.COMMON_PRIVATE)
 COORD=re.compile(r"\([-+]?\d+(?:\.\d+)?\s*,\s*[-+]?\d+(?:\.\d+)?\)|\b(?:axial|row \d|column \d|R\d+C\d+)\b",re.I)
 HEX=[("upper-left",(0,-1)),("upper-right",(1,-1)),("left",(-1,0)),("right",(1,0)),("lower-left",(-1,1)),("lower-right",(0,1))]
 DIR8=["north","north-east","east","south-east","south","south-west","west","north-west"]
+ANGLE_COMPARISON="Look at each marked angle in turn, judging the opening between its rays rather than how long the rays are drawn: decide which of the two angles is larger, and estimate how many degrees larger it is, to the nearest 10 degrees. State your conclusion, justify it by describing the direction the rays point at each vertex, and end with a confidence score from 0 to 1."
+ANGLE_SINGLE="Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it is acute, right, obtuse or reflex. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1."
+ANGLE_TRIANGLE="Look at the triangle's three interior angles, judging each opening rather than the lengths of the sides: name the vertex with the largest interior angle and estimate that angle to the nearest 10 degrees. State your conclusion, justify it by comparing the three openings, and end with a confidence score from 0 to 1."
+ROUTE_TEMPLATE="Trace the coloured lines that touch the label {TARGET} {POSITION} of the frame and follow each one through its bends to wherever it terminates: decide whether {TARGET} is connected to every other labelled side of the frame or whether some remain unreached from it, and name the label at the far end of each line that begins at {TARGET}. State your conclusion, justify it by describing the paths you followed and how you distinguished each line by colour where they overlap, and end with a confidence score from 0 to 1 for your conclusion."
 def compact(v):return json.dumps(v,ensure_ascii=False,sort_keys=True,separators=(",",":"))
 def canon(v):return compact(v) if isinstance(v,(list,dict)) else str(v)
 def near(v,s):return int(math.floor(float(v)/s+.5+1e-9)*s)
@@ -23,20 +27,29 @@ def closest(r):
  d=r["all_pairwise_distances"];m=min(d.values());k=min(k for k,v in d.items() if abs(v-m)<1e-9);a,b=k.split("-");return a,b
 def boundary(v):return min(abs(((v-x+180)%360)-180) for x in (22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5))
 def skip(n,r):
- if n=="angle_estimation_dataset_3000":return r["scene_type"]!="comparison","template_requires_two_angles"
  if n=="compass_bearing_dataset_3000":
   a,b=closest(r);v=r["all_pairwise_bearings"][f"{min(a,b)}-to-{max(a,b)}"];return boundary(v)<=15,"closest_pair_bearing_within_15_degrees_of_sector_boundary"
  if n=="cube_structure_dataset_3000":return bool(r["has_ambiguous_visual_floater"]),"ambiguous_visual_floater"
  if n=="depth_height_dataset_3000":return r["scene_type"]!="depth_ordering","not_depth_ordering_scene"
  if n=="laser_mirror_dataset_3000":return r["num_reflections"]==0,"zero_reflections"
  if n=="overlap_circles_dataset_3000":return r["max_stack_depth"]>4,"max_stack_depth_above_4"
- if n=="route_dataset_3000":return r["num_endpoints"]!=6,"template_requires_six_labelled_sides"
  if n=="rpm_dataset_3000":
   rows=[[p["attributes"] for p in r["grid_panels"] if p["row"]==i] for i in (1,2,3)];return any(rows[i]==rows[j] for i in range(3) for j in range(i+1,3)),"identical_matrix_rows"
  return False,""
 def fresh(n,r):
  if n=="angle_estimation_dataset_3000":
-  a,b=r["angle_1_degrees"],r["angle_2_degrees"];return {"larger_angle":"Angle 1" if a>b else "Angle 2","difference_degrees_nearest_10":near(abs(a-b),10)}
+  scene=r["scene_type"]
+  def opening(vertex,endpoints,reflex=False):
+   vectors=[(p[0]-vertex[0],p[1]-vertex[1]) for p in endpoints];dot=vectors[0][0]*vectors[1][0]+vectors[0][1]*vectors[1][1];cross=vectors[0][0]*vectors[1][1]-vectors[0][1]*vectors[1][0];small=math.degrees(math.atan2(abs(cross),dot));return 360-small if reflex else small
+  if scene=="comparison":
+   values=[opening(x["vertex"],x["ray_endpoints"]) for x in r["angles"]];return {"larger_angle":"Angle 1" if values[0]>values[1] else "Angle 2","difference_degrees_nearest_10":near(abs(values[0]-values[1]),10)}
+  if scene=="single":
+   a=opening(r["vertex"],r["ray_endpoints"],r["marked_sweep"]=="reflex");kind="right" if abs(a-90)<.001 else ("acute" if a<90 else ("obtuse" if a<180 else "reflex"));return {"angle_degrees_nearest_10":near(a,10),"angle_class":kind}
+  if scene=="triangle":
+   pts=r["triangle_vertices"]
+   def interior(i):return opening(pts[i],[pts[(i-1)%3],pts[(i+1)%3]])
+   values=[interior(i) for i in range(3)];index=max(range(3),key=values.__getitem__);return {"largest_angle_vertex":"ABC"[index],"largest_angle_degrees_nearest_10":near(values[index],10)}
+  raise ValueError(f"Unsupported angle scene_type: {scene}")
  if n=="clock_reading_dataset_3000":
   a=abs((30*(r["hour"]%12)+.5*r["minute"])-6*r["minute"]);return {"time":f"{r['hour']:02d}:{r['minute']:02d}","smaller_angle_degrees_nearest_5":near(min(a,360-a),5)}
  if n in ("combination_dataset_3000","combination3d_dataset_3000"):
@@ -109,6 +122,8 @@ def png(p):
  except Exception as e:return str(e)
 def special_checks(n,rs):
  issues=[];info={}
+ if n=="angle_estimation_dataset_3000":
+  scenes=Counter(r["scene_type"] for r in rs);bad=[r["id"] for r in rs if r["scene_type"] not in {"comparison","single","triangle"} or (bool(r.get("triangle_class"))!=(r["scene_type"]=="triangle"))];info["scene_type_distribution"]=dict(sorted(scenes.items()));info["variant_mapping_violations"]=len(bad);issues += [f"{len(bad)} angle variant mapping violations"] if bad else []
  if n=="fold_punch_dataset_3000":
   dup=[r["id"] for r in rs if r["questions"][3]["question_text"]==r["questions"][4]["question_text"] and str(r["questions"][3]["ground_truth"])==str(r["questions"][4]["ground_truth"])];info["identical_l4_l5_count"]=len(dup);issues += [f"{len(dup)} identical L4/L5 rows"] if dup else []
  if n=="overlap_circles_dataset_3000":
@@ -116,6 +131,15 @@ def special_checks(n,rs):
  if n=="symmetry_pattern_dataset_3000":
   bad=[r["id"] for r in rs if not r["is_broken"] and r["symmetry_type"].startswith("rotational_") and r["num_shapes"]%int(r["symmetry_type"].rsplit("_",1)[1])];info["intact_rotational_orbit_violations"]=len(bad);info["symmetry_pattern_0143_num_shapes"]=next(r["num_shapes"] for r in rs if r["id"]=="symmetry_pattern_0143");issues += [f"{len(bad)} intact orbit violations"] if bad else []
  if n=="gauge_reading_dataset_3000":info["needle_exactly_on_tick_count"]=sum(abs((r["needle_value"]-r["min_value"])/r["tick_interval"]-round((r["needle_value"]-r["min_value"])/r["tick_interval"]))<1e-9 for r in rs)
+ if n=="route_dataset_3000":
+  endpoint_counts=Counter(r["num_endpoints"] for r in rs);bad=[]
+  for r in rs:
+   degree={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if degree[x] in (2,3)] or [x for x in r["endpoint_letters"] if degree[x]>0]
+   if not c or degree[pick(r,c,"route-target")]<1:bad.append(r["id"])
+  info["num_endpoints_distribution"]={str(k):v for k,v in sorted(endpoint_counts.items())};info["chosen_target_degree_below_1"]=len(bad);issues += [f"{len(bad)} route targets have degree below 1"] if bad else []
+ if n=="compass_bearing_dataset_3000":info["substantive_boundary_guard_exclusions"]=sum(skip(n,r)[0] for r in rs);info["other_exclusion_reasons"]=0
+ if n=="depth_height_dataset_3000":info["scene_type_distribution"]=dict(sorted(Counter(r["scene_type"] for r in rs).items()));info["stack_height_excluded_for_no_depth_cues"]=sum(r["scene_type"]=="stack_height" for r in rs);info["template_failure_exclusions"]=0
+ if n=="laser_mirror_dataset_3000":info["zero_reflection_exclusions"]=sum(r["num_reflections"]==0 for r in rs);info["other_exclusion_reasons"]=0
  if n=="shadow_inference_dataset_3000":
   bad=[r["id"] for r in rs if min(abs(((r["light_azimuth_degrees"]-x+180)%360)-180) for x in (0,180))<r["azimuth_exclusion_degrees"]];info["azimuth_exclusion_violations"]=len(bad);issues += [f"{len(bad)} azimuth exclusion violations"] if bad else []
  if n=="polyhedron_dataset_3000":
@@ -125,6 +149,12 @@ def special_checks(n,rs):
    if stored!=boundary:bad.append(r["id"])
   info["boundary_edge_set_mismatches"]=len(bad);issues += [f"{len(bad)} boundary-edge mismatches"] if bad else []
  return issues,info
+
+def exact_changed_prompt(n,r):
+ if n=="angle_estimation_dataset_3000":return {"comparison":ANGLE_COMPARISON,"single":ANGLE_SINGLE,"triangle":ANGLE_TRIANGLE}[r["scene_type"]]
+ if n=="route_dataset_3000":
+  degree={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if degree[x] in (2,3)] or [x for x in r["endpoint_letters"] if degree[x]>0];target=pick(r,c,"route-target");incident=[z for z in r["routes"] if target in (z["start"],z["end"])];point=next(z["points"][0] if z["start"]==target else z["points"][-1] for z in incident);width,height=r["canvas_size"];position="at the top" if point[1]<height/4 else ("at the bottom" if point[1]>3*height/4 else ("at the left" if point[0]<width/4 else "at the right"));return ROUTE_TEMPLATE.replace("{TARGET}",target).replace("{POSITION}",position)
+ return builder.derive(n,r)["prompt"]
 def validate(n,verify_images=True):
  f=ROOT/n;rs=records(f);by={r["id"]:r for r in rs};ph,pub=csv_rows(f/"open_questions.csv");ah,ans=csv_rows(f/"open_answer_key.csv");am={x["question_id"]:x for x in ans};facts=[x for x in ah if x not in COMMON];issues=[];mism=[];ex=Counter();expected=set()
  for r in rs:
@@ -138,7 +168,7 @@ def validate(n,verify_images=True):
   a=am.get(q["question_id"]);r=by.get(q["question_id"].removesuffix("_open_q1"))
   if not a or not r:continue
   ff=fresh(n,r)
-  if q["prompt"]!=builder.derive(n,r)["prompt"]:issues.append(f"{q['question_id']}: prompt differs from exact specification")
+  if q["prompt"]!=exact_changed_prompt(n,r):issues.append(f"{q['question_id']}: prompt differs from exact specification")
   for key,value in ff.items():
    if a.get(key,"")!=canon(value):mism.append({"question_id":q["question_id"],"field":key,"expected":canon(value),"actual":a.get(key,"")})
   if not q["prompt"].endswith("confidence score from 0 to 1.") and not q["prompt"].endswith("confidence score from 0 to 1 for your conclusion."):issues.append(f"{q['question_id']}: confidence close missing")

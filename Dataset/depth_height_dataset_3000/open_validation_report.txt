@@ -9,5 +9,5 @@ Constant-answer baselines: {"depth_ordering": 0.02266666666666667, "nearest_colo
 Fields >=60%: {}
 Independent derivation mismatches: 0
 PNG recovery: 1500/1500
-Special checks: {}
+Special checks: {"scene_type_distribution": {"depth_ordering": 1500, "stack_height": 1500}, "stack_height_excluded_for_no_depth_cues": 1500, "template_failure_exclusions": 0}
 Issues: []

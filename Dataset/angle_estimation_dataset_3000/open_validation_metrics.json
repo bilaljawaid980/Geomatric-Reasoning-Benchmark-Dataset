@@ -2,17 +2,61 @@
   "status": "PASS",
   "dataset": "angle_estimation_dataset_3000",
   "source_items": 3000,
-  "included_items": 1050,
-  "excluded_items": 1950,
-  "exclusion_counts": {
-    "template_requires_two_angles": 1950
-  },
-  "template": "Look at each marked angle in turn, judging the opening between its rays rather than how long the rays are drawn: decide which of the two angles is larger, and estimate how many degrees larger it is, to the nearest 10 degrees. State your conclusion, justify it by describing the direction the rays point at each vertex, and end with a confidence score from 0 to 1.",
+  "included_items": 3000,
+  "excluded_items": 0,
+  "exclusion_counts": {},
+  "template": "Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it is acute, right, obtuse or reflex. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1.",
   "subfacts": [
+    "angle_degrees_nearest_10",
+    "angle_class",
     "larger_angle",
-    "difference_degrees_nearest_10"
+    "difference_degrees_nearest_10",
+    "largest_angle_vertex",
+    "largest_angle_degrees_nearest_10"
   ],
   "answer_distributions": {
+    "angle_degrees_nearest_10": {
+      "30": 59,
+      "120": 58,
+      "60": 53,
+      "40": 49,
+      "50": 47,
+      "130": 44,
+      "140": 44,
+      "160": 43,
+      "150": 40,
+      "200": 39,
+      "70": 39,
+      "230": 38,
+      "110": 36,
+      "310": 36,
+      "180": 35,
+      "320": 35,
+      "190": 34,
+      "20": 34,
+      "300": 34,
+      "210": 33,
+      "340": 33,
+      "170": 32,
+      "330": 30,
+      "250": 29,
+      "80": 29,
+      "220": 28,
+      "240": 27,
+      "290": 27,
+      "100": 26,
+      "260": 26,
+      "280": 25,
+      "90": 25,
+      "10": 20,
+      "350": 13
+    },
+    "angle_class": {
+      "reflex": 487,
+      "obtuse": 358,
+      "acute": 330,
+      "right": 25
+    },
     "larger_angle": {
       "Angle 2": 526,
       "Angle 1": 524
@@ -34,13 +78,35 @@
       "140": 24,
       "150": 12,
       "160": 2
+    },
+    "largest_angle_vertex": {
+      "A": 561,
+      "C": 138,
+      "B": 51
+    },
+    "largest_angle_degrees_nearest_10": {
+      "90": 268,
+      "70": 129,
+      "80": 81,
+      "130": 59,
+      "110": 55,
+      "120": 51,
+      "100": 44,
+      "140": 41,
+      "60": 22
     }
   },
   "constant_answer_baselines": {
+    "angle_degrees_nearest_10": 0.049166666666666664,
+    "angle_class": 0.4058333333333333,
     "larger_angle": 0.5009523809523809,
-    "difference_degrees_nearest_10": 0.12571428571428572
+    "difference_degrees_nearest_10": 0.12571428571428572,
+    "largest_angle_vertex": 0.748,
+    "largest_angle_degrees_nearest_10": 0.35733333333333334
   },
-  "fields_at_or_above_60_percent": {},
+  "fields_at_or_above_60_percent": {
+    "largest_angle_vertex": 0.748
+  },
   "independent_derivation": {
     "mismatches": [],
     "method": "separate formulas and geometry traversals; generator answer derivation is not called"
@@ -55,10 +121,17 @@
     "exact_spec_wording": true
   },
   "png_recovery": {
-    "passed": 1050,
-    "total": 1050,
+    "passed": 3000,
+    "total": 3000,
     "failures": []
   },
-  "special_checks": {},
+  "special_checks": {
+    "scene_type_distribution": {
+      "comparison": 1050,
+      "single": 1200,
+      "triangle": 750
+    },
+    "variant_mapping_violations": 0
+  },
   "issues": []
 }

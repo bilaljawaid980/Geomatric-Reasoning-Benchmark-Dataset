@@ -10,7 +10,7 @@
 
 | Dataset | Version | Source | Included | Excluded | Exclusion reason(s) | Highest sub-fact baseline | Fields at or above 60% | Result |
 |---|---|---:|---:|---:|---|---:|---|---|
-| `angle_estimation_dataset_3000` | `angle-estimation-6.0.0` | 3,000 | 1,050 | 1,950 | template_requires_two_angles: 1950 | 0.501 | none | PASS |
+| `angle_estimation_dataset_3000` | `angle-estimation-7.0.0` | 3,000 | 3,000 | 0 | none | 0.748 | largest_angle_vertex: 0.748 | PASS |
 | `clock_reading_dataset_3000` | `clock-reading-4.0.0` | 3,000 | 3,000 | 0 | none | 0.040 | none | PASS |
 | `combination3d_dataset_3000` | `combination3d-5.0.0` | 3,000 | 3,000 | 0 | none | 0.353 | none | PASS |
 | `combination_dataset_3000` | `combination-4.0.0` | 3,000 | 3,000 | 0 | none | 0.351 | none | PASS |
@@ -39,18 +39,30 @@
 | `polyhedron_dataset_3000` | `polyhedron-8.0.0` | 3,000 | 3,000 | 0 | none | 0.895 | convexity: 0.895 | PASS |
 | `projectile_motion_dataset_1000` | `projectile-motion-4.0.0` | 1,000 | 1,000 | 0 | none | 0.654 | peak_above_20_m: 0.654 | PASS |
 | `rotation_matching_dataset_3000` | `rotation-matching-5.0.0` | 3,000 | 3,000 | 0 | none | 0.260 | none | PASS |
-| `route_dataset_3000` | `route-5.0.0` | 3,000 | 986 | 2,014 | template_requires_six_labelled_sides: 2014 | 0.010 | none | PASS |
+| `route_dataset_3000` | `route-6.0.0` | 3,000 | 3,000 | 0 | none | 0.004 | none | PASS |
 | `rpm_dataset_3000` | `rpm-5.0.0` | 3,000 | 3,000 | 0 | none | 0.220 | none | PASS |
 | `shadow_inference_dataset_3000` | `shadow-inference-5.0.0` | 3,000 | 3,000 | 0 | none | 0.505 | none | PASS |
 | `surface_topology_dataset_3000` | `surface-topology-6.0.0` | 3,000 | 3,000 | 0 | none | 0.750 | orientability: 0.750 | PASS |
 | `symmetry_pattern_dataset_3000` | `symmetry-pattern-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | none | PASS |
 
+## Coverage audit
+
+- `angle_estimation` scene types: `{"comparison": 1050, "single": 1200, "triangle": 750}`; variant mapping violations: 0.
+- `route` endpoint counts: `{"4": 994, "5": 1020, "6": 986}`; chosen targets with degree below 1: 0.
+- `compass_bearing`: 1,882 exclusions, all from the 15-degree sector-boundary ambiguity guard; other reasons: 0.
+- `depth_height`: 1,500 stack-height exclusions because those scenes have no depth cues; template-failure exclusions: 0.
+- `laser_mirror`: 750 exclusions, all zero-reflection items; other reasons: 0.
+
+A stack-height prompt exists for later review and was not generated in this pass:
+
+> Compare the coloured stacks by counting the visible blocks from the common baseline upward: rank every stack from shortest to tallest by colour, and name which one is tallest. State your conclusion, justify it by describing how you counted the blocks in each stack, and end with a confidence score from 0 to 1.
+
 ## Validation summary
 
 - Independent ground-truth mismatches: 0.
-- PNG/file recovery: 91,904/91,904 included images.
+- PNG/file recovery: 95,868/95,868 included images.
 - Public schema: exactly `question_id,image,prompt` in every domain.
 - Exact template wording, answer-leak checks, rendered-vocabulary checks, numeric tolerance checks, and one-to-one question/answer resolution: PASS in all 34 domains.
-- Combined open files: 91,904 questions and 91,904 answers; 91,904 referenced image paths resolve.
+- Combined open files: 95,868 questions and 95,868 answers; 95,868 referenced image paths resolve.
 - Gauge exact-tick frequency and every complete answer distribution/baseline are retained in the per-domain `open_validation_metrics.json` files and the consolidated JSON report.
 - Closed combined suite remains 500,000 questions, 500,000 answers, and 100,000 images.

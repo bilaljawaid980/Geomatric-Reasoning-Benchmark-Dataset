@@ -14,7 +14,7 @@ Every question follows this shape, taken from the route template:
 
 > Trace the coloured lines that touch the label A at the top of the frame and follow
 > each one through its bends to wherever it terminates: decide whether A is connected
-> to every one of the other five labelled sides or whether some remain unreached from
+> to every other labelled side of the frame or whether some remain unreached from
 > it, and name the label at the far end of each line that begins at A. State your
 > conclusion, justify it by describing the paths you followed and how you
 > distinguished each line by colour where they overlap, and end with a confidence
@@ -57,6 +57,8 @@ many items are affected and correct them.
 
 ## angle_estimation
 
+Comparison scenes:
+
 > Look at each marked angle in turn, judging the opening between its rays rather than
 > how long the rays are drawn: decide which of the two angles is larger, and estimate
 > how many degrees larger it is, to the nearest 10 degrees. State your conclusion,
@@ -65,6 +67,27 @@ many items are affected and correct them.
 
 Targets: `larger_angle`, difference from `angle_1_degrees` / `angle_2_degrees`.
 Tolerance: ±10°.
+
+Single-angle scenes:
+
+> Look at the marked angle, judging the opening between its rays rather than how long
+> the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it
+> is acute, right, obtuse or reflex. State your conclusion, justify it by describing
+> the direction each ray points from the vertex, and end with a confidence score from
+> 0 to 1.
+
+Targets: the nearest-10-degree estimate from `angle_degrees`, and the angle class.
+Tolerance: ±10°.
+
+Triangle scenes:
+
+> Look at the triangle's three interior angles, judging each opening rather than the
+> lengths of the sides: name the vertex with the largest interior angle and estimate
+> that angle to the nearest 10 degrees. State your conclusion, justify it by comparing
+> the three openings, and end with a confidence score from 0 to 1.
+
+Targets: `largest_angle_vertex`, and the corresponding value from
+`interior_angles_degrees` rounded to the nearest 10 degrees. Tolerance: ±10°.
 
 ## clock_reading
 
@@ -356,7 +379,7 @@ Targets: `correct_answer_choice`, `reflection_answer_choice`.
 
 > Trace the coloured lines that touch the label {TARGET} {POSITION} of the frame and
 > follow each one through its bends to wherever it terminates: decide whether {TARGET}
-> is connected to every one of the other five labelled sides or whether some remain
+> is connected to every other labelled side of the frame or whether some remain
 > unreached from it, and name the label at the far end of each line that begins at
 > {TARGET}. State your conclusion, justify it by describing the paths you followed and
 > how you distinguished each line by colour where they overlap, and end with a

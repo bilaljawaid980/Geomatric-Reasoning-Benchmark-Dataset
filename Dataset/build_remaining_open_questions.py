@@ -8,8 +8,13 @@ ROOT=Path(__file__).resolve().parent
 PUBLIC_COLUMNS=["question_id","image","prompt"]
 COMMON_PRIVATE=["question_id","image","acceptance_set","tolerances","targets"]
 
+ANGLE_COMPARISON="Look at each marked angle in turn, judging the opening between its rays rather than how long the rays are drawn: decide which of the two angles is larger, and estimate how many degrees larger it is, to the nearest 10 degrees. State your conclusion, justify it by describing the direction the rays point at each vertex, and end with a confidence score from 0 to 1."
+ANGLE_SINGLE="Look at the marked angle, judging the opening between its rays rather than how long the rays are drawn: estimate its size to the nearest 10 degrees, and say whether it is acute, right, obtuse or reflex. State your conclusion, justify it by describing the direction each ray points from the vertex, and end with a confidence score from 0 to 1."
+ANGLE_TRIANGLE="Look at the triangle's three interior angles, judging each opening rather than the lengths of the sides: name the vertex with the largest interior angle and estimate that angle to the nearest 10 degrees. State your conclusion, justify it by comparing the three openings, and end with a confidence score from 0 to 1."
+ROUTE_TEMPLATE="Trace the coloured lines that touch the label {TARGET} {POSITION} of the frame and follow each one through its bends to wherever it terminates: decide whether {TARGET} is connected to every other labelled side of the frame or whether some remain unreached from it, and name the label at the far end of each line that begins at {TARGET}. State your conclusion, justify it by describing the paths you followed and how you distinguished each line by colour where they overlap, and end with a confidence score from 0 to 1 for your conclusion."
+
 P={
-"angle_estimation_dataset_3000":"Look at each marked angle in turn, judging the opening between its rays rather than how long the rays are drawn: decide which of the two angles is larger, and estimate how many degrees larger it is, to the nearest 10 degrees. State your conclusion, justify it by describing the direction the rays point at each vertex, and end with a confidence score from 0 to 1.",
+"angle_estimation_dataset_3000":ANGLE_COMPARISON,
 "clock_reading_dataset_3000":"Trace both hands from the centre of the dial out towards the printed numerals: work out which is the hour hand and which is the minute hand, read the time they show, and give the smaller angle between them to the nearest 5 degrees. State your conclusion, justify it by describing where each hand tip falls among the numerals, and end with a confidence score from 0 to 1.",
 "combination_dataset_3000":"Compare each separated piece of every candidate with the target shape: decide which single candidate could be slid and turned, without being flipped over, to reproduce the target exactly, and say what disqualifies one of the candidates you rejected. State your conclusion, justify it by describing how you tried to fit the pieces together, and end with a confidence score from 0 to 1.",
 "combination3d_dataset_3000":"Compare each separated group of cubes in every candidate with the target structure: decide which single candidate could be moved and turned about the upright axis to reproduce the target exactly, and say what disqualifies one of the candidates you rejected. State your conclusion, justify it by describing how you tried to fit the groups together and how you accounted for cubes hidden behind others, and end with a confidence score from 0 to 1.",
@@ -49,21 +54,26 @@ def closest(r):
  d=r["all_pairwise_distances"];m=min(d.values());k=min(k for k,v in d.items() if abs(v-m)<1e-9);a,b=k.split("-");return a,b,m
 def bd(v):return min(abs(((v-x+180)%360)-180) for x in (22.5,67.5,112.5,157.5,202.5,247.5,292.5,337.5))
 def excluded(n,r):
- if n=="angle_estimation_dataset_3000":return r["scene_type"]!="comparison","template_requires_two_angles"
  if n=="compass_bearing_dataset_3000":
   a,b,_=closest(r);v=r["all_pairwise_bearings"][f"{min(a,b)}-to-{max(a,b)}"];return bd(v)<=15,"closest_pair_bearing_within_15_degrees_of_sector_boundary"
  if n=="cube_structure_dataset_3000":return bool(r["has_ambiguous_visual_floater"]),"ambiguous_visual_floater"
  if n=="depth_height_dataset_3000":return r["scene_type"]!="depth_ordering","not_depth_ordering_scene"
  if n=="laser_mirror_dataset_3000":return r["num_reflections"]==0,"zero_reflections"
  if n=="overlap_circles_dataset_3000":return r["max_stack_depth"]>4,"max_stack_depth_above_4"
- if n=="route_dataset_3000":return r["num_endpoints"]!=6,"template_requires_six_labelled_sides"
  if n=="rpm_dataset_3000":
   rows=[[p["attributes"] for p in r["grid_panels"] if p["row"]==i] for i in (1,2,3)];return any(rows[i]==rows[j] for i in range(3) for j in range(i+1,3)),"identical_matrix_rows"
  return False,""
 def derive(n,r):
  p=P.get(n)
  if n=="angle_estimation_dataset_3000":
-  a,b=r["angle_1_degrees"],r["angle_2_degrees"];return out(p,{"larger_angle":"Angle 1" if a>b else "Angle 2","difference_degrees_nearest_10":near(abs(a-b),10)},["Angle 1","Angle 2"],{"difference_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
+  scene=r["scene_type"]
+  if scene=="comparison":
+   a,b=r["angle_1_degrees"],r["angle_2_degrees"];return out(ANGLE_COMPARISON,{"larger_angle":"Angle 1" if a>b else "Angle 2","difference_degrees_nearest_10":near(abs(a-b),10)},["Angle 1","Angle 2"],{"difference_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
+  if scene=="single":
+   a=r["angle_degrees"];kind="right" if abs(a-90)<.001 else ("acute" if a<90 else ("obtuse" if a<180 else "reflex"));return out(ANGLE_SINGLE,{"angle_degrees_nearest_10":near(a,10),"angle_class":kind},["marked angle"],{"angle_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
+  if scene=="triangle":
+   angles=r["interior_angles_degrees"];return out(ANGLE_TRIANGLE,{"largest_angle_vertex":r["largest_angle_vertex"],"largest_angle_degrees_nearest_10":near(max(angles),10)},["triangle vertices"],{"largest_angle_degrees_nearest_10":{"absolute_tolerance":10,"unit":"degrees"}})
+  raise ValueError(f"Unsupported angle scene_type: {scene}")
  if n=="clock_reading_dataset_3000":return out(p,{"time":r["time"],"smaller_angle_degrees_nearest_5":near(r["angle_between_hands"],5)},["clock hands"],{"smaller_angle_degrees_nearest_5":{"absolute_tolerance":5,"unit":"degrees"}})
  if n in ("combination_dataset_3000","combination3d_dataset_3000"):
   z=pick(r,[x for x in r["candidates"] if not x["is_valid_assembly"]],"rejected");return out(p,{"correct_candidate":r["correct_answer_choice"],"rejected_candidate":z["choice_label"],"rejection_reason":FAIL[z["failure_reason"]]},["target","candidate panel"])
@@ -99,7 +109,7 @@ def derive(n,r):
  if n=="projectile_motion_dataset_1000":return out(p,{"peak_horizontal_distance_m_nearest_1":near(r["horizontal_position_at_peak_m"],1),"peak_above_20_m":"yes" if r["max_height_m"]>20 else "no"},["trajectory","printed launch values"],{"peak_horizontal_distance_m_nearest_1":{"absolute_tolerance":2,"unit":"metres"}})
  if n=="rotation_matching_dataset_3000":return out(p,{"rotation_candidate":r["correct_answer_choice"],"reflection_candidate":r["reflection_answer_choice"]},["reference","candidates"])
  if n=="route_dataset_3000":
-  d={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if d[x] in (2,3)] or [x for x in r["endpoint_letters"] if d[x]>0];t=pick(r,c,"route-target");inc=[z for z in r["routes"] if t in (z["start"],z["end"])];ends=[z["end"] if z["start"]==t else z["start"] for z in inc];un=sorted(set(r["endpoint_letters"])-{t}-set(ends));pt=next(z["points"][0] if z["start"]==t else z["points"][-1] for z in inc);w,h=r["canvas_size"];pos="at the top" if pt[1]<h/4 else ("at the bottom" if pt[1]>3*h/4 else ("at the left" if pt[0]<w/4 else "at the right"));q="Trace the coloured lines that touch the label {TARGET} {POSITION} of the frame and follow each one through its bends to wherever it terminates: decide whether {TARGET} is connected to every one of the other five labelled sides or whether some remain unreached from it, and name the label at the far end of each line that begins at {TARGET}. State your conclusion, justify it by describing the paths you followed and how you distinguished each line by colour where they overlap, and end with a confidence score from 0 to 1 for your conclusion.".replace("{TARGET}",t).replace("{POSITION}",pos);return out(q,{"connectivity":{"connected_to_all_other_labels":"yes" if not un else "no","far_end_labels":ends,"unreached_labels":un}},[t])
+  d={x:sum(x in (z["start"],z["end"]) for z in r["routes"]) for x in r["endpoint_letters"]};c=[x for x in r["endpoint_letters"] if d[x] in (2,3)] or [x for x in r["endpoint_letters"] if d[x]>0];t=pick(r,c,"route-target");inc=[z for z in r["routes"] if t in (z["start"],z["end"])];ends=[z["end"] if z["start"]==t else z["start"] for z in inc];un=sorted(set(r["endpoint_letters"])-{t}-set(ends));pt=next(z["points"][0] if z["start"]==t else z["points"][-1] for z in inc);w,h=r["canvas_size"];pos="at the top" if pt[1]<h/4 else ("at the bottom" if pt[1]>3*h/4 else ("at the left" if pt[0]<w/4 else "at the right"));q=ROUTE_TEMPLATE.replace("{TARGET}",t).replace("{POSITION}",pos);return out(q,{"connectivity":{"connected_to_all_other_labels":"yes" if not un else "no","far_end_labels":ends,"unreached_labels":un}},[t])
  if n=="rpm_dataset_3000":return out(p,{"correct_choice":r["correct_answer_index"],"attributes_changed_together":[x["attribute"] for x in r["active_rules"]]},["matrix","numbered choices"])
  if n=="shadow_inference_dataset_3000":
   v=r["light_azimuth_degrees"];direction=["north","east","south","west"][int((v+45)%360//90)];return out(p,{"light_direction":direction,"light_height":"high" if r["light_elevation_degrees"]>=45 else "low"},["objects","shadows"])
@@ -128,7 +138,9 @@ def build_domain(f):
  return len(public),dict(ex),fields
 def main():
  a=argparse.ArgumentParser();a.add_argument("--domain",action="append");z=a.parse_args();report={}
+ report_path=ROOT/"open_question_build_report.json"
+ if z.domain and report_path.is_file():report=json.loads(report_path.read_text(encoding="utf-8"))
  for n in z.domain or DATASETS:
   count,ex,fields=build_domain(ROOT/n);report[n]={"included":count,"excluded":sum(ex.values()),"exclusion_reasons":ex,"subfacts":fields};print(f"{n}: {count} included, {sum(ex.values())} excluded")
- (ROOT/"open_question_build_report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+ report_path.write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
 if __name__=="__main__":main()

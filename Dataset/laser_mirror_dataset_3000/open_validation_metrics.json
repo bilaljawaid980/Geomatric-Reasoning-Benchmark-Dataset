@@ -63,6 +63,9 @@
     "total": 2250,
     "failures": []
   },
-  "special_checks": {},
+  "special_checks": {
+    "zero_reflection_exclusions": 750,
+    "other_exclusion_reasons": 0
+  },
   "issues": []
 }

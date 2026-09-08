@@ -17,13 +17,24 @@
     ]
   },
   "route_dataset_3000": {
-    "included": 986,
-    "excluded": 2014,
-    "exclusion_reasons": {
-      "template_requires_six_labelled_sides": 2014
-    },
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
     "subfacts": [
       "connectivity"
+    ]
+  },
+  "angle_estimation_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "angle_degrees_nearest_10",
+      "angle_class",
+      "larger_angle",
+      "difference_degrees_nearest_10",
+      "largest_angle_vertex",
+      "largest_angle_degrees_nearest_10"
     ]
   }
 }
