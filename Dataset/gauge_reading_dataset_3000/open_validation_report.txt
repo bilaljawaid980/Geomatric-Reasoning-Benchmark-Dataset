@@ -5,10 +5,10 @@ Included: 3000
 Excluded: 0
 Exclusions: {}
 Sub-facts: rounded_tick_value, range_half
-Constant-answer baselines: {"range_half": 0.5, "rounded_tick_value": 0.09866666666666667}
+Constant-answer baselines: {"range_half": 0.5, "rounded_tick_value": 0.052}
 Fields >=60%: {}
 Independent derivation mismatches: 0
 Deterministic sub-fact dependency violations: 0
 PNG recovery: 3000/3000
-Special checks: {"needle_exactly_on_tick_count": 1380}
+Special checks: {"needle_exactly_on_rendered_tick_count": 3000}
 Issues: []

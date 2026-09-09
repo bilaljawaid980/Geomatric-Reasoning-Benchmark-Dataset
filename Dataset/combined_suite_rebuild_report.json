@@ -93,22 +93,7 @@
     },
     "question_rows": 500000,
     "stale_or_mismatched": {
-      "angle_estimation": "dataset_version is ['angle-estimation-6.0.0'], expected angle-estimation-8.0.0",
-      "clock_reading": "dataset_version is ['clock-reading-4.0.0'], expected clock-reading-5.0.0",
-      "compass_bearing": "dataset_version is ['compass-bearing-5.0.0'], expected compass-bearing-7.0.0",
-      "coordinate_geometry": "dataset_version is ['coordinate-geometry-5.0.0'], expected coordinate-geometry-7.0.0",
-      "cube_structure": "dataset_version is ['cube-structure-5.0.0'], expected cube-structure-6.0.0",
-      "depth_height": "dataset_version is ['depth-height-5.0.0'], expected depth-height-6.0.0",
-      "gear_train": "dataset_version is ['gear-train-4.0.0'], expected gear-train-5.0.0",
-      "hex_pathfinding": "dataset_version is ['hex-pathfinding-5.0.0'], expected hex-pathfinding-6.0.0",
-      "laser_mirror": "dataset_version is ['laser-mirror-4.0.0'], expected laser-mirror-5.0.0",
-      "line_intersection": "dataset_version is ['line-intersection-6.0.0'], expected line-intersection-7.0.0",
-      "orthographic": "dataset_version is ['orthographic-4.0.0'], expected orthographic-5.0.0",
-      "overlap_circles": "dataset_version is ['overlap-circles-5.0.0'], expected overlap-circles-6.0.0",
-      "projectile_motion": "dataset_version is ['projectile-motion-4.0.0'], expected projectile-motion-5.0.0",
-      "route": "dataset_version is ['route-5.0.0'], expected route-6.0.0",
-      "rpm": "question rows differ from current question_set.csv",
-      "surface_topology": "dataset_version is ['surface-topology-6.0.0'], expected surface-topology-7.0.0"
+      "gauge_reading": "dataset_version is ['gauge-reading-4.0.0'], expected gauge-reading-5.0.0"
     }
   },
   "discovered_dataset_count": 34,
@@ -125,7 +110,7 @@
       "prefix": "angle_estimation",
       "questions": 15000,
       "slug": "angle_estimation",
-      "version": "angle-estimation-8.0.0"
+      "version": "angle-estimation-9.0.0"
     },
     "clock_reading_dataset_3000": {
       "answers": 15000,
@@ -157,7 +142,7 @@
       "prefix": "compass_bearing",
       "questions": 15000,
       "slug": "compass_bearing",
-      "version": "compass-bearing-7.0.0"
+      "version": "compass-bearing-8.0.0"
     },
     "coordinate_geometry_dataset_3000": {
       "answers": 15000,
@@ -189,7 +174,7 @@
       "prefix": "depth_height",
       "questions": 15000,
       "slug": "depth_height",
-      "version": "depth-height-6.0.0"
+      "version": "depth-height-7.0.0"
     },
     "embedded_figures_dataset_3000": {
       "answers": 15000,
@@ -197,7 +182,7 @@
       "prefix": "embedded_figure",
       "questions": 15000,
       "slug": "embedded_figures",
-      "version": "embedded-figures-4.0.0"
+      "version": "embedded-figures-5.0.0"
     },
     "fbd_dataset_3000": {
       "answers": 15000,
@@ -205,7 +190,7 @@
       "prefix": "fbd",
       "questions": 15000,
       "slug": "fbd",
-      "version": "free-body-diagram-5.0.0"
+      "version": "free-body-diagram-6.0.0"
     },
     "fold_punch_dataset_3000": {
       "answers": 15000,
@@ -213,7 +198,7 @@
       "prefix": "fold_punch",
       "questions": 15000,
       "slug": "fold_punch",
-      "version": "fold-punch-5.0.0"
+      "version": "fold-punch-6.0.0"
     },
     "gauge_reading_dataset_3000": {
       "answers": 15000,
@@ -221,7 +206,7 @@
       "prefix": "gauge_reading",
       "questions": 15000,
       "slug": "gauge_reading",
-      "version": "gauge-reading-4.0.0"
+      "version": "gauge-reading-5.0.0"
     },
     "gear_train_dataset_3000": {
       "answers": 15000,
@@ -237,7 +222,7 @@
       "prefix": "hex_pathfinding",
       "questions": 15000,
       "slug": "hex_pathfinding",
-      "version": "hex-pathfinding-6.0.0"
+      "version": "hex-pathfinding-7.0.0"
     },
     "impossible_object_dataset_3000": {
       "answers": 15000,

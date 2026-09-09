@@ -16,7 +16,7 @@
 | `embedded_figures_dataset_3000` | `embedded-figures-5.0.0` | 3,000 | 3,000 | 0 | none | 0.250 | PASS |
 | `fbd_dataset_3000` | `free-body-diagram-6.0.0` | 3,000 | 3,000 | 0 | none | 0.122 | PASS |
 | `fold_punch_dataset_3000` | `fold-punch-6.0.0` | 3,000 | 3,000 | 0 | none | 0.250 | PASS |
-| `gauge_reading_dataset_3000` | `gauge-reading-4.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
+| `gauge_reading_dataset_3000` | `gauge-reading-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
 | `gear_train_dataset_3000` | `gear-train-5.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |
 | `hex_pathfinding_dataset_3000` | `hex-pathfinding-7.0.0` | 3,000 | 3,000 | 0 | none | 0.419 | PASS |
 | `impossible_object_dataset_3000` | `impossible-object-7.0.0` | 3,000 | 3,000 | 0 | none | 0.500 | PASS |

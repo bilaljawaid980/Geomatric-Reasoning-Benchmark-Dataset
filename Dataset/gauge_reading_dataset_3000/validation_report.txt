@@ -23,6 +23,9 @@ Question types:
   needle_value_nearest_tick: 3000
   quarter_range_increase: 3000
 
+Needles aligned to rendered ticks: 3000/3000
+Rendered-tick guard injection tests: {'half_tick_boundary_accepted_as_9_5': True, 'major_only_rounded_10_rejected': True}
+
 Issues:
   None
 

@@ -334,7 +334,7 @@
       "p95": 20.0
     }
   },
-  "dataset_version": "legacy-current",
+  "dataset_version": "gauge-reading-5.0.0",
   "degeneracy_flags": {
     "1": {
       "constant_answer_baseline": 0.8,
@@ -469,6 +469,12 @@
       "3": 0.74436883,
       "4": 0.57266211,
       "5": 0.87397309
+    }
+  },
+  "guard_injection_tests": {
+    "rendered_tick_rounding": {
+      "half_tick_boundary_accepted_as_9_5": true,
+      "major_only_rounded_10_rejected": true
     }
   },
   "images": 3000,
@@ -984,38 +990,65 @@
       }
     },
     "3": {
-      "constant_answer_baseline": 0.09866666666666667,
+      "constant_answer_baseline": 0.052,
       "counts": {
-        "0": 106,
-        "1": 71,
-        "10": 160,
-        "100": 168,
-        "120": 126,
-        "140": 46,
-        "15": 62,
-        "160": 59,
-        "180": 79,
-        "2": 55,
-        "20": 296,
-        "200": 44,
-        "25": 49,
-        "3": 71,
-        "30": 92,
-        "35": 54,
-        "4": 75,
-        "40": 249,
-        "45": 49,
-        "5": 86,
-        "50": 93,
-        "55": 65,
-        "6": 68,
-        "60": 221,
-        "7": 40,
-        "70": 65,
-        "8": 94,
-        "80": 223,
-        "9": 71,
-        "90": 63
+        "-10": 60,
+        "0": 46,
+        "0.5": 32,
+        "1": 39,
+        "1.5": 28,
+        "10": 156,
+        "100": 58,
+        "110": 96,
+        "12.5": 38,
+        "120": 30,
+        "130": 46,
+        "15": 59,
+        "150": 31,
+        "160": 28,
+        "17.5": 26,
+        "170": 42,
+        "180": 37,
+        "190": 44,
+        "2": 27,
+        "2.5": 60,
+        "20": 146,
+        "22.5": 21,
+        "25": 64,
+        "27.5": 22,
+        "3": 34,
+        "3.5": 31,
+        "30": 108,
+        "32.5": 30,
+        "35": 48,
+        "37.5": 22,
+        "4": 44,
+        "4.5": 28,
+        "40": 129,
+        "42.5": 22,
+        "45": 61,
+        "47.5": 28,
+        "5": 71,
+        "5.5": 30,
+        "50": 53,
+        "52.5": 42,
+        "55": 59,
+        "57.5": 26,
+        "6": 38,
+        "6.5": 40,
+        "60": 137,
+        "65": 27,
+        "7.5": 74,
+        "70": 108,
+        "75": 24,
+        "8": 50,
+        "8.5": 32,
+        "80": 129,
+        "85": 25,
+        "9": 39,
+        "9.5": 27,
+        "90": 114,
+        "95": 34
       }
     },
     "4": {
@@ -1113,6 +1146,13 @@
   "png_asset_presence": "3000/3000",
   "questions": 15000,
   "reference_frame_audit": "Dataset-specific geometry and question frames are documented in the generator/validator; no implicit frame conversion is introduced by this audit.",
+  "rendered_tick_validation": {
+    "level3_uses_rendered_minor_interval": true,
+    "major_interval_field": "tick_interval",
+    "needles_aligned": 3000,
+    "rendered_minor_interval": "tick_interval / 2",
+    "total": 3000
+  },
   "scalar_scene_features": [
     "danger_zone_threshold",
     "danger_zone_threshold_fraction",
@@ -1133,5 +1173,11 @@
     "rounded_tick_value_fraction",
     "tick_interval",
     "unit"
-  ]
+  ],
+  "v5_repair_impact": {
+    "gauge_reading_0075_after": "9.5",
+    "gauge_reading_0075_before": "10",
+    "level3_answers_changed": 1620,
+    "other_level_answers_changed": 0
+  }
 }

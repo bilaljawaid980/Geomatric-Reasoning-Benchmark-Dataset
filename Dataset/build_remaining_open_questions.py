@@ -113,7 +113,7 @@ def derive(n,r):
  if n=="fbd_dataset_3000":
   s=r["shown_forces"];groups=[sorted(x["arrow_label"] for x in s if abs(x["magnitude"]-m)<1e-9) for m in sorted({x["magnitude"] for x in s},reverse=True)];return out(p,{"drawn_magnitude_ranking":groups},["drawn force arrows"])
  if n=="fold_punch_dataset_3000":return out(p,{"correct_pattern":r["correct_answer_choice"]},["fold sequence","candidate panel"])
- if n=="gauge_reading_dataset_3000":return out(p,{"rounded_tick_value":r["rounded_tick_value"],"range_half":"lower" if r["needle_value"]<(r["min_value"]+r["max_value"])/2 else "upper"},["needle","scale"],{"rounded_tick_value":{"absolute_tolerance":r["tick_interval"]/2,"unit":r["unit"]}})
+ if n=="gauge_reading_dataset_3000":return out(p,{"rounded_tick_value":r["rounded_tick_value"],"range_half":"lower" if r["needle_value"]<(r["min_value"]+r["max_value"])/2 else "upper"},["needle","scale"],{"rounded_tick_value":{"absolute_tolerance":r["tick_interval"]/4,"unit":r["unit"]}})
  if n=="gear_train_dataset_3000":
   fast=max(r["computed_rotation"],key=lambda x:r["computed_rotation"][x]["rpm"]);labels=sorted(x["label"] for x in r["gears"] if x["label"]!=r["driver_label"]);relations={x:"same" if r["computed_rotation"][x]["direction"]==r["driver_direction"] else "opposite" for x in labels};desired="same" if r["seed"]%2==0 else "opposite";choices=[x for x in labels if relations[x]==desired];target=pick(r,choices or labels,"direction-target");q=GEAR_TEMPLATE.replace("{TARGET}",target);return out(q,{"fastest_gear":fast,"direction_target":target,"target_direction_relation":relations[target]},[r["driver_label"],target])
  if n=="hex_pathfinding_dataset_3000":

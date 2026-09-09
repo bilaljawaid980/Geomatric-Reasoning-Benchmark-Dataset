@@ -1,8 +1,8 @@
 {
   "constraint_source": "generator constants and validation metrics",
   "current_build_layout": "unsuffixed",
-  "dataset_version": "gauge-reading-4.0.0",
-  "generator_commit": "1655e18cf0538d8a6667492feb4bed8f9876f5e1",
+  "dataset_version": "gauge-reading-5.0.0",
+  "generator_commit": "ba6bcb054b2547087e1d6bd34ccf42e9b15f91b1",
   "images": 3000,
   "question_set_fields": [
     "question_id",
@@ -35,11 +35,21 @@
     "open_numeric_tolerances_stored_and_stated": true,
     "open_prompt_does_not_name_reasoning_trap": true,
     "existing_five_level_questions_unchanged_except_approved_defect_repairs": true,
+    "level3_uses_nearest_rendered_tick_interval": true,
+    "rendered_minor_tick_interval_equals_half_major_interval": true,
     "open_question_count_per_eligible_image": 1,
     "open_exclusions_are_explicitly_reported": true
   },
   "open_question_builder": "../build_remaining_open_questions.py",
   "open_question_validator": "../validate_remaining_open_questions.py",
   "open_excluded_items": 0,
-  "open_exclusion_counts": {}
+  "open_exclusion_counts": {},
+  "repair_impact": {
+    "level3_answers_changed": 1620,
+    "other_level_answers_changed": 0,
+    "gauge_reading_0075": {
+      "before": "10",
+      "after": "9.5"
+    }
+  }
 }

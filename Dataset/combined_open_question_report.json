@@ -74,7 +74,7 @@
       "open_answers": 3000
     },
     "gauge_reading_dataset_3000": {
-      "dataset_version": "gauge-reading-4.0.0",
+      "dataset_version": "gauge-reading-5.0.0",
       "images": 3000,
       "open_questions": 3000,
       "open_answers": 3000

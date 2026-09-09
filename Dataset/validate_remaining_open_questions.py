@@ -94,7 +94,7 @@ def fresh(n,r):
   s=r["shown_forces"];groups=[sorted(x["arrow_label"] for x in s if abs(x["magnitude"]-m)<1e-9) for m in sorted({x["magnitude"] for x in s},reverse=True)];return {"drawn_magnitude_ranking":groups}
  if n=="fold_punch_dataset_3000":return {"correct_pattern":next(x["choice_label"] for x in r["candidates"] if x["error_type"] is None)}
  if n=="gauge_reading_dataset_3000":
-  v=math.floor((r["needle_value"]-r["min_value"])/r["tick_interval"]+.5)*r["tick_interval"]+r["min_value"];return {"rounded_tick_value":v,"range_half":"lower" if r["needle_value"]<(r["min_value"]+r["max_value"])/2 else "upper"}
+  rendered_tick=r["tick_interval"]/2;v=math.floor((r["needle_value"]-r["min_value"])/rendered_tick+.5)*rendered_tick+r["min_value"];v=int(v) if float(v).is_integer() else v;return {"rounded_tick_value":v,"range_half":"lower" if r["needle_value"]<(r["min_value"]+r["max_value"])/2 else "upper"}
  if n=="gear_train_dataset_3000":
   teeth={x["label"]:x["tooth_count"] for x in r["gears"]};rpm={x:r["driver_rpm"]*teeth[r["driver_label"]]/teeth[x] for x in teeth};fast=max(rpm,key=rpm.get);last=sorted(teeth)[-1];edges={tuple(sorted(x)) for x in r["mesh_edges"]};adj={x:[] for x in teeth}
   for a,b in edges:adj[a].append(b);adj[b].append(a)
@@ -228,7 +228,7 @@ def special_checks(n,rs):
   leaks=[r["id"] for r in rs if r["questions"][2]["question_type"]=="cluster_distribution" and r["questions"][2]["ground_truth"] not in ("clustered","spread")];info["invalid_cluster_distribution_answers"]=len(leaks);issues += [f"{len(leaks)} invalid cluster answers"] if leaks else []
  if n=="symmetry_pattern_dataset_3000":
   bad=[r["id"] for r in rs if not r["is_broken"] and r["symmetry_type"].startswith("rotational_") and r["num_shapes"]%int(r["symmetry_type"].rsplit("_",1)[1])];info["intact_rotational_orbit_violations"]=len(bad);info["symmetry_pattern_0143_num_shapes"]=next(r["num_shapes"] for r in rs if r["id"]=="symmetry_pattern_0143");issues += [f"{len(bad)} intact orbit violations"] if bad else []
- if n=="gauge_reading_dataset_3000":info["needle_exactly_on_tick_count"]=sum(abs((r["needle_value"]-r["min_value"])/r["tick_interval"]-round((r["needle_value"]-r["min_value"])/r["tick_interval"]))<1e-9 for r in rs)
+ if n=="gauge_reading_dataset_3000":info["needle_exactly_on_rendered_tick_count"]=sum(abs((r["needle_value"]-r["min_value"])/(r["tick_interval"]/2)-round((r["needle_value"]-r["min_value"])/(r["tick_interval"]/2)))<1e-9 for r in rs)
  if n=="route_dataset_3000":
   endpoint_counts=Counter(r["num_endpoints"] for r in rs);bad=[]
   for r in rs:

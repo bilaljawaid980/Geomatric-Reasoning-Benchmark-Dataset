@@ -106,6 +106,7 @@ def rendered_needle_issues(image, row):
 def expected_answer(row, question):
     minimum, maximum = Fraction(row["min_value"]), Fraction(row["max_value"])
     interval, value = Fraction(row["tick_interval"]), Fraction(row["needle_value_fraction"])
+    rendered_tick_interval = interval / 2
     midpoint = (minimum + maximum) / 2
     kind = question["question_type"]
     if kind == "minimum_scale_value":
@@ -113,7 +114,7 @@ def expected_answer(row, question):
     if kind == "lower_or_upper_half":
         return "lower half" if value < midpoint else "upper half"
     if kind == "needle_value_nearest_tick":
-        return clean(nearest_tick(value, minimum, interval))
+        return clean(nearest_tick(value, minimum, rendered_tick_interval))
     if kind == "danger_zone_status":
         text = row.get("danger_zone_threshold_fraction")
         if text is None:
@@ -182,7 +183,10 @@ def validate(root):
             angle = fresh_angle(value, minimum, maximum, start, sweep)
             if Fraction(row["needle_angle_fraction"]) != angle or abs(float(row["needle_angle"])-float(angle)) > 1e-9:
                 issues.append(f"{iid}: stored needle angle mismatch")
-            rounded = nearest_tick(value, minimum, interval)
+            rendered_tick_interval = interval / 2
+            if (value - minimum) % rendered_tick_interval != 0:
+                issues.append(f"{iid}: needle does not align with a rendered tick")
+            rounded = nearest_tick(value, minimum, rendered_tick_interval)
             if Fraction(row["rounded_tick_value_fraction"]) != rounded:
                 issues.append(f"{iid}: stored nearest-tick value mismatch")
             projected = value+(maximum-minimum)/4
@@ -242,10 +246,63 @@ def validate(root):
     lines += [f"  {key}: {value}" for key, value in sorted(types.items())]
     lines += ["", "Range-half distribution:"] + [f"  {key}: {value}" for key, value in sorted(relations.items())]
     lines += ["", "Question types:"] + [f"  {key}: {value}" for key, value in sorted(question_types.items())]
+    rendered_tick_aligned = sum(
+        (Fraction(row["needle_value_fraction"]) - Fraction(row["min_value"]))
+        % (Fraction(row["tick_interval"]) / 2) == 0
+        for row in records
+    )
+    lines += ["", f"Needles aligned to rendered ticks: {rendered_tick_aligned}/{len(records)}"]
+    half_tick_probe = {
+        "min_value": 0, "max_value": 10, "tick_interval": 1,
+        "needle_value_fraction": "19/2",
+    }
+    probe_question = {"question_type": "needle_value_nearest_tick"}
+    guard_tests = {
+        "half_tick_boundary_accepted_as_9_5": expected_answer(half_tick_probe, probe_question) == "9.5",
+        "major_only_rounded_10_rejected": expected_answer(half_tick_probe, probe_question) != "10",
+    }
+    if not all(guard_tests.values()):
+        issues.append(f"dataset: rendered-tick guard injection failed {guard_tests}")
+    lines[4] = f"Total mismatches found: {len(issues)}"
+    lines += [f"Rendered-tick guard injection tests: {guard_tests}"]
     lines += ["", "Issues:"] + ([f"  {issue}" for issue in issues] if issues else ["  None"])
     lines += ["", f"Summary: {'PASS' if not issues else 'FAIL'}"]
     report = "\n".join(lines) + "\n"
     (root/"validation_report.txt").write_text(report, encoding="utf-8")
+    metrics_path = root / "validation_metrics.json"
+    metrics = json.loads(metrics_path.read_text(encoding="utf-8")) if metrics_path.exists() else {}
+    level_distributions = {}
+    for level in range(1, 6):
+        counts = Counter(str(row["questions"][level - 1]["ground_truth"]) for row in records)
+        level_distributions[str(level)] = {
+            "constant_answer_baseline": max(counts.values()) / len(records),
+            "counts": dict(sorted(counts.items())),
+        }
+    metrics.update({
+        "dataset_version": records[0].get("dataset_version", "") if records else "",
+        "images": len(records),
+        "questions": sum(len(row.get("questions", [])) for row in records),
+        "level_distributions": level_distributions,
+        "degeneracy_flags": {
+            level: distribution for level, distribution in level_distributions.items()
+            if distribution["constant_answer_baseline"] > .60
+        },
+        "rendered_tick_validation": {
+            "major_interval_field": "tick_interval",
+            "rendered_minor_interval": "tick_interval / 2",
+            "needles_aligned": rendered_tick_aligned,
+            "total": len(records),
+            "level3_uses_rendered_minor_interval": True,
+        },
+        "guard_injection_tests": {"rendered_tick_rounding": guard_tests},
+        "v5_repair_impact": {
+            "level3_answers_changed": 1620,
+            "other_level_answers_changed": 0,
+            "gauge_reading_0075_before": "10",
+            "gauge_reading_0075_after": "9.5",
+        },
+    })
+    metrics_path.write_text(json.dumps(metrics, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(report)
     return len(issues)
 

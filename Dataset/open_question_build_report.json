@@ -170,5 +170,14 @@
     "subfacts": [
       "correct_pattern"
     ]
+  },
+  "gauge_reading_dataset_3000": {
+    "included": 3000,
+    "excluded": 0,
+    "exclusion_reasons": {},
+    "subfacts": [
+      "rounded_tick_value",
+      "range_half"
+    ]
   }
 }

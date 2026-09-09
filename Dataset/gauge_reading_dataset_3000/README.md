@@ -19,11 +19,11 @@ Visual measurement reading is a documented weakness of vision-language models. L
 
 1. **Simple Description:** read the minimum labeled scale value.
 2. **Basic Relational:** classify the needle in the lower or upper half of the range.
-3. **Comparative/Structural:** interpolate the needle and round to the nearest tick interval.
+3. **Comparative/Structural:** interpolate the needle and report the nearest rendered tick, including the halfway minor ticks.
 4. **Compound Reasoning:** combine pointer location and a marked threshold to determine danger-zone status and exceedance.
 5. **Extrapolative/Counterfactual:** add 25% of the full range, derive the new value, and determine whether it exceeds the maximum.
 
-Midpoint needle values are excluded because “lower half or upper half” would otherwise be ambiguous. Danger thresholds lie on labeled major ticks, and needle values equal to the threshold are excluded so “exceeds” has an exact interpretation. Half-tick pointer positions make interpolation meaningful rather than reducing every sample to direct label lookup.
+Midpoint needle values are excluded because “lower half or upper half” would otherwise be ambiguous. Danger thresholds lie on labeled major ticks, and needle values equal to the threshold are excluded so “exceeds” has an exact interpretation. Half-tick pointer positions make interpolation meaningful rather than reducing every sample to direct numbered-label lookup. Here `tick_interval` is the numbered major-tick interval; the rendered minor-tick interval is `tick_interval / 2`, and Level 3 rounds to that visible interval.
 
 ## Exact mapping
 
@@ -60,7 +60,9 @@ This repository contains synthetic images and ground truth only. It includes no 
 
 ### Supplementary open-ended questions
 
-Version `gauge-reading-4.0.0` replaces the supplementary free-response set with the exact domain template in `OPEN_QUESTION_SPEC.md`. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+Version `gauge-reading-5.0.0` corrects Level 3 and the supplementary rounded-value sub-fact to use the nearest rendered tick, including halfway minor ticks. It includes `3000` eligible items and excludes `0` under `{}`. Every prompt uses visible evidence, asks for justification, and ends with a confidence score from 0 to 1.
+
+This repair changes 1,620 Level 3 answers and no answers at Levels 1, 2, 4, or 5. For example, `gauge_reading_0075` changes from `10` to `9.5`, matching the visible halfway tick between 9 and 10.
 
 - `open_questions.csv` is public and contains exactly `question_id,image,prompt`.
 - `open_answer_key.csv` is answer-key-side and contains separate partial-credit fields, an exhaustive `acceptance_set`, deterministic `targets`, and machine-readable `tolerances` for every numeric field.

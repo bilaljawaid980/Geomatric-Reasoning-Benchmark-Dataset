@@ -22,6 +22,7 @@ DANGER = "#C8433A"
 CENTER = (300, 326)
 RADIUS = 238
 NEEDLE_LENGTH = 174
+DATASET_VERSION = "gauge-reading-5.0.0"
 
 CONFIGS = (
     {"instrument_type": "speedometer", "unit": "km/h", "min": 0, "max": 200, "tick": 20, "start": -135, "sweep": 270},
@@ -106,7 +107,11 @@ def make_scene(index: int):
     ]
     needle_value = rng.choice(relation_candidates)
     needle_angle = value_angle(needle_value, minimum, maximum, start, sweep)
-    rounded_value = round_to_tick(needle_value, minimum, interval)
+    # The renderer draws both numbered major ticks and halfway minor ticks.
+    # "Nearest tick mark" therefore means the nearest rendered tick, not the
+    # nearest numbered value.
+    rendered_tick_interval = interval / 2
+    rounded_value = round_to_tick(needle_value, minimum, rendered_tick_interval)
     projected_value = needle_value + full_range / 4
     projected_exceeds = projected_value > maximum
 
@@ -122,7 +127,7 @@ def make_scene(index: int):
     questions = [
         {"question_id": f"{iid}_q1", "difficulty_level": 1, "question_type": "minimum_scale_value", "question_text": "What is the minimum value shown on this gauge's scale?", "ground_truth": clean_number(minimum), "answer_format": "number"},
         {"question_id": f"{iid}_q2", "difficulty_level": 2, "question_type": "lower_or_upper_half", "question_text": "Is the needle pointing to a value in the lower half or upper half of the gauge's range? Answer 'lower half' or 'upper half'.", "ground_truth": "lower half" if needle_value < midpoint else "upper half", "answer_format": "lower half or upper half"},
-        {"question_id": f"{iid}_q3", "difficulty_level": 3, "question_type": "needle_value_nearest_tick", "question_text": "What value is the needle pointing to, rounded to the nearest tick mark interval?", "ground_truth": clean_number(rounded_value), "answer_format": "number using half-up rounding"},
+        {"question_id": f"{iid}_q3", "difficulty_level": 3, "question_type": "needle_value_nearest_tick", "question_text": "What value is the needle pointing to, rounded to the nearest tick mark interval?", "ground_truth": clean_number(rounded_value), "answer_format": "number at the nearest rendered tick mark"},
         {"question_id": f"{iid}_q4", "difficulty_level": 4, "question_type": "danger_zone_status", "question_text": "Is the needle currently in the danger zone, if one is marked? If so, by how much does it exceed the threshold?", "ground_truth": danger_answer, "answer_format": "'yes; exceeds threshold by N', 'no', or 'no danger zone marked'"},
         {"question_id": f"{iid}_q5", "difficulty_level": 5, "question_type": "quarter_range_increase", "question_text": "If the needle value increased by 25% of the gauge's full range, would it exceed the maximum value on the scale? Answer yes or no, and give the new value.", "ground_truth": projected_answer, "answer_format": "'yes; new value N' or 'no; new value N'"},
     ]
@@ -131,6 +136,7 @@ def make_scene(index: int):
         "id": iid,
         "image_path": f"images/{iid}.png",
         "canvas_size": [CANVAS, CANVAS],
+        "dataset_version": DATASET_VERSION,
         "seed": index,
         "instrument_type": config["instrument_type"],
         "unit": config["unit"],
