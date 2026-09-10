@@ -28,244 +28,180 @@ configs:
 
 # GRIP-Benchmark-34
 
-**A programmatically generated and independently validated suite for visual geometry and physical reasoning**
+GRIP (Geometry, Reasoning, Induction, and Physics) is a synthetic visual-reasoning benchmark built to test whether multimodal models can reason from diagrams rather than rely on recognition alone. It spans geometry, topology, spatial transformation, visual measurement, induction, and mechanics through 34 independently generated domains.
 
-## 1. Suite overview
+The release contains:
 
-GRIP-Benchmark-34 contains **34 synthetic sub-benchmarks**, **100,000 images**, and **500,000 image–question pairs** across **nine reasoning families**: plane geometry, transformational geometry, projective geometry, topology/graph theory, surface topology, analytic/coordinate geometry, inductive/analogical reasoning, physical/mechanical reasoning, and solid geometry. The 33 core categories contribute 3,000 images each, while the focused projectile-motion addition contributes 1,000; every image has exactly five difficulty-ordered questions.
+- **34 domains** in **9 reasoning families**
+- **100,000 images**: 33 domains with 3,000 images and `projectile_motion` with 1,000
+- **500,000 closed questions**: five ordered difficulty levels per image
+- **100,000 open-ended questions**: one explanation-based question per image
+- Programmatically generated scenes with deterministic, closed-form ground truth
+- Dataset-specific validators, image-aware checks, distribution audits, and human review
 
-All images, scene parameters, and answers are generated programmatically with deterministic, closed-form ground truth. Ground truth is independently re-derived from the underlying geometry by dataset-specific validator code, and every current validation report records **PASS with zero mismatches**.
+GRIP is an open benchmark. Reference answers are published for reproducible evaluation, while question-only files are also provided for clean model input.
 
-Suggested suite names:
+## Dataset
 
-1. **GRIP-Benchmark-34** — Geometry, Reasoning, Induction, and Physics; used throughout this README.
-2. **GeoReason-34** — emphasizes visual, analytic, and mechanical reasoning rather than recognition alone.
-3. **Synthetic Geometry and Physical Reasoning Suite (SGPRS-34)** — emphasizes provenance and scope.
+Each image has five closed questions arranged as a reasoning ladder:
 
-This repository generates datasets and ground truth. It does not run models, score predictions, or provide an evaluation harness.
+| Level | Reasoning stage | Description |
+|---|---|---|
+| L1 | Perception | Read or count a directly visible property. |
+| L2 | Relation | Compare two elements or apply one simple relation. |
+| L3 | Structure | Combine evidence across multiple objects or regions. |
+| L4 | Multi-step reasoning | Apply a compound geometric, physical, or logical rule. |
+| L5 | Counterfactual reasoning | Predict the result of a stated change or extrapolation. |
 
-Eligible images additionally have one domain-specific, parameterized open-ended question using the exact wording in `OPEN_QUESTION_SPEC.md`, with a visual justification and confidence score. Numeric facts store their scoring tolerance. The 91,904 supplementary rows are released separately from the fixed five-level ladder, and all exclusions are explicit.
+The 33 full-size domains contain 15,000 closed questions each. `projectile_motion_dataset_1000` contains 5,000. Together they total exactly 500,000 closed questions and 500,000 reference answers.
 
+### Main release files
 
-## 2. Dataset summary
+| File | Rows | Purpose |
+|---|---:|---|
+| `combined/all_questions_combined.csv` | 500,000 | Closed questions without ground truth |
+| `combined/all_answers_combined.csv` | 500,000 | Closed questions with published reference answers |
+| `combined/all_open_questions_combined.csv` | 100,000 | Open-ended questions without answer targets |
+| `combined/all_open_answers_combined.csv` | 100,000 | Open-ended questions with targets and tolerances |
+| `combined/all_answers_combined-*.parquet` | 500,000 | Hugging Face viewer shards with embedded images |
+| `combined/all_annotations_combined-*.parquet` | 100,000 | Per-image scene metadata with embedded images |
 
-| Dataset | Geometry class | Version | Images | Questions | Validation | Key skill tested |
-|---|---|---|---:|---:|---|---|
-| [route](Dataset/route_dataset_3000/) | Topology / Graph Theory | route-6.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Trace colored routes and reason over endpoint connectivity |
-| [nested_squares](Dataset/nested_squares_dataset_3000/) | Transformational Geometry | nested-squares-11.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Measure center drift, size ratio, four-fold rotation, and geometric visibility |
-| [nested_triangles](Dataset/nested_triangles_dataset_3000/) | Transformational Geometry | nested-triangles-11.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Generalize drift, size, and three-fold rotation reasoning to triangles |
-| [nested_hexagons](Dataset/nested_hexagons_dataset_3000/) | Transformational Geometry | nested-hexagons-11.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Generalize drift, size, and six-fold rotation reasoning to hexagons |
-| [cube_structure](Dataset/cube_structure_dataset_3000/) | Solid Geometry | cube-structure-6.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Count and reason about visible/hidden cubes and support |
-| [line_intersection](Dataset/line_intersection_dataset_3000/) | Plane Geometry | line-intersection-7.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Count and compare line intersections |
-| [overlap_circles](Dataset/overlap_circles_dataset_3000/) | Plane Geometry | overlap-circles-6.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Reason about circle overlap and planar regions |
-| [cube_net](Dataset/cube_net_dataset_3000/) | Solid Geometry | cube-net-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Infer 3D cube relationships from unfolded nets |
-| [shadow_inference](Dataset/shadow_inference_dataset_3000/) | Projective Geometry | shadow-inference-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Infer light direction/elevation from projected shadows |
-| [impossible_object](Dataset/impossible_object_dataset_3000/) | Solid Geometry | impossible-object-7.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Detect globally inconsistent 3D line structures |
-| [polyhedron](Dataset/polyhedron_dataset_3000/) | Solid Geometry | polyhedron-8.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Classify polyhedra and reason about faces, edges, and vertices |
-| [depth_height](Dataset/depth_height_dataset_3000/) | Projective Geometry / Height Comparison | depth-height-6.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Compare perspective-based depth and count flat stack heights |
-| [embedded_figures](Dataset/embedded_figures_dataset_3000/) | Plane Geometry — Composition | embedded-figures-4.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Find a target figure within a complex line composition |
-| [rotation_matching](Dataset/rotation_matching_dataset_3000/) | Transformational Geometry | rotation-matching-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Match shapes under rotation while rejecting reflections |
-| [combination](Dataset/combination_dataset_3000/) | Plane Geometry — Composition | combination-4.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Assemble 2D polyomino pieces into a target |
-| [combination3d](Dataset/combination3d_dataset_3000/) | Solid Geometry | combination3d-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Assemble voxel pieces under constrained 3D rotations |
-| [fold_punch](Dataset/fold_punch_dataset_3000/) | Transformational Geometry | fold-punch-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Track sequential reflections and layered punch positions |
-| [symmetry_pattern](Dataset/symmetry_pattern_dataset_3000/) | Transformational Geometry | symmetry-pattern-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Identify and reason about reflection/rotation symmetry |
-| [occluded_pattern](Dataset/occluded_pattern_dataset_3000/) | Plane Geometry | occluded-pattern-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Perform amodal counting through regular-pattern occlusion |
-| [angle_estimation](Dataset/angle_estimation_dataset_3000/) | Plane Geometry — Angles | angle-estimation-8.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Estimate, compare, and classify planar angles |
-| [coordinate_geometry](Dataset/coordinate_geometry_dataset_3000/) | Analytic / Coordinate Geometry | coordinate-geometry-7.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Read coordinates and compute distance, midpoint, and collinearity |
-| [orthographic](Dataset/orthographic_dataset_3000/) | Solid Geometry — Multi-View Projection | orthographic-4.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Reconstruct and compare voxel structures from top/front/side projections |
-| [rpm](Dataset/rpm_dataset_3000/) | Inductive / Analogical Reasoning | rpm-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Discover, combine, and extrapolate visual progression rules |
-| [surface_topology](Dataset/surface_topology_dataset_3000/) | Surface Topology | surface-topology-7.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Reason about genus, orientability, boundaries, and Euler characteristic |
-| [gear_train](Dataset/gear_train_dataset_3000/) | Physical / Mechanical Reasoning | gear-train-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Propagate rotation direction and exact gear ratios through mechanical chains and branches |
-| [physical_stability](Dataset/physical_stability_dataset_3000/) | Physical / Mechanical Reasoning | physical-stability-4.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Compute cumulative centers of mass and identify tipping joints under block removal |
-| [free_body_diagram](Dataset/fbd_dataset_3000/) | Physical / Mechanical Reasoning | free-body-diagram-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Resolve force vectors, equilibrium, omissions, invalid arrows, and counterfactual acceleration |
-| [clock_reading](Dataset/clock_reading_dataset_3000/) | Physical / Mechanical Reasoning | clock-reading-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Read exact analog time, account for hour-hand creep, and recompute hand angles after time advancement |
-| [gauge_reading](Dataset/gauge_reading_dataset_3000/) | Physical / Mechanical Reasoning | gauge-reading-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Interpolate single-needle readings across varied ranges and reason about thresholds and projected values |
-| [optical_illusion](Dataset/optical_illusion_dataset_3000/) | Plane Geometry / Visual Perception | optical-illusion-6.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Separate true pixel geometry from misleading contextual size cues |
-| [compass_bearing](Dataset/compass_bearing_dataset_3000/) | Analytic Geometry / Navigation | compass-bearing-6.0.0 | 3,000 | 15,000 + 2,717 open | PASS — 0 mismatches | Compute compass bearings, turns, and counterfactual destinations |
-| [hex_pathfinding](Dataset/hex_pathfinding_dataset_3000/) | Topology / Graph Theory | hex-pathfinding-6.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Find and count shortest paths through obstructed hex grids |
-| [laser_mirror](Dataset/laser_mirror_dataset_3000/) | Plane Geometry / Physical Optics | laser-mirror-5.0.0 | 3,000 | 15,000 + 3,000 open | PASS — 0 mismatches | Trace multi-bounce reflections and counterfactual mirror rotations |
-| [projectile_motion](Dataset/projectile_motion_dataset_1000/) | Physical / Mechanical Reasoning | projectile-motion-5.0.0 | 1,000 | 5,000 + 1,000 open | PASS — 0 mismatches | Apply ideal projectile kinematics and reason about obstacle clearance and angle optimization |
-| **Total** | **34 sub-benchmarks** | — | **100,000** | **500,000 + 100,000 open** | **34/34 PASS** | **Broad visual, spatial, geometric, topological, analytic, inductive, optical, and mechanical reasoning** |
+The Hugging Face `default` configuration loads the closed-question answer view. The `annotations` configuration exposes scene metadata for analysis. PNG bytes are embedded in the Parquet shards so images render directly in the dataset viewer.
 
-### Geometry-class breakdown
+## Families and domains
 
-- **Plane Geometry:** overlap circles, line intersections, occluded patterns, optical illusions, and multi-bounce laser reflection.
-- **Plane Geometry — Composition:** 2D combination and embedded figures.
-- **Plane Geometry — Angles:** angle estimation.
-- **Transformational Geometry:** the nested-polygon family (squares, equilateral triangles, and regular hexagons), rotation matching, symmetry patterns, and fold-and-punch transformations.
-- **Projective Geometry:** perspective-based depth ordering and shadow inference; `depth_height` also contains an explicitly documented 50% flat height-comparison branch.
-- **Topology / Graph Theory:** colored-route connectivity and shortest-path reasoning on hex grids.
-- **Surface Topology:** genus, orientability, boundary components, and Euler characteristic.
-- **Analytic / Coordinate Geometry:** coordinate-based geometry plus compass-bearing and map-navigation reasoning.
-- **Inductive / Analogical Reasoning:** progressive-matrix rule discovery and completion.
-- **Physical / Mechanical Reasoning:** causal gear propagation, cumulative-center-of-mass stability, free-body force analysis, exact analog-clock hand angles, single-needle gauge interpolation, and ideal projectile kinematics.
-- **Solid Geometry** contains six sub-branches:
-  1. **Nets & Surfaces:** `cube_net_dataset_3000`
-  2. **Volume & Spatial Visualization:** `cube_structure_dataset_3000`
-  3. **3D Tiling/Dissection:** `combination3d_dataset_3000`
-  4. **Polyhedra:** `polyhedron_dataset_3000`
-  5. **Spatial Consistency:** `impossible_object_dataset_3000`
-  6. **Multi-View Projection:** `orthographic_dataset_3000`
+| Family | Domains | What they test |
+|---|---|---|
+| Plane geometry | `angle_estimation`, `combination`, `embedded_figures`, `laser_mirror`, `line_intersection`, `occluded_pattern`, `optical_illusion`, `overlap_circles` | Angles, composition, intersections, occlusion, reflection, overlap, and metric judgment |
+| Transformational geometry | `fold_punch`, `nested_hexagons`, `nested_squares`, `nested_triangles`, `rotation_matching`, `symmetry_pattern` | Rotation, reflection, folding, symmetry, scaling, and transformation invariance |
+| Projective geometry | `depth_height`, `shadow_inference` | Depth ordering, height comparison, projection, and light direction |
+| Topology and graph theory | `hex_pathfinding`, `route` | Connectivity, degree, shortest paths, and replanning |
+| Surface topology | `surface_topology` | Genus, orientability, boundaries, and Euler structure |
+| Analytic and coordinate geometry | `compass_bearing`, `coordinate_geometry` | Coordinates, distance, midpoint, bearings, and navigation |
+| Inductive and analogical reasoning | `rpm` | Visual rule discovery and Raven-style matrix completion |
+| Physical and mechanical reasoning | `clock_reading`, `fbd`, `gauge_reading`, `gear_train`, `physical_stability`, `projectile_motion` | Measurement, forces, motion, equilibrium, stability, and mechanical propagation |
+| Solid geometry | `combination3d`, `cube_net`, `cube_structure`, `impossible_object`, `orthographic`, `polyhedron` | 3D assembly, nets, occlusion, projections, spatial consistency, and polyhedral structure |
 
-## 3. Shared methodology
+Every domain directory under `Dataset/` is self-contained and includes its images, generator, annotations, question files, answer key, build manifest, validation outputs, and domain README.
 
-### Unified five-level question progression
+## Generation pipeline
 
-Every image has exactly five questions in increasing order of difficulty:
+GRIP is generated end to end from code:
 
-1. **Level 1 — Simple Description:** perceive one directly visible fact with no inference.
-2. **Level 2 — Basic Relational:** perform one comparison or one-step rule application.
-3. **Level 3 — Comparative/Structural:** reason across multiple elements, rank them, identify an extreme, or cross-reference image regions.
-4. **Level 4 — Compound Reasoning:** combine at least two facts or apply a multi-step formula/rule chain without hypothetical framing.
-5. **Level 5 — Extrapolative/Counterfactual:** apply an explicitly defined hypothetical geometric change, extrapolate beyond the shown pattern, or explain a deterministic consequence.
+1. **Sample a scene.** A deterministic seed selects geometry, layout, labels, and task parameters within domain constraints.
+2. **Enforce constraints.** Generation guards reject degenerate, clipped, ambiguous, or invalid scenes before release.
+3. **Render the image.** The accepted scene is converted into a PNG using the domain renderer.
+4. **Derive ground truth.** Closed-form geometry, graph algorithms, exact search, or physical equations produce the answers.
+5. **Build the five-level ladder.** Each image receives one ordered question at every level from L1 through L5.
+6. **Generate the open question.** A domain-specific template requests a conclusion, visible justification, and confidence score.
+7. **Validate independently.** Separate validation logic re-derives targets and checks the final artifact.
+8. **Assemble the suite.** Dataset folders are discovered through `build_manifest.json`; combined files are rebuilt with row-count, ID, and image-path assertions.
 
-The exact question templates differ by category, but this progression and the `difficulty_level: 1..5` annotation contract are shared by all 34 datasets. Every Level 5 operation is independently recomputable from raw stored geometry or scene metadata. Flattened CSV/JSONL files contain one row per question, yielding 15,000 rows per core dataset and 5,000 for the focused projectile-motion category.
+The repository does not require a model to create labels. Ground truth comes from the scene construction itself and is independently recomputed during validation.
 
-The suite-level files in `combined/` are rebuilt from dataset directories discovered by `build_manifest.json`, not from a hardcoded list. The five-level combined files include all 34 datasets: 33 datasets at 15,000 questions each plus `projectile_motion_dataset_1000` at 5,000 questions, for 500,000 questions and 500,000 answers. The supplementary set contains exactly 100,000 open questions and 100,000 open answer rows in `all_open_questions_combined.csv` and `all_open_answers_combined.csv`, one per image. Of 283 compass-bearing closest-pair near-ties, the guarded farthest-pair fallback recovers 248; the final 35 use a fixed, explicitly named A-to-B bearing after render review confirmed both labels and their separation are readable. The supplementary set does not alter the five-level totals or structure. The Hub's `default` configuration loads the sharded five-level answer Parquet view, including embedded image bytes, prompt, ground truth, and answer format. The separate `annotations` configuration contains one row per image with the combined scene metadata. The original CSVs remain available for non-viewer workflows.
+## Validation and human verification
 
-Free-body-diagram Level 4 questions introduce the structured scoring declaration `{"type":"numeric_tolerance","tolerance_percent":2}` for real-valued mechanics answers. This field appears in annotations, answer keys, and the published answer view, but not in question-only CSVs; it records grading precision explicitly.
+Automated validation covers all released items and includes:
 
-### Independent validation
+- Independent ground-truth re-derivation instead of trusting stored answers
+- Every question ID resolves to exactly one answer and one source image/annotation record
+- Verification that every referenced PNG exists
+- Image-aware recovery checks for the visual quantities used by each task
+- Constraint tests with deliberately invalid and boundary cases
+- Public-schema and answer-leak checks
+- Answer-distribution and constant-answer baseline reports
+- Feature-to-answer association audits using bias-corrected Cramér's V
 
-Generation-time assertions are not treated as sufficient evidence. Each sub-benchmark has a separate validator that reconstructs answers from raw scene geometry or metadata. Depending on the task, validators use exact-cover search, graph recomputation, affine reflection, dot products, coordinate formulas, polyhedral/voxel enumeration, geometric containment, or projective shadow calculations.
+Human verification complements the automated checks. Reviewers inspect representative low-, medium-, and high-difficulty renders, trace the visible evidence used by the answer, and investigate cases flagged by validators or manual inspection. The original 29-domain release retains a reproducible 435-image review set with 2,175 closed question-answer checks in [`spot check/spot_check_review/`](<spot check/spot_check_review/>). Later domains and revised tasks include targeted render reviews in their validation reports.
 
-Validation follows a common pattern:
+The current suite audit reports:
 
-- re-derive ground truth rather than trusting stored answer fields;
-- check constraints and reject ambiguous cases such as ties, accidental collinearity, invalid transformations, clipping, or degenerate geometry;
-- recompute all five question answers;
-- audit expected dataset-level distributions;
-- where image/label divergence is a material risk, read the final PNG from disk and check rendered components, locations, silhouettes, or line geometry.
+- **34/34 domains passing**
+- **100,000/100,000 images resolved**
+- **500,000 closed questions matched to 500,000 answers**
+- **100,000 open questions matched to 100,000 answer records**
+- **0 independently re-derived ground-truth mismatches**
 
-Every dataset folder contains its generator, raw annotations, flattened outputs, validation report, contact sheet, and dataset-specific README.
+See [`Dataset/final_suite_audit.md`](Dataset/final_suite_audit.md) for the suite summary and each domain's `validation_metrics.json`, `validation_report.txt`, and `open_validation_metrics.json` for detailed results.
 
-For suite-wide manual review of the original 29-category release, see [spot_check_review](<spot check/spot_check_review/>), which preserves five low-, five medium-, and five high-difficulty images per included dataset: 435 images total, a long-form 2,175-row five-question answer key, and a consolidated 29×15 contact sheet. The deterministic seed is `20260814`.
+## Open-ended reasoning track
 
-## 4. Transparency: bugs found and fixed
+The open-ended track adds one question per image without changing the closed L1-L5 benchmark. These prompts ask a model to:
 
-Manual visual review and independent recomputation were part of dataset development, not post-hoc presentation. Two notable issues illustrate why both are necessary.
+- reach a domain-specific conclusion;
+- explain which visible evidence supports it; and
+- end with a confidence score from 0 to 1.
 
-### Route endpoint-degree and tie handling
+Each open answer record stores the expected sub-facts, accepted forms, and explicit tolerances for numeric quantities. Prompts are generated from the exact domain templates in [`OPEN_QUESTION_SPEC.md`](OPEN_QUESTION_SPEC.md), with only documented per-image parameter substitution.
 
-An early `highest_degree_letter` implementation in `route_dataset_3000` counted only routes where a letter appeared as `route.start`. It failed to count appearances as `route.end`, so some labels were wrong. The computation was corrected to count both endpoints. Explicit tie handling was also added: an ambiguous highest-degree question is not emitted; the question generator falls back to a well-defined template. A metadata-only regeneration repaired affected questions without changing route images or geometry, and the full validator subsequently reported zero mismatches.
+Use `combined/all_open_questions_combined.csv` as model input and `combined/all_open_answers_combined.csv` for evaluation. The public question file does not include target fields.
 
-### Shadow geometry, color, and floor contrast
+## Evaluation guidance
 
-Early `shadow_inference_dataset_3000` renders used small, caster-colored blobs that did not reliably communicate the stored projected length and direction. This escaped internal metadata consistency because the stored light/shadow values could agree even when the actual pixels did not.
+Use question-only files when running a model, then score outputs against the corresponding answer files. Report results by domain and difficulty level, and compare accuracy with the constant-answer baselines published in the validation metrics.
 
-The issue was corrected in two review-driven passes:
+Do not provide `annotations.jsonl`, `open_annotations.jsonl`, annotation Parquet files, or answer keys to a model under evaluation. They contain the scene parameters used to derive answers and therefore leak ground truth.
 
-1. **Shape and geometry:** round-footprint objects received elongated tapered/almond silhouettes, cubes received sheared quadrilaterals, and PNG-level checks were added for centerline, endpoint, transverse width, base contact, clipping, and ground-line placement. Shadow length remains derived from object geometry and `1 / tan(light_elevation)`.
-2. **Color and contrast:** every shadow was moved to a neutral dark-gray layer independent of caster color, and a lighter neutral floor gradient was introduced beneath the dark sky to make direction and extent readable.
+Some tasks intentionally test universal facts or have imbalanced answer distributions. These cases are retained for coverage and are explicitly reported in the audit files; raw accuracy should not be interpreted without the relevant baseline.
 
-The annotation hash was preserved during the rendering-only pass, and both the pre-change and final full validations reported zero ground-truth mismatches.
-
-These fixes are a methodological strength: self-consistent parameters alone cannot prove that a rendered image expresses those parameters. Independent recomputation catches label logic errors, while human inspection and PNG-aware checks catch perceptual/rendering failures.
-
-### Cube-net, Combination3D, and rotation-frame audit
-
-A later manual-review pass found that `cube_net_dataset_3000` mixed flat-net fold-edge neighbors with folded-cube adjacency in some Level 4 answers. The v2 rebuild now stores both frames explicitly, repaired 452 incorrect prior Level 4 labels, removed the impossible folded-cube `neither` option, and balances adjacent/opposite answers 1,500/1,500.
-
-The same audit confirmed that `combination3d_dataset_3000` was already internally consistent: its isometric renderer, height calculation, gravity convention, and permitted vertical spins all use world z as the visual vertical axis. This convention is now explicit in every record and is enforced by exhaustive z-only/full-rotation exact-cover validation.
-
-`rotation_matching_dataset_3000` replaces non-isometric distorted foils with two congruent wrong-angle rotations plus one congruent reflection. A 25-degree minimum-turn guard and all-item PNG corner recovery protect vertex-count legibility, while a label-free Level 5 avoids reusing the target/reflection candidate pair. The current validator and `validation_metrics.json` contain the retained release audit.
-
-## 5. Related work
-
-> **Third-party attribution:** The publications below are independent works by their
-> respective authors. They were studied and cited as conceptual inspiration for this
-> original synthetic benchmark. The GRIP-Benchmark creator does not claim authorship,
-> contribution, endorsement, or affiliation with these papers or their authors.
-
-- **GIQ.** Michalkiewicz et al., [*GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra*](https://arxiv.org/abs/2506.08194), evaluates vision and vision-language models using synthetic and real imagery of diverse polyhedra, including reconstruction, symmetry, mental rotation, and shape classification. GRIP-Benchmark-34 is complementary: it includes solid-geometry tasks but broadens the scope to plane, transformational, projective, topological, compositional, angle, coordinate, navigational, optical, inductive, and mechanical reasoning.
-- **Spatial-DISE.** Huang et al., [*Spatial-DISE: A Unified Benchmark for Evaluating Spatial Reasoning in Vision-Language Models*](https://arxiv.org/abs/2510.13394), proposes a cognitively grounded spatial-reasoning taxonomy and scalable synthetic generation. Its task framing informed several categories here, including 2D/3D combination and fold-and-punch reasoning.
-- **CAPTURe.** Pothiraj et al., [*CAPTURe: Evaluating Spatial Reasoning in Vision Language Models via Occluded Object Counting*](https://arxiv.org/abs/2504.15485), studies amodal counting through unseen regions. The `occluded_pattern` sub-benchmark extends this controlled pattern-extrapolation setting with a five-level question structure.
-- **GeoQA.** Chen et al., [*GeoQA: A Geometric Question Answering Benchmark Towards Multimodal Numerical Reasoning*](https://aclanthology.org/2021.findings-acl.46/), focuses on diagram-and-text geometry problems from school examinations. GRIP-Benchmark-34 instead uses fully synthetic scenes with directly inspectable generation parameters and task-specific independent validators.
-- **PhysBench.** Chow et al., [*PhysBench: Benchmarking and Enhancing Vision-Language Models for Physical World Understanding*](https://arxiv.org/abs/2501.16411), evaluates physical properties, relationships, scenes, and dynamics. The six Physical/Mechanical categories here provide controlled, exactly re-derived causal mechanics, statics, free-body force analysis, clock-angle, instrument-reading, and projectile-kinematics tasks.
-- **Interactive intuitive physics.** Schulze Buschoff et al., [*Can Vision Language Models Learn Intuitive Physics from Interaction?*](https://arxiv.org/abs/2602.06033), studies block-tower construction and stability learning. `physical_stability_dataset_3000` provides a complementary deterministic center-of-mass benchmark with explicit counterfactual removal cases.
-- **Analog-clock reasoning.** Choi et al., [*It's Time to Get It Right: Improving Analog Clock Reading and Clock-Hand Spatial Reasoning in Vision-Language Models*](https://arxiv.org/abs/2603.08011), documents persistent clock-reading and clock-hand spatial-reasoning failures in VLMs. Yang, Xie, and Zisserman, [*It's About Time: Analog Clock Reading in the Wild*](https://arxiv.org/abs/2111.09162), develops synthetic-to-real analog-clock recognition and benchmark data. `clock_reading_dataset_3000` adds exact minute-level readings, continuous hour-hand motion, smaller-angle computation, and deterministic time-advance counterfactuals.
-- **Visual instrument reading.** Lin et al., [*Do Vision-Language Models Measure Up? Benchmarking Visual Measurement Reading with MeasureBench*](https://arxiv.org/abs/2510.26865), evaluates real and synthetic measurement instruments and highlights indicator localization as a recurring source of VLM reading error. `gauge_reading_dataset_3000` provides a complementary controlled benchmark with exact varied-range interpolation, threshold bands, and counterfactual range increases.
-
-The `orthographic_dataset_3000` category implements classical orthographic/third-angle projection reasoning and serves as the inverse-task complement to `cube_structure_dataset_3000`: the former reconstructs 3D structure from three flat views, while the latter reasons about occlusion from one isometric view.
-
-## 6. Release use, validation, and limitations
-
-### Benchmark and metadata files
-
-GRIP is a published open benchmark, so the Hub's `default` configuration intentionally exposes ground truth and `answer_format` alongside each question. Its `image_bytes` column is a Hugging Face `Image` feature with the PNG bytes embedded in Parquet; `image` retains the original filename and `image_path` retains the repository-relative source path. The `annotations` configuration exposes scene metadata for inspection and analysis, with its `image` column stored as the same embedded `Image` feature. Complex list and object metadata is losslessly JSON-encoded in individual columns so the heterogeneous 34-domain schema remains representable in one table.
-
-The per-dataset `question_set.csv` files, `combined/all_questions_combined.csv`, per-domain `open_questions.csv`, and `combined/all_open_questions_combined.csv` are question-only model-facing artifacts. Per-dataset `answer_key.csv`, per-domain `open_answer_key.csv`, and their combined answer files include published reference answers. Raw `annotations.jsonl`, `open_annotations.jsonl`, and the annotations Parquet view can reveal the exact scene geometry and quantities from which answers are derived. **Do not provide annotations to a model under evaluation: doing so leaks answer-generating metadata and invalidates the measurement.**
-
-### Validation methodology
-
-Validators independently re-derive answers from stored geometry, inspect final PNGs for recoverable question-dependent quantities, run bias-corrected Cramér's V feature/answer audits, exercise constraints with violating and boundary guard-injection cases, and report constant-answer baselines. Accuracy should be interpreted relative to the reported baseline rather than as an isolated percentage.
-
-### Depth/height scope
-
-`depth_height_dataset_3000` is deliberately split: 1,500 scenes contain perspective-based size and vertical-position cues for projective depth ordering, while 1,500 are flat stack-height counting scenes. The whole category should not be described as exclusively projective.
-
-### Levels with constant-answer baseline at or above 60%
-
-- `combination_dataset_3000` Level 5: **64.0%**
-- `cube_net_dataset_3000` Level 1: **100.0%**
-- `cube_net_dataset_3000` Level 5: **78.8%**
-- `embedded_figures_dataset_3000` Level 5: **66.2%**
-- `gauge_reading_dataset_3000` Level 1: **80.0%**
-- `gauge_reading_dataset_3000` Level 4: **60.0%**
-- `gear_train_dataset_3000` Level 2: **100.0%**
-- `laser_mirror_dataset_3000` Level 2: **75.0%**
-- `optical_illusion_dataset_3000` Level 1: **100.0%**
-- `orthographic_dataset_3000` Level 5: **100.0%**
-- `physical_stability_dataset_3000` Level 2: **62.5%**
-- `polyhedron_dataset_3000` Level 2: **89.5%**
-- `polyhedron_dataset_3000` Level 5: **100.0%**
-- `projectile_motion_dataset_1000` Level 2: **65.4%**
-- `projectile_motion_dataset_1000` Level 5: **68.8%**
-- `surface_topology_dataset_3000` Level 2: **75.0%**
-- `symmetry_pattern_dataset_3000` Level 5: **100.0%**
-
-Six levels are structurally constant at 100% and therefore carry no discriminative signal: `cube_net` L1 (every cube net has six faces), `gear_train` L2 (meshed gears counter-rotate), `optical_illusion` L1 (two elements are always compared), `orthographic` L5, `polyhedron` L5 (removing a face opens the surface), and `symmetry_pattern` L5. Report results as accuracy above baseline, and do not treat performance on these levels as evidence of reasoning ability.
-
-## 7. Folder structure
+## Repository structure
 
 ```text
 geomstry/
 ├── README.md
+├── OPEN_QUESTION_SPEC.md
+├── UNIFIED_5_LEVEL_GENERATION_TEMPLATE.md
 ├── Dataset/
-│   ├── route_dataset_3000/
-│   ├── nested_squares_dataset_3000/
-│   ├── nested_triangles_dataset_3000/
-│   ├── nested_hexagons_dataset_3000/
-│   ├── ...
-│   ├── orthographic_dataset_3000/
-│   ├── rpm_dataset_3000/
-│   ├── surface_topology_dataset_3000/
-│   ├── gear_train_dataset_3000/
-│   ├── physical_stability_dataset_3000/
-│   ├── fbd_dataset_3000/
-│   ├── clock_reading_dataset_3000/
-│   ├── gauge_reading_dataset_3000/
-│   ├── optical_illusion_dataset_3000/
-│   ├── compass_bearing_dataset_3000/
-│   ├── hex_pathfinding_dataset_3000/
-│   ├── laser_mirror_dataset_3000/
-│   └── projectile_motion_dataset_1000/
-├── spot check/
-│   ├── spot_check_sampler.py
-│   └── spot_check_review/
-└── combined/
-    ├── all_questions_combined.csv
-    ├── all_answers_combined.csv
-    ├── all_open_questions_combined.csv
-    ├── all_open_answers_combined.csv
-    ├── all_answers_combined-*.parquet
-    └── all_annotations_combined-*.parquet
+│   ├── <domain>_dataset_3000/
+│   ├── projectile_motion_dataset_1000/
+│   ├── final_suite_audit.md
+│   └── open_question_rewrite_report.md
+├── combined/
+│   ├── all_questions_combined.csv
+│   ├── all_answers_combined.csv
+│   ├── all_open_questions_combined.csv
+│   ├── all_open_answers_combined.csv
+│   ├── all_answers_combined-*.parquet
+│   └── all_annotations_combined-*.parquet
+└── spot check/
+    └── spot_check_review/
 ```
 
-Each dataset folder is self-contained. Consult its local README for task definitions, generation commands, annotation schema, validation logic, limitations, and review assets.
+Images are stored with Git Large File Storage. Install Git LFS before cloning or pulling the complete repository:
 
-Dataset PNG files are stored with Git Large File Storage. Before cloning or pulling the complete image collection, install Git LFS and run `git lfs install`.
+```bash
+git lfs install
+git clone https://github.com/bilaljawaid980/Geomatric-Reasoning-Benchmark-Dataset.git
+```
 
-This suite currently contains 34 datasets under the unified five-level rubric: 28 geometric/spatial/navigational/perceptual categories and six physical/mechanical categories. Future categories must follow [UNIFIED_5_LEVEL_GENERATION_TEMPLATE.md](UNIFIED_5_LEVEL_GENERATION_TEMPLATE.md) from generation onward.
+## Related work
 
-The repository-wide final audit is published in [Dataset/final_suite_audit.md](Dataset/final_suite_audit.md). It reports current versions, five per-level constant baselines, modification status, and PNG asset coverage for all 34 datasets. Dataset-specific final audit reports intentionally flag structural answer skews rather than hiding them behind generator/validator agreement.
+GRIP is an original synthetic benchmark. The following independent projects provide useful context for its task design:
+
+- [GIQ](https://arxiv.org/abs/2506.08194): 3D geometric reasoning with synthetic and real polyhedra
+- [Spatial-DISE](https://arxiv.org/abs/2510.13394): a cognitively grounded spatial-reasoning taxonomy
+- [CAPTURe](https://arxiv.org/abs/2504.15485): occluded-object counting and amodal reasoning
+- [GeoQA](https://aclanthology.org/2021.findings-acl.46/): multimodal numerical reasoning over geometry problems
+- [PhysBench](https://arxiv.org/abs/2501.16411): physical-world understanding for vision-language models
+- [Analog Clock Reading in the Wild](https://arxiv.org/abs/2111.09162): synthetic-to-real analog-clock recognition
+- [MeasureBench](https://arxiv.org/abs/2510.26865): visual measurement and instrument reading
+
+These works are cited as related research only; their authors are not affiliated with or responsible for GRIP.
+
+## Citation
+
+If you use GRIP-Benchmark-34, cite the repository:
+
+```bibtex
+@misc{jawaid2026grip,
+  author       = {Bilal Jawaid},
+  title        = {GRIP-Benchmark-34: A Programmatic Benchmark for Geometry, Reasoning, Induction, and Physics},
+  year         = {2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/bilaljawaid980/Geomatric-Reasoning-Benchmark-Dataset}
+}
+```
+
+## License
+
+GRIP-Benchmark-34 is released under the [MIT License](https://opensource.org/license/mit).
