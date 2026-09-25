@@ -1,0 +1,15 @@
+model,arm,silent_capitulation_rate,silent_capitulation_rate_ci_low,silent_capitulation_rate_ci_high,silent_capitulation_rate_n
+claude_opus_5,constructed,0.0,0.0,0.0,152
+claude_opus_5,natural,0.0,0.0,0.0,36
+claude_sonnet_5,constructed,0.0,0.0,0.0,344
+claude_sonnet_5,natural,0.0,0.0,0.0,63
+gemini_3_8_flash,constructed,0.0,0.0,0.0,139
+gemini_3_8_flash,natural,0.0,0.0,0.0,75
+gpt_5_6_luna,constructed,0.0,0.0,0.0,330
+gpt_5_6_luna,natural,0.0,0.0,0.0,76
+grok_4_6,constructed,0.0,0.0,0.0,151
+grok_4_6,natural,0.0,0.0,0.0,30
+inking,constructed,0.0,0.0,0.0,129
+inking,natural,0.0,0.0,0.0,14
+muse_glimmer_30b,constructed,0.0,0.0,0.0,266
+muse_glimmer_30b,natural,0.0,0.0,0.0,41

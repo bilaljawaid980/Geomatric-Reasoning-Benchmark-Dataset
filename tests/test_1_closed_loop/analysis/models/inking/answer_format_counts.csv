@@ -1,0 +1,103 @@
+model,answer_format,rows
+inking,'<increase|decrease|stay the same>; <direction changes|direction unchanged>',50
+inking,'<stable|unstable>; <brief cumulative-center-of-mass reason>',50
+inking,"'yes; exceeds threshold by N', 'no', or 'no danger zone marked'",50
+inking,'yes; new value N' or 'no; new value N',50
+inking,A or B,50
+inking,HH:MM,50
+inking,adjacent_or_opposite,50
+inking,arrow_label,39
+inking,arrow_label_and_missing_force,11
+inking,attribute_name,11
+inking,attribute_value,13
+inking,beam label,50
+inking,beam label or already constructible,50
+inking,before or after,50
+inking,choice,803
+inking,choice_letter,12
+inking,choice_number,50
+inking,classification plus meters rounded to 1 decimal,8
+inking,classification_phrase,39
+inking,color,107
+inking,coordinate,64
+inking,direction_degrees,42
+inking,"edge, position N",50
+inking,"equal, A, or B",50
+inking,hole or walkable,50
+inking,"increase, decrease, or stay the same",42
+inking,integer,415
+inking,integer 1-12,50
+inking,integer degrees,50
+inking,integer degrees plus direction,50
+inking,integer degrees using half-up rounding,100
+inking,integer in curly brackets,50
+inking,integer; orientability,50
+inking,label,35
+inking,label_pair,36
+inking,"left, right, or directly above",50
+inking,letter,459
+inking,letter; endpoint distance and bearing difference,50
+inking,letter_pair,35
+inking,list,30
+inking,location,25
+inking,lower half or upper half,50
+inking,meters rounded to 1 decimal; numeric tolerance 2%,50
+inking,"north, south, or same latitude",50
+inking,number,150
+inking,number at the nearest rendered tick mark,50
+inking,"number in curly brackets, 0-120, graded within ±8 degrees",50
+inking,"number in curly brackets, 0-60, graded within ±5 degrees",50
+inking,"number in curly brackets, 0-90, graded within ±6 degrees",50
+inking,"number rounded to 1 decimal in curly brackets, graded within ±10% relative",150
+inking,number rounded to 1 decimal place,50
+inking,number_in_curly_brackets,137
+inking,numeric,2546
+inking,numeric_2dp,50
+inking,numeric_pair,13
+inking,one_word,78
+inking,ordered_list,50
+inking,same or opposite,50
+inking,short_text,43
+inking,single uppercase letter,100
+inking,stable or 'tips between block X and <block Y|ground>',50
+inking,"stay the same (N moves), increase to N moves, or no valid path exists",50
+inking,text,30
+inking,three-digit bearing in curly brackets,50
+inking,two_attributes,16
+inking,unique or multiple (count),50
+inking,unique_or_not_unique,27
+inking,view_name,48
+inking,view_names,20
+inking,yes or no,150
+inking,yes/no; actual relation,50
+inking,"yes/no; exits at edge, position N",50
+inking,yes_no,458
+inking,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",50
+inking,"{""absolute_tolerance"":0.1,""type"":""numeric_tolerance""}",22
+inking,"{""absolute_tolerance"":5,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",36
+inking,"{""acceptance_set"":[""A"",""B"",""E""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""A"",""C"",""E""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""A"",""C""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""A"",""D""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""A"",""E"",""F""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""A"",""E""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""A""],""type"":""letter_any_of_list""}",2
+inking,"{""acceptance_set"":[""B"",""C"",""E""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""B"",""C"",""F""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""B"",""C""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""B"",""D""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""B""],""type"":""letter_any_of_list""}",11
+inking,"{""acceptance_set"":[""C"",""D"",""E""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""C"",""E"",""F""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""C"",""E""],""type"":""letter_any_of_list""}",3
+inking,"{""acceptance_set"":[""C"",""F""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""C""],""type"":""letter_any_of_list""}",2
+inking,"{""acceptance_set"":[""D"",""E"",""F""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""D"",""E""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""D""],""type"":""letter_any_of_list""}",5
+inking,"{""acceptance_set"":[""E"",""F""],""type"":""letter_any_of_list""}",1
+inking,"{""acceptance_set"":[""E""],""type"":""letter_any_of_list""}",7
+inking,"{""acceptance_set"":[""F""],""type"":""letter_any_of_list""}",4
+inking,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",50
+inking,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",50
+inking,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",50

@@ -1,0 +1,1121 @@
+model,source_row_id,domain,stem,question_id,reason
+gemini_3_8_flash,angle_estimation:angle_estimation_1884_q4,angle_estimation,angle_estimation_1884,angle_estimation_1884_q4,expected exactly one number
+gemini_3_8_flash,clock_reading:clock_reading_1276_q1,clock_reading,clock_reading_1276,clock_reading_1276_q1,expected exactly one number
+gemini_3_8_flash,clock_reading:clock_reading_2830_q4,clock_reading,clock_reading_2830,clock_reading_2830_q4,expected exactly one number
+gemini_3_8_flash,combination:combination_0489_q1,combination,combination_0489,combination_0489_q1,expected exactly one number
+gemini_3_8_flash,combination3d:combination3d_1251_q1,combination3d,combination3d_1251,combination3d_1251_q1,expected exactly one number
+gemini_3_8_flash,combination3d:combination3d_1329_q1,combination3d,combination3d_1329,combination3d_1329_q1,expected exactly one number
+gemini_3_8_flash,coordinate_geometry:coordinate_geometry_0021_q5,coordinate_geometry,coordinate_geometry_0021,coordinate_geometry_0021_q5,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_0174_q1,cube_structure,cube_structure_0174,cube_structure_0174_q1,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_0711_q2,cube_structure,cube_structure_0711,cube_structure_0711_q2,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_0867_q4,cube_structure,cube_structure_0867,cube_structure_0867_q4,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1340_q4,cube_structure,cube_structure_1340,cube_structure_1340_q4,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1475_q1,cube_structure,cube_structure_1475,cube_structure_1475_q1,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1475_q2,cube_structure,cube_structure_1475,cube_structure_1475_q2,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1475_q3,cube_structure,cube_structure_1475,cube_structure_1475_q3,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1475_q5,cube_structure,cube_structure_1475,cube_structure_1475_q5,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1696_q1,cube_structure,cube_structure_1696,cube_structure_1696_q1,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1773_q4,cube_structure,cube_structure_1773,cube_structure_1773_q4,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_1811_q5,cube_structure,cube_structure_1811,cube_structure_1811_q5,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_2322_q1,cube_structure,cube_structure_2322,cube_structure_2322_q1,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_2561_q3,cube_structure,cube_structure_2561,cube_structure_2561_q3,expected exactly one number
+gemini_3_8_flash,cube_structure:cube_structure_2749_q1,cube_structure,cube_structure_2749,cube_structure_2749_q1,expected exactly one number
+gemini_3_8_flash,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_1991_q4,depth_height,depth_height_1991,depth_height_1991_q4,expected exactly one number
+gemini_3_8_flash,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+gemini_3_8_flash,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+gemini_3_8_flash,embedded_figures:embedded_figure_0028_q1,embedded_figures,embedded_figure_0028,embedded_figure_0028_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_0317_q1,embedded_figures,embedded_figure_0317,embedded_figure_0317_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_0392_q1,embedded_figures,embedded_figure_0392,embedded_figure_0392_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_0393_q1,embedded_figures,embedded_figure_0393,embedded_figure_0393_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_1376_q1,embedded_figures,embedded_figure_1376,embedded_figure_1376_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_1376_q4,embedded_figures,embedded_figure_1376,embedded_figure_1376_q4,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_1495_q1,embedded_figures,embedded_figure_1495,embedded_figure_1495_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_1535_q1,embedded_figures,embedded_figure_1535,embedded_figure_1535_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_1568_q1,embedded_figures,embedded_figure_1568,embedded_figure_1568_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_1568_q4,embedded_figures,embedded_figure_1568,embedded_figure_1568_q4,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_2021_q1,embedded_figures,embedded_figure_2021,embedded_figure_2021_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_2021_q4,embedded_figures,embedded_figure_2021,embedded_figure_2021_q4,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_2708_q1,embedded_figures,embedded_figure_2708,embedded_figure_2708_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_2864_q1,embedded_figures,embedded_figure_2864,embedded_figure_2864_q1,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_2864_q4,embedded_figures,embedded_figure_2864,embedded_figure_2864_q4,expected exactly one number
+gemini_3_8_flash,embedded_figures:embedded_figure_2933_q1,embedded_figures,embedded_figure_2933,embedded_figure_2933_q1,expected exactly one number
+gemini_3_8_flash,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+gemini_3_8_flash,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+gemini_3_8_flash,fold_punch:fold_punch_0766_q2,fold_punch,fold_punch_0766,fold_punch_0766_q2,expected exactly one number
+gemini_3_8_flash,fold_punch:fold_punch_0844_q2,fold_punch,fold_punch_0844,fold_punch_0844_q2,expected exactly one number
+gemini_3_8_flash,fold_punch:fold_punch_0970_q2,fold_punch,fold_punch_0970,fold_punch_0970_q2,expected exactly one number
+gemini_3_8_flash,fold_punch:fold_punch_1019_q5,fold_punch,fold_punch_1019,fold_punch_1019_q5,expected exactly one number
+gemini_3_8_flash,fold_punch:fold_punch_1921_q2,fold_punch,fold_punch_1921,fold_punch_1921_q2,expected exactly one number
+gemini_3_8_flash,fold_punch:fold_punch_2656_q2,fold_punch,fold_punch_2656,fold_punch_2656_q2,expected exactly one number
+gemini_3_8_flash,hex_pathfinding:hex_pathfinding_2516_q1,hex_pathfinding,hex_pathfinding_2516,hex_pathfinding_2516_q1,expected exactly one number
+gemini_3_8_flash,hex_pathfinding:hex_pathfinding_2516_q3,hex_pathfinding,hex_pathfinding_2516,hex_pathfinding_2516_q3,expected exactly one number
+gemini_3_8_flash,hex_pathfinding:hex_pathfinding_2760_q3,hex_pathfinding,hex_pathfinding_2760,hex_pathfinding_2760_q3,expected exactly one number
+gemini_3_8_flash,laser_mirror:laser_mirror_0842_q1,laser_mirror,laser_mirror_0842,laser_mirror_0842_q1,expected exactly one number
+gemini_3_8_flash,laser_mirror:laser_mirror_0975_q3,laser_mirror,laser_mirror_0975,laser_mirror_0975_q3,expected exactly one number
+gemini_3_8_flash,laser_mirror:laser_mirror_2158_q3,laser_mirror,laser_mirror_2158,laser_mirror_2158_q3,expected exactly one number
+gemini_3_8_flash,laser_mirror:laser_mirror_2509_q3,laser_mirror,laser_mirror_2509,laser_mirror_2509_q3,expected exactly one number
+gemini_3_8_flash,laser_mirror:laser_mirror_2800_q3,laser_mirror,laser_mirror_2800,laser_mirror_2800_q3,expected exactly one number
+gemini_3_8_flash,line_intersection:line_intersect_0513_q5,line_intersection,line_intersect_0513,line_intersect_0513_q5,expected exactly one number
+gemini_3_8_flash,line_intersection:line_intersect_1139_q1,line_intersection,line_intersect_1139,line_intersect_1139_q1,"request error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\n  ""error"": {\n    ""code"": 400,\n    ""message"": ""User location is not supported for the API use."",\n    ""status"": ""FAILED_PRECONDITION""\n  }\n}\n', 'provider_name': 'Google AI Studio', 'is_byok': False, 'provider_error_code': '400', 'previous_errors': [{'code': 504, 'message': 'The operation was aborted', 'provider_name': 'Google'}]}}, 'user_id': 'user_3FEQ8BHXZDjnKmKWrpDQcBcjw8i'}"
+gemini_3_8_flash,line_intersection:line_intersect_1951_q2,line_intersection,line_intersect_1951,line_intersect_1951_q2,"request error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\n  ""error"": {\n    ""code"": 400,\n    ""message"": ""User location is not supported for the API use."",\n    ""status"": ""FAILED_PRECONDITION""\n  }\n}\n', 'provider_name': 'Google AI Studio', 'is_byok': False, 'provider_error_code': '400', 'previous_errors': [{'code': 504, 'message': 'The operation was aborted', 'provider_name': 'Google'}]}}, 'user_id': 'user_3FEQ8BHXZDjnKmKWrpDQcBcjw8i'}"
+gemini_3_8_flash,line_intersection:line_intersect_2135_q2,line_intersection,line_intersect_2135,line_intersect_2135_q2,"request error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\n  ""error"": {\n    ""code"": 400,\n    ""message"": ""User location is not supported for the API use."",\n    ""status"": ""FAILED_PRECONDITION""\n  }\n}\n', 'provider_name': 'Google AI Studio', 'is_byok': False, 'provider_error_code': '400', 'previous_errors': [{'code': 504, 'message': 'The operation was aborted', 'provider_name': 'Google'}]}}, 'user_id': 'user_3FEQ8BHXZDjnKmKWrpDQcBcjw8i'}"
+gemini_3_8_flash,line_intersection:line_intersect_2550_q1,line_intersection,line_intersect_2550,line_intersect_2550_q1,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_0054_q1,nested_hexagons,nested_hexagons_0054,nested_hexagons_0054_q1,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_0054_q4,nested_hexagons,nested_hexagons_0054,nested_hexagons_0054_q4,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_0319_q4,nested_hexagons,nested_hexagons_0319,nested_hexagons_0319_q4,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_0602_q1,nested_hexagons,nested_hexagons_0602,nested_hexagons_0602_q1,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_0602_q3,nested_hexagons,nested_hexagons_0602,nested_hexagons_0602_q3,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_1054_q3,nested_hexagons,nested_hexagons_1054,nested_hexagons_1054_q3,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_1054_q4,nested_hexagons,nested_hexagons_1054,nested_hexagons_1054_q4,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_2627_q1,nested_hexagons,nested_hexagons_2627,nested_hexagons_2627_q1,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_2627_q4,nested_hexagons,nested_hexagons_2627,nested_hexagons_2627_q4,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_2880_q3,nested_hexagons,nested_hexagons_2880,nested_hexagons_2880_q3,expected exactly one number
+gemini_3_8_flash,nested_hexagons:nested_hexagons_2899_q4,nested_hexagons,nested_hexagons_2899,nested_hexagons_2899_q4,expected exactly one number
+gemini_3_8_flash,nested_squares:nested_squares_0027_q4,nested_squares,nested_squares_0027,nested_squares_0027_q4,expected exactly one number
+gemini_3_8_flash,nested_squares:nested_squares_1112_q4,nested_squares,nested_squares_1112,nested_squares_1112_q4,expected exactly one number
+gemini_3_8_flash,nested_squares:nested_squares_1374_q3,nested_squares,nested_squares_1374,nested_squares_1374_q3,expected exactly one number
+gemini_3_8_flash,nested_squares:nested_squares_1410_q4,nested_squares,nested_squares_1410,nested_squares_1410_q4,expected exactly one number
+gemini_3_8_flash,nested_squares:nested_squares_2164_q3,nested_squares,nested_squares_2164,nested_squares_2164_q3,expected exactly one number
+gemini_3_8_flash,nested_squares:nested_squares_2531_q3,nested_squares,nested_squares_2531,nested_squares_2531_q3,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_0657_q1,nested_triangles,nested_triangles_0657,nested_triangles_0657_q1,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_0657_q3,nested_triangles,nested_triangles_0657,nested_triangles_0657_q3,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_0660_q4,nested_triangles,nested_triangles_0660,nested_triangles_0660_q4,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_1118_q4,nested_triangles,nested_triangles_1118,nested_triangles_1118_q4,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_1497_q1,nested_triangles,nested_triangles_1497,nested_triangles_1497_q1,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_2355_q4,nested_triangles,nested_triangles_2355,nested_triangles_2355_q4,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_2489_q4,nested_triangles,nested_triangles_2489,nested_triangles_2489_q4,expected exactly one number
+gemini_3_8_flash,nested_triangles:nested_triangles_2872_q4,nested_triangles,nested_triangles_2872,nested_triangles_2872_q4,expected exactly one number
+gemini_3_8_flash,occluded_pattern:occluded_pattern_2531_q4,occluded_pattern,occluded_pattern_2531,occluded_pattern_2531_q4,expected exactly one number
+gemini_3_8_flash,optical_illusion:optical_illusion_1096_q4,optical_illusion,optical_illusion_1096,optical_illusion_1096_q4,expected exactly one number
+gemini_3_8_flash,orthographic:orthographic_1318_q2,orthographic,orthographic_1318,orthographic_1318_q2,expected exactly one number
+gemini_3_8_flash,orthographic:orthographic_2696_q2,orthographic,orthographic_2696,orthographic_2696_q2,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_0394_q5,overlap_circles,overlap_circles_0394,overlap_circles_0394_q5,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_0726_q4,overlap_circles,overlap_circles_0726,overlap_circles_0726_q4,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_0733_q5,overlap_circles,overlap_circles_0733,overlap_circles_0733_q5,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_0744_q2,overlap_circles,overlap_circles_0744,overlap_circles_0744_q2,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_1059_q5,overlap_circles,overlap_circles_1059,overlap_circles_1059_q5,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_1061_q4,overlap_circles,overlap_circles_1061,overlap_circles_1061_q4,expected exactly one number
+gemini_3_8_flash,overlap_circles:overlap_circles_2042_q4,overlap_circles,overlap_circles_2042,overlap_circles_2042_q4,expected exactly one number
+gemini_3_8_flash,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+gemini_3_8_flash,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+gemini_3_8_flash,rotation_matching:rotation_match_2457_q3,rotation_matching,rotation_match_2457,rotation_match_2457_q3,expected exactly one number
+gemini_3_8_flash,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_1918_q1,route,route_puzzle_1918,route_puzzle_1918_q1,expected exactly one number
+gemini_3_8_flash,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+gemini_3_8_flash,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable
+gemini_3_8_flash,shadow_inference:shadow_inference_1442_q4,shadow_inference,shadow_inference_1442,shadow_inference_1442_q4,expected exactly one number
+gemini_3_8_flash,shadow_inference:shadow_inference_1526_q1,shadow_inference,shadow_inference_1526,shadow_inference_1526_q1,expected exactly one number
+claude_opus_5,cube_structure:cube_structure_0711_q1,cube_structure,cube_structure_0711,cube_structure_0711_q1,expected exactly one number
+claude_opus_5,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+claude_opus_5,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+claude_opus_5,embedded_figures:embedded_figure_1535_q2,embedded_figures,embedded_figure_1535,embedded_figure_1535_q2,expected exactly one number
+claude_opus_5,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+claude_opus_5,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+claude_opus_5,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+claude_opus_5,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+claude_opus_5,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+claude_opus_5,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+claude_opus_5,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+claude_opus_5,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+claude_opus_5,hex_pathfinding:hex_pathfinding_2667_q3,hex_pathfinding,hex_pathfinding_2667,hex_pathfinding_2667_q3,expected exactly one number
+claude_opus_5,hex_pathfinding:hex_pathfinding_2760_q3,hex_pathfinding,hex_pathfinding_2760,hex_pathfinding_2760_q3,expected exactly one number
+claude_opus_5,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+claude_opus_5,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+claude_opus_5,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+grok_4_6,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+grok_4_6,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+grok_4_6,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+grok_4_6,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+grok_4_6,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+grok_4_6,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+grok_4_6,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+grok_4_6,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+grok_4_6,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+grok_4_6,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable
+claude_sonnet_5,clock_reading:clock_reading_2954_q4,clock_reading,clock_reading_2954,clock_reading_2954_q4,expected exactly one number
+claude_sonnet_5,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+claude_sonnet_5,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+claude_sonnet_5,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+claude_sonnet_5,occluded_pattern:occluded_pattern_2232_q2,occluded_pattern,occluded_pattern_2232,occluded_pattern_2232_q2,expected exactly one number
+claude_sonnet_5,orthographic:orthographic_0807_q2,orthographic,orthographic_0807,orthographic_0807_q2,expected exactly one number
+claude_sonnet_5,orthographic:orthographic_2015_q2,orthographic,orthographic_2015,orthographic_2015_q2,expected exactly one number
+claude_sonnet_5,orthographic:orthographic_2391_q2,orthographic,orthographic_2391,orthographic_2391_q2,expected exactly one number
+claude_sonnet_5,orthographic:orthographic_2426_q2,orthographic,orthographic_2426,orthographic_2426_q2,expected exactly one number
+claude_sonnet_5,orthographic:orthographic_2713_q2,orthographic,orthographic_2713,orthographic_2713_q2,expected exactly one number
+claude_sonnet_5,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+claude_sonnet_5,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+claude_sonnet_5,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable
+muse_glimmer_30b,angle_estimation:angle_estimation_0863_q2,angle_estimation,angle_estimation_0863,angle_estimation_0863_q2,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_0678_q1,clock_reading,clock_reading_0678,clock_reading_0678_q1,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_0678_q5,clock_reading,clock_reading_0678,clock_reading_0678_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1276_q5,clock_reading,clock_reading_1276,clock_reading_1276_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1323_q4,clock_reading,clock_reading_1323,clock_reading_1323_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1323_q5,clock_reading,clock_reading_1323,clock_reading_1323_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1615_q5,clock_reading,clock_reading_1615,clock_reading_1615_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1639_q4,clock_reading,clock_reading_1639,clock_reading_1639_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1639_q5,clock_reading,clock_reading_1639,clock_reading_1639_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1709_q4,clock_reading,clock_reading_1709,clock_reading_1709_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1709_q5,clock_reading,clock_reading_1709,clock_reading_1709_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1880_q5,clock_reading,clock_reading_1880,clock_reading_1880_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1945_q1,clock_reading,clock_reading_1945,clock_reading_1945_q1,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_1945_q5,clock_reading,clock_reading_1945,clock_reading_1945_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2305_q4,clock_reading,clock_reading_2305,clock_reading_2305_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2346_q1,clock_reading,clock_reading_2346,clock_reading_2346_q1,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2346_q5,clock_reading,clock_reading_2346,clock_reading_2346_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2462_q4,clock_reading,clock_reading_2462,clock_reading_2462_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2626_q1,clock_reading,clock_reading_2626,clock_reading_2626_q1,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2626_q4,clock_reading,clock_reading_2626,clock_reading_2626_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2626_q5,clock_reading,clock_reading_2626,clock_reading_2626_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2636_q1,clock_reading,clock_reading_2636,clock_reading_2636_q1,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2636_q5,clock_reading,clock_reading_2636,clock_reading_2636_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2639_q4,clock_reading,clock_reading_2639,clock_reading_2639_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2639_q5,clock_reading,clock_reading_2639,clock_reading_2639_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2830_q4,clock_reading,clock_reading_2830,clock_reading_2830_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2830_q5,clock_reading,clock_reading_2830,clock_reading_2830_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2831_q5,clock_reading,clock_reading_2831,clock_reading_2831_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2889_q1,clock_reading,clock_reading_2889,clock_reading_2889_q1,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2889_q5,clock_reading,clock_reading_2889,clock_reading_2889_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2954_q4,clock_reading,clock_reading_2954,clock_reading_2954_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2954_q5,clock_reading,clock_reading_2954,clock_reading_2954_q5,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2992_q4,clock_reading,clock_reading_2992,clock_reading_2992_q4,expected exactly one number
+muse_glimmer_30b,clock_reading:clock_reading_2992_q5,clock_reading,clock_reading_2992,clock_reading_2992_q5,expected exactly one number
+muse_glimmer_30b,combination:combination_1119_q1,combination,combination_1119,combination_1119_q1,expected exactly one number
+muse_glimmer_30b,combination:combination_1347_q1,combination,combination_1347,combination_1347_q1,expected exactly one number
+muse_glimmer_30b,combination:combination_1919_q1,combination,combination_1919,combination_1919_q1,expected exactly one number
+muse_glimmer_30b,combination3d:combination3d_2038_q1,combination3d,combination3d_2038,combination3d_2038_q1,expected exactly one number
+muse_glimmer_30b,coordinate_geometry:coordinate_geometry_0021_q2,coordinate_geometry,coordinate_geometry_0021,coordinate_geometry_0021_q2,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_0257_q3,cube_net,cube_net_0257,cube_net_0257_q3,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_0961_q3,cube_net,cube_net_0961,cube_net_0961_q3,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_1020_q3,cube_net,cube_net_1020,cube_net_1020_q3,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_1134_q3,cube_net,cube_net_1134,cube_net_1134_q3,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_2248_q3,cube_net,cube_net_2248,cube_net_2248_q3,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_2376_q3,cube_net,cube_net_2376,cube_net_2376_q3,expected exactly one number
+muse_glimmer_30b,cube_net:cube_net_2812_q3,cube_net,cube_net_2812,cube_net_2812_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0174_q1,cube_structure,cube_structure_0174,cube_structure_0174_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0174_q2,cube_structure,cube_structure_0174,cube_structure_0174_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0174_q4,cube_structure,cube_structure_0174,cube_structure_0174_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0174_q5,cube_structure,cube_structure_0174,cube_structure_0174_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0207_q1,cube_structure,cube_structure_0207,cube_structure_0207_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0207_q4,cube_structure,cube_structure_0207,cube_structure_0207_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0207_q5,cube_structure,cube_structure_0207,cube_structure_0207_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0711_q1,cube_structure,cube_structure_0711,cube_structure_0711_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0711_q2,cube_structure,cube_structure_0711,cube_structure_0711_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0711_q3,cube_structure,cube_structure_0711,cube_structure_0711_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0711_q4,cube_structure,cube_structure_0711,cube_structure_0711_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0711_q5,cube_structure,cube_structure_0711,cube_structure_0711_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0867_q1,cube_structure,cube_structure_0867,cube_structure_0867_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0867_q2,cube_structure,cube_structure_0867,cube_structure_0867_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0867_q3,cube_structure,cube_structure_0867,cube_structure_0867_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0867_q4,cube_structure,cube_structure_0867,cube_structure_0867_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0867_q5,cube_structure,cube_structure_0867,cube_structure_0867_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0898_q1,cube_structure,cube_structure_0898,cube_structure_0898_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0898_q2,cube_structure,cube_structure_0898,cube_structure_0898_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0898_q4,cube_structure,cube_structure_0898,cube_structure_0898_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_0898_q5,cube_structure,cube_structure_0898,cube_structure_0898_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1045_q4,cube_structure,cube_structure_1045,cube_structure_1045_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1045_q5,cube_structure,cube_structure_1045,cube_structure_1045_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1340_q2,cube_structure,cube_structure_1340,cube_structure_1340_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1340_q5,cube_structure,cube_structure_1340,cube_structure_1340_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1475_q2,cube_structure,cube_structure_1475,cube_structure_1475_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1475_q4,cube_structure,cube_structure_1475,cube_structure_1475_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1569_q1,cube_structure,cube_structure_1569,cube_structure_1569_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1569_q3,cube_structure,cube_structure_1569,cube_structure_1569_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1569_q5,cube_structure,cube_structure_1569,cube_structure_1569_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1696_q1,cube_structure,cube_structure_1696,cube_structure_1696_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1696_q2,cube_structure,cube_structure_1696,cube_structure_1696_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1696_q4,cube_structure,cube_structure_1696,cube_structure_1696_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1696_q5,cube_structure,cube_structure_1696,cube_structure_1696_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1773_q1,cube_structure,cube_structure_1773,cube_structure_1773_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1773_q4,cube_structure,cube_structure_1773,cube_structure_1773_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1773_q5,cube_structure,cube_structure_1773,cube_structure_1773_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1811_q1,cube_structure,cube_structure_1811,cube_structure_1811_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_1811_q4,cube_structure,cube_structure_1811,cube_structure_1811_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2093_q1,cube_structure,cube_structure_2093,cube_structure_2093_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2093_q5,cube_structure,cube_structure_2093,cube_structure_2093_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2192_q2,cube_structure,cube_structure_2192,cube_structure_2192_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2192_q3,cube_structure,cube_structure_2192,cube_structure_2192_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2192_q5,cube_structure,cube_structure_2192,cube_structure_2192_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2260_q1,cube_structure,cube_structure_2260,cube_structure_2260_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2260_q2,cube_structure,cube_structure_2260,cube_structure_2260_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2260_q3,cube_structure,cube_structure_2260,cube_structure_2260_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2260_q4,cube_structure,cube_structure_2260,cube_structure_2260_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2260_q5,cube_structure,cube_structure_2260,cube_structure_2260_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2322_q2,cube_structure,cube_structure_2322,cube_structure_2322_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2322_q3,cube_structure,cube_structure_2322,cube_structure_2322_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2561_q1,cube_structure,cube_structure_2561,cube_structure_2561_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2561_q2,cube_structure,cube_structure_2561,cube_structure_2561_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2561_q4,cube_structure,cube_structure_2561,cube_structure_2561_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2561_q5,cube_structure,cube_structure_2561,cube_structure_2561_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2623_q2,cube_structure,cube_structure_2623,cube_structure_2623_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2623_q4,cube_structure,cube_structure_2623,cube_structure_2623_q4,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2623_q5,cube_structure,cube_structure_2623,cube_structure_2623_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2730_q3,cube_structure,cube_structure_2730,cube_structure_2730_q3,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2730_q5,cube_structure,cube_structure_2730,cube_structure_2730_q5,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2749_q1,cube_structure,cube_structure_2749,cube_structure_2749_q1,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2749_q2,cube_structure,cube_structure_2749,cube_structure_2749_q2,expected exactly one number
+muse_glimmer_30b,cube_structure:cube_structure_2749_q4,cube_structure,cube_structure_2749,cube_structure_2749_q4,expected exactly one number
+muse_glimmer_30b,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1148_q5,depth_height,depth_height_1148,depth_height_1148_q5,expected exactly one number
+muse_glimmer_30b,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+muse_glimmer_30b,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+muse_glimmer_30b,embedded_figures:embedded_figure_0750_q1,embedded_figures,embedded_figure_0750,embedded_figure_0750_q1,expected exactly one number
+muse_glimmer_30b,embedded_figures:embedded_figure_0750_q4,embedded_figures,embedded_figure_0750,embedded_figure_0750_q4,expected exactly one number
+muse_glimmer_30b,embedded_figures:embedded_figure_1323_q1,embedded_figures,embedded_figure_1323,embedded_figure_1323_q1,expected exactly one number
+muse_glimmer_30b,embedded_figures:embedded_figure_2021_q1,embedded_figures,embedded_figure_2021,embedded_figure_2021_q1,expected exactly one number
+muse_glimmer_30b,embedded_figures:embedded_figure_2820_q1,embedded_figures,embedded_figure_2820,embedded_figure_2820_q1,expected exactly one number
+muse_glimmer_30b,embedded_figures:embedded_figure_2933_q1,embedded_figures,embedded_figure_2933,embedded_figure_2933_q1,expected exactly one number
+muse_glimmer_30b,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,empty answer body
+muse_glimmer_30b,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+muse_glimmer_30b,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+muse_glimmer_30b,fold_punch:fold_punch_0214_q2,fold_punch,fold_punch_0214,fold_punch_0214_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0214_q5,fold_punch,fold_punch_0214,fold_punch_0214_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0276_q2,fold_punch,fold_punch_0276,fold_punch_0276_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0371_q2,fold_punch,fold_punch_0371,fold_punch_0371_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0371_q5,fold_punch,fold_punch_0371,fold_punch_0371_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0723_q2,fold_punch,fold_punch_0723,fold_punch_0723_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0757_q2,fold_punch,fold_punch_0757,fold_punch_0757_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0757_q5,fold_punch,fold_punch_0757,fold_punch_0757_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0766_q2,fold_punch,fold_punch_0766,fold_punch_0766_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0766_q5,fold_punch,fold_punch_0766,fold_punch_0766_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0844_q2,fold_punch,fold_punch_0844,fold_punch_0844_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0844_q5,fold_punch,fold_punch_0844,fold_punch_0844_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0961_q2,fold_punch,fold_punch_0961,fold_punch_0961_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0966_q2,fold_punch,fold_punch_0966,fold_punch_0966_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0970_q2,fold_punch,fold_punch_0970,fold_punch_0970_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_0970_q5,fold_punch,fold_punch_0970,fold_punch_0970_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1019_q2,fold_punch,fold_punch_1019,fold_punch_1019_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1019_q5,fold_punch,fold_punch_1019,fold_punch_1019_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1132_q2,fold_punch,fold_punch_1132,fold_punch_1132_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1132_q5,fold_punch,fold_punch_1132,fold_punch_1132_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1318_q2,fold_punch,fold_punch_1318,fold_punch_1318_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1318_q5,fold_punch,fold_punch_1318,fold_punch_1318_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1871_q2,fold_punch,fold_punch_1871,fold_punch_1871_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1871_q5,fold_punch,fold_punch_1871,fold_punch_1871_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1921_q2,fold_punch,fold_punch_1921,fold_punch_1921_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1921_q5,fold_punch,fold_punch_1921,fold_punch_1921_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1966_q2,fold_punch,fold_punch_1966,fold_punch_1966_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_1966_q5,fold_punch,fold_punch_1966,fold_punch_1966_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2060_q2,fold_punch,fold_punch_2060,fold_punch_2060_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2060_q5,fold_punch,fold_punch_2060,fold_punch_2060_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2465_q2,fold_punch,fold_punch_2465,fold_punch_2465_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2522_q2,fold_punch,fold_punch_2522,fold_punch_2522_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2522_q5,fold_punch,fold_punch_2522,fold_punch_2522_q5,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2656_q2,fold_punch,fold_punch_2656,fold_punch_2656_q2,expected exactly one number
+muse_glimmer_30b,fold_punch:fold_punch_2656_q5,fold_punch,fold_punch_2656,fold_punch_2656_q5,expected exactly one number
+muse_glimmer_30b,gear_train:gear_train_0081_q4,gear_train,gear_train_0081,gear_train_0081_q4,expected exactly one number
+muse_glimmer_30b,gear_train:gear_train_1489_q4,gear_train,gear_train_1489,gear_train_1489_q4,expected exactly one number
+muse_glimmer_30b,gear_train:gear_train_1957_q4,gear_train,gear_train_1957,gear_train_1957_q4,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_0487_q3,hex_pathfinding,hex_pathfinding_0487,hex_pathfinding_0487_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_0511_q3,hex_pathfinding,hex_pathfinding_0511,hex_pathfinding_0511_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_1051_q3,hex_pathfinding,hex_pathfinding_1051,hex_pathfinding_1051_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_1280_q1,hex_pathfinding,hex_pathfinding_1280,hex_pathfinding_1280_q1,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_1280_q3,hex_pathfinding,hex_pathfinding_1280,hex_pathfinding_1280_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_1586_q3,hex_pathfinding,hex_pathfinding_1586,hex_pathfinding_1586_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_1661_q1,hex_pathfinding,hex_pathfinding_1661,hex_pathfinding_1661_q1,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_1884_q3,hex_pathfinding,hex_pathfinding_1884,hex_pathfinding_1884_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2020_q1,hex_pathfinding,hex_pathfinding_2020,hex_pathfinding_2020_q1,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2020_q3,hex_pathfinding,hex_pathfinding_2020,hex_pathfinding_2020_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2132_q1,hex_pathfinding,hex_pathfinding_2132,hex_pathfinding_2132_q1,empty answer body
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2516_q1,hex_pathfinding,hex_pathfinding_2516,hex_pathfinding_2516_q1,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2516_q3,hex_pathfinding,hex_pathfinding_2516,hex_pathfinding_2516_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2592_q1,hex_pathfinding,hex_pathfinding_2592,hex_pathfinding_2592_q1,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2623_q3,hex_pathfinding,hex_pathfinding_2623,hex_pathfinding_2623_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2667_q3,hex_pathfinding,hex_pathfinding_2667,hex_pathfinding_2667_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2737_q3,hex_pathfinding,hex_pathfinding_2737,hex_pathfinding_2737_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2806_q3,hex_pathfinding,hex_pathfinding_2806,hex_pathfinding_2806_q3,expected exactly one number
+muse_glimmer_30b,hex_pathfinding:hex_pathfinding_2929_q3,hex_pathfinding,hex_pathfinding_2929,hex_pathfinding_2929_q3,expected exactly one number
+muse_glimmer_30b,impossible_object:impossible_object_0522_q1,impossible_object,impossible_object_0522,impossible_object_0522_q1,expected exactly one number
+muse_glimmer_30b,impossible_object:impossible_object_1881_q4,impossible_object,impossible_object_1881,impossible_object_1881_q4,expected exactly one number
+muse_glimmer_30b,impossible_object:impossible_object_2135_q4,impossible_object,impossible_object_2135,impossible_object_2135_q4,expected exactly one number
+muse_glimmer_30b,impossible_object:impossible_object_2547_q1,impossible_object,impossible_object_2547,impossible_object_2547_q1,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_0071_q3,laser_mirror,laser_mirror_0071,laser_mirror_0071_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_0438_q3,laser_mirror,laser_mirror_0438,laser_mirror_0438_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_0842_q3,laser_mirror,laser_mirror_0842,laser_mirror_0842_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_0975_q3,laser_mirror,laser_mirror_0975,laser_mirror_0975_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_1003_q3,laser_mirror,laser_mirror_1003,laser_mirror_1003_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_1215_q3,laser_mirror,laser_mirror_1215,laser_mirror_1215_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_1700_q3,laser_mirror,laser_mirror_1700,laser_mirror_1700_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_1945_q3,laser_mirror,laser_mirror_1945,laser_mirror_1945_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_1959_q3,laser_mirror,laser_mirror_1959,laser_mirror_1959_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2006_q3,laser_mirror,laser_mirror_2006,laser_mirror_2006_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2042_q3,laser_mirror,laser_mirror_2042,laser_mirror_2042_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2158_q3,laser_mirror,laser_mirror_2158,laser_mirror_2158_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2216_q3,laser_mirror,laser_mirror_2216,laser_mirror_2216_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2403_q3,laser_mirror,laser_mirror_2403,laser_mirror_2403_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2440_q3,laser_mirror,laser_mirror_2440,laser_mirror_2440_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2509_q3,laser_mirror,laser_mirror_2509,laser_mirror_2509_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2712_q3,laser_mirror,laser_mirror_2712,laser_mirror_2712_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2759_q3,laser_mirror,laser_mirror_2759,laser_mirror_2759_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2800_q3,laser_mirror,laser_mirror_2800,laser_mirror_2800_q3,expected exactly one number
+muse_glimmer_30b,laser_mirror:laser_mirror_2904_q3,laser_mirror,laser_mirror_2904,laser_mirror_2904_q3,expected exactly one number
+muse_glimmer_30b,line_intersection:line_intersect_1651_q5,line_intersection,line_intersect_1651,line_intersect_1651_q5,expected exactly one number
+muse_glimmer_30b,line_intersection:line_intersect_1951_q5,line_intersection,line_intersect_1951,line_intersect_1951_q5,expected exactly one number
+muse_glimmer_30b,nested_hexagons:nested_hexagons_2899_q3,nested_hexagons,nested_hexagons_2899,nested_hexagons_2899_q3,empty answer body
+muse_glimmer_30b,nested_squares:nested_squares_2958_q4,nested_squares,nested_squares_2958,nested_squares_2958_q4,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0251_q5,occluded_pattern,occluded_pattern_0251,occluded_pattern_0251_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0291_q2,occluded_pattern,occluded_pattern_0291,occluded_pattern_0291_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0291_q5,occluded_pattern,occluded_pattern_0291,occluded_pattern_0291_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0476_q5,occluded_pattern,occluded_pattern_0476,occluded_pattern_0476_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0946_q1,occluded_pattern,occluded_pattern_0946,occluded_pattern_0946_q1,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0946_q2,occluded_pattern,occluded_pattern_0946,occluded_pattern_0946_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_0946_q5,occluded_pattern,occluded_pattern_0946,occluded_pattern_0946_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1151_q2,occluded_pattern,occluded_pattern_1151,occluded_pattern_1151_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1194_q2,occluded_pattern,occluded_pattern_1194,occluded_pattern_1194_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1194_q5,occluded_pattern,occluded_pattern_1194,occluded_pattern_1194_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1486_q2,occluded_pattern,occluded_pattern_1486,occluded_pattern_1486_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1486_q5,occluded_pattern,occluded_pattern_1486,occluded_pattern_1486_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1895_q5,occluded_pattern,occluded_pattern_1895,occluded_pattern_1895_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_1984_q5,occluded_pattern,occluded_pattern_1984,occluded_pattern_1984_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2232_q2,occluded_pattern,occluded_pattern_2232,occluded_pattern_2232_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2232_q5,occluded_pattern,occluded_pattern_2232,occluded_pattern_2232_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2281_q5,occluded_pattern,occluded_pattern_2281,occluded_pattern_2281_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2285_q2,occluded_pattern,occluded_pattern_2285,occluded_pattern_2285_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2373_q2,occluded_pattern,occluded_pattern_2373,occluded_pattern_2373_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2373_q5,occluded_pattern,occluded_pattern_2373,occluded_pattern_2373_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2435_q2,occluded_pattern,occluded_pattern_2435,occluded_pattern_2435_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2435_q5,occluded_pattern,occluded_pattern_2435,occluded_pattern_2435_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2531_q2,occluded_pattern,occluded_pattern_2531,occluded_pattern_2531_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2622_q2,occluded_pattern,occluded_pattern_2622,occluded_pattern_2622_q2,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2622_q5,occluded_pattern,occluded_pattern_2622,occluded_pattern_2622_q5,expected exactly one number
+muse_glimmer_30b,occluded_pattern:occluded_pattern_2807_q2,occluded_pattern,occluded_pattern_2807,occluded_pattern_2807_q2,expected exactly one number
+muse_glimmer_30b,optical_illusion:optical_illusion_0380_q4,optical_illusion,optical_illusion_0380,optical_illusion_0380_q4,expected exactly one number
+muse_glimmer_30b,optical_illusion:optical_illusion_1088_q4,optical_illusion,optical_illusion_1088,optical_illusion_1088_q4,expected exactly one number
+muse_glimmer_30b,optical_illusion:optical_illusion_2821_q4,optical_illusion,optical_illusion_2821,optical_illusion_2821_q4,expected exactly one number
+muse_glimmer_30b,optical_illusion:optical_illusion_2931_q4,optical_illusion,optical_illusion_2931,optical_illusion_2931_q4,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_0130_q2,orthographic,orthographic_0130,orthographic_0130_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_0316_q2,orthographic,orthographic_0316,orthographic_0316_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_0492_q2,orthographic,orthographic_0492,orthographic_0492_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_0807_q2,orthographic,orthographic_0807,orthographic_0807_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_0824_q2,orthographic,orthographic_0824,orthographic_0824_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_1067_q2,orthographic,orthographic_1067,orthographic_1067_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_1318_q2,orthographic,orthographic_1318,orthographic_1318_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_1590_q2,orthographic,orthographic_1590,orthographic_1590_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_1664_q2,orthographic,orthographic_1664,orthographic_1664_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_1963_q2,orthographic,orthographic_1963,orthographic_1963_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2015_q2,orthographic,orthographic_2015,orthographic_2015_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2147_q2,orthographic,orthographic_2147,orthographic_2147_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2391_q2,orthographic,orthographic_2391,orthographic_2391_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2426_q2,orthographic,orthographic_2426,orthographic_2426_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2459_q2,orthographic,orthographic_2459,orthographic_2459_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2696_q2,orthographic,orthographic_2696,orthographic_2696_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2713_q2,orthographic,orthographic_2713,orthographic_2713_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2783_q2,orthographic,orthographic_2783,orthographic_2783_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2861_q2,orthographic,orthographic_2861,orthographic_2861_q2,expected exactly one number
+muse_glimmer_30b,orthographic:orthographic_2867_q2,orthographic,orthographic_2867,orthographic_2867_q2,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_1694_q2,overlap_circles,overlap_circles_1694,overlap_circles_1694_q2,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2042_q2,overlap_circles,overlap_circles_2042,overlap_circles_2042_q2,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2042_q4,overlap_circles,overlap_circles_2042,overlap_circles_2042_q4,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2042_q5,overlap_circles,overlap_circles_2042,overlap_circles_2042_q5,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2613_q4,overlap_circles,overlap_circles_2613,overlap_circles_2613_q4,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2613_q5,overlap_circles,overlap_circles_2613,overlap_circles_2613_q5,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2911_q4,overlap_circles,overlap_circles_2911,overlap_circles_2911_q4,expected exactly one number
+muse_glimmer_30b,overlap_circles:overlap_circles_2911_q5,overlap_circles,overlap_circles_2911,overlap_circles_2911_q5,expected exactly one number
+muse_glimmer_30b,polyhedron:polyhedron_0304_q1,polyhedron,polyhedron_0304,polyhedron_0304_q1,expected exactly one number
+muse_glimmer_30b,polyhedron:polyhedron_0887_q1,polyhedron,polyhedron_0887,polyhedron_0887_q1,expected exactly one number
+muse_glimmer_30b,polyhedron:polyhedron_0887_q3,polyhedron,polyhedron_0887,polyhedron_0887_q3,expected exactly one number
+muse_glimmer_30b,polyhedron:polyhedron_0996_q3,polyhedron,polyhedron_0996,polyhedron_0996_q3,expected exactly one number
+muse_glimmer_30b,polyhedron:polyhedron_2403_q1,polyhedron,polyhedron_2403,polyhedron_2403_q1,expected exactly one number
+muse_glimmer_30b,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0243_q3,projectile_motion,projectile_motion_0243,projectile_motion_0243_q3,expected exactly one number
+muse_glimmer_30b,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0534_q3,projectile_motion,projectile_motion_0534,projectile_motion_0534_q3,expected exactly one number
+muse_glimmer_30b,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0866_q3,projectile_motion,projectile_motion_0866,projectile_motion_0866_q3,expected exactly one number
+muse_glimmer_30b,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0915_q3,projectile_motion,projectile_motion_0915,projectile_motion_0915_q3,expected exactly one number
+muse_glimmer_30b,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+muse_glimmer_30b,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+muse_glimmer_30b,rotation_matching:rotation_match_0475_q3,rotation_matching,rotation_match_0475,rotation_match_0475_q3,expected exactly one number
+muse_glimmer_30b,rotation_matching:rotation_match_1014_q3,rotation_matching,rotation_match_1014,rotation_match_1014_q3,expected exactly one number
+muse_glimmer_30b,rotation_matching:rotation_match_1244_q3,rotation_matching,rotation_match_1244,rotation_match_1244_q3,expected exactly one number
+muse_glimmer_30b,rotation_matching:rotation_match_1991_q3,rotation_matching,rotation_match_1991,rotation_match_1991_q3,expected exactly one number
+muse_glimmer_30b,rotation_matching:rotation_match_2457_q3,rotation_matching,rotation_match_2457,rotation_match_2457_q3,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_0006_q5,route,route_puzzle_0006,route_puzzle_0006_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0051_q2,route,route_puzzle_0051,route_puzzle_0051_q2,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0051_q5,route,route_puzzle_0051,route_puzzle_0051_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_0161_q5,route,route_puzzle_0161,route_puzzle_0161_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0218_q1,route,route_puzzle_0218,route_puzzle_0218_q1,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0386_q5,route,route_puzzle_0386,route_puzzle_0386_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_1125_q5,route,route_puzzle_1125,route_puzzle_1125_q5,empty answer body
+muse_glimmer_30b,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_1821_q5,route,route_puzzle_1821,route_puzzle_1821_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_1839_q5,route,route_puzzle_1839,route_puzzle_1839_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_1915_q2,route,route_puzzle_1915,route_puzzle_1915_q2,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_1915_q3,route,route_puzzle_1915,route_puzzle_1915_q3,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_1915_q5,route,route_puzzle_1915,route_puzzle_1915_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_2201_q2,route,route_puzzle_2201,route_puzzle_2201_q2,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_2201_q3,route,route_puzzle_2201,route_puzzle_2201_q3,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+muse_glimmer_30b,route:route_puzzle_2201_q5,route,route_puzzle_2201,route_puzzle_2201_q5,expected exactly one number
+muse_glimmer_30b,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable
+muse_glimmer_30b,rpm:rpm_1350_q5,rpm,rpm_1350,rpm_1350_q5,expected exactly one number
+muse_glimmer_30b,rpm:rpm_1517_q2,rpm,rpm_1517,rpm_1517_q2,expected exactly one number
+muse_glimmer_30b,rpm:rpm_1901_q5,rpm,rpm_1901,rpm_1901_q5,expected exactly one number
+muse_glimmer_30b,rpm:rpm_2066_q2,rpm,rpm_2066,rpm_2066_q2,expected exactly one number
+muse_glimmer_30b,rpm:rpm_2066_q4,rpm,rpm_2066,rpm_2066_q4,expected exactly one number
+muse_glimmer_30b,rpm:rpm_2066_q5,rpm,rpm_2066,rpm_2066_q5,expected exactly one number
+muse_glimmer_30b,rpm:rpm_2936_q2,rpm,rpm_2936,rpm_2936_q2,expected exactly one number
+muse_glimmer_30b,rpm:rpm_2941_q2,rpm,rpm_2941,rpm_2941_q2,expected exactly one number
+muse_glimmer_30b,rpm:rpm_2941_q5,rpm,rpm_2941,rpm_2941_q5,expected exactly one number
+muse_glimmer_30b,shadow_inference:shadow_inference_0254_q4,shadow_inference,shadow_inference_0254,shadow_inference_0254_q4,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_0170_q3,surface_topology,surface_topology_0170,surface_topology_0170_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_0170_q5,surface_topology,surface_topology_0170,surface_topology_0170_q5,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_0702_q3,surface_topology,surface_topology_0702,surface_topology_0702_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_0702_q5,surface_topology,surface_topology_0702,surface_topology_0702_q5,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_1778_q3,surface_topology,surface_topology_1778,surface_topology_1778_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_1778_q5,surface_topology,surface_topology_1778,surface_topology_1778_q5,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2111_q3,surface_topology,surface_topology_2111,surface_topology_2111_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2142_q3,surface_topology,surface_topology_2142,surface_topology_2142_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2754_q3,surface_topology,surface_topology_2754,surface_topology_2754_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2754_q5,surface_topology,surface_topology_2754,surface_topology_2754_q5,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2942_q3,surface_topology,surface_topology_2942,surface_topology_2942_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2990_q3,surface_topology,surface_topology_2990,surface_topology_2990_q3,expected exactly one number
+muse_glimmer_30b,surface_topology:surface_topology_2990_q5,surface_topology,surface_topology_2990,surface_topology_2990_q5,expected exactly one number
+gpt_5_6_luna,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+gpt_5_6_luna,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+gpt_5_6_luna,embedded_figures:embedded_figure_0028_q2,embedded_figures,embedded_figure_0028,embedded_figure_0028_q2,expected exactly one number
+gpt_5_6_luna,embedded_figures:embedded_figure_0393_q2,embedded_figures,embedded_figure_0393,embedded_figure_0393_q2,expected exactly one number
+gpt_5_6_luna,embedded_figures:embedded_figure_1048_q2,embedded_figures,embedded_figure_1048,embedded_figure_1048_q2,expected exactly one number
+gpt_5_6_luna,embedded_figures:embedded_figure_1720_q2,embedded_figures,embedded_figure_1720,embedded_figure_1720_q2,expected exactly one number
+gpt_5_6_luna,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+gpt_5_6_luna,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+gpt_5_6_luna,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+gpt_5_6_luna,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable
+inking,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+inking,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+inking,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+inking,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+inking,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+inking,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+inking,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+inking,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+inking,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+inking,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+inking,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+inking,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+inking,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+inking,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+inking,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+inking,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+inking,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+inking,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+inking,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+inking,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+inking,embedded_figures:embedded_figure_0028_q2,embedded_figures,embedded_figure_0028,embedded_figure_0028_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_0317_q2,embedded_figures,embedded_figure_0317,embedded_figure_0317_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_0392_q2,embedded_figures,embedded_figure_0392,embedded_figure_0392_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_0393_q2,embedded_figures,embedded_figure_0393,embedded_figure_0393_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_0750_q2,embedded_figures,embedded_figure_0750,embedded_figure_0750_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1048_q2,embedded_figures,embedded_figure_1048,embedded_figure_1048_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1323_q2,embedded_figures,embedded_figure_1323,embedded_figure_1323_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1376_q2,embedded_figures,embedded_figure_1376,embedded_figure_1376_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1431_q2,embedded_figures,embedded_figure_1431,embedded_figure_1431_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1495_q2,embedded_figures,embedded_figure_1495,embedded_figure_1495_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1535_q2,embedded_figures,embedded_figure_1535,embedded_figure_1535_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1568_q2,embedded_figures,embedded_figure_1568,embedded_figure_1568_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1720_q2,embedded_figures,embedded_figure_1720,embedded_figure_1720_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_1804_q2,embedded_figures,embedded_figure_1804,embedded_figure_1804_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_2021_q2,embedded_figures,embedded_figure_2021,embedded_figure_2021_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_2820_q2,embedded_figures,embedded_figure_2820,embedded_figure_2820_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_2864_q2,embedded_figures,embedded_figure_2864,embedded_figure_2864_q2,expected exactly one number
+inking,embedded_figures:embedded_figure_2933_q2,embedded_figures,embedded_figure_2933,embedded_figure_2933_q2,expected exactly one number
+inking,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+inking,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+inking,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+inking,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+inking,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+inking,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+inking,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+inking,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+inking,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+inking,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+inking,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+inking,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+inking,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+inking,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+inking,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+inking,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+inking,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+inking,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+inking,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+inking,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+inking,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+inking,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+inking,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+inking,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+inking,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+inking,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+inking,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+inking,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+inking,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+inking,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+inking,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+inking,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+inking,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+inking,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+inking,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+inking,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+inking,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+inking,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+inking,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+inking,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+inking,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+inking,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+inking,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+inking,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+inking,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+inking,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+inking,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+inking,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+inking,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+inking,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+inking,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+inking,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+inking,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+inking,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+inking,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+inking,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+inking,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+inking,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable

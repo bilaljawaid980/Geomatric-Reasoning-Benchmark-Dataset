@@ -1,0 +1,9 @@
+{
+  "cells": 170,
+  "models": 10,
+  "test1_rows": 85000,
+  "strict_to_typed_changes": 3237,
+  "option_phrase_changes": 1256,
+  "raw_universal_hits": 1,
+  "unresolved_comparator_defects": 0
+}

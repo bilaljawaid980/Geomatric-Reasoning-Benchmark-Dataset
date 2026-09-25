@@ -29,3 +29,11 @@ Dataset/overlap_circles_dataset_3000/dataset_final.jsonl filter=lfs diff=lfs mer
 Dataset/physical_stability_dataset_3000/annotations.jsonl filter=lfs diff=lfs merge=lfs -text
 Dataset/rpm_dataset_3000/annotations.jsonl filter=lfs diff=lfs merge=lfs -text
 Dataset/surface_topology_dataset_3000/annotations.jsonl filter=lfs diff=lfs merge=lfs -text
+figures/GRIP_levels.png -filter -diff -merge
+figures/GRIP_test1_family_bars.png -filter -diff -merge
+figures/GRIP_test1_radar_full.png -filter -diff -merge
+figures/GRIP_test1_radar_half.png -filter -diff -merge
+figures/model_mean_accuracy_bar_chart.png -filter -diff -merge
+figures/samples/contact_sheet.png -filter -diff -merge
+figures/samples/square900/hex_pathfinding_2132.png -filter -diff -merge
+figures/samples/square900/nested_squares_1571.png -filter -diff -merge

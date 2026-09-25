@@ -1,0 +1,307 @@
+model,answer_format,rows
+claude_opus_5,'<increase|decrease|stay the same>; <direction changes|direction unchanged>',50
+claude_opus_5,'<stable|unstable>; <brief cumulative-center-of-mass reason>',50
+claude_opus_5,"'yes; exceeds threshold by N', 'no', or 'no danger zone marked'",50
+claude_opus_5,'yes; new value N' or 'no; new value N',50
+claude_opus_5,A or B,50
+claude_opus_5,HH:MM,50
+claude_opus_5,adjacent_or_opposite,50
+claude_opus_5,arrow_label,39
+claude_opus_5,arrow_label_and_missing_force,11
+claude_opus_5,attribute_name,11
+claude_opus_5,attribute_value,13
+claude_opus_5,beam label,50
+claude_opus_5,beam label or already constructible,50
+claude_opus_5,before or after,50
+claude_opus_5,choice,803
+claude_opus_5,choice_letter,12
+claude_opus_5,choice_number,50
+claude_opus_5,classification plus meters rounded to 1 decimal,8
+claude_opus_5,classification_phrase,39
+claude_opus_5,color,107
+claude_opus_5,coordinate,64
+claude_opus_5,direction_degrees,42
+claude_opus_5,"edge, position N",50
+claude_opus_5,"equal, A, or B",50
+claude_opus_5,hole or walkable,50
+claude_opus_5,"increase, decrease, or stay the same",42
+claude_opus_5,integer,415
+claude_opus_5,integer 1-12,50
+claude_opus_5,integer degrees,50
+claude_opus_5,integer degrees plus direction,50
+claude_opus_5,integer degrees using half-up rounding,100
+claude_opus_5,integer in curly brackets,50
+claude_opus_5,integer; orientability,50
+claude_opus_5,label,35
+claude_opus_5,label_pair,36
+claude_opus_5,"left, right, or directly above",50
+claude_opus_5,letter,459
+claude_opus_5,letter; endpoint distance and bearing difference,50
+claude_opus_5,letter_pair,35
+claude_opus_5,list,30
+claude_opus_5,location,25
+claude_opus_5,lower half or upper half,50
+claude_opus_5,meters rounded to 1 decimal; numeric tolerance 2%,50
+claude_opus_5,"north, south, or same latitude",50
+claude_opus_5,number,150
+claude_opus_5,number at the nearest rendered tick mark,50
+claude_opus_5,"number in curly brackets, 0-120, graded within ±8 degrees",50
+claude_opus_5,"number in curly brackets, 0-60, graded within ±5 degrees",50
+claude_opus_5,"number in curly brackets, 0-90, graded within ±6 degrees",50
+claude_opus_5,"number rounded to 1 decimal in curly brackets, graded within ±10% relative",150
+claude_opus_5,number rounded to 1 decimal place,50
+claude_opus_5,number_in_curly_brackets,137
+claude_opus_5,numeric,2546
+claude_opus_5,numeric_2dp,50
+claude_opus_5,numeric_pair,13
+claude_opus_5,one_word,78
+claude_opus_5,ordered_list,50
+claude_opus_5,same or opposite,50
+claude_opus_5,short_text,43
+claude_opus_5,single uppercase letter,100
+claude_opus_5,stable or 'tips between block X and <block Y|ground>',50
+claude_opus_5,"stay the same (N moves), increase to N moves, or no valid path exists",50
+claude_opus_5,text,30
+claude_opus_5,three-digit bearing in curly brackets,50
+claude_opus_5,two_attributes,16
+claude_opus_5,unique or multiple (count),50
+claude_opus_5,unique_or_not_unique,27
+claude_opus_5,view_name,48
+claude_opus_5,view_names,20
+claude_opus_5,yes or no,150
+claude_opus_5,yes/no; actual relation,50
+claude_opus_5,"yes/no; exits at edge, position N",50
+claude_opus_5,yes_no,458
+claude_opus_5,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",50
+claude_opus_5,"{""absolute_tolerance"":0.1,""type"":""numeric_tolerance""}",22
+claude_opus_5,"{""absolute_tolerance"":5,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",36
+claude_opus_5,"{""acceptance_set"":[""A"",""B"",""E""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""A"",""C"",""E""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""A"",""C""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""A"",""D""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""A"",""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""A"",""E""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""A""],""type"":""letter_any_of_list""}",2
+claude_opus_5,"{""acceptance_set"":[""B"",""C"",""E""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""B"",""C"",""F""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""B"",""C""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""B"",""D""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""B""],""type"":""letter_any_of_list""}",11
+claude_opus_5,"{""acceptance_set"":[""C"",""D"",""E""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""C"",""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""C"",""E""],""type"":""letter_any_of_list""}",3
+claude_opus_5,"{""acceptance_set"":[""C"",""F""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""C""],""type"":""letter_any_of_list""}",2
+claude_opus_5,"{""acceptance_set"":[""D"",""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""D"",""E""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""D""],""type"":""letter_any_of_list""}",5
+claude_opus_5,"{""acceptance_set"":[""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_opus_5,"{""acceptance_set"":[""E""],""type"":""letter_any_of_list""}",7
+claude_opus_5,"{""acceptance_set"":[""F""],""type"":""letter_any_of_list""}",4
+claude_opus_5,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",50
+claude_opus_5,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",50
+claude_opus_5,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",50
+claude_sonnet_5,'<increase|decrease|stay the same>; <direction changes|direction unchanged>',50
+claude_sonnet_5,'<stable|unstable>; <brief cumulative-center-of-mass reason>',50
+claude_sonnet_5,"'yes; exceeds threshold by N', 'no', or 'no danger zone marked'",50
+claude_sonnet_5,'yes; new value N' or 'no; new value N',50
+claude_sonnet_5,A or B,50
+claude_sonnet_5,HH:MM,50
+claude_sonnet_5,adjacent_or_opposite,50
+claude_sonnet_5,arrow_label,39
+claude_sonnet_5,arrow_label_and_missing_force,11
+claude_sonnet_5,attribute_name,11
+claude_sonnet_5,attribute_value,13
+claude_sonnet_5,beam label,50
+claude_sonnet_5,beam label or already constructible,50
+claude_sonnet_5,before or after,50
+claude_sonnet_5,choice,803
+claude_sonnet_5,choice_letter,12
+claude_sonnet_5,choice_number,50
+claude_sonnet_5,classification plus meters rounded to 1 decimal,8
+claude_sonnet_5,classification_phrase,39
+claude_sonnet_5,color,107
+claude_sonnet_5,coordinate,64
+claude_sonnet_5,direction_degrees,42
+claude_sonnet_5,"edge, position N",50
+claude_sonnet_5,"equal, A, or B",50
+claude_sonnet_5,hole or walkable,50
+claude_sonnet_5,"increase, decrease, or stay the same",42
+claude_sonnet_5,integer,415
+claude_sonnet_5,integer 1-12,50
+claude_sonnet_5,integer degrees,50
+claude_sonnet_5,integer degrees plus direction,50
+claude_sonnet_5,integer degrees using half-up rounding,100
+claude_sonnet_5,integer in curly brackets,50
+claude_sonnet_5,integer; orientability,50
+claude_sonnet_5,label,35
+claude_sonnet_5,label_pair,36
+claude_sonnet_5,"left, right, or directly above",50
+claude_sonnet_5,letter,459
+claude_sonnet_5,letter; endpoint distance and bearing difference,50
+claude_sonnet_5,letter_pair,35
+claude_sonnet_5,list,30
+claude_sonnet_5,location,25
+claude_sonnet_5,lower half or upper half,50
+claude_sonnet_5,meters rounded to 1 decimal; numeric tolerance 2%,50
+claude_sonnet_5,"north, south, or same latitude",50
+claude_sonnet_5,number,150
+claude_sonnet_5,number at the nearest rendered tick mark,50
+claude_sonnet_5,"number in curly brackets, 0-120, graded within ±8 degrees",50
+claude_sonnet_5,"number in curly brackets, 0-60, graded within ±5 degrees",50
+claude_sonnet_5,"number in curly brackets, 0-90, graded within ±6 degrees",50
+claude_sonnet_5,"number rounded to 1 decimal in curly brackets, graded within ±10% relative",150
+claude_sonnet_5,number rounded to 1 decimal place,50
+claude_sonnet_5,number_in_curly_brackets,137
+claude_sonnet_5,numeric,2546
+claude_sonnet_5,numeric_2dp,50
+claude_sonnet_5,numeric_pair,13
+claude_sonnet_5,one_word,78
+claude_sonnet_5,ordered_list,50
+claude_sonnet_5,same or opposite,50
+claude_sonnet_5,short_text,43
+claude_sonnet_5,single uppercase letter,100
+claude_sonnet_5,stable or 'tips between block X and <block Y|ground>',50
+claude_sonnet_5,"stay the same (N moves), increase to N moves, or no valid path exists",50
+claude_sonnet_5,text,30
+claude_sonnet_5,three-digit bearing in curly brackets,50
+claude_sonnet_5,two_attributes,16
+claude_sonnet_5,unique or multiple (count),50
+claude_sonnet_5,unique_or_not_unique,27
+claude_sonnet_5,view_name,48
+claude_sonnet_5,view_names,20
+claude_sonnet_5,yes or no,150
+claude_sonnet_5,yes/no; actual relation,50
+claude_sonnet_5,"yes/no; exits at edge, position N",50
+claude_sonnet_5,yes_no,458
+claude_sonnet_5,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",50
+claude_sonnet_5,"{""absolute_tolerance"":0.1,""type"":""numeric_tolerance""}",22
+claude_sonnet_5,"{""absolute_tolerance"":5,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",36
+claude_sonnet_5,"{""acceptance_set"":[""A"",""B"",""E""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""A"",""C"",""E""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""A"",""C""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""A"",""D""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""A"",""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""A"",""E""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""A""],""type"":""letter_any_of_list""}",2
+claude_sonnet_5,"{""acceptance_set"":[""B"",""C"",""E""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""B"",""C"",""F""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""B"",""C""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""B"",""D""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""B""],""type"":""letter_any_of_list""}",11
+claude_sonnet_5,"{""acceptance_set"":[""C"",""D"",""E""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""C"",""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""C"",""E""],""type"":""letter_any_of_list""}",3
+claude_sonnet_5,"{""acceptance_set"":[""C"",""F""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""C""],""type"":""letter_any_of_list""}",2
+claude_sonnet_5,"{""acceptance_set"":[""D"",""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""D"",""E""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""D""],""type"":""letter_any_of_list""}",5
+claude_sonnet_5,"{""acceptance_set"":[""E"",""F""],""type"":""letter_any_of_list""}",1
+claude_sonnet_5,"{""acceptance_set"":[""E""],""type"":""letter_any_of_list""}",7
+claude_sonnet_5,"{""acceptance_set"":[""F""],""type"":""letter_any_of_list""}",4
+claude_sonnet_5,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",50
+claude_sonnet_5,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",50
+claude_sonnet_5,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",50
+gemini_3_8_flash,'<increase|decrease|stay the same>; <direction changes|direction unchanged>',50
+gemini_3_8_flash,'<stable|unstable>; <brief cumulative-center-of-mass reason>',50
+gemini_3_8_flash,"'yes; exceeds threshold by N', 'no', or 'no danger zone marked'",50
+gemini_3_8_flash,'yes; new value N' or 'no; new value N',50
+gemini_3_8_flash,A or B,50
+gemini_3_8_flash,HH:MM,50
+gemini_3_8_flash,adjacent_or_opposite,50
+gemini_3_8_flash,arrow_label,39
+gemini_3_8_flash,arrow_label_and_missing_force,11
+gemini_3_8_flash,attribute_name,11
+gemini_3_8_flash,attribute_value,13
+gemini_3_8_flash,beam label,50
+gemini_3_8_flash,beam label or already constructible,50
+gemini_3_8_flash,before or after,50
+gemini_3_8_flash,choice,803
+gemini_3_8_flash,choice_letter,12
+gemini_3_8_flash,choice_number,50
+gemini_3_8_flash,classification plus meters rounded to 1 decimal,8
+gemini_3_8_flash,classification_phrase,39
+gemini_3_8_flash,color,107
+gemini_3_8_flash,coordinate,64
+gemini_3_8_flash,direction_degrees,42
+gemini_3_8_flash,"edge, position N",50
+gemini_3_8_flash,"equal, A, or B",50
+gemini_3_8_flash,hole or walkable,50
+gemini_3_8_flash,"increase, decrease, or stay the same",42
+gemini_3_8_flash,integer,415
+gemini_3_8_flash,integer 1-12,50
+gemini_3_8_flash,integer degrees,50
+gemini_3_8_flash,integer degrees plus direction,50
+gemini_3_8_flash,integer degrees using half-up rounding,100
+gemini_3_8_flash,integer in curly brackets,50
+gemini_3_8_flash,integer; orientability,50
+gemini_3_8_flash,label,35
+gemini_3_8_flash,label_pair,36
+gemini_3_8_flash,"left, right, or directly above",50
+gemini_3_8_flash,letter,459
+gemini_3_8_flash,letter; endpoint distance and bearing difference,50
+gemini_3_8_flash,letter_pair,35
+gemini_3_8_flash,list,30
+gemini_3_8_flash,location,25
+gemini_3_8_flash,lower half or upper half,50
+gemini_3_8_flash,meters rounded to 1 decimal; numeric tolerance 2%,50
+gemini_3_8_flash,"north, south, or same latitude",50
+gemini_3_8_flash,number,150
+gemini_3_8_flash,number at the nearest rendered tick mark,50
+gemini_3_8_flash,"number in curly brackets, 0-120, graded within ±8 degrees",50
+gemini_3_8_flash,"number in curly brackets, 0-60, graded within ±5 degrees",50
+gemini_3_8_flash,"number in curly brackets, 0-90, graded within ±6 degrees",50
+gemini_3_8_flash,"number rounded to 1 decimal in curly brackets, graded within ±10% relative",150
+gemini_3_8_flash,number rounded to 1 decimal place,50
+gemini_3_8_flash,number_in_curly_brackets,137
+gemini_3_8_flash,numeric,2546
+gemini_3_8_flash,numeric_2dp,50
+gemini_3_8_flash,numeric_pair,13
+gemini_3_8_flash,one_word,78
+gemini_3_8_flash,ordered_list,50
+gemini_3_8_flash,same or opposite,50
+gemini_3_8_flash,short_text,43
+gemini_3_8_flash,single uppercase letter,100
+gemini_3_8_flash,stable or 'tips between block X and <block Y|ground>',50
+gemini_3_8_flash,"stay the same (N moves), increase to N moves, or no valid path exists",50
+gemini_3_8_flash,text,30
+gemini_3_8_flash,three-digit bearing in curly brackets,50
+gemini_3_8_flash,two_attributes,16
+gemini_3_8_flash,unique or multiple (count),50
+gemini_3_8_flash,unique_or_not_unique,27
+gemini_3_8_flash,view_name,48
+gemini_3_8_flash,view_names,20
+gemini_3_8_flash,yes or no,150
+gemini_3_8_flash,yes/no; actual relation,50
+gemini_3_8_flash,"yes/no; exits at edge, position N",50
+gemini_3_8_flash,yes_no,458
+gemini_3_8_flash,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",50
+gemini_3_8_flash,"{""absolute_tolerance"":0.1,""type"":""numeric_tolerance""}",22
+gemini_3_8_flash,"{""absolute_tolerance"":5,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",36
+gemini_3_8_flash,"{""acceptance_set"":[""A"",""B"",""E""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""A"",""C"",""E""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""A"",""C""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""A"",""D""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""A"",""E"",""F""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""A"",""E""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""A""],""type"":""letter_any_of_list""}",2
+gemini_3_8_flash,"{""acceptance_set"":[""B"",""C"",""E""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""B"",""C"",""F""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""B"",""C""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""B"",""D""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""B""],""type"":""letter_any_of_list""}",11
+gemini_3_8_flash,"{""acceptance_set"":[""C"",""D"",""E""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""C"",""E"",""F""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""C"",""E""],""type"":""letter_any_of_list""}",3
+gemini_3_8_flash,"{""acceptance_set"":[""C"",""F""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""C""],""type"":""letter_any_of_list""}",2
+gemini_3_8_flash,"{""acceptance_set"":[""D"",""E"",""F""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""D"",""E""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""D""],""type"":""letter_any_of_list""}",5
+gemini_3_8_flash,"{""acceptance_set"":[""E"",""F""],""type"":""letter_any_of_list""}",1
+gemini_3_8_flash,"{""acceptance_set"":[""E""],""type"":""letter_any_of_list""}",7
+gemini_3_8_flash,"{""acceptance_set"":[""F""],""type"":""letter_any_of_list""}",4
+gemini_3_8_flash,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",50
+gemini_3_8_flash,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",50
+gemini_3_8_flash,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",50

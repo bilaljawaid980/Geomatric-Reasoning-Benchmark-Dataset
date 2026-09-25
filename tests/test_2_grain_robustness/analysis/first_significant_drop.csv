@@ -1,0 +1,8 @@
+model,first_significant_drop_sigma
+claude_opus_5,15.0
+claude_sonnet_5,15.0
+gemini_3_8_flash,
+gpt_5_6_luna,40.0
+grok_4_6,15.0
+inking,15.0
+muse_glimmer_30b,15.0

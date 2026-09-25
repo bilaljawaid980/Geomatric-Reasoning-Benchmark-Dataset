@@ -1,0 +1,1064 @@
+row_id,model,domain,stem,question_id,level,answer_format,response_raw,error,parse_error
+angle_estimation:angle_estimation_0021_q4,muse_glimmer_30b,angle_estimation,angle_estimation_0021,angle_estimation_0021_q4,4,numeric,None,,expected exactly one number
+angle_estimation:angle_estimation_0863_q2,muse_glimmer_30b,angle_estimation,angle_estimation_0863,angle_estimation_0863_q2,2,"{""absolute_tolerance"":5,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+clock_reading:clock_reading_0040_q5,muse_glimmer_30b,clock_reading,clock_reading_0040,clock_reading_0040_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0050_q5,muse_glimmer_30b,clock_reading,clock_reading_0050,clock_reading_0050_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0100_q5,muse_glimmer_30b,clock_reading,clock_reading_0100,clock_reading_0100_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0114_q5,muse_glimmer_30b,clock_reading,clock_reading_0114,clock_reading_0114_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0161_q4,muse_glimmer_30b,clock_reading,clock_reading_0161,clock_reading_0161_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0194_q5,muse_glimmer_30b,clock_reading,clock_reading_0194,clock_reading_0194_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0202_q4,muse_glimmer_30b,clock_reading,clock_reading_0202,clock_reading_0202_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0219_q1,muse_glimmer_30b,clock_reading,clock_reading_0219,clock_reading_0219_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_0280_q5,muse_glimmer_30b,clock_reading,clock_reading_0280,clock_reading_0280_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0290_q5,muse_glimmer_30b,clock_reading,clock_reading_0290,clock_reading_0290_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0376_q1,muse_glimmer_30b,clock_reading,clock_reading_0376,clock_reading_0376_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_0377_q4,muse_glimmer_30b,clock_reading,clock_reading_0377,clock_reading_0377_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0472_q4,muse_glimmer_30b,clock_reading,clock_reading_0472,clock_reading_0472_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0577_q4,muse_glimmer_30b,clock_reading,clock_reading_0577,clock_reading_0577_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0589_q4,muse_glimmer_30b,clock_reading,clock_reading_0589,clock_reading_0589_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0622_q4,muse_glimmer_30b,clock_reading,clock_reading_0622,clock_reading_0622_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0649_q4,muse_glimmer_30b,clock_reading,clock_reading_0649,clock_reading_0649_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0676_q4,muse_glimmer_30b,clock_reading,clock_reading_0676,clock_reading_0676_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0678_q1,muse_glimmer_30b,clock_reading,clock_reading_0678,clock_reading_0678_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_0678_q5,muse_glimmer_30b,clock_reading,clock_reading_0678,clock_reading_0678_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0707_q4,muse_glimmer_30b,clock_reading,clock_reading_0707,clock_reading_0707_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0764_q5,muse_glimmer_30b,clock_reading,clock_reading_0764,clock_reading_0764_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0791_q1,muse_glimmer_30b,clock_reading,clock_reading_0791,clock_reading_0791_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_0813_q4,muse_glimmer_30b,clock_reading,clock_reading_0813,clock_reading_0813_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0832_q5,muse_glimmer_30b,clock_reading,clock_reading_0832,clock_reading_0832_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0835_q1,muse_glimmer_30b,clock_reading,clock_reading_0835,clock_reading_0835_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_0864_q4,muse_glimmer_30b,clock_reading,clock_reading_0864,clock_reading_0864_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0933_q4,muse_glimmer_30b,clock_reading,clock_reading_0933,clock_reading_0933_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0970_q5,muse_glimmer_30b,clock_reading,clock_reading_0970,clock_reading_0970_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_0981_q5,muse_glimmer_30b,clock_reading,clock_reading_0981,clock_reading_0981_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1051_q5,muse_glimmer_30b,clock_reading,clock_reading_1051,clock_reading_1051_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1110_q1,muse_glimmer_30b,clock_reading,clock_reading_1110,clock_reading_1110_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_1198_q5,muse_glimmer_30b,clock_reading,clock_reading_1198,clock_reading_1198_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1247_q4,muse_glimmer_30b,clock_reading,clock_reading_1247,clock_reading_1247_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1276_q5,muse_glimmer_30b,clock_reading,clock_reading_1276,clock_reading_1276_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1323_q4,muse_glimmer_30b,clock_reading,clock_reading_1323,clock_reading_1323_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1323_q5,muse_glimmer_30b,clock_reading,clock_reading_1323,clock_reading_1323_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1325_q5,muse_glimmer_30b,clock_reading,clock_reading_1325,clock_reading_1325_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1381_q5,muse_glimmer_30b,clock_reading,clock_reading_1381,clock_reading_1381_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1398_q1,muse_glimmer_30b,clock_reading,clock_reading_1398,clock_reading_1398_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_1438_q4,muse_glimmer_30b,clock_reading,clock_reading_1438,clock_reading_1438_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1525_q4,muse_glimmer_30b,clock_reading,clock_reading_1525,clock_reading_1525_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1584_q1,muse_glimmer_30b,clock_reading,clock_reading_1584,clock_reading_1584_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_1615_q5,muse_glimmer_30b,clock_reading,clock_reading_1615,clock_reading_1615_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1639_q4,muse_glimmer_30b,clock_reading,clock_reading_1639,clock_reading_1639_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1639_q5,muse_glimmer_30b,clock_reading,clock_reading_1639,clock_reading_1639_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1647_q4,muse_glimmer_30b,clock_reading,clock_reading_1647,clock_reading_1647_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1674_q5,muse_glimmer_30b,clock_reading,clock_reading_1674,clock_reading_1674_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1709_q4,muse_glimmer_30b,clock_reading,clock_reading_1709,clock_reading_1709_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1709_q5,muse_glimmer_30b,clock_reading,clock_reading_1709,clock_reading_1709_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1710_q5,muse_glimmer_30b,clock_reading,clock_reading_1710,clock_reading_1710_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1794_q4,muse_glimmer_30b,clock_reading,clock_reading_1794,clock_reading_1794_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1842_q5,muse_glimmer_30b,clock_reading,clock_reading_1842,clock_reading_1842_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1880_q5,muse_glimmer_30b,clock_reading,clock_reading_1880,clock_reading_1880_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1906_q4,muse_glimmer_30b,clock_reading,clock_reading_1906,clock_reading_1906_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1928_q4,muse_glimmer_30b,clock_reading,clock_reading_1928,clock_reading_1928_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1930_q4,muse_glimmer_30b,clock_reading,clock_reading_1930,clock_reading_1930_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_1943_q1,muse_glimmer_30b,clock_reading,clock_reading_1943,clock_reading_1943_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_1945_q1,muse_glimmer_30b,clock_reading,clock_reading_1945,clock_reading_1945_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_1945_q5,muse_glimmer_30b,clock_reading,clock_reading_1945,clock_reading_1945_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2011_q4,muse_glimmer_30b,clock_reading,clock_reading_2011,clock_reading_2011_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2256_q5,muse_glimmer_30b,clock_reading,clock_reading_2256,clock_reading_2256_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2305_q4,muse_glimmer_30b,clock_reading,clock_reading_2305,clock_reading_2305_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2346_q1,muse_glimmer_30b,clock_reading,clock_reading_2346,clock_reading_2346_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2346_q5,muse_glimmer_30b,clock_reading,clock_reading_2346,clock_reading_2346_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2349_q5,muse_glimmer_30b,clock_reading,clock_reading_2349,clock_reading_2349_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2382_q5,muse_glimmer_30b,clock_reading,clock_reading_2382,clock_reading_2382_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2462_q4,muse_glimmer_30b,clock_reading,clock_reading_2462,clock_reading_2462_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2494_q5,muse_glimmer_30b,clock_reading,clock_reading_2494,clock_reading_2494_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2511_q1,muse_glimmer_30b,clock_reading,clock_reading_2511,clock_reading_2511_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2594_q5,muse_glimmer_30b,clock_reading,clock_reading_2594,clock_reading_2594_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2626_q1,muse_glimmer_30b,clock_reading,clock_reading_2626,clock_reading_2626_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2626_q4,muse_glimmer_30b,clock_reading,clock_reading_2626,clock_reading_2626_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2626_q5,muse_glimmer_30b,clock_reading,clock_reading_2626,clock_reading_2626_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2636_q1,muse_glimmer_30b,clock_reading,clock_reading_2636,clock_reading_2636_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2636_q5,muse_glimmer_30b,clock_reading,clock_reading_2636,clock_reading_2636_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2639_q4,muse_glimmer_30b,clock_reading,clock_reading_2639,clock_reading_2639_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2639_q5,muse_glimmer_30b,clock_reading,clock_reading_2639,clock_reading_2639_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2736_q5,muse_glimmer_30b,clock_reading,clock_reading_2736,clock_reading_2736_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2740_q4,muse_glimmer_30b,clock_reading,clock_reading_2740,clock_reading_2740_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2762_q1,muse_glimmer_30b,clock_reading,clock_reading_2762,clock_reading_2762_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2764_q4,muse_glimmer_30b,clock_reading,clock_reading_2764,clock_reading_2764_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2768_q5,muse_glimmer_30b,clock_reading,clock_reading_2768,clock_reading_2768_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2830_q4,muse_glimmer_30b,clock_reading,clock_reading_2830,clock_reading_2830_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2830_q5,muse_glimmer_30b,clock_reading,clock_reading_2830,clock_reading_2830_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2831_q5,muse_glimmer_30b,clock_reading,clock_reading_2831,clock_reading_2831_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2838_q4,muse_glimmer_30b,clock_reading,clock_reading_2838,clock_reading_2838_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2854_q1,muse_glimmer_30b,clock_reading,clock_reading_2854,clock_reading_2854_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2864_q5,muse_glimmer_30b,clock_reading,clock_reading_2864,clock_reading_2864_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2889_q1,muse_glimmer_30b,clock_reading,clock_reading_2889,clock_reading_2889_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2889_q5,muse_glimmer_30b,clock_reading,clock_reading_2889,clock_reading_2889_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2921_q1,muse_glimmer_30b,clock_reading,clock_reading_2921,clock_reading_2921_q1,1,integer 1-12,None,,expected exactly one number
+clock_reading:clock_reading_2945_q4,muse_glimmer_30b,clock_reading,clock_reading_2945,clock_reading_2945_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2954_q4,muse_glimmer_30b,clock_reading,clock_reading_2954,clock_reading_2954_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2954_q5,muse_glimmer_30b,clock_reading,clock_reading_2954,clock_reading_2954_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2992_q4,muse_glimmer_30b,clock_reading,clock_reading_2992,clock_reading_2992_q4,4,integer degrees using half-up rounding,None,,expected exactly one number
+clock_reading:clock_reading_2992_q5,muse_glimmer_30b,clock_reading,clock_reading_2992,clock_reading_2992_q5,5,integer degrees using half-up rounding,None,,expected exactly one number
+combination:combination_0974_q1,muse_glimmer_30b,combination,combination_0974,combination_0974_q1,1,numeric,None,,expected exactly one number
+combination:combination_1088_q1,muse_glimmer_30b,combination,combination_1088,combination_1088_q1,1,numeric,None,,expected exactly one number
+combination:combination_1119_q1,muse_glimmer_30b,combination,combination_1119,combination_1119_q1,1,numeric,None,,expected exactly one number
+combination:combination_1194_q1,muse_glimmer_30b,combination,combination_1194,combination_1194_q1,1,numeric,None,,expected exactly one number
+combination:combination_1198_q1,muse_glimmer_30b,combination,combination_1198,combination_1198_q1,1,numeric,None,,expected exactly one number
+combination:combination_1347_q1,muse_glimmer_30b,combination,combination_1347,combination_1347_q1,1,numeric,None,,expected exactly one number
+combination:combination_1766_q3,muse_glimmer_30b,combination,combination_1766,combination_1766_q3,3,numeric,None,,expected exactly one number
+combination:combination_1919_q1,muse_glimmer_30b,combination,combination_1919,combination_1919_q1,1,numeric,None,,expected exactly one number
+combination:combination_2633_q1,muse_glimmer_30b,combination,combination_2633,combination_2633_q1,1,numeric,None,,expected exactly one number
+combination:combination_2837_q1,muse_glimmer_30b,combination,combination_2837,combination_2837_q1,1,numeric,None,,expected exactly one number
+combination:combination_2848_q1,muse_glimmer_30b,combination,combination_2848,combination_2848_q1,1,numeric,None,,expected exactly one number
+combination3d:combination3d_0702_q1,muse_glimmer_30b,combination3d,combination3d_0702,combination3d_0702_q1,1,numeric,None,,expected exactly one number
+combination3d:combination3d_1549_q1,muse_glimmer_30b,combination3d,combination3d_1549,combination3d_1549_q1,1,numeric,None,,expected exactly one number
+combination3d:combination3d_2038_q1,muse_glimmer_30b,combination3d,combination3d_2038,combination3d_2038_q1,1,numeric,None,,expected exactly one number
+coordinate_geometry:coordinate_geometry_0021_q2,muse_glimmer_30b,coordinate_geometry,coordinate_geometry_0021,coordinate_geometry_0021_q2,2,numeric_2dp,None,,expected exactly one number
+coordinate_geometry:coordinate_geometry_1514_q2,muse_glimmer_30b,coordinate_geometry,coordinate_geometry_1514,coordinate_geometry_1514_q2,2,numeric_2dp,None,,expected exactly one number
+coordinate_geometry:coordinate_geometry_2347_q5,muse_glimmer_30b,coordinate_geometry,coordinate_geometry_2347,coordinate_geometry_2347_q5,5,numeric,None,,expected exactly one number
+cube_net:cube_net_0257_q3,muse_glimmer_30b,cube_net,cube_net_0257,cube_net_0257_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_0272_q3,muse_glimmer_30b,cube_net,cube_net_0272,cube_net_0272_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_0421_q3,muse_glimmer_30b,cube_net,cube_net_0421,cube_net_0421_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_0961_q3,muse_glimmer_30b,cube_net,cube_net_0961,cube_net_0961_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_0965_q3,muse_glimmer_30b,cube_net,cube_net_0965,cube_net_0965_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_1020_q3,muse_glimmer_30b,cube_net,cube_net_1020,cube_net_1020_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_1134_q3,muse_glimmer_30b,cube_net,cube_net_1134,cube_net_1134_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_1810_q3,muse_glimmer_30b,cube_net,cube_net_1810,cube_net_1810_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_2222_q3,muse_glimmer_30b,cube_net,cube_net_2222,cube_net_2222_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_2248_q3,muse_glimmer_30b,cube_net,cube_net_2248,cube_net_2248_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_2376_q3,muse_glimmer_30b,cube_net,cube_net_2376,cube_net_2376_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_2483_q3,muse_glimmer_30b,cube_net,cube_net_2483,cube_net_2483_q3,3,numeric,None,,expected exactly one number
+cube_net:cube_net_2812_q3,muse_glimmer_30b,cube_net,cube_net_2812,cube_net_2812_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0072_q1,muse_glimmer_30b,cube_structure,cube_structure_0072,cube_structure_0072_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0074_q1,muse_glimmer_30b,cube_structure,cube_structure_0074,cube_structure_0074_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0114_q5,muse_glimmer_30b,cube_structure,cube_structure_0114,cube_structure_0114_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0174_q1,muse_glimmer_30b,cube_structure,cube_structure_0174,cube_structure_0174_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0174_q2,muse_glimmer_30b,cube_structure,cube_structure_0174,cube_structure_0174_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0174_q4,muse_glimmer_30b,cube_structure,cube_structure_0174,cube_structure_0174_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0174_q5,muse_glimmer_30b,cube_structure,cube_structure_0174,cube_structure_0174_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0175_q5,muse_glimmer_30b,cube_structure,cube_structure_0175,cube_structure_0175_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0205_q3,muse_glimmer_30b,cube_structure,cube_structure_0205,cube_structure_0205_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0207_q1,muse_glimmer_30b,cube_structure,cube_structure_0207,cube_structure_0207_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0207_q4,muse_glimmer_30b,cube_structure,cube_structure_0207,cube_structure_0207_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0207_q5,muse_glimmer_30b,cube_structure,cube_structure_0207,cube_structure_0207_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0223_q3,muse_glimmer_30b,cube_structure,cube_structure_0223,cube_structure_0223_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0275_q3,muse_glimmer_30b,cube_structure,cube_structure_0275,cube_structure_0275_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0285_q1,muse_glimmer_30b,cube_structure,cube_structure_0285,cube_structure_0285_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0286_q3,muse_glimmer_30b,cube_structure,cube_structure_0286,cube_structure_0286_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0320_q2,muse_glimmer_30b,cube_structure,cube_structure_0320,cube_structure_0320_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0387_q2,muse_glimmer_30b,cube_structure,cube_structure_0387,cube_structure_0387_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0430_q5,muse_glimmer_30b,cube_structure,cube_structure_0430,cube_structure_0430_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0446_q2,muse_glimmer_30b,cube_structure,cube_structure_0446,cube_structure_0446_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0449_q1,muse_glimmer_30b,cube_structure,cube_structure_0449,cube_structure_0449_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0473_q4,muse_glimmer_30b,cube_structure,cube_structure_0473,cube_structure_0473_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0558_q5,muse_glimmer_30b,cube_structure,cube_structure_0558,cube_structure_0558_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0559_q2,muse_glimmer_30b,cube_structure,cube_structure_0559,cube_structure_0559_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0561_q1,muse_glimmer_30b,cube_structure,cube_structure_0561,cube_structure_0561_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0579_q4,muse_glimmer_30b,cube_structure,cube_structure_0579,cube_structure_0579_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0581_q2,muse_glimmer_30b,cube_structure,cube_structure_0581,cube_structure_0581_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0588_q3,muse_glimmer_30b,cube_structure,cube_structure_0588,cube_structure_0588_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0603_q5,muse_glimmer_30b,cube_structure,cube_structure_0603,cube_structure_0603_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0612_q1,muse_glimmer_30b,cube_structure,cube_structure_0612,cube_structure_0612_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0628_q5,muse_glimmer_30b,cube_structure,cube_structure_0628,cube_structure_0628_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0670_q2,muse_glimmer_30b,cube_structure,cube_structure_0670,cube_structure_0670_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0677_q4,muse_glimmer_30b,cube_structure,cube_structure_0677,cube_structure_0677_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0693_q2,muse_glimmer_30b,cube_structure,cube_structure_0693,cube_structure_0693_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0711_q1,muse_glimmer_30b,cube_structure,cube_structure_0711,cube_structure_0711_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0711_q2,muse_glimmer_30b,cube_structure,cube_structure_0711,cube_structure_0711_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0711_q3,muse_glimmer_30b,cube_structure,cube_structure_0711,cube_structure_0711_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0711_q4,muse_glimmer_30b,cube_structure,cube_structure_0711,cube_structure_0711_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0711_q5,muse_glimmer_30b,cube_structure,cube_structure_0711,cube_structure_0711_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0743_q2,muse_glimmer_30b,cube_structure,cube_structure_0743,cube_structure_0743_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0746_q5,muse_glimmer_30b,cube_structure,cube_structure_0746,cube_structure_0746_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0766_q2,muse_glimmer_30b,cube_structure,cube_structure_0766,cube_structure_0766_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0769_q1,muse_glimmer_30b,cube_structure,cube_structure_0769,cube_structure_0769_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0826_q1,muse_glimmer_30b,cube_structure,cube_structure_0826,cube_structure_0826_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0833_q1,muse_glimmer_30b,cube_structure,cube_structure_0833,cube_structure_0833_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0840_q4,muse_glimmer_30b,cube_structure,cube_structure_0840,cube_structure_0840_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0867_q1,muse_glimmer_30b,cube_structure,cube_structure_0867,cube_structure_0867_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0867_q2,muse_glimmer_30b,cube_structure,cube_structure_0867,cube_structure_0867_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0867_q3,muse_glimmer_30b,cube_structure,cube_structure_0867,cube_structure_0867_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0867_q4,muse_glimmer_30b,cube_structure,cube_structure_0867,cube_structure_0867_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0867_q5,muse_glimmer_30b,cube_structure,cube_structure_0867,cube_structure_0867_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0898_q1,muse_glimmer_30b,cube_structure,cube_structure_0898,cube_structure_0898_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0898_q2,muse_glimmer_30b,cube_structure,cube_structure_0898,cube_structure_0898_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0898_q4,muse_glimmer_30b,cube_structure,cube_structure_0898,cube_structure_0898_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0898_q5,muse_glimmer_30b,cube_structure,cube_structure_0898,cube_structure_0898_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0935_q3,muse_glimmer_30b,cube_structure,cube_structure_0935,cube_structure_0935_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0944_q1,muse_glimmer_30b,cube_structure,cube_structure_0944,cube_structure_0944_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_0968_q5,muse_glimmer_30b,cube_structure,cube_structure_0968,cube_structure_0968_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1044_q5,muse_glimmer_30b,cube_structure,cube_structure_1044,cube_structure_1044_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1045_q4,muse_glimmer_30b,cube_structure,cube_structure_1045,cube_structure_1045_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1045_q5,muse_glimmer_30b,cube_structure,cube_structure_1045,cube_structure_1045_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1055_q3,muse_glimmer_30b,cube_structure,cube_structure_1055,cube_structure_1055_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1103_q5,muse_glimmer_30b,cube_structure,cube_structure_1103,cube_structure_1103_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1163_q4,muse_glimmer_30b,cube_structure,cube_structure_1163,cube_structure_1163_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1167_q4,muse_glimmer_30b,cube_structure,cube_structure_1167,cube_structure_1167_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1179_q5,muse_glimmer_30b,cube_structure,cube_structure_1179,cube_structure_1179_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1187_q4,muse_glimmer_30b,cube_structure,cube_structure_1187,cube_structure_1187_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1272_q2,muse_glimmer_30b,cube_structure,cube_structure_1272,cube_structure_1272_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1277_q4,muse_glimmer_30b,cube_structure,cube_structure_1277,cube_structure_1277_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1284_q3,muse_glimmer_30b,cube_structure,cube_structure_1284,cube_structure_1284_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1304_q2,muse_glimmer_30b,cube_structure,cube_structure_1304,cube_structure_1304_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1313_q4,muse_glimmer_30b,cube_structure,cube_structure_1313,cube_structure_1313_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1324_q2,muse_glimmer_30b,cube_structure,cube_structure_1324,cube_structure_1324_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1340_q2,muse_glimmer_30b,cube_structure,cube_structure_1340,cube_structure_1340_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1340_q5,muse_glimmer_30b,cube_structure,cube_structure_1340,cube_structure_1340_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1345_q1,muse_glimmer_30b,cube_structure,cube_structure_1345,cube_structure_1345_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1356_q1,muse_glimmer_30b,cube_structure,cube_structure_1356,cube_structure_1356_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1363_q1,muse_glimmer_30b,cube_structure,cube_structure_1363,cube_structure_1363_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1387_q1,muse_glimmer_30b,cube_structure,cube_structure_1387,cube_structure_1387_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1475_q2,muse_glimmer_30b,cube_structure,cube_structure_1475,cube_structure_1475_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1475_q4,muse_glimmer_30b,cube_structure,cube_structure_1475,cube_structure_1475_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1482_q5,muse_glimmer_30b,cube_structure,cube_structure_1482,cube_structure_1482_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1529_q5,muse_glimmer_30b,cube_structure,cube_structure_1529,cube_structure_1529_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1545_q2,muse_glimmer_30b,cube_structure,cube_structure_1545,cube_structure_1545_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1569_q1,muse_glimmer_30b,cube_structure,cube_structure_1569,cube_structure_1569_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1569_q3,muse_glimmer_30b,cube_structure,cube_structure_1569,cube_structure_1569_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1569_q5,muse_glimmer_30b,cube_structure,cube_structure_1569,cube_structure_1569_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1605_q1,muse_glimmer_30b,cube_structure,cube_structure_1605,cube_structure_1605_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1605_q3,muse_glimmer_30b,cube_structure,cube_structure_1605,cube_structure_1605_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1606_q3,muse_glimmer_30b,cube_structure,cube_structure_1606,cube_structure_1606_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1647_q2,muse_glimmer_30b,cube_structure,cube_structure_1647,cube_structure_1647_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1695_q3,muse_glimmer_30b,cube_structure,cube_structure_1695,cube_structure_1695_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1696_q1,muse_glimmer_30b,cube_structure,cube_structure_1696,cube_structure_1696_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1696_q2,muse_glimmer_30b,cube_structure,cube_structure_1696,cube_structure_1696_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1696_q4,muse_glimmer_30b,cube_structure,cube_structure_1696,cube_structure_1696_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1696_q5,muse_glimmer_30b,cube_structure,cube_structure_1696,cube_structure_1696_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1698_q1,muse_glimmer_30b,cube_structure,cube_structure_1698,cube_structure_1698_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1713_q2,muse_glimmer_30b,cube_structure,cube_structure_1713,cube_structure_1713_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1729_q1,muse_glimmer_30b,cube_structure,cube_structure_1729,cube_structure_1729_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1745_q4,muse_glimmer_30b,cube_structure,cube_structure_1745,cube_structure_1745_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1753_q2,muse_glimmer_30b,cube_structure,cube_structure_1753,cube_structure_1753_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1753_q3,muse_glimmer_30b,cube_structure,cube_structure_1753,cube_structure_1753_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1773_q1,muse_glimmer_30b,cube_structure,cube_structure_1773,cube_structure_1773_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1773_q4,muse_glimmer_30b,cube_structure,cube_structure_1773,cube_structure_1773_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1773_q5,muse_glimmer_30b,cube_structure,cube_structure_1773,cube_structure_1773_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1811_q1,muse_glimmer_30b,cube_structure,cube_structure_1811,cube_structure_1811_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1811_q4,muse_glimmer_30b,cube_structure,cube_structure_1811,cube_structure_1811_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1821_q1,muse_glimmer_30b,cube_structure,cube_structure_1821,cube_structure_1821_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1875_q4,muse_glimmer_30b,cube_structure,cube_structure_1875,cube_structure_1875_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_1894_q4,muse_glimmer_30b,cube_structure,cube_structure_1894,cube_structure_1894_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2000_q1,muse_glimmer_30b,cube_structure,cube_structure_2000,cube_structure_2000_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2029_q4,muse_glimmer_30b,cube_structure,cube_structure_2029,cube_structure_2029_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2032_q4,muse_glimmer_30b,cube_structure,cube_structure_2032,cube_structure_2032_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2037_q4,muse_glimmer_30b,cube_structure,cube_structure_2037,cube_structure_2037_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2093_q1,muse_glimmer_30b,cube_structure,cube_structure_2093,cube_structure_2093_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2093_q5,muse_glimmer_30b,cube_structure,cube_structure_2093,cube_structure_2093_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2123_q4,muse_glimmer_30b,cube_structure,cube_structure_2123,cube_structure_2123_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2182_q2,muse_glimmer_30b,cube_structure,cube_structure_2182,cube_structure_2182_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2192_q2,muse_glimmer_30b,cube_structure,cube_structure_2192,cube_structure_2192_q2,2,numeric,ANSWER: {,,expected exactly one number
+cube_structure:cube_structure_2192_q3,muse_glimmer_30b,cube_structure,cube_structure_2192,cube_structure_2192_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2192_q5,muse_glimmer_30b,cube_structure,cube_structure_2192,cube_structure_2192_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2213_q5,muse_glimmer_30b,cube_structure,cube_structure_2213,cube_structure_2213_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2220_q4,muse_glimmer_30b,cube_structure,cube_structure_2220,cube_structure_2220_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2227_q5,muse_glimmer_30b,cube_structure,cube_structure_2227,cube_structure_2227_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2257_q5,muse_glimmer_30b,cube_structure,cube_structure_2257,cube_structure_2257_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2260_q1,muse_glimmer_30b,cube_structure,cube_structure_2260,cube_structure_2260_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2260_q2,muse_glimmer_30b,cube_structure,cube_structure_2260,cube_structure_2260_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2260_q3,muse_glimmer_30b,cube_structure,cube_structure_2260,cube_structure_2260_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2260_q4,muse_glimmer_30b,cube_structure,cube_structure_2260,cube_structure_2260_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2260_q5,muse_glimmer_30b,cube_structure,cube_structure_2260,cube_structure_2260_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2281_q2,muse_glimmer_30b,cube_structure,cube_structure_2281,cube_structure_2281_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2322_q2,muse_glimmer_30b,cube_structure,cube_structure_2322,cube_structure_2322_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2322_q3,muse_glimmer_30b,cube_structure,cube_structure_2322,cube_structure_2322_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2346_q3,muse_glimmer_30b,cube_structure,cube_structure_2346,cube_structure_2346_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2405_q4,muse_glimmer_30b,cube_structure,cube_structure_2405,cube_structure_2405_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2419_q1,muse_glimmer_30b,cube_structure,cube_structure_2419,cube_structure_2419_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2445_q2,muse_glimmer_30b,cube_structure,cube_structure_2445,cube_structure_2445_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2476_q1,muse_glimmer_30b,cube_structure,cube_structure_2476,cube_structure_2476_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2533_q5,muse_glimmer_30b,cube_structure,cube_structure_2533,cube_structure_2533_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2561_q1,muse_glimmer_30b,cube_structure,cube_structure_2561,cube_structure_2561_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2561_q2,muse_glimmer_30b,cube_structure,cube_structure_2561,cube_structure_2561_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2561_q4,muse_glimmer_30b,cube_structure,cube_structure_2561,cube_structure_2561_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2561_q5,muse_glimmer_30b,cube_structure,cube_structure_2561,cube_structure_2561_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2578_q4,muse_glimmer_30b,cube_structure,cube_structure_2578,cube_structure_2578_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2594_q5,muse_glimmer_30b,cube_structure,cube_structure_2594,cube_structure_2594_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2601_q4,muse_glimmer_30b,cube_structure,cube_structure_2601,cube_structure_2601_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2616_q2,muse_glimmer_30b,cube_structure,cube_structure_2616,cube_structure_2616_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2623_q2,muse_glimmer_30b,cube_structure,cube_structure_2623,cube_structure_2623_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2623_q4,muse_glimmer_30b,cube_structure,cube_structure_2623,cube_structure_2623_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2623_q5,muse_glimmer_30b,cube_structure,cube_structure_2623,cube_structure_2623_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2681_q5,muse_glimmer_30b,cube_structure,cube_structure_2681,cube_structure_2681_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2730_q3,muse_glimmer_30b,cube_structure,cube_structure_2730,cube_structure_2730_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2730_q5,muse_glimmer_30b,cube_structure,cube_structure_2730,cube_structure_2730_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2749_q1,muse_glimmer_30b,cube_structure,cube_structure_2749,cube_structure_2749_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2749_q2,muse_glimmer_30b,cube_structure,cube_structure_2749,cube_structure_2749_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2749_q4,muse_glimmer_30b,cube_structure,cube_structure_2749,cube_structure_2749_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2761_q5,muse_glimmer_30b,cube_structure,cube_structure_2761,cube_structure_2761_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2763_q2,muse_glimmer_30b,cube_structure,cube_structure_2763,cube_structure_2763_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2763_q4,muse_glimmer_30b,cube_structure,cube_structure_2763,cube_structure_2763_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2785_q1,muse_glimmer_30b,cube_structure,cube_structure_2785,cube_structure_2785_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2830_q2,muse_glimmer_30b,cube_structure,cube_structure_2830,cube_structure_2830_q2,2,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2839_q4,muse_glimmer_30b,cube_structure,cube_structure_2839,cube_structure_2839_q4,4,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2839_q5,muse_glimmer_30b,cube_structure,cube_structure_2839,cube_structure_2839_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2884_q3,muse_glimmer_30b,cube_structure,cube_structure_2884,cube_structure_2884_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2912_q3,muse_glimmer_30b,cube_structure,cube_structure_2912,cube_structure_2912_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2919_q1,muse_glimmer_30b,cube_structure,cube_structure_2919,cube_structure_2919_q1,1,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2925_q3,muse_glimmer_30b,cube_structure,cube_structure_2925,cube_structure_2925_q3,3,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2949_q5,muse_glimmer_30b,cube_structure,cube_structure_2949,cube_structure_2949_q5,5,numeric,None,,expected exactly one number
+cube_structure:cube_structure_2962_q1,muse_glimmer_30b,cube_structure,cube_structure_2962,cube_structure_2962_q1,1,numeric,None,,expected exactly one number
+depth_height:depth_height_0032_q3,muse_glimmer_30b,depth_height,depth_height_0032,depth_height_0032_q3,3,ordered_list,"ANSWER: orange, pink",,structured answer was not parseable
+depth_height:depth_height_0148_q3,muse_glimmer_30b,depth_height,depth_height_0148,depth_height_0148_q3,3,ordered_list,"ANSWER: orange, teal, pink, blue",,structured answer was not parseable
+depth_height:depth_height_0307_q3,muse_glimmer_30b,depth_height,depth_height_0307,depth_height_0307_q3,3,ordered_list,"ANSWER: pink, blue, orange",,structured answer was not parseable
+depth_height:depth_height_0337_q3,muse_glimmer_30b,depth_height,depth_height_0337,depth_height_0337_q3,3,ordered_list,"ANSWER: purple, pink, teal, orange",,structured answer was not parseable
+depth_height:depth_height_0373_q3,muse_glimmer_30b,depth_height,depth_height_0373,depth_height_0373_q3,3,ordered_list,"ANSWER: blue, teal, pink, purple",,structured answer was not parseable
+depth_height:depth_height_0427_q3,muse_glimmer_30b,depth_height,depth_height_0427,depth_height_0427_q3,3,ordered_list,"ANSWER: orange, teal, blue",,structured answer was not parseable
+depth_height:depth_height_0440_q3,muse_glimmer_30b,depth_height,depth_height_0440,depth_height_0440_q3,3,ordered_list,"ANSWER: purple, orange",,structured answer was not parseable
+depth_height:depth_height_0454_q3,muse_glimmer_30b,depth_height,depth_height_0454,depth_height_0454_q3,3,ordered_list,"ANSWER: orange, purple, pink, blue",,structured answer was not parseable
+depth_height:depth_height_0488_q3,muse_glimmer_30b,depth_height,depth_height_0488,depth_height_0488_q3,3,ordered_list,"ANSWER: pink, orange, blue, purple",,structured answer was not parseable
+depth_height:depth_height_0663_q3,muse_glimmer_30b,depth_height,depth_height_0663,depth_height_0663_q3,3,ordered_list,"ANSWER: blue, teal",,structured answer was not parseable
+depth_height:depth_height_0701_q3,muse_glimmer_30b,depth_height,depth_height_0701,depth_height_0701_q3,3,ordered_list,"ANSWER: purple, teal, orange",,structured answer was not parseable
+depth_height:depth_height_0721_q3,muse_glimmer_30b,depth_height,depth_height_0721,depth_height_0721_q3,3,ordered_list,"ANSWER: pink, orange, purple",,structured answer was not parseable
+depth_height:depth_height_0811_q3,muse_glimmer_30b,depth_height,depth_height_0811,depth_height_0811_q3,3,ordered_list,"ANSWER: orange, teal, purple, blue",,structured answer was not parseable
+depth_height:depth_height_0921_q3,muse_glimmer_30b,depth_height,depth_height_0921,depth_height_0921_q3,3,ordered_list,"ANSWER: purple, teal, pink",,structured answer was not parseable
+depth_height:depth_height_0975_q3,muse_glimmer_30b,depth_height,depth_height_0975,depth_height_0975_q3,3,ordered_list,"ANSWER: pink, blue, teal, purple",,structured answer was not parseable
+depth_height:depth_height_1108_q3,muse_glimmer_30b,depth_height,depth_height_1108,depth_height_1108_q3,3,ordered_list,"ANSWER: pink, teal, purple, orange",,structured answer was not parseable
+depth_height:depth_height_1123_q3,muse_glimmer_30b,depth_height,depth_height_1123,depth_height_1123_q3,3,ordered_list,"ANSWER: purple, orange, teal, blue",,structured answer was not parseable
+depth_height:depth_height_1143_q3,muse_glimmer_30b,depth_height,depth_height_1143,depth_height_1143_q3,3,ordered_list,"ANSWER: purple, orange, blue, pink",,structured answer was not parseable
+depth_height:depth_height_1148_q3,muse_glimmer_30b,depth_height,depth_height_1148,depth_height_1148_q3,3,ordered_list,"ANSWER: Blue, Green, Purple, Pink",,structured answer was not parseable
+depth_height:depth_height_1148_q5,muse_glimmer_30b,depth_height,depth_height_1148,depth_height_1148_q5,5,numeric,None,,expected exactly one number
+depth_height:depth_height_1161_q3,muse_glimmer_30b,depth_height,depth_height_1161,depth_height_1161_q3,3,ordered_list,"ANSWER: pink, green, purple, blue",,structured answer was not parseable
+depth_height:depth_height_1180_q3,muse_glimmer_30b,depth_height,depth_height_1180,depth_height_1180_q3,3,ordered_list,"ANSWER: orange, blue, pink",,structured answer was not parseable
+depth_height:depth_height_1206_q3,muse_glimmer_30b,depth_height,depth_height_1206,depth_height_1206_q3,3,ordered_list,"ANSWER: orange, teal, purple",,structured answer was not parseable
+depth_height:depth_height_1282_q3,muse_glimmer_30b,depth_height,depth_height_1282,depth_height_1282_q3,3,ordered_list,"ANSWER: pink, blue",,structured answer was not parseable
+depth_height:depth_height_1297_q3,muse_glimmer_30b,depth_height,depth_height_1297,depth_height_1297_q3,3,ordered_list,"ANSWER: blue, pink, orange, purple",,structured answer was not parseable
+depth_height:depth_height_1326_q3,muse_glimmer_30b,depth_height,depth_height_1326,depth_height_1326_q3,3,ordered_list,"ANSWER: purple, pink",,structured answer was not parseable
+depth_height:depth_height_1472_q3,muse_glimmer_30b,depth_height,depth_height_1472,depth_height_1472_q3,3,ordered_list,"ANSWER: teal, pink, orange, purple",,structured answer was not parseable
+depth_height:depth_height_1505_q3,muse_glimmer_30b,depth_height,depth_height_1505,depth_height_1505_q3,3,ordered_list,"ANSWER: blue, purple",,structured answer was not parseable
+depth_height:depth_height_1583_q3,muse_glimmer_30b,depth_height,depth_height_1583,depth_height_1583_q3,3,ordered_list,"ANSWER: blue, pink",,structured answer was not parseable
+depth_height:depth_height_1596_q3,muse_glimmer_30b,depth_height,depth_height_1596,depth_height_1596_q3,3,ordered_list,"ANSWER: blue, orange, teal, pink",,structured answer was not parseable
+depth_height:depth_height_1704_q3,muse_glimmer_30b,depth_height,depth_height_1704,depth_height_1704_q3,3,ordered_list,"ANSWER: Purple, Teal",,structured answer was not parseable
+depth_height:depth_height_1705_q3,muse_glimmer_30b,depth_height,depth_height_1705,depth_height_1705_q3,3,ordered_list,"ANSWER: blue, teal",,structured answer was not parseable
+depth_height:depth_height_1811_q3,muse_glimmer_30b,depth_height,depth_height_1811,depth_height_1811_q3,3,ordered_list,"ANSWER: purple, orange, blue, teal",,structured answer was not parseable
+depth_height:depth_height_1903_q3,muse_glimmer_30b,depth_height,depth_height_1903,depth_height_1903_q3,3,ordered_list,"ANSWER: orange, pink",,structured answer was not parseable
+depth_height:depth_height_1913_q3,muse_glimmer_30b,depth_height,depth_height_1913,depth_height_1913_q3,3,ordered_list,"ANSWER: pink, orange",,structured answer was not parseable
+depth_height:depth_height_1925_q3,muse_glimmer_30b,depth_height,depth_height_1925,depth_height_1925_q3,3,ordered_list,"ANSWER: green, blue",,structured answer was not parseable
+depth_height:depth_height_1991_q3,muse_glimmer_30b,depth_height,depth_height_1991,depth_height_1991_q3,3,ordered_list,"ANSWER: pink, teal, blue",,structured answer was not parseable
+depth_height:depth_height_2037_q3,muse_glimmer_30b,depth_height,depth_height_2037,depth_height_2037_q3,3,ordered_list,"ANSWER: orange, blue",,structured answer was not parseable
+depth_height:depth_height_2151_q3,muse_glimmer_30b,depth_height,depth_height_2151,depth_height_2151_q3,3,ordered_list,"ANSWER: purple, teal, orange",,structured answer was not parseable
+depth_height:depth_height_2272_q3,muse_glimmer_30b,depth_height,depth_height_2272,depth_height_2272_q3,3,ordered_list,"ANSWER: pink, teal, purple",,structured answer was not parseable
+depth_height:depth_height_2314_q3,muse_glimmer_30b,depth_height,depth_height_2314,depth_height_2314_q3,3,ordered_list,"ANSWER: teal, purple, blue",,structured answer was not parseable
+depth_height:depth_height_2336_q3,muse_glimmer_30b,depth_height,depth_height_2336,depth_height_2336_q3,3,ordered_list,"ANSWER: purple, pink, blue, orange",,structured answer was not parseable
+depth_height:depth_height_2472_q3,muse_glimmer_30b,depth_height,depth_height_2472,depth_height_2472_q3,3,ordered_list,"ANSWER: pink, teal, blue, purple",,structured answer was not parseable
+depth_height:depth_height_2513_q3,muse_glimmer_30b,depth_height,depth_height_2513,depth_height_2513_q3,3,ordered_list,"ANSWER: pink, blue, orange",,structured answer was not parseable
+depth_height:depth_height_2515_q3,muse_glimmer_30b,depth_height,depth_height_2515,depth_height_2515_q3,3,ordered_list,"ANSWER: teal, orange",,structured answer was not parseable
+depth_height:depth_height_2675_q3,muse_glimmer_30b,depth_height,depth_height_2675,depth_height_2675_q3,3,ordered_list,"ANSWER: blue, pink, orange",,structured answer was not parseable
+depth_height:depth_height_2780_q3,muse_glimmer_30b,depth_height,depth_height_2780,depth_height_2780_q3,3,ordered_list,"ANSWER: blue, pink, orange",,structured answer was not parseable
+depth_height:depth_height_2799_q3,muse_glimmer_30b,depth_height,depth_height_2799,depth_height_2799_q3,3,ordered_list,"ANSWER: pink triangle, blue triangle, purple square",,structured answer was not parseable
+depth_height:depth_height_2800_q3,muse_glimmer_30b,depth_height,depth_height_2800,depth_height_2800_q3,3,ordered_list,"ANSWER: purple, pink, orange, blue",,structured answer was not parseable
+depth_height:depth_height_2867_q3,muse_glimmer_30b,depth_height,depth_height_2867,depth_height_2867_q3,3,ordered_list,"ANSWER: orange, pink",,structured answer was not parseable
+depth_height:depth_height_2898_q3,muse_glimmer_30b,depth_height,depth_height_2898,depth_height_2898_q3,3,ordered_list,"ANSWER: pink, teal, orange",,structured answer was not parseable
+embedded_figures:embedded_figure_0075_q1,muse_glimmer_30b,embedded_figures,embedded_figure_0075,embedded_figure_0075_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_0184_q1,muse_glimmer_30b,embedded_figures,embedded_figure_0184,embedded_figure_0184_q1,1,numeric,ANSWER: B,,expected exactly one number
+embedded_figures:embedded_figure_0750_q1,muse_glimmer_30b,embedded_figures,embedded_figure_0750,embedded_figure_0750_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_0750_q4,muse_glimmer_30b,embedded_figures,embedded_figure_0750,embedded_figure_0750_q4,4,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_0800_q1,muse_glimmer_30b,embedded_figures,embedded_figure_0800,embedded_figure_0800_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_0809_q1,muse_glimmer_30b,embedded_figures,embedded_figure_0809,embedded_figure_0809_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_1137_q1,muse_glimmer_30b,embedded_figures,embedded_figure_1137,embedded_figure_1137_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_1323_q1,muse_glimmer_30b,embedded_figures,embedded_figure_1323,embedded_figure_1323_q1,1,numeric,ANSWER: B,,expected exactly one number
+embedded_figures:embedded_figure_2021_q1,muse_glimmer_30b,embedded_figures,embedded_figure_2021,embedded_figure_2021_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_2137_q1,muse_glimmer_30b,embedded_figures,embedded_figure_2137,embedded_figure_2137_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_2820_q1,muse_glimmer_30b,embedded_figures,embedded_figure_2820,embedded_figure_2820_q1,1,numeric,None,,expected exactly one number
+embedded_figures:embedded_figure_2933_q1,muse_glimmer_30b,embedded_figures,embedded_figure_2933,embedded_figure_2933_q1,1,numeric,None,,expected exactly one number
+fbd:fbd_0037_q2,muse_glimmer_30b,fbd,fbd_0037,fbd_0037_q2,2,arrow_label_and_missing_force,None,,structured answer was not parseable
+fbd:fbd_0037_q3,muse_glimmer_30b,fbd,fbd_0037,fbd_0037_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_0037_q4,muse_glimmer_30b,fbd,fbd_0037,fbd_0037_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_0104_q4,muse_glimmer_30b,fbd,fbd_0104,fbd_0104_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_0114_q2,muse_glimmer_30b,fbd,fbd_0114,fbd_0114_q2,2,arrow_label_and_missing_force,"ANSWER: W, normal force",,structured answer was not parseable
+fbd:fbd_0131_q4,muse_glimmer_30b,fbd,fbd_0131,fbd_0131_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Net force magnitude ≈ 19.8 N (≈ 19.82 N downward), Support (normal) force magnitude ≈ 88.7 N (≈ 88.6–88.7 N upward)",,structured answer was not parseable
+fbd:fbd_0171_q4,muse_glimmer_30b,fbd,fbd_0171,fbd_0171_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N net force, 181.5 N tension",,structured answer was not parseable
+fbd:fbd_0180_q3,muse_glimmer_30b,fbd,fbd_0180,fbd_0180_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes shown: W 81.5 N > N 80.3 N > F 21.3 N; Shown vertical components: not balanced; Physically correct scenario: the body is not in overall equilibrium – it has a centripetal acceleration and is dynamically in motion on the banked curve.,,structured answer was not parseable
+fbd:fbd_0191_q3,muse_glimmer_30b,fbd,fbd_0191,fbd_0191_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes shown: N = W (178.1 N = 178.1 N, tie); Drawn-diagram vertical components: not balanced – the vertical component of the drawn N is < 178.1 N while W is 178.1 N downward; Physically correct scenario: lift a = 0.0 m/s² so the body is in overall equilibrium, Nphys = Wphys ≈ 178.1 N.",,structured answer was not parseable
+fbd:fbd_0191_q4,muse_glimmer_30b,fbd,fbd_0191,fbd_0191_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Net force = 0 N, support/normal force ≈ 1.78×10² N upward, ~178.1 N. The drawn N arrow is incorrect: the normal/support force is shown angled up-and-to-the-left instead of vertically upward normal to the floor, and is depicted acting at the block’s centre rather than at the floor–block contact; in the physically correct model with lift a = 0 m/s² the normal force is vertical upward, equal in magnitude to the weight, so the net force is zero.",,structured answer was not parseable
+fbd:fbd_0232_q4,muse_glimmer_30b,fbd,fbd_0232,fbd_0232_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 0.676",,structured answer was not parseable
+fbd:fbd_0334_q3,muse_glimmer_30b,fbd,fbd_0334,fbd_0334_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes as drawn: N 472.8 N > A 337.7 N > F 204.0 N = W 204.0 N; the drawn vertical components F upward 204.0 N and W downward 204.0 N are balanced; in the physically correct wall-push scenario with m = 20.80 kg, μ = 0.756, applied ≈ 337.7 N the required static friction ≈ W ≈ 204 N < μ·A ≈ 255 N, so the horizontal applied",,structured answer was not parseable
+fbd:fbd_0334_q4,muse_glimmer_30b,fbd,fbd_0334,fbd_0334_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Physical net force magnitude = 0 N (static equilibrium, horizontal applied 337.7 N balanced by wall normal ≈337.7 N and vertical weight 204.0 N balanced by friction 204.0 N",,structured answer was not parseable
+fbd:fbd_0337_q3,muse_glimmer_30b,fbd,fbd_0337,fbd_0337_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_0337_q4,muse_glimmer_30b,fbd,fbd_0337,fbd_0337_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_0414_q3,muse_glimmer_30b,fbd,fbd_0414,fbd_0414_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes (as,,structured answer was not parseable
+fbd:fbd_0414_q4,muse_glimmer_30b,fbd,fbd_0414,fbd_0414_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 0.384",,structured answer was not parseable
+fbd:fbd_0416_q3,muse_glimmer_30b,fbd,fbd_0416,fbd_0416_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes shown: W 98.7 N > T 88.4 N; Shown vertical components are not balanced; Physically correct,,structured answer was not parseable
+fbd:fbd_0455_q3,muse_glimmer_30b,fbd,fbd_0455,fbd_0455_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (as drawn): N = W (201.1 N = 201.1 N); Shown vertical components: not balanced – the drawn N has an upward vertical component < 201.1 N while W is 201.1 N straight down; Physically correct scenario: the body is in equilibrium overall (a = 0 m/s², N_phys = W = m g ≈ 201.1 N, net force zero).",,structured answer was not parseable
+fbd:fbd_0455_q4,muse_glimmer_30b,fbd,fbd_0455,fbd_0455_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Physical net force = m·a = 20.50 kg × 0.0 m/s² = 0 N, so the block is in translational equilibrium. The physically correct support/normal force magnitude is the weight
+
+N_phys = m g ≈ 201.1 N upward, vertically collinear with the weight, ≈ 201 N upward on the block. 
+
+The rendered diagram shows the normal/support force incorrectly. The drawn “N 201.1 N” arrow is shown going up-and-to-the-left at a diagonal from the block’s centre of mass. In the physically correct model the contact",,structured answer was not parseable
+fbd:fbd_0563_q4,muse_glimmer_30b,fbd,fbd_0563,fbd_0563_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Net force ≈ 33.0 N upward (≈ m·a = 14.35 kg × 2.3 m/s²), support / normal force ≈ 173.8 N upward (≈ m·(g+a) ≈ 14.35 kg × 12.1 m/s²)",,structured answer was not parseable
+fbd:fbd_0573_q3,muse_glimmer_30b,fbd,fbd_0573,fbd_0573_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (as drawn): T1 = W1 = T2 = W2,",,structured answer was not parseable
+fbd:fbd_0573_q4,muse_glimmer_30b,fbd,fbd_0573,fbd_0573_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Net force magnitude = 0 N, tension magnitude = 168.1 N. The rendered T1 arrow for m1 is incorrect: it is drawn diagonally up-and-to-the-left away from the vertical string line and appears to act on the side of the block rather than at the string attachment. In the physically correct model the tension force on m1 must act vertically upward along the string, collinear with the weight W1 and the string, not at an oblique angle.",,structured answer was not parseable
+fbd:fbd_0590_q4,muse_glimmer_30b,fbd,fbd_0590,fbd_0590_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net force magnitude = 0 N, tension magnitude = 62.8 N",,structured answer was not parseable
+fbd:fbd_0608_q4,muse_glimmer_30b,fbd,fbd_0608,fbd_0608_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_0609_q3,muse_glimmer_30b,fbd,fbd_0609,fbd_0609_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Rank (drawn magnitudes): W2 208.5 N > T1 179.6 N = T2 179.6 N > W1 157.7 N. Shown vertical components: not balanced – on m1 T1 up 179.6 N ≠ W1 down 157.7 N net up; on m2 T2 up 179.6 N ≠ W2 down 208.5 N net down. Physically correct scenario: not in equilibrium overall; with m2>m1 the Atwood system accelerates, m2 descending and m1 ascending, so net forces on each mass are non-zero.",,structured answer was not parseable
+fbd:fbd_0609_q4,muse_glimmer_30b,fbd,fbd_0609,fbd_0609_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_0731_q3,muse_glimmer_30b,fbd,fbd_0731,fbd_0731_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes: W 172.2 N > N 119.7 N; the drawn vertical components are not balanced; in the physically correct scenario the body is not in equilibrium overall.,,structured answer was not parseable
+fbd:fbd_0749_q3,muse_glimmer_30b,fbd,fbd_0749,fbd_0749_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): N = W (tie, both 178.2 N); Shown vertical components balanced: Yes; Physically correct equilibrium: Yes, the body is in translational equilibrium with zero net force and a = 0.0 m/s²",,structured answer was not parseable
+fbd:fbd_0812_q3,muse_glimmer_30b,fbd,fbd_0812,fbd_0812_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_0851_q3,muse_glimmer_30b,fbd,fbd_0851,fbd_0851_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): N 179.1 N > W 149.9 N; Shown vertical components: not balanced; Physically correct scenario: body is not in equilibrium, it is accelerating upward with a = 1.91 m/s²",,structured answer was not parseable
+fbd:fbd_0932_q4,muse_glimmer_30b,fbd,fbd_0932,fbd_0932_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_0942_q3,muse_glimmer_30b,fbd,fbd_0942,fbd_0942_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_1007_q4,muse_glimmer_30b,fbd,fbd_1007,fbd_1007_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Net force magnitude = 0 N, support / normal force magnitude = 193.3 N upward (equal to weight, m g). The drawn N 193.3 N arrow is incorrect: the support/normal force is shown acting at an angle up-and-to-the-left from the centre of mass instead of vertically upward at the point of contact with the elevator floor; in the physically correct model for a = 0 the normal is vertical, equal and opposite to weight, so the net force is zero.",,structured answer was not parseable
+fbd:fbd_1087_q4,muse_glimmer_30b,fbd,fbd_1087,fbd_1087_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1109_q3,muse_glimmer_30b,fbd,fbd_1109,fbd_1109_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Drawn magnitudes: N = W (tie for largest/smallest); shown vertical components are balanced; Physically correct scenario: the body is in equilibrium overall,,structured answer was not parseable
+fbd:fbd_1173_q4,muse_glimmer_30b,fbd,fbd_1173,fbd_1173_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Physical net force magnitude = 0 N, tension magnitude = 124.4 N. The drawn T1 124.4 N arrow is incorrect: it is shown acting on m1 at an oblique up-left angle, whereas in the physically correct Atwood model the tension in the string acts vertically upward on the block, collinear with the string and the weight, i.e., straight up from the top of m1, not diagonally into the side of the block.",,structured answer was not parseable
+fbd:fbd_1185_q3,muse_glimmer_30b,fbd,fbd_1185,fbd_1185_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): W2 135.8 N > T1 114.6 N = T2 114.6 N > W1 99.2 N; Shown vertical components are not balanced – m1 has net upward 114.6 N − 99.2 N, m2 has net downward 135.8 N − 114.6 N; Physically correct Atwood with m1=10.11 kg, m2=13.84 kg: the two masses are",,structured answer was not parseable
+fbd:fbd_1185_q4,muse_glimmer_30b,fbd,fbd_1185,fbd_1185_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1240_q4,muse_glimmer_30b,fbd,fbd_1240,fbd_1240_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 0.647",,structured answer was not parseable
+fbd:fbd_1261_q4,muse_glimmer_30b,fbd,fbd_1261,fbd_1261_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1364_q3,muse_glimmer_30b,fbd,fbd_1364,fbd_1364_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes shown: T 247.3 N > W 176.7 N;,,structured answer was not parseable
+fbd:fbd_1364_q4,muse_glimmer_30b,fbd,fbd_1364,fbd_1364_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1419_q3,muse_glimmer_30b,fbd,fbd_1419,fbd_1419_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): T1 = T2 = W1 = W2 = 148.6 N, all tied; Shown vertical components: balanced per mass, net zero on each m1 and m2 in the drawing. Physically correct scenario: m1 = m2 so the Atwood system is in static equilibrium overall, no acceleration.",,structured answer was not parseable
+fbd:fbd_1455_q3,muse_glimmer_30b,fbd,fbd_1455,fbd_1455_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): W1 = W2 = T2 = 144.1 N, i.e. W1 = W2 = T2 largest-to-smallest with a three-way tie; Shown vertical components: m2 is shown balanced, W2 up-vs-down 144.1 N = T2 144.1 N, m1 is shown unbalanced with only W1 144.1 N down and no upward arrow drawn, so the diagram as drawn does not show a balanced vertical force system for m1 and not for the system as a whole; Physically correct scenario: m1 = m2 = 14.69 kg so the ideal massless-inextensible Atwood machine is in static equilibrium, zero net acceleration and, if released from rest, remains at rest, i.e. the bodies are in overall equilibrium.",,structured answer was not parseable
+fbd:fbd_1465_q3,muse_glimmer_30b,fbd,fbd_1465,fbd_1465_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes (as drawn): W 96.7 N > N 81.1 N > F 43.3 N > A 4 N; Shown-vertical-components: not balanced;,,structured answer was not parseable
+fbd:fbd_1473_q3,muse_glimmer_30b,fbd,fbd_1473,fbd_1473_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Rank by shown magnitude: W2 166.9 N > T1 = T2 102.7 N > W1 74.2 N; Shown vertical components: not balanced – on m1 T1 up 102.7 N ≠ W1 down 74.2 N, net up; on m2 T2 up 102.7 N ≠ W2 down 166.9 N, net down",,structured answer was not parseable
+fbd:fbd_1475_q4,muse_glimmer_30b,fbd,fbd_1475,fbd_1475_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net force magnitude ≈ 13.7 N (≈ m|a|), support / normal force magnitude ≈ 62.7 N (≈ m(g+a) with upward positive)",,structured answer was not parseable
+fbd:fbd_1483_q4,muse_glimmer_30b,fbd,fbd_1483,fbd_1483_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1529_q4,muse_glimmer_30b,fbd,fbd_1529,fbd_1529_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net force magnitude = 0 N, support (normal) force magnitude = 111.1 N",,structured answer was not parseable
+fbd:fbd_1562_q4,muse_glimmer_30b,fbd,fbd_1562,fbd_1562_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net force = 0 N, tension ≈ 113.1 N",,structured answer was not parseable
+fbd:fbd_1651_q5,muse_glimmer_30b,fbd,fbd_1651,fbd_1651_q5,5,yes_no,ANSWER:,,empty answer body
+fbd:fbd_1656_q4,muse_glimmer_30b,fbd,fbd_1656,fbd_1656_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1746_q2,muse_glimmer_30b,fbd,fbd_1746,fbd_1746_q2,2,arrow_label_and_missing_force,"ANSWER: W, normal force",,structured answer was not parseable
+fbd:fbd_1746_q3,muse_glimmer_30b,fbd,fbd_1746,fbd_1746_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes shown: W 94.9 N >,,structured answer was not parseable
+fbd:fbd_1746_q4,muse_glimmer_30b,fbd,fbd_1746,fbd_1746_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1752_q4,muse_glimmer_30b,fbd,fbd_1752,fbd_1752_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",ANSWER: The physically correct static equilibrium has zero net force. Weight W = m g ≈ 9.46·9.81 ≈ 92.8 N downward,,structured answer was not parseable
+fbd:fbd_1792_q2,muse_glimmer_30b,fbd,fbd_1792,fbd_1792_q2,2,arrow_label_and_missing_force,"ANSWER: F is the friction force on the body, the normal reaction of the wall on the body (≈273.2 N to the left) is missing from the diagram",,structured answer was not parseable
+fbd:fbd_1861_q2,muse_glimmer_30b,fbd,fbd_1861,fbd_1861_q2,2,arrow_label_and_missing_force,"ANSWER: F, normal force",,structured answer was not parseable
+fbd:fbd_1861_q3,muse_glimmer_30b,fbd,fbd_1861,fbd_1861_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_1861_q4,muse_glimmer_30b,fbd,fbd_1861,fbd_1861_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1877_q3,muse_glimmer_30b,fbd,fbd_1877,fbd_1877_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Shown magnitudes: N 83.1 N = W 83.1 N, tie for largest/smallest; Shown vertical components are balanced; Physically correct scenario with m = 8.47 kg, a = 0.0 m/s²: the body is in overall equilibrium.",,structured answer was not parseable
+fbd:fbd_1888_q2,muse_glimmer_30b,fbd,fbd_1888,fbd_1888_q2,2,arrow_label_and_missing_force,"ANSWER: F, normal force is missing",,structured answer was not parseable
+fbd:fbd_1888_q3,muse_glimmer_30b,fbd,fbd_1888,fbd_1888_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Shown magnitudes: A 249.8 N > F = W 154.3 N; Shown vertical components are balanced, F up 154.3 N = W down 154.3 N. Physically correct scenario: The body is in static equilibrium overall, normal = applied ≈ 249.8 N, max static friction μN ≈ 177.4 N > weight ≈ 154.3 N so weight is supported by friction and horizontal forces balance.",,structured answer was not parseable
+fbd:fbd_1888_q4,muse_glimmer_30b,fbd,fbd_1888,fbd_1888_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 0.617",,structured answer was not parseable
+fbd:fbd_1925_q3,muse_glimmer_30b,fbd,fbd_1925,fbd_1925_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Shown magnitudes: N = W, both 81.9 N, tie largest = smallest; shown vertical components balanced: yes, N up 81.9 N = W down 81.9 N; physically correct scenario with m = 8.35 kg, a_lift = 0.0 m/s²: the body is in equilibrium overall, net force ≈ 0, a ≈ 0.",,structured answer was not parseable
+fbd:fbd_1925_q4,muse_glimmer_30b,fbd,fbd_1925,fbd_1925_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net force 0 N, support force 81.9 N",,structured answer was not parseable
+fbd:fbd_1972_q3,muse_glimmer_30b,fbd,fbd_1972,fbd_1972_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes shown: N = A 232.1 N > F = W 158.0 N ; Drawn-di,,structured answer was not parseable
+fbd:fbd_1987_q4,muse_glimmer_30b,fbd,fbd_1987,fbd_1987_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_1994_q4,muse_glimmer_30b,fbd,fbd_1994,fbd_1994_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net force magnitude 0 N, tension magnitude ≈ 134.3 N",,structured answer was not parseable
+fbd:fbd_2003_q4,muse_glimmer_30b,fbd,fbd_2003,fbd_2003_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: net ≈12.2 N (≈12.25 N), support ≈64.3 N",,structured answer was not parseable
+fbd:fbd_2033_q2,muse_glimmer_30b,fbd,fbd_2033,fbd_2033_q2,2,arrow_label_and_missing_force,"ANSWER: W 123.3 N, normal/contact/support force upward from the elevator floor is missing",,structured answer was not parseable
+fbd:fbd_2113_q3,muse_glimmer_30b,fbd,fbd_2113,fbd_2113_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_2113_q4,muse_glimmer_30b,fbd,fbd_2113,fbd_2113_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2145_q3,muse_glimmer_30b,fbd,fbd_2145,fbd_2145_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (as drawn): W2 195.6 N > T1 147.2 N = T2 147.2 N > W1 118.0 N; Shown vertical components are not balanced – m1 has net upward 147.2 N – 118.0 N and m2 has net downward 195.6 N – 147.2 N, so neither mass and the system as drawn are in vertical force balance; Physically correct Atwood with m1 = 12.03 kg, m2 = 19.94 kg: the system",,structured answer was not parseable
+fbd:fbd_2223_q2,muse_glimmer_30b,fbd,fbd_2223,fbd_2223_q2,2,arrow_label_and_missing_force,"ANSWER: W2, missing T1 (tension force on m1 upward)",,structured answer was not parseable
+fbd:fbd_2230_q3,muse_glimmer_30b,fbd,fbd_2230,fbd_2230_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Rank (drawn magnitudes): N 184.4 N > A 131.7 N > F 85.0 N = W 85.0 N; Drawn vertical components balanced:,,structured answer was not parseable
+fbd:fbd_2230_q4,muse_glimmer_30b,fbd,fbd_2230,fbd_2230_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2266_q3,muse_glimmer_30b,fbd,fbd_2266,fbd_2266_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Ranking (drawn magnitudes): N 367.4 N = A 367.4 N > W 207.3 N > F 83.0 N; Drawn vertical components: unbalanced – shown F = 83.0 N up vs shown W = 207.3 N down; Physical equilibrium: no – in the physically correct wall-push scenario N = applied ≈ 367.5 N, max static friction ≈ μN ≈ 83 N < weight =",,structured answer was not parseable
+fbd:fbd_2266_q4,muse_glimmer_30b,fbd,fbd_2266,fbd_2266_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",ANSWER:,,empty answer body
+fbd:fbd_2306_q4,muse_glimmer_30b,fbd,fbd_2306,fbd_2306_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 134.7 N",,structured answer was not parseable
+fbd:fbd_2357_q3,muse_glimmer_30b,fbd,fbd_2357,fbd_2357_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Diagram arrows magnitudes: N 183.3 N = W 183.3 N (tie); shown vertical components are balanced. Physically correct scenario: body is in equilibrium overall.,,structured answer was not parseable
+fbd:fbd_2376_q3,muse_glimmer_30b,fbd,fbd_2376,fbd_2376_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_2379_q3,muse_glimmer_30b,fbd,fbd_2379,fbd_2379_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): T1 = T2 = W1 = W2 = 90.1 N; Shown vertical components per mass: balanced, T1 up = W1 down and T2 up = W2 down; Physically correct scenario: m1 = m2 so the Atwood system is in static equilibrium overall, no net acceleration.",,structured answer was not parseable
+fbd:fbd_2380_q3,muse_glimmer_30b,fbd,fbd_2380,fbd_2380_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes shown: N = A (181.1 N) > F = W (124.4 N); Diagram vertical components: balanced (F 124.4 N up = W 124.4 N down); Physically correct scenario: not in overall equilibrium – horizontal forces balance but μN ≈ 149 N < W ≈124.4 N? Actually μN≈149 N > W, wait compute: μN =0.822×181.1≈148.8 N > W≈124.4 N so static friction could in principle balance weight, but the drawn friction 124.4 N is less than μNmax, and with the given applied =181.14 N the required",,structured answer was not parseable
+fbd:fbd_2381_q3,muse_glimmer_30b,fbd,fbd_2381,fbd_2381_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (as drawn): N = W (tie, both 92.1 N); Shown vertical components balanced: Yes; Physically correct equilibrium: Yes, the body is in overall equilibrium (a = 0, N = mg).",,structured answer was not parseable
+fbd:fbd_2404_q3,muse_glimmer_30b,fbd,fbd_2404,fbd_2404_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes shown: N = A (223.1 N) > F = W (126.5 N); vertical components as drawn are balanced, F upward 126.5 N = W downward 126.5 N; Physically correct scenario: the block is in static equilibrium, normal = applied ≈223 N balances horizontally and μN ≈155.6 N > weight ≈126.5 N so friction can balance weight.",,structured answer was not parseable
+fbd:fbd_2408_q3,muse_glimmer_30b,fbd,fbd_2408,fbd_2408_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitude rank (drawn): W 119.9 N > T 98.9 N; Shown vertical components: not balanced; Physical equilibrium (correct physics): yes, the body would be in static equilibrium with T = mg ≈ 119.9 N",,structured answer was not parseable
+fbd:fbd_2443_q3,muse_glimmer_30b,fbd,fbd_2443,fbd_2443_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_2449_q4,muse_glimmer_30b,fbd,fbd_2449,fbd_2449_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2462_q3,muse_glimmer_30b,fbd,fbd_2462,fbd_2462_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Drawn-diagram arrows magnitude ranking: W 79.7 N (only arrow shown). Drawn-diagram vertical components balanced: No, only a downward 79.7 N component is shown. Physically correct scenario: The body is in equilibrium overall, with an upward tension ≈ 79.7 N balancing the weight mg ≈ 79.7 N.",,structured answer was not parseable
+fbd:fbd_2549_q3,muse_glimmer_30b,fbd,fbd_2549,fbd_2549_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Magnitudes shown: N = W (tie); Shown vertical components balanced: Yes; Physically correct scenario equilibrium: Yes,,structured answer was not parseable
+fbd:fbd_2549_q4,muse_glimmer_30b,fbd,fbd_2549,fbd_2549_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 152.7 N",,structured answer was not parseable
+fbd:fbd_2561_q3,muse_glimmer_30b,fbd,fbd_2561,fbd_2561_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",ANSWER: Drawn arrows magnitudes: W 201.2 N (only arrow shown). Drawn vertical components balanced: No. Physically correct scenario equilibrium overall: Yes.,,structured answer was not parseable
+fbd:fbd_2648_q4,muse_glimmer_30b,fbd,fbd_2648,fbd_2648_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2649_q3,muse_glimmer_30b,fbd,fbd_2649,fbd_2649_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Drawn-diagram magnitudes: W2 127.1 N > T1 97.9 N = T2 97.9 N > W1 79.7 N. Drawn-diagram vertical components: not balanced – m1 has net upward 97.9 N – 79.7 N, m2 has net downward 127.1 N – 97.9 N; no mass is in force balance as drawn. Physically-correct Atwood scenario: the masses are unequal, m2 > m1, so the",,structured answer was not parseable
+fbd:fbd_2664_q3,muse_glimmer_30b,fbd,fbd_2664,fbd_2664_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}",None,,structured answer was not parseable
+fbd:fbd_2664_q4,muse_glimmer_30b,fbd,fbd_2664,fbd_2664_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2698_q3,muse_glimmer_30b,fbd,fbd_2698,fbd_2698_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Shown magnitudes: N = A = 155.7 N > W ≈ 93.3 N > F = 59.3 N; shown vertical components F up 59.3 N and W down ≈93.3 N are not balanced. Physically correct wall-push scenario: N = applied ≈155.7 N, max static friction ≈ μN ≈59.3 N < weight ≈ m g ≈93.4 N, so the friction cannot balance weight and the body is not in overall equilibrium – it would accelerate downward.",,structured answer was not parseable
+fbd:fbd_2703_q4,muse_glimmer_30b,fbd,fbd_2703,fbd_2703_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 123.8 N",,structured answer was not parseable
+fbd:fbd_2726_q2,muse_glimmer_30b,fbd,fbd_2726,fbd_2726_q2,2,arrow_label_and_missing_force,"ANSWER: W, the upward tension/support force exerted by the string on the mass is missing",,structured answer was not parseable
+fbd:fbd_2726_q3,muse_glimmer_30b,fbd,fbd_2726,fbd_2726_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Drawn-diagram arrows: only W 85.8 N is shown, so magnitude ranking is W 85.8 N alone; shown vertical components are not balanced, net downward 85.8 N. Physically correct scenario: the hanging 8.75 kg mass has weight ≈85.8 N downward and an equal upward tension in the string, so the body is in overall static equilibrium.",,structured answer was not parseable
+fbd:fbd_2726_q4,muse_glimmer_30b,fbd,fbd_2726,fbd_2726_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: Net force magnitude = 0 N, Tension magnitude = 85.8 N",,structured answer was not parseable
+fbd:fbd_2736_q4,muse_glimmer_30b,fbd,fbd_2736,fbd_2736_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2786_q3,muse_glimmer_30b,fbd,fbd_2786,fbd_2786_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes shown: T = W (tie, both 191.6 N); Shown vertical components balanced: Yes; Physically correct scenario: Yes, the body is in static equilibrium overall",,structured answer was not parseable
+fbd:fbd_2786_q4,muse_glimmer_30b,fbd,fbd_2786,fbd_2786_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N, 191.6 N",,structured answer was not parseable
+fbd:fbd_2820_q3,muse_glimmer_30b,fbd,fbd_2820,fbd_2820_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes (drawn): W 152.7 N > N 152.3 N > F 30.7 N, no ties; Shown vertical components are not balanced; Physically correct scenario: the body is not in overall equilibrium – it is undergoing curvilinear motion with a net centripetal force, i.e., not in static/dynamic equilibrium.",,structured answer was not parseable
+fbd:fbd_2898_q2,muse_glimmer_30b,fbd,fbd_2898,fbd_2898_q2,2,arrow_label_and_missing_force,"ANSWER: W, normal force",,structured answer was not parseable
+fbd:fbd_2922_q2,muse_glimmer_30b,fbd,fbd_2922,fbd_2922_q2,2,arrow_label_and_missing_force,"ANSWER: W, normal force",,structured answer was not parseable
+fbd:fbd_2939_q3,muse_glimmer_30b,fbd,fbd_2939,fbd_2939_q3,3,"{""fields"":[""magnitude_ranking"",""shown_vertical_forces_balanced"",""physical_equilibrium""],""ordering_within_tie_group"":""any"",""type"":""structured_tie_groups""}","ANSWER: Magnitudes shown: N 260.9 N > W 203.5 N; the two shown vertical components are not balanced, net shown force is upward ≈ 57.4 N; physically correct scenario: the body is not in equilibrium overall, it has a net upward force m·a and accelerates upward at a = 2.77 m/s².",,structured answer was not parseable
+fbd:fbd_2941_q4,muse_glimmer_30b,fbd,fbd_2941,fbd_2941_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+fbd:fbd_2979_q4,muse_glimmer_30b,fbd,fbd_2979,fbd_2979_q4,4,"{""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0 N net force, 82.6 N tension",,structured answer was not parseable
+fold_punch:fold_punch_0145_q5,muse_glimmer_30b,fold_punch,fold_punch_0145,fold_punch_0145_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0214_q2,muse_glimmer_30b,fold_punch,fold_punch_0214,fold_punch_0214_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0214_q5,muse_glimmer_30b,fold_punch,fold_punch_0214,fold_punch_0214_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0226_q2,muse_glimmer_30b,fold_punch,fold_punch_0226,fold_punch_0226_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0265_q5,muse_glimmer_30b,fold_punch,fold_punch_0265,fold_punch_0265_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0276_q2,muse_glimmer_30b,fold_punch,fold_punch_0276,fold_punch_0276_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0307_q5,muse_glimmer_30b,fold_punch,fold_punch_0307,fold_punch_0307_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0336_q2,muse_glimmer_30b,fold_punch,fold_punch_0336,fold_punch_0336_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0371_q2,muse_glimmer_30b,fold_punch,fold_punch_0371,fold_punch_0371_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0371_q5,muse_glimmer_30b,fold_punch,fold_punch_0371,fold_punch_0371_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0400_q2,muse_glimmer_30b,fold_punch,fold_punch_0400,fold_punch_0400_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0464_q2,muse_glimmer_30b,fold_punch,fold_punch_0464,fold_punch_0464_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0466_q5,muse_glimmer_30b,fold_punch,fold_punch_0466,fold_punch_0466_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0472_q5,muse_glimmer_30b,fold_punch,fold_punch_0472,fold_punch_0472_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0598_q2,muse_glimmer_30b,fold_punch,fold_punch_0598,fold_punch_0598_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0617_q2,muse_glimmer_30b,fold_punch,fold_punch_0617,fold_punch_0617_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0643_q5,muse_glimmer_30b,fold_punch,fold_punch_0643,fold_punch_0643_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0655_q2,muse_glimmer_30b,fold_punch,fold_punch_0655,fold_punch_0655_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0658_q2,muse_glimmer_30b,fold_punch,fold_punch_0658,fold_punch_0658_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0668_q2,muse_glimmer_30b,fold_punch,fold_punch_0668,fold_punch_0668_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0704_q2,muse_glimmer_30b,fold_punch,fold_punch_0704,fold_punch_0704_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0723_q2,muse_glimmer_30b,fold_punch,fold_punch_0723,fold_punch_0723_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0757_q2,muse_glimmer_30b,fold_punch,fold_punch_0757,fold_punch_0757_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0757_q5,muse_glimmer_30b,fold_punch,fold_punch_0757,fold_punch_0757_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0766_q2,muse_glimmer_30b,fold_punch,fold_punch_0766,fold_punch_0766_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0766_q5,muse_glimmer_30b,fold_punch,fold_punch_0766,fold_punch_0766_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0844_q2,muse_glimmer_30b,fold_punch,fold_punch_0844,fold_punch_0844_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0844_q5,muse_glimmer_30b,fold_punch,fold_punch_0844,fold_punch_0844_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0924_q5,muse_glimmer_30b,fold_punch,fold_punch_0924,fold_punch_0924_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0941_q2,muse_glimmer_30b,fold_punch,fold_punch_0941,fold_punch_0941_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0943_q5,muse_glimmer_30b,fold_punch,fold_punch_0943,fold_punch_0943_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0958_q2,muse_glimmer_30b,fold_punch,fold_punch_0958,fold_punch_0958_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0961_q2,muse_glimmer_30b,fold_punch,fold_punch_0961,fold_punch_0961_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0966_q2,muse_glimmer_30b,fold_punch,fold_punch_0966,fold_punch_0966_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0970_q2,muse_glimmer_30b,fold_punch,fold_punch_0970,fold_punch_0970_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_0970_q5,muse_glimmer_30b,fold_punch,fold_punch_0970,fold_punch_0970_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1012_q5,muse_glimmer_30b,fold_punch,fold_punch_1012,fold_punch_1012_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1019_q2,muse_glimmer_30b,fold_punch,fold_punch_1019,fold_punch_1019_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1019_q5,muse_glimmer_30b,fold_punch,fold_punch_1019,fold_punch_1019_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1096_q5,muse_glimmer_30b,fold_punch,fold_punch_1096,fold_punch_1096_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1132_q2,muse_glimmer_30b,fold_punch,fold_punch_1132,fold_punch_1132_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1132_q5,muse_glimmer_30b,fold_punch,fold_punch_1132,fold_punch_1132_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1158_q2,muse_glimmer_30b,fold_punch,fold_punch_1158,fold_punch_1158_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1257_q2,muse_glimmer_30b,fold_punch,fold_punch_1257,fold_punch_1257_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1264_q5,muse_glimmer_30b,fold_punch,fold_punch_1264,fold_punch_1264_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1318_q2,muse_glimmer_30b,fold_punch,fold_punch_1318,fold_punch_1318_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1318_q5,muse_glimmer_30b,fold_punch,fold_punch_1318,fold_punch_1318_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1325_q5,muse_glimmer_30b,fold_punch,fold_punch_1325,fold_punch_1325_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1457_q2,muse_glimmer_30b,fold_punch,fold_punch_1457,fold_punch_1457_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1534_q2,muse_glimmer_30b,fold_punch,fold_punch_1534,fold_punch_1534_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1576_q5,muse_glimmer_30b,fold_punch,fold_punch_1576,fold_punch_1576_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1585_q2,muse_glimmer_30b,fold_punch,fold_punch_1585,fold_punch_1585_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1610_q5,muse_glimmer_30b,fold_punch,fold_punch_1610,fold_punch_1610_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1611_q2,muse_glimmer_30b,fold_punch,fold_punch_1611,fold_punch_1611_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1682_q5,muse_glimmer_30b,fold_punch,fold_punch_1682,fold_punch_1682_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1736_q5,muse_glimmer_30b,fold_punch,fold_punch_1736,fold_punch_1736_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1796_q2,muse_glimmer_30b,fold_punch,fold_punch_1796,fold_punch_1796_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1871_q2,muse_glimmer_30b,fold_punch,fold_punch_1871,fold_punch_1871_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1871_q5,muse_glimmer_30b,fold_punch,fold_punch_1871,fold_punch_1871_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1902_q2,muse_glimmer_30b,fold_punch,fold_punch_1902,fold_punch_1902_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1921_q2,muse_glimmer_30b,fold_punch,fold_punch_1921,fold_punch_1921_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1921_q5,muse_glimmer_30b,fold_punch,fold_punch_1921,fold_punch_1921_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1930_q5,muse_glimmer_30b,fold_punch,fold_punch_1930,fold_punch_1930_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1966_q2,muse_glimmer_30b,fold_punch,fold_punch_1966,fold_punch_1966_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1966_q5,muse_glimmer_30b,fold_punch,fold_punch_1966,fold_punch_1966_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_1976_q2,muse_glimmer_30b,fold_punch,fold_punch_1976,fold_punch_1976_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2057_q2,muse_glimmer_30b,fold_punch,fold_punch_2057,fold_punch_2057_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2060_q2,muse_glimmer_30b,fold_punch,fold_punch_2060,fold_punch_2060_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2060_q5,muse_glimmer_30b,fold_punch,fold_punch_2060,fold_punch_2060_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2114_q5,muse_glimmer_30b,fold_punch,fold_punch_2114,fold_punch_2114_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2126_q2,muse_glimmer_30b,fold_punch,fold_punch_2126,fold_punch_2126_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2193_q2,muse_glimmer_30b,fold_punch,fold_punch_2193,fold_punch_2193_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2404_q2,muse_glimmer_30b,fold_punch,fold_punch_2404,fold_punch_2404_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2435_q2,muse_glimmer_30b,fold_punch,fold_punch_2435,fold_punch_2435_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2464_q5,muse_glimmer_30b,fold_punch,fold_punch_2464,fold_punch_2464_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2465_q2,muse_glimmer_30b,fold_punch,fold_punch_2465,fold_punch_2465_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2522_q2,muse_glimmer_30b,fold_punch,fold_punch_2522,fold_punch_2522_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2522_q5,muse_glimmer_30b,fold_punch,fold_punch_2522,fold_punch_2522_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2616_q2,muse_glimmer_30b,fold_punch,fold_punch_2616,fold_punch_2616_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2656_q2,muse_glimmer_30b,fold_punch,fold_punch_2656,fold_punch_2656_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2656_q5,muse_glimmer_30b,fold_punch,fold_punch_2656,fold_punch_2656_q5,5,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2936_q2,muse_glimmer_30b,fold_punch,fold_punch_2936,fold_punch_2936_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_2968_q2,muse_glimmer_30b,fold_punch,fold_punch_2968,fold_punch_2968_q2,2,numeric,None,,expected exactly one number
+fold_punch:fold_punch_3000_q2,muse_glimmer_30b,fold_punch,fold_punch_3000,fold_punch_3000_q2,2,numeric,None,,expected exactly one number
+gauge_reading:gauge_reading_1133_q3,muse_glimmer_30b,gauge_reading,gauge_reading_1133,gauge_reading_1133_q3,3,number at the nearest rendered tick mark,None,,expected exactly one number
+gauge_reading:gauge_reading_2558_q3,muse_glimmer_30b,gauge_reading,gauge_reading_2558,gauge_reading_2558_q3,3,number at the nearest rendered tick mark,None,,expected exactly one number
+gear_train:gear_train_0081_q4,muse_glimmer_30b,gear_train,gear_train_0081,gear_train_0081_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+gear_train:gear_train_0279_q4,muse_glimmer_30b,gear_train,gear_train_0279,gear_train_0279_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+gear_train:gear_train_0588_q4,muse_glimmer_30b,gear_train,gear_train_0588,gear_train_0588_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+gear_train:gear_train_1177_q4,muse_glimmer_30b,gear_train,gear_train_1177,gear_train_1177_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+gear_train:gear_train_1489_q4,muse_glimmer_30b,gear_train,gear_train_1489,gear_train_1489_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+gear_train:gear_train_1527_q4,muse_glimmer_30b,gear_train,gear_train_1527,gear_train_1527_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+gear_train:gear_train_1957_q4,muse_glimmer_30b,gear_train,gear_train_1957,gear_train_1957_q4,4,number rounded to 1 decimal place,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0122_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0122,hex_pathfinding_0122_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0171_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0171,hex_pathfinding_0171_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0315_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0315,hex_pathfinding_0315_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0412_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0412,hex_pathfinding_0412_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0487_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0487,hex_pathfinding_0487_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0500_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0500,hex_pathfinding_0500_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0511_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0511,hex_pathfinding_0511_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0546_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0546,hex_pathfinding_0546_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0645_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0645,hex_pathfinding_0645_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0761_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0761,hex_pathfinding_0761_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0874_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0874,hex_pathfinding_0874_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0893_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0893,hex_pathfinding_0893_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_0940_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_0940,hex_pathfinding_0940_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1029_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1029,hex_pathfinding_1029_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1051_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1051,hex_pathfinding_1051_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1222_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1222,hex_pathfinding_1222_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1230_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1230,hex_pathfinding_1230_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1241_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1241,hex_pathfinding_1241_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1272_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1272,hex_pathfinding_1272_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1280_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1280,hex_pathfinding_1280_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1280_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1280,hex_pathfinding_1280_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1495_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1495,hex_pathfinding_1495_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1510_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1510,hex_pathfinding_1510_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1512_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1512,hex_pathfinding_1512_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1538_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1538,hex_pathfinding_1538_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1561_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1561,hex_pathfinding_1561_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1586_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1586,hex_pathfinding_1586_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1633_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1633,hex_pathfinding_1633_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1635_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1635,hex_pathfinding_1635_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1661_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1661,hex_pathfinding_1661_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1728_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1728,hex_pathfinding_1728_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1844_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1844,hex_pathfinding_1844_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_1884_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_1884,hex_pathfinding_1884_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2020_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2020,hex_pathfinding_2020_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2020_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2020,hex_pathfinding_2020_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2032_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2032,hex_pathfinding_2032_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2099_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2099,hex_pathfinding_2099_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2132_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2132,hex_pathfinding_2132_q1,1,integer,ANSWER: ,,empty answer body
+hex_pathfinding:hex_pathfinding_2178_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2178,hex_pathfinding_2178_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2206_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2206,hex_pathfinding_2206_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2365_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2365,hex_pathfinding_2365_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2383_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2383,hex_pathfinding_2383_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2508_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2508,hex_pathfinding_2508_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2516_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2516,hex_pathfinding_2516_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2516_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2516,hex_pathfinding_2516_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2525_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2525,hex_pathfinding_2525_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2592_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2592,hex_pathfinding_2592_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2623_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2623,hex_pathfinding_2623_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2667_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2667,hex_pathfinding_2667_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2737_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2737,hex_pathfinding_2737_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2806_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2806,hex_pathfinding_2806_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2840_q1,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2840,hex_pathfinding_2840_q1,1,integer,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2866_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2866,hex_pathfinding_2866_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2929_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2929,hex_pathfinding_2929_q3,3,integer in curly brackets,None,,expected exactly one number
+hex_pathfinding:hex_pathfinding_2977_q3,muse_glimmer_30b,hex_pathfinding,hex_pathfinding_2977,hex_pathfinding_2977_q3,3,integer in curly brackets,None,,expected exactly one number
+impossible_object:impossible_object_0522_q1,muse_glimmer_30b,impossible_object,impossible_object_0522,impossible_object_0522_q1,1,integer,None,,expected exactly one number
+impossible_object:impossible_object_0578_q1,muse_glimmer_30b,impossible_object,impossible_object_0578,impossible_object_0578_q1,1,integer,None,,expected exactly one number
+impossible_object:impossible_object_0584_q4,muse_glimmer_30b,impossible_object,impossible_object_0584,impossible_object_0584_q4,4,integer,None,,expected exactly one number
+impossible_object:impossible_object_0685_q1,muse_glimmer_30b,impossible_object,impossible_object_0685,impossible_object_0685_q1,1,integer,None,,expected exactly one number
+impossible_object:impossible_object_1131_q4,muse_glimmer_30b,impossible_object,impossible_object_1131,impossible_object_1131_q4,4,integer,ANSWER:,,empty answer body
+impossible_object:impossible_object_1881_q4,muse_glimmer_30b,impossible_object,impossible_object_1881,impossible_object_1881_q4,4,integer,None,,expected exactly one number
+impossible_object:impossible_object_1882_q1,muse_glimmer_30b,impossible_object,impossible_object_1882,impossible_object_1882_q1,1,integer,None,,expected exactly one number
+impossible_object:impossible_object_2135_q4,muse_glimmer_30b,impossible_object,impossible_object_2135,impossible_object_2135_q4,4,integer,None,,expected exactly one number
+impossible_object:impossible_object_2297_q1,muse_glimmer_30b,impossible_object,impossible_object_2297,impossible_object_2297_q1,1,integer,None,,expected exactly one number
+impossible_object:impossible_object_2547_q1,muse_glimmer_30b,impossible_object,impossible_object_2547,impossible_object_2547_q1,1,integer,None,,expected exactly one number
+impossible_object:impossible_object_2749_q1,muse_glimmer_30b,impossible_object,impossible_object_2749,impossible_object_2749_q1,1,integer,ANSWER:,,empty answer body
+laser_mirror:laser_mirror_0071_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0071,laser_mirror_0071_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0171_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0171,laser_mirror_0171_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0438_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0438,laser_mirror_0438_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0493_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0493,laser_mirror_0493_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0628_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0628,laser_mirror_0628_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0657_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0657,laser_mirror_0657_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0679_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0679,laser_mirror_0679_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0842_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0842,laser_mirror_0842_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0963_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0963,laser_mirror_0963_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_0975_q3,muse_glimmer_30b,laser_mirror,laser_mirror_0975,laser_mirror_0975_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1002_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1002,laser_mirror_1002_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1003_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1003,laser_mirror_1003_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1061_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1061,laser_mirror_1061_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1091_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1091,laser_mirror_1091_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1118_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1118,laser_mirror_1118_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1156_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1156,laser_mirror_1156_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1215_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1215,laser_mirror_1215_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1386_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1386,laser_mirror_1386_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1392_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1392,laser_mirror_1392_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1411_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1411,laser_mirror_1411_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1533_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1533,laser_mirror_1533_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1603_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1603,laser_mirror_1603_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1661_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1661,laser_mirror_1661_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1700_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1700,laser_mirror_1700_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1723_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1723,laser_mirror_1723_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1770_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1770,laser_mirror_1770_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1785_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1785,laser_mirror_1785_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1794_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1794,laser_mirror_1794_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1945_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1945,laser_mirror_1945_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_1959_q3,muse_glimmer_30b,laser_mirror,laser_mirror_1959,laser_mirror_1959_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2006_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2006,laser_mirror_2006_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2042_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2042,laser_mirror_2042_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2101_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2101,laser_mirror_2101_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2158_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2158,laser_mirror_2158_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2216_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2216,laser_mirror_2216_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2255_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2255,laser_mirror_2255_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2286_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2286,laser_mirror_2286_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2296_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2296,laser_mirror_2296_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2361_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2361,laser_mirror_2361_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2403_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2403,laser_mirror_2403_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2440_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2440,laser_mirror_2440_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2509_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2509,laser_mirror_2509_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2657_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2657,laser_mirror_2657_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2659_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2659,laser_mirror_2659_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2712_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2712,laser_mirror_2712_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2759_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2759,laser_mirror_2759_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2800_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2800,laser_mirror_2800_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2904_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2904,laser_mirror_2904_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2963_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2963,laser_mirror_2963_q3,3,integer,None,,expected exactly one number
+laser_mirror:laser_mirror_2972_q3,muse_glimmer_30b,laser_mirror,laser_mirror_2972,laser_mirror_2972_q3,3,integer,None,,expected exactly one number
+line_intersection:line_intersect_0060_q5,muse_glimmer_30b,line_intersection,line_intersect_0060,line_intersect_0060_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_0548_q5,muse_glimmer_30b,line_intersection,line_intersect_0548,line_intersect_0548_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_0690_q5,muse_glimmer_30b,line_intersection,line_intersect_0690,line_intersect_0690_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_0780_q5,muse_glimmer_30b,line_intersection,line_intersect_0780,line_intersect_0780_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_1366_q5,muse_glimmer_30b,line_intersection,line_intersect_1366,line_intersect_1366_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_1439_q2,muse_glimmer_30b,line_intersection,line_intersect_1439,line_intersect_1439_q2,2,numeric,None,,expected exactly one number
+line_intersection:line_intersect_1568_q5,muse_glimmer_30b,line_intersection,line_intersect_1568,line_intersect_1568_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_1651_q5,muse_glimmer_30b,line_intersection,line_intersect_1651,line_intersect_1651_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_1656_q5,muse_glimmer_30b,line_intersection,line_intersect_1656,line_intersect_1656_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_1951_q5,muse_glimmer_30b,line_intersection,line_intersect_1951,line_intersect_1951_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_2602_q5,muse_glimmer_30b,line_intersection,line_intersect_2602,line_intersect_2602_q5,5,numeric,None,,expected exactly one number
+line_intersection:line_intersect_2783_q5,muse_glimmer_30b,line_intersection,line_intersect_2783,line_intersect_2783_q5,5,numeric,None,,expected exactly one number
+nested_hexagons:nested_hexagons_2899_q3,muse_glimmer_30b,nested_hexagons,nested_hexagons_2899,nested_hexagons_2899_q3,3,"number rounded to 1 decimal in curly brackets, graded within ±10% relative",ANSWER:,,empty answer body
+nested_squares:nested_squares_2958_q4,muse_glimmer_30b,nested_squares,nested_squares_2958,nested_squares_2958_q4,4,"number in curly brackets, 0-90, graded within ±6 degrees",None,,expected exactly one number
+occluded_pattern:occluded_pattern_0086_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0086,occluded_pattern_0086_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0158_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0158,occluded_pattern_0158_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0204_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_0204,occluded_pattern_0204_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0214_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_0214,occluded_pattern_0214_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0251_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0251,occluded_pattern_0251_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0291_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_0291,occluded_pattern_0291_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0291_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0291,occluded_pattern_0291_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0394_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0394,occluded_pattern_0394_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0444_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0444,occluded_pattern_0444_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0476_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0476,occluded_pattern_0476_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0554_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_0554,occluded_pattern_0554_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0566_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0566,occluded_pattern_0566_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0670_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0670,occluded_pattern_0670_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0946_q1,muse_glimmer_30b,occluded_pattern,occluded_pattern_0946,occluded_pattern_0946_q1,1,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0946_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_0946,occluded_pattern_0946_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_0946_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_0946,occluded_pattern_0946_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1044_q4,muse_glimmer_30b,occluded_pattern,occluded_pattern_1044,occluded_pattern_1044_q4,4,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1151_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1151,occluded_pattern_1151_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1185_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1185,occluded_pattern_1185_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1194_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1194,occluded_pattern_1194_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1194_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1194,occluded_pattern_1194_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1275_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1275,occluded_pattern_1275_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1308_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1308,occluded_pattern_1308_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1338_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1338,occluded_pattern_1338_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1388_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1388,occluded_pattern_1388_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1436_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1436,occluded_pattern_1436_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1466_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1466,occluded_pattern_1466_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1486_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1486,occluded_pattern_1486_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1486_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1486,occluded_pattern_1486_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1494_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1494,occluded_pattern_1494_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1550_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1550,occluded_pattern_1550_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1690_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_1690,occluded_pattern_1690_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1770_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1770,occluded_pattern_1770_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1895_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1895,occluded_pattern_1895_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1915_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1915,occluded_pattern_1915_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_1984_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_1984,occluded_pattern_1984_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2010_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2010,occluded_pattern_2010_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2014_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2014,occluded_pattern_2014_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2135_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2135,occluded_pattern_2135_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2171_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2171,occluded_pattern_2171_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2184_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2184,occluded_pattern_2184_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2198_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2198,occluded_pattern_2198_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2212_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2212,occluded_pattern_2212_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2222_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2222,occluded_pattern_2222_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2232_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2232,occluded_pattern_2232_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2232_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2232,occluded_pattern_2232_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2281_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2281,occluded_pattern_2281_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2285_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2285,occluded_pattern_2285_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2305_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2305,occluded_pattern_2305_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2373_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2373,occluded_pattern_2373_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2373_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2373,occluded_pattern_2373_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2374_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2374,occluded_pattern_2374_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2430_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2430,occluded_pattern_2430_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2435_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2435,occluded_pattern_2435_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2435_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2435,occluded_pattern_2435_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2487_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2487,occluded_pattern_2487_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2528_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2528,occluded_pattern_2528_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2531_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2531,occluded_pattern_2531_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2562_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2562,occluded_pattern_2562_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2584_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2584,occluded_pattern_2584_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2622_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2622,occluded_pattern_2622_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2622_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2622,occluded_pattern_2622_q5,5,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2738_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2738,occluded_pattern_2738_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2748_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2748,occluded_pattern_2748_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2807_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2807,occluded_pattern_2807_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2926_q2,muse_glimmer_30b,occluded_pattern,occluded_pattern_2926,occluded_pattern_2926_q2,2,numeric,None,,expected exactly one number
+occluded_pattern:occluded_pattern_2979_q5,muse_glimmer_30b,occluded_pattern,occluded_pattern_2979,occluded_pattern_2979_q5,5,numeric,None,,expected exactly one number
+optical_illusion:optical_illusion_0380_q4,muse_glimmer_30b,optical_illusion,optical_illusion_0380,optical_illusion_0380_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_0510_q4,muse_glimmer_30b,optical_illusion,optical_illusion_0510,optical_illusion_0510_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_0825_q4,muse_glimmer_30b,optical_illusion,optical_illusion_0825,optical_illusion_0825_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_0902_q4,muse_glimmer_30b,optical_illusion,optical_illusion_0902,optical_illusion_0902_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_1088_q4,muse_glimmer_30b,optical_illusion,optical_illusion_1088,optical_illusion_1088_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_2342_q4,muse_glimmer_30b,optical_illusion,optical_illusion_2342,optical_illusion_2342_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_2465_q4,muse_glimmer_30b,optical_illusion,optical_illusion_2465,optical_illusion_2465_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_2821_q4,muse_glimmer_30b,optical_illusion,optical_illusion_2821,optical_illusion_2821_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+optical_illusion:optical_illusion_2931_q4,muse_glimmer_30b,optical_illusion,optical_illusion_2931,optical_illusion_2931_q4,4,"{""absolute_tolerance"":0.1,""answer_key_side_only"":true,""type"":""numeric_tolerance""}",None,,expected exactly one number
+orthographic:orthographic_0076_q2,muse_glimmer_30b,orthographic,orthographic_0076,orthographic_0076_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0130_q2,muse_glimmer_30b,orthographic,orthographic_0130,orthographic_0130_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0177_q2,muse_glimmer_30b,orthographic,orthographic_0177,orthographic_0177_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0316_q2,muse_glimmer_30b,orthographic,orthographic_0316,orthographic_0316_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0425_q2,muse_glimmer_30b,orthographic,orthographic_0425,orthographic_0425_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0492_q2,muse_glimmer_30b,orthographic,orthographic_0492,orthographic_0492_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0807_q2,muse_glimmer_30b,orthographic,orthographic_0807,orthographic_0807_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0824_q2,muse_glimmer_30b,orthographic,orthographic_0824,orthographic_0824_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_0915_q2,muse_glimmer_30b,orthographic,orthographic_0915,orthographic_0915_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1048_q2,muse_glimmer_30b,orthographic,orthographic_1048,orthographic_1048_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1067_q2,muse_glimmer_30b,orthographic,orthographic_1067,orthographic_1067_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1187_q2,muse_glimmer_30b,orthographic,orthographic_1187,orthographic_1187_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1213_q2,muse_glimmer_30b,orthographic,orthographic_1213,orthographic_1213_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1219_q2,muse_glimmer_30b,orthographic,orthographic_1219,orthographic_1219_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1318_q2,muse_glimmer_30b,orthographic,orthographic_1318,orthographic_1318_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1325_q2,muse_glimmer_30b,orthographic,orthographic_1325,orthographic_1325_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1357_q2,muse_glimmer_30b,orthographic,orthographic_1357,orthographic_1357_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1532_q2,muse_glimmer_30b,orthographic,orthographic_1532,orthographic_1532_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1590_q2,muse_glimmer_30b,orthographic,orthographic_1590,orthographic_1590_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1614_q2,muse_glimmer_30b,orthographic,orthographic_1614,orthographic_1614_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1664_q2,muse_glimmer_30b,orthographic,orthographic_1664,orthographic_1664_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1690_q2,muse_glimmer_30b,orthographic,orthographic_1690,orthographic_1690_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1719_q2,muse_glimmer_30b,orthographic,orthographic_1719,orthographic_1719_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1721_q2,muse_glimmer_30b,orthographic,orthographic_1721,orthographic_1721_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1768_q2,muse_glimmer_30b,orthographic,orthographic_1768,orthographic_1768_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1800_q2,muse_glimmer_30b,orthographic,orthographic_1800,orthographic_1800_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1829_q2,muse_glimmer_30b,orthographic,orthographic_1829,orthographic_1829_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1844_q2,muse_glimmer_30b,orthographic,orthographic_1844,orthographic_1844_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1922_q2,muse_glimmer_30b,orthographic,orthographic_1922,orthographic_1922_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_1963_q2,muse_glimmer_30b,orthographic,orthographic_1963,orthographic_1963_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2015_q2,muse_glimmer_30b,orthographic,orthographic_2015,orthographic_2015_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2030_q2,muse_glimmer_30b,orthographic,orthographic_2030,orthographic_2030_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2033_q2,muse_glimmer_30b,orthographic,orthographic_2033,orthographic_2033_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2096_q2,muse_glimmer_30b,orthographic,orthographic_2096,orthographic_2096_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2104_q2,muse_glimmer_30b,orthographic,orthographic_2104,orthographic_2104_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2121_q2,muse_glimmer_30b,orthographic,orthographic_2121,orthographic_2121_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2147_q2,muse_glimmer_30b,orthographic,orthographic_2147,orthographic_2147_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2226_q2,muse_glimmer_30b,orthographic,orthographic_2226,orthographic_2226_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2281_q2,muse_glimmer_30b,orthographic,orthographic_2281,orthographic_2281_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2306_q2,muse_glimmer_30b,orthographic,orthographic_2306,orthographic_2306_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2391_q2,muse_glimmer_30b,orthographic,orthographic_2391,orthographic_2391_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2426_q2,muse_glimmer_30b,orthographic,orthographic_2426,orthographic_2426_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2459_q2,muse_glimmer_30b,orthographic,orthographic_2459,orthographic_2459_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2484_q2,muse_glimmer_30b,orthographic,orthographic_2484,orthographic_2484_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2638_q2,muse_glimmer_30b,orthographic,orthographic_2638,orthographic_2638_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2696_q2,muse_glimmer_30b,orthographic,orthographic_2696,orthographic_2696_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2713_q2,muse_glimmer_30b,orthographic,orthographic_2713,orthographic_2713_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2783_q2,muse_glimmer_30b,orthographic,orthographic_2783,orthographic_2783_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2861_q2,muse_glimmer_30b,orthographic,orthographic_2861,orthographic_2861_q2,2,numeric,None,,expected exactly one number
+orthographic:orthographic_2867_q2,muse_glimmer_30b,orthographic,orthographic_2867,orthographic_2867_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_0101_q5,muse_glimmer_30b,overlap_circles,overlap_circles_0101,overlap_circles_0101_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_0206_q2,muse_glimmer_30b,overlap_circles,overlap_circles_0206,overlap_circles_0206_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_0368_q2,muse_glimmer_30b,overlap_circles,overlap_circles_0368,overlap_circles_0368_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_0828_q5,muse_glimmer_30b,overlap_circles,overlap_circles_0828,overlap_circles_0828_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1012_q5,muse_glimmer_30b,overlap_circles,overlap_circles_1012,overlap_circles_1012_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1036_q2,muse_glimmer_30b,overlap_circles,overlap_circles_1036,overlap_circles_1036_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1138_q4,muse_glimmer_30b,overlap_circles,overlap_circles_1138,overlap_circles_1138_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1335_q4,muse_glimmer_30b,overlap_circles,overlap_circles_1335,overlap_circles_1335_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1694_q2,muse_glimmer_30b,overlap_circles,overlap_circles_1694,overlap_circles_1694_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1730_q2,muse_glimmer_30b,overlap_circles,overlap_circles_1730,overlap_circles_1730_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1795_q5,muse_glimmer_30b,overlap_circles,overlap_circles_1795,overlap_circles_1795_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1914_q2,muse_glimmer_30b,overlap_circles,overlap_circles_1914,overlap_circles_1914_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_1946_q2,muse_glimmer_30b,overlap_circles,overlap_circles_1946,overlap_circles_1946_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2042_q2,muse_glimmer_30b,overlap_circles,overlap_circles_2042,overlap_circles_2042_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2042_q4,muse_glimmer_30b,overlap_circles,overlap_circles_2042,overlap_circles_2042_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2042_q5,muse_glimmer_30b,overlap_circles,overlap_circles_2042,overlap_circles_2042_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2222_q5,muse_glimmer_30b,overlap_circles,overlap_circles_2222,overlap_circles_2222_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2252_q4,muse_glimmer_30b,overlap_circles,overlap_circles_2252,overlap_circles_2252_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2261_q5,muse_glimmer_30b,overlap_circles,overlap_circles_2261,overlap_circles_2261_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2340_q2,muse_glimmer_30b,overlap_circles,overlap_circles_2340,overlap_circles_2340_q2,2,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2378_q4,muse_glimmer_30b,overlap_circles,overlap_circles_2378,overlap_circles_2378_q4,4,numeric,ANSWER,,expected exactly one number
+overlap_circles:overlap_circles_2613_q4,muse_glimmer_30b,overlap_circles,overlap_circles_2613,overlap_circles_2613_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2613_q5,muse_glimmer_30b,overlap_circles,overlap_circles_2613,overlap_circles_2613_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2727_q4,muse_glimmer_30b,overlap_circles,overlap_circles_2727,overlap_circles_2727_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2911_q4,muse_glimmer_30b,overlap_circles,overlap_circles_2911,overlap_circles_2911_q4,4,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2911_q5,muse_glimmer_30b,overlap_circles,overlap_circles_2911,overlap_circles_2911_q5,5,numeric,None,,expected exactly one number
+overlap_circles:overlap_circles_2965_q5,muse_glimmer_30b,overlap_circles,overlap_circles_2965,overlap_circles_2965_q5,5,numeric,None,,expected exactly one number
+polyhedron:polyhedron_0304_q1,muse_glimmer_30b,polyhedron,polyhedron_0304,polyhedron_0304_q1,1,numeric,None,,expected exactly one number
+polyhedron:polyhedron_0887_q1,muse_glimmer_30b,polyhedron,polyhedron_0887,polyhedron_0887_q1,1,numeric,None,,expected exactly one number
+polyhedron:polyhedron_0887_q3,muse_glimmer_30b,polyhedron,polyhedron_0887,polyhedron_0887_q3,3,numeric,None,,expected exactly one number
+polyhedron:polyhedron_0996_q3,muse_glimmer_30b,polyhedron,polyhedron_0996,polyhedron_0996_q3,3,numeric,None,,expected exactly one number
+polyhedron:polyhedron_1341_q1,muse_glimmer_30b,polyhedron,polyhedron_1341,polyhedron_1341_q1,1,numeric,None,,expected exactly one number
+polyhedron:polyhedron_1396_q3,muse_glimmer_30b,polyhedron,polyhedron_1396,polyhedron_1396_q3,3,numeric,None,,expected exactly one number
+polyhedron:polyhedron_1499_q3,muse_glimmer_30b,polyhedron,polyhedron_1499,polyhedron_1499_q3,3,numeric,None,,expected exactly one number
+polyhedron:polyhedron_1589_q1,muse_glimmer_30b,polyhedron,polyhedron_1589,polyhedron_1589_q1,1,numeric,None,,expected exactly one number
+polyhedron:polyhedron_2113_q1,muse_glimmer_30b,polyhedron,polyhedron_2113,polyhedron_2113_q1,1,numeric,None,,expected exactly one number
+polyhedron:polyhedron_2403_q1,muse_glimmer_30b,polyhedron,polyhedron_2403,polyhedron_2403_q1,1,numeric,None,,expected exactly one number
+polyhedron:polyhedron_2595_q1,muse_glimmer_30b,polyhedron,polyhedron_2595,polyhedron_2595_q1,1,numeric,ANSWER: ,,empty answer body
+projectile_motion:projectile_motion_0017_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.4 s, 49.3 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0036_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 6.8 s, 122.1 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0050_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0050,projectile_motion_0050_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.4 s, 47.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0051_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0055_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0055,projectile_motion_0055_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.4 s, 85.1 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0058_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0058,projectile_motion_0058_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.7 s, 74.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0088_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0088,projectile_motion_0088_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 2.1 s, 49.6 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0099_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0099,projectile_motion_0099_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0104_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 1.0 s, 18.4 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0108_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0108,projectile_motion_0108_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0174_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0174,projectile_motion_0174_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 1.7 s, 31.2 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0190_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0190,projectile_motion_0190_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 2.1 s, 25.5 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0199_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0199,projectile_motion_0199_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.2 s, 43.7 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0201_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0201,projectile_motion_0201_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0203_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0203,projectile_motion_0203_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.9 s, 109.5 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0213_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0213,projectile_motion_0213_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 6.8 s, 137.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0216_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 6.2 s, 61.3 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0237_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.3 s, 139.8 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0238_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0238,projectile_motion_0238_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 4.9 s, 124.7 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0243_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0243,projectile_motion_0243_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0243_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.9 s, 62.7 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0268_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0280_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0280,projectile_motion_0280_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0291_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0291,projectile_motion_0291_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 2.2 s, 11.6 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0307_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0307,projectile_motion_0307_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0314_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0314,projectile_motion_0314_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.2 s, 49.4 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0373_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0373,projectile_motion_0373_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.5 s, 91.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0386_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0386,projectile_motion_0386_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.3 s, 139.8 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0430_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 7.5 s, 99.5 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0449_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 6.2 s, 118.9 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0453_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.5 s, 130.9 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0504_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0504,projectile_motion_0504_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.8 s, 108.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0525_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0525,projectile_motion_0525_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 0.9 s, 7.8 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0534_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0534,projectile_motion_0534_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0534_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 1.4 s, 10.2 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0551_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0551,projectile_motion_0551_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0574_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0574,projectile_motion_0574_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0575_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0575,projectile_motion_0575_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 4.7 s, 82.5 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0579_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 4.7 s, 44.3 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0607_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0607,projectile_motion_0607_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0619_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0619,projectile_motion_0619_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0621_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0652_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0652,projectile_motion_0652_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.8 s, 26.2 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0655_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0655,projectile_motion_0655_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.2 s, 92.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0657_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0657,projectile_motion_0657_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0701_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0701,projectile_motion_0701_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0712_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0712,projectile_motion_0712_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 5.9 s, 154.1 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0726_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0726,projectile_motion_0726_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0742_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0742,projectile_motion_0742_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0826_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0826,projectile_motion_0826_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 4.3 s, 114.3 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0854_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0854,projectile_motion_0854_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 6.3 s, 103.5 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0859_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 3.6 s, 47.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0866_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0866,projectile_motion_0866_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0866_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 4.2 s, 97.3 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0870_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0870,projectile_motion_0870_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0901_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0901,projectile_motion_0901_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0913_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 6.7 s, 58.9 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0915_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0915,projectile_motion_0915_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+projectile_motion:projectile_motion_0915_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}",None,,structured answer was not parseable
+projectile_motion:projectile_motion_0925_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0925,projectile_motion_0925_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 2.1 s, 13.4 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0948_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 1.7 s, 26.7 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0980_q4,muse_glimmer_30b,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,4,"{""fields"":[""time_of_flight_s"",""range_m""],""tolerance_percent"":2,""type"":""numeric_tolerance""}","ANSWER: 2.5 s, 12.0 m",,structured answer was not parseable
+projectile_motion:projectile_motion_0996_q3,muse_glimmer_30b,projectile_motion,projectile_motion_0996,projectile_motion_0996_q3,3,meters rounded to 1 decimal; numeric tolerance 2%,None,,expected exactly one number
+rotation_matching:rotation_match_0475_q3,muse_glimmer_30b,rotation_matching,rotation_match_0475,rotation_match_0475_q3,3,numeric,None,,expected exactly one number
+rotation_matching:rotation_match_0482_q3,muse_glimmer_30b,rotation_matching,rotation_match_0482,rotation_match_0482_q3,3,numeric,None,,expected exactly one number
+rotation_matching:rotation_match_1014_q3,muse_glimmer_30b,rotation_matching,rotation_match_1014,rotation_match_1014_q3,3,numeric,None,,expected exactly one number
+rotation_matching:rotation_match_1244_q3,muse_glimmer_30b,rotation_matching,rotation_match_1244,rotation_match_1244_q3,3,numeric,None,,expected exactly one number
+rotation_matching:rotation_match_1556_q3,muse_glimmer_30b,rotation_matching,rotation_match_1556,rotation_match_1556_q3,3,numeric,None,,expected exactly one number
+rotation_matching:rotation_match_1991_q3,muse_glimmer_30b,rotation_matching,rotation_match_1991,rotation_match_1991_q3,3,numeric,None,,expected exactly one number
+rotation_matching:rotation_match_2457_q3,muse_glimmer_30b,rotation_matching,rotation_match_2457,rotation_match_2457_q3,3,numeric,None,,expected exactly one number
+route:route_puzzle_0006_q4,muse_glimmer_30b,route,route_puzzle_0006,route_puzzle_0006_q4,4,list,ANSWER: B E A C D,,structured answer was not parseable
+route:route_puzzle_0006_q5,muse_glimmer_30b,route,route_puzzle_0006,route_puzzle_0006_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0015_q4,muse_glimmer_30b,route,route_puzzle_0015,route_puzzle_0015_q4,4,list,"ANSWER: F, B, E",,structured answer was not parseable
+route:route_puzzle_0051_q2,muse_glimmer_30b,route,route_puzzle_0051,route_puzzle_0051_q2,2,numeric,None,,expected exactly one number
+route:route_puzzle_0051_q5,muse_glimmer_30b,route,route_puzzle_0051,route_puzzle_0051_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0052_q5,muse_glimmer_30b,route,route_puzzle_0052,route_puzzle_0052_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0161_q4,muse_glimmer_30b,route,route_puzzle_0161,route_puzzle_0161_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_0161_q5,muse_glimmer_30b,route,route_puzzle_0161,route_puzzle_0161_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0180_q5,muse_glimmer_30b,route,route_puzzle_0180,route_puzzle_0180_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0218_q1,muse_glimmer_30b,route,route_puzzle_0218,route_puzzle_0218_q1,1,numeric,None,,expected exactly one number
+route:route_puzzle_0335_q5,muse_glimmer_30b,route,route_puzzle_0335,route_puzzle_0335_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0362_q2,muse_glimmer_30b,route,route_puzzle_0362,route_puzzle_0362_q2,2,numeric,None,,expected exactly one number
+route:route_puzzle_0386_q5,muse_glimmer_30b,route,route_puzzle_0386,route_puzzle_0386_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0416_q4,muse_glimmer_30b,route,route_puzzle_0416,route_puzzle_0416_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_0443_q5,muse_glimmer_30b,route,route_puzzle_0443,route_puzzle_0443_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0471_q4,muse_glimmer_30b,route,route_puzzle_0471,route_puzzle_0471_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_0488_q4,muse_glimmer_30b,route,route_puzzle_0488,route_puzzle_0488_q4,4,list,ANSWER: F C B A D E,,structured answer was not parseable
+route:route_puzzle_0529_q2,muse_glimmer_30b,route,route_puzzle_0529,route_puzzle_0529_q2,2,numeric,None,,expected exactly one number
+route:route_puzzle_0784_q4,muse_glimmer_30b,route,route_puzzle_0784,route_puzzle_0784_q4,4,list,ANSWER: A E B C D,,structured answer was not parseable
+route:route_puzzle_0808_q5,muse_glimmer_30b,route,route_puzzle_0808,route_puzzle_0808_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0907_q5,muse_glimmer_30b,route,route_puzzle_0907,route_puzzle_0907_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_0913_q4,muse_glimmer_30b,route,route_puzzle_0913,route_puzzle_0913_q4,4,list,"ANSWER: A, B, E, C, D",,structured answer was not parseable
+route:route_puzzle_0965_q4,muse_glimmer_30b,route,route_puzzle_0965,route_puzzle_0965_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_1056_q4,muse_glimmer_30b,route,route_puzzle_1056,route_puzzle_1056_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_1125_q5,muse_glimmer_30b,route,route_puzzle_1125,route_puzzle_1125_q5,5,numeric,ANSWER: ,,empty answer body
+route:route_puzzle_1281_q4,muse_glimmer_30b,route,route_puzzle_1281,route_puzzle_1281_q4,4,list,"ANSWER: F, E, B, C, D, A",,structured answer was not parseable
+route:route_puzzle_1344_q4,muse_glimmer_30b,route,route_puzzle_1344,route_puzzle_1344_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_1349_q5,muse_glimmer_30b,route,route_puzzle_1349,route_puzzle_1349_q5,5,numeric,ANSWER,,expected exactly one number
+route:route_puzzle_1663_q4,muse_glimmer_30b,route,route_puzzle_1663,route_puzzle_1663_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_1821_q4,muse_glimmer_30b,route,route_puzzle_1821,route_puzzle_1821_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_1821_q5,muse_glimmer_30b,route,route_puzzle_1821,route_puzzle_1821_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_1833_q4,muse_glimmer_30b,route,route_puzzle_1833,route_puzzle_1833_q4,4,list,"ANSWER: E, B, D, C, A",,structured answer was not parseable
+route:route_puzzle_1839_q5,muse_glimmer_30b,route,route_puzzle_1839,route_puzzle_1839_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_1877_q4,muse_glimmer_30b,route,route_puzzle_1877,route_puzzle_1877_q4,4,list,"ANSWER: A-B, B-E, C-D, D-E",,structured answer was not parseable
+route:route_puzzle_1915_q2,muse_glimmer_30b,route,route_puzzle_1915,route_puzzle_1915_q2,2,numeric,None,,expected exactly one number
+route:route_puzzle_1915_q3,muse_glimmer_30b,route,route_puzzle_1915,route_puzzle_1915_q3,3,numeric,None,,expected exactly one number
+route:route_puzzle_1915_q4,muse_glimmer_30b,route,route_puzzle_1915,route_puzzle_1915_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_1915_q5,muse_glimmer_30b,route,route_puzzle_1915,route_puzzle_1915_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_1918_q4,muse_glimmer_30b,route,route_puzzle_1918,route_puzzle_1918_q4,4,list,"ANSWER: B, A, C, D",,structured answer was not parseable
+route:route_puzzle_1998_q4,muse_glimmer_30b,route,route_puzzle_1998,route_puzzle_1998_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2011_q2,muse_glimmer_30b,route,route_puzzle_2011,route_puzzle_2011_q2,2,numeric,None,,expected exactly one number
+route:route_puzzle_2045_q4,muse_glimmer_30b,route,route_puzzle_2045,route_puzzle_2045_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2066_q5,muse_glimmer_30b,route,route_puzzle_2066,route_puzzle_2066_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_2091_q4,muse_glimmer_30b,route,route_puzzle_2091,route_puzzle_2091_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2105_q4,muse_glimmer_30b,route,route_puzzle_2105,route_puzzle_2105_q4,4,list,"ANSWER: A, B, C, D, E, F",,structured answer was not parseable
+route:route_puzzle_2171_q4,muse_glimmer_30b,route,route_puzzle_2171,route_puzzle_2171_q4,4,list,ANSWER: A-D,,structured answer was not parseable
+route:route_puzzle_2201_q2,muse_glimmer_30b,route,route_puzzle_2201,route_puzzle_2201_q2,2,numeric,None,,expected exactly one number
+route:route_puzzle_2201_q3,muse_glimmer_30b,route,route_puzzle_2201,route_puzzle_2201_q3,3,numeric,None,,expected exactly one number
+route:route_puzzle_2201_q4,muse_glimmer_30b,route,route_puzzle_2201,route_puzzle_2201_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2201_q5,muse_glimmer_30b,route,route_puzzle_2201,route_puzzle_2201_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_2212_q4,muse_glimmer_30b,route,route_puzzle_2212,route_puzzle_2212_q4,4,list,"ANSWER: A-C, B-D",,structured answer was not parseable
+route:route_puzzle_2391_q5,muse_glimmer_30b,route,route_puzzle_2391,route_puzzle_2391_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_2397_q4,muse_glimmer_30b,route,route_puzzle_2397,route_puzzle_2397_q4,4,list,"ANSWER: B, C, E, F, D, A",,structured answer was not parseable
+route:route_puzzle_2449_q5,muse_glimmer_30b,route,route_puzzle_2449,route_puzzle_2449_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_2507_q4,muse_glimmer_30b,route,route_puzzle_2507,route_puzzle_2507_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2547_q4,muse_glimmer_30b,route,route_puzzle_2547,route_puzzle_2547_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2622_q5,muse_glimmer_30b,route,route_puzzle_2622,route_puzzle_2622_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_2685_q5,muse_glimmer_30b,route,route_puzzle_2685,route_puzzle_2685_q5,5,numeric,None,,expected exactly one number
+route:route_puzzle_2767_q4,muse_glimmer_30b,route,route_puzzle_2767,route_puzzle_2767_q4,4,list,ANSWER: B D C A,,structured answer was not parseable
+route:route_puzzle_2929_q4,muse_glimmer_30b,route,route_puzzle_2929,route_puzzle_2929_q4,4,list,None,,structured answer was not parseable
+route:route_puzzle_2972_q5,muse_glimmer_30b,route,route_puzzle_2972,route_puzzle_2972_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0077_q5,muse_glimmer_30b,rpm,rpm_0077,rpm_0077_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0260_q5,muse_glimmer_30b,rpm,rpm_0260,rpm_0260_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0422_q5,muse_glimmer_30b,rpm,rpm_0422,rpm_0422_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0428_q5,muse_glimmer_30b,rpm,rpm_0428,rpm_0428_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0505_q2,muse_glimmer_30b,rpm,rpm_0505,rpm_0505_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_0588_q4,muse_glimmer_30b,rpm,rpm_0588,rpm_0588_q4,4,numeric,None,,expected exactly one number
+rpm:rpm_0694_q4,muse_glimmer_30b,rpm,rpm_0694,rpm_0694_q4,4,numeric,None,,expected exactly one number
+rpm:rpm_0749_q5,muse_glimmer_30b,rpm,rpm_0749,rpm_0749_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0816_q5,muse_glimmer_30b,rpm,rpm_0816,rpm_0816_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_0876_q4,muse_glimmer_30b,rpm,rpm_0876,rpm_0876_q4,4,numeric,None,,expected exactly one number
+rpm:rpm_1009_q4,muse_glimmer_30b,rpm,rpm_1009,rpm_1009_q4,4,numeric,None,,expected exactly one number
+rpm:rpm_1013_q5,muse_glimmer_30b,rpm,rpm_1013,rpm_1013_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_1192_q2,muse_glimmer_30b,rpm,rpm_1192,rpm_1192_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_1350_q5,muse_glimmer_30b,rpm,rpm_1350,rpm_1350_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_1449_q5,muse_glimmer_30b,rpm,rpm_1449,rpm_1449_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_1495_q5,muse_glimmer_30b,rpm,rpm_1495,rpm_1495_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_1517_q2,muse_glimmer_30b,rpm,rpm_1517,rpm_1517_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_1549_q5,muse_glimmer_30b,rpm,rpm_1549,rpm_1549_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_1618_q2,muse_glimmer_30b,rpm,rpm_1618,rpm_1618_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_1743_q4,muse_glimmer_30b,rpm,rpm_1743,rpm_1743_q4,4,numeric,None,,expected exactly one number
+rpm:rpm_1901_q5,muse_glimmer_30b,rpm,rpm_1901,rpm_1901_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2059_q5,muse_glimmer_30b,rpm,rpm_2059,rpm_2059_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2066_q2,muse_glimmer_30b,rpm,rpm_2066,rpm_2066_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2066_q4,muse_glimmer_30b,rpm,rpm_2066,rpm_2066_q4,4,numeric,None,,expected exactly one number
+rpm:rpm_2066_q5,muse_glimmer_30b,rpm,rpm_2066,rpm_2066_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2067_q2,muse_glimmer_30b,rpm,rpm_2067,rpm_2067_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2252_q2,muse_glimmer_30b,rpm,rpm_2252,rpm_2252_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2378_q2,muse_glimmer_30b,rpm,rpm_2378,rpm_2378_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2436_q2,muse_glimmer_30b,rpm,rpm_2436,rpm_2436_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2563_q5,muse_glimmer_30b,rpm,rpm_2563,rpm_2563_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2566_q5,muse_glimmer_30b,rpm,rpm_2566,rpm_2566_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2588_q5,muse_glimmer_30b,rpm,rpm_2588,rpm_2588_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2713_q5,muse_glimmer_30b,rpm,rpm_2713,rpm_2713_q5,5,numeric,None,,expected exactly one number
+rpm:rpm_2936_q2,muse_glimmer_30b,rpm,rpm_2936,rpm_2936_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2941_q2,muse_glimmer_30b,rpm,rpm_2941,rpm_2941_q2,2,choice_number,None,,expected exactly one number
+rpm:rpm_2941_q5,muse_glimmer_30b,rpm,rpm_2941,rpm_2941_q5,5,numeric,None,,expected exactly one number
+shadow_inference:shadow_inference_0254_q4,muse_glimmer_30b,shadow_inference,shadow_inference_0254,shadow_inference_0254_q4,4,numeric,None,,expected exactly one number
+surface_topology:surface_topology_0002_q5,muse_glimmer_30b,surface_topology,surface_topology_0002,surface_topology_0002_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_0170_q3,muse_glimmer_30b,surface_topology,surface_topology_0170,surface_topology_0170_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_0170_q5,muse_glimmer_30b,surface_topology,surface_topology_0170,surface_topology_0170_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_0274_q5,muse_glimmer_30b,surface_topology,surface_topology_0274,surface_topology_0274_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_0702_q3,muse_glimmer_30b,surface_topology,surface_topology_0702,surface_topology_0702_q3,3,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_0702_q5,muse_glimmer_30b,surface_topology,surface_topology_0702,surface_topology_0702_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_0950_q5,muse_glimmer_30b,surface_topology,surface_topology_0950,surface_topology_0950_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_0966_q3,muse_glimmer_30b,surface_topology,surface_topology_0966,surface_topology_0966_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_0992_q5,muse_glimmer_30b,surface_topology,surface_topology_0992,surface_topology_0992_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1093_q5,muse_glimmer_30b,surface_topology,surface_topology_1093,surface_topology_1093_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1143_q5,muse_glimmer_30b,surface_topology,surface_topology_1143,surface_topology_1143_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1247_q5,muse_glimmer_30b,surface_topology,surface_topology_1247,surface_topology_1247_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1256_q5,muse_glimmer_30b,surface_topology,surface_topology_1256,surface_topology_1256_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1362_q3,muse_glimmer_30b,surface_topology,surface_topology_1362,surface_topology_1362_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_1590_q5,muse_glimmer_30b,surface_topology,surface_topology_1590,surface_topology_1590_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1778_q3,muse_glimmer_30b,surface_topology,surface_topology_1778,surface_topology_1778_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_1778_q5,muse_glimmer_30b,surface_topology,surface_topology_1778,surface_topology_1778_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_1882_q3,muse_glimmer_30b,surface_topology,surface_topology_1882,surface_topology_1882_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_1978_q3,muse_glimmer_30b,surface_topology,surface_topology_1978,surface_topology_1978_q3,3,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_2111_q3,muse_glimmer_30b,surface_topology,surface_topology_2111,surface_topology_2111_q3,3,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_2142_q3,muse_glimmer_30b,surface_topology,surface_topology_2142,surface_topology_2142_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_2190_q1,muse_glimmer_30b,surface_topology,surface_topology_2190,surface_topology_2190_q1,1,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_2194_q5,muse_glimmer_30b,surface_topology,surface_topology_2194,surface_topology_2194_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_2246_q3,muse_glimmer_30b,surface_topology,surface_topology_2246,surface_topology_2246_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_2362_q3,muse_glimmer_30b,surface_topology,surface_topology_2362,surface_topology_2362_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_2754_q3,muse_glimmer_30b,surface_topology,surface_topology_2754,surface_topology_2754_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_2754_q5,muse_glimmer_30b,surface_topology,surface_topology_2754,surface_topology_2754_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_2842_q5,muse_glimmer_30b,surface_topology,surface_topology_2842,surface_topology_2842_q5,5,number_in_curly_brackets,None,,expected exactly one number
+surface_topology:surface_topology_2942_q3,muse_glimmer_30b,surface_topology,surface_topology_2942,surface_topology_2942_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_2990_q3,muse_glimmer_30b,surface_topology,surface_topology_2990,surface_topology_2990_q3,3,numeric,None,,expected exactly one number
+surface_topology:surface_topology_2990_q5,muse_glimmer_30b,surface_topology,surface_topology_2990,surface_topology_2990_q5,5,number_in_curly_brackets,None,,expected exactly one number

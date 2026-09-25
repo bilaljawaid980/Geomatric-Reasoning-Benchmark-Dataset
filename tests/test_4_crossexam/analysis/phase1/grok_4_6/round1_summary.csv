@@ -1,0 +1,2 @@
+model,rows,correct,accuracy,accuracy_ci_low,accuracy_ci_high,confidence_rows,mean_confidence,mean_confidence_correct,mean_confidence_incorrect,brier_score,ece_10_bins
+grok_4_6,2000,882,0.441,0.4195,0.463,1994,0.823309929789368,0.8831632653061223,0.7758363309352518,0.3498205616850551,0.3809829488465396

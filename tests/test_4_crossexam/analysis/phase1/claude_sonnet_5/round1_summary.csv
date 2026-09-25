@@ -1,0 +1,2 @@
+model,rows,correct,accuracy,accuracy_ci_low,accuracy_ci_high,confidence_rows,mean_confidence,mean_confidence_correct,mean_confidence_incorrect,brier_score,ece_10_bins
+claude_sonnet_5,2000,581,0.2905,0.271,0.3105,1975,0.6770481012658227,0.7729137931034482,0.6371899641577061,0.3240340759493671,0.3833772151898734

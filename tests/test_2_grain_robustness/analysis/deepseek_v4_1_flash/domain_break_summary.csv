@@ -1,0 +1,5 @@
+model,break_bucket,domains
+deepseek_v4_1_flash,15.0,6
+deepseek_v4_1_flash,25.0,3
+deepseek_v4_1_flash,40.0,2
+deepseek_v4_1_flash,no significant drop,23

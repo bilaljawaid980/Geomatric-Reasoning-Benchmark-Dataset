@@ -1,0 +1,25 @@
+model,break_bucket,domains
+claude_opus_5,15.0,4
+claude_opus_5,25.0,3
+claude_opus_5,40.0,1
+claude_opus_5,no significant drop,26
+claude_sonnet_5,15.0,2
+claude_sonnet_5,25.0,1
+claude_sonnet_5,40.0,1
+claude_sonnet_5,no significant drop,30
+gemini_3_8_flash,25.0,1
+gemini_3_8_flash,40.0,2
+gemini_3_8_flash,no significant drop,31
+gpt_5_6_luna,25.0,2
+gpt_5_6_luna,40.0,2
+gpt_5_6_luna,no significant drop,30
+grok_4_6,15.0,2
+grok_4_6,40.0,2
+grok_4_6,no significant drop,30
+inking,15.0,4
+inking,25.0,3
+inking,40.0,2
+inking,no significant drop,25
+muse_glimmer_30b,15.0,4
+muse_glimmer_30b,25.0,2
+muse_glimmer_30b,no significant drop,28

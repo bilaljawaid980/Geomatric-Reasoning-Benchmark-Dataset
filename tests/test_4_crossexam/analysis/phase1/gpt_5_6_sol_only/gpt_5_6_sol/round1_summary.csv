@@ -1,0 +1,2 @@
+model,rows,correct,accuracy,accuracy_ci_low,accuracy_ci_high,confidence_rows,mean_confidence,mean_confidence_correct,mean_confidence_incorrect,brier_score,ece_10_bins
+gpt_5_6_sol,2000,768,0.384,0.363,0.4055,2000,0.9503850000000001,0.9703385416666667,0.9379464285714285,0.54716975,0.566385

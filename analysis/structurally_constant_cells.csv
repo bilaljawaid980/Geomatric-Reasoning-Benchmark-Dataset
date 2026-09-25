@@ -1,0 +1,7 @@
+domain,level,n,baseline,modal_ground_truth,excluded_constant,small_n,raw_accuracy,adjusted_score
+cube_net,1,50,1.0,6,True,False,,
+gear_train,2,50,1.0,opposite,True,False,,
+optical_illusion,1,50,1.0,2,True,False,,
+orthographic,5,50,1.0,front and side,True,False,,
+polyhedron,5,50,1.0,no,True,False,,
+symmetry_pattern,5,50,1.0,yes,True,False,,

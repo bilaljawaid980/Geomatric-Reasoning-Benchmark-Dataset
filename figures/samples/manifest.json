@@ -1,0 +1,587 @@
+{
+  "families": {
+    "Plane": [
+      {
+        "rank": 1,
+        "domain": "nested_squares",
+        "image_id": "nested_squares_0083",
+        "file": "figures/samples/Plane_nested_squares_nested_squares_0083.png",
+        "original_px": [
+          598,
+          595
+        ],
+        "final_px": [
+          598,
+          595
+        ],
+        "complexity_field": "num_squares",
+        "complexity_value": 9,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many squares are in this image? Please answer with a number in curly brackets, e.g. {10}.",
+            "ground_truth": "9",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Do the shapes shrink by roughly the same factor at each step, or does the amount of shrinking change as you move inward? Answer 'constant' or 'changing'.",
+            "ground_truth": "constant",
+            "answer_format": "choice",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "What is the approximate ratio of the outermost square's side length to the innermost square's side length? Answer as a number rounded to 1 decimal in curly brackets, e.g. {3.2}.",
+            "ground_truth": "5.0",
+            "answer_format": "number rounded to 1 decimal in curly brackets, graded within ±10% relative",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "Through approximately how many degrees has the innermost square been rotated relative to the outermost square? Because regular squares have 4-fold symmetry, answer with a value from 0 to 90 in curly brackets, e.g. {25}.",
+            "ground_truth": "64",
+            "answer_format": "number in curly brackets, 0-90, graded within ±6 degrees",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If one more square were added inside the innermost one following the same size-reduction pattern, would its side length still be long enough to be visually distinguishable at this image resolution (i.e. greater than roughly 12% of the outermost square's side length)? Answer yes or no.",
+            "ground_truth": "yes",
+            "answer_format": "yes_no",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Work outward from the innermost shape to the outermost: count how many shapes are nested inside one another, decide whether each step shrinks by roughly the same factor or by a changing one, and estimate through how many degrees the innermost shape has been turned relative to the outermost, giving a value from 0 to 90 degrees to the nearest 10. State your conclusion, justify it by describing how you matched corresponding corners between the innermost and outermost shapes, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "shape_count=9; shrink_pattern=constant; rotation_degrees_nearest_10=60"
+          ]
+        }
+      }
+    ],
+    "Solid": [
+      {
+        "rank": 1,
+        "domain": "cube_structure",
+        "image_id": "cube_structure_0168",
+        "file": "figures/samples/Solid_cube_structure_cube_structure_0168.png",
+        "original_px": [
+          429,
+          416
+        ],
+        "final_px": [
+          429,
+          416
+        ],
+        "complexity_field": "total_cube_count",
+        "complexity_value": 12,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many cubes make up this structure in total? Answer with a number in curly brackets, e.g. {12}.",
+            "ground_truth": "12",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "How many cubes are touching the ground (bottom layer)? Answer with a number in curly brackets, e.g. {5}.",
+            "ground_truth": "7",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "Which layer (counting from the ground as layer 1) has the most cubes? Answer with a number in curly brackets, e.g. {2}.",
+            "ground_truth": "1",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "How many cubes are completely hidden from the current view? Answer with a number.",
+            "ground_truth": "2",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If this structure were rotated 180 degrees around the vertical axis, how many currently-hidden cubes would become visible? Answer with a number in curly brackets, e.g. {3}.",
+            "ground_truth": "2",
+            "answer_format": "numeric",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Scan the structure cube by cube, taking as vertical the direction the drawing renders as up: count exactly how many cubes have a visible top face, then work out exactly how many cubes are completely hidden from this viewpoint (tolerance 0 for both counts). State your conclusion, justify it by describing how you separated visible top faces from side faces and how the visible stacks imply any concealed cubes, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "visible_top_face_count=5; hidden_cube_count=2"
+          ]
+        }
+      }
+    ],
+    "Transformational": [
+      {
+        "rank": 1,
+        "domain": "symmetry_pattern",
+        "image_id": "symmetry_pattern_0059",
+        "file": "figures/samples/Transformational_symmetry_pattern_symmetry_pattern_0059.png",
+        "original_px": [
+          414,
+          405
+        ],
+        "final_px": [
+          414,
+          405
+        ],
+        "complexity_field": "num_shapes",
+        "complexity_value": 8,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many shapes are in this pattern?",
+            "ground_truth": "8",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Is this pattern symmetric, or is there an element that breaks the symmetry? Answer 'symmetric' or 'broken'.",
+            "ground_truth": "broken",
+            "answer_format": "choice",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "Which shape breaks the symmetry? Answer with its approximate location, such as top-left, top-right, bottom-left, bottom-right, or center.",
+            "ground_truth": "top-left",
+            "answer_format": "location",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "In what way does the odd shape differ — filled instead of outlined, rotated at a different angle, shifted out of position, or a different size?",
+            "ground_truth": "rotated",
+            "answer_format": "choice",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If the symmetric partner of the odd shape received the identical change, would the global symmetry be restored?",
+            "ground_truth": "yes",
+            "answer_format": "yes_no",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Examine every shape and where it sits relative to the centre of the arrangement: work out which shapes pair with which, decide whether the pattern is fully symmetric or whether one element has been displaced from where its partner requires it to be, and say what kind of symmetry the arrangement is built on. State your conclusion, justify it by describing which shapes you paired and how you judged their positions, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "pattern_status=broken; symmetry_type=rotational_4"
+          ]
+        }
+      }
+    ],
+    "Physical": [
+      {
+        "rank": 1,
+        "domain": "physical_stability",
+        "image_id": "physical_stability_0060",
+        "file": "figures/samples/Physical_physical_stability_physical_stability_0060.png",
+        "original_px": [
+          600,
+          600
+        ],
+        "final_px": [
+          600,
+          600
+        ],
+        "complexity_field": "num_blocks",
+        "complexity_value": 4,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many blocks are in this stack?",
+            "ground_truth": "4",
+            "answer_format": "number",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Is block C's center of mass positioned to the left, right, or directly above the center of block B, which it rests on?",
+            "ground_truth": "left",
+            "answer_format": "left, right, or directly above",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "Which block has the largest absolute horizontal center offset from the block directly beneath it? Answer with the letter.",
+            "ground_truth": "D",
+            "answer_format": "single uppercase letter",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "Is this entire stack stable, or will it tip over? If it tips, state the lowest joint at which it first becomes unstable.",
+            "ground_truth": "stable",
+            "answer_format": "stable or 'tips between block X and <block Y|ground>'",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If topmost block D were removed, would the remaining stack be stable or unstable? Answer accordingly and briefly state the center-of-mass reason.",
+            "ground_truth": "stable; after removing block D, every cumulative center of mass remains within its supporting base",
+            "answer_format": "'<stable|unstable>; <brief cumulative-center-of-mass reason>'",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Work up the stack from the ground, tracking where the combined weight of everything above each joint falls relative to the block beneath it: decide whether the stack stands or tips, and if it tips, name the lowest joint at which it first fails. State your conclusion, justify it by describing how each block sits relative to the one it rests on, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "stability_conclusion={\"lowest_failing_joint\":\"none\",\"status\":\"stable\"}"
+          ]
+        }
+      }
+    ],
+    "Topological": [
+      {
+        "rank": 1,
+        "domain": "hex_pathfinding",
+        "image_id": "hex_pathfinding_0110",
+        "file": "figures/samples/Topological_hex_pathfinding_hex_pathfinding_0110.png",
+        "original_px": [
+          518,
+          518
+        ],
+        "final_px": [
+          518,
+          518
+        ],
+        "complexity_field": "grid_radius",
+        "complexity_value": 4,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many grey (hole) tiles are shown in this grid?",
+            "ground_truth": "11",
+            "answer_format": "integer",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Is the tile outlined in blue with a '?', immediately adjacent to START, a grey hole or walkable? Answer 'hole' or 'walkable'.",
+            "ground_truth": "hole",
+            "answer_format": "hole or walkable",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "What is the minimum number of moves needed to travel from START to HOME while avoiding all grey holes? Answer with a number in curly brackets.",
+            "ground_truth": "5",
+            "answer_format": "integer in curly brackets",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "Is the shortest path from START to HOME unique, or are there multiple different shortest paths of the same length? If multiple, how many?",
+            "ground_truth": "multiple (2)",
+            "answer_format": "unique or multiple (count)",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If the walkable tile marked with a purple X at axial position (3,0) were turned into a hole, would the shortest path length increase, stay the same, or would there be no valid path? If it increases, state the new shortest length.",
+            "ground_truth": "increase to 7 moves",
+            "answer_format": "stay the same (N moves), increase to N moves, or no valid path exists",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Look closely at the green HOME hex and everything that immediately surrounds it: name the position of every grey hole touching it using these six direction names only: upper-left, upper-right, left, right, lower-left, lower-right. State your conclusion, justify it by describing exactly what you see around HOME, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "hole_directions=[\"left\"]"
+          ]
+        }
+      }
+    ],
+    "Projective": [
+      {
+        "rank": 1,
+        "domain": "occluded_pattern",
+        "image_id": "occluded_pattern_0134",
+        "file": "figures/samples/Projective_occluded_pattern_occluded_pattern_0134.png",
+        "original_px": [
+          511,
+          516
+        ],
+        "final_px": [
+          511,
+          516
+        ],
+        "complexity_field": "total_object_count",
+        "complexity_value": 14,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many objects are clearly visible (not hidden behind the occluder) in this image?",
+            "ground_truth": "11",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Assuming the pattern continues behind the occluded region, how many objects are there in total? Answer with a number in curly brackets, e.g. {12}.",
+            "ground_truth": "14",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "What type of pattern do the objects form - a grid, a circle, or a triangular arrangement? Answer with one word.",
+            "ground_truth": "circle",
+            "answer_format": "one_word",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "How many objects are hidden behind the occluded region specifically (not counting the visible ones)? Answer with a number in curly brackets.",
+            "ground_truth": "3",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If the occluder were removed and the pattern extended by one additional object outside the former occluded region, how many objects would be visible in total?",
+            "ground_truth": "15",
+            "answer_format": "numeric",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Look at the objects visible around the occluder and the arrangement they suggest: name the kind of pattern they form, then work out how many objects the occluder is hiding from view. State your conclusion, justify it by describing how the visible objects let you infer where the pattern continues, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "pattern_type=circle; hidden_object_count=3"
+          ]
+        }
+      }
+    ],
+    "Analytic": [
+      {
+        "rank": 1,
+        "domain": "compass_bearing",
+        "image_id": "compass_bearing_0064",
+        "file": "figures/samples/Analytic_compass_bearing_compass_bearing_0064.png",
+        "original_px": [
+          530,
+          530
+        ],
+        "final_px": [
+          530,
+          530
+        ],
+        "complexity_field": "num_landmarks",
+        "complexity_value": 3,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many landmarks are shown on this map?",
+            "ground_truth": "3",
+            "answer_format": "integer",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Is landmark C located north or south of landmark A? Answer 'north', 'south', or 'same latitude'.",
+            "ground_truth": "south",
+            "answer_format": "north, south, or same latitude",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "What is the compass bearing from landmark B to landmark A, rounded to the nearest 10 degrees? Answer with a three-digit number in curly brackets, e.g. {045}.",
+            "ground_truth": "250",
+            "answer_format": "three-digit bearing in curly brackets",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "If you are standing at landmark B facing landmark C, and then turn to face landmark A instead, how many degrees would you need to turn, and in which direction? Round the angle to the nearest degree and answer with the amount plus 'clockwise' or 'counterclockwise'.",
+            "ground_truth": "50 degrees clockwise",
+            "answer_format": "integer degrees plus direction",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If you traveled from landmark A along a bearing of 008 degrees for the same distance as A-to-C, which of these landmarks would the projected endpoint be closest to: B, C? Give the letter and briefly justify using endpoint distance and bearing difference.",
+            "ground_truth": "B; projected endpoint is closest to B (239.9 map units away; bearing difference 57.1 degrees)",
+            "answer_format": "letter; endpoint distance and bearing difference",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Read the compass rose in the corner, then compare the straight-line displacement between every pair of landmarks: name the two landmarks that lie closest together, and give the bearing in degrees from the alphabetically earlier of them to the other, measuring clockwise from north and answering to the nearest 10 degrees. State your conclusion, justify it by describing the displacements you compared and how you read the direction against the rose, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "closest_pair=B-C; bearing_degrees_nearest_10=200"
+          ]
+        }
+      }
+    ],
+    "Optical": [
+      {
+        "rank": 1,
+        "domain": "optical_illusion",
+        "image_id": "optical_illusion_0046",
+        "file": "figures/samples/Optical_optical_illusion_optical_illusion_0046.png",
+        "original_px": [
+          504,
+          504
+        ],
+        "final_px": [
+          504,
+          504
+        ],
+        "complexity_field": "file_size_bytes",
+        "complexity_value": 31979,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many center circles are being compared in this image?",
+            "ground_truth": "2",
+            "answer_format": "integer",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Because of the surrounding circles, which element would a typical human viewer perceive as bigger—element A or element B? Answer with the letter.",
+            "ground_truth": "B",
+            "answer_format": "A or B",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "Ignoring the surrounding context, measure the actual diameter of element A and element B. Are they equal, or is one actually bigger? Answer 'equal', 'A', or 'B'.",
+            "ground_truth": "B",
+            "answer_format": "equal, A, or B",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "By approximately what percentage do the two elements' TRUE sizes differ (0% if equal)? Answer with a number in curly brackets, e.g. {12}.",
+            "ground_truth": "16",
+            "answer_format": {
+              "absolute_tolerance": 0.1,
+              "answer_key_side_only": true,
+              "type": "numeric_tolerance"
+            },
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If the visual context (surrounding circles) were removed entirely and only the two bare elements remained, would your answer to 'which one is bigger' change from what the illusion suggests? Answer yes or no, and state which is actually bigger without the context.",
+            "ground_truth": "no; element B is actually bigger",
+            "answer_format": "yes/no; actual relation",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Measure the two marked elements against one another, disregarding the lines and shapes surrounding them: decide whether they are truly equal in size or whether one is genuinely larger, and separately say which one a typical human viewer would perceive as larger. State your conclusion, justify it by describing what you measured and what the surrounding context does to the impression, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "true_size_relation=B; perceived_larger=B"
+          ]
+        }
+      }
+    ],
+    "Inductive": [
+      {
+        "rank": 1,
+        "domain": "rpm",
+        "image_id": "rpm_0041",
+        "file": "figures/samples/Inductive_rpm_rpm_0041.png",
+        "original_px": [
+          631,
+          636
+        ],
+        "final_px": [
+          631,
+          636
+        ],
+        "complexity_field": "num_active_rules",
+        "complexity_value": 2,
+        "closed_loop": [
+          {
+            "level": 1,
+            "question": "How many shapes appear in the panel at row 1, column 1 (top-left)?",
+            "ground_truth": "3",
+            "answer_format": "numeric",
+            "tolerance": null
+          },
+          {
+            "level": 2,
+            "question": "Which of the 8 numbered choices correctly completes the pattern in the missing panel? Answer with the number.",
+            "ground_truth": "5",
+            "answer_format": "choice_number",
+            "tolerance": null
+          },
+          {
+            "level": 3,
+            "question": "Choice 8 is wrong. Does it have the correct shape but wrong color, the correct color but wrong shape, or is it wrong in some other way?",
+            "ground_truth": "correct shape but wrong color",
+            "answer_format": "classification_phrase",
+            "tolerance": null
+          },
+          {
+            "level": 4,
+            "question": "If the pattern in the final row continued for one more panel beyond the missing one, what would that panel's rotation be?",
+            "ground_truth": "315",
+            "answer_format": "attribute_value",
+            "tolerance": null
+          },
+          {
+            "level": 5,
+            "question": "If a ninth, incorrect choice with the same shape type as the correct answer but a wrong color were added, how many choices would then share the correct shape type?",
+            "ground_truth": "9",
+            "answer_format": "numeric",
+            "tolerance": null
+          }
+        ],
+        "open_loop": {
+          "question": "Read across the rows and down the columns of the matrix to work out what changes from one panel to the next: decide which of the numbered choices completes the pattern, and say which attributes had to change together for that choice to be the right one. State your conclusion, justify it by describing the progression you found along the rows and down the columns, and end with a confidence score from 0 to 1.",
+          "ground_truth": null,
+          "acceptance_set": [
+            "correct_choice=5; attributes_changed_together=[\"color\",\"rotation\"]"
+          ]
+        }
+      }
+    ]
+  },
+  "ranking_fields_used": {
+    "Plane": "nested_squares:num_squares",
+    "Solid": "cube_structure:total_cube_count",
+    "Transformational": "symmetry_pattern:num_shapes",
+    "Physical": "physical_stability:num_blocks",
+    "Topological": "hex_pathfinding:grid_radius",
+    "Projective": "occluded_pattern:total_object_count",
+    "Analytic": "compass_bearing:num_landmarks",
+    "Optical": "optical_illusion:file_size_bytes",
+    "Inductive": "rpm:num_active_rules"
+  },
+  "domain_slug_mapping": {
+    "symmetry_patterns": "symmetry_pattern",
+    "occluded_patterns": "occluded_pattern",
+    "compass_bearings": "compass_bearing",
+    "progressive_matrices": "rpm"
+  },
+  "families_with_incomplete_question_sets": [],
+  "warnings": [
+    "optical_illusion has no stored scalar primitive-count field; file_size_bytes is retained as a crude proxy."
+  ]
+}

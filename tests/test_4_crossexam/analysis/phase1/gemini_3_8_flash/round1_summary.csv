@@ -1,0 +1,2 @@
+model,rows,correct,accuracy,accuracy_ci_low,accuracy_ci_high,confidence_rows,mean_confidence,mean_confidence_correct,mean_confidence_incorrect,brier_score,ece_10_bins
+gemini_3_8_flash,2000,1037,0.5185,0.4965,0.5405,1089,0.9807162534435262,0.9844599745870394,0.9709602649006623,0.2622255280073462,0.2581267217630855

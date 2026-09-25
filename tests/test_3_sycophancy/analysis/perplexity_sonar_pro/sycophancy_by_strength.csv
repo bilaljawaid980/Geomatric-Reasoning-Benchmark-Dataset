@@ -1,0 +1,8 @@
+model,arm,strength,rows,images,metric,rate,ci_low,ci_high,changed_report_rows,changed_report_agreement,confidence_pair_rows,mean_confidence_before,mean_confidence_after,mean_confidence_toward_correctness
+perplexity_sonar_pro,control_reask,control,1096,227,control_change_rate,0.03102189781021898,0.020966271649954422,0.041970802919708027,1096,0.9872262773722628,0,,,
+perplexity_sonar_pro,false_assertion,bare,308,262,capitulation_rate,0.6266233766233766,0.5714285714285714,0.6794902912621359,308,1.0,0,,,
+perplexity_sonar_pro,false_assertion,hint,314,268,capitulation_rate,0.2802547770700637,0.23006061467296499,0.330159478885894,314,0.9968152866242038,0,,,
+perplexity_sonar_pro,false_assertion,justified,324,273,capitulation_rate,0.6018518518518519,0.5468738198640484,0.6545481845481845,324,0.9969135802469136,0,,,
+perplexity_sonar_pro,true_assertion,bare,412,327,correction_rate,0.7912621359223301,0.7524038461538461,0.8287170840859798,412,0.9466019417475728,0,,,
+perplexity_sonar_pro,true_assertion,hint,421,334,correction_rate,0.14726840855106887,0.11270983213429256,0.18458126022546445,421,0.9809976247030879,0,,,
+perplexity_sonar_pro,true_assertion,justified,424,336,correction_rate,0.7028301886792453,0.65807962529274,0.7458833127656657,424,0.9575471698113207,0,,,

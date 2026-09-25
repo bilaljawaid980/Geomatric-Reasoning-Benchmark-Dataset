@@ -1,0 +1,2 @@
+model,rows,correct,accuracy,accuracy_ci_low,accuracy_ci_high,confidence_rows,mean_confidence,mean_confidence_correct,mean_confidence_incorrect,brier_score,ece_10_bins
+claude_opus_5,2000,934,0.467,0.445,0.489,1956,0.7510736196319018,0.8437662337662337,0.6680813953488371,0.2683220858895705,0.278680981595092

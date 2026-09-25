@@ -1,0 +1,2 @@
+model,rows,correct,accuracy,accuracy_ci_low,accuracy_ci_high,confidence_rows,mean_confidence,mean_confidence_correct,mean_confidence_incorrect,brier_score,ece_10_bins
+inking,2000,286,0.143,0.1275,0.1585,1962,0.9272986748216107,0.9542105263157894,0.9227251043530112,0.7317498470948013,0.7820387359836902

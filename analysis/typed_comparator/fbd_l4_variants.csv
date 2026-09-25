@@ -1,0 +1,21 @@
+model,variant,rows,strict_accuracy,typed_accuracy
+claude_opus_5,numeric + wrong-arrow,15,0.0,0.0
+claude_opus_5,numeric only,35,0.0,0.2857142857142857
+claude_sonnet_5,numeric + wrong-arrow,15,0.0,0.0
+claude_sonnet_5,numeric only,35,0.0,0.14285714285714285
+deepseek_v4_1_flash,numeric + wrong-arrow,15,0.0,0.0
+deepseek_v4_1_flash,numeric only,35,0.0,0.11428571428571428
+gemini_3_8_flash,numeric + wrong-arrow,15,0.0,0.0
+gemini_3_8_flash,numeric only,35,0.0,0.17142857142857143
+gpt_5_6_luna,numeric + wrong-arrow,15,0.0,0.0
+gpt_5_6_luna,numeric only,35,0.0,0.08571428571428572
+gpt_5_6_sol,numeric + wrong-arrow,15,0.0,0.0
+gpt_5_6_sol,numeric only,35,0.0,0.08571428571428572
+grok_4_6,numeric + wrong-arrow,15,0.0,0.0
+grok_4_6,numeric only,35,0.0,0.08571428571428572
+inking,numeric + wrong-arrow,15,0.0,0.0
+inking,numeric only,35,0.0,0.11428571428571428
+muse_glimmer_30b,numeric + wrong-arrow,15,0.0,0.0
+muse_glimmer_30b,numeric only,35,0.0,0.08571428571428572
+perplexity_sonar_pro,numeric + wrong-arrow,15,0.0,0.0
+perplexity_sonar_pro,numeric only,35,0.0,0.08571428571428572

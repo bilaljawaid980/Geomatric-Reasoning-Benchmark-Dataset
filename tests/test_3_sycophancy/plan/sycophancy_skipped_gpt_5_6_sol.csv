@@ -1,0 +1,112 @@
+model,source_row_id,domain,stem,question_id,reason
+gpt_5_6_sol,depth_height:depth_height_0032_q3,depth_height,depth_height_0032,depth_height_0032_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0427_q3,depth_height,depth_height_0427,depth_height_0427_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0440_q3,depth_height,depth_height_0440,depth_height_0440_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0663_q3,depth_height,depth_height_0663,depth_height_0663_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0701_q3,depth_height,depth_height_0701,depth_height_0701_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0721_q3,depth_height,depth_height_0721,depth_height_0721_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0921_q3,depth_height,depth_height_0921,depth_height_0921_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_0975_q3,depth_height,depth_height_0975,depth_height_0975_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1143_q3,depth_height,depth_height_1143,depth_height_1143_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1148_q3,depth_height,depth_height_1148,depth_height_1148_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1180_q3,depth_height,depth_height_1180,depth_height_1180_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1206_q3,depth_height,depth_height_1206,depth_height_1206_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1282_q3,depth_height,depth_height_1282,depth_height_1282_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1472_q3,depth_height,depth_height_1472,depth_height_1472_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1505_q3,depth_height,depth_height_1505,depth_height_1505_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1705_q3,depth_height,depth_height_1705,depth_height_1705_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1903_q3,depth_height,depth_height_1903,depth_height_1903_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_1991_q3,depth_height,depth_height_1991,depth_height_1991_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_2151_q3,depth_height,depth_height_2151,depth_height_2151_q3,structured answer was not parseable
+gpt_5_6_sol,depth_height:depth_height_2472_q3,depth_height,depth_height_2472,depth_height_2472_q3,structured answer was not parseable
+gpt_5_6_sol,embedded_figures:embedded_figure_0028_q2,embedded_figures,embedded_figure_0028,embedded_figure_0028_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_0392_q2,embedded_figures,embedded_figure_0392,embedded_figure_0392_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_0393_q2,embedded_figures,embedded_figure_0393,embedded_figure_0393_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_1376_q2,embedded_figures,embedded_figure_1376,embedded_figure_1376_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_1495_q2,embedded_figures,embedded_figure_1495,embedded_figure_1495_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_1535_q2,embedded_figures,embedded_figure_1535,embedded_figure_1535_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_1568_q2,embedded_figures,embedded_figure_1568,embedded_figure_1568_q2,expected exactly one number
+gpt_5_6_sol,embedded_figures:embedded_figure_2820_q2,embedded_figures,embedded_figure_2820,embedded_figure_2820_q2,expected exactly one number
+gpt_5_6_sol,fbd:fbd_0037_q2,fbd,fbd_0037,fbd_0037_q2,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0037_q3,fbd,fbd_0037,fbd_0037_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0037_q4,fbd,fbd_0037,fbd_0037_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0191_q3,fbd,fbd_0191,fbd_0191_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0191_q4,fbd,fbd_0191,fbd_0191_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0334_q3,fbd,fbd_0334,fbd_0334_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0334_q4,fbd,fbd_0334,fbd_0334_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0337_q3,fbd,fbd_0337,fbd_0337_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0337_q4,fbd,fbd_0337,fbd_0337_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0414_q3,fbd,fbd_0414,fbd_0414_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0414_q4,fbd,fbd_0414,fbd_0414_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0455_q3,fbd,fbd_0455,fbd_0455_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0455_q4,fbd,fbd_0455,fbd_0455_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0573_q3,fbd,fbd_0573,fbd_0573_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0573_q4,fbd,fbd_0573,fbd_0573_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0609_q3,fbd,fbd_0609,fbd_0609_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_0609_q4,fbd,fbd_0609,fbd_0609_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1185_q3,fbd,fbd_1185,fbd_1185_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1185_q4,fbd,fbd_1185,fbd_1185_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1364_q3,fbd,fbd_1364,fbd_1364_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1364_q4,fbd,fbd_1364,fbd_1364_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1746_q2,fbd,fbd_1746,fbd_1746_q2,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1746_q3,fbd,fbd_1746,fbd_1746_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1746_q4,fbd,fbd_1746,fbd_1746_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1861_q2,fbd,fbd_1861,fbd_1861_q2,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1861_q3,fbd,fbd_1861,fbd_1861_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1861_q4,fbd,fbd_1861,fbd_1861_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1888_q2,fbd,fbd_1888,fbd_1888_q2,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1888_q3,fbd,fbd_1888,fbd_1888_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_1888_q4,fbd,fbd_1888,fbd_1888_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2113_q3,fbd,fbd_2113,fbd_2113_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2113_q4,fbd,fbd_2113,fbd_2113_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2230_q3,fbd,fbd_2230,fbd_2230_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2230_q4,fbd,fbd_2230,fbd_2230_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2266_q3,fbd,fbd_2266,fbd_2266_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2266_q4,fbd,fbd_2266,fbd_2266_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2549_q3,fbd,fbd_2549,fbd_2549_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2549_q4,fbd,fbd_2549,fbd_2549_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2664_q3,fbd,fbd_2664,fbd_2664_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2664_q4,fbd,fbd_2664,fbd_2664_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2726_q2,fbd,fbd_2726,fbd_2726_q2,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2726_q3,fbd,fbd_2726,fbd_2726_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2726_q4,fbd,fbd_2726,fbd_2726_q4,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2786_q3,fbd,fbd_2786,fbd_2786_q3,structured answer was not parseable
+gpt_5_6_sol,fbd:fbd_2786_q4,fbd,fbd_2786,fbd_2786_q4,structured answer was not parseable
+gpt_5_6_sol,fold_punch:fold_punch_0844_q2,fold_punch,fold_punch_0844,fold_punch_0844_q2,expected exactly one number
+gpt_5_6_sol,fold_punch:fold_punch_0966_q2,fold_punch,fold_punch_0966,fold_punch_0966_q2,expected exactly one number
+gpt_5_6_sol,fold_punch:fold_punch_1132_q2,fold_punch,fold_punch_1132,fold_punch_1132_q2,expected exactly one number
+gpt_5_6_sol,fold_punch:fold_punch_2060_q2,fold_punch,fold_punch_2060,fold_punch_2060_q2,expected exactly one number
+gpt_5_6_sol,fold_punch:fold_punch_2522_q2,fold_punch,fold_punch_2522,fold_punch_2522_q2,expected exactly one number
+gpt_5_6_sol,fold_punch:fold_punch_2656_q2,fold_punch,fold_punch_2656,fold_punch_2656_q2,expected exactly one number
+gpt_5_6_sol,projectile_motion:projectile_motion_0017_q4,projectile_motion,projectile_motion_0017,projectile_motion_0017_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0036_q4,projectile_motion,projectile_motion_0036,projectile_motion_0036_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0051_q4,projectile_motion,projectile_motion_0051,projectile_motion_0051_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0104_q4,projectile_motion,projectile_motion_0104,projectile_motion_0104_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0216_q4,projectile_motion,projectile_motion_0216,projectile_motion_0216_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0237_q4,projectile_motion,projectile_motion_0237,projectile_motion_0237_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0243_q4,projectile_motion,projectile_motion_0243,projectile_motion_0243_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0268_q4,projectile_motion,projectile_motion_0268,projectile_motion_0268_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0430_q4,projectile_motion,projectile_motion_0430,projectile_motion_0430_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0449_q4,projectile_motion,projectile_motion_0449,projectile_motion_0449_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0453_q4,projectile_motion,projectile_motion_0453,projectile_motion_0453_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0534_q4,projectile_motion,projectile_motion_0534,projectile_motion_0534_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0579_q4,projectile_motion,projectile_motion_0579,projectile_motion_0579_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0621_q4,projectile_motion,projectile_motion_0621,projectile_motion_0621_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0859_q4,projectile_motion,projectile_motion_0859,projectile_motion_0859_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0866_q4,projectile_motion,projectile_motion_0866,projectile_motion_0866_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0913_q4,projectile_motion,projectile_motion_0913,projectile_motion_0913_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0915_q4,projectile_motion,projectile_motion_0915,projectile_motion_0915_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0948_q4,projectile_motion,projectile_motion_0948,projectile_motion_0948_q4,structured answer was not parseable
+gpt_5_6_sol,projectile_motion:projectile_motion_0980_q4,projectile_motion,projectile_motion_0980,projectile_motion_0980_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_0006_q4,route,route_puzzle_0006,route_puzzle_0006_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_0161_q4,route,route_puzzle_0161,route_puzzle_0161_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_0416_q4,route,route_puzzle_0416,route_puzzle_0416_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_0913_q4,route,route_puzzle_0913,route_puzzle_0913_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_1344_q4,route,route_puzzle_1344,route_puzzle_1344_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_1821_q4,route,route_puzzle_1821,route_puzzle_1821_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_1915_q4,route,route_puzzle_1915,route_puzzle_1915_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_1918_q4,route,route_puzzle_1918,route_puzzle_1918_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_2105_q4,route,route_puzzle_2105,route_puzzle_2105_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_2171_q4,route,route_puzzle_2171,route_puzzle_2171_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_2201_q4,route,route_puzzle_2201,route_puzzle_2201_q4,structured answer was not parseable
+gpt_5_6_sol,route:route_puzzle_2212_q4,route,route_puzzle_2212,route_puzzle_2212_q4,structured answer was not parseable

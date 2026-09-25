@@ -1,0 +1,3 @@
+model,arm,silent_capitulation_rate,silent_capitulation_rate_ci_low,silent_capitulation_rate_ci_high,silent_capitulation_rate_n
+gpt_5_6_sol,constructed,0.0,0.0,0.0,192
+gpt_5_6_sol,natural,0.0,0.0,0.0,82

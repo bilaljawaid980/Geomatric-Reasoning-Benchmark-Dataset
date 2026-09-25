@@ -1,0 +1,198 @@
+{
+  "images": {
+    "physical_stability_0060": {
+      "family": "Physical",
+      "domain": "physical_stability",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "nested_squares_0083": {
+      "family": "Plane",
+      "domain": "nested_squares",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "cube_structure_0168": {
+      "family": "Solid",
+      "domain": "cube_structure",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "symmetry_pattern_0059": {
+      "family": "Transformational",
+      "domain": "symmetry_pattern",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "hex_pathfinding_0110": {
+      "family": "Topological",
+      "domain": "hex_pathfinding",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "occluded_pattern_0134": {
+      "family": "Projective",
+      "domain": "occluded_pattern",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "compass_bearing_0064": {
+      "family": "Analytic",
+      "domain": "compass_bearing",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "optical_illusion_0046": {
+      "family": "Optical",
+      "domain": "optical_illusion",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    },
+    "rpm_0041": {
+      "family": "Inductive",
+      "domain": "rpm",
+      "in_test": {
+        "test1": false,
+        "test2": false,
+        "test3": false,
+        "test4": false
+      },
+      "test1": null,
+      "test2": null,
+      "test3": null,
+      "test4": null
+    }
+  },
+  "coverage": {
+    "physical_stability_0060": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "nested_squares_0083": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "cube_structure_0168": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "symmetry_pattern_0059": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "hex_pathfinding_0110": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "occluded_pattern_0134": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "compass_bearing_0064": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "optical_illusion_0046": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    },
+    "rpm_0041": {
+      "test1": {"present": false, "models_with_stored_response": 0},
+      "test2": {"present": false, "models_with_stored_response": 0},
+      "test3": {"present": false, "models_with_stored_response": 0},
+      "test4": {"present": false, "models_with_stored_response": 0}
+    }
+  },
+  "comparator_version": "not_applicable: none of the nine selected image IDs occurs in a stored evaluation item set, so no correctness flags were copied",
+  "slug_mapping": {
+    "symmetry_patterns": "symmetry_pattern",
+    "occluded_patterns": "occluded_pattern",
+    "compass_bearings": "compass_bearing",
+    "progressive_matrices": "rpm"
+  },
+  "warnings": [
+    "None of the nine selected figure images occurs in the stored Test-1 closed-loop rows, Test-2 grain rows, Test-3 sycophancy manifests/results, or Test-4 Phase-1/Phase-2 manifests/results.",
+    "The selected images exist in the dataset and figures/samples/manifest.json, but they are dataset figure examples rather than members of the stored evaluation samples.",
+    "No model-response strings, parsed answers, correctness flags, confidence values, or transition labels were reconstructed for absent items."
+  ]
+}
