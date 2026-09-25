@@ -1,0 +1,7 @@
+datasets
+matplotlib
+numpy
+openai
+pandas
+Pillow
+python-dotenv

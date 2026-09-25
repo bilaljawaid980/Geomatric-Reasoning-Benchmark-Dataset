@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the fourth entry in GRIP-Benchmark's **Physical/Mechanical Reasoning** family. It extends analog-clock reading to single-needle instruments with varied labeled ranges and angular sweeps, closer to speedometers, pressure gauges, temperature dials, and general analog meters.
+This is the fourth entry in GRIP's **Physical/Mechanical Reasoning** family. It extends analog-clock reading to single-needle instruments with varied labeled ranges and angular sweeps, closer to speedometers, pressure gauges, temperature dials, and general analog meters.
 
 Visual measurement reading is a documented weakness of vision-language models. Lin et al.'s [*Do Vision-Language Models Measure Up? Benchmarking Visual Measurement Reading with MeasureBench*](https://arxiv.org/abs/2510.26865) identifies indicator localization as a recurring failure mode: models may recognize labels while mislocating the pointer and consequently return a large numerical error. The paper is independent related work; its authors are not affiliated with this dataset.
 

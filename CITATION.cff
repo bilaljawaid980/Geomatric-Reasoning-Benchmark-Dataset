@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use GRIP, please cite this repository."
+title: "Geometric Parrots: Rule Absence vs. Rule Fragility in Spatial and Physical Reasoning for Vision-Language Models"
+type: dataset
+authors:
+  - family-names: Anonymous
+year: 2027
+license: MIT

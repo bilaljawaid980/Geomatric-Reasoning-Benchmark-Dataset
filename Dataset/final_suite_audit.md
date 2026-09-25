@@ -1,4 +1,4 @@
-# GRIP-Benchmark-34 Final Suite Audit
+# GRIP Final Suite Audit
 
 | Dataset | Version | Modified in final pass | Ground-truth errors found | L1 | L2 | L3 | L4 | L5 | PNG assets |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|

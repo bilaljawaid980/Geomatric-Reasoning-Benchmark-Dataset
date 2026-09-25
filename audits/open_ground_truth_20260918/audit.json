@@ -87590,682 +87590,682 @@
   },
   "input_integrity": [
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\angle_estimation_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\angle_estimation_dataset_3000\\annotations.jsonl",
       "before_sha256": "3936ac15a0b75fad9f9f32a931eb06919a909c7ceb8d76db2cf4e66d43bc5b95",
       "after_sha256": "3936ac15a0b75fad9f9f32a931eb06919a909c7ceb8d76db2cf4e66d43bc5b95"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\angle_estimation_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\angle_estimation_dataset_3000\\open_answer_key.csv",
       "before_sha256": "9c90ad13277d7a6104c752e340e10ecc625f7c30f0660aed6cfc9290f20842d8",
       "after_sha256": "9c90ad13277d7a6104c752e340e10ecc625f7c30f0660aed6cfc9290f20842d8"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\angle_estimation_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\angle_estimation_dataset_3000\\open_questions.csv",
       "before_sha256": "79211d7a0344e54aa539153eee9f1b0db42c383dad4a1adb453c9e15ddd1aaaa",
       "after_sha256": "79211d7a0344e54aa539153eee9f1b0db42c383dad4a1adb453c9e15ddd1aaaa"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\angle_estimation_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\angle_estimation_dataset_3000\\answer_key.csv",
       "before_sha256": "fc52dd1cccda41101dbcf6946e5aa0f927caa1da4aeb59592dee6382d703ce4e",
       "after_sha256": "fc52dd1cccda41101dbcf6946e5aa0f927caa1da4aeb59592dee6382d703ce4e"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\clock_reading_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\clock_reading_dataset_3000\\annotations.jsonl",
       "before_sha256": "cba84b83ba0b362051506829c503522cb371c1403300e9ceb21d01f5c912d070",
       "after_sha256": "cba84b83ba0b362051506829c503522cb371c1403300e9ceb21d01f5c912d070"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\clock_reading_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\clock_reading_dataset_3000\\open_answer_key.csv",
       "before_sha256": "88561ccf67de353a70f50be07886e46dc8873536e6f95429c7a3c422d146e1dd",
       "after_sha256": "88561ccf67de353a70f50be07886e46dc8873536e6f95429c7a3c422d146e1dd"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\clock_reading_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\clock_reading_dataset_3000\\open_questions.csv",
       "before_sha256": "7c09bc90adcede4870ebf4bfba149d7a83ac9331cdcef584d12ffdeea69642c0",
       "after_sha256": "7c09bc90adcede4870ebf4bfba149d7a83ac9331cdcef584d12ffdeea69642c0"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\clock_reading_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\clock_reading_dataset_3000\\answer_key.csv",
       "before_sha256": "95deb9a1aa3454fa27e1bbcd48ba7a200023632c3af909179b4c11e8091a2dca",
       "after_sha256": "95deb9a1aa3454fa27e1bbcd48ba7a200023632c3af909179b4c11e8091a2dca"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination3d_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\combination3d_dataset_3000\\annotations.jsonl",
       "before_sha256": "1db9e25dc4ade9fc1ec10df59466549c8ab48547dd7f2e10673360aa1fe49944",
       "after_sha256": "1db9e25dc4ade9fc1ec10df59466549c8ab48547dd7f2e10673360aa1fe49944"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination3d_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\combination3d_dataset_3000\\open_answer_key.csv",
       "before_sha256": "8b2cf66c77d03d7f0813c4126abf271bfc5fdfe71d91b70ba9765421731bbee3",
       "after_sha256": "8b2cf66c77d03d7f0813c4126abf271bfc5fdfe71d91b70ba9765421731bbee3"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination3d_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\combination3d_dataset_3000\\open_questions.csv",
       "before_sha256": "e196592f130d3b34464407807f76abd3827e982bd6fd27ebd77d616d9863bc0b",
       "after_sha256": "e196592f130d3b34464407807f76abd3827e982bd6fd27ebd77d616d9863bc0b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination3d_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\combination3d_dataset_3000\\answer_key.csv",
       "before_sha256": "724ed272b0db18f23fbd6818bcc8f751a50c42d78b8d8dd58a9b2a480673839c",
       "after_sha256": "724ed272b0db18f23fbd6818bcc8f751a50c42d78b8d8dd58a9b2a480673839c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\combination_dataset_3000\\annotations.jsonl",
       "before_sha256": "66e5d10649e5b35454da3ab5c1d08305a17d59f687610c7508a5c495c3e823ec",
       "after_sha256": "66e5d10649e5b35454da3ab5c1d08305a17d59f687610c7508a5c495c3e823ec"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\combination_dataset_3000\\open_answer_key.csv",
       "before_sha256": "17611917e6fc8302500b7d051371cc1a90375bb50ef0ced86f3b6b2113e5130a",
       "after_sha256": "17611917e6fc8302500b7d051371cc1a90375bb50ef0ced86f3b6b2113e5130a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\combination_dataset_3000\\open_questions.csv",
       "before_sha256": "346137071ddb2a1c5f51725cb03c7ea0f52174ec978a298b6caecaac62a71fcd",
       "after_sha256": "346137071ddb2a1c5f51725cb03c7ea0f52174ec978a298b6caecaac62a71fcd"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\combination_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\combination_dataset_3000\\answer_key.csv",
       "before_sha256": "f339fd70b23c8df76c41dae6cb4daa099a8de86dd5a4c010a2a523bd53501f2f",
       "after_sha256": "f339fd70b23c8df76c41dae6cb4daa099a8de86dd5a4c010a2a523bd53501f2f"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\compass_bearing_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\compass_bearing_dataset_3000\\annotations.jsonl",
       "before_sha256": "49b3af9bd6aa8a2a26c697850a3d48ff68d5c00bfc542d72a8750d391a674c06",
       "after_sha256": "49b3af9bd6aa8a2a26c697850a3d48ff68d5c00bfc542d72a8750d391a674c06"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\compass_bearing_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\compass_bearing_dataset_3000\\open_answer_key.csv",
       "before_sha256": "695e6b53ac589bf047769231d63dbe1e46d48429b4f8c9063174d050c8c1bbab",
       "after_sha256": "695e6b53ac589bf047769231d63dbe1e46d48429b4f8c9063174d050c8c1bbab"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\compass_bearing_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\compass_bearing_dataset_3000\\open_questions.csv",
       "before_sha256": "0d76575917f7e23975c782dcc11bd62f34f7ac15571362898b4afd1e08c93db6",
       "after_sha256": "0d76575917f7e23975c782dcc11bd62f34f7ac15571362898b4afd1e08c93db6"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\compass_bearing_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\compass_bearing_dataset_3000\\answer_key.csv",
       "before_sha256": "06779ff1d2d930e3f0b7c6770da844cefb81dfe236e554b85deac018b84f33ad",
       "after_sha256": "06779ff1d2d930e3f0b7c6770da844cefb81dfe236e554b85deac018b84f33ad"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\coordinate_geometry_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\coordinate_geometry_dataset_3000\\annotations.jsonl",
       "before_sha256": "bf40e8f1020358c6c8719496819df95ab28957e86413473f877028d568a1c10b",
       "after_sha256": "bf40e8f1020358c6c8719496819df95ab28957e86413473f877028d568a1c10b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\coordinate_geometry_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\coordinate_geometry_dataset_3000\\open_answer_key.csv",
       "before_sha256": "f6e615beec5350b70d95883b9a8fccf375b06890eb0e1820275b4455a4732e75",
       "after_sha256": "f6e615beec5350b70d95883b9a8fccf375b06890eb0e1820275b4455a4732e75"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\coordinate_geometry_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\coordinate_geometry_dataset_3000\\open_questions.csv",
       "before_sha256": "409e09920037a113b3a184f3aeefac63102d06d8623791de0467f89543515aa3",
       "after_sha256": "409e09920037a113b3a184f3aeefac63102d06d8623791de0467f89543515aa3"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\coordinate_geometry_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\coordinate_geometry_dataset_3000\\answer_key.csv",
       "before_sha256": "756aead7432200a93f24af2e1a219c37a03f6822c82e96662531b6c37af2d374",
       "after_sha256": "756aead7432200a93f24af2e1a219c37a03f6822c82e96662531b6c37af2d374"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_net_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\cube_net_dataset_3000\\annotations.jsonl",
       "before_sha256": "3d465fddc95eb1550085c1b5bfa0e3ec7f3568233e2536129cd00fde7a94a3d6",
       "after_sha256": "3d465fddc95eb1550085c1b5bfa0e3ec7f3568233e2536129cd00fde7a94a3d6"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_net_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\cube_net_dataset_3000\\open_answer_key.csv",
       "before_sha256": "5064175ac6cfb692de4238aaac7d332ee55e3e678ffb81cc47c879aa7936ca20",
       "after_sha256": "5064175ac6cfb692de4238aaac7d332ee55e3e678ffb81cc47c879aa7936ca20"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_net_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\cube_net_dataset_3000\\open_questions.csv",
       "before_sha256": "56c77f6b4cc7d16d152337c4cc42947b908adbc8e4b8f70e912c977e4d4c43c7",
       "after_sha256": "56c77f6b4cc7d16d152337c4cc42947b908adbc8e4b8f70e912c977e4d4c43c7"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_net_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\cube_net_dataset_3000\\answer_key.csv",
       "before_sha256": "244fb1dd2899046ce857952dd165141fdd653d9da5b283a0233e35fc469e5b7d",
       "after_sha256": "244fb1dd2899046ce857952dd165141fdd653d9da5b283a0233e35fc469e5b7d"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_structure_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\cube_structure_dataset_3000\\annotations.jsonl",
       "before_sha256": "dfe908db48ecbe1fa2a4001e3dae0d25057dfaea381b8149c22e1a4fa6cc3fd1",
       "after_sha256": "dfe908db48ecbe1fa2a4001e3dae0d25057dfaea381b8149c22e1a4fa6cc3fd1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_structure_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\cube_structure_dataset_3000\\open_answer_key.csv",
       "before_sha256": "8b7351afa700802f92d7f7e8322ccf6879ddb51eaf66f81ed62e19416ab560f9",
       "after_sha256": "8b7351afa700802f92d7f7e8322ccf6879ddb51eaf66f81ed62e19416ab560f9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_structure_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\cube_structure_dataset_3000\\open_questions.csv",
       "before_sha256": "76018f27bc866529853052035818093a143e667fbfc31ebf6bee0ee3396c91c0",
       "after_sha256": "76018f27bc866529853052035818093a143e667fbfc31ebf6bee0ee3396c91c0"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\cube_structure_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\cube_structure_dataset_3000\\answer_key.csv",
       "before_sha256": "a585f85c26b9b50f13ecf7eecbe9282c3e866fb6b45c187161f029942054e5d0",
       "after_sha256": "a585f85c26b9b50f13ecf7eecbe9282c3e866fb6b45c187161f029942054e5d0"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\depth_height_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\depth_height_dataset_3000\\annotations.jsonl",
       "before_sha256": "6a018fa8ff1d170c6250af61a41311a7611b5d1062ca5c2ad32781db87092308",
       "after_sha256": "6a018fa8ff1d170c6250af61a41311a7611b5d1062ca5c2ad32781db87092308"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\depth_height_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\depth_height_dataset_3000\\open_answer_key.csv",
       "before_sha256": "e4058cd41abff06d593927dfc8c0abdc0b9455e404cda6dda064a57411f73d46",
       "after_sha256": "e4058cd41abff06d593927dfc8c0abdc0b9455e404cda6dda064a57411f73d46"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\depth_height_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\depth_height_dataset_3000\\open_questions.csv",
       "before_sha256": "b1f85a40c141f3a53f9339439f608d7be98d132c4b9a257aad6d555ad800f035",
       "after_sha256": "b1f85a40c141f3a53f9339439f608d7be98d132c4b9a257aad6d555ad800f035"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\depth_height_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\depth_height_dataset_3000\\answer_key.csv",
       "before_sha256": "dceb20c8164fcef86bb3dac73a6292c39841235c6d29014cbde47f3b1765264b",
       "after_sha256": "dceb20c8164fcef86bb3dac73a6292c39841235c6d29014cbde47f3b1765264b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\embedded_figures_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\embedded_figures_dataset_3000\\annotations.jsonl",
       "before_sha256": "492c1e23396b40dbe9ca7f63ad0819cf52df27e1f839c435420768b57a8bc18e",
       "after_sha256": "492c1e23396b40dbe9ca7f63ad0819cf52df27e1f839c435420768b57a8bc18e"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\embedded_figures_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\embedded_figures_dataset_3000\\open_answer_key.csv",
       "before_sha256": "7ab2d0ac9250eb5cdb502880284256cf0b30c421145904b5d6ce7577940c3616",
       "after_sha256": "7ab2d0ac9250eb5cdb502880284256cf0b30c421145904b5d6ce7577940c3616"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\embedded_figures_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\embedded_figures_dataset_3000\\open_questions.csv",
       "before_sha256": "475bb8067fcbfdab4e0026a51c74a209bb1c5b108897308acba106a466b76ab9",
       "after_sha256": "475bb8067fcbfdab4e0026a51c74a209bb1c5b108897308acba106a466b76ab9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\embedded_figures_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\embedded_figures_dataset_3000\\answer_key.csv",
       "before_sha256": "7e17f94c98363334775c869a1c4eda135aec8b02520a7dd81784068b7e3df092",
       "after_sha256": "7e17f94c98363334775c869a1c4eda135aec8b02520a7dd81784068b7e3df092"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fbd_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\fbd_dataset_3000\\annotations.jsonl",
       "before_sha256": "7d9e349e7747233f394d5a47c9df976fe312ebe4a927c72162c03cfb32f9940f",
       "after_sha256": "7d9e349e7747233f394d5a47c9df976fe312ebe4a927c72162c03cfb32f9940f"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fbd_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\fbd_dataset_3000\\open_answer_key.csv",
       "before_sha256": "82387556dd052ab0b7b055bd0b7d088160f677a63502d83f798db6f645a21956",
       "after_sha256": "82387556dd052ab0b7b055bd0b7d088160f677a63502d83f798db6f645a21956"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fbd_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\fbd_dataset_3000\\open_questions.csv",
       "before_sha256": "edcf3ed6b0b3a2b8ca89f3ac8dd8b909258f8ef16104857ce0e066ca837fd737",
       "after_sha256": "edcf3ed6b0b3a2b8ca89f3ac8dd8b909258f8ef16104857ce0e066ca837fd737"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fbd_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\fbd_dataset_3000\\answer_key.csv",
       "before_sha256": "cb0707729873e1c9fe8b5dac6f4f4e62c94a9e2c03a321ddf15b0d146d9e39a9",
       "after_sha256": "cb0707729873e1c9fe8b5dac6f4f4e62c94a9e2c03a321ddf15b0d146d9e39a9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fold_punch_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\fold_punch_dataset_3000\\annotations.jsonl",
       "before_sha256": "69b5f42872aaac2bf8f5d23959561453b08bad8c179299070dec515c6448faf9",
       "after_sha256": "69b5f42872aaac2bf8f5d23959561453b08bad8c179299070dec515c6448faf9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fold_punch_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\fold_punch_dataset_3000\\open_answer_key.csv",
       "before_sha256": "839ebae24fd82e95e1c038777e7d2f30210ed9e551ee31106f3bbfa658ad28bd",
       "after_sha256": "839ebae24fd82e95e1c038777e7d2f30210ed9e551ee31106f3bbfa658ad28bd"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fold_punch_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\fold_punch_dataset_3000\\open_questions.csv",
       "before_sha256": "65e245a201b31ee9b3f7766cc72d00ed84563fa848f5e80dc3599e9e5411dcc1",
       "after_sha256": "65e245a201b31ee9b3f7766cc72d00ed84563fa848f5e80dc3599e9e5411dcc1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\fold_punch_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\fold_punch_dataset_3000\\answer_key.csv",
       "before_sha256": "86b2272ccc76fcc409ffe6bb16ca1f445564bc27d24f3c10f53b49bd42d253c9",
       "after_sha256": "86b2272ccc76fcc409ffe6bb16ca1f445564bc27d24f3c10f53b49bd42d253c9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gauge_reading_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\gauge_reading_dataset_3000\\annotations.jsonl",
       "before_sha256": "7d2589cd3b8de8e90acadd9c5e489bc9aa11dcdd345154a390a8c05952c10bd8",
       "after_sha256": "7d2589cd3b8de8e90acadd9c5e489bc9aa11dcdd345154a390a8c05952c10bd8"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gauge_reading_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\gauge_reading_dataset_3000\\open_answer_key.csv",
       "before_sha256": "1e00a35000cefa8f41f783db910c6a13f45cf997cd30c4508052bb1cafece4f9",
       "after_sha256": "1e00a35000cefa8f41f783db910c6a13f45cf997cd30c4508052bb1cafece4f9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gauge_reading_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\gauge_reading_dataset_3000\\open_questions.csv",
       "before_sha256": "7b4b1c1585f2d4866c856ead0ccd60c75577291143b2d24ac329f1f9cc4f4340",
       "after_sha256": "7b4b1c1585f2d4866c856ead0ccd60c75577291143b2d24ac329f1f9cc4f4340"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gauge_reading_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\gauge_reading_dataset_3000\\answer_key.csv",
       "before_sha256": "cbb221cda284bb543da0ccc88df7a84a62d1924d1f44ebef3718d09a95d552ff",
       "after_sha256": "cbb221cda284bb543da0ccc88df7a84a62d1924d1f44ebef3718d09a95d552ff"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gear_train_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\gear_train_dataset_3000\\annotations.jsonl",
       "before_sha256": "e56fbd2c4774d40d82cd5cba5317c590f6775358068ac36244ea127b17361604",
       "after_sha256": "e56fbd2c4774d40d82cd5cba5317c590f6775358068ac36244ea127b17361604"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gear_train_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\gear_train_dataset_3000\\open_answer_key.csv",
       "before_sha256": "3d2b89fa347b591e836af062b2613a8503b0f64d27dc22fa47a23bd6daa992bb",
       "after_sha256": "3d2b89fa347b591e836af062b2613a8503b0f64d27dc22fa47a23bd6daa992bb"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gear_train_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\gear_train_dataset_3000\\open_questions.csv",
       "before_sha256": "bf4e951bfe44108bbec7df9b2e8cbfd97794761d7cd74464b7c7d367c4327f91",
       "after_sha256": "bf4e951bfe44108bbec7df9b2e8cbfd97794761d7cd74464b7c7d367c4327f91"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\gear_train_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\gear_train_dataset_3000\\answer_key.csv",
       "before_sha256": "da04d05340a5c9ef51a716d95da0988831d543af20dbb4e5d79823c4612a25ee",
       "after_sha256": "da04d05340a5c9ef51a716d95da0988831d543af20dbb4e5d79823c4612a25ee"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\hex_pathfinding_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\hex_pathfinding_dataset_3000\\annotations.jsonl",
       "before_sha256": "b8091326edbeb8544a6e483cfe9ded24471ba54eeb3e37fe9115fc46e067eb9f",
       "after_sha256": "b8091326edbeb8544a6e483cfe9ded24471ba54eeb3e37fe9115fc46e067eb9f"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\hex_pathfinding_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\hex_pathfinding_dataset_3000\\open_answer_key.csv",
       "before_sha256": "8db87c688b73c24901516f4d067972344c96ae7a77c47a114786b62c2ca575d4",
       "after_sha256": "8db87c688b73c24901516f4d067972344c96ae7a77c47a114786b62c2ca575d4"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\hex_pathfinding_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\hex_pathfinding_dataset_3000\\open_questions.csv",
       "before_sha256": "e66bb848e548f7fccdae59e98d568ab4e291f8a82c85c7df234248459ff50a0f",
       "after_sha256": "e66bb848e548f7fccdae59e98d568ab4e291f8a82c85c7df234248459ff50a0f"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\hex_pathfinding_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\hex_pathfinding_dataset_3000\\answer_key.csv",
       "before_sha256": "6dddbeddd760b86d240ed400b715d8a98973ac9e63525179b93b513c868dcdc6",
       "after_sha256": "6dddbeddd760b86d240ed400b715d8a98973ac9e63525179b93b513c868dcdc6"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\impossible_object_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\impossible_object_dataset_3000\\annotations.jsonl",
       "before_sha256": "1a4a8ba022d3f7c58c6321944eee5c4e5d6125d523b424676c2090bcb5e5878e",
       "after_sha256": "1a4a8ba022d3f7c58c6321944eee5c4e5d6125d523b424676c2090bcb5e5878e"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\impossible_object_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\impossible_object_dataset_3000\\open_answer_key.csv",
       "before_sha256": "49eff82276564de3c1f04aa0aab0171293c94f17408cca8430ae078d8efb094e",
       "after_sha256": "49eff82276564de3c1f04aa0aab0171293c94f17408cca8430ae078d8efb094e"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\impossible_object_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\impossible_object_dataset_3000\\open_questions.csv",
       "before_sha256": "d90580b9db481de721ec96513b063830a00a7ff26ff627b670739ba5b8d3f55b",
       "after_sha256": "d90580b9db481de721ec96513b063830a00a7ff26ff627b670739ba5b8d3f55b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\impossible_object_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\impossible_object_dataset_3000\\answer_key.csv",
       "before_sha256": "a66775580f82fa552f2302761dad31764524f49b3e9906671b1bc4a3ef7c39f2",
       "after_sha256": "a66775580f82fa552f2302761dad31764524f49b3e9906671b1bc4a3ef7c39f2"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\laser_mirror_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\laser_mirror_dataset_3000\\annotations.jsonl",
       "before_sha256": "65211f07e6aa08de0decd84302d86934588fe9a0074a33a92a7c1a410fcaa2cc",
       "after_sha256": "65211f07e6aa08de0decd84302d86934588fe9a0074a33a92a7c1a410fcaa2cc"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\laser_mirror_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\laser_mirror_dataset_3000\\open_answer_key.csv",
       "before_sha256": "d4d3d517fb15a13f8dc56c0857f57ac5962ad0e11e433b6a97ae2fc33dfa8d3a",
       "after_sha256": "d4d3d517fb15a13f8dc56c0857f57ac5962ad0e11e433b6a97ae2fc33dfa8d3a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\laser_mirror_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\laser_mirror_dataset_3000\\open_questions.csv",
       "before_sha256": "c04a56c5250001663f910127adf96bf68c71d85b895f6a028da8c489a5fa3935",
       "after_sha256": "c04a56c5250001663f910127adf96bf68c71d85b895f6a028da8c489a5fa3935"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\laser_mirror_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\laser_mirror_dataset_3000\\answer_key.csv",
       "before_sha256": "f3f417e4c548d7d858efcf50c71b2def3103bf0c19b663f7e692c8a2e2064fc1",
       "after_sha256": "f3f417e4c548d7d858efcf50c71b2def3103bf0c19b663f7e692c8a2e2064fc1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\line_intersection_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\line_intersection_dataset_3000\\annotations.jsonl",
       "before_sha256": "af9d9abe9244cd1433e5ae3bca96268ebf115369e3503b4f3e531d352c40a79a",
       "after_sha256": "af9d9abe9244cd1433e5ae3bca96268ebf115369e3503b4f3e531d352c40a79a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\line_intersection_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\line_intersection_dataset_3000\\open_answer_key.csv",
       "before_sha256": "9f5c4a55755450255e7b0f71f43d2d04767d9e9964281ad8d8350a632b285705",
       "after_sha256": "9f5c4a55755450255e7b0f71f43d2d04767d9e9964281ad8d8350a632b285705"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\line_intersection_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\line_intersection_dataset_3000\\open_questions.csv",
       "before_sha256": "e5a16cd5dcdf21cae728a5276188b9f8c528b905214c142044c8a38b4a91e2a1",
       "after_sha256": "e5a16cd5dcdf21cae728a5276188b9f8c528b905214c142044c8a38b4a91e2a1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\line_intersection_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\line_intersection_dataset_3000\\answer_key.csv",
       "before_sha256": "01a94ae1cfebdeacad06631d76e74a2742d0a87e39f67055750e40610aff122c",
       "after_sha256": "01a94ae1cfebdeacad06631d76e74a2742d0a87e39f67055750e40610aff122c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_hexagons_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\nested_hexagons_dataset_3000\\annotations.jsonl",
       "before_sha256": "97e05c242a76549305ecbd253aec75b208a8efd61d56018127fa08068efe1a6d",
       "after_sha256": "97e05c242a76549305ecbd253aec75b208a8efd61d56018127fa08068efe1a6d"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_hexagons_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\nested_hexagons_dataset_3000\\open_answer_key.csv",
       "before_sha256": "de9df6a229c4c06df69e00505734e0fa2da3f9d4820d7bb144a49884de6376c2",
       "after_sha256": "de9df6a229c4c06df69e00505734e0fa2da3f9d4820d7bb144a49884de6376c2"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_hexagons_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\nested_hexagons_dataset_3000\\open_questions.csv",
       "before_sha256": "29c37cded78b44a33da9a016aa99bbc84349ae4cbb7de0dfb535dc7e4f89389b",
       "after_sha256": "29c37cded78b44a33da9a016aa99bbc84349ae4cbb7de0dfb535dc7e4f89389b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_hexagons_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\nested_hexagons_dataset_3000\\answer_key.csv",
       "before_sha256": "b1f93f12cc4ebe765191f195ca00dad062b8b71f1943476a238b4a7c1a383460",
       "after_sha256": "b1f93f12cc4ebe765191f195ca00dad062b8b71f1943476a238b4a7c1a383460"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_squares_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\nested_squares_dataset_3000\\annotations.jsonl",
       "before_sha256": "d621e61ec3fafa660651970cec06f98e8c30dab85e73e32c45a92b23d0938ca5",
       "after_sha256": "d621e61ec3fafa660651970cec06f98e8c30dab85e73e32c45a92b23d0938ca5"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_squares_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\nested_squares_dataset_3000\\open_answer_key.csv",
       "before_sha256": "19b0b83c1ecddc968e20edbe59ef439edbb8a4aeb6f3a78b1c1dc05459a7fccc",
       "after_sha256": "19b0b83c1ecddc968e20edbe59ef439edbb8a4aeb6f3a78b1c1dc05459a7fccc"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_squares_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\nested_squares_dataset_3000\\open_questions.csv",
       "before_sha256": "e60a9a5787feb72bb66b1fb760a120840db963f0bd621fe650aae42dc5f5d3a3",
       "after_sha256": "e60a9a5787feb72bb66b1fb760a120840db963f0bd621fe650aae42dc5f5d3a3"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_squares_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\nested_squares_dataset_3000\\answer_key.csv",
       "before_sha256": "61d2103303c2b4ad59a6fb2d5c3f4563e37abee0ec50b22e7c925a801f2be979",
       "after_sha256": "61d2103303c2b4ad59a6fb2d5c3f4563e37abee0ec50b22e7c925a801f2be979"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_triangles_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\nested_triangles_dataset_3000\\annotations.jsonl",
       "before_sha256": "921ee01e955b8f99eab0ebb3831701542eb9d8ab698a406f3af64b5366f6fbbb",
       "after_sha256": "921ee01e955b8f99eab0ebb3831701542eb9d8ab698a406f3af64b5366f6fbbb"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_triangles_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\nested_triangles_dataset_3000\\open_answer_key.csv",
       "before_sha256": "8cbfc9953ab83c0e94655e533dab609e3769f5792634653d8ab08433c80ad1d1",
       "after_sha256": "8cbfc9953ab83c0e94655e533dab609e3769f5792634653d8ab08433c80ad1d1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_triangles_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\nested_triangles_dataset_3000\\open_questions.csv",
       "before_sha256": "7a48254c4ba4c35e3166cbd31975ad1e86879d1a7f4dc07aa09bb8cf11357c7b",
       "after_sha256": "7a48254c4ba4c35e3166cbd31975ad1e86879d1a7f4dc07aa09bb8cf11357c7b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\nested_triangles_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\nested_triangles_dataset_3000\\answer_key.csv",
       "before_sha256": "7c19ff4fc178e11394674d45dd3d13924ed0723137af2542a875d5cfadea4721",
       "after_sha256": "7c19ff4fc178e11394674d45dd3d13924ed0723137af2542a875d5cfadea4721"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\occluded_pattern_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\occluded_pattern_dataset_3000\\annotations.jsonl",
       "before_sha256": "8ee11275bcdd154c264f46ab678817519077279f9d7d2882ffa8779a85b7c33c",
       "after_sha256": "8ee11275bcdd154c264f46ab678817519077279f9d7d2882ffa8779a85b7c33c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\occluded_pattern_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\occluded_pattern_dataset_3000\\open_answer_key.csv",
       "before_sha256": "4a8e00df251fbefd7f818a27a3203cdb2e84500d876723653c73f410c9742ee8",
       "after_sha256": "4a8e00df251fbefd7f818a27a3203cdb2e84500d876723653c73f410c9742ee8"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\occluded_pattern_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\occluded_pattern_dataset_3000\\open_questions.csv",
       "before_sha256": "3af7ae3928e935ac47222b115779135b03389b5ed95e076a0d0424f094a4cb97",
       "after_sha256": "3af7ae3928e935ac47222b115779135b03389b5ed95e076a0d0424f094a4cb97"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\occluded_pattern_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\occluded_pattern_dataset_3000\\answer_key.csv",
       "before_sha256": "faa1614026ebd22bd3a793c4e9aee42e8f3f11536592086943697086d6721037",
       "after_sha256": "faa1614026ebd22bd3a793c4e9aee42e8f3f11536592086943697086d6721037"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\optical_illusion_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\optical_illusion_dataset_3000\\annotations.jsonl",
       "before_sha256": "e17848ed51ab23db4f280643c70c2e4488e800bcc23d17bde864702a020d232b",
       "after_sha256": "e17848ed51ab23db4f280643c70c2e4488e800bcc23d17bde864702a020d232b"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\optical_illusion_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\optical_illusion_dataset_3000\\open_answer_key.csv",
       "before_sha256": "c85e0b4234d70e7f3fb33a9e8cd225dca0d25c3243d9ead59d9e293bdba0d239",
       "after_sha256": "c85e0b4234d70e7f3fb33a9e8cd225dca0d25c3243d9ead59d9e293bdba0d239"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\optical_illusion_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\optical_illusion_dataset_3000\\open_questions.csv",
       "before_sha256": "3aed8c6039ba6c9e7b6ba287b31c143bec37f30c917fca34f44abac8cbb92c4a",
       "after_sha256": "3aed8c6039ba6c9e7b6ba287b31c143bec37f30c917fca34f44abac8cbb92c4a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\optical_illusion_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\optical_illusion_dataset_3000\\answer_key.csv",
       "before_sha256": "88dd88caac265a361339ad028195a8724345bdf0ab84e2e3ff40c602aa304e34",
       "after_sha256": "88dd88caac265a361339ad028195a8724345bdf0ab84e2e3ff40c602aa304e34"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\orthographic_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\orthographic_dataset_3000\\annotations.jsonl",
       "before_sha256": "68721ca4fc12fa45fef6f5b17625dc559a0fc961b8ba279fed98fa08254c208a",
       "after_sha256": "68721ca4fc12fa45fef6f5b17625dc559a0fc961b8ba279fed98fa08254c208a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\orthographic_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\orthographic_dataset_3000\\open_answer_key.csv",
       "before_sha256": "a0807384cbffb935886a01a1d8e78670268435228b4139f5e7d5c60a8415bb87",
       "after_sha256": "a0807384cbffb935886a01a1d8e78670268435228b4139f5e7d5c60a8415bb87"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\orthographic_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\orthographic_dataset_3000\\open_questions.csv",
       "before_sha256": "a3e8dffcd418146a92241b582e297b545978631bf2019401e44a6a4018c07335",
       "after_sha256": "a3e8dffcd418146a92241b582e297b545978631bf2019401e44a6a4018c07335"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\orthographic_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\orthographic_dataset_3000\\answer_key.csv",
       "before_sha256": "dda520487a258b24951a80a66b2fd1ac64ecd5ab4de40c0b0f802f155f6903de",
       "after_sha256": "dda520487a258b24951a80a66b2fd1ac64ecd5ab4de40c0b0f802f155f6903de"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\overlap_circles_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\overlap_circles_dataset_3000\\annotations.jsonl",
       "before_sha256": "ce7dbff47bb41132ae7f940e1c7702b1887ab8a894adaea514c5289e3a6347c1",
       "after_sha256": "ce7dbff47bb41132ae7f940e1c7702b1887ab8a894adaea514c5289e3a6347c1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\overlap_circles_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\overlap_circles_dataset_3000\\open_answer_key.csv",
       "before_sha256": "94f02843e73ee4cf69ae7210849a1250e9b174e51a6e6747721ef7e474d7a966",
       "after_sha256": "94f02843e73ee4cf69ae7210849a1250e9b174e51a6e6747721ef7e474d7a966"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\overlap_circles_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\overlap_circles_dataset_3000\\open_questions.csv",
       "before_sha256": "066039998d2b930c1fef95540713adb2ef6d384b515a1727d352e8e4d915fa58",
       "after_sha256": "066039998d2b930c1fef95540713adb2ef6d384b515a1727d352e8e4d915fa58"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\overlap_circles_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\overlap_circles_dataset_3000\\answer_key.csv",
       "before_sha256": "4c8126db7a279e58bef208d0ee1001f28b1570cd3daf0d8d856c968a9b771b56",
       "after_sha256": "4c8126db7a279e58bef208d0ee1001f28b1570cd3daf0d8d856c968a9b771b56"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\physical_stability_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\physical_stability_dataset_3000\\annotations.jsonl",
       "before_sha256": "1093e621fea881bb5fb18093db5fd40a26ed715c11b1c0ef6aca5ef616142581",
       "after_sha256": "1093e621fea881bb5fb18093db5fd40a26ed715c11b1c0ef6aca5ef616142581"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\physical_stability_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\physical_stability_dataset_3000\\open_answer_key.csv",
       "before_sha256": "6f92d263162ab66c9f9fc57d21a67e64928db467b9d1d8891a811e540a066c8c",
       "after_sha256": "6f92d263162ab66c9f9fc57d21a67e64928db467b9d1d8891a811e540a066c8c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\physical_stability_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\physical_stability_dataset_3000\\open_questions.csv",
       "before_sha256": "ec00c1cd841f05c50addb38229f0c0f076869bb2e9b7f08e53d7d90c24eb6f8e",
       "after_sha256": "ec00c1cd841f05c50addb38229f0c0f076869bb2e9b7f08e53d7d90c24eb6f8e"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\physical_stability_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\physical_stability_dataset_3000\\answer_key.csv",
       "before_sha256": "fad44dcefe03159b9251a23568019567fd757cde625f44241a5f60f708c61d32",
       "after_sha256": "fad44dcefe03159b9251a23568019567fd757cde625f44241a5f60f708c61d32"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\polyhedron_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\polyhedron_dataset_3000\\annotations.jsonl",
       "before_sha256": "602f04b79d125f12f51f335e896f12339b75ef972ab2d02bde11bec04dd1085c",
       "after_sha256": "602f04b79d125f12f51f335e896f12339b75ef972ab2d02bde11bec04dd1085c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\polyhedron_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\polyhedron_dataset_3000\\open_answer_key.csv",
       "before_sha256": "205db9f4376779ab68d9a2e473b31cfd8625599334346e6e160b2aecb4acad7c",
       "after_sha256": "205db9f4376779ab68d9a2e473b31cfd8625599334346e6e160b2aecb4acad7c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\polyhedron_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\polyhedron_dataset_3000\\open_questions.csv",
       "before_sha256": "17d9c68ce23f300a7fed05b8f5ba7398bbe100aa6f18ec7ae3dc7d826161e479",
       "after_sha256": "17d9c68ce23f300a7fed05b8f5ba7398bbe100aa6f18ec7ae3dc7d826161e479"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\polyhedron_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\polyhedron_dataset_3000\\answer_key.csv",
       "before_sha256": "01e1476f7b15467844b098b30f8f42dceb5b27f9e6330344411ebae2229044c4",
       "after_sha256": "01e1476f7b15467844b098b30f8f42dceb5b27f9e6330344411ebae2229044c4"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\projectile_motion_dataset_1000\\annotations.jsonl",
+      "path": "Dataset\\projectile_motion_dataset_1000\\annotations.jsonl",
       "before_sha256": "e774636f689c6229d5051996c90029ff62e008d3c79ad062a77171eaa999b0ab",
       "after_sha256": "e774636f689c6229d5051996c90029ff62e008d3c79ad062a77171eaa999b0ab"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\projectile_motion_dataset_1000\\open_answer_key.csv",
+      "path": "Dataset\\projectile_motion_dataset_1000\\open_answer_key.csv",
       "before_sha256": "6716b3a502b0c04fe7c3717803f8a8bf89df57a346def7f68d1f0492a29695a4",
       "after_sha256": "6716b3a502b0c04fe7c3717803f8a8bf89df57a346def7f68d1f0492a29695a4"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\projectile_motion_dataset_1000\\open_questions.csv",
+      "path": "Dataset\\projectile_motion_dataset_1000\\open_questions.csv",
       "before_sha256": "a398c8a8b6fa7eda7cbd1b5c23f1ecdadb39d6f9730434d85a6f7b160be1a5c9",
       "after_sha256": "a398c8a8b6fa7eda7cbd1b5c23f1ecdadb39d6f9730434d85a6f7b160be1a5c9"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\projectile_motion_dataset_1000\\answer_key.csv",
+      "path": "Dataset\\projectile_motion_dataset_1000\\answer_key.csv",
       "before_sha256": "0285e4f785d3a303ea392cdcf184c156a04144a5252caeb60f343321fb1835bf",
       "after_sha256": "0285e4f785d3a303ea392cdcf184c156a04144a5252caeb60f343321fb1835bf"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rotation_matching_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\rotation_matching_dataset_3000\\annotations.jsonl",
       "before_sha256": "7c7e05eb3aaab56454910bf3acdae705c489f1143f0599355135a8c8b4377dff",
       "after_sha256": "7c7e05eb3aaab56454910bf3acdae705c489f1143f0599355135a8c8b4377dff"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rotation_matching_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\rotation_matching_dataset_3000\\open_answer_key.csv",
       "before_sha256": "fdc879b1223a7a76184036de63b22ca80d484f6c001e83322dc58c9eab7b91e1",
       "after_sha256": "fdc879b1223a7a76184036de63b22ca80d484f6c001e83322dc58c9eab7b91e1"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rotation_matching_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\rotation_matching_dataset_3000\\open_questions.csv",
       "before_sha256": "6cf6f49a949d62b653934871b7c2792789195eff9e8dae4ce4c41c0184199307",
       "after_sha256": "6cf6f49a949d62b653934871b7c2792789195eff9e8dae4ce4c41c0184199307"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rotation_matching_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\rotation_matching_dataset_3000\\answer_key.csv",
       "before_sha256": "8c9147aeeab9ffcf848dbdfaa66440ff77664de4e6b38aec3b9371758c0848fe",
       "after_sha256": "8c9147aeeab9ffcf848dbdfaa66440ff77664de4e6b38aec3b9371758c0848fe"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\route_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\route_dataset_3000\\annotations.jsonl",
       "before_sha256": "c7fbfc74f97fb4f9d4f17cb485b03674683de69632c39927c0953eada642c71a",
       "after_sha256": "c7fbfc74f97fb4f9d4f17cb485b03674683de69632c39927c0953eada642c71a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\route_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\route_dataset_3000\\open_answer_key.csv",
       "before_sha256": "0c2603c60f0598dfee8036686b24e790a346e727749f98e18456efe2eea22a39",
       "after_sha256": "0c2603c60f0598dfee8036686b24e790a346e727749f98e18456efe2eea22a39"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\route_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\route_dataset_3000\\open_questions.csv",
       "before_sha256": "beff2c4611757f028bc1963e12e2c1e91558d2aac65cdc5822d770eea13823d2",
       "after_sha256": "beff2c4611757f028bc1963e12e2c1e91558d2aac65cdc5822d770eea13823d2"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\route_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\route_dataset_3000\\answer_key.csv",
       "before_sha256": "ab9fb431b5bbb44953b0f1b323b693ef0793defa14aae859aff310a6273572e4",
       "after_sha256": "ab9fb431b5bbb44953b0f1b323b693ef0793defa14aae859aff310a6273572e4"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rpm_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\rpm_dataset_3000\\annotations.jsonl",
       "before_sha256": "e18066760d86bc81f6474ec86815b37d803d706219cbf0754d30cbfc613c164a",
       "after_sha256": "e18066760d86bc81f6474ec86815b37d803d706219cbf0754d30cbfc613c164a"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rpm_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\rpm_dataset_3000\\open_answer_key.csv",
       "before_sha256": "9e6396d61878bc306eb8119927e15491749e964581ff9275d3cb2ec31264ab43",
       "after_sha256": "9e6396d61878bc306eb8119927e15491749e964581ff9275d3cb2ec31264ab43"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rpm_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\rpm_dataset_3000\\open_questions.csv",
       "before_sha256": "56e727d15999348e3804803e63268a4e1ddc02aef1895881dd2db5ba333b6dc0",
       "after_sha256": "56e727d15999348e3804803e63268a4e1ddc02aef1895881dd2db5ba333b6dc0"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\rpm_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\rpm_dataset_3000\\answer_key.csv",
       "before_sha256": "be9d6d681fbabecba18501b025d66de20e4347dfa8d73980543e1253bad42784",
       "after_sha256": "be9d6d681fbabecba18501b025d66de20e4347dfa8d73980543e1253bad42784"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\shadow_inference_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\shadow_inference_dataset_3000\\annotations.jsonl",
       "before_sha256": "b8e40b315feef48627d15e92aa5b59c908ea764314a57312031a7a593d291f5e",
       "after_sha256": "b8e40b315feef48627d15e92aa5b59c908ea764314a57312031a7a593d291f5e"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\shadow_inference_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\shadow_inference_dataset_3000\\open_answer_key.csv",
       "before_sha256": "86937c5a3c84315d3aa130d2bb0190cd35d2139113bc92967cf2ed2fcd5a23b0",
       "after_sha256": "86937c5a3c84315d3aa130d2bb0190cd35d2139113bc92967cf2ed2fcd5a23b0"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\shadow_inference_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\shadow_inference_dataset_3000\\open_questions.csv",
       "before_sha256": "969ed46067ddd63cd4014a222109426c31254fce63d00440e1a2154bb1d2d366",
       "after_sha256": "969ed46067ddd63cd4014a222109426c31254fce63d00440e1a2154bb1d2d366"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\shadow_inference_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\shadow_inference_dataset_3000\\answer_key.csv",
       "before_sha256": "57591430005cdad36e45f6147f5c938713a70bed2d9ef1ee62d91d102ac4f132",
       "after_sha256": "57591430005cdad36e45f6147f5c938713a70bed2d9ef1ee62d91d102ac4f132"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\surface_topology_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\surface_topology_dataset_3000\\annotations.jsonl",
       "before_sha256": "a497f0e9c41ecbf61e6f46eaa45d2c540c4a68d2f2967bec210b6c74259118fc",
       "after_sha256": "a497f0e9c41ecbf61e6f46eaa45d2c540c4a68d2f2967bec210b6c74259118fc"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\surface_topology_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\surface_topology_dataset_3000\\open_answer_key.csv",
       "before_sha256": "095c0671b9407f30c1b707b65342f9a5a1cf8f9c568100f0372ad81c580c54ea",
       "after_sha256": "095c0671b9407f30c1b707b65342f9a5a1cf8f9c568100f0372ad81c580c54ea"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\surface_topology_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\surface_topology_dataset_3000\\open_questions.csv",
       "before_sha256": "fb68f03d2a2125d77a8cfd9e9716532de28018a56b10c1a38a20acdbe3ca1566",
       "after_sha256": "fb68f03d2a2125d77a8cfd9e9716532de28018a56b10c1a38a20acdbe3ca1566"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\surface_topology_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\surface_topology_dataset_3000\\answer_key.csv",
       "before_sha256": "664255bc42ca0190e35c9a099c04b00b83f4b0b7252ef88f88415d83b23cd472",
       "after_sha256": "664255bc42ca0190e35c9a099c04b00b83f4b0b7252ef88f88415d83b23cd472"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\symmetry_pattern_dataset_3000\\annotations.jsonl",
+      "path": "Dataset\\symmetry_pattern_dataset_3000\\annotations.jsonl",
       "before_sha256": "32ae391a9c92a3c293c4a02aef5a393134fcce76c1a27a8639550e8e628cc501",
       "after_sha256": "32ae391a9c92a3c293c4a02aef5a393134fcce76c1a27a8639550e8e628cc501"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\symmetry_pattern_dataset_3000\\open_answer_key.csv",
+      "path": "Dataset\\symmetry_pattern_dataset_3000\\open_answer_key.csv",
       "before_sha256": "9554ceed1d95b8ff0dcc2151b9e3b8ccc3033b859c0c49dde596ba584802e02c",
       "after_sha256": "9554ceed1d95b8ff0dcc2151b9e3b8ccc3033b859c0c49dde596ba584802e02c"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\symmetry_pattern_dataset_3000\\open_questions.csv",
+      "path": "Dataset\\symmetry_pattern_dataset_3000\\open_questions.csv",
       "before_sha256": "bd21101da2f74f3336884048b22db61c6f83066613bcdf3f2e95cf0296ff7634",
       "after_sha256": "bd21101da2f74f3336884048b22db61c6f83066613bcdf3f2e95cf0296ff7634"
     },
     {
-      "path": "C:\\Users\\bilal\\OneDrive\\Desktop\\geomstry\\Dataset\\symmetry_pattern_dataset_3000\\answer_key.csv",
+      "path": "Dataset\\symmetry_pattern_dataset_3000\\answer_key.csv",
       "before_sha256": "def5cf890a0a8653d39a35463270374c6ab206ceca66b42d106e475b3a504c94",
       "after_sha256": "def5cf890a0a8653d39a35463270374c6ab206ceca66b42d106e475b3a504c94"
     }

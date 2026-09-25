@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This is the third entry in GRIP-Benchmark's **Physical/Mechanical Reasoning** family. It tests exact analog-clock perception, continuous hour-hand motion, hand-angle calculation, and time-advance counterfactuals.
+This is the third entry in GRIP's **Physical/Mechanical Reasoning** family. It tests exact analog-clock perception, continuous hour-hand motion, hand-angle calculation, and time-advance counterfactuals.
 
 Analog-clock understanding is a documented vision-language weakness. Choi et al.'s [*It's Time to Get It Right*](https://arxiv.org/abs/2603.08011) reports frequent hour/minute-hand confusion and weak exact-time reading in current VLMs. Yang, Xie, and Zisserman's [*It's About Time: Analog Clock Reading in the Wild*](https://arxiv.org/abs/2111.09162) established synthetic-to-real clock recognition and minute-accurate clock benchmarks. These are independent related works; their authors are not affiliated with this dataset.
 

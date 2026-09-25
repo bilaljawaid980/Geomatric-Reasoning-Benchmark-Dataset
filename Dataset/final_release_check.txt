@@ -1,4 +1,4 @@
-GRIP-Benchmark-34 Final Release Check
+GRIP Final Release Check
 ========================================
 Datasets: 34
 Archive directories: 0

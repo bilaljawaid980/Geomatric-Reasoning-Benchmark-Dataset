@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This is the second category in GRIP-Benchmark's **Physical/Mechanical Reasoning** family, alongside `gear_train_dataset_3000`. It tests intuitive and analytic understanding of stacked-object stability through cumulative centers of mass rather than judging each block independently.
+This is the second category in GRIP's **Physical/Mechanical Reasoning** family, alongside `gear_train_dataset_3000`. It tests intuitive and analytic understanding of stacked-object stability through cumulative centers of mass rather than judging each block independently.
 
 The motivation is related to Chow et al.'s [PhysBench](https://arxiv.org/abs/2501.16411) (ICLR 2025), which reports broad limitations in VLM physical-world understanding, and Schulze Buschoff et al.'s [*Can Vision Language Models Learn Intuitive Physics from Interaction?*](https://arxiv.org/abs/2602.06033), which studies learning and generalization in block-tower construction and stability tasks. These are third-party works cited as context; the authors are not affiliated with this dataset.
 

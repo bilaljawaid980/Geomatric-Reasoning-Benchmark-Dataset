@@ -1,4 +1,4 @@
-"""Build, publish, and verify the private GRIP-Benchmark Hugging Face dataset.
+"""Build, publish, and verify the private GRIP Hugging Face dataset.
 
 Run this script from a normal terminal. It reads HF_TOKEN/hf_token from the
 project .env without printing it and publishes one unified `train` split.
@@ -15,9 +15,9 @@ from collections import Counter
 from pathlib import Path
 
 
-PROJECT = Path(r"C:\Users\bilal\OneDrive\Desktop\geomstry").resolve()
+PROJECT = Path(__file__).resolve().parent
 DATASET_ROOT = PROJECT / "Dataset"
-REPO_ID = "bilaljawaid980/GRIP-Benchmark"
+REPO_ID = os.environ.get("HF_REPO_ID", "anonymous/GRIP")
 CATEGORIES = {
     "route": "route_dataset_3000",
     "nested_squares": "nested_squares_dataset_3000",
@@ -165,14 +165,14 @@ tags:
 - synthetic
 - benchmark
 - vqa
-pretty_name: GRIP-Benchmark
+pretty_name: GRIP
 size_categories:
 - 100K<n<1M
 ---
 
-# GRIP-Benchmark
+# GRIP
 
-GRIP-Benchmark is a fully synthetic, programmatically generated and independently validated visual geometry, spatial-reasoning, and physical-reasoning suite. The current release contains **{len(CATEGORIES)} categories**, **{TOTAL_IMAGES:,} unique images**, and **{TOTAL_ROWS:,} image-question rows**. Every image is paired with five questions ordered from direct perception through extrapolative/counterfactual reasoning.
+GRIP is a fully synthetic, programmatically generated and independently validated visual geometry, spatial-reasoning, and physical-reasoning suite. The current release contains **{len(CATEGORIES)} categories**, **{TOTAL_IMAGES:,} unique images**, and **{TOTAL_ROWS:,} image-question rows**. Every image is paired with five questions ordered from direct perception through extrapolative/counterfactual reasoning.
 
 The repository provides data and ground truth only. It does not include model inference, scoring, or an evaluation harness.
 
@@ -276,11 +276,11 @@ def main() -> None:
 
     dataset.push_to_hub(
         REPO_ID, split="train", private=True, token=token, max_shard_size="500MB",
-        commit_message=f"Update GRIP-Benchmark: {len(CATEGORIES)} categories and {TOTAL_ROWS:,} questions",
+        commit_message=f"Update GRIP: {len(CATEGORIES)} categories and {TOTAL_ROWS:,} questions",
     )
     api.upload_file(
         path_or_fileobj=str(card_path), path_in_repo="README.md", repo_id=REPO_ID,
-        repo_type="dataset", token=token, commit_message="Add GRIP-Benchmark dataset card",
+        repo_type="dataset", token=token, commit_message="Add GRIP dataset card",
     )
 
     verify_dir = PROJECT / "hf_upload_verification"

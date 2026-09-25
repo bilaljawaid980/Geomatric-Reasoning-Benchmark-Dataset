@@ -38,7 +38,7 @@ archive_pngs=sum(1 for p in root.rglob('*.png') if 'archive' in {x.lower() for x
 archive_dirs=sum(1 for p in root.rglob('archive') if p.is_dir())
 if archive_pngs:errors.append(f'archive PNGs: {archive_pngs}')
 if archive_dirs:errors.append(f'archive directories: {archive_dirs}')
-report=['GRIP-Benchmark-34 Final Release Check','='*40,f'Datasets: {len(datasets)}',f'Archive directories: {archive_dirs}',f'Archive PNGs: {archive_pngs}',f'Errors: {len(errors)}']
+report=['GRIP Final Release Check','='*40,f'Datasets: {len(datasets)}',f'Archive directories: {archive_dirs}',f'Archive PNGs: {archive_pngs}',f'Errors: {len(errors)}']
 report+=errors or ['None'];report+=['','Final per-dataset top-level listings:']+lines
 (root/'final_release_check.txt').write_text('\n'.join(report)+'\n',encoding='utf-8')
 print('\n'.join(report[:8]))

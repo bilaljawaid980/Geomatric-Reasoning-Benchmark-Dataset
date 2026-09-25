@@ -88,7 +88,7 @@ def main():
     roots = sorted(path for path in args.dataset_root.iterdir()
                    if path.is_dir() and (path / "annotations.jsonl").is_file())
     results = {root.name: audit_one(root) for root in roots}
-    lines = ["# GRIP-Benchmark-34 Final Suite Audit", "", "| Dataset | Version | Modified in final pass | Ground-truth errors found | L1 | L2 | L3 | L4 | L5 | PNG assets |",
+    lines = ["# GRIP Final Suite Audit", "", "| Dataset | Version | Modified in final pass | Ground-truth errors found | L1 | L2 | L3 | L4 | L5 | PNG assets |",
              "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for name, result in results.items():
         bases = [result["level_distributions"][str(level)]["constant_answer_baseline"] for level in range(1, 6)]

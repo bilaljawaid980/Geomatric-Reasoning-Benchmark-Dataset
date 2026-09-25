@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This dataset is GRIP-Benchmark's first **Physical/Mechanical Reasoning** category. It complements the suite's geometric and spatial categories by testing causal propagation through an external-gear mechanism: rotation direction, angular-speed ratios, multi-step transmission, and component-change counterfactuals.
+This dataset is GRIP's first **Physical/Mechanical Reasoning** category. It complements the suite's geometric and spatial categories by testing causal propagation through an external-gear mechanism: rotation direction, angular-speed ratios, multi-step transmission, and component-change counterfactuals.
 
 The mechanical rules are standard: meshed external gears rotate in opposite directions, and their angular speeds are inversely proportional to tooth count. Broader motivation comes from recent interest in physical reasoning for vision-language models, including PhysBench (ICLR 2025) and PhysVLM (arXiv:2503.08481). These works are related context and are not authored by this dataset's creator.
 

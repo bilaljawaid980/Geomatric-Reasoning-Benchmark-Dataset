@@ -6,7 +6,7 @@ Level 3 answer formatting uses structured tie groups and accepts any ordering wi
 
 ## 1. Dataset overview
 
-This is the third Physical/Mechanical Reasoning category in GRIP-Benchmark, following gear trains and physical stability. It contains 3,000 deterministic free-body-diagram images and 15,000 questions covering force identification, vector comparison, equilibrium, Newton’s second law, physical error/omission detection, and counterfactual force analysis.
+This is the third Physical/Mechanical Reasoning category in GRIP, following gear trains and physical stability. It contains 3,000 deterministic free-body-diagram images and 15,000 questions covering force identification, vector comparison, equilibrium, Newton’s second law, physical error/omission detection, and counterfactual force analysis.
 
 The `wrong_diagram` preset parallels the global-consistency skill in `impossible_object_dataset_3000`, but applies it to mechanics rather than pure geometry. Images are synthetic and generated from exact physics parameters with `random.Random(image_index)`.
 
