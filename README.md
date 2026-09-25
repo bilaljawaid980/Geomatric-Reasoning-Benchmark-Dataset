@@ -126,7 +126,7 @@ python -m pip install openai pillow pandas numpy python-dotenv
 
 ```bibtex
 @misc{jawaid2026grip,
-  author       = {Bilal Jawaid},
+  author       = {Anonymous},
   title        = {GRIP-Benchmark-34: A Programmatic Benchmark for Geometry, Reasoning, Induction, and Physics},
   year         = {2026},
   howpublished = {GitHub repository},
