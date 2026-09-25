@@ -125,12 +125,10 @@ python -m pip install openai pillow pandas numpy python-dotenv
 ## Citation
 
 ```bibtex
-@misc{jawaid2026grip,
   author       = {Anonymous},
   title        = {GRIP-Benchmark-34: A Programmatic Benchmark for Geometry, Reasoning, Induction, and Physics},
   year         = {2026},
-  howpublished = {GitHub repository},
-  url          = {https://github.com/bilaljawaid980/Geomatric-Reasoning-Benchmark-Dataset}
+  
 }
 ```
 
