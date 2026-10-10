@@ -1,7 +1,7 @@
-"""Build, publish, and verify the private GRIP Hugging Face dataset.
+"""Build, publish, and verify the public GRIP Hugging Face dataset.
 
 Run this script from a normal terminal. It reads HF_TOKEN/hf_token from the
-project .env without printing it and publishes one unified `train` split.
+project .env without printing it and publishes one unified `test` split.
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent
 DATASET_ROOT = PROJECT / "Dataset"
-REPO_ID = os.environ.get("HF_REPO_ID", "anonymous/GRIP")
+REPO_ID = os.environ.get("HF_REPO_ID", "bilaljawaid980/GRIP-Benchmark")
 CATEGORIES = {
     "route": "route_dataset_3000",
     "nested_squares": "nested_squares_dataset_3000",
@@ -275,7 +275,7 @@ def main() -> None:
     print("===== END DATASET CARD =====\n")
 
     dataset.push_to_hub(
-        REPO_ID, split="train", private=True, token=token, max_shard_size="500MB",
+        REPO_ID, split="test", private=False, token=token, max_shard_size="500MB",
         commit_message=f"Update GRIP: {len(CATEGORIES)} categories and {TOTAL_ROWS:,} questions",
     )
     api.upload_file(
@@ -285,8 +285,8 @@ def main() -> None:
 
     verify_dir = PROJECT / "hf_upload_verification"
     verify_dir.mkdir(exist_ok=True)
-    print("Reloading the private dataset from the Hub for verification...")
-    remote = load_dataset(REPO_ID, split="train", token=token, cache_dir=str(verify_dir / "cache"))
+    print("Reloading the public dataset from the Hub for verification...")
+    remote = load_dataset(REPO_ID, split="test", token=token, cache_dir=str(verify_dir / "cache"))
     if len(remote) != TOTAL_ROWS:
         raise RuntimeError(f"Remote row count is {len(remote)}, expected {TOTAL_ROWS:,}")
     remote_counts = Counter(remote["category"])
