@@ -27,7 +27,7 @@ configs:
   - config_name: open_loop
     data_files:
       - split: test
-        path: combined/all_open_answers_combined.csv
+        path: combined/all_open_answers_combined.parquet
   - config_name: scene_annotations
     data_files:
       - split: test
