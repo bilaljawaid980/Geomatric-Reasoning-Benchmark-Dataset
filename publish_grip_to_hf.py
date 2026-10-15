@@ -17,7 +17,7 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parent
 DATASET_ROOT = PROJECT / "Dataset"
-REPO_ID = os.environ.get("HF_REPO_ID", "bilaljawaid980/GRIP-Benchmark")
+REPO_ID = os.environ.get("HF_REPO_ID", "").strip()
 CATEGORIES = {
     "route": "route_dataset_3000",
     "nested_squares": "nested_squares_dataset_3000",
@@ -248,6 +248,8 @@ def main() -> None:
     if args.audit_only:
         print(f"LOCAL AUDIT VERIFIED: {len(CATEGORIES)} categories, {TOTAL_IMAGES:,} images, {TOTAL_ROWS:,} rows")
         return
+    if not REPO_ID:
+        raise SystemExit("Set the HF_REPO_ID environment variable before publishing")
     login(token=token, add_to_git_credential=False)
     api = HfApi(token=token)
     identity = api.whoami(token=token)

@@ -3,43 +3,10 @@ message: "If you use GRIP, please cite the accompanying preprint and dataset."
 title: "Geometric Parrots: Rule Absence vs. Rule Fragility in Spatial and Physical Reasoning for Vision-Language Models"
 type: dataset
 authors:
-  - given-names: Bilal
-    family-names: Jawaid
-    affiliation: Independent
-  - given-names: Hamza
-    family-names: Hanif
-    affiliation: Simon Fraser University
-  - given-names: Muhammad Maaz
-    family-names: Uddin
-    affiliation: Salim Habib University
-  - given-names: Anas
-    family-names: Zafar
-    affiliation: The University of Texas MD Anderson Cancer Center
-  - given-names: Inad
-    family-names: Alqurashi
-    affiliation: Taif University
-  - given-names: Aizan
-    family-names: Zafar
-    affiliation: International Institute of Information Technology, Bangalore
-  - given-names: Osama
-    family-names: Farooqui
-    affiliation: Salim Habib University
-  - given-names: Sheheryar
-    family-names: Khan
-    affiliation: CPCE, Hong Kong Polytechnic University
-  - given-names: Ferhat
-    family-names: Sadak
-    affiliation: Aston University
-  - given-names: Shaina
-    family-names: Raza
-    affiliation: Vector Institute
-  - given-names: Rizwan
-    family-names: Qureshi
-    affiliation: Massachusetts General Hospital
+  - name: Anonymous
 version: 1.0.0
 date-released: 2026-10-11
 license: MIT
-repository-code: "https://github.com/bilaljawaid980/Geomatric-Reasoning-Benchmark-Dataset"
 keywords:
   - vision-language models
   - geometric reasoning

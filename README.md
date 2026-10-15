@@ -42,8 +42,6 @@ configs:
 | | |
 |---|---|
 | Paper | *Geometric Parrots: Rule Absence vs. Rule Fragility in Spatial and Physical Reasoning for Vision-Language Models* |
-| Project page | [GRIP Benchmark](https://bilaljawaid980.github.io/grip-benchmark/) |
-| Code | [GitHub](https://github.com/bilaljawaid980/Geomatric-Reasoning-Benchmark-Dataset) |
 | Scale | 100,000 images · 600,000 questions · 34 domains · 9 reasoning families |
 
 ![GRIP taxonomy and Dual-Loop Evaluation overview](assets/grip-taxonomy-burst.png)
@@ -139,20 +137,22 @@ Load any configuration from the Hub:
 ```python
 from datasets import load_dataset
 
+dataset_id = "<published-dataset-id>"
+
 closed_loop = load_dataset(
-    "bilaljawaid980/GRIP-Benchmark",
+    dataset_id,
     "closed_loop",
     split="test",
 )
 
 open_loop = load_dataset(
-    "bilaljawaid980/GRIP-Benchmark",
+    dataset_id,
     "open_loop",
     split="test",
 )
 
 scene_annotations = load_dataset(
-    "bilaljawaid980/GRIP-Benchmark",
+    dataset_id,
     "scene_annotations",
     split="test",
 )
@@ -200,29 +200,13 @@ GRIP, including its procedurally generated data and accompanying code, is releas
 ## Citation
 
 ```bibtex
-@misc{jawaid2026geometric,
-  author = {Bilal Jawaid and Hamza Hanif and Muhammad Maaz Uddin and
-            Anas Zafar and Inad Alqurashi and Aizan Zafar and
-            Osama Farooqui and Sheheryar Khan and Ferhat Sadak and
-            Shaina Raza and Rizwan Qureshi},
+@misc{anonymous2026geometricparrots,
+  author = {Anonymous},
   title  = {Geometric Parrots: Rule Absence vs. Rule Fragility in Spatial
             and Physical Reasoning for Vision-Language Models},
-  year   = {2026},
-  note   = {Preprint}
+  year   = {2026}
 }
 ```
 
-### Authors and affiliations
-
-1. Bilal Jawaid — Independent
-2. Hamza Hanif — Simon Fraser University
-3. Muhammad Maaz Uddin — Salim Habib University
-4. Anas Zafar — The University of Texas MD Anderson Cancer Center
-5. Inad Alqurashi — Taif University
-6. Aizan Zafar — International Institute of Information Technology, Bangalore
-7. Osama Farooqui — Salim Habib University
-8. Sheheryar Khan — CPCE, Hong Kong Polytechnic University
-9. Ferhat Sadak — Aston University
-10. Shaina Raza — Vector Institute
-11. Rizwan Qureshi — Massachusetts General Hospital
+Author information is anonymized in this repository.
 
